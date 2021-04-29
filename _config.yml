@@ -1,0 +1,93 @@
+title: Feeling Responsive
+slogan: A Flexible Theme for Jekyll
+description: >-
+  »Feeling Responsive« is a responsive theme for Jekyll based on the fabulous
+  foundation framework with beautiful typography and a bright color palette.
+credits: >-
+  <p>Created with &hearts; by <a href="http://phlow.de/">Phlow</a> with <a
+  href="http://jekyllrb.com/" target="_blank">Jekyll</a> based on <a
+  href="http://phlow.github.io/feeling-responsive/">Feeling Responsive</a>.</p>
+author: phlow
+url: ''
+baseurl: ''
+improve_content: 'https://github.com/Phlow/feeling-responsive/edit/gh-pages'
+urlimg: 'https://phlow.github.io/feeling-responsive/images/'
+logo: logo.png
+plugins:
+  - jekyll-asciidoc
+  - jekyll-gist
+  - jekyll-paginate
+paginate: 5
+paginate_path: 'blog/page:num'
+markdown: kramdown
+permalink: '/:categories/:title/'
+highlight: rouge
+excerpt_separator: <!--more-->
+include:
+  - .htaccess
+exclude:
+  - .sass-cache
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - INSTALL.md
+  - vendor
+language: en
+compress_html:
+  clippings: all
+  comments:
+    - '<!-- '
+    - ' -->'
+  endings: all
+  profile: false
+  ignore:
+    envs:
+      - development
+defaults:
+  - scope:
+      path: ''
+      type: pages
+    values:
+      show_meta: false
+      comments: false
+      author: phlow
+  - scope:
+      path: ''
+      type: posts
+    values:
+      show_meta: true
+      comments: false
+      author: phlow
+google_author: 'https://plus.google.com/u/0/118311555303973066167'
+google_site_verification: Vk0IOJ2jwG_qEoG7fuEXYqv0m2rLa8P778Fi_GrsgEQ
+bing_webmastertools_id: 0FB4C028ABCF07C908C54386ABD2D97F
+favicon-32x32: favicon-32x32.png
+touch-icon-192x192: touch-icon-192x192.png
+apple-touch-icon-180x180-precomposed: apple-touch-icon-180x180-precomposed.png
+apple-touch-icon-152x152-precomposed: apple-touch-icon-152x152-precomposed.png
+apple-touch-icon-144x144-precomposed: apple-touch-icon-144x144-precomposed.png
+apple-touch-icon-120x120-precomposed: apple-touch-icon-120x120-precomposed.png
+apple-touch-icon-114x114-precomposed: apple-touch-icon-114x114-precomposed.png
+apple-touch-icon-76x76-precomposed: apple-touch-icon-76x76-precomposed.png
+apple-touch-icon-72x72-precomposed: apple-touch-icon-72x72-precomposed.png
+apple-touch-icon-precomposed: apple-touch-icon-precomposed.png
+msapplication_tileimage: msapplication_tileimage.png
+msapplication_tilecolor: '#fabb00'
+og_image: 'http://images.phlow.de/phlow/phlow_de-logo-512x.png'
+og_locale: en_EN
+og_type: website
+socialmedia:
+  twitter: phlow
+  facebook: phlow.media
+disqus_shortname: feelingresponsive
+sass:
+  sass_dir: _sass
+  style: ':compressed'
+asciidoctor-enabled: false
+asciidoctor:
+  description: null
+  attributes:
+    source-highlighter: coderay
+    coderay-css: style
+    icons: font
