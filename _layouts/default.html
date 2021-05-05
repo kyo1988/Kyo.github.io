@@ -1,23 +1,37 @@
----
-layout: compress
----
-<!doctype html>
-<html class="no-js" lang="{% if site.language == nil %}en{% else %}{{ site.language }}{% endif %}">
-<head>
-	{% include _head.html %}
-</head>
-<body id="top-of-page" class="{{ layout.format }}">
-	{% unless page.skip_boilerplate %}
-	{% include _navigation.html %}
-	{% endunless %}
+<!DOCTYPE html>
+<html>
 
-	{% include _masthead.html %}
-	{{ content }}
+{% include head.html %}
 
-	{% unless page.skip_boilerplate %}
-	{% include _footer.html %}
-	{% endunless %}
+<body>
 
-	{% include _footer_scripts.html %}
+<div class="container">
+
+  {% include header.html %}
+
+  {% if site.default_column == "two" %}  
+
+  <div class="page-content col-sm-8">
+    {{ content }}
+    {% include post_pagination.html %}
+  </div>
+  {% include sidebar.html %}
+
+  {% else %}
+
+  <div class="page-content">
+    <div class="wrapper">
+      {{ content }}
+    </div>
+  </div>
+  {% include post_pagination.html %}
+
+  {% endif %}
+
+  {% include footer.html %}
+
+</div>
+
 </body>
+
 </html>
