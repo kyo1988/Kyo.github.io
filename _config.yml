@@ -2,7 +2,7 @@
 title: Kyo's Website
 tagline: MBA Data Scientist in FMCG
 author: Kyo
-email: yu@lijiayu.net
+email: #yu@lijiayu.net
 description: "Freshman21 is a Jekyll blog theme." # You can edit this line in _config.yml. It will appear in your document head meta and in your feed.xml site description
 keywords: "Jekyll, theme, Freshman21"
 baseurl: "Kyo.github.io" # the subpath of your site, e.g. /blog/
@@ -12,7 +12,7 @@ locale: en_US
 ### Personal info and site tools info:
 twitter_username: #yulijia
 github_username:  kyo1988
-disqus_shortname: kyo#freshman21
+disqus_shortname: kyo
 favicon:     "/images/favicon.ico"
 aboutme: Hi, this is Kyo. I made this site using the Freshman21 theme. Please enjoy it. # these are shown on aboutme-sidebar.
 aboutme_photo: #https://i.imgur.com/Mdc4szJl.jpg# your photo.
@@ -20,7 +20,7 @@ google_analytics_key: #UA-57979084-1 # put YOUR key here to enable tracking! (bl
 
 
 ### Site setting:
-ShowContactInfo: "True" # Personal Info (twitter,github,email) can be seen on aboutme-sidebar, those info only shown where ShowContactInfo == True
+ShowContactInfo: "False" # Personal Info (twitter,github,email) can be seen on aboutme-sidebar, those info only shown where ShowContactInfo == True
 default_column: "one" # blog style: two columns, if default_column != "two", you will see a one column blog.
 default_locale: "en" # blog sidebar language set, only include: English (en), Chinese (cn), Japanese (jp), Polish (pl), Korean (kr),  Russian (ru), Turkish (tr), and Indonesian (id).
 
