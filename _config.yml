@@ -1,5 +1,5 @@
 ### Site info:
-title: Kyo's Website
+title: Kyo's Blog
 tagline: MBA Data Scientist in FMCG
 author: Kyo
 email: kyoichiro.harada@bath.edu
@@ -47,9 +47,9 @@ locales:
 ### your Blogroll info, only name can shown on the page.
 
 Blogroll:
-      - name: Kyo's Website
+      - name: Kyo's Blog
         href: https://kyo1988.github.io/Kyo.github.io/
-        title: Kyo's Website
+        title: Kyo's Blog
 
 ### Build settings
 markdown: kramdown
