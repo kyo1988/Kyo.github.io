@@ -12,7 +12,7 @@ comments: true
 
 This is a modified version of the report for Business Analyics in Bath Full Time MBA Class of 2020.
 
-## SALES FORECASTING
+# SALES FORECASTING
 
 ## Introduction
 In this section, it is discussed that the recommended pizza in section A will be added to the university catering service provider.  The firm also can offer a variety of food lines mainly including sandwiches, wraps, crisps, salad and sushi meals.  The supply chain management and cash-flow decisions of the company depend on one-month-ahead sales forecasting for 6 main meals.  However, the current method to predict the demands can be primitive.  This is primary because the monthly predictions have been done by the average of the last four month’s sales for each product with seasonal adjustments counted on their instinct.  In addition, weekly demand estimation is simply done by the monthly one divided by four or five based on the number of days in the target month.  Therefore, in section B, it is discussed how to improve one-month-ahead sales forecast.  The data related to sales history for six of the main food lines is extracted which is divided by two part in terms of the amount of sales to analyze in Figure 12 and Figure 13 respectively.  It is seen apparently most of food lines have a seasonality with the exception of ‘Wraps’ which might be almost constant.  
@@ -121,18 +121,18 @@ Mean Square Error (MSE) can be one of the most common method to compare the mode
 ![Figure 65](https://res.cloudinary.com/djiyxp5ax/image/upload/v1598711636/%E5%9B%B365.png "Figure 65")
 
 ## Reference
-Brownlee, J., 2016. How to Check if Time Series Data is Stationary with Python [Online]. Available from: https://machinelearningmastery.com/time-series-data-stationary-python/ [Accessed 30 March 2020].
-Brownlee, J., 2017. Long Short-Term Memory Networks with Python
-Downey, A.B., 2011. Think Stats
-Janert, P.K., 2010. Data Analysis with Open Source Tools
-Janssens, W., Wijnen, K., Pelsmacker, P.D., Kenhove, P.V., 2008. Marketing Research with SPSS (FT Prentice Hall)
-Lilien, G.L. and Rangaswamy, A., 2002. Marketing Engineering: Computer Assisted Marketing Analysis and Planning
-Meulman, J.J. and Koopman, S.J., 2007. An Introduction to State Space Time Series Analysis
-Palachy, S., 2019. Detecting stationarity in time series data [Online]. Available from: https://towardsdatascience.com/detecting-stationarity-in-time-series-data-d29e0a21e638 [Accessed 30 March 2020].
-Prabhakaran, S., 2019. ARIMA Model – Complete Guide to Time Series Forecasting in Python [Online]. Available from: https://www.machinelearningplus.com/time-series/arima-model-time-series-forecasting-python/ [Accessed 30 March 2020].
-Prabhakaran, S., 2019. Time Series Analysis in Python – A Comprehensive Guide with Examples [Online]. Available from: https://www.machinelearningplus.com/time-series/time-series-analysis-python/ [Accessed 30 March 2020].
-SINGH, A., 2018. A Gentle Introduction to Handling a Non-Stationary Time Series in Python [Online]. Available from: https://www.analyticsvidhya.com/blog/2018/09/non-stationary-time-series-python/ [Accessed 30 March 2020].
-Taylor, S.J. and Letham, B., 2017. Forecasting at scale. PeerJ Preprints 5:e3190v2 https://doi.org/10.7287/peerj.preprints.3190v2
-TensorFlow, 2020. Time series forecasting [Online]. Available from: https://www.tensorflow.org/tutorials/structured_data/time_series [Accessed 30 March 2020].
-Tieleman, T. and Hinton, G., 2012. Lecture 6.5-rmsprop: Divide the Gradient by a Running Average of Its Recent Magnitude. COURSERA: Neural Networks for Machine Learning, 4, 26-31.
-Wierenga, B., 2008. Handbook of Marketing Decision Models
+* Brownlee, J., 2016. How to Check if Time Series Data is Stationary with Python [Online]. Available from: https://machinelearningmastery.com/time-series-data-stationary-python/ [Accessed 30 March 2020].
+* Brownlee, J., 2017. Long Short-Term Memory Networks with Python
+* Downey, A.B., 2011. Think Stats
+* Janert, P.K., 2010. Data Analysis with Open Source Tools
+* Janssens, W., Wijnen, K., Pelsmacker, P.D., Kenhove, P.V., 2008. Marketing Research with SPSS (FT Prentice Hall)
+* Lilien, G.L. and Rangaswamy, A., 2002. Marketing Engineering: Computer Assisted Marketing Analysis and Planning
+* Meulman, J.J. and Koopman, S.J., 2007. An Introduction to State Space Time Series Analysis
+* Palachy, S., 2019. Detecting stationarity in time series data [Online]. Available from: https://towardsdatascience.com/detecting-stationarity-in-time-series-data-d29e0a21e638 [Accessed 30 March 2020].
+* Prabhakaran, S., 2019. ARIMA Model – Complete Guide to Time Series Forecasting in Python [Online]. Available from: https://www.machinelearningplus.com/time-series/arima-model-time-series-forecasting-python/ [Accessed 30 March 2020].
+* Prabhakaran, S., 2019. Time Series Analysis in Python – A Comprehensive Guide with Examples [Online]. Available from: https://www.machinelearningplus.com/time-series/time-series-analysis-python/ [Accessed 30 March 2020].
+* SINGH, A., 2018. A Gentle Introduction to Handling a Non-Stationary Time Series in Python [Online]. Available from: https://www.analyticsvidhya.com/blog/2018/09/non-stationary-time-series-python/ [Accessed 30 March 2020].
+* Taylor, S.J. and Letham, B., 2017. Forecasting at scale. PeerJ Preprints 5:e3190v2 https://doi.org/10.7287/peerj.preprints.3190v2
+* TensorFlow, 2020. Time series forecasting [Online]. Available from: https://www.tensorflow.org/tutorials/structured_data/time_series [Accessed 30 March 2020].
+* Tieleman, T. and Hinton, G., 2012. Lecture 6.5-rmsprop: Divide the Gradient by a Running Average of Its Recent Magnitude. COURSERA: Neural Networks for Machine Learning, 4, 26-31.
+* Wierenga, B., 2008. Handbook of Marketing Decision Models
