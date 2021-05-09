@@ -16,22 +16,27 @@ This is a modified version of the report for Strategic Marketing in Bath Full Ti
 
 ## Introduction
 ![Executive Summary](https://res.cloudinary.com/djiyxp5ax/image/upload/v1620530278/MN50343-Kyo_tbxqq6.png "Executive Summary")
+
 This note was written for the slides of Strategic marketing assignment.  The slides have 5 pages including executive summary. The title of remains were 4C, STP, 4P and ‘Customer Acquisition and Retention’.  Therefore, this note was constructed 4 paragraphs for supplementation to each slide.  Besides, the reference below were for this note and slides.
 
 ## 4C
 ![4C](https://res.cloudinary.com/djiyxp5ax/image/upload/v1620530278/MN50343-Kyo1_wrjwg2.png "4C")
+
 Although the sales growth of retailers in the UK is flat, the ones of high-end market are raising, for example, Harrods (23%) in 2018.  Therefore, John Lewis might be able to concentrate on high-end market.  In addition, Ocado of Online grocery retailers' market shares is 13.4% in the UK in 2014.  If Waitrose of John Lewis merged or rebranded it, the total share would be 18.4% which was still almost 20% lower than Tesco (as of 2014) and AmazonFresh (as of 2016), however, would rank 3rd place.  However, the share of Tesco has decreased to 27% from 39.1% in 2014 mainly due to Amazon’s penetration, therefore, although Tesco is still large, Waitrose should focus on AmazonFresh as a major competitor.
 
 ## Segmentation, Targeting, and Positioning (STP)
 ![STP](https://res.cloudinary.com/djiyxp5ax/image/upload/v1620530278/MN50343-Kyo2_vuqxzr.png "STP")
+
 The features of generation have some common points among regions, especially the US can be relatively similar to the UK, however, they are less similar EU countries.  However, in terms of global sales share, Asia-Pacific (37.6%) and the US (32%) are larger than Europe (25.3%), therefore, after Waitrose of John Lewis gain share in the UK and EU, they should enter this market with the retail stores to adapt omni-channel strategy.
 
 ## Marketing Mix (4P)
 ![4P](https://res.cloudinary.com/djiyxp5ax/image/upload/v1620530278/MN50343-Kyo3_aea5h2.png "4P")
+
 Although mobile payment users are 25% of British millenniums, more than 20% of them have tried and lapsed this method mainly via Apple Pay and Pingit which Barclays operated.  This figure is relatively lower than EU countries, one of which is Italy having 37%.  Therefore, Waitrose of John Lewis should adapt at least these two mobile platformers and PayPal (an existing non-bank financial brand) to improve CX. In addition, Pinterest is a less developed social media in comparison with other social channels primary Instagram.  Thus, John Lewis can invest them to promote their products.
 
 ## Customer Acquisition and Retention
 ![Customer Acquisition and Retention](https://res.cloudinary.com/djiyxp5ax/image/upload/v1620530277/MN50343-Kyo4_imnrcy.png "Customer Acquisition and Retention")
+
 The personalization, especially basket page can raise average order value (AOV).  Therefore, this promotion can increase page not only views, conversion and retention rate but also AOV.  However, the investment has to be commensurate with the cost, mainly acquisition one, the average of which for those who installed and registered on mobile shopping apps was totally $17.93 and those who made a purchase in 2019 was $39.38, which was almost half of 2017.  On the other hand, AOV from a mobile phone was $ 86.47 in 2019 Q2. Thus, if this investment affect AOV negatively, it can be justified.
 
 ## Reference
