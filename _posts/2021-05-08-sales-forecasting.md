@@ -17,7 +17,7 @@ This is a modified version of the report for Business Analyics in Bath Full Time
 ## Introduction
 In this section, it is discussed that the recommended pizza in section A will be added to the university catering service provider.  The firm also can offer a variety of food lines mainly including sandwiches, wraps, crisps, salad and sushi meals.  The supply chain management and cash-flow decisions of the company depend on one-month-ahead sales forecasting for 6 main meals.  However, the current method to predict the demands can be primitive.  This is primary because the monthly predictions have been done by the average of the last four month’s sales for each product with seasonal adjustments counted on their instinct.  In addition, weekly demand estimation is simply done by the monthly one divided by four or five based on the number of days in the target month.  Therefore, in section B, it is discussed how to improve one-month-ahead sales forecast.  The data related to sales history for six of the main food lines is extracted which is divided by two part in terms of the amount of sales to analyze in Figure 12 and Figure 13 respectively.  It is seen apparently most of food lines have a seasonality with the exception of ‘Wraps’ which might be almost constant.  
 
-![Figure 12](https://res.cloudinary.com/djiyxp5ax/image/upload/v1598707217/%E5%9B%B312.png "Figure 12")| 
+| ![Figure 12](https://res.cloudinary.com/djiyxp5ax/image/upload/v1598707217/%E5%9B%B312.png)| 
 |:--:| 
 | *Figure 12* |
 ![Figure 13](https://res.cloudinary.com/djiyxp5ax/image/upload/v1598707276/%E5%9B%B313.png "Figure 13")
