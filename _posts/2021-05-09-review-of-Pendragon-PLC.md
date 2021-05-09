@@ -1,0 +1,107 @@
+---
+layout: post
+title: Financial Review of Pendragon PLC
+excerpt: "This is a modified version of the report for Corporate Finance in Bath Full Time MBA Class of 2020."
+categories: Finance
+tags: [Finance Business]
+comments: true
+---
+
+* Table of Contents
+{:toc}
+
+This is a modified version of the report for Corporate Finance in Bath Full Time MBA Class of 2020.
+
+# Financial Review of Pendragon PLC
+
+## Introduction
+“Cash is fact, profit is opinion” was argued by The Economist because such accounting figures can be manipulated conveniently <cite>(Anonymous, 1997)</cite>.  This might imply the framework to analyze the company is changing, however, the importance of valuation and analysis itself may be stable.  This report will review of Pendragon PLC (PDG.L) in terms of their financial performance, position and capability to generate cash flow.  In addition, the enterprise value will be calculated using discount cash flow method (DFC) and therefore, the figure will be compared with their market value.
+
+## Review of Financial Performance
+
+![Figure 1](https://res.cloudinary.com/djiyxp5ax/image/upload/v1598772024/%E5%9B%B31b.png "Figure 1")
+
+From the investor’s point of view, the performance of company can be represented by return on invested capital (ROIC).  This is mainly because ROIC describe how much the company generate the cash flow using capital in which the finance providers invested such as equity and debt <cite>(Watson and Head, 2019)</cite>.  In general, the cash flow is indicated by net operating profit less adjusted taxes <cite>(McKinsey & Company, 2010)</cite>.  However, this report uses Earnings Before Interest Taxes Depreciation and Amortization (EBITDA) owing to the fact that EBITDA can be directly extracted from Income Statement which means to be more reliable than the processed one.  The Figure 1 show 4 years average ROIC  of PDG.L and the major competitors , which the firm can be the second least valuable for the investors because if their investment was used to the competitors or other assets, they would earn more money.  Moreover, the ROIC of PDG.L was 0.24% in 2018, which meant not only the least valuable firm but also approximately 13% smaller than its average.  ROIC could be decomposed in terms of profitability and efficiency using mainly EBITA Margin and Invested Capital Turnover respectively (ibid).  The perspective of cost structure is also important and is represented by two figures which are sales cost ratio and selling, general & administrative (SGA) ratio, however, these number of PDG.L was almost stable for 4 years  (ibid).  Therefore, Figure 2 show ROIC decomposition by profitability and efficiency.  This figure indicates PDG.L has the lower profitability and efficiency than competitors, in contrast, firms with larger ROIC has either profitability or efficiency then both cannot hold at the same time in this industry which is retail and repair of used and new cars.  What is the main cause of low ROIC can be recognized to see ROIC trees (Figure 3 and 4).  These trees show EBITDA margin, fixed asset turnover and accounts payable turnover of PDG.L are significantly lower than the competitors average.  Relatively low EBITDA margin means they might make less effort to cut operating expenses <cite>(Investopedia, 2019)</cite>.  Less fixed asset turnover signifies their fixed-asset investments management can be smaller effective (ibid).  Lower accounts payable turnover connotes there can be smaller amount cash flow to pay their short-term obligations (ibid).
+
+![Figure 2](https://res.cloudinary.com/djiyxp5ax/image/upload/v1598772211/%E5%9B%B32b.png "Figure 2")
+
+![Figure 3](https://res.cloudinary.com/djiyxp5ax/image/upload/v1598772252/%E5%9B%B33b.png "Figure 3")
+
+![Figure 4](https://res.cloudinary.com/djiyxp5ax/image/upload/v1598772279/%E5%9B%B34b.png "Figure 4")
+
+## Review of Financial Position
+There are two aspects to analyze financial position of the firm, which are liquidity and gearing (coverage).  The major indicators of liquidity are quick rate and current rate.  In comparison with the average of competitors, these ratios are 17% (0.97) and 28% (0.22) lower respectively.  This means PDG.L has less capability to pay short term obligations and therefore they are more likely to be bankruptcy <cite>(Investopedia, 2019)</cite>.  Gearing is represented by capital gearing, debt-to-equity and interest coverage ratio.  They have moderate capital gearing (0.25) and debt-to-equity (4.10) because these difference with the average of competitors are 10% and 5% higher, however, interest coverage of them (2.39) is 84% smaller.  This means their interest expense can be quite larger than their earnings therefore the likelihood of bankruptcy might be higher and this statement is supported both liquidity and gearing (ibid).
+
+## Review of the cash generation
+Most investors are interested in the structure and capability to earn free cash flow.  This is because the value of company can be driven by cash flow which is created their ROIC and revenue growth <cite>(McKinsey & Company, 2010)</cite>.  Free cash flow  of PDG.L has been negative for 5 years, however, operating cash flow has been positive for the same period and larger than the average .  This means capital expenditure of them has been considerably larger than operating cash flow .  This was mainly due to the fact that they recognized a significant impairment of £88.8M against the carrying value of goodwill in a number of its Cash Generating Units (AR18p77).  Therefore, if they did not recognize the impairment, free cash flow would £34.6M, which means they might have the capability to earn cash flow because free cash flow exclude goodwill was positive and such impairment is less likely to be happen.
+
+## DCF Based Valuation
+There is the history of stock price in Figure 5, which indicate after global recession in 2008, although until 2016 the price had been recovering, it is decreasing again and therefore enterprise value as market capitalization (MC) is also declining to £158.97M as of 2019 according to Yahoo! Finance.  This decrease could recognize the historical cumulative log return and total relative one of stock price in Figure 6.  However, some people argue that MC do not represent the value of firm.  There are three approaches to evaluate the company which are income, cost and market approach mainly including MC <cite>(McKinsey & Company, 2010)</cite>.  Discount cash flow method can be the most popular income approach valuation one, which the estimated future free cash flows multiplying weighted average cost of capital (WACC) as a discount factor and then those discounted free cash flows is summed up is considered as enterprise value (ibid).  Assumed CAPM theory  hold, WACC is calculated as 3.81%  which might mean the investor lost the opportunity to earn more money investing other assets such as stocks or bonds due to the fact that average ROIC is 12.92%.  The determination of value drivers is important to estimate future free cash flow.  In general, some of key drivers are revenue growth, EBITDA margin and tax rate. As a base line scenario, those are assumed as compound average growth rate (CAGR, -0.24% ), weighted average EBITDA margin  (1.10%) and British tax rate (19% in 2019 and 17% from 2020) respectively.  Therefore, CAGR estimated future 5 years revenue (2019-2023) and then EBITDA was calculated by multiplying the revenue with EBITDA margin.  Assumed percentage of depreciation and amortization against revenue is constant and equal to the figure in 2018 (0.66%), the future depreciation and amortization was earned to multiply the revenue with the percentage.  The future earnings before interest and taxes (EBIT) was reckoned the EBITDA minus depreciation and amortization.  Future free cash flow (FCF) was estimated the EBIT minus operating cash tax which EBIT multiplied tax rate.  Finally, the enterprise value was £498.04M owing to the fact that those 5 years FCF was discounted by WACC and totaled.  In comparison with market cap, the estimated value was almost 3 times higher which means the current market value can be undervalued by market participants.  However, the base line of DCF method might be unreliable because of the uncertainty of prediction for key drivers primary revenue growth and therefore it should be mitigated to use some feasible scenarios which should be averaged weightily based on it’s feasibility or to adapt Monte Carlo simulation (MC).  As a result of the adaption (see figure 7), the enterprise value was £430.04M, which meant several scenarios were smoothened using two normal distributions for revenue growth and EBITDA margin, both of which have 2% standard deviation.
+
+![Figure 5](https://res.cloudinary.com/djiyxp5ax/image/upload/v1598772333/%E5%9B%B35b.png "Figure 5")
+
+![Figure 6](https://res.cloudinary.com/djiyxp5ax/image/upload/v1598772369/%E5%9B%B36b.png "Figure 6")
+
+![Figure 7](https://res.cloudinary.com/djiyxp5ax/image/upload/v1598772421/%E5%9B%B37b.png "Figure 7")
+
+## Conclusion
+This report has reviewed PDG.L’s financial conditions and estimated their enterprise value.  As a result of the review, EBITDA margin, fixed asset and account payable turnover were considerably smaller than major competitors.  In addition, in terms of liquidity and gearing, they might be lower capability to pay short term debt.  According to their cash generation, they have relatively large operating cash flow, however, capital expenditure was higher than their cash earning ability from business.  This might mean lower turnovers lead to lower liquidity and gearing, therefore, capital expenditure may become larger and thus their free cash flow earning ability become weaker.  This can be supported by that estimated enterprise value with DCF and MC (£430.04M) was approximately 3 times larger than their market cap.  This may mean market participants are significantly concerned to their capability to earn free cash flow more than assumed and estimated in this report.  The valuation did not consider inflation, foreign currency, pension obligation effects and other factors to affect the value, however, these should be done so to calculate the value more precisely.
+
+
+## Reference
+* Anonymous, 1997. A star to sail by? The Economist, 344(8028), pp.53–55.
+* Cambria Automobiles PLC. (CAMB.L), 2019. Balance Sheet. Yahoo!Finance. Retrieved from: https://finance.yahoo.com/quote/CAMB.L/balance-sheet?p=CAMB.L [Accessed 20 December 2019].
+* Cambria Automobiles PLC. (CAMB.L), 2019. Income statement. Yahoo!Finance. Retrieved from: https://finance.yahoo.com/quote/CAMB.L/financials?p=CAMB.L [Accessed 20 December 2019].
+* Cambria Automobiles PLC. (CAMB.L), 2019. Key Statistics. Yahoo!Finance. Retrieved from: https://finance.yahoo.com/quote/CAMB.L/key-statistics?p=CAMB.L [Accessed 20 December 2019].
+* Cambria Automobiles PLC. (CAMB.L), 2019. Statement of Cash Flows. Yahoo!Finance. Retrieved from: https://finance.yahoo.com/quote/CAMB.L/cash-flow?p=CAMB.L [Accessed 20 December 2019].
+* Card Factory PLC. (CARD.L), 2019. Balance Sheet. Yahoo!Finance. Retrieved from: https://finance.yahoo.com/quote/CARD.L/balance-sheet?p=CARD.L [Accessed 20 December 2019].
+* Card Factory PLC. (CARD.L), 2019. Income statement. Yahoo!Finance. Retrieved from: https://finance.yahoo.com/quote/CARD.L/financials?p=CARD.L [Accessed 20 December 2019].
+* Card Factory PLC. (CARD.L), 2019. Key Statistics. Yahoo!Finance. Retrieved from: https://finance.yahoo.com/quote/CARD.L/key-statistics?p=CARD.L [Accessed 20 December 2019].
+* Card Factory PLC. (CARD.L), 2019. Statement of Cash Flows. Yahoo!Finance. Retrieved from: https://finance.yahoo.com/quote/CARD.L/cash-flow?p=CARD.L [Accessed 20 December 2019].
+* Financial Times (FT), 2019. Ten year government bond spreads. [online] Available from: https://markets.ft.com/data/bonds/government-bonds-spreads [Accessed 20 December 2019].
+* Gear4music Holdings PLC. (G4M.L), 2019. Balance Sheet. Yahoo!Finance. Retrieved from: https://finance.yahoo.com/quote/G4M.L/balance-sheet?p=G4M.L [Accessed 20 December 2019].
+* Gear4music Holdings PLC. (G4M.L), 2019. Income statement. Yahoo!Finance. Retrieved from: https://finance.yahoo.com/quote/G4M.L/financials?p=G4M.L [Accessed 20 December 2019].
+* Gear4music Holdings PLC. (G4M.L), 2019. Key Statistics. Yahoo!Finance. Retrieved from: https://finance.yahoo.com/quote/G4M.L/key-statistics?p=G4M.L [Accessed 20 December 2019].
+* Gear4music Holdings PLC. (G4M.L), 2019. Statement of Cash Flows. Yahoo!Finance. Retrieved from: https://finance.yahoo.com/quote/G4M.L/cash-flow?p=G4M.L [Accessed 20 December 2019].
+* Halfords Group plc. (HFD.L), 2019. Balance Sheet. Yahoo!Finance. Retrieved from: https://finance.yahoo.com/quote/HFD.L/balance-sheet?p=HFD.L [Accessed 20 December 2019].
+* Halfords Group plc. (HFD.L), 2019. Income statement. Yahoo!Finance. Retrieved from: https://finance.yahoo.com/quote/HFD.L/financials?p=HFD.L [Accessed 20 December 2019].
+* Halfords Group plc. (HFD.L), 2019. Key Statistics. Yahoo!Finance. Retrieved from: https://finance.yahoo.com/quote/HFD.L/key-statistics?p=HFD.L [Accessed 20 December 2019].
+* Halfords Group plc. (HFD.L), 2019. Statement of Cash Flows. Yahoo!Finance. Retrieved from: https://finance.yahoo.com/quote/HFD.L/cash-flow?p=HFD.L [Accessed 20 December 2019].
+* Investopedia, 2019. Accounts Payable Turnover Ratio Definition. [online] Available from: https://www.investopedia.com/terms/a/accountspayableturnoverratio.asp [Accessed 20 December 2019].
+* Investopedia, 2019. Debt-To-Equity Ratio – D/E. [online] Available from: https://www.investopedia.com/terms/d/debtequityratio.asp [Accessed 20 December 2019].
+* Investopedia, 2019. EBITDA Margin. [online] Available from: https://www.investopedia.com/terms/e/ebitda-margin.asp [Accessed 20 December 2019].
+* Investopedia, 2019. Fixed Asset Turnover Ratio Definition. [online] Available from: https://www.investopedia.com/terms/f/fixed-asset-turnover.asp [Accessed 20 December 2019].
+* Investopedia, 2019. How Do I Use the CAPM to Determine Cost of Equity?. [online] Available from: https://www.investopedia.com/ask/answers/022515/how-do-i-use-capm-capital-asset-pricing-model-determine-cost-equity.asp [Accessed 20 December 2019].
+* Investopedia, 2019. How to Analyze a Company's Financial Position. [online] Available from: https://www.investopedia.com/articles/fundamental/04/063004.asp [Accessed 20 December 2019].
+* Investopedia, 2019. Interest Coverage Ratio Definition. [online] Available from: https://www.investopedia.com/terms/i/interestcoverageratio.asp [Accessed 20 December 2019].
+* Investopedia, 2019. Quick Ratio Definition. [online] Available from: https://www.investopedia.com/terms/q/quickratio.asp [Accessed 20 December 2019].
+* Investopedia, 2019. Weighted Average Cost of Capital – WACC. [online] Available from: https://www.investopedia.com/terms/w/wacc.asp [Accessed 20 December 2019].
+* Lookers PLC. (LOOK.L), 2019. Balance Sheet. Yahoo!Finance. Retrieved from: https://finance.yahoo.com/quote/LOOK.L/balance-sheet?p=LOOK.L [Accessed 20 December 2019].
+* Lookers PLC. (LOOK.L), 2019. Income statement. Yahoo!Finance. Retrieved from: https://finance.yahoo.com/quote/LOOK.L/financials?p=LOOK.L [Accessed 20 December 2019].
+* Lookers PLC. (LOOK.L), 2019. Key Statistics. Yahoo!Finance. Retrieved from: https://finance.yahoo.com/quote/LOOK.L/key-statistics?p=LOOK.L [Accessed 20 December 2019].
+* Lookers PLC. (LOOK.L), 2019. Statement of Cash Flows. Yahoo!Finance. Retrieved from: https://finance.yahoo.com/quote/LOOK.L/cash-flow?p=LOOK.L [Accessed 20 December 2019].
+* McKinsey & Company, 2010. VALUATION. FIFTH EDITION. John Wiley & Sons, Inc.
+* Motorpoint Group PLC. (MOTR.L), 2019. Balance Sheet. Yahoo!Finance. Retrieved from: https://finance.yahoo.com/quote/MOTR.L/balance-sheet?p=MOTR.L [Accessed 20 December 2019].
+* Motorpoint Group PLC. (MOTR.L), 2019. Income statement. Yahoo!Finance. Retrieved from: https://finance.yahoo.com/quote/MOTR.L/financials?p=MOTR.L [Accessed 20 December 2019].
+* Motorpoint Group PLC. (MOTR.L), 2019. Key Statistics. Yahoo!Finance. Retrieved from: https://finance.yahoo.com/quote/MOTR.L/key-statistics?p=MOTR.L [Accessed 20 December 2019].
+* Motorpoint Group PLC. (MOTR.L), 2019. Statement of Cash Flows. Yahoo!Finance. Retrieved from: https://finance.yahoo.com/quote/MOTR.L/cash-flow?p=MOTR.L [Accessed 20 December 2019].
+* Naked Wines PLC. (WINE.L), 2019. Balance Sheet. Yahoo!Finance. Retrieved from: https://finance.yahoo.com/quote/WINE.L/balance-sheet?p=WINE.L [Accessed 20 December 2019].
+* Naked Wines PLC. (WINE.L), 2019. Income statement. Yahoo!Finance. Retrieved from: https://finance.yahoo.com/quote/WINE.L/financials?p=WINE.L [Accessed 20 December 2019].
+* Naked Wines PLC. (WINE.L), 2019. Key Statistics. Yahoo!Finance. Retrieved from: https://finance.yahoo.com/quote/WINE.L/key-statistics?p=WINE.L [Accessed 20 December 2019].
+* Naked Wines PLC. (WINE.L), 2019. Statement of Cash Flows. Yahoo!Finance. Retrieved from: https://finance.yahoo.com/quote/WINE.L/cash-flow?p=WINE.L [Accessed 20 December 2019].
+* Pendragon PLC, 2018. Pendragon PLC Annual Report 2018.
+* Pendragon PLC. (PDG.L), 2019. Balance Sheet. Yahoo!Finance. Retrieved from: https://finance.yahoo.com/quote/PDG.L/balance-sheet?p=PDG.L [Accessed 20 December 2019].
+* Pendragon PLC. (PDG.L), 2019. Income statement. Yahoo!Finance. Retrieved from: https://finance.yahoo.com/quote/PDG.L/financials?p=PDG.L [Accessed 20 December 2019].
+* Pendragon PLC. (PDG.L), 2019. Key Statistics. Yahoo!Finance. Retrieved from: https://finance.yahoo.com/quote/PDG.L/key-statistics?p=PDG.L [Accessed 20 December 2019].
+* Pendragon PLC. (PDG.L), 2019. Statement of Cash Flows. Yahoo!Finance. Retrieved from: https://finance.yahoo.com/quote/PDG.L/cash-flow?p=PDG.L [Accessed 20 December 2019].
+* Simply Wall St, 2019. Why Deere & Company’s (NYSE:DE) Return On Capital Employed Might Be A Concern [Online]. Available from: https://finance.yahoo.com/news/why-deere-company-nyse-return-125612798.html [Accessed 20 December 2019].
+* Statista, 2019. Average market risk premium in the United Kingdom (UK) 2011-2019 [online] Available from: https://www.statista.com/statistics/664833/average-market-risk-premium-united-kingdom/ [Accessed 20 December 2019].
+* Vertu Motors Plc. (VTU.L), 2019. Balance Sheet. Yahoo!Finance. Retrieved from: https://finance.yahoo.com/quote/VTU.L/balance-sheet?p=VTU.L [Accessed 20 December 2019].
+* Vertu Motors Plc. (VTU.L), 2019. Income statement. Yahoo!Finance. Retrieved from: https://finance.yahoo.com/quote/VTU.L/financials?p=VTU.L [Accessed 20 December 2019].
+* Vertu Motors Plc. (VTU.L), 2019. Key Statistics. Yahoo!Finance. Retrieved from: https://finance.yahoo.com/quote/VTU.L/key-statistics?p=VTU.L [Accessed 20 December 2019].
+* Vertu Motors Plc. (VTU.L), 2019. Statement of Cash Flows. Yahoo!Finance. Retrieved from: https://finance.yahoo.com/quote/VTU.L/cash-flow?p=VTU.L [Accessed 20 December 2019].
+* Watches of Switzerland Group PLC. (WOSG.L), 2019. Balance Sheet. Yahoo!Finance. Retrieved from: https://finance.yahoo.com/quote/WOSG.L/balance-sheet?p=WOSG.L [Accessed 20 December 2019].
+* Watches of Switzerland Group PLC. (WOSG.L), 2019. Income statement. Yahoo!Finance. Retrieved from: https://finance.yahoo.com/quote/WOSG.L/financials?p=WOSG.L [Accessed 20 December 2019].
+* Watches of Switzerland Group PLC. (WOSG.L), 2019. Key Statistics. Yahoo!Finance. Retrieved from: https://finance.yahoo.com/quote/WOSG.L/key-statistics?p=WOSG.L [Accessed 20 December 2019].
+* Watches of Switzerland Group PLC. (WOSG.L), 2019. Statement of Cash Flows. Yahoo!Finance. Retrieved from: https://finance.yahoo.com/quote/WOSG.L/cash-flow?p=WOSG.L [Accessed 20 December 2019].
+* Watson, D. and Head, A., 2019. Corporate Finance Principles and Practice. 8th edition. Pearson Education Limited.
