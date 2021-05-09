@@ -41,6 +41,8 @@ There is a significant difference between stationary and non-stationary time ser
 Other ways to asses stationary are statistical tests primary including ADF (Augmented Dickey Fuller) test and KPSS (Kwiatkowski-Phillips-Schmidt-Shin) test <cite>(SINGH, 2018)</cite>.  The null hypothesis of the former test is the time series obtains non-stationary which means if the P-Value is less than the significance level (0.05), the null hypothesis might be rejected <cite>(Prabhakaran, 2019)</cite>. On the other hand, the null hypothesis of the latter test is reversed of the former (ibid).  The result of ADF and KPSS test for the sales data of food lines are shown Figure 26 and Figure 27 respectively.  Figure 26 shows P-Values are higher than 5% with the exception of ‘Wraps’, which means the time series of other food lines are likely to fail to reject null hypothesis and therefore they tend to be non-stationary.  However, time series of ‘Wraps’ considerably inclined to reject null hypothesis and hence is likely to be stationary.  One of main reasons to support the stationary of ‘Wraps’ sales is the null hypothesis is more likely to be rejected as ADF statistic value is more negative <cite>(Brownlee, 2016)</cite>.  Figure 27 demonstrates sales of ‘Crisps’ might be non-stationary due to the significance of P-Values (0.024 < 0.05).  However, the remains tend to be stationary because their P-Values are not significant (rejected non-stationary hypothesis).  There seems to be the contradictions between ADF test results and KPSS ones, however, there are the several types of stationarities which are strict stationary (the mean, variance and covariance do not depend on time), trend stationary (the equivalent of the strict one after removed a trend) and difference stationary (the equivalent of the strict one after differencing) <cite>(SINGH, 2018)</cite>.  In addition, KPSS test can categorize strict stationary or trend stationary and ADF test is also known as a difference stationarity test (ibid).
 
 ![Figure 26](https://res.cloudinary.com/djiyxp5ax/image/upload/v1598708708/%E5%9B%B326.png "Figure 26")
+
+
 ![Figure 27](https://res.cloudinary.com/djiyxp5ax/image/upload/v1598708742/%E5%9B%B327.png "Figure 27")
 
 As a result of introducing the type of stationary, the sales of food lines can be separated as strict stationary, trend one and non-stationary (See Figure 28).
@@ -50,6 +52,8 @@ As a result of introducing the type of stationary, the sales of food lines can b
 However, stationary is required to improve the accuracy of the prediction due to the fact that time series modeling supposed to be so as a fundamental assumption.  There is some method to transform the series (strict) stationary such as taking the logarithm, differencing and removing rolling average <cite>(Prabhakaran, 2019)</cite>.  In fact, the differencing the sales of ‘Crisps’ seems to obtain strict stationary with ADF statistic value -7.230 (P-Value 0.000) and KPSS statistic value 0.136 (P-Value 0.100), which mean both tests might reject nonstationary hypothesis.  Hence, after executed the differentiation for other non-strict stationary, they might have strict stationary except the sales of ‘Salad’, which are shown in Figure 29 and Figure 30.  
 
 ![Figure 29](https://res.cloudinary.com/djiyxp5ax/image/upload/v1598708899/%E5%9B%B329.png "Figure 29")
+
+
 ![Figure 30](https://res.cloudinary.com/djiyxp5ax/image/upload/v1598708932/%E5%9B%B330.png "Figure 30")
 
 Instead of differencing, removing 9 month moving average for the sales of ‘Salad’, it is more likely to possess strict stationary with ADF statistic value -4.506 (P-Value 0.000) and KPSS statistic value 0.304 (P-Value 0.100).  As a result of some transformations, more forecastable time series are obtained.   
@@ -87,6 +91,8 @@ However, the outcomes of modeling (shown in Figure 39 through Figure 44) might n
 One of the best alternatives of Box–Jenkins approach such as ARIMA can be state space models <cite>(Meulman and Koopman, 2007)</cite>.  It formulates the unobserved dynamic process (state) of time series, which can divide a several components such as deterministic (or stochastic) level, slope and seasonal, therefore, they are individually formulated and estimated (ibid).  Although there are several state space models, the best fit models are determined by the lowest AIC which is shown in Figure 45.  Figure 46 through 51 demonstrate the comparison observed data, current forecast (4 months moving average) and the best fit liner state space model.  It can be seen state space model might be able to predict more accuracy than ARIMA models with exception of the eldest year (2018-2019).  
 
 ![Figure 45](https://res.cloudinary.com/djiyxp5ax/image/upload/v1598710394/%E5%9B%B345.png "Figure 45")
+
+
 ![Figure 46](https://res.cloudinary.com/djiyxp5ax/image/upload/v1598710429/%E5%9B%B346.png "Figure 46")
 ![Figure 47](https://res.cloudinary.com/djiyxp5ax/image/upload/v1598710473/%E5%9B%B347.png "Figure 47")
 ![Figure 48](https://res.cloudinary.com/djiyxp5ax/image/upload/v1598710511/%E5%9B%B348.png "Figure 48")
