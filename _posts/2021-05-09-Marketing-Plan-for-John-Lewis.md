@@ -1,6 +1,6 @@
 ---
 layout: post
-title: SALES FORECASTING
+title: Marketing Plan for John Lewis
 excerpt: "This is a modified version of the report for Strategic Marketing in Bath Full Time MBA Class of 2020."
 categories: Strategic Marketing
 tags: [Strategy Marketing Business]
