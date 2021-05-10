@@ -37,11 +37,13 @@ The service blueprint highlights how different the customer journey, frontstage 
 Figure 1 demonstrates the customer journey and its interactions of their whole payment transaction.  As the figure shows, a customer installed the app with registration to receive the debit card which enable them to purchase what they want via the card after they charge the money through their online account on Monzo.  After payment, they can obtain the notification of the payment on the web or app (mobile) and then unlike most banks, they can confirm their balance counted on this transaction immediately.  
 
 ![Figure 1](https://res.cloudinary.com/djiyxp5ax/image/upload/v1598793894/%E5%9B%B31c.png "Figure 1")
+
 Figure 1: The service blueprint of Monzo mobile payment service. * Dotted line: Line of interaction, Line: Line of visibility and Double line: Line of internal interaction
 
 Monzo provides mainly free mobile account for the customers, however, recently has released the premium account called ‘Business Pro’ which costs £5 per month for small businesses and freelancers, the main feature of which is ‘Tax Pots’ that can calculate the tax based on their salary instead of an accountant <cite>(EPSTEIN, 2020)</cite>.  The tax calculation is used by third-party accounting software <cite>(O'Hear, 2020)</cite>.  Therefore, the blueprint of the payment service including tax calculation is seen in Figure 2.
 
 ![Figure 2](https://res.cloudinary.com/djiyxp5ax/image/upload/v1598793940/%E5%9B%B32c.png "Figure 2")
+
 Figure 2: The service blueprint of Monzo mobile payment service with ‘TaxPods’ for premium users.
 
 ## Staging (Recommendation)
@@ -51,6 +53,7 @@ The issue of introducing the premium account with new features mainly ‘Taxpods
 As a result of playing a role as a premium user, the most significant mental silent attributions can be consistency among of them.  This is primary because Monzo is aiming to be ‘a bank that lives on your smartphone’ <cite>(AWS, 2020)</cite>.  This is likely to imply all payment transactions should be able to be delivered on the mobile for the consistency of their mission and therefore, the tax payment calculated by ‘TaxPods’ also should be able to be granted on the mobile.  In addition, the tax payment tends to be done regularly and annually and therefore, it should be done automatically.  Furthermore, the tax amount calculation is based on the customer’s annual income <cite>(EPSTEIN, 2020)</cite>.  Therefore, it might be required to restrict withdrawing a part of their deposit automatically in order to prepare the automatic tax payment because now the customer can deposit the money for any purpose in another pod in the same account by hand but they cannot do so automatically therefore it is important for mitigating customer’s pain and then it should be able to be confirmed and be noticed to the users as it is happened for the same reason of automatic reservation.  Figure 3 shows the blueprint of the recommended mobile payment service of Monzo including the tax payment for the premium users.  It is seen the customer is not required to a certain additional action for these improvements, however, they might feel they are going to prepare the tax payment by the reserve for the tax notification, which is likely to rise their WTP.  
 
 ![Figure 3](https://res.cloudinary.com/djiyxp5ax/image/upload/v1598793972/%E5%9B%B33c.png "Figure 3")
+
 Figure 3: The service blueprint of Monzo recommended mobile payment service.
 
 ## Future remark (Additional recommendations)
