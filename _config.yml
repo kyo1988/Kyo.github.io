@@ -15,7 +15,7 @@ github_username:  kyo1988
 disqus_shortname: kyo
 favicon:     "/images/IMG_0168.ico" #favicon.ico"
 aboutme: Hi, this is Kyo. I made this site using the Freshman21 theme. Please enjoy it. # these are shown on aboutme-sidebar.
-aboutme_photo: "/images/IMG_0168.JPG" # your photo.
+aboutme_photo: https://res.cloudinary.com/djiyxp5ax/image/upload/v1621667206/IMG_0082_txvfj3.jpg # your photo.
 google_analytics_key: G-89K1E4WTNW # put YOUR key here to enable tracking! (blank to disable)
 
 
