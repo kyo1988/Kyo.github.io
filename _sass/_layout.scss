@@ -40,7 +40,8 @@
   border-top: 1px solid $grey-color-light;
   border-bottom: 1px solid $grey-color-light;
   .menu-icon {
-    display: none;
+    // display: none;
+    display: block;
   }
 
   .page-link {
