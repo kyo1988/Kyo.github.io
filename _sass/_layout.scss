@@ -36,12 +36,12 @@
 
 .site-nav {
   /*float: right;*/
-  line-height: 5.6px;
+  line-height: 56px;
   border-top: 1px solid $grey-color-light;
   border-bottom: 1px solid $grey-color-light;
   .menu-icon {
-    // display: none;
-    display: block;
+    display: none;
+    // display: block;
   }
 
   .page-link {
@@ -79,8 +79,8 @@
       text-align: center;
 
       > svg {
-        width: 1px;
-        height: 3px;
+        width: 18px;
+        height: 15px;
 
         path {
           fill: $grey-color-dark;
