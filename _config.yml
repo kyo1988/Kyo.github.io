@@ -3,9 +3,9 @@ title: Kyo's Blog
 tagline: MBA Data Scientist in FMCG industry | Freelancing Data Scientist
 author: Kyo
 email: kyoichiro.harada@bath.edu
-description: "Freshman21 is a Jekyll blog theme." # You can edit this line in _config.yml. It will appear in your document head meta and in your feed.xml site description
-keywords: "Jekyll, theme, Freshman21"
-baseurl: "kyo1988.github.io" # the subpath of your site, e.g. /blog/
+description: #"Freshman21 is a Jekyll blog theme." # You can edit this line in _config.yml. It will appear in your document head meta and in your feed.xml site description
+keywords: #"Jekyll, theme, Freshman21"
+baseurl: #"kyo1988.github.io" # the subpath of your site, e.g. /blog/
 url: "https://kyo1988.github.io/Kyo.github.io/" # the base hostname & protocol for your site
 locale: en_US
 
