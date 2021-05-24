@@ -41,8 +41,8 @@ locales:
       Google_search: "Site Search"
       Home: "Home"
       About: "About"
-      # Guestbook: "Guestbook"
-      # Subscribe: "Subscribe"
+      Guestbook: "Guestbook"
+      Subscribe: "Subscribe"
 
 ### your Blogroll info, only name can shown on the page.
 
@@ -58,5 +58,5 @@ kramdown:
         input: GFM
         syntax_highlighter: rouge
 plugins: [jekyll-paginate]
-paginate: 3
+paginate: 5
 excerpt_separator: <!-- more -->
