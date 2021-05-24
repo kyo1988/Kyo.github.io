@@ -14,6 +14,6 @@ Insted of Wordpress, Github Pages is completely free then I restarted my blog.
 Here is my [Linkdin Profile](www.linkedin.com/in/KyoHarada).
 
 I am not only a Data Scientist in a company but also a freelancing one.
-If you ask a job about that, Please text me via email, Twitter or my  [upwork Profile](https://www.upwork.com/o/profiles/users/~01a04e0c3805f59a83/). Or if you are Japanese speaker, I have also Japanese local pratform [WorkShip Profile](https://goworkship.com/profile/33012) 
+If you ask a job about that, Please text me via email, Twitter or my  [upwork profile](https://www.upwork.com/o/profiles/users/~01a04e0c3805f59a83/). Or if you are Japanese speaker, I have also Japanese local pratform [WorkShip profile](https://goworkship.com/profile/33012) 
 
-Here is the one of my portfolio related to [Business Analytics](https://kyo1988.github.io/Kyo.github.io/page2/#sales-forecasting) and its [Business Analytics GitHub code](https://github.com/kyo1988/Kyo.github.io/blob/gh-pages/Business_Analytics_Note.ipynb).
+Here is the one of my portfolio related to Data Science [Business Analytics GitHub code](https://github.com/kyo1988/Kyo.github.io/blob/gh-pages/Business_Analytics_Note.ipynb) and [Financial Analytics GitHub code](https://github.com/kyo1988/Kyo.github.io/blob/gh-pages/Corporate_Finance_Note.ipynb).
