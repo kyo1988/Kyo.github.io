@@ -57,6 +57,10 @@ markdown: kramdown
 kramdown:
         input: GFM
         syntax_highlighter: rouge
-plugins: [jekyll-paginate]
+plugins:
+  - jekyll-paginate
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
 paginate: 3
 excerpt_separator: <!-- more -->
