@@ -23,12 +23,10 @@ L^{3MWorld}_{forward}(t,t_{i},t_{i+0.25})&=&\frac{1-DF(t,t_{i+0.25})-TS^{3M-6M}(
  
 However,
  
-\begin{itemize}
-\item $L(t,T)$: Observable LIBOR at time point $t$ maturity $T$
-\item $L^{3MWorld}_{forward}(t,t_{0},t_{0.25})=L(t,t_{0.25})$
-\item $L^{3MWorld}_{forward}(t,t_{i},t_{i+0.25})$: A 3-month LIBOR with a reset date of $t_ {i}$ and a maturity of $t_{i+0.25}$ as seen from the point in time $t$
-\item $TS^{3M-6M}(t,T)$: Tenor spread when swapping 6-month LIBOR for 3-month LIBOR at time $t$ and maturity $T$
-\end{itemize}
+* $L(t,T)$: Observable LIBOR at time point $t$ maturity $T$
+* $L^{3MWorld}_{forward}(t,t_{0},t_{0.25})=L(t,t_{0.25})$
+* $L^{3MWorld}_{forward}(t,t_{i},t_{i+0.25})$: A 3-month LIBOR with a reset date of $t_ {i}$ and a maturity of $t_{i+0.25}$ as seen from the point in time $t$
+* $TS^{3M-6M}(t,T)$: Tenor spread when swapping 6-month LIBOR for 3-month LIBOR at time $t$ and maturity $T$
  
 In this article, we try to derive the equation \label{3MonthLibor}. 
 At this time, the evaluation formula of the JPY tenor swap is expressed as follows (Takahashi, 2010)．
@@ -39,13 +37,11 @@ At this time, the evaluation formula of the JPY tenor swap is expressed as follo
  
 However,
  
-\begin{itemize}
-\item $N=2M$
-\item $L(T_{n-1},T_{n})$: LIBOR with a reset date of $T_{n-1}$ and a maturity of $T_{n}$
-\item $P_{t,T_{n}}$: Zero coupon bond price with maturity of $t$ at time $ T_{n}$
-\item $\delta_{n}$: Interest calculation period
-\item $\tau_{N}$: Tenor spread when swapping 6-month LIBOR for 3-month LIBOR at time $t$ and maturity of $T (= T_{N} = T_{M})$
-\end{itemize}
+* $N=2M$
+* $L(T_{n-1},T_{n})$: LIBOR with a reset date of $T_{n-1}$ and a maturity of $T_{n}$
+* $P_{t,T_{n}}$: Zero coupon bond price with maturity of $t$ at time $ T_{n}$
+* $\delta_{n}$: Interest calculation period
+* $\tau_{N}$: Tenor spread when swapping 6-month LIBOR for 3-month LIBOR at time $t$ and maturity of $T (= T_{N} = T_{M})$
  
 Now, we want to derive 3 months LIBOR, that is, $E_{t}[L(T_{N-1}, T_{N}]$, therefore expand the left side of the expression \label{tenor} as follows.
  
