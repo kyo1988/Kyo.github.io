@@ -12,7 +12,7 @@ This is Kyo, who graduated from Bath Full Time MBA Class of 2020.
 I used to write my blog in Wordpress blog, however, running cost, especially server fee was increasing then I quitted.
 Insted of Wordpress, Github Pages is completely free then I restarted my blog.
 
-I am not only a Data Scientist in a company but also a freelancing one.
+I am not only a Data Scientist in a company but also a freelancing Data Scientist and Consultant.
 In addition, I have experience to improve marketing and business management system using data science as a manager in one of the largest cosmetic firm.
 Here is my [Linkdin Profile](https://www.linkedin.com/in/KyoHarada).
 
