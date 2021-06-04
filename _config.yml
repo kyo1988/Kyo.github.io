@@ -57,6 +57,9 @@ markdown: kramdown
 kramdown:
         input: GFM
         syntax_highlighter: rouge
+gems:
+  - jekyll-related-posts
+
 plugins:
   - jekyll-paginate
   - jekyll-feed
