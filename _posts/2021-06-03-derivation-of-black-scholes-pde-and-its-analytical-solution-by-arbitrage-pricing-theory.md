@@ -277,12 +277,10 @@ y(u，v)=\int_{0}^{+\infty}( C(k)\sin( ku ) +D(k)\cos( ku ) )\exp( -\frac{\sigma
 Here, the coefficients $C(k)$ and $D(k)$ of the equation \eqref{HeatConductionEquationSol} are given by the following equation from Fourier's integral theorem as $y(u,0)=g(a)$.
  
 \begin{eqnarray}\label{FourierCoefficient}
-\{
 \begin{array}{l}
-C(k)=\frac{1}{\pi}\int^{+\infty}_{-\infty}g(a)\cos (ka) da\\\\
-D(k)=\frac{1}{\pi}\int^{+\infty}_{-\infty}g(a)\sin (ka) da
+C(k)=\frac{1}{\pi}\int_{-\infty}^{+\infty}g(a)\cos (ka) da\\\\
+D(k)=\frac{1}{\pi}\int_{-\infty}^{+\infty}g(a)\sin (ka) da
 \end{array}
-.
 \end{eqnarray}
  
 Substituting the obtained equation of coefficients \eqref{FourierCoefficient} into the solution \eqref{HeatConductionEquationSol} of the heat conduction equation \eqref{HeatConductionEquation} and rearranging it gives the following equation.
@@ -299,19 +297,18 @@ w=\dfrac{a-u}{\sigma \sqrt[]{\mathstrut v}}．
 Note that the boundary conditions have changed to the following conditions due to the change of variables.
  
 \begin{eqnarray}
-g(a)=g( u+\sigma \sqrt[]{\mathstrut v}w )=\{
+g(a)=g( u+\sigma \sqrt[]{\mathstrut v}w )=
 \begin{array}{l}
 K( \mathrm{e}^{u+\sigma \sqrt[]{\mathstrut v}w}-1 )\cdots w\geq -\dfrac{u}{\sigma \sqrt[]{\mathstrut v}}\\\\
 0\cdots w \lt -\dfrac{u}{\sigma \sqrt[]{\mathstrut v}}
 \end{array}
-.
 \end{eqnarray}
  
 Focusing on the change of variables by $w$ and the changed boundary conditions, the equation \eqref{HeatConductionEquationSol2} is expanded as follows.
  
 \begin{eqnarray}\label{HeatConductionEquationSol3}
-y(u，v)=\dfrac{1}{\sqrt[]{\mathstrut 2 \pi}} \int_{-\dfrac{u}^{+\infty}{\sigma \sqrt[]{\mathstrut v}}}K( \exp(u+\sigma \sqrt[]{\mathstrut v}w)-1 )\exp( -\dfrac{w^{2}}{2} )dw
-=\dfrac{1}{\sqrt[]{\mathstrut 2 \pi}} \int_{-\frac{u}{\sigma \sqrt[]{\mathstrut v}}}^{+\infty}K\exp(u+\sigma \sqrt[]{\mathstrut v}w-\dfrac{w^{2}}{2} ) dw-\dfrac{1}{\sqrt[]{\mathstrut 2 \pi}} \int_{-\frac{u}{\sigma \sqrt[]{\mathstrut v}}}^{+\infty} K \exp(-\dfrac{w^{2}}{2})dw．
+y(u，v)=\dfrac{1}{\sqrt[]{\mathstrut 2 \pi}} \int_{-\dfrac{u}{\sigma \sqrt[]{\mathstrut v}}}^{+\infty}K( \exp(u+\sigma \sqrt[]{\mathstrut v}w)-1 )\exp( -\dfrac{w^{2}}{2} )dw
+=\dfrac{1}{\sqrt[]{\mathstrut 2 \pi}} \int_{-\frac{u}{\sigma \sqrt[]{\mathstrut v}}}^{+\infty}K\exp(u+\sigma \sqrt[]{\mathstrut v}w-\dfrac{w^{2}}{2}) dw-\dfrac{1}{\sqrt[]{\mathstrut 2 \pi}} \int_{-\frac{u}{\sigma \sqrt[]{\mathstrut v}}}^{+\infty} K \exp(-\dfrac{w^{2}}{2})dw．
 \end{eqnarray}
  
 Furthermore, if the first term on the right side of the equation \eqref{HeatConductionEquationSol3} is replaced with $z = w- \sigma \sqrt[]{\mathstrut v}$ and the second term is replaced with $z = w$, the following equation is obtained.
@@ -324,7 +321,7 @@ y(u，v)=x\exp(rv) \dfrac{1}{ \sqrt[]{\mathstrut 2 \pi}} \int_{-\frac{u}{\sigma 
 Finally, by substituting the obtained equation \eqref{HeatConductionEquationSol4} into the solution of the Black-Scholes PDE \eqref{val2} is obtained as an analytical solution of the Black-Scholes PDE, which is a function that satisfies the Black-Scholes PDE.
  
 \begin{eqnarray}\label{HeatConductionEquationSol4}
-c(t，x)=xN(\frac{u}{\sigma\sqrt[]{\mathstrut v}}+\sigma\sqrt[]{\mathstrut v} )-K\exp(-rv)N( \frac{u}{\sigma \sqrt[]{\mathstrut v}} )．
+c(t，x)=xN(\frac{u}{\sigma\sqrt[]{\mathstrut v}}+\sigma\sqrt[]{\mathstrut v})-K\exp(-rv)N(\frac{u}{\sigma \sqrt[]{\mathstrut v}})．
 \end{eqnarray}
  
 However,
