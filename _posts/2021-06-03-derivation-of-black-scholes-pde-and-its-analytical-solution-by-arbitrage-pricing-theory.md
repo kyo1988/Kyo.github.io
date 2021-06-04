@@ -42,7 +42,7 @@ dX(t)=\Delta(t)dS(t)+r(X(t)-\Delta(t)S(t))dt　
 =rX(t)dt+\Delta(t)( \alpha -r )S(t)dt+\Delta(t)\sigma S(t)dW(t)．
 \end{eqnarray}
  
-Here, the three terms appearing in the small change in portfolio value $dX(t)$\eqref{portDiff2} expanded by the given stock price of the stochastic differential equation \eqref{stockPrice} can be interpreted as follows.
+Here, the three terms appearing in the small change $dX(t) in portfolio value $\eqref{portDiff2} expanded by the given stock price of the stochastic differential equation \eqref{stockPrice} can be interpreted as follows.
  
 * $rX(t)dt$: A term that reflects the profit from the expected rate of return of the portfolio $r$
 * $\Delta(t)( \alpha -r )S(t)dt$: A term that reflects the risk premium on equity investments $\alpha-r$
@@ -70,18 +70,18 @@ The formula \eqref{ItoFormDiff} is called Ito's formula in differential form. Th
 Partial differentiation of $f(t, x)$, $f_ {t}(t, x)$, $f_{x}(t, x)$, $f_ {xx}(t, x)$ is defined and continuous. Let $W(t)$ be the Brownian motion. At this time, the following equation holds for all $T \geq0$. 
 
 \begin{eqnarray}\label{ItoForm}
-f(T，W(T))=f(0，W(0))+\int_{0}f_{t}^{T}(t，W(t))dt+\int_{0}f_{x}^{T}(t，W(t))dW(t)+\frac{1}{2}\int_{0}f_{xx}^{T}(t，W(t))dt．
+f(T，W(T))=f(0，W(0))+\int_{0}^{T}f_{t}(t，W(t))dt+\int_{0}^{T}f_{x}(t，W(t))dW(t)+\frac{1}{2}\int_{0}^{T}f_{xx}(t，W(t))dt．
 \end{eqnarray}
  
-Where the third term of the expression \eqref{ItoForm} $\int_{0}f_{x}^{T}(t, W(t)) dW(t)$ is called Ito integral, and the second and fourth terms are Lebesgue integrals for variables of time. Ito's formula can be extended to general stochastic processes including the Brown process, excluding jump process. This stochastic process is called the Ito process $dX(t)=a(t)dW(t)+b(t)dt$, and $a^{2}(t) per unit time, which accumulate the quadratic variation of $. It is assumed that $a(t) and b(t)$ are adapted stochastic  processes.
+Where the third term of the expression \eqref{ItoForm} $\int_{0}^{T}f_{x}(t, W(t)) dW(t)$ is called Ito integral, and the second and fourth terms are Lebesgue integrals for variables of time. Ito's formula can be extended to general stochastic processes including the Brown process, excluding jump process. This stochastic process is called the Ito process $dX(t)=a(t)dW(t)+b(t)dt$, which accumulate the quadratic variation of $a^{2}(t)$ per unit time. It is assumed that $a(t)$ and $b(t)$ are adapted stochastic processes.
  
-* Ito's formula for the Ito process]
+* Ito's formula for the Ito process
 
-Let $X(t)$ be the Ito process, and $f(t, x)$ be the partial derivative $f_{t}(t, x), f_{x}(t, x), f_{xx}(Let t, x)$ be a defined and continuous function, and let $W(t)$ be Brownian motion. At this time, the following equation holds for all $T \geq 0$. 
+Let $X(t)$ be the Ito process, and $f(t, x)$ be the partial derivative $f_{t}(t, x)$, $f_{x}(t, x)$, $f_{xx}(t, x)$ be a defined and continuous function, and let $W(t)$ be Brownian motion. At this time, the following equation holds for all $T \geq 0$. 
 
 \begin{eqnarray}\label{ItoFormII}
-f(T，X(T))=f(0，X(0))+\int_{0}f_{t}^{T}(t，X(t))dt
-+\int_{0}f_{x}^{T}(t，X(t))dX(t)+\frac{1}{2}\int_{0}f_{xx}^{T}(t，X(t))a^{2}(t)dt．
+f(T，X(T))=f(0，X(0))+\int_{0}^{T}f_{t}(t，X(t))dt
++\int_{0}^{T}f_{x}(t，X(t))dX(t)+\frac{1}{2}\int_{0}^{T}f_{xx}(t，X(t))a^{2}(t)dt．
 \end{eqnarray}
  
 Therefore, the derivative of the discounted stock price $\mathrm{e}^{-rt} S(t)$ is $f(t, x) = \mathrm{e}^{-rt} x$ which is gotten to apply Ito's formula \eqref{ItoForm}. In the following, it is used that $f_{t} (t, x )=-r \mathrm{e}^{-rt} x$, $ f_{x}  (t, x )=\, mathrm{e}^{-rt}$, $f_{xx} (t, x )=0 $.
@@ -105,7 +105,7 @@ d( \mathrm{e}^{-rt}X(t) )=df(t，X(t))
 =\Delta(t)d( \mathrm{e}^{-rt}S(t) )．
 \end{eqnarray}
  
-In this way, the formula \eqref{DiscountPort} is obtained by the discounted stock price $S(t)$ and the portfolio value $X(t)$ at the discount rate $\mathrm{e}^{-rt}$ with the interest rate $r $ of the money market account. The formula \eqref {DiscountPort} indicates that small change in the discount portfolio value $d (\mathrm{e}^{-rt} X(t) ) depends only on a small change in the discounted stock price $d(\mathrm{e}^{-rt} S(t) )$.
+In this way, the formula \eqref{DiscountPort} is obtained by the discounted stock price $S(t)$ and the portfolio value $X(t)$ at the discount rate $\mathrm{e}^{-rt}$ with the interest rate $r$ of the money market account. The formula \eqref{DiscountPort} indicates that small change in the discount portfolio value $d(\mathrm{e}^{-rt}X(t))$ depends only on a small change in the discounted stock price $d(\mathrm{e}^{-rt}S(t))$.
  
 Consider a European call option where the payment on the maturity date $T$ is $(S(T)-K )^{+}$. Here, the strike price $K$ is assumed to be a non-negative constant.
 Fischer Black, Myron Scholes and Robert Cox Merton argued that the value of European call option on maturity $T$ with payment $(S(T) -K )^{+}$ at any time $t$ depends on the length of time to maturity, the value of the stock price $S(t)$ at time $t$, the model parameters $r, \sigma$ and the strike price $K$.
@@ -192,23 +192,23 @@ c_{t}(t，x)+rxc_{x}(t，x)\frac{1}{2}\sigma^{2} x^{2}c_{xx}(t，x)=rc(t，x)，
 In addition to satisfying the equation \eqref{BlackScholes}, the function $c(t, x)$ must also satisfy the boundary conditions shown in the following equation.
  
 \begin{eqnarray}\label{BoundaryCondtion}
-c(T，x)=(x-K)^{+}，c(t，0)=0，\lim_{x \to \infty}[c(t，x)-( x-\mathrm{e}^{-r( T-t )}K )]=0
+c(T，x)=(x-K)^{+}，c(t，0)=0，\lim_{x \to \infty}[c(t，x)-(x-\mathrm{e}^{-r( T-t )}K)]=0
 \end{eqnarray}
  
 In fact, the first equation of the expression \eqref{BoundaryCondtion} follows from the definition of the European call option.
 
-The second equation is that when $x = 0$ is substituted into the Black-Scholes partial differential equation \eqref{BlackScholes}, it is obtained the ordinary differential equation $c_{t} (t, 0 ) = rc (t, 0 )$ for the function $c(t, 0)$ at time $t$ and then it is obtained its solution $c(t, 0 ) = \mathrm{e}^{rt} is substituted $t = T$ for c (0, 0 )$, which results in $c  (T, 0 ) = (0-K )^{+} = 0$ , $C (0, 0 ) = 0$. 
+The second equation is that when $x=0$ is substituted into the Black-Scholes partial differential equation \eqref{BlackScholes}, it is obtained the ordinary differential equation $c_{t}(t,0)=rc(t,0)$ for the function $c(t, 0)$ at time $t$ and then it is obtained its solution $c(t,0)=\mathrm{e}^{rt}$ is substituted $t=T$ for $c(0,0)$, which results in $c(T,0)=(0-K)^{+}=0$, $C(0,0)=0$. 
 
 In the third equation, ‘Put/Call Parity’ holds because it is likely to end with ‘In the money’ for European call options for very large $x$ and the value of the forward contract is almost equal to $x-\mathrm{e}^{-r (Tt )}K$.
 
-In order to obtain an analytical solution of the Black-Scholes PDE \eqref{BlackScholes}, it is reduced by change of variables to a PDE whose exact solution is known. Therefore, two variables $u and v$ are defined by the following equation, which are introduced for this purpose.
+In order to obtain an analytical solution of the Black-Scholes PDE \eqref{BlackScholes}, it is reduced by change of variables to a PDE whose exact solution is known. Therefore, two variables $u$ and $v$ are defined by the following equation, which are introduced for this purpose.
  
 \begin{eqnarray}\label{val1}
 u=\log \frac{x}{K}+(r-\frac{\sigma^{2}}{2})(T-t) 
 v=T-t
 \end{eqnarray}
  
-Here, using the variables $u and v$ defined in the expression \eqref{val1}, the function $c(t, x)$ is converted into two functions $\mathrm{e}^{-rv}$ and $y (u, v )$ as shown in the following expression. 
+Here, using the variables $u$ and $v$ defined in the expression \eqref{val1}, the function $c(t, x)$ is converted into two functions $\mathrm{e}^{-rv}$ and $y (u, v )$ as shown in the following expression. 
  
 \begin{eqnarray}\label{val2}
 c(t，x)=\mathrm{e}^{-rv}y(u，v)．
@@ -223,16 +223,9 @@ y_{u u}(u，v)-\frac{2}{\sigma^{2}}y_{v}(u，v)=0．
 The equation \eqref{HeatConductionEquation} is a known partial differential equation with an exact solution called the heat conduction equation. Here, the boundary condition is changed by variable transformation.
  
 \begin{eqnarray}
-
-c(t，x)=\{
-
-\begin{array}{l}
-x-K\cdots x\geq K\\
-0\cdots x \lt K
-\end{array}
-
-.
-
+c(t，x)=\{\begin{array}{l}
+x-K\cdots x\geq K\\\\
+0\cdots x \lt K\end{array}.
 \end{eqnarray}
  
 Note that the following conditions have changed.
@@ -240,13 +233,13 @@ Note that the following conditions have changed.
 \begin{eqnarray}
 y(u，0)=\{
 \begin{array}{l}
-K( \mathrm{e}^{u}-1 )\cdots u\geq 0\\
+K( \mathrm{e}^{u}-1 )\cdots u\geq 0\\\\
 0\cdots u \lt 0
 \end{array}
 .
 \end{eqnarray}
  
-It is known that the heat conduction equation \eqref{HeatConductionEquation} is solved by the separation of variables method. The separation of variables method means that the solution $y (u, v )$ is expressed as the product of two functions $p(u) and q(v)$.
+It is known that the heat conduction equation \eqref{HeatConductionEquation} is solved by the separation of variables method. The separation of variables method means that the solution $y(u,v)$ is expressed as the product of two functions $p(u)$ and $q(v)$.
  
 \begin{eqnarray}\label{val3}
 y(u，v)=p(u)q(v)．
@@ -258,12 +251,12 @@ Substituting the equation \eqref{val3} into the heat conduction equation \eqref{
 \frac{p_{u u}(u)}{p(u)}=\frac{2}{\sigma^{2}}\frac{q_{v}(v)}{q(v)}．
 \end{eqnarray}
  
-Focusing on both sides of the obtained equation \eqref{SeparationVariables}, the left side is a function of only $u$ and the right side is a function of only $v$, then constants irrelevant to $u$ and $v$, which is $-k^{2} (0 \leq k \lt \infty )$. Therefore, finding the solution of the heat conduction equation \eqref{HeatConductionEquation} results in the problem of solving the following two ordinary differential equations.
+Focusing on both sides of the obtained equation \eqref{SeparationVariables}, the left side is a function of only $u$ and the right side is a function of only $v$, then constants irrelevant to $u$ and $v$, which is $-k^{2}(0\leq k\lt \infty)$. Therefore, finding the solution of the heat conduction equation \eqref{HeatConductionEquation} results in the problem of solving the following two ordinary differential equations.
  
 * $\dfrac{p_{u u}(u)}{p(u)}=-k^{2}$
 * $\dfrac{2}{\sigma^{2}}\dfrac{q_{v}(v)}{q(v)}=-k^{2}$
  
-The first equation is a second-order ordinary differential equation with constant coefficients, then if the coefficients are constants $C(k) and D(k)$ with respect to constants $k$ irrelevant to $u$ and $v$, the solution is given by the following equation.
+The first equation is a second-order ordinary differential equation with constant coefficients, then if the coefficients are constants $C(k)$ and $D(k)$ with respect to constants $k$ irrelevant to $u$ and $v$, the solution is given by the following equation.
  
 \begin{eqnarray}\label{ODE1Sol}
 p(u)=C(k)\sin( ku ) +D(k)\cos( ku ) ．
@@ -281,12 +274,12 @@ Therefore, the solution $y (u, v )$ of the heat conduction equation \eqref{HeatC
 y(u，v)=\int_{0}^{+\infty}( C(k)\sin( ku ) +D(k)\cos( ku ) )\exp( -\frac{\sigma^{2}k^{2}}{2}v )dk．
 \end{eqnarray}
  
-Here, the coefficients $C(k) and D(k)$ of the equation \eqref{HeatConductionEquationSol} are given by the following equation from Fourier's integral theorem as $y (u, 0 ) = g(a)$.
+Here, the coefficients $C(k)$ and $D(k)$ of the equation \eqref{HeatConductionEquationSol} are given by the following equation from Fourier's integral theorem as $y(u,0)=g(a)$.
  
 \begin{eqnarray}\label{FourierCoefficient}
 \{
 \begin{array}{l}
-C(k)=\frac{1}{\pi}\int^{+\infty}_{-\infty}g(a)\cos (ka) da\\
+C(k)=\frac{1}{\pi}\int^{+\infty}_{-\infty}g(a)\cos (ka) da\\\\
 D(k)=\frac{1}{\pi}\int^{+\infty}_{-\infty}g(a)\sin (ka) da
 \end{array}
 .
@@ -295,7 +288,7 @@ D(k)=\frac{1}{\pi}\int^{+\infty}_{-\infty}g(a)\sin (ka) da
 Substituting the obtained equation of coefficients \eqref{FourierCoefficient} into the solution \eqref{HeatConductionEquationSol} of the heat conduction equation \eqref{HeatConductionEquation} and rearranging it gives the following equation.
  
 \begin{eqnarray}\label{HeatConductionEquationSol2}
-y(u，v)=\dfrac{1}{\sigma \sqrt[]{\mathstrut 2 \pi v}} \int^{+\infty}_{-\infty}g(a)\exp( -\dfrac{1}{2}(\dfrac{a-u}{\sigma \sqrt[]{\mathstrut v}})^{2} ) da．
+y(u，v)=\dfrac{1}{\sigma \sqrt[]{\mathstrut 2 \pi v}} \int_{-\infty}^{+\infty}g(a)\exp( -\dfrac{1}{2}(\dfrac{a-u}{\sigma \sqrt[]{\mathstrut v}})^{2} ) da．
 \end{eqnarray} 
 
 For further analysis, the change of variables is performed again as follows. 
@@ -308,7 +301,7 @@ Note that the boundary conditions have changed to the following conditions due t
 \begin{eqnarray}
 g(a)=g( u+\sigma \sqrt[]{\mathstrut v}w )=\{
 \begin{array}{l}
-K( \mathrm{e}^{u+\sigma \sqrt[]{\mathstrut v}w}-1 )\cdots w\geq -\dfrac{u}{\sigma \sqrt[]{\mathstrut v}}\\
+K( \mathrm{e}^{u+\sigma \sqrt[]{\mathstrut v}w}-1 )\cdots w\geq -\dfrac{u}{\sigma \sqrt[]{\mathstrut v}}\\\\
 0\cdots w \lt -\dfrac{u}{\sigma \sqrt[]{\mathstrut v}}
 \end{array}
 .
@@ -317,21 +310,21 @@ K( \mathrm{e}^{u+\sigma \sqrt[]{\mathstrut v}w}-1 )\cdots w\geq -\dfrac{u}{\sigm
 Focusing on the change of variables by $w$ and the changed boundary conditions, the equation \eqref{HeatConductionEquationSol2} is expanded as follows.
  
 \begin{eqnarray}\label{HeatConductionEquationSol3}
-y(u，v)=\dfrac{1}{ \sqrt[]{\mathstrut 2 \pi}} \int^{+\infty}_{-\dfrac{u}{\sigma \sqrt[]{\mathstrut v}}}K( \exp(u+\sigma \sqrt[]{\mathstrut v}w)-1 )\exp( -\dfrac{w^{2}}{2} ) dw\nonumber \\
-=\dfrac{1}{ \sqrt[]{\mathstrut 2 \pi}} \int^{+\infty}_{-\frac{u}{\sigma \sqrt[]{\mathstrut v}}}K\exp(u+\sigma \sqrt[]{\mathstrut v}w-\dfrac{w^{2}}{2} ) dw-\dfrac{1}{ \sqrt[]{\mathstrut 2 \pi}} \int^{+\infty}_{-\frac{u}{\sigma \sqrt[]{\mathstrut v}}}K\exp( -\dfrac{w^{2}}{2} ) dw．
+y(u，v)=\dfrac{1}{\sqrt[]{\mathstrut 2 \pi}} \int_{-\dfrac{u}^{+\infty}{\sigma \sqrt[]{\mathstrut v}}}K( \exp(u+\sigma \sqrt[]{\mathstrut v}w)-1 )\exp( -\dfrac{w^{2}}{2} )dw
+=\dfrac{1}{\sqrt[]{\mathstrut 2 \pi}} \int_{-\frac{u}{\sigma \sqrt[]{\mathstrut v}}}^{+\infty}K\exp(u+\sigma \sqrt[]{\mathstrut v}w-\dfrac{w^{2}}{2} ) dw-\dfrac{1}{\sqrt[]{\mathstrut 2 \pi}} \int_{-\frac{u}{\sigma \sqrt[]{\mathstrut v}}}^{+\infty} K \exp(-\dfrac{w^{2}}{2})dw．
 \end{eqnarray}
  
 Furthermore, if the first term on the right side of the equation \eqref{HeatConductionEquationSol3} is replaced with $z = w- \sigma \sqrt[]{\mathstrut v}$ and the second term is replaced with $z = w$, the following equation is obtained.
  
 \begin{eqnarray}\label{HeatConductionEquationSol4}
-y(u，v)=x\exp(rv) \dfrac{1}{ \sqrt[]{\mathstrut 2 \pi}} \int^{+\infty}_{-\frac{u}{\sigma \sqrt[]{\mathstrut v}}-\sigma \sqrt[]{\mathstrut v}}\exp( -\dfrac{z^{2}}{2} ) dz-K\dfrac{1}{ \sqrt[]{\mathstrut 2 \pi}} \int^{+\infty}_{-\frac{u}{\sigma \sqrt[]{\mathstrut v}}}\exp( -\dfrac{z^{2}}{2} ) dz\nonumber \\
+y(u，v)=x\exp(rv) \dfrac{1}{ \sqrt[]{\mathstrut 2 \pi}} \int_{-\frac{u}{\sigma \sqrt[]{\mathstrut v}}^{+\infty}-\sigma \sqrt[]{\mathstrut v}}\exp( -\dfrac{z^{2}}{2} ) dz-K\dfrac{1}{ \sqrt[]{\mathstrut 2 \pi}} \int_{-\frac{u}{\sigma \sqrt[]{\mathstrut v}}}^{+\infty}\exp( -\dfrac{z^{2}}{2} ) dz
 =x\exp(rv)N( \frac{u}{\sigma \sqrt[]{\mathstrut v}}+\sigma \sqrt[]{\mathstrut v} )-KN( \frac{u}{\sigma \sqrt[]{\mathstrut v}} )．
 \end{eqnarray}
  
 Finally, by substituting the obtained equation \eqref{HeatConductionEquationSol4} into the solution of the Black-Scholes PDE \eqref{val2} is obtained as an analytical solution of the Black-Scholes PDE, which is a function that satisfies the Black-Scholes PDE.
  
 \begin{eqnarray}\label{HeatConductionEquationSol4}
-c(t，x)=xN(\frac{u}{\sigma\sqrt[]{\mathstrutv}}+\sigma\sqrt[]{\mathstrut v} )-K\exp(-rv)N( \frac{u}{\sigma \sqrt[]{\mathstrut v}} )．
+c(t，x)=xN(\frac{u}{\sigma\sqrt[]{\mathstrut v}}+\sigma\sqrt[]{\mathstrut v} )-K\exp(-rv)N( \frac{u}{\sigma \sqrt[]{\mathstrut v}} )．
 \end{eqnarray}
  
 However,
