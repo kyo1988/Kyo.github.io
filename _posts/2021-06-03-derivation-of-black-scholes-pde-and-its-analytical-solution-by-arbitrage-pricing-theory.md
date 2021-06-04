@@ -290,9 +290,10 @@ w=\dfrac{a-u}{\sigma \sqrt[]{\mathstrut v}}．
 Note that the boundary conditions have changed to the following conditions due to the change of variables.
  
 $g(a)=g( u+\sigma \sqrt[]{\mathstrut v}w )=$
+
 $K( \mathrm{e}^{u+\sigma \sqrt[]{\mathstrut v}w}-1 )\cdots w\geq -\dfrac{u}{\sigma \sqrt[]{\mathstrut v}}$
+
 Or $0\cdots w \lt -\dfrac{u}{\sigma \sqrt[]{\mathstrut v}}$
-\end{array}
  
 Focusing on the change of variables by $w$ and the changed boundary conditions, the equation \eqref{HeatConductionEquationSol2} is expanded as follows.
  
