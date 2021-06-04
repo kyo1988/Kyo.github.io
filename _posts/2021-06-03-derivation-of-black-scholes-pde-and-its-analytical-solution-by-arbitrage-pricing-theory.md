@@ -16,10 +16,8 @@ In general, when the underlying asset price is given by a stochastic differentia
  
 Suppose it is given a portfolio valued at $X(t)$ at any time $t$. Here, the composition of the given portfolio is as follows.
  
-\begin{enumerate}
-\item money-market account with interest rate $r$
-\item A stock modeled by the geometric Brownian motion expressed by the following equation
-\end{enumerate}
+* money-market account with interest rate $r$
+* A stock modeled by the geometric Brownian motion expressed by the following equation
  
 \begin{eqnarray}\label{stockPrice}
 dS(t)=\alpha S(t)dt+\sigma S(t)dW(t)．
@@ -51,7 +49,7 @@ Here, the three terms appearing in the small change in portfolio value $dX(t)$\e
 * $\Delta(t)\sigma S(t)dW(t)$: Volatility term proportional to the size of equity investment
  
 Then, consider the discounted stock price $\mathrm{e}^{-rt} S(t)$ and the discounted portfolio value $\mathrm{e}^{-rt}X(t)$. In order to analyze these price processes, it should be noted that they are different from ordinary analysis due to the nature of the geometric Brownian motion that appeared as a model of stock prices. This property means that Brownian motion has a non-zero quadratic variation, which, as it will be seen later, is the source of the volatility term of the Black-Scholes PDE.
-In other words, to differentiate an expression expressed in the form of $f \left(W(t) right)$ with $f(x)$ as a differentiable function and $W(t)$ as the Brown motion. If Brown motion $W(t)$ is differentiable, the following equation holds from ordinary analysis by the chain rule of the composite function.
+In other words, to differentiate an expression expressed in the form of $f\left(W(t)right)$ with $f(x)$ as a differentiable function and $W(t)$ as the Brown motion. If Brown motion $W(t)$ is differentiable, the following equation holds from ordinary analysis by the chain rule of the composite function.
  
 \begin{eqnarray}
 \frac{d}{dt}f(W(t))&=&f'(W(t))W'(t)\nonumber\\
@@ -59,7 +57,7 @@ In other words, to differentiate an expression expressed in the form of $f \left
 &=&f'(W(t))dW(t)．\nonumber
 \end{eqnarray}
  
-However, since Brownian motion accumulates a quadratic variation of 1 per unit time, $(dWdW = dt)$, the derivative of $f \left(W(t)\right)$ has a correction term shown in the following equation.
+However, since Brownian motion accumulates a quadratic variation of 1 per unit time $(dWdW = dt)$, the derivative of $f\left(W(t)\right)$ has a correction term shown in the following equation.
  
 \begin{eqnarray}\label{ItoFormDiff}
 df(W(t))=f'(W(t))dW(t)+\frac{1}{2}f''(W(t))dt．
@@ -67,25 +65,21 @@ df(W(t))=f'(W(t))dW(t)+\frac{1}{2}f''(W(t))dt．
  
 The formula \eqref{ItoFormDiff} is called Ito's formula in differential form. The equation \eqref{ItoFormDiff} is an equation obtained by differentiating Ito's formula \eqref{ItoForm} for the Brownian motion shown below.
  
-\begin{theorem}[Ito's formula for Brownian motion]
-Partial differentiation of $ f(t, x) $f_ {t}(t, x), f_{x}(t, x), f_ {xx}(t, x)$ is defined and continuous. Let $W(t)$ be the Brownian motion. At this time, the following equation holds for all $T \geq0$.
- 
+* Ito's formula for Brownian motion]
+Partial differentiation of $ f(t, x) $f_ {t}(t, x), f_{x}(t, x), f_ {xx}(t, x)$ is defined and continuous. Let $W(t)$ be the Brownian motion. At this time, the following equation holds for all $T \geq0$. 
 \begin{eqnarray}\label{ItoForm}
 f\left(T，W(T)\right)=f\left(0，W(0)\right)&+&\int^{T}_{0}f_{t}\left(t，W(t)\right)dt\nonumber\\
 &+&\int^{T}_{0}f_{x}\left(t，W(t)\right)dW(t)+\frac{1}{2}\int^{T}_{0}f_{xx}\left(t，W(t)\right)dt．
 \end{eqnarray}
-\end{theorem}
  
 Where the third term of the expression \eqref{ItoForm} $\int^{T}_{0}f_{x}\left(t, W(t) \right) dW(t)$ is called Ito integral, and the second and fourth terms are Lebesgue integrals for variables of time. Ito's formula can be extended to general stochastic processes including the Brown process, excluding jump process. This stochastic process is called the Ito process $dX(t)=a(t)dW(t)+b(t)dt$, and $a^{2}(t) per unit time, which accumulate the quadratic variation of $. It is assumed that $a(t) and b(t)$ are adapted stochastic  processes.
  
-\begin{theorem}[Ito's formula for the Ito process]
-Let $X(t)$ be the Ito process, and $f(t, x)$ be the partial derivative $f_{t}(t, x), f_{x}(t, x), f_{xx}(Let t, x)$ be a defined and continuous function, and let $W(t)$ be Brownian motion. At this time, the following equation holds for all $T \geq 0$.
- 
+* Ito's formula for the Ito process]
+Let $X(t)$ be the Ito process, and $f(t, x)$ be the partial derivative $f_{t}(t, x), f_{x}(t, x), f_{xx}(Let t, x)$ be a defined and continuous function, and let $W(t)$ be Brownian motion. At this time, the following equation holds for all $T \geq 0$. 
 \begin{eqnarray}\label{ItoFormII}
 f\left(T，X(T)\right)=f\left(0，X(0)\right)&+&\int^{T}_{0}f_{t}\left(t，X(t)\right)dt\nonumber\\
 &+&\int^{T}_{0}f_{x}\left(t，X(t)\right)dX(t)+\frac{1}{2}\int^{T}_{0}f_{xx}\left(t，X(t)\right)a^{2}(t)dt．
 \end{eqnarray}
-\end{theorem}
  
 Therefore, the derivative of the discounted stock price $\mathrm{e}^{-rt} S(t)$ is $f(t, x) = \mathrm{e}^{-rt} x$ which is gotten to apply Ito's formula \eqref{ItoForm}. In the following, it is used that $f_{t} \left(t, x \right)=-r \mathrm{e}^{-rt} x$, $ f_{x} \left (t, x \right)=\, mathrm{e}^{-rt}$, $f_{xx} \left(t, x \right)=0 $.
  
@@ -263,10 +257,8 @@ Substituting the equation \eqref{val3} into the heat conduction equation \eqref{
  
 Focusing on both sides of the obtained equation \eqref{SeparationVariables}, the left side is a function of only $u$ and the right side is a function of only $v$, then constants irrelevant to $u$ and $v$, which is $-k^{2} \left(0 \leq k \lt \infinity \right)$. Therefore, finding the solution of the heat conduction equation \eqref{HeatConductionEquation} results in the problem of solving the following two ordinary differential equations.
  
-\begin{enumerate}
-\item $\dfrac{p_{u u}(u)}{p(u)}=-k^{2}$
-\item $\dfrac{2}{\sigma^{2}}\dfrac{q_{v}(v)}{q(v)}=-k^{2}$
-\end{enumerate}
+* $\dfrac{p_{u u}(u)}{p(u)}=-k^{2}$
+* $\dfrac{2}{\sigma^{2}}\dfrac{q_{v}(v)}{q(v)}=-k^{2}$
  
 The first equation is a second-order ordinary differential equation with constant coefficients, then if the coefficients are constants $C(k) and D(k)$ with respect to constants $k$ irrelevant to $u$ and $v$, the solution is given by the following equation.
  
@@ -280,7 +272,7 @@ Since the second equation is a variable separable ordinary differential equation
 q(v)=E(k)\exp\left( -\frac{\sigma^{2}k^{2}}{2}v \right) ．
 \end{eqnarray}
  
-Therefore, the solution $y \left(u, v \right)$ of the heat conduction equation \eqref {HeatConductionEquation} is a constant $k \left(0\leq k \lt \infty \right)$ irrelevant to $u$ and $v$. Then all are superposed to obtain the general solution shown in the following equation.
+Therefore, the solution $y \left(u, v \right)$ of the heat conduction equation \eqref{HeatConductionEquation} is a constant $k \left(0\leq k \lt \infty \right)$ irrelevant to $u$ and $v$. Then all are superposed to obtain the general solution shown in the following equation.
  
 \begin{eqnarray}\label{HeatConductionEquationSol}
 y\left(u，v\right)=\int^{+\infty}_{0}\left( C(k)\sin\left( ku \right) +D(k)\cos\left( ku \right) \right)\exp\left( -\frac{\sigma^{2}k^{2}}{2}v \right)dk．
