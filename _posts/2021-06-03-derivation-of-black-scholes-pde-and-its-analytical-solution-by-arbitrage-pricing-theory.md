@@ -222,22 +222,15 @@ y_{u u}(u，v)-\frac{2}{\sigma^{2}}y_{v}(u，v)=0．
  
 The equation \eqref{HeatConductionEquation} is a known partial differential equation with an exact solution called the heat conduction equation. Here, the boundary condition is changed by variable transformation.
  
-\begin{eqnarray}
-c(t，x)=\{\begin{array}{l}
-x-K\cdots x\geq K\\\\
-0\cdots x \lt K\end{array}.
-\end{eqnarray}
+$c(t，x)=$
+$x-K\cdots x\geq K$
+$0\cdots x \lt K$
  
 Note that the following conditions have changed.
  
-\begin{eqnarray}
-y(u，0)=\{
-\begin{array}{l}
-K( \mathrm{e}^{u}-1 )\cdots u\geq 0\\\\
-0\cdots u \lt 0
-\end{array}
-.
-\end{eqnarray}
+$y(u，0)=$
+$K( \mathrm{e}^{u}-1 )\cdots u\geq 0$
+$0\cdots u \lt 0$
  
 It is known that the heat conduction equation \eqref{HeatConductionEquation} is solved by the separation of variables method. The separation of variables method means that the solution $y(u,v)$ is expressed as the product of two functions $p(u)$ and $q(v)$.
  
@@ -276,12 +269,14 @@ y(u，v)=\int_{0}^{+\infty}( C(k)\sin( ku ) +D(k)\cos( ku ) )\exp( -\frac{\sigma
  
 Here, the coefficients $C(k)$ and $D(k)$ of the equation \eqref{HeatConductionEquationSol} are given by the following equation from Fourier's integral theorem as $y(u,0)=g(a)$.
  
-\begin{array}{l}\label{FourierCoefficient}
-C(k)=\frac{1}{\pi}\int_{-\infty}^{+\infty}g(a)\cos (ka) da\\\\
+\begin{eqnarray}\label{FourierCoefficient}
+C(k)=\frac{1}{\pi}\int_{-\infty}^{+\infty}g(a)\cos (ka) da
+\end{eqnarray}
+\begin{eqnarray}\label{FourierCoefficient2}
 D(k)=\frac{1}{\pi}\int_{-\infty}^{+\infty}g(a)\sin (ka) da
-\end{array}
+\end{eqnarray}
  
-Substituting the obtained equation of coefficients \eqref{FourierCoefficient} into the solution \eqref{HeatConductionEquationSol} of the heat conduction equation \eqref{HeatConductionEquation} and rearranging it gives the following equation.
+Substituting the obtained equation of coefficients \eqref{FourierCoefficient} and \eqref{FourierCoefficient2} into the solution \eqref{HeatConductionEquationSol} of the heat conduction equation \eqref{HeatConductionEquation} and rearranging it gives the following equation.
  
 \begin{eqnarray}\label{HeatConductionEquationSol2}
 y(u，v)=\dfrac{1}{\sigma \sqrt[]{\mathstrut 2 \pi v}} \int_{-\infty}^{+\infty}g(a)\exp( -\dfrac{1}{2}(\dfrac{a-u}{\sigma \sqrt[]{\mathstrut v}})^{2} ) da．
@@ -295,9 +290,8 @@ w=\dfrac{a-u}{\sigma \sqrt[]{\mathstrut v}}．
 Note that the boundary conditions have changed to the following conditions due to the change of variables.
  
 $g(a)=g( u+\sigma \sqrt[]{\mathstrut v}w )=$
-\begin{array}{l}
-K( \mathrm{e}^{u+\sigma \sqrt[]{\mathstrut v}w}-1 )\cdots w\geq -\dfrac{u}{\sigma \sqrt[]{\mathstrut v}}\\\\
-0\cdots w \lt -\dfrac{u}{\sigma \sqrt[]{\mathstrut v}}
+$K( \mathrm{e}^{u+\sigma \sqrt[]{\mathstrut v}w}-1 )\cdots w\geq -\dfrac{u}{\sigma \sqrt[]{\mathstrut v}}$
+Or $0\cdots w \lt -\dfrac{u}{\sigma \sqrt[]{\mathstrut v}}$
 \end{array}
  
 Focusing on the change of variables by $w$ and the changed boundary conditions, the equation \eqref{HeatConductionEquationSol2} is expanded as follows.
