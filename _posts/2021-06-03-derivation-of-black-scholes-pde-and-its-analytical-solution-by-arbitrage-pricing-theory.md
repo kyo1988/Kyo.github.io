@@ -310,18 +310,15 @@ y(u，v)=x\exp(rv) \dfrac{1}{ \sqrt[]{\mathstrut 2 \pi}} \int_{-\frac{u}{\sigma 
  
 Finally, by substituting the obtained equation \eqref{HeatConductionEquationSol4} into the solution of the Black-Scholes PDE \eqref{val2} is obtained as an analytical solution of the Black-Scholes PDE, which is a function that satisfies the Black-Scholes PDE.
  
-\begin{eqnarray}\label{HeatConductionEquationSol4}
-c(t，x)=xN(\frac{u}{\sigma \sqrt[]{\mathstrut v}} + \sigma \sqrt[]{\mathstrut v} ) -K\exp(-rv)N(\frac{u}{\sigma \sqrt[]{\mathstrut v}})．
+\begin{eqnarray}\label
+c(t，x)=xN(\frac{u}{\sigma \sqrt[]{\mathstrut v}} + \sigma \sqrt[]{\mathstrut v} ) -K \exp(-rv)N(\frac{u}{\sigma \sqrt[]{\mathstrut v}})
 \end{eqnarray}
  
 However,
  
-\begin{eqnarray}
-u=\log \frac{x}{K}+(r-\frac{\sigma^{2}}{2})(T-t)
-\end{eqnarray}
-\begin{eqnarray}
-v=T-t
-\end{eqnarray}
+$u=\log \frac{x}{K}+(r-\frac{\sigma^{2}}{2})(T-t)$
+
+$v=T-t$
 
 ## Reference
 * Shreve, S., 2004. Stochastic Calculus for Finance II: Continuous-Time Models
