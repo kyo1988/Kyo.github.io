@@ -65,23 +65,23 @@ df(W(t))=f'(W(t))dW(t)+\frac{1}{2}f''(W(t))dt．
  
 The formula \eqref{ItoFormDiff} is called Ito's formula in differential form. The equation \eqref{ItoFormDiff} is an equation obtained by differentiating Ito's formula \eqref{ItoForm} for the Brownian motion shown below.
  
-* Ito's formula for Brownian motion]
+* Ito's formula for Brownian motion
 
-Partial differentiation of $ f(t, x) $f_ {t}(t, x), f_{x}(t, x), f_ {xx}(t, x)$ is defined and continuous. Let $W(t)$ be the Brownian motion. At this time, the following equation holds for all $T \geq0$. 
+Partial differentiation of $f(t, x)$, $f_ {t}(t, x)$, $f_{x}(t, x)$, $f_ {xx}(t, x)$ is defined and continuous. Let $W(t)$ be the Brownian motion. At this time, the following equation holds for all $T \geq0$. 
 
 \begin{eqnarray}\label{ItoForm}
-f(T，W(T))=f(0，W(0))+\int^{T}_{0}f_{t}(t，W(t))dt+\int^{T}_{0}f_{x}(t，W(t))dW(t)+\frac{1}{2}\int^{T}_{0}f_{xx}(t，W(t))dt．
+f(T，W(T))=f(0，W(0))+\int_{0}f_{t}^{T}(t，W(t))dt+\int_{0}f_{x}^{T}(t，W(t))dW(t)+\frac{1}{2}\int_{0}f_{xx}^{T}(t，W(t))dt．
 \end{eqnarray}
  
-Where the third term of the expression \eqref{ItoForm} $\int^{T}_{0}f_{x}(t, W(t) ) dW(t)$ is called Ito integral, and the second and fourth terms are Lebesgue integrals for variables of time. Ito's formula can be extended to general stochastic processes including the Brown process, excluding jump process. This stochastic process is called the Ito process $dX(t)=a(t)dW(t)+b(t)dt$, and $a^{2}(t) per unit time, which accumulate the quadratic variation of $. It is assumed that $a(t) and b(t)$ are adapted stochastic  processes.
+Where the third term of the expression \eqref{ItoForm} $\int_{0}f_{x}^{T}(t, W(t)) dW(t)$ is called Ito integral, and the second and fourth terms are Lebesgue integrals for variables of time. Ito's formula can be extended to general stochastic processes including the Brown process, excluding jump process. This stochastic process is called the Ito process $dX(t)=a(t)dW(t)+b(t)dt$, and $a^{2}(t) per unit time, which accumulate the quadratic variation of $. It is assumed that $a(t) and b(t)$ are adapted stochastic  processes.
  
 * Ito's formula for the Ito process]
 
 Let $X(t)$ be the Ito process, and $f(t, x)$ be the partial derivative $f_{t}(t, x), f_{x}(t, x), f_{xx}(Let t, x)$ be a defined and continuous function, and let $W(t)$ be Brownian motion. At this time, the following equation holds for all $T \geq 0$. 
 
 \begin{eqnarray}\label{ItoFormII}
-f(T，X(T))=f(0，X(0))+\int^{T}_{0}f_{t}(t，X(t))dt
-+\int^{T}_{0}f_{x}(t，X(t))dX(t)+\frac{1}{2}\int^{T}_{0}f_{xx}(t，X(t))a^{2}(t)dt．
+f(T，X(T))=f(0，X(0))+\int_{0}f_{t}^{T}(t，X(t))dt
++\int_{0}f_{x}^{T}(t，X(t))dX(t)+\frac{1}{2}\int_{0}f_{xx}^{T}(t，X(t))a^{2}(t)dt．
 \end{eqnarray}
  
 Therefore, the derivative of the discounted stock price $\mathrm{e}^{-rt} S(t)$ is $f(t, x) = \mathrm{e}^{-rt} x$ which is gotten to apply Ito's formula \eqref{ItoForm}. In the following, it is used that $f_{t} (t, x )=-r \mathrm{e}^{-rt} x$, $ f_{x}  (t, x )=\, mathrm{e}^{-rt}$, $f_{xx} (t, x )=0 $.
@@ -258,7 +258,7 @@ Substituting the equation \eqref{val3} into the heat conduction equation \eqref{
 \frac{p_{u u}(u)}{p(u)}=\frac{2}{\sigma^{2}}\frac{q_{v}(v)}{q(v)}．
 \end{eqnarray}
  
-Focusing on both sides of the obtained equation \eqref{SeparationVariables}, the left side is a function of only $u$ and the right side is a function of only $v$, then constants irrelevant to $u$ and $v$, which is $-k^{2} (0 \leq k \lt \infinity )$. Therefore, finding the solution of the heat conduction equation \eqref{HeatConductionEquation} results in the problem of solving the following two ordinary differential equations.
+Focusing on both sides of the obtained equation \eqref{SeparationVariables}, the left side is a function of only $u$ and the right side is a function of only $v$, then constants irrelevant to $u$ and $v$, which is $-k^{2} (0 \leq k \lt \infty )$. Therefore, finding the solution of the heat conduction equation \eqref{HeatConductionEquation} results in the problem of solving the following two ordinary differential equations.
  
 * $\dfrac{p_{u u}(u)}{p(u)}=-k^{2}$
 * $\dfrac{2}{\sigma^{2}}\dfrac{q_{v}(v)}{q(v)}=-k^{2}$
@@ -278,7 +278,7 @@ q(v)=E(k)\exp( -\frac{\sigma^{2}k^{2}}{2}v ) ．
 Therefore, the solution $y (u, v )$ of the heat conduction equation \eqref{HeatConductionEquation} is a constant $k (0\leq k \lt \infty )$ irrelevant to $u$ and $v$. Then all are superposed to obtain the general solution shown in the following equation.
  
 \begin{eqnarray}\label{HeatConductionEquationSol}
-y(u，v)=\int^{+\infty}_{0}( C(k)\sin( ku ) +D(k)\cos( ku ) )\exp( -\frac{\sigma^{2}k^{2}}{2}v )dk．
+y(u，v)=\int_{0}^{+\infty}( C(k)\sin( ku ) +D(k)\cos( ku ) )\exp( -\frac{\sigma^{2}k^{2}}{2}v )dk．
 \end{eqnarray}
  
 Here, the coefficients $C(k) and D(k)$ of the equation \eqref{HeatConductionEquationSol} are given by the following equation from Fourier's integral theorem as $y (u, 0 ) = g(a)$.
