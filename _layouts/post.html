@@ -2,7 +2,7 @@
 layout: default
 ---
 <div class="post" itemscope itemtype="http://schema.org/BlogPosting">
-
+<related-posts />
   <header class="post-header">
     <h1 itemprop="name" class="post-title">{{ page.title }}</h1>
     <meta itemprop="keywords" content="{{ page.tags | join: ',' }}" />
@@ -28,8 +28,6 @@ layout: default
   </article>
   <hr />
 </div>
-
-<related-posts />
 
 {% include page_pagination.html%}
 {% include comments.html %}
