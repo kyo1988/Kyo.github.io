@@ -13,7 +13,7 @@ comments: true
 # Organize and implement Hull and White (1994a) interest rate model
 ## Derivation of Hull and White (1994a) interest rate model solutions and boundary conditions
 
-\begin{Definition}[Hull and White(1994a) interest rate model]
+* Definition [Hull and White(1994a) interest rate model]
 \begin{eqnarray}\label{HullandWhite1994a}
 dr(t)=(\theta(t)-ar(t))dt+\sigma d\tilde{W}(t) ．
 \end{eqnarray}
@@ -22,7 +22,7 @@ dr(t)=(\theta(t)-ar(t))dt+\sigma d\tilde{W}(t) ．
 However, $\tilde{W}(t)$ is Brownian motion under the risk-neutral measure $\mathbb{P}$.
 Also, $\theta (t)$, $a$, and $\sigma$ are positive-definite functions for time (Hull and White, 1994a).
  
-\begin{Definition}[Discount bond price evaluation formula]
+* Definition [Discount bond price evaluation formula]
 \begin{eqnarray}\label{DiscountBondPrice}
 B(t,T)=\tilde{\mathbb{E}}[e^{-\int_{t}^{T}R(s)ds}|{\cal F}(t)] ．
 \end{eqnarray}
@@ -30,7 +30,7 @@ B(t,T)=\tilde{\mathbb{E}}[e^{-\int_{t}^{T}R(s)ds}|{\cal F}(t)] ．
  
 Here, a discount bond is a contract in which $1$ is paid for a certain fixed maturity of $T$, and no payment is made before the maturity.
  
-\begin{Definition}[Yield from time $t$ to $T$]
+* Definition [Yield from time $t$ to $T$]
 \begin{eqnarray}
 Y(t,T)=-\frac{1}{T-t}\log B(t,T)．
 \end{eqnarray}
@@ -50,11 +50,11 @@ The random variable $e^{-\int_{t}^{T} R(s)ds}$ estimated in the equation \eqref{
 B(t,T)=f(t,R(t))．
 \end{eqnarray}
  
-On the other hand, since the equation \eqref{DiscountBondPrice} is the expansion of $D(t) B(t, T) = \tilde{\mathbb{E}} [D(T) B (T, T)) | {\cal F}(t)], then $D(t) B(t, T)=D(t) f(t, T))$ is a martingale. Therefore, in order for the no arbitrage condition to hold, the drift $(dt)$ term obtained by differentiating $D(t) f (t, T )$ must appear as $0$.
+On the other hand, since the equation \eqref{DiscountBondPrice} is the expansion of $D(t)B(t,T)=\tilde{\mathbb{E}}[D(T)B(T,T))|{\cal F}(t)]$, then $D(t)B(t, T)=D(t)f(t, T))$ is a martingale. Therefore, in order for the no arbitrage condition to hold, the drift $(dt)$ term obtained by differentiating $D(t)f(t,T)$ must appear as $0$.
  
-To find the derivative of $D(t) f  (t, T )$, it is required first to find the discount process and its relational expression.
+To find the derivative of $D(t)f(t,T)$, it is required first to find the discount process and its relational expression.
 
-\begin{Definition}[discount process]
+* Definition [discount process]
 \begin{eqnarray}
 D(t)=e^{-\int_{0}^{t}R(s)ds}．
 \end{eqnarray}
@@ -79,10 +79,10 @@ dD(t)=-D(t)R(t)dt．
 If the interest rate process $R(t)$ in finding the derivative of $D(t) f  (t, T \ right)$ follows the equation \eqref{HullandWhite1994a}, then From $dtdt=0$, $dtd\tilde{W}=0$, $d\tilde{W}d\tilde{W}=dt$ and $drdr= \sigma^2dt$
 
 \begin{eqnarray}
-d(D(t)f(t,T))=f(t,T)dD(t)+D(t)df(t,T) 
+d(D(t)f(t,T))
+=f(t,T)dD(t)+D(t)df(t,T)
 =f(t,T)(-D(t)R(t))+D(t){f_t(t,T)dt+f_r(t,T)dr+\frac{1}{2}f_rr(t,T)drdr} 
-=D(t)(-rf(t,T)+f_t(t,T)+\frac{1}{2}\sigma^2 f_rr(t,T) .  
-+. (\theta(t)-ar(t))f_r(t,T) )dt+D(t)\sigma f_r(t,T)d\tilde{W}(t)．
+=D(t)(-rf(t,T)+f_t(t,T)+\frac{1}{2}\sigma^2 f_rr(t,T)+(\theta(t)-ar(t))f_r(t,T))dt+D(t)\sigma f_r(t,T)d\tilde{W}(t)．
 \end{eqnarray}
 
 Therefore, $f(t, T))$ must be met.
@@ -149,16 +149,15 @@ Integrating both sides of this equation from $t$ to $T$
 
 \begin{eqnarray}
 e^{-\int_{0}^{T}a(v)dv}C(T,T)-e^{-\int_{0}^{t}a(v)dv}C(t,T)=-\int_{t}^{T}e^{-\int_{0}^{s}a(v)dv}ds 
-rightarrow C(t,T)=e^{\int_{0}^{t}a(v)dv}\int_{t}^{T}e^{-\int_{0}^{s}a(v)dv}ds  
+\xtwoheadrightarrow C(t,T)=e^{\int_{0}^{t}a(v)dv}\int_{t}^{T}e^{-\int_{0}^{s}a(v)dv}ds  
 =\int_{t}^{T}e^{-\int_{t}^{s}a(v)dv}ds．
 \end{eqnarray}
 
-The expansion of this unique solution is as follows. However, $a(v)=a$ is set from the equation \eqref {HullandWhite1994a}.
+The expansion of this unique solution is as follows. However, $a(v)=a$ is set from the equation \eqref{HullandWhite1994a}.
 
 \begin{eqnarray}
 C(t,T)=\int_{t}^{T}e^{-\int_{t}^{s}a(v)dv}ds 
 =\int_{t}^{T}e^{-as+at}ds 
-=-\frac{1}{a}e^{-as+at}_{t}^{T} 
 =\frac{1}{a}(1-e^{-a(T-t)})．
 \end{eqnarray}
 
@@ -171,10 +170,10 @@ A(t,T)=\int_{t}^{T}(\theta(t)C(t,T)-\frac{1}{2}\sigma^{2}C^{2}(t,T) )ds．
 Integrating both sides of this equation from $t$ to $T$
 \begin{eqnarray}
 A(T,T)-A(t,T)=-\int_{t}^{T}\theta(t)C(t,T)ds+\frac{1}{2}\int_{t}^{T}\sigma^{2}C^{2}(t,T)ds 
-rightarrow A(t,T)=\int_{t}^{T}(\theta(t)C(t,T)-\frac{1}{2}\sigma^{2}C^{2}(t,T))ds．
+\xtwoheadrightarrow A(t,T)=\int_{t}^{T}(\theta(t)C(t,T)-\frac{1}{2}\sigma^{2}C^{2}(t,T))ds．
 \end{eqnarray}
 
-The expansion of this unique solution is as follows. However, $a(v)=a$ is set from the equation \eqref {HullandWhite1994a}.
+The expansion of this unique solution is as follows. However, $a(v)=a$ is set from the equation \eqref{HullandWhite1994a}.
 
 \begin{eqnarray}
 A(t,T)=\int_{t}^{T}(\theta(t)C(t,T)-\frac{1}{2}\sigma^{2}C^{2}(t,T) )ds 
@@ -185,7 +184,7 @@ A(t,T)=\int_{t}^{T}(\theta(t)C(t,T)-\frac{1}{2}\sigma^{2}C^{2}(t,T) )ds
  
 Next, the parameter $\theta(t)$ in the equation \eqref{HullandWhite1994a} means the speed of mean reversion. It is required to match this parameter to the term structure of the quoted interest rate.
  
-\begin{Definition}[Instantaneous Forward Rate]
+* Definition [Instantaneous Forward Rate]
 Let $f^{M}(0, T)$ be the instantaneous forward rate of the market at maturity $T$ at time $0$.
 \begin{eqnarray}
 f^{M}(0,T)=-\frac{\partial \ln B^{M}(0,T)}{\partial T}．
@@ -200,8 +199,8 @@ Because it is $B(t,T)=f(t,r)=e^{-rC(t,T)-A(t,T)}$，
 =-\frac{r}{a}(1-e^{-aT} ) 
 -\frac{\sigma^{2}}{2a^3}(-aT+2(1-e^{-aT})-\frac{1}{2}(1-e^{-2aT})) 
 +\frac{1}{a}\int_{0}^{T}\theta(s)(1-e^{-a(T-s)})ds 
-rightarrow \frac{\partial \ln B^{M}(0,T)}{\partial T}=re^{-aT}+\frac{\sigma^{2}}{2a^3}(-a+2ae^{-aT}+e^{-2aT})+\int_{t}^{T}\theta(s)e^{-a(T-s)}ds 
-rightarrow f^{M}(0,T)=re^{-aT}+\frac{\sigma^{2}}{2a^3}(-a+2ae^{-aT}+e^{-2aT})+\int_{t}^{T}\theta(s)e^{-a(T-s)}ds．
+\xtwoheadrightarrow \frac{\partial \ln B^{M}(0,T)}{\partial T}=re^{-aT}+\frac{\sigma^{2}}{2a^3}(-a+2ae^{-aT}+e^{-2aT})+\int_{t}^{T}\theta(s)e^{-a(T-s)}ds 
+\xtwoheadrightarrow f^{M}(0,T)=re^{-aT}+\frac{\sigma^{2}}{2a^3}(-a+2ae^{-aT}+e^{-2aT})+\int_{t}^{T}\theta(s)e^{-a(T-s)}ds．
 \end{eqnarray}
  
 The following relationship is used to derive $\theta(T)$ from $f^{M}(0, T)$.
@@ -215,7 +214,7 @@ Here, $x(t)=re^{-at}+\int_{0}^{t}\theta(s)e^{-a(t-s)}ds$
 \begin{eqnarray}
 x'(t)=-a(re^{-at}+\int_{0}^{t}\theta(s)e^{-a(t-s)}ds)+\theta(t) 
 x'(t)=-ax(t)+\theta(t) 
-rightarrow \theta(t)=x'(t)+ax(t) 
+\xtwoheadrightarrow \theta(t)=x'(t)+ax(t) 
 arrow \theta(T)=x'(T)+ax(T)．
 \end{eqnarray}
  
@@ -223,7 +222,7 @@ On the other hand, if it is set $g(t)=\frac{\sigma^2}{2a^2}(-1+2e^{-at}+e^{-2at}
 
 \begin{eqnarray}
 f^{M}(0,T)=x(T)+g(T) 
-rightarrow x(T)=f^{M}(0,T)-g(T)．
+\xtwoheadrightarrow x(T)=f^{M}(0,T)-g(T)．
 \end{eqnarray}
  
 Therefore 
@@ -278,7 +277,7 @@ Also, substituting the expression \eqref{puA} into the expression \eqref{averrag
 
 \begin{eqnarray}\label{pdA}
 p_u\Delta x-p_d\Delta x=\frac{1}{2}(\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}+\frac{\nu \Delta t}{\Delta x} )\Delta x-p_d\Delta x 
-rightarrow p_d\Delta x=\frac{1}{2}(\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}-\frac{\nu \Delta t}{\Delta x} )\Delta x  
+\xtwoheadrightarrow p_d\Delta x=\frac{1}{2}(\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}-\frac{\nu \Delta t}{\Delta x} )\Delta x  
 p_d=\frac{1}{2}(\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}-\frac{\nu \Delta t}{\Delta x} )．
 \end{eqnarray}
  
@@ -287,7 +286,7 @@ And if it is substituted the expression \eqref{puA} and the expression \eqref{pu
 \begin{eqnarray}\label{pmA}
 p_u+p_m+p_d=\frac{1}{2}(\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}+\frac{\nu \Delta t}{\Delta x} )+p_m+\frac{1}{2}(\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}-\frac{\nu \Delta t}{\Delta x} ) 
 =\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}+p_m 
-rightarrow p_m=1-\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}．
+\xtwoheadrightarrow p_m=1-\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}．
 \end{eqnarray}
  
 Hull And White (1994a) proposed a method for constructing an efficient and accurate short rate for the equation \eqref{HullandWhite1994a}. Also, it is assumed $\theta(t)=0$，$r(0)=0$. 
@@ -303,7 +302,7 @@ Here，
 \mathbb{E}[\Delta x]=\nu \Delta t 
 =-ar\Delta t 
 =Mr 
-rightarrow M=-a\Delta t．
+\xtwoheadrightarrow M=-a\Delta t．
 \end{eqnarray}
 
 Also，
@@ -349,8 +348,8 @@ p_u=\frac{1}{2}(\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}+\frac{\nu \D
 \end{eqnarray}
  
 \begin{eqnarray}\label{pdA}
-p_d=\frac{1}{2}(\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}-\frac{\nu \Delta t}{\Delta x} ) 
-=\frac{1}{2}( j^2M^2+\frac{1}{3} +jM ) 
+p_d=\frac{1}{2}(\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}-\frac{\nu \Delta t}{\Delta x}) 
+=\frac{1}{2}(j^2M^2+\frac{1}{3}+jM) 
 =\frac{1}{6}+\frac{j^2M^2+jM}{2}．
 \end{eqnarray}
  
@@ -385,15 +384,15 @@ p_u=\frac{1}{2}(\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}-\frac{\nu \D
 Also, if it is assigned the expression \eqref{puB} to the expression \eqref{averrageBB},
 \begin{eqnarray}\label{pmB}
 2p_u\Delta x+p_m\Delta x=\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}-\frac{\nu \Delta t}{\Delta x}+p_m\Delta x 
-rightarrow p_m\Delta x=2\nu \Delta t-\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}  
-rightarrow p_m=\frac{2\nu \Delta t}{\Delta x}-\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}．
+\xtwoheadrightarrow p_m\Delta x=2\nu \Delta t-\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}  
+\xtwoheadrightarrow p_m=\frac{2\nu \Delta t}{\Delta x}-\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}．
 \end{eqnarray}
  
 And if it is substituted the expression \eqref{puB} and the expression \eqref{pmB} into the expression \eqref{SumProB}
 \begin{eqnarray}\label{pdB}
 p_u+p_m+p_d=\frac{1}{2}(\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}-\frac{\nu \Delta t}{\Delta x} )+\frac{2\nu \Delta t}{\Delta x}-\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}+p_d 
 =\frac{3}{2}\frac{\nu \Delta t}{\Delta x}-\frac{1}{2}\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}+p_d 
-rightarrow p_d=1-\frac{1}{2}( \frac{3\nu \Delta t}{\Delta x}-\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2} ) ．
+\xtwoheadrightarrow p_d=1-\frac{1}{2}( \frac{3\nu \Delta t}{\Delta x}-\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2} ) ．
 \end{eqnarray}
  
 Therefore from the formula \eqref{ExForPb1},
@@ -444,15 +443,15 @@ p_d=\frac{1}{2}(\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}+\frac{\nu \D
 Also, if it is assigned the expression \eqref{pdC} to the expression \eqref{averrageCC},
 \begin{eqnarray}\label{pmC}
 -p_m\Delta x-2p_d\Delta x=-p_m\Delta x-\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}-\frac{\nu \Delta t}{\Delta x} 
-rightarrow -p_m\Delta x=2\nu \Delta t+\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}  
-rightarrow p_m=-\frac{2\nu \Delta t}{\Delta x}-\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}．
+\xtwoheadrightarrow -p_m\Delta x=2\nu \Delta t+\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}  
+\xtwoheadrightarrow p_m=-\frac{2\nu \Delta t}{\Delta x}-\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}．
 \end{eqnarray}
  
 And if it is substituted the expression \eqref{pdC} and the expression \eqref{pmC} into the expression \eqref{SumProC},
 \begin{eqnarray}\label{puC}
 p_u+p_m+p_d=p_u-\frac{2\nu \Delta t}{\Delta x}-\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}+\frac{1}{2}(\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}+\frac{\nu \Delta t}{\Delta x} ) 
 =p_u-\frac{3}{2}\frac{\nu \Delta t}{\Delta x}-\frac{1}{2}\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2} 
-rightarrow p_u=1+\frac{3}{2}\frac{\nu \Delta t}{\Delta x}+\frac{1}{2}\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}．
+\xtwoheadrightarrow p_u=1+\frac{3}{2}\frac{\nu \Delta t}{\Delta x}+\frac{1}{2}\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}．
 \end{eqnarray}
  
 Therefore from the formula \eqref{ExForPb1},
@@ -484,8 +483,8 @@ Therefore, the drift term $ a_i $ is given as follows.
 
 \begin{eqnarray}
 \ln P(0,i+1)=\ln \int_{j=BottomNode[i]}^{TopNode[i]}Q_{i,j}e^{j\Delta r\Delta t}-a_i\Delta t 
-rightarrow a_i\Delta t=\ln \int_{j=BottomNode[i]}^{TopNode[i]}Q_{i,j}e^{j\Delta r\Delta t}-\ln P(0,i+1) 
-rightarrow a_i=\frac{\ln \int_{j=BottomNode[i]}^{TopNode[i]}Q_{i,j}e^{j\Delta r\Delta t}-\ln P(0,i+1)}{\Delta t}．
+\xtwoheadrightarrow a_i\Delta t=\ln \int_{j=BottomNode[i]}^{TopNode[i]}Q_{i,j}e^{j\Delta r\Delta t}-\ln P(0,i+1) 
+\xtwoheadrightarrow a_i=\frac{\ln \int_{j=BottomNode[i]}^{TopNode[i]}Q_{i,j}e^{j\Delta r\Delta t}-\ln P(0,i+1)}{\Delta t}．
 \end{eqnarray}
 
 ## Reference
