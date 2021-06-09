@@ -50,7 +50,7 @@ The random variable $e^{-\int_{t}^{T}R(s)ds}$ estimated in the equation \eqref{D
 B(t,T)=f(t,R(t))．
 \end{eqnarray}
  
-On the other hand, since the equation \eqref{DiscountBondPrice} is the expansion of $D(t)B(t,T)=\tilde{\Bbb{E}}[D(T)B(T,T))|{\cal F}(t)]$, then $D(t)B(t,T)=D(t)f(t,T)$ is a martingale. 
+On the other hand, since the equation \eqref{DiscountBondPrice} is the expansion of $D(t)B(t,T)=\tilde{\Bbb{E}}[D(T)B(T,T))|\cal{F}(t)]$, then $D(t)B(t,T)=D(t)f(t,T)$ is a martingale. 
 
 Therefore, in order for the no arbitrage condition to hold, the drift $(dt)$ term obtained by differentiating $D(t)f(t,T)$ must appear as $0$.
  
