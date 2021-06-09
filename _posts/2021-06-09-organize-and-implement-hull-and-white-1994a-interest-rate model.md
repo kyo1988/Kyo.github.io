@@ -50,7 +50,9 @@ The random variable $e^{-\int_{t}^{T}R(s)ds}$ estimated in the equation \eqref{D
 B(t,T)=f(t,R(t))．
 \end{eqnarray}
  
-On the other hand, since the equation \eqref{DiscountBondPrice} is the expansion of $D(t)B(t,T)=\tilde{\mathbb{E}}[D(T)B(T,T))|{\cal F}(t)]$, then $D(t)B(t,T)=D(t)f(t,T)$ is a martingale. Therefore, in order for the no arbitrage condition to hold, the drift $(dt)$ term obtained by differentiating $D(t)f(t,T)$ must appear as $0$.
+On the other hand, since the equation \eqref{DiscountBondPrice} is the expansion of $D(t)B(t,T)=\tilde{\Bbb{E}}[D(T)B(T,T))|{\cal F}(t)]$, then $D(t)B(t,T)=D(t)f(t,T)$ is a martingale. 
+
+Therefore, in order for the no arbitrage condition to hold, the drift $(dt)$ term obtained by differentiating $D(t)f(t,T)$ must appear as $0$.
  
 To find the derivative of $D(t)f(t,T)$, it is required first to find the discount process and its relational expression.
 
@@ -275,7 +277,7 @@ p_u=\frac{1}{2}(\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}+\frac{\nu \D
  
 Also, substituting the expression \eqref{puA} into the expression \eqref{averrageAA},
 
-\begin{eqnarray}\label{pdA}
+\begin{eqnarray}
 p_u\Delta x-p_d\Delta x=\frac{1}{2}(\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}+\frac{\nu \Delta t}{\Delta x} )\Delta x-p_d\Delta x 
 \Leftrightarrow p_d\Delta x=\frac{1}{2}(\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}-\frac{\nu \Delta t}{\Delta x} )\Delta x  
 p_d=\frac{1}{2}(\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}-\frac{\nu \Delta t}{\Delta x} )．
@@ -347,7 +349,7 @@ p_u=\frac{1}{2}(\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}+\frac{\nu \D
 =\frac{1}{6}+\frac{j^2M^2-jM}{2}．
 \end{eqnarray}
  
-\begin{eqnarray}\label{pdA}
+\begin{eqnarray}
 p_d=\frac{1}{2}(\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}-\frac{\nu \Delta t}{\Delta x}) 
 =\frac{1}{2}(j^2M^2+\frac{1}{3}+jM) 
 =\frac{1}{6}+\frac{j^2M^2+jM}{2}．
