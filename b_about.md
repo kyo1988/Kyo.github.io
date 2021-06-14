@@ -5,8 +5,7 @@ comments: yes
 permalink: /about/
 ---
 
-
-## About Me
+## Profile
 
 This is Kyo, who graduated from Bath Full Time MBA Class of 2020 and more than 5 years experienced management consultant in financial service industry.
 
