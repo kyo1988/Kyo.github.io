@@ -52,9 +52,7 @@ Then, consider the discounted stock price $\mathrm{e}^{-rt} S(t)$ and the discou
 In other words, to differentiate an expression expressed in the form of $f(W(t))$ with $f(x)$ as a differentiable function and $W(t)$ as the Brown motion. If Brown motion $W(t)$ is differentiable, the following equation holds from ordinary analysis by the chain rule of the composite function.
  
 \begin{eqnarray}
-\frac{d}{dt}f(W(t))=f'(W(t))W'(t)
-rightarrow df(W(t))=f'(W(t))W'(t)dt
-=f'(W(t))dW(t)．\nonumber
+\frac{d}{dt}f(W(t))=f'(W(t))W'(t) \Leftrightarrow df(W(t))=f'(W(t))W'(t)dt=f'(W(t))dW(t)．
 \end{eqnarray}
  
 However, since Brownian motion accumulates a quadratic variation of 1 per unit time $(dWdW = dt)$, the derivative of $f(W(t))$ has a correction term shown in the following equation.
@@ -80,29 +78,19 @@ Where the third term of the expression \eqref{ItoForm} $\int_{0}^{T}f_{x}(t, W(t
 Let $X(t)$ be the Ito process, and $f(t, x)$ be the partial derivative $f_{t}(t, x)$, $f_{x}(t, x)$, $f_{xx}(t, x)$ be a defined and continuous function, and let $W(t)$ be Brownian motion. At this time, the following equation holds for all $T \geq 0$. 
 
 \begin{eqnarray}\label{ItoFormII}
-f(T，X(T))=f(0，X(0))+\int_{0}^{T}f_{t}(t，X(t))dt
-+\int_{0}^{T}f_{x}(t，X(t))dX(t)+\frac{1}{2}\int_{0}^{T}f_{xx}(t，X(t))a^{2}(t)dt．
+f(T，X(T))=f(0，X(0))+\int_{0}^{T}f_{t}(t，X(t))dt+\int_{0}^{T}f_{x}(t，X(t))dX(t)+\frac{1}{2}\int_{0}^{T}f_{xx}(t，X(t))a^{2}(t)dt．
 \end{eqnarray}
  
 Therefore, the derivative of the discounted stock price $\mathrm{e}^{-rt} S(t)$ is $f(t, x) = \mathrm{e}^{-rt} x$ which is gotten to apply Ito's formula \eqref{ItoForm}. In the following, it is used that $f_{t} (t, x )=-r \mathrm{e}^{-rt} x$, $ f_{x}  (t, x )=\, mathrm{e}^{-rt}$, $f_{xx} (t, x )=0 $.
  
 \begin{eqnarray}\label{DiscountStockPrice}
-d( \mathrm{e}^{-rt}S(t) )=df(t，S(t)) 
-=f_{t}(t，S(t))dt+f_{x}(t，S(t))dS(t)+f_{xx}(t，S(t))dt
-=-r\mathrm{e}^{-rt}S(t)dt+\mathrm{e}^{-rt}dS(t) 
-=-r\mathrm{e}^{-rt}S(t)dt+\mathrm{e}^{-rt}( \alpha S(t)dt+\sigma S(t)dW(t) ) 
-=(\alpha-r)\mathrm{e}^{-rt}S(t)dt+\sigma\mathrm{e}^{-rt}S(t)dW(t)
+d( \mathrm{e}^{-rt}S(t) )=df(t，S(t)) =f_{t}(t，S(t))dt+f_{x}(t，S(t))dS(t)+f_{xx}(t，S(t))dt=-r\mathrm{e}^{-rt}S(t)dt+\mathrm{e}^{-rt}dS(t) =-r\mathrm{e}^{-rt}S(t)dt+\mathrm{e}^{-rt}( \alpha S(t)dt+\sigma S(t)dW(t))=(\alpha-r)\mathrm{e}^{-rt}S(t)dt+\sigma\mathrm{e}^{-rt}S(t)dW(t)
 \end{eqnarray}
  
 Similarly, the derivative of the discounted portfolio value $\mathrm{e}^{-rt} X(t)$ is given by
  
 \begin{eqnarray}\label{DiscountPort}
-d( \mathrm{e}^{-rt}X(t) )=df(t，X(t)) 
-=f_{t}(t，X(t))dt+f_{x}(t，X(t))dX(t)+\frac{1}{2}f_{xx}(t，X(t))dt
-=-r\mathrm{e}^{-rt}X(t)dt+\mathrm{e}^{-rt}dX(t) 
-=-r\mathrm{e}^{-rt}X(t)dt+\mathrm{e}^{-rt}( \Delta(t)dS(t)+r(X(t)-\Delta(t)S(t))dt ) 
-=\Delta(t)(\alpha-r)\mathrm{e}^{-rt}S(t)dt+\Delta(t)\sigma\mathrm{e}^{-rt}S(t)dW(t)
-=\Delta(t)d( \mathrm{e}^{-rt}S(t) )．
+d( \mathrm{e}^{-rt}X(t) )=df(t，X(t))=f_{t}(t，X(t))dt+f_{x}(t，X(t))dX(t)+\frac{1}{2}f_{xx}(t，X(t))dt=-r\mathrm{e}^{-rt}X(t)dt+\mathrm{e}^{-rt}dX(t) =-r\mathrm{e}^{-rt}X(t)dt+\mathrm{e}^{-rt}( \Delta(t)dS(t)+r(X(t)-\Delta(t)S(t))dt)=\Delta(t)(\alpha-r)\mathrm{e}^{-rt}S(t)dt+\Delta(t)\sigma\mathrm{e}^{-rt}S(t)dW(t)=\Delta(t)d(\mathrm{e}^{-rt}S(t))．
 \end{eqnarray}
  
 In this way, the formula \eqref{DiscountPort} is obtained by the discounted stock price $S(t)$ and the portfolio value $X(t)$ at the discount rate $\mathrm{e}^{-rt}$ with the interest rate $r$ of the money market account. The formula \eqref{DiscountPort} indicates that small change in the discount portfolio value $d(\mathrm{e}^{-rt}X(t))$ depends only on a small change in the discounted stock price $d(\mathrm{e}^{-rt}S(t))$.
@@ -130,36 +118,26 @@ And show that $X(0) = c(0, S(0))$ holds. In fact, the following equation is obta
 \mathrm{e}^{-rt}X(t)-X(0)=\mathrm{e}^{-rt}c(t，S(t))-c(0，S(0))，t\in[0，T)
 \end{eqnarray}
  
-At this time, if $X(0) = c(0, S(0))$, then it is obtained the necessary and sufficient conditional expression $\mathrm{e}^{-rt} X(t) = \mathrm{e}^{-rt} c(t, S (t))$.
+At this time, if $X(0)=c(0,S(0))$, then it is obtained the necessary and sufficient conditional expression $\mathrm{e}^{-rt}X(t)=\mathrm{e}^{-rt}c(t,S(t))$.
 
 ## Necessary and sufficient condition to duplicate the portfolio, which does fully hedge the option sell position 
 
 To expand the right-hand side \eqref{IsCopyPort}, it is required to calculate the derivative of discount option price $\mathrm{e}^{-rt} c(t, S (t, S) t))$. To do this, it is needed to calculate the derivative of the option price $c(t, S(t))$. From Ito's formula for the Ito process \eqref{ItoFormII} and the given stock price stochastic differential equation \eqref{stockPrice}
  
 \begin{eqnarray}
-dc(t，S(t))=c_{t}(t，S(t))dt+c_{x}(t，S(t))dS(t)+\frac{1}{2}c_{xx}(t，S(t))(\sigma S(t))^{2}dt
-=c_{t}(t，S(t))dt+c_{x}(t，S(t))( \alpha S(t)dt+\sigma S(t)dW(t) )+\frac{1}{2}c_{xx}(t，S(t))(\sigma S(t))^{2}dt
-=( c_{t}(t，S(t))dt+\alpha c_{x}(t，S(t))+\frac{1}{2}\sigma^{2} S^{2}(t)c_{xx}(t，S(t)))dt
-+\sigma S(t)c_{x}(t，S(t))dW(t)．
+dc(t，S(t))=c_{t}(t，S(t))dt+c_{x}(t，S(t))dS(t)+\frac{1}{2}c_{xx}(t，S(t))(\sigma S(t))^{2}dt=c_{t}(t，S(t))dt+c_{x}(t，S(t))( \alpha S(t)dt+\sigma S(t)dW(t) )+\frac{1}{2}c_{xx}(t，S(t))(\sigma S(t))^{2}dt=( c_{t}(t，S(t))dt+\alpha c_{x}(t，S(t))+\frac{1}{2}\sigma^{2} S^{2}(t)c_{xx}(t，S(t)))dt+\sigma S(t)c_{x}(t，S(t))dW(t)．
 \end{eqnarray}
  
-It is calculated the derivative of discount option price $\mathrm{e}^{-rt} c (t)$ by Ito's formula \eqref{ItoFormII} for the Ito process as $f(t, x) =\mathrm{e}^{-rt} x, S(t))$. In the following, it is used that $f_{t} (t, x ) = -r \mathrm{e}^{-rt}x$, $f_{x} (t, x ) =\, \mathrm{e}^{-rt}$, $f_{xx} (t, x ) = 0$.
+It is calculated the derivative of discount option price $\mathrm{e}^{-rt} c (t)$ by Ito's formula \eqref{ItoFormII} for the Ito process as $f(t, x)=\mathrm{e}^{-rt}x,S(t))$. In the following, it is used that $f_{t}(t,x)=-r\mathrm{e}^{-rt}x$, $f_{x}(t,x)=\mathrm{e}^{-rt}$, $f_{xx}(t,x)=0$.
  
 \begin{eqnarray}\label{expandCallDis}
-d(\mathrm{e}^{-rt}c(t，S(t)))=df(t，c(t，S(t))) 
-=f_{t}(t，c(t，S(t)))dt+f_{x}(t，c(t，S(t)))dc(t，S(t))
-+\frac{1}{2}f_{xx}(t，c(t，S(t)) (\sigma S(t)c_{x}(t，S(t)))^{2}dt
-=-r\mathrm{e}^{-rt}c(t，S(t))+\mathrm{e}^{-rt} dc(t，S(t))
-=\mathrm{e}^{-rt}( -rc(t，S(t))+c_{t}(t，S(t))+\alpha c_{x}(t，S(t)).
-+.\frac{1}{2}\sigma^{2} S^{2}(t)c_{xx}(t，S(t)))dt+\mathrm{e}^{-rt}\sigma S(t)c_{x}(t，S(t))dW(t)．
+d(\mathrm{e}^{-rt}c(t，S(t)))=df(t，c(t，S(t)))=f_{t}(t，c(t，S(t)))dt+f_{x}(t，c(t，S(t)))dc(t，S(t))+\frac{1}{2}f_{xx}(t，c(t，S(t)) (\sigma S(t)c_{x}(t，S(t)))^{2}dt=-r\mathrm{e}^{-rt}c(t，S(t))+\mathrm{e}^{-rt} dc(t，S(t))=\mathrm{e}^{-rt}(-rc(t，S(t))+c_{t}(t，S(t))+\alpha c_{x}(t，S(t))+\frac{1}{2}\sigma^{2} S^{2}(t)c_{xx}(t，S(t)))dt+\mathrm{e}^{-rt}\sigma S(t)c_{x}(t，S(t))dW(t)．
 \end{eqnarray}
  
 It is given the following equation to expand the right-hand side of \eqref{IsCopyPort} with the formula \eqref{expandCallDis} and the left-hand side with the formula \eqref{DiscountPort}.
  
 \begin{eqnarray}\label{expandCopyPort}
-\Delta(t)(\alpha-r)S(t)dt+\Delta(t)\sigma S(t)dW(t)
-=( -rc(t，S(t))+c_{t}(t，S(t))+\alpha c_{x}(t，S(t))+\frac{1}{2}\sigma^{2} S^{2}(t)c_{xx}(t，S(t)))dt
-+\sigma S(t)c_{x}(t，S(t))dW(t)．
+\Delta(t)(\alpha-r)S(t)dt+\Delta(t)\sigma S(t)dW(t)=( -rc(t，S(t))+c_{t}(t，S(t))+\alpha c_{x}(t，S(t))+\frac{1}{2}\sigma^{2} S^{2}(t)c_{xx}(t，S(t)))dt+\sigma S(t)c_{x}(t，S(t))dW(t)．
 \end{eqnarray}
  
 If the expansion formula \eqref{expandCopyPort}, which is a necessary and sufficient condition for replicating a portfolio that completely hedges an option's sell position, holds, the coefficients on both sides must be matched. Therefore, since the coefficients on both sides of $dW(t)$ are equal, the following equation is obtained.
@@ -177,7 +155,7 @@ Since the coefficients on both sides of $dt$ are also equal, the following equat
 =-rc(t，S(t))+c_{t}(t，S(t))+\alpha c_{x}(t，S(t))+\frac{1}{2}\sigma^{2} S^{2}(t)c_{xx}(t，S(t))
 \end{eqnarray}
  
-Since $\alpha c_{x} (t, S(t) )$ term appears on both sides of the expression \eqref{expandCopyPortForT} for any time $t\in[0, T)$, it is obtained the following equation to extract this term.
+Since $\alpha c_{x}(t,S(t))$ term appears on both sides of the expression \eqref{expandCopyPortForT} for any time $t\in[0, T)$, it is obtained the following equation to extract this term.
  
 \begin{eqnarray}\label{PreBlackScholes}
 rc(t，S(t))=c_{t}(t，S(t))+rS(t)c_{x}(t，S(t))+\frac{1}{2}\sigma^{2} S^{2}(t)c_{xx}(t，S(t))
@@ -306,7 +284,7 @@ Furthermore, if the first term on the right side of the equation \eqref{HeatCond
  
 \begin{eqnarray}\label{HeatConductionEquationSol4}
 y(u，v)=x\exp(rv) \dfrac{1}{ \sqrt[]{\mathstrut 2 \pi}} \int_{-\frac{u}{\sigma \sqrt[]{\mathstrut v}}^{+\infty}-\sigma \sqrt[]{\mathstrut v}}\exp( -\dfrac{z^{2}}{2} ) dz-K\dfrac{1}{ \sqrt[]{\mathstrut 2 \pi}} \int_{-\frac{u}{\sigma \sqrt[]{\mathstrut v}}}^{+\infty}\exp( -\dfrac{z^{2}}{2} ) dz
-=x\exp(rv)N(\frac{u}{\sigma \sqrt[]{\mathstrut v}}+\sigma \sqrt[]{\mathstrut v})-KN( \frac{u}{\sigma \sqrt[]{\mathstrut v}} )．
+=x\exp(rv)N(\frac{u}{\sigma \sqrt[]{\mathstrut v}}+\sigma \sqrt[]{\mathstrut v})-KN( \frac{u}{\sigma \sqrt[]{\mathstrut v}})．
 \end{eqnarray}
  
 Finally, by substituting the obtained equation \eqref{HeatConductionEquationSol4} into the solution of the Black-Scholes PDE \eqref{val2} is obtained as an analytical solution of the Black-Scholes PDE, which is a function that satisfies the Black-Scholes PDE.
