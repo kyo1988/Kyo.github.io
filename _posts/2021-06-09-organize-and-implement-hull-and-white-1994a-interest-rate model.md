@@ -492,7 +492,7 @@ Therefore, the drift term $ a_i $ is given as follows.
 ## Hull and White Tree Implementation
 
 It is given the simplified tree implementation mentioned above. The source code is written in matlab 2016b.
-
+* Full of below code is in [my GitHub account](https://github.com/kyo1988/Kyo.github.io/blob/gh-pages/scripts%20for%20article/BuildHWF1.m)
 {% highlight css %} 
 #container { float: left; margin: 0 -240px 0 0; width: 100%; } 
     for i=1:N-1 
