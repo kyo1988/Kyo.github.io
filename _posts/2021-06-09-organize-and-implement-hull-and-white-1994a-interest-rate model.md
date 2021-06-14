@@ -489,6 +489,68 @@ Therefore, the drift term $ a_i $ is given as follows.
 \Leftrightarrow a_i=\frac{\ln \int_{j=BottomNode[i]}^{TopNode[i]}Q_{i,j}e^{j\Delta r\Delta t}-\ln P(0,i+1)}{\Delta t}．
 \end{eqnarray}
 
+## Hull and White Tree Implementation
+
+It is given the simplified tree implementation mentioned above. The source code is written in matlab 2016b.
+
+{% highlight css %} 
+#container { float: left; margin: 0 -240px 0 0; width: 100%; } 
+    for i=1:N-1 
+        deltaX(i+1)=sigma*sqrt(3.*(t(i+1)-t(i)));
+    end
+    for i=1:N-1 
+        for j=m(i):-1:-m(i) 
+            M=-j.*deltaX(i).*a*(t(i+1)-t(i));
+            V=sigma.^2.*(t(i+1)-t(i ));
+            k(N+1-j, i)=round((j.*deltaX(i)+M)./deltaX(i+1)); 
+            alpha=(j.*deltaX(i)+M-k(N+1-j, i).*deltaX(i+1))./deltaX(i+1);
+            pu(N+1-j, i)=V./(2.*deltaX(i+1).^2)+(alpha.^2+alpha)./2;
+            pd(N+1-j, i)=V./(2.*deltaX(i+1).^2)+(alpha.^2-alpha)./2; 
+            pm(N+1-j, i)=1-V./(deltaX(i+1).^2)-alpha.^2;
+        if j==max(m(i)) 
+            m(i+1)=k(N+1-j,i)+1; 
+        end
+        end
+    end
+    for i=1:N-1
+        for j=1:m(i)
+            x(N+1+j, i)=x(N+1+j-1, i)-deltaX(i); 
+            x(N+1-j, i)=x(N+1-j+1, i)+deltaX(i); 
+        end
+    end  
+    for i=1:N-1 
+        if i==2
+            Q(N+2, i)=Q(N+1, i-1).*pu(N+1, i-1).*exp(-r(N+1, i-1).*(t(i)-t(i-1))); 
+            Q(N+1, i)=Q(N+1, i-1).*pm(N+1, i-1).*exp(-r(N+1, i-1).*(t(i)-t(i-1))); 
+            Q(N, i)=Q(N+1, i-1).*pd(N+1, i-1).*exp(-r(N+1, i-1).*(t(i)-t(i-1))); 
+        elseif i>=3
+            for j=m(i):-1:-m( i ) 
+                for jj=m(i-1):-1:-m(i-1) 
+                    Q(N+1+j, i)=Q(N+1+j, i)...
+                    +Q(N+1+jj, i-1).*pu(N+1+jj, i-1).*exp(-r(N+1+jj, i-1).*(t(i)-t(i-1))).*(k(N+1+jj,i-1)+1==j)...
+                    +Q(N+1+jj, i-1).*pm(N+1+jj, i-1).*exp(-r(N+1+jj, i-1).*(t(i)-t(i-1))).*(k(N+1+jj,i-1)==j)...
+                    +Q(N+1+jj, i-1).*pd(N+1+jj, i-1).*exp(-r(N+1+jj, i-1).*(t(i)-t(i-1))).*(k(N+1+jj,i-1)-1==j);
+                end 
+            end 
+        end
+    if i==1
+        g(i)=-log(P(i+1))./(t(i+1)-t(i)); 
+    elseif i>=2 
+        sum=0; 
+        for j=m(i) :-1 :-m(i) 
+            sum=sum+Q(N+1+j, i).*exp(-x(N+1+j, i).*(t(i+1)-t(i))); 
+        end 
+            g(i)=(log(sum)-log(P(i+1)))./(t(i+1)-t(i)); 
+    end
+        for j=m(i):-1:-m(i)
+            r(N+1-j, i)=x(N+1-j, i)+g(i); 
+            d(N+1-j, i)=exp(-r(N+1-j, i).*(t(i+1)-t(i))); 
+        end 
+    end
+{% endhighlight %}
+
+
+
 ## Reference
 * Hull, J. and A. White, 1994. "Numerical procedures for implementing term structure models I:Single-Factor Models,'' Journal of Derivatives, 2, 1 (Fall 1994a) 7−16
 * Strickland, C. and Clewlow, L., 1998. Implementing Derivatives Models
