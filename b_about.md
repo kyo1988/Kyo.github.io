@@ -7,11 +7,11 @@ permalink: /about/
 
 This is Kyo, who graduated from Bath Full Time MBA Class of 2020 and more than 5 years experienced management consultant in financial service industry.
 
-I am now not only a Data Scientist in a company but also a freelancing Data Scientist and Consultant.
+I am also a freelancing Data Scientist and Consultant While working in a cosmetics firm as a brand manager.
 In addition, I have experience to improve marketing and business management system using data science as a manager in one of the largest cosmetic firm.
 Here is my [Linkdin Profile](https://www.linkedin.com/in/KyoHarada).
 
-## Interest
+## Main Area
 
 Now, I am focusing on studying the applications of Data Science for finance and marketing (ex. here is [marketing slides](https://www.slideshare.net/KyoichiroKyoHaradaMB/marketing-plan-for-waitrose-of-john-lewis/1?src=clipshare)).
 
