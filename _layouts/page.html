@@ -16,7 +16,9 @@ layout: default
   {% endif %}
 
   {% if page.comments %}
-  {% include comments.html %}
+    {% if page.title != "About" %}
+    {% include comments.html %}
+    {% endif %}
   {% endif %}
 
 </div>
