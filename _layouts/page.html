@@ -11,12 +11,12 @@ layout: default
     {{ content }}
   </article>
 
-  {% if page.comments %}
-  {% include comments.html %}
-  {% endif %}
-
   {% if page.title == "About" %}
   {% include instagram.html username="haradakyo" %}
+  {% endif %}
+
+  {% if page.comments %}
+  {% include comments.html %}
   {% endif %}
 
 </div>
