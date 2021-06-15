@@ -6,6 +6,8 @@ permalink: /about/
 ---
 
 This is Kyo, who graduated from Bath Full Time MBA Class of 2020 and was more than 5 years experienced management consultant in financial service industry.
+
+
 I am now a freelancing Data Scientist and Consultant While working in a cosmetics firm as a brand manager.
 
 ## Specialized Area
