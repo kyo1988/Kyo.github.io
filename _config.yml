@@ -28,9 +28,9 @@ locales:
     en:
       Aboutme: "About Me"
       Archives: "Archives"
-      Blogroll: "Blogroll"
+###      Blogroll: "Blogroll"
       Categories: "Categories"
-      Copyright_Notice: "Copyright Notice"
+###      Copyright_Notice: "Copyright Notice"
       Recent_Posts: "Recent Posts"
       Tags: "Tags"
       Previous: "Older"
@@ -41,7 +41,7 @@ locales:
       Google_search: "Site Search"
       Home: "Home"
       About: "About"
-      Guestbook: "Guestbook"
+###      Guestbook: "Guestbook"
       Subscribe: "Subscribe"
 
 ### your Blogroll info, only name can shown on the page.
