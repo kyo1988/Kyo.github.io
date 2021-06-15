@@ -28,9 +28,8 @@ locales:
     en:
       Aboutme: "About Me"
       Archives: "Archives"
-###      Blogroll: "Blogroll"
       Categories: "Categories"
-###      Copyright_Notice: "Copyright Notice"
+      Copyright_Notice: "Copyright Notice"
       Recent_Posts: "Recent Posts"
       Tags: "Tags"
       Previous: "Older"
@@ -41,15 +40,17 @@ locales:
       Google_search: "Site Search"
       Home: "Home"
       About: "About"
-###      Guestbook: "Guestbook"
       Subscribe: "Subscribe"
+
+###      Blogroll: "Blogroll"
+###      Guestbook: "Guestbook"
 
 ### your Blogroll info, only name can shown on the page.
 
-Blogroll:
-      - name: Kyo's Blog
-        href: https://kyo1988.github.io/Kyo.github.io/
-        title: Kyo's Blog
+# Blogroll:
+#       - name: Kyo's Blog
+#         href: https://kyo1988.github.io/Kyo.github.io/
+#         title: Kyo's Blog
 
 ### Build settings
 markdown: kramdown
