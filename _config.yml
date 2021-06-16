@@ -58,13 +58,12 @@ markdown: kramdown
 kramdown:
         input: GFM
         syntax_highlighter: rouge
-gems:
-  - jekyll/tagging
-  - jekyll-tagging-related_posts
 plugins:
   - jekyll-paginate
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll/tagging
+  - jekyll-tagging-related_posts
 paginate: 3
 excerpt_separator: <!-- more -->
