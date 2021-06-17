@@ -69,3 +69,6 @@ plugins:
   - jekyll-tagging-related_posts
 paginate: 3
 excerpt_separator: <!-- more -->
+
+future: true
+timezone: TIMEZONE
