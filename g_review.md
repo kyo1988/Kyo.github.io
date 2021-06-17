@@ -1,8 +1,8 @@
 ---
 layout: page
 title: Review
-comments: yes
-permalink: /Review/
+comments: no
+permalink: /review/
 ---
 
 # Related Book Review
