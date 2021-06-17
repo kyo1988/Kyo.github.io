@@ -14,7 +14,7 @@ twitter_username: kyoHarada
 github_username:  kyo1988
 disqus_shortname: kyo
 favicon:     "/images/IMG_0168.ico" #favicon.ico"
-aboutme: Hi, this is Kyo. This is Kyo, who am  a freelancing Data Scientist and Consultant While working in a cosmetic firm as a brand manager. # these are shown on aboutme-sidebar.
+aboutme: Hi, this is Kyo, who am  a freelancing Data Scientist and Consultant While working in a cosmetic firm as a brand manager. # these are shown on aboutme-sidebar.
 aboutme_photo: https://res.cloudinary.com/djiyxp5ax/image/upload/v1621667206/IMG_0082_txvfj3.jpg # your photo.
 google_analytics_key: UA-196500796-1 # put YOUR key here to enable tracking! (blank to disable)
 
