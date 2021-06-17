@@ -38,9 +38,9 @@ locales:
       Home: "Home"
       About: "About"
       Review: "Review"
+      Archives: "Archives"
+      Tags: "Tags"
 
-###      Archives: "Archives"
-###      Tags: "Tags"
 ###      Copyright_Notice: "Copyright Notice"
 ###      Blogroll: "Blogroll"
 ###      Guestbook: "Guestbook"
