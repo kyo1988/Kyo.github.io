@@ -5,9 +5,4 @@ comments: no
 permalink: /review/
 ---
 
-# Related Book Review
-## Business 
-### Startup
-### Marketing 
-### Corporate Finance
-## Data Science
+# Data Science Book Review
