@@ -7,7 +7,7 @@ description: `Blog by Kyo who am a freelancing Data Scientist and Consultant'
 # You can edit this line in _config.yml. It will appear in your document head meta and in your feed.xml site description
 keywords: "Brand Manager, Freelancer, Data Scientist, Consultant"
 baseurl: "/Kyo.github.io" # the subpath of your site, e.g. /blog/
-url: "https://kyo1988.github.io/Kyo.github.io" # the base hostname & protocol for your site
+url: "https://kyo1988.github.io/Kyo.github.io/" # the base hostname & protocol for your site
 locale: en_US
 
 ### Personal info and site tools info:
