@@ -85,5 +85,5 @@ Recently Facebook developed ‘The Prophet Forecasting Model’ for Time Series 
 * Angrist, J.D. and Pischke, J -S., 2014. Mastering 'Metrics: The Path from Cause to Effect
 * Wooldridge, J.M., 2002. Econometric Analysis of Cross Section and Panel Data
 * Wooldridge, J.M., 2000. Introductory Econometrics: A Modern Approach
-* Hamilton, R., 1994, Time series analysis
+* Hamilton, R., 1994. Time series analysis
 * Taylor, S.J. and Letham, B., 2017. Forecasting at scale. PeerJ Preprints 5:e3190v2 https://doi.org/10.7287/peerj.preprints.3190v2
