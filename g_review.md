@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Books We Can Learn Fundamental Methods of Data Science
+title: Review
 comments: yes
 permalink: /review/
 ---
