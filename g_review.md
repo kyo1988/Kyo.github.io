@@ -74,6 +74,10 @@ It can be said that Time Series Analysis is included in Econometrics, however, i
 * Box–Jenkins Method (mainly including ARIMA and SARIMAX) <cite>(Hamilton, 1994, Chapter 3-5)</cite>
 * State Space Model (such as The Kalman Filter) <cite>(Hamilton, 1994, Chapter 13)</cite>
 
+If you want to see more practical version or do implement.
+* Time Series Analysis and Its Applications With R Examples <cite>(Shumway and Stoffer, 2016)</cite>
+<a target="_blank"  href="https://www.amazon.co.jp/gp/product/B073H6HGJR/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=B073H6HGJR&linkCode=as2&tag=kyo07e-22&linkId=52dfc3a7fa3baa58e60761676c74d69f"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=JP&ASIN=B073H6HGJR&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=kyo07e-22" ></a>
+
 Recently Facebook developed ‘The Prophet Forecasting Model’ for Time Series Analysis <cite>(Taylor and Letham, 2017)</cite>.
 
 
@@ -86,4 +90,5 @@ Recently Facebook developed ‘The Prophet Forecasting Model’ for Time Series 
 * Wooldridge, J.M., 2002. Econometric Analysis of Cross Section and Panel Data
 * Wooldridge, J.M., 2000. Introductory Econometrics: A Modern Approach
 * Hamilton, R., 1994. Time series analysis
+* Shumway, R.H. and Stoffer, D.S., 2016. Time Series Analysis and Its Applications With R Examples
 * Taylor, S.J. and Letham, B., 2017. Forecasting at scale. PeerJ Preprints 5:e3190v2 https://doi.org/10.7287/peerj.preprints.3190v2
