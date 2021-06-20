@@ -76,6 +76,7 @@ It can be said that Time Series Analysis is included in Econometrics, however, i
 
 If you want to see more practical version or do implement.
 * Time Series Analysis and Its Applications With R Examples <cite>(Shumway and Stoffer, 2016)</cite>
+
 <a target="_blank"  href="https://www.amazon.co.jp/gp/product/B073H6HGJR/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=B073H6HGJR&linkCode=as2&tag=kyo07e-22&linkId=52dfc3a7fa3baa58e60761676c74d69f"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=JP&ASIN=B073H6HGJR&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=kyo07e-22" ></a>
 
 Recently Facebook developed ‘The Prophet Forecasting Model’ for Time Series Analysis <cite>(Taylor and Letham, 2017)</cite>.
