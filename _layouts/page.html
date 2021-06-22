@@ -13,11 +13,16 @@ layout: default
 
   {% if page.title == "About" %}
     {% include instagram.html username="haradakyo" %}
-<div class="twitter-timeline-item">
-  <a class="twitter-timeline" href="https://twitter.com/KyoHarada?ref_src=twsrc%5Etfw">Tweets by KyoHarada</a>
-  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-</div>
+      <div class="twitter-timeline-item">
+        <a class="twitter-timeline" href="https://twitter.com/KyoHarada?ref_src=twsrc%5Etfw">Tweets by KyoHarada</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div>
   {% endif %}
+
+  {% if page.title == "About" %}
+    {% include d3.html %}
+  {% endif %}
+
 
   {% if page.comments %}
     {% include comments.html %}
