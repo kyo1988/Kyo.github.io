@@ -20,8 +20,10 @@ layout: default
   {% endif %}
 
   {% if page.title == "Visualization" %}
+    {::nomarkdown}
     {% include d3.html %}
     <div id="example"></div>
+    {:/}
   {% endif %}
 
 
