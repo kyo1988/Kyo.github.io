@@ -67,5 +67,17 @@ plugins:
   - jekyll-seo-tag
   - jekyll/tagging
   - jekyll-tagging-related_posts
+
+social-icons:
+ - title: GitHub
+   url: https://github.com/kyo1988/Kyo.github.io/blob/gh-pages/scripts%20for%20article
+   class: github
+ - title: LinkedIn
+   url: https://www.linkedin.com/in/KyoHarada
+   class: linkedin
+ - title: Twitter
+   url: https://twitter.com/KyoHarada
+   class: twitter
+
 paginate: 3
 excerpt_separator: <!-- more -->
