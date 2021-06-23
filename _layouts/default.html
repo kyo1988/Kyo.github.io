@@ -15,6 +15,13 @@
 
   {% if site.default_column == "two" %}
 
+    {% for icon in social-icons %}
+      <a class="social-icon--link {{ icon.class }}" href="{{ icon.url }}">
+        {% include {{ icon.class | prepend: 'social-icons/' | append: '.svg' }} %}
+        <span class="social-icon--title visuallyHidden">{{ icon.title }}</span>
+      </a>
+    {% endfor %}
+
   <div class="page-content col-sm-8">
     {{ content }}
     {% include post_pagination.html %}
