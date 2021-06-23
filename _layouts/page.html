@@ -19,6 +19,11 @@ layout: default
       </div>
   {% endif %}
 
+      {% if page.title == "Visualization" %}
+        {% include d3.html %}
+        test
+      {% endif %}
+
   {% if page.comments %}
     {% include comments.html %}
   {% endif %}
