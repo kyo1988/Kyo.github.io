@@ -70,3 +70,5 @@ plugins:
 
 paginate: 3
 excerpt_separator: <!-- more -->
+
+Access-Control-Allow-Origin: 'https://kyo1988.github.io'
