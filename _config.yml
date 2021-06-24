@@ -71,4 +71,4 @@ plugins:
 paginate: 3
 excerpt_separator: <!-- more -->
 
-Access-Control-Allow-Origin: 'https://github.com/kyo1988/Kyo.github.io/blob/gh-pages/data/morley.csv'
+Access-Control-Allow-Origin:
