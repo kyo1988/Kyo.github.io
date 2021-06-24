@@ -41,7 +41,7 @@ var chart = d3.box()
     .width(width)
     .height(height);
 
-d3.csv("https://github.com/kyo1988/Kyo.github.io/blob/gh-pages/data/morley.csv", function(error, csv) {
+d3.csv("https://github.com/kyo1988/Kyo.github.io/blob/gh-pages/data/morley.csv", {mode: 'cors'} function(error, csv) {
   var data = [];
 
   csv.forEach(function(x) {
