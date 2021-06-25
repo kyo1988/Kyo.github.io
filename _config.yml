@@ -29,6 +29,7 @@ locales:
       Aboutme: "About Me"
       Recent_Posts: "Recent Posts"
       Categories: "Categories"
+      Tags: "Tags"
       Previous: "Older"
       Next: "Newer"
       PostedInCategories: "Posted in"
@@ -41,7 +42,6 @@ locales:
       Visualization: "Visualization"
 
 ###      Archives: "Archives"
-###      Tags: "Tags"
 ###      Copyright_Notice: "Copyright Notice"
 ###      Blogroll: "Blogroll"
 ###      Guestbook: "Guestbook"
