@@ -30,6 +30,7 @@ locales:
       Recent_Posts: "Recent Posts"
       Categories: "Categories"
       Tags: "Tags"
+      Archives: "Archives"
       Previous: "Older"
       Next: "Newer"
       PostedInCategories: "Posted in"
@@ -41,7 +42,6 @@ locales:
       Review: "Review"
       Visualization: "Visualization"
 
-###      Archives: "Archives"
 ###      Copyright_Notice: "Copyright Notice"
 ###      Blogroll: "Blogroll"
 ###      Guestbook: "Guestbook"
