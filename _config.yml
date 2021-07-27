@@ -18,7 +18,6 @@ aboutme: Hi, this is Kyo, who am  a freelancing data scientist and consultant wh
 aboutme_photo: https://res.cloudinary.com/djiyxp5ax/image/upload/v1621667206/IMG_0082_txvfj3.jpg # your photo.
 google_analytics_key: UA-196500796-1 # put YOUR key here to enable tracking! (blank to disable)
 
-
 ### Site setting:
 ShowContactInfo: "True" # Personal Info (twitter,github,email) can be seen on aboutme-sidebar, those info only shown where ShowContactInfo == True
 default_column: "two" # blog style: two columns, if default_column != "two", you will see a one column blog.
@@ -39,13 +38,14 @@ locales:
       Google_search: "Site Search"
       Home: "Home"
       About: "About"
+###      Subscribe: "Subscribe"
       Review: "Review"
       Visualization: "Visualization"
+      Marketing: "Marketing"
 
 ###      Copyright_Notice: "Copyright Notice"
 ###      Blogroll: "Blogroll"
 ###      Guestbook: "Guestbook"
-###      Subscribe: "Subscribe"
 
 ### your Blogroll info, only name can shown on the page.
 
