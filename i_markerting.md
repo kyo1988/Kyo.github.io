@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Marketing
-comments: no
+comments: yes
 permalink: /marketing/
 ---
 
@@ -18,9 +18,13 @@ This picture would be cover page.
 
 If you are interested in my book, please notice me using below form.
 After wrote the book, I will inform you using the email which you submited below form.
+
 {% include goole-form.html %}
 
+
+
 ## Reference
+* Beverland, M., 2018. Brand Management
 * CHAVEZ, T., O’HARA, C. and VAIDYA, V., 2019. Data Driven: HARNESSING DATA AND AI TO REINVENT CUSTOMER ENGAGEMENT
 * EHRENBERG, A.S.C., 1988. Repeat-buying: facts, theory and applications, New Edition
 * Grewal, D. and Levy, M., 2019, m: marketing, Sixth Edition
@@ -28,6 +32,7 @@ After wrote the book, I will inform you using the email which you submited below
 * Jeffery, M., 2010. Data-Driven Marketing: The 15 Metrics Everyone in Marketing Should Know
 * Katsov, I., 2018. Introduction to Algorithmic Marketing
 * Kartajaya, H., Setiawan, I. and Kotler, P., 2021. Marketing 5.0: Technology for Humanity
+* Keller, K.L., 2013. Strategic Brand Management
 * Kotler, P. and Keller, K.L., 2015, Marketing Management, Global Edition
 * Morioka, T. and Imanishi, S., 2016. Probability Theory for Marketing (In Japanese)
 * Sharp, B., 2010. How Brands Grow
