@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Visualization
-comments: no
+comments: yes
 permalink: /visualization/
 ---
 
