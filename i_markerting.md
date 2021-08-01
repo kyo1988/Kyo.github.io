@@ -11,19 +11,38 @@ permalink: /marketing/
 # Marketing Science
 
 I am writing a book named 'Introduction to Marketing Science'.
-It would be two version, which are essential version (exclude Code and Math) for KDP (Kindle Direct Publishing) and full version for PDF.
+It would be two version, which are essential version (exclude Code and Math) for KDP (Kindle Direct Publishing) and full version for PDF (which would be included in Python Code for Data Science applications).
 
+## Purpose
+Literally textbook style of marketing science introduction, which is inspired by Grigsby (2018).
+
+## For What
+Marketing can be art and science, however, marketing science is only science, which is based on data. Then as for marketer, it might be hard to understand. This book fill the gap between marketer and data scientist using figures (Data visualization technique).
+
+## Target Audience
+* Data Scientists who are interested in Marketing
+* Marketer and Brand Manager who are interested in Data Science
+
+## Table of Contents
+1. Overview 
+2. Qualitative Marketing (Kotler school)
+3. Quantitative Marketing (Ehrenberg-Bass school)
+4. Digital Marketing
+5. Data science applications (Business Analytics)
+
+## Cover Page
 This picture would be cover page.
-
 
 ![Figure 1](https://res.cloudinary.com/djiyxp5ax/image/upload/v1627115145/EBook_Cover_jwu2sy.png "EBook Cover")
 
-If you are interested in my book, please notice me using below form.
+
+## Get the PDF Book
+If you are interested in my book of PDF version, please notice me using below form.
 After wrote the book, I will inform you using the email which you submited below form.
 
 {% include goole-form.html %}
 
-
+The references would be below.
 
 ## Reference
 * Beverland, M., 2018. Brand Management
