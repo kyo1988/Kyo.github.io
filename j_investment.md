@@ -8,7 +8,7 @@ permalink: /Investment/
 * Table of Contents
 {:toc}
 
-# Investment
+# Types of Investment
 
 Here is the information page about investment, which is mainly two types (passive and active). However, recently algorithm investment is becoming a hot topic, which might be in the middle of two standards. You can see my position about which is better in the article, titled [Will index funds continue to beat active funds?](https://kyo1988.github.io/Kyo.github.io/business/finance/2021/05/25/will-index-funds-continue-to-beat-active-funds.html).
 
