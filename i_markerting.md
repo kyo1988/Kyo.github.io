@@ -14,6 +14,8 @@ I am writing a book named 'Introduction to Marketing Science'.
 It would be two version, which are essential version (exclude Code and Math) for KDP (Kindle Direct Publishing) and full version for PDF.
 
 This picture would be cover page.
+
+
 ![Figure 1](https://res.cloudinary.com/djiyxp5ax/image/upload/v1627115145/EBook_Cover_jwu2sy.png "EBook Cover")
 
 If you are interested in my book, please notice me using below form.
