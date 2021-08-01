@@ -38,10 +38,11 @@ locales:
       Google_search: "Site Search"
       Home: "Home"
       About: "About"
-###      Subscribe: "Subscribe"
+      Subscribe: "Subscribe"
       Review: "Review"
       Visualization: "Visualization"
       Marketing: "Marketing"
+      Investment: "Investment"
 
 ###      Copyright_Notice: "Copyright Notice"
 ###      Blogroll: "Blogroll"
