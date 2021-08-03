@@ -13,6 +13,7 @@ permalink: /Investment/
 Here is the information page about investment, which is mainly two types (passive and active). However, recently algorithm investment is becoming a hot topic, which might be in the middle of two standards. You can see my position about which is better in the article, titled [Will index funds continue to beat active funds?](https://kyo1988.github.io/Kyo.github.io/business/finance/2021/05/25/will-index-funds-continue-to-beat-active-funds.html).
 
 ## Reference
+### Investment including Trading
 * Burton G. Malkiel, 1999. A Random Walk Down Wall Street Including A Life-Cycle Guide To Personal Investing
 * BENJAMIN GRAHAM and DAVID L. DODD,  Security Analysis, Sixth Edition
 * Button, G.M. and Charles, D.E., 2013. The Element of Investing 
@@ -31,3 +32,23 @@ Here is the information page about investment, which is mainly two types (passiv
 * Siegel, J.J., 2009. Stocks For The Long Run, Fourth Edition
 * Schroeder, A., 2008. The Snowball Warren Buffett and the Business of Life
 * Tatro, Q., 2011, Trade the Trader
+### Financial Engineering
+* Brigo, D. and Mercurio, F., 2006, Interest Rate Models — Theory and Practice, 2nd edition
+* Clewlow, L. and Strickland, C., 1998. IMPLEMENTING DERIVATIVES MODELS
+* Campbell, J.Y., Lo, A.W. and MacKinlay, A.C., 2002. THE ECONOMETRICS OF FINANCIAL MARKETS
+* Donald van Deventer and Kenji Imai, 2003. CREDIT RISK MODELS AAID THE BASEL ACCORDS
+* Dufie, D., 1996. Dynamic Asset Pricing Theory
+* Gurrierih, S., Nakabayashi, M. and Wong, T., n.d., Calibration Methods of Hull-White Model
+* Hull, J.C., 2009. OPTIONS,FUTURES AND OTHER DERIVATIVES, 7th editions
+* Hull, J. and White, A., 2000. The General Hull-White Model and Super Calibration
+* Hull, J. and White, A., 1993. n.d., EFFICIENT PROCEDURES FOR VALUING EUROPEAN AND AMERICAN PATH DEPENDENT OPTIONS
+* Hull, J. and White, A., n.d., FORWARD RATE VOLATILITIES，SWAP RATE VOLATILITIES, AND THE IMPLEMENTATION OF THE LIBOR MARKET MODEL
+* Hull, J. and White, A., 1994, NUMERICAL PROCEDURES FOR IMPLEMENTING TERM STRUCTURE MODELS II: TWO FACTOR MODELS
+* Hull, J. and White, A., 1996, USING HULL-WHITE INTEREST RATE TREES
+* JIN, H., GOTOH, J. AND SUMITA, U., 2007. A New Approach for Computing Option Prices of the Hull-White Type with Stepwise Reversion and Volatility Functions
+* Kotzea, A. and Oosthuizenb, R., 2015. Pricing JSE Exotic Can-Do Options: Monte Carlo Simulation
+* Karatzas, I. and Shreve, S.E., 1997. Brownian Motion and Stochastic Calculus
+* Longstaff, F.A. and Schwartz, E.S., 2001. Valuing American Options by Simulation: A Simple Least-Squares Approach
+* Lamberton, D. and Lapeyre, B., 1997. INTRODUCTION AU CALCUL STOCHASTIQUE APPLIQUEALAFINANCE
+* Shreve, S.E., 2005. Stochastic Calculus for Finance 1: The Binomial Asset Pricing Model
+* Shreve, S.E., 2004. Stochastic Calculus for Finance 2: Coηtinuous-TimeModels
