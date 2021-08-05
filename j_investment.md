@@ -15,9 +15,9 @@ Here is the information page about investment, which is mainly two types (passiv
 ## Arbitrage Pricing Theory
 
 It can be said active and passive (index) investment are still in a state of confrontation, which means Arbitrage Pricing Theory (APT) and Capital Asset Pricing Model (CAPM) are also. These airticles are related to APT (main part of financial engineering).
-[Organize and implement Hull and White (1994a) interest rate model](https://kyo1988.github.io/Kyo.github.io/business/finance/2021/06/09/organize-and-implement-hull-and-white-1994a-interest-rate-model.html)
-[Derivation of Black-Scholes PDE and its analytical solution by arbitrage pricing theory](https://kyo1988.github.io/Kyo.github.io/business/finance/2021/06/03/derivation-of-black-scholes-pde-and-its-analytical-solution-by-arbitrage-pricing-theory.html)
-[Derivation of yield curve construction formula with tenor basis spread](https://kyo1988.github.io/Kyo.github.io/business/finance/2021/05/31/derivation-of-yield-curve-construction-formula-with-tenor-basis-spread.html)
+* [Organize and implement Hull and White (1994a) interest rate model](https://kyo1988.github.io/Kyo.github.io/business/finance/2021/06/09/organize-and-implement-hull-and-white-1994a-interest-rate-model.html)
+* [Derivation of Black-Scholes PDE and its analytical solution by arbitrage pricing theory](https://kyo1988.github.io/Kyo.github.io/business/finance/2021/06/03/derivation-of-black-scholes-pde-and-its-analytical-solution-by-arbitrage-pricing-theory.html)
+* [Derivation of yield curve construction formula with tenor basis spread](https://kyo1988.github.io/Kyo.github.io/business/finance/2021/05/31/derivation-of-yield-curve-construction-formula-with-tenor-basis-spread.html)
 
 ## Reference
 ### Investment
