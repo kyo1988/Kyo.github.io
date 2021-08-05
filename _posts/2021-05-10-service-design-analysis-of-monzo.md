@@ -66,12 +66,12 @@ This essay has discussed about the payment service of Monzo, especially pre tran
 ![Figure Appendix](https://res.cloudinary.com/djiyxp5ax/image/upload/v1598794008/appendix_c.png "Figure Appendix")
 
 ## Reference
-* Lauren, 2020. Monzo Review: Should you make the switch? [Online]. Available from: https://moneytothemasses.com/banking/monzo-review-should-you-make-the-switch/amp [Accessed 17 April 2020].
-* CBInshight, 2020. Monzo [Online]. Available from: https://www.cbinsights.com/company/mondo [Accessed 17 April 2020].
-* AWS, 2020. Monzo Case Study [Online]. Available from: https://aws.amazon.com/jp/solutions/case-studies/monzo/ [Accessed 17 April 2020].
-* Strange, A., 2019. Every Company Will Be a Fintech Company [Online]. Available from: https://a16z.com/2020/01/21/every-company-will-be-a-fintech-company/ [Accessed 17 April 2020].
+* Lauren, 2020. Monzo Review: Should you make the switch? [Online]. Available from: [https://moneytothemasses.com/banking/monzo-review-should-you-make-the-switch/amp](https://moneytothemasses.com/banking/monzo-review-should-you-make-the-switch/amp) [Accessed 17 April 2020].
+* CBInshight, 2020. Monzo [Online]. Available from: [https://www.cbinsights.com/company/mondo](https://www.cbinsights.com/company/mondo) [Accessed 17 April 2020].
+* AWS, 2020. Monzo Case Study [Online]. Available from: [https://aws.amazon.com/jp/solutions/case-studies/monzo/](https://aws.amazon.com/jp/solutions/case-studies/monzo/) [Accessed 17 April 2020].
+* Strange, A., 2019. Every Company Will Be a Fintech Company [Online]. Available from: [https://a16z.com/2020/01/21/every-company-will-be-a-fintech-company/](https://a16z.com/2020/01/21/every-company-will-be-a-fintech-company/) [Accessed 17 April 2020].
 * Fragnière, E., Nanchen, B. and Sitten, M., 2012. Performing Service Design Experiments Using Ethnomethodology and Theatre-Based Reenactment: A Swiss Ski Resort Case Study
 * REASON, B., LØVLIE, L. and FLU, M.B., 2016. SERVICE DESIGN FOR BUSINESS A Practical Guide to Optimizing the Customer Experience
-* EPSTEIN, S., 2020. Monzo’s next big move is taking on broken business banking [Online]. Available from: https://www.wired.co.uk/article/monzo-business-account [Accessed 17 April 2020].
-* O'Hear, S., 2020. Monzo launches free and paid-for business bank accounts [Online]. Available from: https://techcrunch.com/2020/03/17/monzo-business-bank-accounts/amp/ [Accessed 17 April 2020].
+* EPSTEIN, S., 2020. Monzo’s next big move is taking on broken business banking [Online]. Available from: [https://www.wired.co.uk/article/monzo-business-account](https://www.wired.co.uk/article/monzo-business-account) [Accessed 17 April 2020].
+* O'Hear, S., 2020. Monzo launches free and paid-for business bank accounts [Online]. Available from: [https://techcrunch.com/2020/03/17/monzo-business-bank-accounts/amp/](https://techcrunch.com/2020/03/17/monzo-business-bank-accounts/amp/) [Accessed 17 April 2020].
 * Catenazzo, G. and Fragnière, E., 2010. Pricing Traditional Travel Agency Services: A Theatre-Based Experimental Study

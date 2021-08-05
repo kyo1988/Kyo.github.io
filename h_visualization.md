@@ -16,7 +16,7 @@ D3 is one of good methoid to visualize data even in Jekyll (static website), how
 
 ## Reference
 * Jones, B., 2014. Communicating Data with Tableau
-* Cole, D., 2017. D3.js in Jekyll Markdown [Online]. Available from: http://dan-cole.com/2017/d3js-example/ [Accessed 22 June 2021].
+* Cole, D., 2017. D3.js in Jekyll Markdown [Online]. Available from: [http://dan-cole.com/2017/d3js-example/](http://dan-cole.com/2017/d3js-example/) [Accessed 22 June 2021].
 * Cairo, A., 2011. The Functional Art
 * Few, S., 2006. Information Dashboard Design
 * Knaflic, C.N., 2015. Storytelling With Data

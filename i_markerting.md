@@ -13,6 +13,8 @@ permalink: /marketing/
 I am writing a book named 'Introduction to Marketing Science'.
 It would be two version, which are essential version (exclude Code and Math) for KDP (Kindle Direct Publishing) and full version for PDF (which would be included in Python Code for Data Science applications).
 
+Or You can see MBA style marketing in the article, titled [Marketing Plan for John Lewis](https://kyo1988.github.io/Kyo.github.io/marketing/2021/05/09/Marketing-Plan-for-John-Lewis.html).
+
 ## Purpose
 Literally textbook style of marketing science introduction, which is inspired by Grigsby (2018).
 

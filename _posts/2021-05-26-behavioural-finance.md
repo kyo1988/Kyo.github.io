@@ -39,12 +39,12 @@ This essay has discussed the statement of the passive trader which is that no on
 * Ding, Z., 2009. The Fundamental Law of Active Management: Time Series Dynamics and Cross-Sectional Properties
 * Grinold, R.C., and Ronald N. Khan, R.N., 1995, Active Portfolio Management
 * Ackert, L.F. and Deaves, R., 2010. Behavioral Finance
-* Kaufman, K., 2018. 'The Market Is Always Wrong': In Defense of Inefficiency [Online]. Available from: https://www.forbes.com/sites/karlkaufman/2018/09/30/the-market-is-always-wrong-in-defense-of-inefficiency/#501daf754da1 [Accessed 8 March 2020].
+* Kaufman, K., 2018. 'The Market Is Always Wrong': In Defense of Inefficiency [Online]. Available from: [https://www.forbes.com/sites/karlkaufman/2018/09/30/the-market-is-always-wrong-in-defense-of-inefficiency/#501daf754da1](https://www.forbes.com/sites/karlkaufman/2018/09/30/the-market-is-always-wrong-in-defense-of-inefficiency/#501daf754da1) [Accessed 8 March 2020].
 * Fenton-O'Creevy, M et al., 2012. Emotion Regulation and Trader Expertise: Heart Rate Variability on the Trading Floor
 * DANIEL, K., HIRSHLEIFER, D., and SUBRAHMANYAM, A., 1998. Investor Psychology and Security Market Under- and Overreactions
 * Alsharman, M., Fairchild, R., and Hinvest, N., 2016. Warning: Trading can be Hazardous to your Wealth! (Just Watch out for Bears!)
 * Crane, A.D. and Crotty, K., 2018. Passive versus Active Fund Performance: Do Index Funds Have Skill?
 * Barberis, N, and Thaler, R, 2003. “A Survey of Behavioral Finance.”: Online working paper.
 * Baron, M., Brogaard, J. and Kirilenko, A., 2014. Risk and Return in High Frequency Trading
-* Henderson, R., 2019. US regulator throws sand in the wheels of high-frequency traders [Online]. Available from: https://www.ft.com/content/fb40285c-7728-11e9-be7d-6d846537acab [Accessed 8 March 2020].
+* Henderson, R., 2019. US regulator throws sand in the wheels of high-frequency traders [Online]. Available from: [https://www.ft.com/content/fb40285c-7728-11e9-be7d-6d846537acab](https://www.ft.com/content/fb40285c-7728-11e9-be7d-6d846537acab) [Accessed 8 March 2020].
 * Fong, K., Parwada, J. and Yang, J.W., 2018. Algorithmic Trading and Mutual Fund Performance
