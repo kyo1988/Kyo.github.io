@@ -129,18 +129,18 @@ Mean Square Error (MSE) can be one of the most common method to compare the mode
 ![Figure 65](https://res.cloudinary.com/djiyxp5ax/image/upload/v1598711636/%E5%9B%B365.png "Figure 65")
 
 ## Reference
-* Brownlee, J., 2016. How to Check if Time Series Data is Stationary with Python [Online]. Available from: https://machinelearningmastery.com/time-series-data-stationary-python/ [Accessed 30 March 2020].
+* Brownlee, J., 2016. How to Check if Time Series Data is Stationary with Python [Online]. Available from: [https://machinelearningmastery.com/time-series-data-stationary-python/](https://machinelearningmastery.com/time-series-data-stationary-python/) [Accessed 30 March 2020].
 * Brownlee, J., 2017. Long Short-Term Memory Networks with Python
 * Downey, A.B., 2011. Think Stats
 * Janert, P.K., 2010. Data Analysis with Open Source Tools
 * Janssens, W., Wijnen, K., Pelsmacker, P.D., Kenhove, P.V., 2008. Marketing Research with SPSS (FT Prentice Hall)
 * Lilien, G.L. and Rangaswamy, A., 2002. Marketing Engineering: Computer Assisted Marketing Analysis and Planning
 * Meulman, J.J. and Koopman, S.J., 2007. An Introduction to State Space Time Series Analysis
-* Palachy, S., 2019. Detecting stationarity in time series data [Online]. Available from: https://towardsdatascience.com/detecting-stationarity-in-time-series-data-d29e0a21e638 [Accessed 30 March 2020].
-* Prabhakaran, S., 2019. ARIMA Model – Complete Guide to Time Series Forecasting in Python [Online]. Available from: https://www.machinelearningplus.com/time-series/arima-model-time-series-forecasting-python/ [Accessed 30 March 2020].
-* Prabhakaran, S., 2019. Time Series Analysis in Python – A Comprehensive Guide with Examples [Online]. Available from: https://www.machinelearningplus.com/time-series/time-series-analysis-python/ [Accessed 30 March 2020].
-* SINGH, A., 2018. A Gentle Introduction to Handling a Non-Stationary Time Series in Python [Online]. Available from: https://www.analyticsvidhya.com/blog/2018/09/non-stationary-time-series-python/ [Accessed 30 March 2020].
-* Taylor, S.J. and Letham, B., 2017. Forecasting at scale. PeerJ Preprints 5:e3190v2 https://doi.org/10.7287/peerj.preprints.3190v2
-* TensorFlow, 2020. Time series forecasting [Online]. Available from: https://www.tensorflow.org/tutorials/structured_data/time_series [Accessed 30 March 2020].
+* Palachy, S., 2019. Detecting stationarity in time series data [Online]. Available from: [https://towardsdatascience.com/detecting-stationarity-in-time-series-data-d29e0a21e638](https://towardsdatascience.com/detecting-stationarity-in-time-series-data-d29e0a21e638) [Accessed 30 March 2020].
+* Prabhakaran, S., 2019. ARIMA Model – Complete Guide to Time Series Forecasting in Python [Online]. Available from: [https://www.machinelearningplus.com/time-series/arima-model-time-series-forecasting-python/](https://www.machinelearningplus.com/time-series/arima-model-time-series-forecasting-python/) [Accessed 30 March 2020].
+* Prabhakaran, S., 2019. Time Series Analysis in Python – A Comprehensive Guide with Examples [Online]. Available from: [https://www.machinelearningplus.com/time-series/time-series-analysis-python/](https://www.machinelearningplus.com/time-series/time-series-analysis-python/) [Accessed 30 March 2020].
+* SINGH, A., 2018. A Gentle Introduction to Handling a Non-Stationary Time Series in Python [Online]. Available from: [https://www.analyticsvidhya.com/blog/2018/09/non-stationary-time-series-python/](https://www.analyticsvidhya.com/blog/2018/09/non-stationary-time-series-python/) [Accessed 30 March 2020].
+* Taylor, S.J. and Letham, B., 2017. Forecasting at scale. PeerJ Preprints 5:e3190v2 [https://doi.org/10.7287/peerj.preprints.3190v2](https://doi.org/10.7287/peerj.preprints.3190v2)
+* TensorFlow, 2020. Time series forecasting [Online]. Available from: [https://www.tensorflow.org/tutorials/structured_data/time_series](https://www.tensorflow.org/tutorials/structured_data/time_series) [Accessed 30 March 2020].
 * Tieleman, T. and Hinton, G., 2012. Lecture 6.5-rmsprop: Divide the Gradient by a Running Average of Its Recent Magnitude. COURSERA: Neural Networks for Machine Learning, 4, 26-31.
 * Wierenga, B., 2008. Handbook of Marketing Decision Models

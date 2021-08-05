@@ -40,4 +40,4 @@ Break even units sold is total fixed cost divided by the number that revenue per
 
 ## Reference
 * Lauren Sam and Camille Murdock, 2018. Business Financial Plan Herriman High School
-* NICKOLAS, S., 2020. How can I Calculate Break-Even Analysis in Excel? [Online]. Available from: https://www.merchantsavvy.co.uk/mobile-payment-stats-trends/ [Accessed 8th June 2020].
+* NICKOLAS, S., 2020. How can I Calculate Break-Even Analysis in Excel? [Online]. Available from: [https://www.merchantsavvy.co.uk/mobile-payment-stats-trends/](https://www.merchantsavvy.co.uk/mobile-payment-stats-trends/) [Accessed 8th June 2020].

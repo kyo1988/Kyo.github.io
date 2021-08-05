@@ -43,13 +43,13 @@ Now Japan has also the primary deficit then has a few measures to stimulate the 
 Some people said that today Japan can be an experimental station for fiscal-monetary policy. If the Japanese government can manage the inflation rate, other countries such as Europe would also be saved.
 
 ## Reference
-* Blanchard, O. and Tashiro, T., 2019, Fiscal Policy Options for Japan [Online] Available from: https://piie.com/publications/policy-briefs/fiscal-policy-options-japan
+* Blanchard, O. and Tashiro, T., 2019, Fiscal Policy Options for Japan [Online] Available from: [https://piie.com/publications/policy-briefs/fiscal-policy-options-japan](https://piie.com/publications/policy-briefs/fiscal-policy-options-japan)
  [Accessed 17 September 2019].
-* Davies, G., 2018, Bank of Japan faces the return of very low inflation [Online] Available from: https://www.ft.com/content/27d9e0cc-8cb7-11e8-b639-7680cedcc421
+* Davies, G., 2018, Bank of Japan faces the return of very low inflation [Online] Available from: [https://www.ft.com/content/27d9e0cc-8cb7-11e8-b639-7680cedcc421](https://www.ft.com/content/27d9e0cc-8cb7-11e8-b639-7680cedcc421)
  [Accessed 17 September 2019].
-* Davies, G., 2019a, Shinzo Abe contemplates one last throw of the economic dice [Online] Available from: https://www.ft.com/content/6e58065e-77c7-11e9-be7d-6d846537acab
+* Davies, G., 2019a, Shinzo Abe contemplates one last throw of the economic dice [Online] Available from: [https://www.ft.com/content/6e58065e-77c7-11e9-be7d-6d846537acab](https://www.ft.com/content/6e58065e-77c7-11e9-be7d-6d846537acab)
  [Accessed 17 September 2019].
-* Davies, G., 2019b, What you need to know about modern monetary theory [Online] Available from: https://www.ft.com/content/744f4fc4-6762-11e9-9adc-98bf1d35a056
+* Davies, G., 2019b, What you need to know about modern monetary theory [Online] Available from: [https://www.ft.com/content/744f4fc4-6762-11e9-9adc-98bf1d35a056](https://www.ft.com/content/744f4fc4-6762-11e9-9adc-98bf1d35a056)
  [Accessed 17 September 2019].
-* World Government Bonds, 2019, Japan 5 Years CDS - Historical Data [Online] Available from: http://www.worldgovernmentbonds.com/cds-historical-data/japan/5-years/
+* World Government Bonds, 2019, Japan 5 Years CDS - Historical Data [Online] Available from: [http://www.worldgovernmentbonds.com/cds-historical-data/japan/5-years/](http://www.worldgovernmentbonds.com/cds-historical-data/japan/5-years/)
  [Accessed 17 September 2019].

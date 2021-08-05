@@ -45,10 +45,10 @@ This essay has discussed how to build the brand on the web using the online trad
 ## Reference
 * Beverland, M., 2018. Brand Management
 * Corstjens, M. and Steele, R., 2008. An international empirical analysis of the performance of manufacturers and retailers
-* Court, D. et al., 2009. The consumer decision journey [Online]. Available from: https://www.mckinsey.com/business-functions/marketing-and-sales/our-insights/the-consumer-decision-journey [Accessed 20 May 2020].
-* Kahneman, D., 2012. Of 2 Minds: How Fast and Slow Thinking Shape Perception and Choice [Excerpt] [Online]. Available from: https://www.scientificamerican.com/article/kahneman-excerpt-thinking-fast-and-slow/ [Accessed 20 May 2020].
-* Nordfält, J., 2020. Eye tracking 1 Lerum [Online]. Available from: https://www.youtube.com/watch?v=h_hXMp1FLFk [Accessed 20 May 2020].
+* Court, D. et al., 2009. The consumer decision journey [Online]. Available from: [https://www.mckinsey.com/business-functions/marketing-and-sales/our-insights/the-consumer-decision-journey](https://www.mckinsey.com/business-functions/marketing-and-sales/our-insights/the-consumer-decision-journey) [Accessed 20 May 2020].
+* Kahneman, D., 2012. Of 2 Minds: How Fast and Slow Thinking Shape Perception and Choice [Excerpt] [Online]. Available from: [https://www.scientificamerican.com/article/kahneman-excerpt-thinking-fast-and-slow/](https://www.scientificamerican.com/article/kahneman-excerpt-thinking-fast-and-slow/) [Accessed 20 May 2020].
+* Nordfält, J., 2020. Eye tracking 1 Lerum [Online]. Available from: [https://www.youtube.com/watch?v=h_hXMp1FLFk](https://www.youtube.com/watch?v=h_hXMp1FLFk) [Accessed 20 May 2020].
 * Nordfält, J., 2020. Search Engine Optimization: lecture slides. Unpublished.
-* PICKETT, P., 2019. The Characteristics of Generation C [Online]. Available from: https://www.thebalancecareers.com/who-is-generation-c-and-what-are-they-all-about-2071937 [Accessed 20 May 2020].
-* Poulou, P., 2018. From 4Ps to 4Es: Rethinking the Marketing Mix [Online]. Available from: https://www.linkedin.com/pulse/from-4ps-4es-philippe-poulou [Accessed 20 May 2020].
+* PICKETT, P., 2019. The Characteristics of Generation C [Online]. Available from: [https://www.thebalancecareers.com/who-is-generation-c-and-what-are-they-all-about-2071937](https://www.thebalancecareers.com/who-is-generation-c-and-what-are-they-all-about-2071937) [Accessed 20 May 2020].
+* Poulou, P., 2018. From 4Ps to 4Es: Rethinking the Marketing Mix [Online]. Available from: [https://www.linkedin.com/pulse/from-4ps-4es-philippe-poulou](https://www.linkedin.com/pulse/from-4ps-4es-philippe-poulou) [Accessed 20 May 2020].
 * Till, B.D., Baack, D. and Waterman, B, 2011. Strategic brand association maps: developing brand insight. Journal of product & brand management., 20(2), pp.92–100.

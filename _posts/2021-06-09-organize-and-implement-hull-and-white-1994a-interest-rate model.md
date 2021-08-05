@@ -550,7 +550,6 @@ It is given the simplified tree implementation mentioned above. The source code 
 {% endhighlight %}
 
 
-
 ## Reference
 * Hull, J. and A. White, 1994. "Numerical procedures for implementing term structure models I:Single-Factor Models,'' Journal of Derivatives, 2, 1 (Fall 1994a) 7−16
 * Strickland, C. and Clewlow, L., 1998. Implementing Derivatives Models
