@@ -24,7 +24,7 @@ permalink: /Travel/
 #### Malaysia
 #### Philippines
 
-## Instagram Gallery
+### Instagram Gallery
 
 Here is the pictures on [my Instagram account](https://www.instagram.com/haradakyo/?hl=en), which the place I visited is posted.
 
