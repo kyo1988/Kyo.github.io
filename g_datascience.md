@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 'Data Science'
+title: DataScience
 comments: yes
 permalink: /DataScience/
 ---
