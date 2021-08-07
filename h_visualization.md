@@ -8,7 +8,7 @@ permalink: /visualization/
 * Table of Contents
 {:toc}
 
-# Data Visualization
+## Data Visualization
 
 D3 is one of good methoid to visualize data even in Jekyll (static website), however, there is some dificulties to connect data source <cite>(Cole, 2017)</cite>. Tableau is another way to do so with easier data connection. Even if using Python (with its library, Seaborn and Pyplot) only, still we can plot sophisticated graphs at least some extent. Here is some example of that.
 

@@ -21,8 +21,3 @@ Here is the one of my portfolio related to Data Science [Business Analytics GitH
 ## Ask Consultation
 
 I can became your Data Scientist and Consultant especially for the firm which do not have the ones yet, then if you ask a job about that, Better call Kyo via [email](kh685mba@gmail.com), [Twitter](https://twitter.com/KyoHarada) or my [upwork profile](https://www.upwork.com/o/profiles/users/~01a04e0c3805f59a83/). Or if you are Japanese speaker, I have also Japanese local pratform [WorkShip profile](https://goworkship.com/profile/33012). 
-
-## Instagram Gallery
-
-Here is the pictures on [my Instagram account](https://www.instagram.com/haradakyo/?hl=en).
-

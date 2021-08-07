@@ -8,7 +8,7 @@ permalink: /marketing/
 * Table of Contents
 {:toc}
 
-# Marketing Science
+## Marketing Science
 
 I am writing a book named 'Introduction to Marketing Science'.
 It would be two version, which are essential version (exclude Code and Math) for KDP (Kindle Direct Publishing) and full version for PDF (which would be included in Python Code for Data Science applications).
@@ -16,14 +16,14 @@ It would be two version, which are essential version (exclude Code and Math) for
 Or You can see MBA style marketing in the article, titled [Marketing Plan for John Lewis](https://kyo1988.github.io/Kyo.github.io/marketing/2021/05/09/Marketing-Plan-for-John-Lewis.html).
 
 ## Purpose
-Literally textbook style of marketing science introduction, which is inspired by Grigsby (2018).
+Literally textbook style of marketing science introduction, which is inspired by Grigsby (2018), who said marketing insight must be induced to marketing actions.
 
 ## For What
-Marketing can be art and science, however, marketing science is only science, which is based on data. Then as for marketer, it might be hard to understand. This book fill the gap between marketer and data scientist using figures (Data visualization technique).
+Marketing can be art and science, however, marketing science is only science, which is based on data. Then as for marketers, it might be hard to understand. This book fills the gap between marketer and data scientist using figures (Data visualization technique).
 
 ## Target Audience
 * Data Scientists who are interested in Marketing
-* Marketer and Brand Manager who are interested in Data Science
+* Marketers and Brand Managers who are interested in Data Science
 
 ## Table of Contents
 1. Overview 
