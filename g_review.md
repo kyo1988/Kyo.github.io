@@ -8,7 +8,7 @@ permalink: /review/
 * Table of Contents
 {:toc}
 
-# Books We Can Learn Fundamental Methods of Data Science
+## Books We Can Learn Fundamental Methods of Data Science
 
 ## The Elements of Statistical Learning <cite>(Hastie, Tibshirani and Friedman, 2009)</cite>
 
