@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Review
+title: 'Data Science'
 comments: yes
-permalink: /review/
+permalink: /DataScience/
 ---
 
 * Table of Contents
@@ -10,7 +10,7 @@ permalink: /review/
 
 ## Books We Can Learn Fundamental Methods of Data Science
 
-## The Elements of Statistical Learning <cite>(Hastie, Tibshirani and Friedman, 2009)</cite>
+### The Elements of Statistical Learning <cite>(Hastie, Tibshirani and Friedman, 2009)</cite>
 
 <a target="_blank"  href="https://www.amazon.co.jp/gp/product/0387848576/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=0387848576&linkCode=as2&tag=kyo07e-22&linkId=5e61d6d9d352a068e888dbbd0ac047ae"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=JP&ASIN=0387848576&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=kyo07e-22" ></a>
 
@@ -29,13 +29,13 @@ If you want to see more practical version or do implement.
 
 <a target="_blank"  href="https://www.amazon.co.jp/gp/product/1071614177/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=1071614177&linkCode=as2&tag=kyo07e-22&linkId=d935373c22d74d46c9f2989533a590b2"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=JP&ASIN=1071614177&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=kyo07e-22" ></a>
 
-## Feature Engineering for Machine Learning <cite>(Zheng and Casari, 2018)</cite>
+### Feature Engineering for Machine Learning <cite>(Zheng and Casari, 2018)</cite>
 
 <a target="_blank"  href="https://www.amazon.co.jp/gp/product/B07BNX4MWC/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=B07BNX4MWC&linkCode=as2&tag=kyo07e-22&linkId=6bfa85bce5dc5d50cd20ae1e5015ab18"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=JP&ASIN=B07BNX4MWC&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=kyo07e-22" ></a>
 
 Before modeling, raw data is required to be featured in order to get insight, however, the practice of this process, ‘Feature engineering’ was not organized. This book is about that, which said ‘Good features should not only represent salient aspects of the data, but also conform to the assumptions of the model’.
 
-## Mostly Harmless Econometrics: An Empiricist's Companion <cite>(Angrist, 2008)</cite>
+### Mostly Harmless Econometrics: An Empiricist's Companion <cite>(Angrist, 2008)</cite>
 
 <a target="_blank"  href="https://www.amazon.co.jp/gp/product/0691120358/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=0691120358&linkCode=as2&tag=kyo07e-22&linkId=cdd94954c4ecfc42e9f2e1bb41f509ce"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=JP&ASIN=0691120358&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=kyo07e-22" ></a>
 
@@ -57,7 +57,7 @@ If you want to see more practical version or do implement.
 
 These definitions are retrived from <cite>(Angrist and Pischke, 2014)</cite>.
 
-## Econometric Analysis of Cross Section and Panel Data <cite>(Wooldridge, 2002)</cite>
+### Econometric Analysis of Cross Section and Panel Data <cite>(Wooldridge, 2002)</cite>
 
 <a target="_blank"  href="https://www.amazon.co.jp/gp/product/0262232588/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=0262232588&linkCode=as2&tag=kyo07e-22&linkId=fa4f1f8e64a4db4941358ff096425126"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=JP&ASIN=0262232588&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=kyo07e-22" ></a>
 
@@ -66,7 +66,7 @@ If you want to see more practical version or do implement.
 
 <a target="_blank"  href="https://www.amazon.co.jp/gp/product/1337558869/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=1337558869&linkCode=as2&tag=kyo07e-22&linkId=ab76d5723476a69ec51d73360543e8ac"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=JP&ASIN=1337558869&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=kyo07e-22" ></a>
 
-## Time series analysis (Hamilton, 1994)
+### Time series analysis (Hamilton, 1994)
 
 <a target="_blank"  href="https://www.amazon.co.jp/gp/product/0691042896/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=0691042896&linkCode=as2&tag=kyo07e-22&linkId=77d9e9fec9b9fa147bbdbc98b2d49e56"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=JP&ASIN=0691042896&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=kyo07e-22" ></a>
 
@@ -82,7 +82,7 @@ If you want to see more practical version or do implement.
 Recently Facebook developed ‘The Prophet Forecasting Model’ for Time Series Analysis <cite>(Taylor and Letham, 2017)</cite>.
 
 
-## Reference
+### Reference
 * Hastie, T., Tibshirani, R., and J. Friedman, J., 2009. The Elements of Statistical Learning
 * James, G., Witten, D., Hastie, T. and Tibshirani, R., 2013. An Introduction to Statistical Learning with Applications in R
 * Zheng, A. and Casari, A., 2018. Feature Engineering for Machine Learning
