@@ -29,7 +29,7 @@ Marketing can be art and science, however, marketing science is only science, wh
 1. Overview 
 2. Qualitative Marketing (Kotler school)
 3. Quantitative Marketing (Ehrenberg-Bass school)
-4. Digital Marketing
+4. Digital Marketing (Data Driven Marketing)
 5. Data science applications (Business Analytics)
 
 ## Cover Page
