@@ -44,6 +44,10 @@ After wrote the book, I will inform you using the email which you submited below
 
 {% include goole-form.html %}
 
+## Schedule
+This is a plan to write with Trello.
+
+{% include trello.html %}
 
 ## Reference
 * Beverland, M., 2018. Brand Management
