@@ -44,7 +44,6 @@ After wrote the book, I will inform you using the email which you submited below
 
 {% include goole-form.html %}
 
-The references would be below.
 
 ## Reference
 * Beverland, M., 2018. Brand Management
