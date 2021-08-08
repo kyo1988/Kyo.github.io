@@ -8,7 +8,7 @@ permalink: /Travel/
 * Table of Contents
 {:toc}
 
-## Find the best place to live 
+## Find the best place to travel and then live 
 ‘Travel is the only thing you buy that makes you richer’, someone said.
 
 ### East Europe
