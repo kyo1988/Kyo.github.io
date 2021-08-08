@@ -35,6 +35,7 @@ Marketing can be art and science, however, marketing science is only science, wh
 
 ## Cover Page
 This picture would be cover page.
+
 ![Figure 1](https://res.cloudinary.com/djiyxp5ax/image/upload/v1627115145/EBook_Cover_jwu2sy.png "EBook Cover")
 
 ## Get the PDF Book
