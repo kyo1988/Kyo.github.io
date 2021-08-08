@@ -26,11 +26,12 @@ Marketing can be art and science, however, marketing science is only science, wh
 * Marketers and Brand Managers who are interested in Data Science
 
 ## Table of Contents
-1. Overview 
+1. Overview (Introduction) 
 2. Qualitative Marketing (Kotler school)
 3. Quantitative Marketing (Ehrenberg-Bass school)
 4. Digital Marketing (Data Driven Marketing)
 5. Data science applications (Business Analytics)
+6. Summary (Conclusion)
 
 ## Cover Page
 This picture would be cover page.
