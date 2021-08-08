@@ -11,18 +11,18 @@ permalink: /Travel/
 ## Find the best place to travel and then live 
 ‘Travel is the only thing you buy that makes you richer’, someone said.
 
-### East Europe
-#### Ukraina
-#### Georgia
+## East Europe
+### Ukraina
+### Georgia
 
-### Northern America
-#### Canada
+## Northern America
+### Canada
 
-### Southeast Asia
-#### Thai
-#### Indonesia
-#### Malaysia
-#### Philippines
+## Southeast Asia
+### Thai
+### Indonesia
+### Malaysia
+### Philippines
 
 ## Instagram Gallery
 
