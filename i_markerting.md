@@ -52,6 +52,7 @@ This is a plan to write with Trello.
 ## Reference
 * Beverland, M., 2018. Brand Management
 * CHAVEZ, T., O’HARA, C. and VAIDYA, V., 2019. Data Driven: HARNESSING DATA AND AI TO REINVENT CUSTOMER ENGAGEMENT
+* Chaffey, D. and Smith, P., 2017. Digital Marketing Excellence, Fifth Edition
 * EHRENBERG, A.S.C., 1988. Repeat-buying: facts, theory and applications, New Edition
 * Grewal, D. and Levy, M., 2019, m: marketing, Sixth Edition
 * Grigsby, M., 2018. Marketing analytics, 2nd edition

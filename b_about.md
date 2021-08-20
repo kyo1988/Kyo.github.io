@@ -21,3 +21,10 @@ Here is the one of my portfolio related to Data Science [Business Analytics GitH
 ## Ask Consultation
 
 I can became your Data Scientist and Consultant especially for the firm which do not have the ones yet, then if you ask a job about that, Better call Kyo via [email](kh685mba@gmail.com), [Twitter](https://twitter.com/KyoHarada) or my [upwork profile](https://www.upwork.com/o/profiles/users/~01a04e0c3805f59a83/). Or if you are Japanese speaker, I have also Japanese local pratform [WorkShip profile](https://goworkship.com/profile/33012). 
+
+## Main Achievement in Consultation as a freelancing consultant
+### UK
+* Building marketing plan for [Amatis Training Ltd](https://www.amatistraining.com/)
+* Building new market entering strategy for [Judopay](https://www.judopay.com/)
+### Japan
+* Developing demand forecast model for [ipoca](https://ipoca.jp)
