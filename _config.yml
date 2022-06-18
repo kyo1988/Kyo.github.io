@@ -18,7 +18,7 @@ favicon:     "/images/IMG_0168.ico"
 #aboutme: Hi, this is Kyo, who am  a freelancing data scientist and consultant while working in a cosmetic firm as a brand manager.
 #these are shown on aboutme-sidebar.
 aboutme_photo: https://res.cloudinary.com/djiyxp5ax/image/upload/v1621667206/IMG_0082_txvfj3.jpg # your photo.
-google_analytics_key: UA-196500796-1
+#google_analytics_key: UA-196500796-1
 
 ### Site setting:
 ShowContactInfo: "True" # Personal Info (twitter,github,email) can be seen on aboutme-sidebar, those info only shown where ShowContactInfo == True
