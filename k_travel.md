@@ -13,10 +13,11 @@ permalink: /Travel/
 
 ## West Europe
 ### * Britain
-I lived here (mainly Bath and Exeter) for 2 years (Sep 2018 - Jun 2020). It is very beautiful. But it is difficult to find a job even having my British MBA. Although other West Europian countries are also difficult, still it is great to travel.
+I lived here (mainly Bath and Exeter) for 2 years around (Sep 2018 - Jun 2020). It is very beautiful. But it is difficult to find a job even having my British MBA. Although other West Europian countries are also difficult, still it is great to travel.
 ### * Spain
 ### * Italy
 ### * France
+### * Greece
 
 ## East Europe
 ### * Ukraina
@@ -26,11 +27,15 @@ I lived here (mainly Bath and Exeter) for 2 years (Sep 2018 - Jun 2020). It is v
 ### * Canada
 ### * USA
 
-## Southeast Asia
+## Southeast and East Asia
 ### * Thai
 ### * Indonesia
 ### * Malaysia
 ### * Philippines
+### * Taiwan
+
+### * Japan (Kamakura and Hakodate)
+Home country
 
 ## Instagram Gallery
 
