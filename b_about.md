@@ -29,4 +29,5 @@ I can became your Data Scientist and Consultant especially for the firm which do
 * Building new market entering strategy for [Judopay](https://www.judopay.com/)
 
 ### Japan
-* Developing demand forecast model for [ipoca](https://ipoca.jp)
+* Developed demand Goods Sale forecast model for [ipoca](https://ipoca.jp)
+* Developing demand Flash Sale forecast model and Follow Brand Recommender Engine for [GLADD](https://gladd.jp/)
