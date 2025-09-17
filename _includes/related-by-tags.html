@@ -1,10 +1,12 @@
 {% assign current = page %}
-{% assign related = site.posts | where_exp: "p", "p.url != current.url" | limit: 3 %}
+{% assign related = site.posts | limit: 3 %}
 <div class="related">
   <h3>次に読む</h3>
   <ul>
   {% for post in related %}
-    <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+    {% unless post.url == current.url %}
+      <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+    {% endunless %}
   {% endfor %}
   </ul>
 </div>
