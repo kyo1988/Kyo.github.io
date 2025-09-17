@@ -233,14 +233,7 @@ def monitor_performance():
 4. **運用監視システム** (Python)
 
 ## Q&A
-{% include qa.html 
-  q1="データ更新頻度は？" 
-  a1="四半期決算後1週間以内、リアルタイム監視"
-  q2="欠損値はどう対処？" 
-  a2="パターン分析→適切な補完手法選択"
-  q3="スケーラビリティは？" 
-  a3="MySQL + Redis + バッチ処理で対応"
-%}
+{% include qa.html q1="データ更新頻度は？" a1="四半期決算後1週間以内、リアルタイム監視" q2="欠損値はどう対処？" a2="パターン分析→適切な補完手法選択" q3="スケーラビリティは？" a3="MySQL + Redis + バッチ処理で対応" %}
 
 {% include cta.html %}
 {% include related-by-tags.html %}
