@@ -26,11 +26,14 @@ last_modified_at: 2025-01-19
 </figure>
 
 ## Q&A
-{% include qa.html items=[
-  {"q":"今回の目的は？","a":"LLM時代のDiscovery特化でブログをリフレッシュ"},
-  {"q":"どう評価した？","a":"構造化データとテンプレート化で引用されやすく"},
-  {"q":"次の一手は？","a":"商談直結ランディング記事の作成"}
-] %}
+{% include qa.html 
+  q1="今回の目的は？" 
+  a1="LLM時代のDiscovery特化でブログをリフレッシュ"
+  q2="どう評価した？" 
+  a2="構造化データとテンプレート化で引用されやすく"
+  q3="次の一手は？" 
+  a3="商談直結ランディング記事の作成"
+%}
 
 ## Sources
 - [Jekyll 4.2 Documentation](https://jekyllrb.com/docs/)
