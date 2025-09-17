@@ -1,32 +1,10 @@
 {% assign current = page %}
-{% assign related = site.posts | where_exp: "p", "p.url != current.url" %}
-{% assign scored = "" | split: "" %}
-{% for p in related %}
-  {% assign score = 0 %}
-  {% for t in current.tags %}
-    {% if p.tags contains t %}{% assign score = score | plus: 1 %}{% endif %}
-  {% endfor %}
-  {% if score > 0 %}
-    {% assign scored = scored | push: p | push: score %}
-  {% endif %}
-{% endfor %}
-{% comment %}
-scored = [post1,score1, post2,score2, ...] から上位3件抽出
-{% endcomment %}
-{% assign pairs = "" %}
-{% for i in (0..scored.size) %}
-  {% if forloop.index0 mod 2 == 0 and scored[i] %}
-    {% assign pairs = pairs | append: scored[i].url | append:"|" | append: scored[i+1] | append: "," %}
-  {% endif %}
-{% endfor %}
-{% assign arr = pairs | split: "," | sort | reverse %}
+{% assign related = site.posts | where_exp: "p", "p.url != current.url" | limit: 3 %}
 <div class="related">
   <h3>次に読む</h3>
   <ul>
-  {% for x in arr limit:3 %}
-    {% assign u = x | split:"|" | first %}
-    {% assign post = site.posts | where: "url", u | first %}
-    {% if post %}<li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>{% endif %}
+  {% for post in related %}
+    <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
   {% endfor %}
   </ul>
 </div>

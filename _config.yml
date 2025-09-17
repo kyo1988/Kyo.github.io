@@ -78,8 +78,6 @@ plugins:
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-paginate
-  - jekyll/tagging
-  - jekyll-tagging-related_posts
 
 # フィード/サイトマップ
 feed:
