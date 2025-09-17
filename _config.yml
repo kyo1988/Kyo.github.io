@@ -1,24 +1,32 @@
 ### Site info:
-title: Kyo's Blog
-tagline: MBA | Brand Manager | Data Scientist
-author: Kyo
+title: "Kyo Harada — Visage AI / Data Scientist"
+tagline: "Founder & Data Scientist building on-device AI for skin analytics and finance-grade data products."
+author: Kyo Harada
 email: kh685mba@gmail.com
-description: "Blog by Kyo who am a freelancing Data Scientist and Consultant"
-keywords: "Brand Manager, Freelancer, Data Scientist, Consultant"
+description: "Founder & Data Scientist building on-device AI for skin analytics and finance-grade data products."
+keywords: "Data Scientist, AI, CoreML, Finance, EDINET, RAG, LLM, Consulting"
 baseurl: "/Kyo.github.io" # the subpath of your site, e.g. /blog/
-url: "https://kyo1988.github.io/Kyo.github.io/" # the base hostname & protocol for your site
-locale: en_US
+url: "https://kyo1988.github.io" # the base hostname & protocol for your site
+lang: "ja"
+locale: ja_JP
 
 ### Personal info and site tools info:
 twitter_username: kyoHarada
-github_username:  kyo1988
-#linkedin: KyoHarada
+github_username: kyo1988
+linkedin: KyoHarada
 disqus_shortname: kyo
-favicon:     "/images/IMG_0168.ico"
-#aboutme: Hi, this is Kyo, who am  a freelancing data scientist and consultant while working in a cosmetic firm as a brand manager.
-#these are shown on aboutme-sidebar.
-aboutme_photo: https://res.cloudinary.com/djiyxp5ax/image/upload/v1621667206/IMG_0082_txvfj3.jpg # your photo.
-#google_analytics_key: UA-196500796-1
+favicon: "/images/IMG_0168.ico"
+aboutme_photo: https://res.cloudinary.com/djiyxp5ax/image/upload/v1621667206/IMG_0082_txvfj3.jpg
+
+# Cloudinary等のカスタム設定
+cloudinary:
+  cloud_name: "djiyxp5ax"
+  base: "https://res.cloudinary.com/djiyxp5ax/image/upload"
+
+# SEO
+seo:
+  type: "Person"
+  name: "Kyo Harada"
 
 ### Site setting:
 ShowContactInfo: "True" # Personal Info (twitter,github,email) can be seen on aboutme-sidebar, those info only shown where ShowContactInfo == True
@@ -60,17 +68,22 @@ locales:
 
 ### Build settings
 markdown: kramdown
-#highlighter: pygments
 kramdown:
-        input: GFM
-        syntax_highlighter: rouge
+  input: GFM
+  syntax_highlighter: rouge
+
+# GitHub Pagesで許可されるプラグインのみ
 plugins:
-  - jekyll-paginate
-  - jekyll-feed
-  - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-paginate
   - jekyll/tagging
   - jekyll-tagging-related_posts
+
+# フィード/サイトマップ
+feed:
+  path: atom.xml
 
 paginate: 3
 excerpt_separator: <!-- more -->

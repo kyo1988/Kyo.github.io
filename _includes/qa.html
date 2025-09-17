@@ -1,0 +1,9 @@
+<section class="qa">
+  <h2>Q&A</h2>
+  <dl>
+    {% for item in include.items %}
+      <dt>{{ item.q }}</dt>
+      <dd>{{ item.a }}</dd>
+    {% endfor %}
+  </dl>
+</section>

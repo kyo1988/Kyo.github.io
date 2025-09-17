@@ -1,6 +1,32 @@
 ---
 layout: default
 ---
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ page.title | escape }}",
+  "description": "{{ page.description | strip_newlines | escape }}",
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
+  "author": {
+    "@type": "Person",
+    "name": "Kyo Harada",
+    "sameAs": [
+      "https://github.com/kyo1988",
+      "https://www.visageaiconsulting.com/",
+      "https://www.linkedin.com/in/KyoHarada"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Visage AI Consulting"
+  },
+  "mainEntityOfPage": {"@type": "WebPage","@id": "{{ page.url | absolute_url }}"}
+}
+</script>
+
 <div class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 itemprop="name" class="post-title">{{ page.title }}</h1>
