@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width initial-scale=1">
+<meta property="og:title" content="Service Design Analysis of Monzo">
+
+<title>Service Design Analysis of Monzo</title>
+<meta property="og:description" content="This is a modified version of the report for Service Design in Bath Full Time MBA Class of 2020.">
+<meta property="og:url" content="https://kyo1988.github.io/business/start-up/design/2021/05/10/service-design-analysis-of-monzo.html">
+<meta property="og:site_name" content="Kyo Harada — Visage AI / Data Scientist">
+<meta property="og:locale" content="ja_JP">
+
+<meta property="article:author" content="https://www.linkedin.com/in/KyoHarada" />
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@kyoHarada">
+<meta name="twitter:creator" content="@kyoHarada">
+<meta name="twitter:title" content="Service Design Analysis of Monzo">
+<meta name="twitter:description" content="This is a modified version of the report for Service Design in Bath Full Time MBA Class of 2020.">
+<meta name="twitter:url" content="https://kyo1988.github.io/business/start-up/design/2021/05/10/service-design-analysis-of-monzo.html">
+
+<meta name="keywords" content="Data Scientist, AI, CoreML, Finance, EDINET, RAG, LLM, Consulting">
+
+<meta name="google-site-verification" content="kZFzSU3m_vE_Y0Ja60lWjUOKkeGpV7Ch3CvfLeP8Di4" />
+
+<link rel="icon" href="/Kyo.github.io/images/IMG_0168.ico">
+<link rel="stylesheet" href="/Kyo.github.io/css/main.css">
+<link rel="canonical" href="https://kyo1988.github.io/business/start-up/design/2021/05/10/service-design-analysis-of-monzo.html">
+<link rel="alternate" type="application/atom+xml" title="Kyo Harada — Visage AI / Data Scientist" href="https://kyo1988.github.io/feed.xml" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<script async defer src="//assets.pinterest.com/js/pinit.js"></script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T222J2Q');</script>
+<!-- End Google Tag Manager -->
+
+</head>
+<!-- <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-196500796-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-196500796-1');
+</script> -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true
+    },
+    CommonHTML: { matchFontHeight: false },
+    displayAlign: "left",
+    displayIndent: "2em",
+    TeX: {
+      equationNumbers: { autoNumber: "AMS" },
+    }
+  });
+</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS_CHTML"></script>
+<!-- <link type="application/atom+xml" rel="alternate" href="https://kyo1988.github.io/Kyo.github.io/atom.xml" title="Kyo Harada — Visage AI / Data Scientist" /> -->
+<!-- <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Service Design Analysis of Monzo | Kyo Harada — Visage AI / Data Scientist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Service Design Analysis of Monzo" />
+<meta name="author" content="Kyo Harada" />
+<meta property="og:locale" content="ja_JP" />
+<meta name="description" content="This is a modified version of the report for Service Design in Bath Full Time MBA Class of 2020." />
+<meta property="og:description" content="This is a modified version of the report for Service Design in Bath Full Time MBA Class of 2020." />
+<link rel="canonical" href="https://kyo1988.github.io/Kyo.github.io/business/start-up/design/2021/05/10/service-design-analysis-of-monzo.html" />
+<meta property="og:url" content="https://kyo1988.github.io/Kyo.github.io/business/start-up/design/2021/05/10/service-design-analysis-of-monzo.html" />
+<meta property="og:site_name" content="Kyo Harada — Visage AI / Data Scientist" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-05-10T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Service Design Analysis of Monzo" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Kyo Harada"},"dateModified":"2021-05-10T00:00:00+09:00","datePublished":"2021-05-10T00:00:00+09:00","description":"This is a modified version of the report for Service Design in Bath Full Time MBA Class of 2020.","headline":"Service Design Analysis of Monzo","mainEntityOfPage":{"@type":"WebPage","@id":"https://kyo1988.github.io/Kyo.github.io/business/start-up/design/2021/05/10/service-design-analysis-of-monzo.html"},"url":"https://kyo1988.github.io/Kyo.github.io/business/start-up/design/2021/05/10/service-design-analysis-of-monzo.html"}</script>
+<!-- End Jekyll SEO tag -->
+ -->
+
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T222J2Q"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="container">
+
+  <header class="site-header">
+
+  <div class="wrapper">
+
+    <h1 class="site-title"><a href="/Kyo.github.io">Kyo Harada — Visage AI / Data Scientist</a></h1>
+    <h3 class="site-meta">Founder & Data Scientist building on-device AI for skin analytics and finance-grade data products.</h3>
+
+    <nav class="site-nav">
+<!--       <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a> -->
+      <div class="trigger">
+        
+        
+        <a class="page-link" href="/Kyo.github.io/">Home</a>
+        
+        
+        
+        <a class="page-link" href="/Kyo.github.io/about/">About</a>
+        
+        
+        
+        <a class="page-link" href="/Kyo.github.io/about/">About</a>
+        
+        
+        
+        <a class="page-link" href="/Kyo.github.io/archives/">Archives</a>
+        
+        
+        
+        <a class="page-link" href="/Kyo.github.io/case-studies/">Case Studies</a>
+        
+        
+        
+        <a class="page-link" href="/Kyo.github.io/categories/">Categories</a>
+        
+        
+        
+        <a class="page-link" href="/Kyo.github.io/tags/">Tags</a>
+        
+        
+        
+        <a class="page-link" href="/Kyo.github.io/guestbook/">Guestbook</a>
+        
+        
+        
+        <a class="page-link" href="/Kyo.github.io/xml/feed.xml">Subscribe</a>
+        
+        
+        
+        <a class="page-link" href="/Kyo.github.io/DataScience/">DataScience</a>
+        
+        
+        
+        <a class="page-link" href="/Kyo.github.io/visualization/">Visualization</a>
+        
+        
+        
+        <a class="page-link" href="/Kyo.github.io/marketing/">Marketing</a>
+        
+        
+        
+        
+        
+        <a class="page-link" href="/Kyo.github.io/Investment/">Investment</a>
+        
+        
+        
+        <a class="page-link" href="/Kyo.github.io/Travel/">Travel</a>
+        
+        
+        
+        
+        
+        <a class="page-link" href="/Kyo.github.io/newsletter/">Newsletter</a>
+        
+        
+        
+        <a class="page-link" href="/Kyo.github.io/press-kit/">Press Kit</a>
+        
+        
+        
+        <a class="page-link" href="/Kyo.github.io/xml/sitemap.xml">Sitemap</a>
+        
+        
+        
+        <a class="page-link" href="/Kyo.github.io/work-with-me/">Work with me</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+  
+
+  <div class="page-content">
+    <div class="wrapper">
+      <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Service Design Analysis of Monzo | Kyo Harada — Visage AI / Data Scientist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Service Design Analysis of Monzo" />
+<meta name="author" content="Kyo Harada" />
+<meta property="og:locale" content="ja_JP" />
+<meta name="description" content="This is a modified version of the report for Service Design in Bath Full Time MBA Class of 2020." />
+<meta property="og:description" content="This is a modified version of the report for Service Design in Bath Full Time MBA Class of 2020." />
+<link rel="canonical" href="https://kyo1988.github.io/Kyo.github.io/business/start-up/design/2021/05/10/service-design-analysis-of-monzo.html" />
+<meta property="og:url" content="https://kyo1988.github.io/Kyo.github.io/business/start-up/design/2021/05/10/service-design-analysis-of-monzo.html" />
+<meta property="og:site_name" content="Kyo Harada — Visage AI / Data Scientist" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-05-10T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Service Design Analysis of Monzo" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Kyo Harada"},"dateModified":"2021-05-10T00:00:00+09:00","datePublished":"2021-05-10T00:00:00+09:00","description":"This is a modified version of the report for Service Design in Bath Full Time MBA Class of 2020.","headline":"Service Design Analysis of Monzo","mainEntityOfPage":{"@type":"WebPage","@id":"https://kyo1988.github.io/Kyo.github.io/business/start-up/design/2021/05/10/service-design-analysis-of-monzo.html"},"url":"https://kyo1988.github.io/Kyo.github.io/business/start-up/design/2021/05/10/service-design-analysis-of-monzo.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Service Design Analysis of Monzo",
+  "description": "",
+  "datePublished": "2021-05-10T00:00:00+0900",
+  "dateModified": "2021-05-10T00:00:00+0900",
+  "author": {
+    "@type": "Person",
+    "name": "Kyo Harada",
+    "sameAs": [
+      "https://github.com/kyo1988",
+      "https://www.visageaiconsulting.com/",
+      "https://www.linkedin.com/in/KyoHarada"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Visage AI Consulting"
+  },
+  "mainEntityOfPage": {"@type":"WebPage","@id":"https://kyo1988.github.io/Kyo.github.io/business/start-up/design/2021/05/10/service-design-analysis-of-monzo.html"}
+}
+</script>
+
+<div class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 itemprop="name" class="post-title">Service Design Analysis of Monzo</h1>
+    <meta itemprop="keywords" content="Business Start-Up Design" />
+    <p class="post-meta">
+    Posted in
+    
+    <a href="/Kyo.github.io/categories/#Business">Business</a>, 
+    
+    <a href="/Kyo.github.io/categories/#Start-Up">Start-Up</a>, 
+    
+    <a href="/Kyo.github.io/categories/#Design">Design</a>
+    
+    
+    and tagged
+    
+    <a href="/Kyo.github.io/tags/#Business Start-Up Design" title="Business Start-Up Design">Business Start-Up Design</a>
+    
+    
+    <time itemprop="datePublished" datetime="2021-05-10">
+    on May 10, 2021
+    </time>
+    </p>
+  </header>
+
+  <article class="post-content" itemprop="articleBody">
+    <ul id="markdown-toc">
+  <li><a href="#service-design-analysis-of-monzo" id="markdown-toc-service-design-analysis-of-monzo">Service Design Analysis of Monzo</a>    <ul>
+      <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
+      <li><a href="#ethnography-fieldwork" id="markdown-toc-ethnography-fieldwork">Ethnography (Fieldwork)</a>        <ul>
+          <li><a href="#immersion-episode-1-pretransaction-verification" id="markdown-toc-immersion-episode-1-pretransaction-verification">Immersion Episode 1: Pretransaction (Verification)</a></li>
+          <li><a href="#immersion-episode-2-posttransaction-user-feedback" id="markdown-toc-immersion-episode-2-posttransaction-user-feedback">Immersion Episode 2: Posttransaction (User feedback)</a></li>
+          <li><a href="#salient-attribution" id="markdown-toc-salient-attribution">Salient Attribution</a></li>
+        </ul>
+      </li>
+      <li><a href="#script-blueprint" id="markdown-toc-script-blueprint">Script (Blueprint)</a>        <ul>
+          <li><a href="#blueprint-of-the-existing-service" id="markdown-toc-blueprint-of-the-existing-service">Blueprint of the Existing Service</a></li>
+        </ul>
+      </li>
+      <li><a href="#staging-recommendation" id="markdown-toc-staging-recommendation">Staging (Recommendation)</a>        <ul>
+          <li><a href="#blueprint-of-the-improved-service" id="markdown-toc-blueprint-of-the-improved-service">Blueprint of the Improved Service</a></li>
+        </ul>
+      </li>
+      <li><a href="#future-remark-additional-recommendations" id="markdown-toc-future-remark-additional-recommendations">Future remark (Additional recommendations)</a></li>
+      <li><a href="#conclusion" id="markdown-toc-conclusion">Conclusion</a></li>
+      <li><a href="#appendix-the-result-of-semi-directed-interview" id="markdown-toc-appendix-the-result-of-semi-directed-interview">Appendix (The Result of Semi-directed Interview)</a></li>
+      <li><a href="#reference" id="markdown-toc-reference">Reference</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>This is a modified version of the report for Enterprise in Action in Bath Full Time MBA Class of 2020.</p>
+
+<h1 id="service-design-analysis-of-monzo">Service Design Analysis of Monzo</h1>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>‘Every Company Will Be a Fintech Company’ argued Strange (2019).  Some of the major examples are Shopify (web monthly subscription service for merchant) and Mindbody (fitness studio management assistant service), both of which earn a half of their profit by financial services (ibid).  However, no single firm might be able to cover all of financial services infrastructure and therefore, they concentrate on each layer of that such as fraud, payment and data, which are offered as a service by them (ibid).  One of the companies focused on the payment layer in financial services infrastructure is Monzo which is a digital bank that forcuses to simplify the process its users maintain their payment by enabling them to monitor spending, divide bills, transfer money and more on their mobile <cite>(CBInshight, 2020)</cite>.  One of major difference with other bank Apps is viewing real-time balances due to the fact that most of banks spend 48 hours to count their transaction on its user’s statements due to the cloud computing <cite>(AWS, 2020)</cite>.  This is primary because the cloud such as Amazon Web Service (AWS) can provide the banks with all IT infrastructures to run their business, which is quite cheaper (maximally 75% of whole IT budget is used) than when they purchase individually and thus they can spend the money to improve their services fully and rapidly expand the ones <cite>(Strange, 2019)</cite>.  This essay will discuss the service of the fintech company and recommendation for the improvement of the payment service including tax calculation of the firm in terms of service design method such as Ethnography, Script and Staging.</p>
+
+<h2 id="ethnography-fieldwork">Ethnography (Fieldwork)</h2>
+<p>Ethnographic studies are required to clarify the salient attributes of the observed service experience <cite>(Fragnière, Nanchen and Sitten, 2012)</cite>.  The author participated the pretransition (verification process in the register one) and post transaction (user feedback process), both of which are called immersion episodes and used to identify the salient attributes of the payment service.</p>
+
+<h3 id="immersion-episode-1-pretransaction-verification">Immersion Episode 1: Pretransaction (Verification)</h3>
+<p>In the registoring process, after typed in the installed Monzo App on the mobile phone via its landing page and Apple store (or Google play), the user has to be verified.  The firm selected two stage verification, which are required to the identification such as a biometric card (the author selected, other forms including passport or photo-card driving license are also acceptable) and short self introduction video with the statement (“This is [Username]. I have a Monzo account”).  This process is only on the mobile app and therefore, the author felt some concern and fear about the data security in the process because no employees directly stay with him (which is the major difference between Monzo and retail bank including HSBC).</p>
+
+<h3 id="immersion-episode-2-posttransaction-user-feedback">Immersion Episode 2: Posttransaction (User feedback)</h3>
+<p>Monzo opens the Monzo Community Forum to collect user feedback.  After a new feature launched, the bank announce it to the customers on the online forum which is linked to its one of the landing pages named ‘Making Monzo’.  The users can comment their feedback directly for the feature they used after created their own account and the employees repley to their one intarctively.  All discussion has been saved and can be arranged in order of the timeline then every customers can read all of them.  For instance, they do not export the notification as an evidence for the payment such as PDF, which is remarkable difference from retail banks because the screenshot of payment confirmation is unlikely to be acceptable for some institutions.  This unenabled notification export problem has been alerted by a customer in the Monzo on the web community forum and the employees have responded and then they are struggling to solve the issue.  Therefore, while there is still some difficulty and inconvenience of the Monzo services, the customers can communicate with the staff of Monzo on the web community.</p>
+
+<h3 id="salient-attribution">Salient Attribution</h3>
+<p>Mental (or emotional) salient attributions has appeared through the immersion episodes and semi-directed interviews (see appendix) in this industory.  They can be security (from episode 1), commitment and consistency (from episode 2).  On the other hand, functional attributions might be emerged via competitor’s analysis, two major examples of which are Revolut and Starling <cite>(Lauren, 2020)</cite>.  The former provides free ATM withdrawals as far as £200 per month with 2% fee, which is marginally less expensive than Monzo (ibid).  The latter has slightly less understandable overdraft charges than Monzo, which is set to 15% annual charge rate in comparison to limiting maximum of the charge fee to £15.50 per month and a £20 buffer.  This may mean almost zero cash withdrawal cost and overdraft charge fee are functional minimum requirement as for the mobile banking consumers.  This is because enabling the users to withdraw and overdraft itself seem not to lead to the competitive advantage and therefore, only implement of these services with cheaper price than the competitors tend to have a perceived value for the users.</p>
+
+<h2 id="script-blueprint">Script (Blueprint)</h2>
+<p>The service blueprint highlights how different the customer journey, frontstage (touch points), back-stage and these interactions because it is quite structured and support to coordinate the roles of different functions <cite>(REASON, LØVLIE and FLU, 2016)</cite>.  However, Monzo operates above 1600 microservices on AWS <cite>(AWS, 2020)</cite>.  Therefore, the scope of blueprint is required to focus on their core business which is online payment on the mobile.</p>
+
+<h3 id="blueprint-of-the-existing-service">Blueprint of the Existing Service</h3>
+<p>Figure 1 demonstrates the customer journey and its interactions of their whole payment transaction.  As the figure shows, a customer installed the app with registration to receive the debit card which enable them to purchase what they want via the card after they charge the money through their online account on Monzo.  After payment, they can obtain the notification of the payment on the web or app (mobile) and then unlike most banks, they can confirm their balance counted on this transaction immediately.</p>
+
+<p><img src="https://res.cloudinary.com/djiyxp5ax/image/upload/v1598793894/%E5%9B%B31c.png" alt="Figure 1" title="Figure 1" /></p>
+
+<p>Figure 1: The service blueprint of Monzo mobile payment service. * Dotted line: Line of interaction, Line: Line of visibility and Double line: Line of internal interaction</p>
+
+<p>Monzo provides mainly free mobile account for the customers, however, recently has released the premium account called ‘Business Pro’ which costs £5 per month for small businesses and freelancers, the main feature of which is ‘Tax Pots’ that can calculate the tax based on their salary instead of an accountant <cite>(EPSTEIN, 2020)</cite>.  The tax calculation is used by third-party accounting software <cite>(O’Hear, 2020)</cite>.  Therefore, the blueprint of the payment service including tax calculation is seen in Figure 2.</p>
+
+<p><img src="https://res.cloudinary.com/djiyxp5ax/image/upload/v1598793940/%E5%9B%B32c.png" alt="Figure 2" title="Figure 2" /></p>
+
+<p>Figure 2: The service blueprint of Monzo mobile payment service with ‘TaxPods’ for premium users.</p>
+
+<h2 id="staging-recommendation">Staging (Recommendation)</h2>
+<p>The issue of introducing the premium account with new features mainly ‘Taxpods’ is if the customers have the willing-to-pay (WTP).  One of the methods to detect their WTP is theatre-based approaches which is based on the script (and role play) to envision the problem recommendation suggested by the service <cite>(Fragnière, Nanchen and Sitten, 2012)</cite>.</p>
+
+<h3 id="blueprint-of-the-improved-service">Blueprint of the Improved Service</h3>
+<p>As a result of playing a role as a premium user, the most significant mental silent attributions can be consistency among of them.  This is primary because Monzo is aiming to be ‘a bank that lives on your smartphone’ <cite>(AWS, 2020)</cite>.  This is likely to imply all payment transactions should be able to be delivered on the mobile for the consistency of their mission and therefore, the tax payment calculated by ‘TaxPods’ also should be able to be granted on the mobile.  In addition, the tax payment tends to be done regularly and annually and therefore, it should be done automatically.  Furthermore, the tax amount calculation is based on the customer’s annual income <cite>(EPSTEIN, 2020)</cite>.  Therefore, it might be required to restrict withdrawing a part of their deposit automatically in order to prepare the automatic tax payment because now the customer can deposit the money for any purpose in another pod in the same account by hand but they cannot do so automatically therefore it is important for mitigating customer’s pain and then it should be able to be confirmed and be noticed to the users as it is happened for the same reason of automatic reservation.  Figure 3 shows the blueprint of the recommended mobile payment service of Monzo including the tax payment for the premium users.  It is seen the customer is not required to a certain additional action for these improvements, however, they might feel they are going to prepare the tax payment by the reserve for the tax notification, which is likely to rise their WTP.</p>
+
+<p><img src="https://res.cloudinary.com/djiyxp5ax/image/upload/v1598793972/%E5%9B%B33c.png" alt="Figure 3" title="Figure 3" /></p>
+
+<p>Figure 3: The service blueprint of Monzo recommended mobile payment service.</p>
+
+<h2 id="future-remark-additional-recommendations">Future remark (Additional recommendations)</h2>
+<p>Tax calculation service (‘Taxpods’) was built as a result of customer surveys and feedbacks <cite>(O’Hear, 2020)</cite>.  In addition, the recommended service improvement in this essay are likely to increase WTP, however, how much they are going to pay for these services seem not to be verified sufficiently by the firm.  Theatre-based experimental study might also provide the solution for the pricing issue.  Therefore, the experiment should be designed for WTP and Price What You Want (PWYW).  The individuals selected randomly from the certain target segment such as millenniums are required to choose the feasible given options, the examples of which are GBP 0  , GBP 2, GBP 4, GBP 5 , GBP 7 <cite>(Catenazzo and Fragnière, 2010)</cite>.  Although it depends on the result of the experiment, at least, the one might be able to conclude if the customers have WTP and then if they have, how much PWYW is.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>This essay has discussed about the payment service of Monzo, especially pre transaction and post one of tax calculation which is offered for the premium users.  Moreover, the recommendation for the improvement of the total payment service including tax calculation in terms of service design method such as Ethnography, Script and Staging.  As a result of these analysis, the current tax calculation service seems to be not consistent with their mission and although they can reduce the cost the users hire an accountant or purchase an accounting service to integrate third party software with their service, there is still inconvenience and inconsistency.  This is mainly because the customers have an obligation to pay the tax after the calculation, and they must reserve the certain amount of money for the tax payment.  In addition, the service may not validate if the users have a willing to pay and how much they can pay for it.  Theatre-based statistic experiments can answer both issues.</p>
+
+<h2 id="appendix-the-result-of-semi-directed-interview">Appendix (The Result of Semi-directed Interview)</h2>
+<p><img src="https://res.cloudinary.com/djiyxp5ax/image/upload/v1598794008/appendix_c.png" alt="Figure Appendix" title="Figure Appendix" /></p>
+
+<h2 id="reference">Reference</h2>
+<ul>
+  <li>Lauren, 2020. Monzo Review: Should you make the switch? [Online]. Available from: <a href="https://moneytothemasses.com/banking/monzo-review-should-you-make-the-switch/amp">https://moneytothemasses.com/banking/monzo-review-should-you-make-the-switch/amp</a> [Accessed 17 April 2020].</li>
+  <li>CBInshight, 2020. Monzo [Online]. Available from: <a href="https://www.cbinsights.com/company/mondo">https://www.cbinsights.com/company/mondo</a> [Accessed 17 April 2020].</li>
+  <li>AWS, 2020. Monzo Case Study [Online]. Available from: <a href="https://aws.amazon.com/jp/solutions/case-studies/monzo/">https://aws.amazon.com/jp/solutions/case-studies/monzo/</a> [Accessed 17 April 2020].</li>
+  <li>Strange, A., 2019. Every Company Will Be a Fintech Company [Online]. Available from: <a href="https://a16z.com/2020/01/21/every-company-will-be-a-fintech-company/">https://a16z.com/2020/01/21/every-company-will-be-a-fintech-company/</a> [Accessed 17 April 2020].</li>
+  <li>Fragnière, E., Nanchen, B. and Sitten, M., 2012. Performing Service Design Experiments Using Ethnomethodology and Theatre-Based Reenactment: A Swiss Ski Resort Case Study</li>
+  <li>REASON, B., LØVLIE, L. and FLU, M.B., 2016. SERVICE DESIGN FOR BUSINESS A Practical Guide to Optimizing the Customer Experience</li>
+  <li>EPSTEIN, S., 2020. Monzo’s next big move is taking on broken business banking [Online]. Available from: <a href="https://www.wired.co.uk/article/monzo-business-account">https://www.wired.co.uk/article/monzo-business-account</a> [Accessed 17 April 2020].</li>
+  <li>O’Hear, S., 2020. Monzo launches free and paid-for business bank accounts [Online]. Available from: <a href="https://techcrunch.com/2020/03/17/monzo-business-bank-accounts/amp/">https://techcrunch.com/2020/03/17/monzo-business-bank-accounts/amp/</a> [Accessed 17 April 2020].</li>
+  <li>Catenazzo, G. and Fragnière, E., 2010. Pricing Traditional Travel Agency Services: A Theatre-Based Experimental Study</li>
+</ul>
+
+  </article>
+  <hr />
+</div>
+
+
+<div>
+  <h1>Related Posts</h1>
+  <ul>
+  
+    <li><a href="/business/analyics/2021/06/18/SALES-FORECASTING-2.html">SALES FORECASTING 2</a></li>
+  
+    <li><a href="/business/finance/2021/06/09/organize-and-implement-hull-and-white-1994a-interest-rate-model.html">Organize and implement Hull and White (1994a) interest rate model</a></li>
+  
+    <li><a href="/business/finance/2021/06/03/derivation-of-black-scholes-pde-and-its-analytical-solution-by-arbitrage-pricing-theory.html">Derivation of Black-Scholes PDE and its analytical solution by arbitrage pricing theory</a></li>
+  
+    <li><a href="/business/finance/2021/05/31/derivation-of-yield-curve-construction-formula-with-tenor-basis-spread.html">Derivation of yield curve construction formula with tenor basis spread</a></li>
+  
+    <li><a href="/business/finance/2021/05/26/vc-finance.html">Venture capital finance</a></li>
+  
+    <li><a href="/business/finance/marketing/2021/05/26/strategic-brand-management.html">Strategic brand management</a></li>
+  
+    <li><a href="/business/finance/2021/05/26/sources-of-finance.html">Sources of finance</a></li>
+  
+  </ul>
+</div>
+
+
+<section class="pager">
+  <ul>
+    
+    <li class="previous"><a href="/Kyo.github.io/finance/start-up/2021/05/10/financial-projection-of-a-meal-kit-start-up.html" title="Financial projection of a Meal Kit Start-Up">&larr; Older</a></li>
+    
+    
+    <li class="next"><a href="/Kyo.github.io/business/start-up/design/2021/05/25/cloud-computing-could-change-cell-phone-business.html" title="Cloud Computing could change cell phone business?">Newer &rarr;</a></li>
+    
+  </ul>
+</section>
+
+<div id="disqus_thread"></div>
+
+<script type="text/javascript">
+
+  var disqus_developer = 1;
+
+var disqus_shortname ='kyo';
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+  dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+    </div>
+  </div>
+  <section class="pager">
+  
+  
+</section>
+
+
+
+  
+
+  <footer class="site-footer">
+
+  <p>Copyright &copy; <a href="/Kyo.github.io/">Kyo Harada — Visage AI / Data Scientist</a></p>
+  <p>Powered by <a href="https://github.com/jekyll/jekyll">Jekyll</a>
+  on
+  <a href="https://github.com/">Github</a>
+  | Theme <a href="https://github.com/yulijia/freshman21/">Freshman21</a> Design by <a href="https://yulijia.net">Lijia Yu</a>
+
+</footer>
+
+
+</div>
+
+<!-- Lazy loading script -->
+<script src="/Kyo.github.io/assets/js/lazyfix.js"></script>
+
+</body>
+
+</html>

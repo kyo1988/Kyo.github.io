@@ -1,16 +1,9 @@
-# frozen_string_literal: true
-
 source "https://rubygems.org"
 
-git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
+# GitHub Pages環境（Jekyll 3.x系を内包）
+gem "github-pages", group: :jekyll_ghpages
 
-# gem "rails"
-
-gem "jekyll", "~> 4.2"
-
-group :jekyll_plugins do
-  gem 'jekyll-sitemap'
-  gem 'jekyll-feed'
-  gem 'jekyll-seo-tag'
-  gem 'jekyll-paginate'
+# 開発ユーティリティ（任意）
+group :tools do
+  gem "webrick"
 end

@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width initial-scale=1">
+<meta property="og:title" content="SALES FORECASTING 2">
+
+<title>SALES FORECASTING 2</title>
+<meta property="og:description" content="This is a modified version of the report for Business Analyics in Bath Full Time MBA Class of 2020.">
+<meta property="og:url" content="https://kyo1988.github.io/business/analyics/2021/06/18/SALES-FORECASTING-2.html">
+<meta property="og:site_name" content="Kyo Harada — Visage AI / Data Scientist">
+<meta property="og:locale" content="ja_JP">
+
+<meta property="article:author" content="https://www.linkedin.com/in/KyoHarada" />
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@kyoHarada">
+<meta name="twitter:creator" content="@kyoHarada">
+<meta name="twitter:title" content="SALES FORECASTING 2">
+<meta name="twitter:description" content="This is a modified version of the report for Business Analyics in Bath Full Time MBA Class of 2020.">
+<meta name="twitter:url" content="https://kyo1988.github.io/business/analyics/2021/06/18/SALES-FORECASTING-2.html">
+
+<meta name="keywords" content="Data Scientist, AI, CoreML, Finance, EDINET, RAG, LLM, Consulting">
+
+<meta name="google-site-verification" content="kZFzSU3m_vE_Y0Ja60lWjUOKkeGpV7Ch3CvfLeP8Di4" />
+
+<link rel="icon" href="/Kyo.github.io/images/IMG_0168.ico">
+<link rel="stylesheet" href="/Kyo.github.io/css/main.css">
+<link rel="canonical" href="https://kyo1988.github.io/business/analyics/2021/06/18/SALES-FORECASTING-2.html">
+<link rel="alternate" type="application/atom+xml" title="Kyo Harada — Visage AI / Data Scientist" href="https://kyo1988.github.io/feed.xml" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<script async defer src="//assets.pinterest.com/js/pinit.js"></script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T222J2Q');</script>
+<!-- End Google Tag Manager -->
+
+</head>
+<!-- <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-196500796-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-196500796-1');
+</script> -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true
+    },
+    CommonHTML: { matchFontHeight: false },
+    displayAlign: "left",
+    displayIndent: "2em",
+    TeX: {
+      equationNumbers: { autoNumber: "AMS" },
+    }
+  });
+</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS_CHTML"></script>
+<!-- <link type="application/atom+xml" rel="alternate" href="https://kyo1988.github.io/Kyo.github.io/atom.xml" title="Kyo Harada — Visage AI / Data Scientist" /> -->
+<!-- <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>SALES FORECASTING 2 | Kyo Harada — Visage AI / Data Scientist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="SALES FORECASTING 2" />
+<meta name="author" content="Kyo Harada" />
+<meta property="og:locale" content="ja_JP" />
+<meta name="description" content="Conjoint analysis for pizza parlor business plan using SPSS. Customer preference modeling with budget constraints." />
+<meta property="og:description" content="Conjoint analysis for pizza parlor business plan using SPSS. Customer preference modeling with budget constraints." />
+<link rel="canonical" href="https://kyo1988.github.io/Kyo.github.io/business/analyics/2021/06/18/SALES-FORECASTING-2.html" />
+<meta property="og:url" content="https://kyo1988.github.io/Kyo.github.io/business/analyics/2021/06/18/SALES-FORECASTING-2.html" />
+<meta property="og:site_name" content="Kyo Harada — Visage AI / Data Scientist" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-06-18T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="SALES FORECASTING 2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Kyo Harada"},"dateModified":"2025-01-19T00:00:00+09:00","datePublished":"2021-06-18T00:00:00+09:00","description":"Conjoint analysis for pizza parlor business plan using SPSS. Customer preference modeling with budget constraints.","headline":"SALES FORECASTING 2","mainEntityOfPage":{"@type":"WebPage","@id":"https://kyo1988.github.io/Kyo.github.io/business/analyics/2021/06/18/SALES-FORECASTING-2.html"},"url":"https://kyo1988.github.io/Kyo.github.io/business/analyics/2021/06/18/SALES-FORECASTING-2.html"}</script>
+<!-- End Jekyll SEO tag -->
+ -->
+
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T222J2Q"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="container">
+
+  <header class="site-header">
+
+  <div class="wrapper">
+
+    <h1 class="site-title"><a href="/Kyo.github.io">Kyo Harada — Visage AI / Data Scientist</a></h1>
+    <h3 class="site-meta">Founder & Data Scientist building on-device AI for skin analytics and finance-grade data products.</h3>
+
+    <nav class="site-nav">
+<!--       <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a> -->
+      <div class="trigger">
+        
+        
+        <a class="page-link" href="/Kyo.github.io/">Home</a>
+        
+        
+        
+        <a class="page-link" href="/Kyo.github.io/about/">About</a>
+        
+        
+        
+        <a class="page-link" href="/Kyo.github.io/about/">About</a>
+        
+        
+        
+        <a class="page-link" href="/Kyo.github.io/archives/">Archives</a>
+        
+        
+        
+        <a class="page-link" href="/Kyo.github.io/case-studies/">Case Studies</a>
+        
+        
+        
+        <a class="page-link" href="/Kyo.github.io/categories/">Categories</a>
+        
+        
+        
+        <a class="page-link" href="/Kyo.github.io/tags/">Tags</a>
+        
+        
+        
+        <a class="page-link" href="/Kyo.github.io/guestbook/">Guestbook</a>
+        
+        
+        
+        <a class="page-link" href="/Kyo.github.io/xml/feed.xml">Subscribe</a>
+        
+        
+        
+        <a class="page-link" href="/Kyo.github.io/DataScience/">DataScience</a>
+        
+        
+        
+        <a class="page-link" href="/Kyo.github.io/visualization/">Visualization</a>
+        
+        
+        
+        <a class="page-link" href="/Kyo.github.io/marketing/">Marketing</a>
+        
+        
+        
+        
+        
+        <a class="page-link" href="/Kyo.github.io/Investment/">Investment</a>
+        
+        
+        
+        <a class="page-link" href="/Kyo.github.io/Travel/">Travel</a>
+        
+        
+        
+        
+        
+        <a class="page-link" href="/Kyo.github.io/newsletter/">Newsletter</a>
+        
+        
+        
+        <a class="page-link" href="/Kyo.github.io/press-kit/">Press Kit</a>
+        
+        
+        
+        <a class="page-link" href="/Kyo.github.io/xml/sitemap.xml">Sitemap</a>
+        
+        
+        
+        <a class="page-link" href="/Kyo.github.io/work-with-me/">Work with me</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+  
+
+  <div class="page-content">
+    <div class="wrapper">
+      <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>SALES FORECASTING 2 | Kyo Harada — Visage AI / Data Scientist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="SALES FORECASTING 2" />
+<meta name="author" content="Kyo Harada" />
+<meta property="og:locale" content="ja_JP" />
+<meta name="description" content="Conjoint analysis for pizza parlor business plan using SPSS. Customer preference modeling with budget constraints." />
+<meta property="og:description" content="Conjoint analysis for pizza parlor business plan using SPSS. Customer preference modeling with budget constraints." />
+<link rel="canonical" href="https://kyo1988.github.io/Kyo.github.io/business/analyics/2021/06/18/SALES-FORECASTING-2.html" />
+<meta property="og:url" content="https://kyo1988.github.io/Kyo.github.io/business/analyics/2021/06/18/SALES-FORECASTING-2.html" />
+<meta property="og:site_name" content="Kyo Harada — Visage AI / Data Scientist" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-06-18T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="SALES FORECASTING 2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Kyo Harada"},"dateModified":"2025-01-19T00:00:00+09:00","datePublished":"2021-06-18T00:00:00+09:00","description":"Conjoint analysis for pizza parlor business plan using SPSS. Customer preference modeling with budget constraints.","headline":"SALES FORECASTING 2","mainEntityOfPage":{"@type":"WebPage","@id":"https://kyo1988.github.io/Kyo.github.io/business/analyics/2021/06/18/SALES-FORECASTING-2.html"},"url":"https://kyo1988.github.io/Kyo.github.io/business/analyics/2021/06/18/SALES-FORECASTING-2.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "SALES FORECASTING 2",
+  "description": "Conjoint analysis for pizza parlor business plan using SPSS. Customer preference modeling with budget constraints.",
+  "datePublished": "2021-06-18T00:00:00+0900",
+  "dateModified": "2025-01-19T00:00:00+0000",
+  "author": {
+    "@type": "Person",
+    "name": "Kyo Harada",
+    "sameAs": [
+      "https://github.com/kyo1988",
+      "https://www.visageaiconsulting.com/",
+      "https://www.linkedin.com/in/KyoHarada"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Visage AI Consulting"
+  },
+  "mainEntityOfPage": {"@type":"WebPage","@id":"https://kyo1988.github.io/Kyo.github.io/business/analyics/2021/06/18/SALES-FORECASTING-2.html"}
+}
+</script>
+
+<div class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 itemprop="name" class="post-title">SALES FORECASTING 2</h1>
+    <meta itemprop="keywords" content="Business Analyics,Conjoint Analysis,SPSS,Marketing Research" />
+    <p class="post-meta">
+    Posted in
+    
+    <a href="/Kyo.github.io/categories/#Business">Business</a>, 
+    
+    <a href="/Kyo.github.io/categories/#Analyics">Analyics</a>
+    
+    
+    and tagged
+    
+    <a href="/Kyo.github.io/tags/#Business Analyics" title="Business Analyics">Business Analyics</a>, 
+    
+    <a href="/Kyo.github.io/tags/#Conjoint Analysis" title="Conjoint Analysis">Conjoint Analysis</a>, 
+    
+    <a href="/Kyo.github.io/tags/#SPSS" title="SPSS">SPSS</a>, 
+    
+    <a href="/Kyo.github.io/tags/#Marketing Research" title="Marketing Research">Marketing Research</a>
+    
+    
+    <time itemprop="datePublished" datetime="2021-06-18">
+    on Jun 18, 2021
+    </time>
+    </p>
+  </header>
+
+  <article class="post-content" itemprop="articleBody">
+    <ul id="markdown-toc">
+  <li><a href="#sales-forecasting-2" id="markdown-toc-sales-forecasting-2">SALES FORECASTING 2</a>    <ul>
+      <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
+      <li><a href="#reference" id="markdown-toc-reference">Reference</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>This is a modified version of the report for Business Analyics in Bath Full Time MBA Class of 2020.</p>
+
+<h1 id="sales-forecasting-2">SALES FORECASTING 2</h1>
+
+<h2 id="introduction">Introduction</h2>
+<p>In this section, it is assumed a pizza parlor business plan in the Bath University has lunched.  The vital issue of the plan is also done so to find one or two pizzas which might be appealed by the Bath University students based on the attributions such as type of topping and base.  Hence, it will be conducted an experiment to attempt diverse pizzas for the target consumers including the students.  However, there are some constrictions for the plan, one of which is the maximum budget of £100 to purchase the pizzas for this experiment.  One of the major tools to find the customer preferences can be conjoint analysis which assumed their preferences as a combination of the attributions having a certain degree <cite>(Janssens et al., 2008)</cite>.  Therefore, it should be decided that which attributions might be the most relevant to the purpose that is to find the most preferred among the students.  The consideration relevant to the attributions was started from the research suggesting 5 attributions which are the crust, topping, cheese type, cheese quality and price <cite>(Lilien and Rangaswamy, 2002)</cite>.  The crust has 3 levels which are thin, thick, pan.  Topping’s levels are pineapple, veggie, chicken, turkey.  The levels of cheese type are Romano, mixed, mozzarella.  These of cheese quality are 50g, 75g, 100g.  £4.99, £6.99, £8.99 are the level of price.  As a result, the total possible combinations of attribute levels are 324 (= 3 x 4 x 3 x 3 x 3).  All of them cannot be conducted due to the time and budget restrictions, however, some researchers argued the effective number of part worth parameters to be approximated from conjoint data, the number of which is less than the sum of all levels of each attribution (Wierenga, 2008).  Thus, if at most 16 (= 3 + 4 + 3 + 3 + 3) candidates are selected precisely, these alternatives can be represented all of the possible combinations of attribute levels (ibid).  The selection usually is done by SPSS from all of attribute levels and therefore, the data format to save 16 alternatives representing all possibilities should be suitable for the application.  Furthermore, the data structure of that should be 16 rows with at least 7 columns which are 5 attributions, the primary key and the preference score.  The most well-liked pizza should the maximum preference score (one hundred) and the minimum one (zero) should be rated to the least popular pizza.  Hence. Each pizza must have the preference score from 0 to 100.  Conjoint analysis assumes the preference score can be represented the weighted sum of the utilities for each attribution <cite>(Wierenga, 2008)</cite>.  This means after collecting the score from the customers being tested, the software (SPSS) can discover weights and utilities of each attributions.  In addition, the key is required to identify each rows, however, it is automatically inserted (see the leftist column of figure 1) when the data is inputted in the data format and then also accordingly the column named ‘STATUS’ with ‘Design’ as the value is inserted as a result of using the function to generate the orthogonal design <cite>(Janssens et al., 2008)</cite>.</p>
+
+<p><img src="https://res.cloudinary.com/djiyxp5ax/image/upload/v1623989695/Figure_1_gtuehf.png" alt="Figure 1" title="Figure 1" /></p>
+
+<p>Furthermore, although it should be tested 16 type of pizzas to collect the target customer preference as the score, there is the budged limitation which the pizzas only can be purchased less than 100 pounds.  This means if assumed the price of normal size pizza is 15 pounds, 6 pizzas are able to be bought for the experiment.  Supposed the shop selected to buy the pizzas can allow to consume at least 3 type of the alternatives among 16 of that in the same pizza, 18 different type of pizza is available for the test.  Therefore, all of alternatives are able to be examined with only 2 duplicates (16 = 18 - 2).  Because of the fact that 6 students are applicable for the evaluation, if each student can eat and rate all of alternatives to cut each piece into 6 parts, the preferable scores of them are able to be collected.  Figure 2 is assumed the result of the 16 alternative pizzas rating by 6 students (identified by id in the figure).  For instance, the column named ‘sco1’ means the students (identified by id in the figure 2) rating score for the top row in the figure 1 (Card ID 1 row).</p>
+
+<p><img src="https://res.cloudinary.com/djiyxp5ax/image/upload/v1623989696/Figure_2_k2ig2k.png" alt="Figure 2" title="Figure 2" /></p>
+
+<p>The utilities of each attributions are estimated by the software, SPSS.  In Figure 3, it is seen apparently that the attribution ‘thin’ (assigned to ‘Crust’ level) has the highest utility (5.708) and the lowest utility (-4.010) is earned by the attribution ‘pineapple’ (belonged to ‘Topping’ level). 
+Utilities</p>
+
+<p><img src="https://res.cloudinary.com/djiyxp5ax/image/upload/v1623989695/Figure_3_bghixu.png" alt="Figure 3" title="Figure 3" /></p>
+
+<p>In addition, Figure 4 shows the averaged importance for each levels of the attributions which mean which levels can earn the highest utility.  In the figure, the level ‘Topping’ has the highest one (22.503) and the lowest one (17.930) is gained by the level ‘Price’.</p>
+
+<p><img src="https://res.cloudinary.com/djiyxp5ax/image/upload/v1623989695/Figure_4_qdicuj.png" alt="Figure 4" title="Figure 4" /></p>
+
+<p>Furthermore, Figure 5 indicates that both the Pearson’s R (.864) and the Kendall’s tau (.639) which mean the correlations between the recognized and forecasted preferences are high (ibid).  both correlations also are likely to be significant (respectively .000 and .000) because less than .05 significance means the null hypothesis of a null correlation is quite unlikely to be acceptable (ibid). 
+Correlations2</p>
+
+<p><img src="https://res.cloudinary.com/djiyxp5ax/image/upload/v1623989695/Figure_5_qxihdw.png" alt="Figure 5" title="Figure 5" /></p>
+
+<p>Finally, Figures 6 through 10, the relative utility levels are demonstrated for each attribute and In Figure 11, the mean importance is displayed for each attribute (ibid).  From Figures 6 through 11, it could be seen that the pizza parlor that offers their customers a thin of crust, Veggie of topping, Romano of cheese type, 50g of cheese quantity and pricing £8.99 might achieve the highest utility.</p>
+
+<p><img src="https://res.cloudinary.com/djiyxp5ax/image/upload/v1598684071/%E5%9B%B36.png" alt="Figure 6" title="Figure 6" />
+<img src="https://res.cloudinary.com/djiyxp5ax/image/upload/v1598684178/%E5%9B%B37.png" alt="Figure 7" title="Figure 7" />
+<img src="https://res.cloudinary.com/djiyxp5ax/image/upload/v1598684256/%E5%9B%B38.png" alt="Figure 8" title="Figure 8" />
+<img src="https://res.cloudinary.com/djiyxp5ax/image/upload/v1598684355/%E5%9B%B39.png" alt="Figure 9" title="Figure 9" />
+<img src="https://res.cloudinary.com/djiyxp5ax/image/upload/v1598685868/%E5%9B%B310.png" alt="Figure 10" title="Figure 10" />
+<img src="https://res.cloudinary.com/djiyxp5ax/image/upload/v1598685920/%E5%9B%B311.png" alt="Figure 11" title="Figure 11" /></p>
+
+<h2 id="reference">Reference</h2>
+<ul>
+  <li>Brownlee, J., 2016. How to Check if Time Series Data is Stationary with Python [Online]. Available from: <a href="https://machinelearningmastery.com/time-series-data-stationary-python/">https://machinelearningmastery.com/time-series-data-stationary-python/</a> [Accessed 30 March 2020].</li>
+  <li>Brownlee, J., 2017. Long Short-Term Memory Networks with Python</li>
+  <li>Downey, A.B., 2011. Think Stats</li>
+  <li>Janert, P.K., 2010. Data Analysis with Open Source Tools</li>
+  <li>Janssens, W., Wijnen, K., Pelsmacker, P.D., Kenhove, P.V., 2008. Marketing Research with SPSS (FT Prentice Hall)</li>
+  <li>Lilien, G.L. and Rangaswamy, A., 2002. Marketing Engineering: Computer Assisted Marketing Analysis and Planning</li>
+  <li>Meulman, J.J. and Koopman, S.J., 2007. An Introduction to State Space Time Series Analysis</li>
+  <li>Palachy, S., 2019. Detecting stationarity in time series data [Online]. Available from: <a href="https://towardsdatascience.com/detecting-stationarity-in-time-series-data-d29e0a21e638">https://towardsdatascience.com/detecting-stationarity-in-time-series-data-d29e0a21e638</a> [Accessed 30 March 2020].</li>
+  <li>Prabhakaran, S., 2019. ARIMA Model – Complete Guide to Time Series Forecasting in Python [Online]. Available from: <a href="https://www.machinelearningplus.com/time-series/arima-model-time-series-forecasting-python/">https://www.machinelearningplus.com/time-series/arima-model-time-series-forecasting-python/</a> [Accessed 30 March 2020].</li>
+  <li>Prabhakaran, S., 2019. Time Series Analysis in Python – A Comprehensive Guide with Examples [Online]. Available from: <a href="https://www.machinelearningplus.com/time-series/time-series-analysis-python/">https://www.machinelearningplus.com/time-series/time-series-analysis-python/</a> [Accessed 30 March 2020].</li>
+  <li>SINGH, A., 2018. A Gentle Introduction to Handling a Non-Stationary Time Series in Python [Online]. Available from: <a href="https://www.analyticsvidhya.com/blog/2018/09/non-stationary-time-series-python/">https://www.analyticsvidhya.com/blog/2018/09/non-stationary-time-series-python/</a> [Accessed 30 March 2020].</li>
+  <li>Taylor, S.J. and Letham, B., 2017. Forecasting at scale. PeerJ Preprints 5:e3190v2 <a href="https://doi.org/10.7287/peerj.preprints.3190v2">https://doi.org/10.7287/peerj.preprints.3190v2</a></li>
+  <li>TensorFlow, 2020. Time series forecasting [Online]. Available from: <a href="https://www.tensorflow.org/tutorials/structured_data/time_series">https://www.tensorflow.org/tutorials/structured_data/time_series</a> [Accessed 30 March 2020].</li>
+  <li>Tieleman, T. and Hinton, G., 2012. Lecture 6.5-rmsprop: Divide the Gradient by a Running Average of Its Recent Magnitude. COURSERA: Neural Networks for Machine Learning, 4, 26-31.</li>
+  <li>Wierenga, B., 2008. Handbook of Marketing Decision Models</li>
+</ul>
+
+<!-- <div class="cta">
+  <h3>相談・見積りのご依頼</h3>
+  <p>小さく速く、成果物ベースでご一緒します。</p>
+  <p>
+    <a class="btn" href="/work-with-me/">Work with me</a>
+    <a class="btn ghost" href="/newsletter/">無料ニュースレター</a>
+  </p>
+</div>
+ -->
+<!-- 
+
+<div class="related">
+  <h3>次に読む</h3>
+  <ul>
+  
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+        <li><a href="/Kyo.github.io/business/analyics/2021/05/08/sales-forecasting.html">SALES FORECASTING</a></li>
+        
+      
+    
+  
+  </ul>
+</div>
+ -->
+
+  </article>
+  <hr />
+</div>
+
+
+<div>
+  <h1>Related Posts</h1>
+  <ul>
+  
+    <li><a href="/business/finance/2021/06/09/organize-and-implement-hull-and-white-1994a-interest-rate-model.html">Organize and implement Hull and White (1994a) interest rate model</a></li>
+  
+    <li><a href="/business/finance/2021/06/03/derivation-of-black-scholes-pde-and-its-analytical-solution-by-arbitrage-pricing-theory.html">Derivation of Black-Scholes PDE and its analytical solution by arbitrage pricing theory</a></li>
+  
+    <li><a href="/business/finance/2021/05/31/derivation-of-yield-curve-construction-formula-with-tenor-basis-spread.html">Derivation of yield curve construction formula with tenor basis spread</a></li>
+  
+    <li><a href="/business/finance/2021/05/26/vc-finance.html">Venture capital finance</a></li>
+  
+    <li><a href="/business/finance/marketing/2021/05/26/strategic-brand-management.html">Strategic brand management</a></li>
+  
+    <li><a href="/business/finance/2021/05/26/sources-of-finance.html">Sources of finance</a></li>
+  
+    <li><a href="/business/finance/start-up/2021/05/26/knowledge-leadership-in-a-global-economy.html">Knowledge Leadership in a Global Economy</a></li>
+  
+  </ul>
+</div>
+
+
+<section class="pager">
+  <ul>
+    
+    <li class="previous"><a href="/Kyo.github.io/business/finance/2021/06/09/organize-and-implement-hull-and-white-1994a-interest-rate-model.html" title="Organize and implement Hull and White (1994a) interest rate model">&larr; Older</a></li>
+    
+    
+    <li class="disabled"><a>Newer &rarr;</a></li>
+    
+  </ul>
+</section>
+
+<div id="disqus_thread"></div>
+
+<script type="text/javascript">
+
+  var disqus_developer = 1;
+
+var disqus_shortname ='kyo';
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+  dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+    </div>
+  </div>
+  <section class="pager">
+  
+  
+</section>
+
+
+
+  
+
+  <footer class="site-footer">
+
+  <p>Copyright &copy; <a href="/Kyo.github.io/">Kyo Harada — Visage AI / Data Scientist</a></p>
+  <p>Powered by <a href="https://github.com/jekyll/jekyll">Jekyll</a>
+  on
+  <a href="https://github.com/">Github</a>
+  | Theme <a href="https://github.com/yulijia/freshman21/">Freshman21</a> Design by <a href="https://yulijia.net">Lijia Yu</a>
+
+</footer>
+
+
+</div>
+
+<!-- Lazy loading script -->
+<script src="/Kyo.github.io/assets/js/lazyfix.js"></script>
+
+</body>
+
+</html>

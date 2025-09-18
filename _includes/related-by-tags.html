@@ -1,0 +1,21 @@
+{% assign current = page %}
+{% assign out = 0 %}
+<div class="related">
+  <h3>次に読む</h3>
+  <ul>
+  {% for p in site.posts %}
+    {% if p.url != current.url and out < 3 %}
+      {% assign matched = false %}
+      {% for t in current.tags %}
+        {% if p.tags contains t %}
+          {% assign matched = true %}
+        {% endif %}
+      {% endfor %}
+      {% if matched %}
+        <li><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>
+        {% assign out = out | plus: 1 %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </ul>
+</div>

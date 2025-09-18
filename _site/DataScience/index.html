@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width initial-scale=1">
+<meta property="og:title" content="DataScience">
+
+<title>DataScience</title>
+<meta property="og:description" content="Founder & Data Scientist building on-device AI for skin analytics and finance-grade data products.">
+<meta property="og:url" content="https://kyo1988.github.io/DataScience/">
+<meta property="og:site_name" content="Kyo Harada — Visage AI / Data Scientist">
+<meta property="og:locale" content="ja_JP">
+
+<meta property="article:author" content="https://www.linkedin.com/in/KyoHarada" />
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@kyoHarada">
+<meta name="twitter:creator" content="@kyoHarada">
+<meta name="twitter:title" content="DataScience">
+<meta name="twitter:description" content="Founder & Data Scientist building on-device AI for skin analytics and finance-grade data products.">
+<meta name="twitter:url" content="https://kyo1988.github.io/DataScience/">
+
+<meta name="keywords" content="Data Scientist, AI, CoreML, Finance, EDINET, RAG, LLM, Consulting">
+
+<meta name="google-site-verification" content="kZFzSU3m_vE_Y0Ja60lWjUOKkeGpV7Ch3CvfLeP8Di4" />
+
+<link rel="icon" href="/Kyo.github.io/images/IMG_0168.ico">
+<link rel="stylesheet" href="/Kyo.github.io/css/main.css">
+<link rel="canonical" href="https://kyo1988.github.io/DataScience/">
+<link rel="alternate" type="application/atom+xml" title="Kyo Harada — Visage AI / Data Scientist" href="https://kyo1988.github.io/feed.xml" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<script async defer src="//assets.pinterest.com/js/pinit.js"></script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T222J2Q');</script>
+<!-- End Google Tag Manager -->
+
+</head>
+<!-- <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-196500796-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-196500796-1');
+</script> -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true
+    },
+    CommonHTML: { matchFontHeight: false },
+    displayAlign: "left",
+    displayIndent: "2em",
+    TeX: {
+      equationNumbers: { autoNumber: "AMS" },
+    }
+  });
+</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS_CHTML"></script>
+<!-- <link type="application/atom+xml" rel="alternate" href="https://kyo1988.github.io/Kyo.github.io/atom.xml" title="Kyo Harada — Visage AI / Data Scientist" /> -->
+<!-- <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>DataScience | Kyo Harada — Visage AI / Data Scientist</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="DataScience" />
+<meta name="author" content="Kyo Harada" />
+<meta property="og:locale" content="ja_JP" />
+<meta name="description" content="Founder &amp; Data Scientist building on-device AI for skin analytics and finance-grade data products." />
+<meta property="og:description" content="Founder &amp; Data Scientist building on-device AI for skin analytics and finance-grade data products." />
+<link rel="canonical" href="https://kyo1988.github.io/Kyo.github.io/DataScience/" />
+<meta property="og:url" content="https://kyo1988.github.io/Kyo.github.io/DataScience/" />
+<meta property="og:site_name" content="Kyo Harada — Visage AI / Data Scientist" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="DataScience" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Kyo Harada"},"description":"Founder &amp; Data Scientist building on-device AI for skin analytics and finance-grade data products.","headline":"DataScience","url":"https://kyo1988.github.io/Kyo.github.io/DataScience/"}</script>
+<!-- End Jekyll SEO tag -->
+ -->
+
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T222J2Q"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="container">
+
+  <header class="site-header">
+
+  <div class="wrapper">
+
+    <h1 class="site-title"><a href="/Kyo.github.io">Kyo Harada — Visage AI / Data Scientist</a></h1>
+    <h3 class="site-meta">Founder & Data Scientist building on-device AI for skin analytics and finance-grade data products.</h3>
+
+    <nav class="site-nav">
+<!--       <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a> -->
+      <div class="trigger">
+        
+        
+        <a class="page-link" href="/Kyo.github.io/">Home</a>
+        
+        
+        
+        <a class="page-link" href="/Kyo.github.io/about/">About</a>
+        
+        
+        
+        <a class="page-link" href="/Kyo.github.io/about/">About</a>
+        
+        
+        
+        <a class="page-link" href="/Kyo.github.io/archives/">Archives</a>
+        
+        
+        
+        <a class="page-link" href="/Kyo.github.io/case-studies/">Case Studies</a>
+        
+        
+        
+        <a class="page-link" href="/Kyo.github.io/categories/">Categories</a>
+        
+        
+        
+        <a class="page-link" href="/Kyo.github.io/tags/">Tags</a>
+        
+        
+        
+        <a class="page-link" href="/Kyo.github.io/guestbook/">Guestbook</a>
+        
+        
+        
+        <a class="page-link" href="/Kyo.github.io/xml/feed.xml">Subscribe</a>
+        
+        
+        
+        <a class="page-link" href="/Kyo.github.io/DataScience/">DataScience</a>
+        
+        
+        
+        <a class="page-link" href="/Kyo.github.io/visualization/">Visualization</a>
+        
+        
+        
+        <a class="page-link" href="/Kyo.github.io/marketing/">Marketing</a>
+        
+        
+        
+        
+        
+        <a class="page-link" href="/Kyo.github.io/Investment/">Investment</a>
+        
+        
+        
+        <a class="page-link" href="/Kyo.github.io/Travel/">Travel</a>
+        
+        
+        
+        
+        
+        <a class="page-link" href="/Kyo.github.io/newsletter/">Newsletter</a>
+        
+        
+        
+        <a class="page-link" href="/Kyo.github.io/press-kit/">Press Kit</a>
+        
+        
+        
+        <a class="page-link" href="/Kyo.github.io/xml/sitemap.xml">Sitemap</a>
+        
+        
+        
+        <a class="page-link" href="/Kyo.github.io/work-with-me/">Work with me</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+  
+
+  <div class="page-content">
+    <div class="wrapper">
+      <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">DataScience</h1>
+  </header>
+
+  <article class="post-content">
+    <ul id="markdown-toc">
+  <li><a href="#books-we-can-learn-fundamental-methods-of-data-science" id="markdown-toc-books-we-can-learn-fundamental-methods-of-data-science">Books We Can Learn Fundamental Methods of Data Science</a>    <ul>
+      <li><a href="#the-elements-of-statistical-learning-hastie-tibshirani-and-friedman-2009" id="markdown-toc-the-elements-of-statistical-learning-hastie-tibshirani-and-friedman-2009">The Elements of Statistical Learning <cite>(Hastie, Tibshirani and Friedman, 2009)</cite></a></li>
+      <li><a href="#feature-engineering-for-machine-learning-zheng-and-casari-2018" id="markdown-toc-feature-engineering-for-machine-learning-zheng-and-casari-2018">Feature Engineering for Machine Learning <cite>(Zheng and Casari, 2018)</cite></a></li>
+      <li><a href="#mostly-harmless-econometrics-an-empiricists-companion-angrist-2008" id="markdown-toc-mostly-harmless-econometrics-an-empiricists-companion-angrist-2008">Mostly Harmless Econometrics: An Empiricist’s Companion <cite>(Angrist, 2008)</cite></a></li>
+      <li><a href="#econometric-analysis-of-cross-section-and-panel-data-wooldridge-2002" id="markdown-toc-econometric-analysis-of-cross-section-and-panel-data-wooldridge-2002">Econometric Analysis of Cross Section and Panel Data <cite>(Wooldridge, 2002)</cite></a></li>
+      <li><a href="#time-series-analysis-hamilton-1994" id="markdown-toc-time-series-analysis-hamilton-1994">Time series analysis (Hamilton, 1994)</a></li>
+      <li><a href="#reference" id="markdown-toc-reference">Reference</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="books-we-can-learn-fundamental-methods-of-data-science">Books We Can Learn Fundamental Methods of Data Science</h2>
+
+<h3 id="the-elements-of-statistical-learning-hastie-tibshirani-and-friedman-2009">The Elements of Statistical Learning <cite>(Hastie, Tibshirani and Friedman, 2009)</cite></h3>
+
+<p><a target="_blank" href="https://www.amazon.co.jp/gp/product/0387848576/ref=as_li_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=0387848576&amp;linkCode=as2&amp;tag=kyo07e-22&amp;linkId=5e61d6d9d352a068e888dbbd0ac047ae"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;MarketPlace=JP&amp;ASIN=0387848576&amp;ServiceVersion=20070822&amp;ID=AsinImage&amp;WS=1&amp;Format=_SL250_&amp;tag=kyo07e-22" /></a></p>
+
+<p>7 major machine (statistical) learning method are described, which are</p>
+
+<ul>
+  <li>Logistic Regression<cite>(Hastie, Tibshirani and Friedman, 2009, Chapter 4, 5)</cite></li>
+  <li>Support Vector Machine<cite>(Hastie, Tibshirani and Friedman, 2009, Chapter 12)</cite></li>
+  <li>Neural Network<cite>(Hastie, Tibshirani and Friedman, 2009, Chapter 11)</cite></li>
+  <li>Tree-Based Method (Random Forests and Decision Tree)<cite>(Hastie, Tibshirani and Friedman, 2009, Chapter 15)</cite></li>
+  <li>Principal Components Analysis (PCA)<cite>(Hastie, Tibshirani and Friedman, 2009, Chapter 14)</cite></li>
+  <li>Clustering Method (K-Mean andHierarchical)<cite>(Hastie, Tibshirani and Friedman, 2009, Chapter 14)</cite></li>
+  <li>Association Rules [biggest success among data mining]<cite>(Hastie, Tibshirani and Friedman, 2009, Chapter 14)</cite></li>
+</ul>
+
+<p>If you want to see more practical version or do implement.</p>
+<ul>
+  <li>An Introduction to Statistical Learning with Applications in R <cite>(James, Witten, Hastie and Tibshirani, 2013)</cite></li>
+</ul>
+
+<p><a target="_blank" href="https://www.amazon.co.jp/gp/product/1071614177/ref=as_li_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=1071614177&amp;linkCode=as2&amp;tag=kyo07e-22&amp;linkId=d935373c22d74d46c9f2989533a590b2"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;MarketPlace=JP&amp;ASIN=1071614177&amp;ServiceVersion=20070822&amp;ID=AsinImage&amp;WS=1&amp;Format=_SL250_&amp;tag=kyo07e-22" /></a></p>
+
+<h3 id="feature-engineering-for-machine-learning-zheng-and-casari-2018">Feature Engineering for Machine Learning <cite>(Zheng and Casari, 2018)</cite></h3>
+
+<p><a target="_blank" href="https://www.amazon.co.jp/gp/product/B07BNX4MWC/ref=as_li_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=B07BNX4MWC&amp;linkCode=as2&amp;tag=kyo07e-22&amp;linkId=6bfa85bce5dc5d50cd20ae1e5015ab18"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;MarketPlace=JP&amp;ASIN=B07BNX4MWC&amp;ServiceVersion=20070822&amp;ID=AsinImage&amp;WS=1&amp;Format=_SL250_&amp;tag=kyo07e-22" /></a></p>
+
+<p>Before modeling, raw data is required to be featured in order to get insight, however, the practice of this process, ‘Feature engineering’ was not organized. This book is about that, which said ‘Good features should not only represent salient aspects of the data, but also conform to the assumptions of the model’.</p>
+
+<h3 id="mostly-harmless-econometrics-an-empiricists-companion-angrist-2008">Mostly Harmless Econometrics: An Empiricist’s Companion <cite>(Angrist, 2008)</cite></h3>
+
+<p><a target="_blank" href="https://www.amazon.co.jp/gp/product/0691120358/ref=as_li_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=0691120358&amp;linkCode=as2&amp;tag=kyo07e-22&amp;linkId=cdd94954c4ecfc42e9f2e1bb41f509ce"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;MarketPlace=JP&amp;ASIN=0691120358&amp;ServiceVersion=20070822&amp;ID=AsinImage&amp;WS=1&amp;Format=_SL250_&amp;tag=kyo07e-22" /></a></p>
+
+<p>In ideal situations, the best method to prove the relationship among variants can be experimental random assignment to eliminate selection bias, however, due to scarcity of resources, it is less likely to be employed in the real world.</p>
+
+<p>Instead of experimental random assignment, there are three approach to access the relationship, which are Instrumental variables, Regression discontinuity designs and Differences-in-differences except (Liner) Regression.</p>
+
+<p>If you want to see more practical version or do implement.</p>
+<ul>
+  <li>Mastering ‘Metrics: The Path from Cause to Effect <cite>(Angrist and Pischke, 2014)</cite></li>
+</ul>
+
+<p><a target="_blank" href="https://www.amazon.co.jp/gp/product/0691152845/ref=as_li_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=0691152845&amp;linkCode=as2&amp;tag=kyo07e-22&amp;linkId=41e38d0462663f2384188f4618ae6b86"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;MarketPlace=JP&amp;ASIN=0691152845&amp;ServiceVersion=20070822&amp;ID=AsinImage&amp;WS=1&amp;Format=_SL250_&amp;tag=kyo07e-22" /></a></p>
+
+<ul>
+  <li>Instrumental variables (IV) <cite>(Angrist, 2008, Chapter 4)</cite>
+‘method harnesses partial or incomplete random assignment, whether naturally occurring or generated by researchers’</li>
+  <li>Regression discontinuity designs (RD) <cite>(Angrist, 2008, Chapter 6)</cite>
+‘The RD design exploits abrupt changes in treatment status that arise when treatment is determined by a cutoff’</li>
+  <li>Instrumental variables (IV) <cite>(Angrist, 2008, Chapter 5)</cite>
+‘in the absence of random assignment, treatment and control groups are likely to differ for many reasons’</li>
+</ul>
+
+<p>These definitions are retrived from <cite>(Angrist and Pischke, 2014)</cite>.</p>
+
+<h3 id="econometric-analysis-of-cross-section-and-panel-data-wooldridge-2002">Econometric Analysis of Cross Section and Panel Data <cite>(Wooldridge, 2002)</cite></h3>
+
+<p><a target="_blank" href="https://www.amazon.co.jp/gp/product/0262232588/ref=as_li_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=0262232588&amp;linkCode=as2&amp;tag=kyo07e-22&amp;linkId=fa4f1f8e64a4db4941358ff096425126"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;MarketPlace=JP&amp;ASIN=0262232588&amp;ServiceVersion=20070822&amp;ID=AsinImage&amp;WS=1&amp;Format=_SL250_&amp;tag=kyo07e-22" /></a></p>
+
+<p>If you want to see more practical version or do implement.</p>
+<ul>
+  <li>Introductory Econometrics: A Modern Approach <cite>(Wooldridge, 2000)</cite></li>
+</ul>
+
+<p><a target="_blank" href="https://www.amazon.co.jp/gp/product/1337558869/ref=as_li_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=1337558869&amp;linkCode=as2&amp;tag=kyo07e-22&amp;linkId=ab76d5723476a69ec51d73360543e8ac"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;MarketPlace=JP&amp;ASIN=1337558869&amp;ServiceVersion=20070822&amp;ID=AsinImage&amp;WS=1&amp;Format=_SL250_&amp;tag=kyo07e-22" /></a></p>
+
+<h3 id="time-series-analysis-hamilton-1994">Time series analysis (Hamilton, 1994)</h3>
+
+<p><a target="_blank" href="https://www.amazon.co.jp/gp/product/0691042896/ref=as_li_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=0691042896&amp;linkCode=as2&amp;tag=kyo07e-22&amp;linkId=77d9e9fec9b9fa147bbdbc98b2d49e56"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;MarketPlace=JP&amp;ASIN=0691042896&amp;ServiceVersion=20070822&amp;ID=AsinImage&amp;WS=1&amp;Format=_SL250_&amp;tag=kyo07e-22" /></a></p>
+
+<p>It can be said that Time Series Analysis is included in Econometrics, however, it can be characterized by autocorrelation and there are some important frameworks, which are</p>
+<ul>
+  <li>Box–Jenkins Method (mainly including ARIMA and SARIMAX) <cite>(Hamilton, 1994, Chapter 3-5)</cite></li>
+  <li>State Space Model (such as The Kalman Filter) <cite>(Hamilton, 1994, Chapter 13)</cite></li>
+</ul>
+
+<p>If you want to see more practical version or do implement.</p>
+<ul>
+  <li>Time Series Analysis and Its Applications With R Examples <cite>(Shumway and Stoffer, 2016)</cite></li>
+</ul>
+
+<p><a target="_blank" href="https://www.amazon.co.jp/gp/product/B073H6HGJR/ref=as_li_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=B073H6HGJR&amp;linkCode=as2&amp;tag=kyo07e-22&amp;linkId=52dfc3a7fa3baa58e60761676c74d69f"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;MarketPlace=JP&amp;ASIN=B073H6HGJR&amp;ServiceVersion=20070822&amp;ID=AsinImage&amp;WS=1&amp;Format=_SL250_&amp;tag=kyo07e-22" /></a></p>
+
+<p>Recently Facebook developed ‘The Prophet Forecasting Model’ for Time Series Analysis <cite>(Taylor and Letham, 2017)</cite>.</p>
+
+<h3 id="reference">Reference</h3>
+<ul>
+  <li>Hastie, T., Tibshirani, R., and J. Friedman, J., 2009. The Elements of Statistical Learning</li>
+  <li>James, G., Witten, D., Hastie, T. and Tibshirani, R., 2013. An Introduction to Statistical Learning with Applications in R</li>
+  <li>Zheng, A. and Casari, A., 2018. Feature Engineering for Machine Learning</li>
+  <li>Angrist, J.D., 2008. Mostly Harmless Econometrics: An Empiricist’s Companion</li>
+  <li>Angrist, J.D. and Pischke, J -S., 2014. Mastering ‘Metrics: The Path from Cause to Effect</li>
+  <li>Wooldridge, J.M., 2002. Econometric Analysis of Cross Section and Panel Data</li>
+  <li>Wooldridge, J.M., 2000. Introductory Econometrics: A Modern Approach</li>
+  <li>Hamilton, R., 1994. Time series analysis</li>
+  <li>Shumway, R.H. and Stoffer, D.S., 2016. Time Series Analysis and Its Applications With R Examples</li>
+  <li>Taylor, S.J. and Letham, B., 2017. Forecasting at scale. PeerJ Preprints 5:e3190v2 https://doi.org/10.7287/peerj.preprints.3190v2</li>
+</ul>
+
+  </article>
+
+  
+
+  
+    <div id="disqus_thread"></div>
+
+<script type="text/javascript">
+
+  var disqus_developer = 1;
+
+var disqus_shortname ='kyo';
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+  dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+</div>
+
+    </div>
+  </div>
+  <section class="pager">
+  
+  
+</section>
+
+
+
+  
+
+  <footer class="site-footer">
+
+  <p>Copyright &copy; <a href="/Kyo.github.io/">Kyo Harada — Visage AI / Data Scientist</a></p>
+  <p>Powered by <a href="https://github.com/jekyll/jekyll">Jekyll</a>
+  on
+  <a href="https://github.com/">Github</a>
+  | Theme <a href="https://github.com/yulijia/freshman21/">Freshman21</a> Design by <a href="https://yulijia.net">Lijia Yu</a>
+
+</footer>
+
+
+</div>
+
+<!-- Lazy loading script -->
+<script src="/Kyo.github.io/assets/js/lazyfix.js"></script>
+
+</body>
+
+</html>
