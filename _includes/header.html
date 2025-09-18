@@ -15,10 +15,11 @@
       </a> -->
       <div class="trigger">
         {% for page in site.pages %}
-        {% if page.title %}
+        {% if page.title and page.title != 'Guestbook' and page.title != 'Subscribe' %}
         <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
         {% endif %}
         {% endfor %}
+        <a class="page-link" href="https://github.com/kyo1988/visage-ai-webapp" target="_blank" rel="noopener">Web App</a>
       </div>
     </nav>
 
