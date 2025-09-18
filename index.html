@@ -11,7 +11,7 @@ layout: default
       <a class="btn btn-ghost" href="https://www.visageaiconsulting.com/en?utm_source=blog&utm_medium=hero&utm_campaign=visage_launch" target="_blank" rel="noopener external">Try the Web App</a>
       <a class="btn btn-ghost" href="https://apps.apple.com/app/visage-ai-skin-advisor/id6748892785?utm_source=blog&utm_medium=hero&utm_campaign=mobile_app" target="_blank" rel="noopener external">Download iOS App</a>
     </div>
-    <ul class="stats">
+    <ul class="stats" role="list" aria-label="Model performance improvements">
       <li><strong>−75%</strong> model size</li>
       <li><strong>3×</strong> inference</li>
       <li><strong>−60%</strong> RAM</li>
@@ -66,8 +66,8 @@ layout: default
         <article class="post-card">
           <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
           <p class="meta">
-            {{ post.date | date: "%b %-d, %Y" }}
-            · {{ post.content | strip_html | split: ' ' | size | divided_by: 200 | ceil }} min read
+            {{ post.date | date: "%b %-d, %Y" }} ·
+            {{ post.content | strip_html | split: ' ' | size | divided_by: 200 | ceil }} min read
           </p>
           <p>{{ post.excerpt | strip_html | truncatewords: 28 }}</p>
           <p><a class="btn btn-ghost" href="{{ post.url | relative_url }}">Read more →</a></p>

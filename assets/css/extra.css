@@ -591,3 +591,47 @@ html{ -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
   background:var(--accent); color:#fff; border-radius:8px; z-index:1000;
   clip:auto; clip-path:none;
 }
+
+/* ===== Density v5 — compact 0.4× / final pass ===== */
+@media (min-width: 768px){
+  .container{ max-width: 900px; }            /* 920→900 さらに締める */
+
+  .section{ padding: 20px 0; }               /* 32→20 */
+  .section-title{ margin-bottom: 10px; }
+
+  .hero{ padding: 28px 0 18px; }             /* 44/28 → 28/18 */
+  .hero h1{ margin: 0 0 8px; line-height: 1.14; letter-spacing:-.01em; }
+  .hero .lead{ max-width: 50ch; line-height: 1.48; }
+  .hero .actions{ gap: 8px; margin-top: 10px; }
+
+  .btn{ height: 34px; padding: 0 10px; font-weight: 600; }
+  .stats{ gap: 6px; margin-top: 6px; }
+  .stats li{ padding: 2px 8px; }
+
+  .grid{ gap: 12px; }
+  .card{
+    padding: 12px; border-radius: 10px;
+    box-shadow: 0 1px 8px rgba(2,8,23,.06), 0 1px 2px rgba(2,8,23,.04);
+    display:flex; flex-direction:column;
+  }
+  .card p:last-child{ margin-top:auto; }
+  .card:hover{ transform: translateY(-.5px); }
+
+  .card h3{ display:flex; align-items:center; gap:6px; }
+  .icon{ width: 18px; height: 18px; opacity:.9; flex:none; }
+
+  .post-grid{ gap: 14px; }
+  .post-card{ padding: 12px; border-radius: 10px; }
+  .post-card .meta{ margin: .05rem 0 .3rem; color: var(--muted); }
+
+  .hero, .card, .post-card{
+    border-color: color-mix(in srgb, var(--border) 55%, transparent);
+  }
+}
+
+/* 見出しのサイズを一段タイトに */
+:root{ --fs-1: clamp(1.85rem, 1.0rem + 2.0vw, 2.55rem); }
+h1,h2{text-wrap:balance}
+
+/* hr を弱めて"線の主張"を抑える */
+hr{ margin:16px 0; opacity:.45; }
