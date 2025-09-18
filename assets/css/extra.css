@@ -294,9 +294,8 @@ figcaption { font-size: 14px; opacity: .8; }
 /* Medical Disclaimer */
 .medical-disclaimer {
   text-align: center;
-  padding: 0.5rem 0;
-  border-top: 1px solid var(--border);
-  margin-bottom: 1rem;
+  margin: 24px 0 8px;
+  opacity: 0.8;
 }
 
 .medical-disclaimer p {
@@ -352,7 +351,7 @@ figcaption { font-size: 14px; opacity: .8; }
   }
 
   .medical-disclaimer {
-    border-color: var(--border-dark);
+    opacity: 0.9;
   }
 
   .medical-disclaimer p {
