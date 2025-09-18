@@ -2,12 +2,33 @@
 layout: page
 title: "Case Studies"
 permalink: /case-studies/
-description: "CoreML optimization, RAG audits, finance-grade pipelines."
+description: "CoreML optimization, RAG audits, finance-grade pipelines. Real-world implementations with measurable results."
 ---
 
-<ul>
+<div class="case-studies-intro">
+  <p>Real-world implementations with measurable results. Each case study includes technical details, performance metrics, and live demonstrations.</p>
+  <div class="case-studies-cta">
+    <a href="https://github.com/kyo1988/visage-ai-webapp?utm_source=blog&utm_medium=case_studies&utm_campaign=web_app" target="_blank" rel="noopener" class="btn btn-primary">Try Live Demos</a>
+  </div>
+</div>
+
+<div class="case-studies-grid">
 {% assign cases = site.posts | where_exp:"p","p.tags contains 'Case-Study'" %}
 {% for p in cases %}
-  <li><a href="{{ p.url | relative_url }}">{{ p.title }}</a> — {{ p.description }}</li>
+  <div class="case-study-card">
+    <h3><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h3>
+    <p class="case-description">{{ p.description }}</p>
+    <div class="case-study-actions">
+      <a href="{{ p.url | relative_url }}" class="btn btn-secondary">Read Case Study</a>
+      <a href="https://github.com/kyo1988/visage-ai-webapp?utm_source=blog&utm_medium=case_study&utm_campaign={{ p.title | slugify }}" target="_blank" rel="noopener" class="btn btn-outline">Live Demo</a>
+    </div>
+  </div>
 {% endfor %}
-</ul>
+</div>
+
+{% if cases.size == 0 %}
+<div class="no-cases">
+  <p>Case studies are being prepared. Check back soon for detailed technical implementations and performance metrics.</p>
+  <a href="https://github.com/kyo1988/visage-ai-webapp?utm_source=blog&utm_medium=case_studies_empty&utm_campaign=web_app" target="_blank" rel="noopener" class="btn btn-primary">Explore Web App</a>
+</div>
+{% endif %}
