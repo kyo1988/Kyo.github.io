@@ -56,3 +56,8 @@ Thumbs.db
 .env.test.local
 .env.production.local
 .github_token
+
+# Analytics and Scripts (Private)
+scripts/analytics/
+*.json
+*.py
