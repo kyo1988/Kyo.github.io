@@ -378,9 +378,14 @@ figcaption { font-size: 14px; opacity: .8; }
 /* Heading balance */
 h1,h2{text-wrap:balance}
 
-/* Skip link */
-.skip{position:absolute;left:-9999px;top:auto}
-.skip:focus{left:16px;top:16px;background:var(--accent);color:#fff;padding:8px 12px;border-radius:8px}
+/* Skip link: フォーカス時のみ表示 */
+.skip{
+  position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;
+}
+.skip:focus{
+  left:16px; top:12px; width:auto; height:auto; padding:8px 12px;
+  background:var(--accent); color:#fff; border-radius:8px; z-index:1000;
+}
 
 /* Mobile hero optimization */
 @media (max-width:480px){
@@ -394,3 +399,52 @@ h1,h2{text-wrap:balance}
 @media (max-width:640px){.post-grid{grid-template-columns:1fr}}
 .post-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px;box-shadow:var(--shadow)}
 .post-card .meta{color:var(--muted);font-size:.9rem;margin:.25rem 0 .5rem}
+
+/* === Density Pass v1 — tighten spacing/typography === */
+
+/* 1) コンテナ幅を少し絞って情報密度UP */
+.container{max-width:1000px;}
+
+/* 2) セクション余白：やや詰める（広すぎ問題の本丸） */
+.section{padding:var(--s-6) 0;}          /* 旧: var(--s-8) */
+.section-title{margin-bottom:var(--s-4);}/* 旧: var(--s-5) */
+
+/* 3) ヒーロー：上下を詰め、リード幅を短くして締まった印象に */
+.hero{padding:var(--s-7) 0 var(--s-5);}   /* 旧: var(--s-9) 0 var(--s-7) */
+.hero h1{margin:0 0 var(--s-3);}
+.hero .lead{max-width:52ch; line-height:1.55;}
+.hero .actions{gap:12px; margin-top:var(--s-4);} /* 旧: gap var(--s-4) */
+
+/* 4) 見出しの上下を軽く */
+h1{letter-spacing:-.01em;}
+h2{margin:var(--s-5) 0 var(--s-3);}       /* 旧: var(--s-7) 0 var(--s-4) */
+h3{margin:var(--s-4) 0 var(--s-2);}       
+
+/* 5) ボタンを少し小ぶりに（ヒーローの密度感を出す） */
+.btn{height:40px; padding:0 14px;}        /* 旧: 44px / 18px */
+.btn-primary{box-shadow:0 4px 18px rgba(2,8,23,.10),0 1px 6px rgba(2,8,23,.06);} /* 影を軽く */
+
+/* 6) Stat strip を詰める */
+.stats{gap:10px; margin-top:10px;}
+.stats li{padding:4px 10px;}
+
+/* 7) カード群：余白・影・ギャップを軽量化 */
+.grid{gap:var(--s-4);}                    /* 旧: var(--s-5) */
+.card{padding:var(--s-4);
+      box-shadow:0 3px 14px rgba(2,8,23,.08),0 1px 4px rgba(2,8,23,.05);}
+.card:hover{transform:translateY(-1px);}  /* 動きをほんの少しだけ */
+
+/* 8) Feature 見出しアイコンのアライメント微調整 */
+.card h3{display:flex; align-items:center; gap:8px;}
+.icon{width:22px;height:22px;opacity:.9;flex:none;}
+
+/* 9) Latest Posts のカードを詰める */
+.post-grid{gap:20px;}
+.post-card{padding:16px;}
+.post-card .meta{margin:.1rem 0 .4rem}
+
+/* 10) セクション区切りラインの強さを1段弱く */
+.hero, .card, .post-card{border-color:color-mix(in srgb, var(--border) 80%, transparent);}
+
+/* 11) フッター上の免責行：マージンを短縮 */
+.medical-disclaimer{margin:1rem 0 .5rem;}
