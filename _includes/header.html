@@ -14,12 +14,12 @@
         </svg>
       </a> -->
       <div class="trigger">
-        {% for page in site.pages %}
-        {% if page.title and page.title != 'Guestbook' and page.title != 'Subscribe' and page.title != 'DataScience' and page.title != 'Sitemap' %}
-        <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-        {% endif %}
-        {% endfor %}
-        <a class="page-link" href="https://www.visageaiconsulting.com/en" target="_blank" rel="noopener">Web App</a>
+        <a class="page-link" href="{{ '/' | relative_url }}">Home</a>
+        <a class="page-link" href="{{ '/about/' | relative_url }}">About</a>
+        <a class="page-link" href="{{ '/archives/' | relative_url }}">Playbooks</a>
+        <a class="page-link" href="{{ '/case-studies/' | relative_url }}">Case Studies</a>
+        <a class="page-link" href="{{ '/work-with-me/' | relative_url }}">Work with me</a>
+        <a class="page-link" href="https://www.visageaiconsulting.com/en?utm_source=blog&utm_medium=header&utm_campaign=visage_launch" target="_blank" rel="noopener">Web App</a>
       </div>
     </nav>
 

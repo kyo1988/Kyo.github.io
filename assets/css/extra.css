@@ -293,15 +293,17 @@ figcaption { font-size: 14px; opacity: .8; }
 
 /* Medical Disclaimer */
 .medical-disclaimer {
+  margin: 2rem 0 0;
+  padding: 0.75rem 1rem;
+  border-top: 1px solid #e5e7eb;
+  opacity: 0.85;
+  font-size: 0.875rem;
   text-align: center;
-  margin: 24px 0 8px;
-  opacity: 0.8;
 }
 
 .medical-disclaimer p {
   margin: 0;
   color: #64748b;
-  font-size: 0.85rem;
 }
 
 /* Footer */
@@ -351,6 +353,7 @@ figcaption { font-size: 14px; opacity: .8; }
   }
 
   .medical-disclaimer {
+    border-top-color: #374151;
     opacity: 0.9;
   }
 

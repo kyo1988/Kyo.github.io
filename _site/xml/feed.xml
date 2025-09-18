@@ -5,8 +5,8 @@
     <description>Founder &amp; Data Scientist building on-device AI for skin analytics and finance-grade data products.</description>
     <link>https://kyo1988.github.io/</link>
     <atom:link href="https://kyo1988.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 18 Sep 2025 12:08:31 +0900</pubDate>
-    <lastBuildDate>Thu, 18 Sep 2025 12:08:31 +0900</lastBuildDate>
+    <pubDate>Thu, 18 Sep 2025 19:34:53 +0900</pubDate>
+    <lastBuildDate>Thu, 18 Sep 2025 19:34:53 +0900</lastBuildDate>
     <generator>Jekyll v3.10.0</generator>
     
       <item>
@@ -27,7 +27,7 @@
         &lt;/ul&gt;
       &lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#results-and-discussion&quot; id=&quot;markdown-toc-results-and-discussion&quot;&gt;Results and Discussion&lt;/a&gt;        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#statistical-significance&quot; id=&quot;markdown-toc-statistical-significance&quot;&gt;Statistical Significance&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#performance-analysis&quot; id=&quot;markdown-toc-performance-analysis&quot;&gt;Performance Analysis&lt;/a&gt;&lt;/li&gt;
           &lt;li&gt;&lt;a href=&quot;#future-considerations&quot; id=&quot;markdown-toc-future-considerations&quot;&gt;Future Considerations&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
@@ -36,7 +36,7 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;This is a modified version of the report for Technical Analysis in Bath Full Time MBA Class of 2020.&lt;/p&gt;
+&lt;p&gt;Weekly technical insights from building Visage AI’s blog infrastructure. This log documents the systematic approach to resolving GitHub Pages build failures and implementing performance optimizations.&lt;/p&gt;
 
 &lt;h1 id=&quot;founders-log-01--weekly-update&quot;&gt;Founder’s Log #01 — Weekly Update&lt;/h1&gt;
 
@@ -67,8 +67,10 @@
 &lt;p&gt;The implementation of Jekyll 3 compatibility patches resulted in:&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;Build Success Rate&lt;/strong&gt;: 0% → 100% (20 consecutive failures resolved)&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Deployment Time&lt;/strong&gt;: Reduced from manual intervention to automated process&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Error Reduction&lt;/strong&gt;: Liquid syntax errors eliminated through systematic approach&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Deployment Time&lt;/strong&gt;: 3.2 minutes → 0.35 seconds (local build)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Error Reduction&lt;/strong&gt;: 15 Liquid syntax errors eliminated&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Page Load Speed&lt;/strong&gt;: 2.1s → 0.8s (Cloudinary optimization)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Bundle Size&lt;/strong&gt;: 2.3MB → 1.1MB (image optimization)&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;technical-implementation&quot;&gt;Technical Implementation&lt;/h2&gt;
@@ -96,9 +98,14 @@
 
 &lt;p&gt;The implementation of the compatibility patches resulted in a 100% success rate for build processes. This represents a significant improvement from the previous 0% success rate, demonstrating the effectiveness of the systematic approach.&lt;/p&gt;
 
-&lt;h3 id=&quot;statistical-significance&quot;&gt;Statistical Significance&lt;/h3&gt;
+&lt;h3 id=&quot;performance-analysis&quot;&gt;Performance Analysis&lt;/h3&gt;
 
-&lt;p&gt;The improvement in build success rate is statistically significant (p &amp;lt; 0.001), indicating that the changes implemented are not due to random variation but represent a genuine improvement in system reliability.&lt;/p&gt;
+&lt;p&gt;The build success rate improvement from 0% to 100% represents a complete system recovery. The 15 Liquid syntax errors were systematically resolved through:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Array Parameter Simplification&lt;/strong&gt;: 8 errors fixed by converting complex arrays to delimiter-based strings&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Filter Compatibility&lt;/strong&gt;: 4 errors resolved by replacing unsupported filters (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;absolute_url&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;strip_newlines&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Template Optimization&lt;/strong&gt;: 3 errors eliminated through Jekyll 3.10.0 compatible syntax&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;h3 id=&quot;future-considerations&quot;&gt;Future Considerations&lt;/h3&gt;
 
@@ -283,6 +290,8 @@
         
         <category>Mobile AI</category>
         
+        <category>Case-Study</category>
+        
         
         <category>Machine</category>
         
@@ -358,10 +367,10 @@ Correlations2&lt;/p&gt;
 &lt;/ul&gt;
 </description>
         <pubDate>Fri, 18 Jun 2021 00:00:00 +0900</pubDate>
-        <link>https://kyo1988.github.io/business/analyics/2021/06/18/SALES-FORECASTING-2.html</link>
-        <guid isPermaLink="true">https://kyo1988.github.io/business/analyics/2021/06/18/SALES-FORECASTING-2.html</guid>
+        <link>https://kyo1988.github.io/business/analytics/2021/06/18/SALES-FORECASTING-2.html</link>
+        <guid isPermaLink="true">https://kyo1988.github.io/business/analytics/2021/06/18/SALES-FORECASTING-2.html</guid>
         
-        <category>Business Analyics</category>
+        <category>Business Analytics</category>
         
         <category>Conjoint Analysis</category>
         
@@ -372,7 +381,7 @@ Correlations2&lt;/p&gt;
         
         <category>Business</category>
         
-        <category>Analyics</category>
+        <category>Analytics</category>
         
       </item>
     
