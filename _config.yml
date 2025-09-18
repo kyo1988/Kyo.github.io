@@ -84,9 +84,12 @@ gems:
   - jekyll-paginate
   - jekyll-redirect-from
 
-# フィード/サイトマップ
+# フィード設定
 feed:
   path: atom.xml
 
+# ページネーション設定
 paginate: 3
-excerpt_separator: <!-- more -->
+
+# 抜粋設定
+excerpt_separator: "<!-- more -->"
