@@ -1,11 +1,11 @@
 <header class="site-header">
   <div class="container">
     <nav class="site-nav" aria-label="Primary">
-      <a href="{{ '/' | relative_url }}">Home</a>
-      <a href="{{ '/about/' | relative_url }}">About</a>
-      <a href="{{ '/archives/' | relative_url }}">Playbooks</a>
-      <a href="{{ '/case-studies/' | relative_url }}">Case Studies</a>
-      <a href="{{ '/work-with-me/' | relative_url }}">Work with me</a>
+      <a href="{{ '/' | relative_url }}" aria-current="{% if page.url == '/' %}page{% endif %}">Home</a>
+      <a href="{{ '/about/' | relative_url }}" aria-current="{% if page.url == '/about/' %}page{% endif %}">About</a>
+      <a href="{{ '/archives/' | relative_url }}" aria-current="{% if page.url == '/archives/' %}page{% endif %}">Playbooks</a>
+      <a href="{{ '/case-studies/' | relative_url }}" aria-current="{% if page.url == '/case-studies/' %}page{% endif %}">Case Studies</a>
+      <a href="{{ '/work-with-me/' | relative_url }}" aria-current="{% if page.url == '/work-with-me/' %}page{% endif %}">Work with me</a>
       <a href="https://www.visageaiconsulting.com/en?utm_source=blog&utm_medium=header&utm_campaign=visage_launch"
          target="_blank" rel="noopener external">Web App</a>
     </nav>
