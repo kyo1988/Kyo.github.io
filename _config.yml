@@ -77,19 +77,18 @@ kramdown:
   syntax_highlighter: rouge
 
 # GitHub Pagesで許可されるプラグインのみ
-gems:
+plugins:
+  - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
-  - jekyll-feed
-  - jekyll-paginate
   - jekyll-redirect-from
 
 # フィード設定
 feed:
   path: atom.xml
 
-# ページネーション設定
-paginate: 3
+# ページネーション設定（コメントアウト - 不要なOlderリンクを防ぐ）
+# paginate: 3
 
 # 抜粋設定
 excerpt_separator: "<!-- more -->"

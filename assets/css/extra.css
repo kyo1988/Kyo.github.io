@@ -381,10 +381,14 @@ h1,h2{text-wrap:balance}
 /* Skip link: フォーカス時のみ表示 */
 .skip{
   position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
 }
 .skip:focus{
   left:16px; top:12px; width:auto; height:auto; padding:8px 12px;
   background:var(--accent); color:#fff; border-radius:8px; z-index:1000;
+  clip: auto;
+  white-space: normal;
 }
 
 /* Mobile hero optimization */
@@ -448,3 +452,38 @@ h3{margin:var(--s-4) 0 var(--s-2);}
 
 /* 11) フッター上の免責行：マージンを短縮 */
 .medical-disclaimer{margin:1rem 0 .5rem;}
+
+/* === Density Pass v2 — tighten spacing/typography/shadows === */
+.container{max-width:980px;} /* 情報密度を上げる */
+
+.section{padding:40px 0;}           /* 旧: var(--s-6/8) 相当 */
+.section-title{margin-bottom:16px;} /* 旧: var(--s-4/5) */
+
+.hero{padding:56px 0 40px;}         /* 旧: 広め → 1段タイトに */
+.hero h1{margin:0 0 12px;}
+.hero .lead{max-width:50ch; line-height:1.55;}
+.hero .actions{gap:10px; margin-top:16px;}
+.btn{height:38px; padding:0 12px; font-weight:600;}
+.btn-primary{box-shadow:0 3px 14px rgba(2,8,23,.10),0 1px 5px rgba(2,8,23,.06);}
+
+.stats{gap:8px; margin-top:10px;}
+.stats li{padding:3px 10px;}
+
+.grid{gap:18px;}
+.card{
+  padding:16px; border-radius:12px;
+  box-shadow:0 3px 14px rgba(2,8,23,.08),0 1px 4px rgba(2,8,23,.05);
+  display:flex; flex-direction:column; /* CTAを下揃えに */
+}
+.card p:last-child{margin-top:auto;}    /* "Open Web App →"を下に固定 */
+.card:hover{transform:translateY(-1px);}
+
+.card h3{display:flex; align-items:center; gap:8px;}
+.icon{width:22px;height:22px;opacity:.9;flex:none;}
+
+.post-grid{gap:20px;}
+.post-card{padding:16px; border-radius:12px;}
+
+.medical-disclaimer{margin:12px 0 8px;}
+
+h1,h2{text-wrap:balance;} /* 改行バランス */
