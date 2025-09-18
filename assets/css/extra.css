@@ -381,14 +381,12 @@ h1,h2{text-wrap:balance}
 /* Skip link: フォーカス時のみ表示 */
 .skip{
   position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;
-  clip: rect(0,0,0,0);
-  white-space: nowrap;
+  white-space:nowrap; clip:rect(0 0 0 0); clip-path:inset(50%);
 }
 .skip:focus{
   left:16px; top:12px; width:auto; height:auto; padding:8px 12px;
   background:var(--accent); color:#fff; border-radius:8px; z-index:1000;
-  clip: auto;
-  white-space: normal;
+  clip:auto; clip-path:none;
 }
 
 /* Mobile hero optimization */
@@ -487,3 +485,43 @@ h3{margin:var(--s-4) 0 var(--s-2);}
 .medical-disclaimer{margin:12px 0 8px;}
 
 h1,h2{text-wrap:balance;} /* 改行バランス */
+
+/* === Density Pass v3 === */
+:root{ --fs-1:clamp(2.0rem, 1.1rem + 2.2vw, 3.0rem); } /* H1を一段タイトに */
+.container{ max-width:940px; }                          /* 密度さらにUP 980→940 */
+
+.section{ padding:32px 0; }                             /* 40→32 */
+.section-title{ margin-bottom:14px; }
+
+.hero{ padding:44px 0 28px; }                           /* 56→44 / 40→28 */
+.hero h1{ margin:0 0 10px; line-height:1.15; }
+.hero .lead{ max-width:50ch; line-height:1.55; }
+.hero .actions{ gap:8px; margin-top:14px; }
+.btn{ height:36px; padding:0 12px; }                    /* 38→36 */
+.stats{ gap:8px; margin-top:8px; }
+.stats li{ padding:3px 10px; }
+
+.grid{ gap:16px; }                                      /* カード間隔さらに少し詰める */
+.card{
+  padding:14px; border-radius:12px;
+  box-shadow:0 2px 10px rgba(2,8,23,.07), 0 1px 3px rgba(2,8,23,.05);
+  display:flex; flex-direction:column;
+}
+.card p:last-child{ margin-top:auto; }                  /* CTAを下揃え固定 */
+.card:hover{ transform:translateY(-1px); }
+
+.post-grid{ gap:18px; }
+.post-card{ padding:14px; }
+
+.medical-disclaimer{ margin:10px 0 6px; }
+
+/* 視覚のカサ減らし：境界線をさらに薄く */
+.hero, .card, .post-card{
+  border-color: color-mix(in srgb, var(--border) 70%, transparent);
+}
+
+/* タイプレンダリングをきれいに */
+html{ -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+
+/* 最後の保険：Olderリンクを完全に隠す */
+.pagination, .next, a[href*="Older"]{ display:none !important; }
