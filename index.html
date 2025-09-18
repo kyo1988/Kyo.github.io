@@ -65,7 +65,10 @@ layout: default
       {% for post in site.posts limit:3 %}
         <article class="post-card">
           <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-          <p class="meta">{{ post.date | date: "%b %-d, %Y" }}</p>
+          <p class="meta">
+            {{ post.date | date: "%b %-d, %Y" }}
+            · {{ post.content | strip_html | split: ' ' | size | divided_by: 200 | ceil }} min read
+          </p>
           <p>{{ post.excerpt | strip_html | truncatewords: 28 }}</p>
           <p><a class="btn btn-ghost" href="{{ post.url | relative_url }}">Read more →</a></p>
         </article>
