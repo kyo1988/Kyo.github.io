@@ -365,3 +365,25 @@ figcaption { font-size: 14px; opacity: .8; }
     color: #94a3b8;
   }
 }
+
+/* Stat strip */
+.stats{display:flex;flex-wrap:wrap;gap:14px;margin-top:14px;color:var(--muted)}
+.stats li{list-style:none;border:1px solid var(--border);border-radius:9999px;padding:6px 12px;background:var(--surface-2)}
+.stats strong{color:var(--text);margin-right:6px}
+
+/* Feature card icons */
+.icon{opacity:.9;margin-right:6px;vertical-align:-4px}
+.card h3{display:flex;align-items:center;gap:8px}
+
+/* Heading balance */
+h1,h2{text-wrap:balance}
+
+/* Skip link */
+.skip{position:absolute;left:-9999px;top:auto}
+.skip:focus{left:16px;top:16px;background:var(--accent);color:#fff;padding:8px 12px;border-radius:8px}
+
+/* Mobile hero optimization */
+@media (max-width:480px){
+  .hero{padding:48px 0 36px}
+  .hero .actions{gap:10px}
+}

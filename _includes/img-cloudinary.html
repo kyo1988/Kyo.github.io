@@ -1,4 +1,8 @@
 {% comment %} usage: {% include img-cloudinary.html path="/images/foo.png" w="1200" alt="desc" %}{% endcomment %}
 {% assign base = site.cloudinary.base | default: "" %}
-<img src="{{ base }}/f_auto,q_auto,w_{{ include.w | default: 1200 }}{{ include.path }}"
-     alt="{{ include.alt | default: page.title }}" loading="lazy">
+<img
+  src="{{ base }}/f_auto,q_auto,w_{{ include.w | default: 1200 }}{{ include.path }}"
+  width="{{ include.w | default: 1200 }}"
+  height="{{ include.h | default: 630 }}"
+  alt="{{ include.alt | default: page.title }}"
+  loading="lazy" decoding="async" fetchpriority="low" />
