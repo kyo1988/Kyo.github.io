@@ -525,3 +525,69 @@ html{ -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
 
 /* 最後の保険：Olderリンクを完全に隠す */
 .pagination, .next, a[href*="Older"]{ display:none !important; }
+
+/* ===== Density v4 — 0.5× spacing / compact scale ===== */
+
+/* 1) デスクトップはしっかり詰め、モバイルは可読性を維持 */
+@media (min-width: 768px){
+  .container{ max-width: 920px; }               /* 940→さらに詰める */
+
+  /* セクション間＝ちょうど半分へ */
+  .section{ padding: 24px 0; }                   /* 旧: ~48px 相当 */
+  .section-title{ margin-bottom: 12px; }
+
+  /* ヒーロー（高さを半分に近づける） */
+  .hero{ padding: 32px 0 22px; }
+  .hero h1{ margin: 0 0 8px; line-height: 1.15; }
+  .hero .lead{ max-width: 50ch; line-height: 1.5; }
+  .hero .actions{ gap: 8px; margin-top: 12px; }
+
+  /* CTA・バッジも縮尺ダウン（最低タップ高は守る） */
+  .btn{ height: 36px; padding: 0 12px; }
+  .stats{ gap: 6px; margin-top: 8px; }
+  .stats li{ padding: 2px 8px; }
+
+  /* Core Capabilities：カードとグリッド間隔を半分に */
+  .grid{ gap: 14px; }
+  .card{
+    padding: 12px;
+    border-radius: 12px;
+    display: flex; flex-direction: column;
+    box-shadow: 0 2px 10px rgba(2,8,23,.07), 0 1px 3px rgba(2,8,23,.05);
+  }
+  .card p:last-child{ margin-top: auto; }        /* CTAを下辺で揃える */
+  .card:hover{ transform: translateY(-1px); }
+
+  .card h3{ display:flex; align-items:center; gap:8px; }
+  .icon{ width: 20px; height: 20px; }
+
+  /* Latest Posts：カード・行間も0.5× */
+  .post-grid{ gap: 16px; }
+  .post-card{ padding: 12px; }
+  .post-card .meta{ margin: .05rem 0 .35rem; }
+
+  /* 区切り線をさらに薄く（視覚ノイズを減らす） */
+  .hero, .card, .post-card{
+    border-color: color-mix(in srgb, var(--border) 60%, transparent);
+  }
+
+  /* セクション区切りの水平線も弱める（もし使っていれば） */
+  hr{ margin: 20px 0; opacity: .5; }
+}
+
+/* 2) タイポの大きさもわずかに詰める（見出しだけ） */
+:root{
+  /* H1をほんの少し小さくして1画面内に収めやすく */
+  --fs-1: clamp(1.9rem, 1.05rem + 2.1vw, 2.7rem);
+}
+
+/* 3) Skip linkはフォーカス時のみ出す（保険） */
+.skip{
+  position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;
+  white-space:nowrap; clip:rect(0 0 0 0); clip-path:inset(50%);
+}
+.skip:focus{
+  left:16px; top:12px; width:auto; height:auto; padding:8px 12px;
+  background:var(--accent); color:#fff; border-radius:8px; z-index:1000;
+  clip:auto; clip-path:none;
+}
