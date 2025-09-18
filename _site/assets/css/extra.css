@@ -1,0 +1,15 @@
+:root { --maxw: 740px; }
+.post-content { max-width: var(--maxw); line-height: 1.8; font-size: 16.5px; }
+.post-content h2 { margin-top: 2.0em; }
+.tldr, .key-takeaways, .qa, .cta, .related { 
+  border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px; margin: 24px 0;
+}
+img { max-width: 100%; height: auto; }
+figure { margin: 24px 0; }
+figcaption { font-size: 14px; opacity: .8; }
+
+@media (prefers-color-scheme: dark) {
+  body { background: #0b0f14; color: #e6edf3; }
+  .tldr, .key-takeaways, .qa, .cta, .related { border-color: #1f2937; background: #11161c; }
+  a { color: #8ab4f8; }
+}

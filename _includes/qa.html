@@ -1,0 +1,15 @@
+<section class="qa">
+  <h2>Q&A</h2>
+  {% assign rows = include.items | default: "" | split: "||" %}
+  <dl>
+  {% for row in rows %}
+    {% assign qa = row | split: "::" %}
+    {% assign q = qa[0] %}
+    {% assign a = qa[1] %}
+    {% if q and a %}
+      <dt>{{ q }}</dt>
+      <dd>{{ a }}</dd>
+    {% endif %}
+  {% endfor %}
+  </dl>
+</section>
