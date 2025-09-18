@@ -4,7 +4,7 @@ title: "CoreML Optimization Playbook"
 excerpt: "This is a modified version of the report for Machine Learning Engineering in Bath Full Time MBA Class of 2020."
 description: "Comprehensive analysis of CoreML optimization techniques for on-device machine learning. Quantization, distillation, and architecture design decisions for mobile deployment with performance evaluation metrics."
 categories: Machine Learning Engineering
-tags: [Machine Learning Engineering, CoreML, On-device, iOS, Optimization, Mobile AI]
+tags: [Machine Learning Engineering, CoreML, On-device, iOS, Optimization, Mobile AI, Case-Study]
 comments: true
 last_modified_at: 2025-01-19
 ---

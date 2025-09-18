@@ -4,7 +4,7 @@ title: "Press Kit"
 permalink: /press-kit/
 description: "Logos, headshots, and one-paragraph bio."
 ---
-- ロゴ：/images/logo.png
-- 写真：/images/profile.jpg
-- 紹介文：Kyo Harada — Founder of Visage AI …
-- 連絡先：info@REPLACE
+- **Logo:** /images/logo.png
+- **Headshot:** /images/profile.jpg  
+- **Bio:** Kyo Harada is the Founder & Data Scientist at Visage AI, specializing in on-device AI for skin analytics and finance-grade data products. He holds an MBA from Bath University and has extensive experience in CoreML optimization, RAG systems, and financial data analysis.
+- **Contact:** info@visageaiconsulting.com

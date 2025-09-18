@@ -3,6 +3,7 @@ layout: page
 title: DataScience
 comments: yes
 permalink: /DataScience/
+redirect_to: /archives/
 ---
 
 * Table of Contents
