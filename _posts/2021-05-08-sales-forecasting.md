@@ -2,9 +2,11 @@
 layout: post
 title: SALES FORECASTING
 excerpt: "This is a modified version of the report for Business Analyics in Bath Full Time MBA Class of 2020."
+description: "One-month-ahead sales forecasting for university catering using time series analysis. ARIMA and LSTM models for demand prediction with seasonal adjustments."
 categories: Business Analyics
-tags: [Business Analyics]
+tags: [Business Analyics, Time Series, Forecasting, ARIMA, LSTM, SPSS]
 comments: true
+last_modified_at: 2025-01-19
 ---
 
 * Table of Contents
@@ -144,3 +146,6 @@ Mean Square Error (MSE) can be one of the most common method to compare the mode
 * TensorFlow, 2020. Time series forecasting [Online]. Available from: [https://www.tensorflow.org/tutorials/structured_data/time_series](https://www.tensorflow.org/tutorials/structured_data/time_series) [Accessed 30 March 2020].
 * Tieleman, T. and Hinton, G., 2012. Lecture 6.5-rmsprop: Divide the Gradient by a Running Average of Its Recent Magnitude. COURSERA: Neural Networks for Machine Learning, 4, 26-31.
 * Wierenga, B., 2008. Handbook of Marketing Decision Models
+
+{% include cta.html %}
+{% include related-by-tags.html %}

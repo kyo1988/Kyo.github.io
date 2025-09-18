@@ -65,5 +65,5 @@ Finally, Figures 6 through 10, the relative utility levels are demonstrated for 
 * Tieleman, T. and Hinton, G., 2012. Lecture 6.5-rmsprop: Divide the Gradient by a Running Average of Its Recent Magnitude. COURSERA: Neural Networks for Machine Learning, 4, 26-31.
 * Wierenga, B., 2008. Handbook of Marketing Decision Models
 
-<!-- {% include cta.html %} -->
-<!-- {% include related-by-tags.html %} -->
+{% include cta.html %}
+{% include related-by-tags.html %}
