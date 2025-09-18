@@ -80,5 +80,3 @@ The next phase of development should focus on gradual feature restoration while 
 * GitHub Pages, 2020. GitHub Pages Jekyll Version [Online]. Available from: [https://pages.github.com/versions/](https://pages.github.com/versions/) [Accessed 19 January 2025].
 * Liquid Template Language, 2020. Liquid Template Language Documentation [Online]. Available from: [https://shopify.github.io/liquid/](https://shopify.github.io/liquid/) [Accessed 19 January 2025].
 
-{% include cta.html %}
-{% include related-by-tags.html %}
