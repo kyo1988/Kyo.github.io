@@ -1,0 +1,9 @@
+<div class="key-takeaways">
+  <strong>Key Takeaways</strong>
+  <ul>
+    {% assign points = include.points | default: "" | split: "||" %}
+    {% for p in points %}
+      {% if p != "" %}<li>{{ p }}</li>{% endif %}
+    {% endfor %}
+  </ul>
+</div>
