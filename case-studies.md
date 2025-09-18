@@ -8,7 +8,8 @@ description: "CoreML optimization, RAG audits, finance-grade pipelines. Real-wor
 <div class="case-studies-intro">
   <p>Real-world implementations with measurable results. Each case study includes technical details, performance metrics, and live demonstrations.</p>
   <div class="case-studies-cta">
-    <a href="https://github.com/kyo1988/visage-ai-webapp?utm_source=blog&utm_medium=case_studies&utm_campaign=web_app" target="_blank" rel="noopener" class="btn btn-primary">Try Live Demos</a>
+    <a href="https://www.visageaiconsulting.com/en?utm_source=blog&utm_medium=case_studies&utm_campaign=web_app" target="_blank" rel="noopener" class="btn btn-primary">Try Live Demos</a>
+    <a href="https://apps.apple.com/app/visage-ai-skin-advisor/id6748892785?utm_source=blog&utm_medium=case_studies&utm_campaign=mobile_app" target="_blank" rel="noopener" class="btn btn-outline">Download iOS App</a>
   </div>
 </div>
 
@@ -20,7 +21,7 @@ description: "CoreML optimization, RAG audits, finance-grade pipelines. Real-wor
     <p class="case-description">{{ p.description }}</p>
     <div class="case-study-actions">
       <a href="{{ p.url | relative_url }}" class="btn btn-secondary">Read Case Study</a>
-      <a href="https://github.com/kyo1988/visage-ai-webapp?utm_source=blog&utm_medium=case_study&utm_campaign={{ p.title | slugify }}" target="_blank" rel="noopener" class="btn btn-outline">Live Demo</a>
+      <a href="https://www.visageaiconsulting.com/en?utm_source=blog&utm_medium=case_study&utm_campaign={{ p.title | slugify }}" target="_blank" rel="noopener" class="btn btn-outline">Live Demo</a>
     </div>
   </div>
 {% endfor %}
@@ -29,6 +30,6 @@ description: "CoreML optimization, RAG audits, finance-grade pipelines. Real-wor
 {% if cases.size == 0 %}
 <div class="no-cases">
   <p>Case studies are being prepared. Check back soon for detailed technical implementations and performance metrics.</p>
-  <a href="https://github.com/kyo1988/visage-ai-webapp?utm_source=blog&utm_medium=case_studies_empty&utm_campaign=web_app" target="_blank" rel="noopener" class="btn btn-primary">Explore Web App</a>
+  <a href="https://www.visageaiconsulting.com/en?utm_source=blog&utm_medium=case_studies_empty&utm_campaign=web_app" target="_blank" rel="noopener" class="btn btn-primary">Explore Web App</a>
 </div>
 {% endif %}
