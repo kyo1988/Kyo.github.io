@@ -1,13 +1,14 @@
 ---
 layout: post
 title: "EDINET XBRLで作る投資家級データベース"
-description: "スキーマ設計、ETL、欠損対処、ダッシュボード例。"投資家が使える粒度"にするための設計と運用の実際。"
+description: "スキーマ設計、ETL、欠損対処、ダッシュボード例。投資家が使える粒度にするための設計と運用の実際。"
 tags: [EDINET, Finance, ETL, Case-Study, XBRL, Database]
 og_image: /images/edinet-db.png
 last_modified_at: 2025-01-19
+lang: ja
 ---
 
-{% include tldr.html text="投資家が使える粒度"にするための設計と運用の実際。EDINET XBRLから投資家級データベースを構築する完全ガイド。" %}
+{% include tldr.html text="投資家が使える粒度にするための設計と運用の実際。EDINET XBRLから投資家級データベースを構築する完全ガイド。" %}
 
 ## スキーマ設計
 

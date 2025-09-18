@@ -1,4 +1,1458 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ja"><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="https://kyo1988.github.io/Kyo.github.io/atom.xml" rel="self" type="application/atom+xml" /><link href="https://kyo1988.github.io/Kyo.github.io/" rel="alternate" type="text/html" hreflang="ja" /><updated>2025-09-18T09:34:29+09:00</updated><id>https://kyo1988.github.io/Kyo.github.io/atom.xml</id><title type="html">Kyo Harada — Visage AI / Data Scientist</title><subtitle>Founder &amp; Data Scientist building on-device AI for skin analytics and finance-grade data products.</subtitle><author><name>Kyo Harada</name></author><entry><title type="html">SALES FORECASTING 2</title><link href="https://kyo1988.github.io/Kyo.github.io/business/analyics/2021/06/18/SALES-FORECASTING-2.html" rel="alternate" type="text/html" title="SALES FORECASTING 2" /><published>2021-06-18T00:00:00+09:00</published><updated>2025-01-19T00:00:00+09:00</updated><id>https://kyo1988.github.io/Kyo.github.io/business/analyics/2021/06/18/SALES-FORECASTING-2</id><content type="html" xml:base="https://kyo1988.github.io/Kyo.github.io/business/analyics/2021/06/18/SALES-FORECASTING-2.html"><![CDATA[<ul id="markdown-toc">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ja"><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="https://kyo1988.github.io/Kyo.github.io/atom.xml" rel="self" type="application/atom+xml" /><link href="https://kyo1988.github.io/Kyo.github.io/" rel="alternate" type="text/html" hreflang="ja" /><updated>2025-09-18T11:37:18+09:00</updated><id>https://kyo1988.github.io/Kyo.github.io/atom.xml</id><title type="html">Kyo Harada — Visage AI / Data Scientist</title><subtitle>Founder &amp; Data Scientist building on-device AI for skin analytics and finance-grade data products.</subtitle><author><name>Kyo Harada</name></author><entry xml:lang="ja"><title type="html">RAGミニ監査チェックリスト（無料DL）</title><link href="https://kyo1988.github.io/Kyo.github.io/2025/01/19/rag-audit-checklist.html" rel="alternate" type="text/html" title="RAGミニ監査チェックリスト（無料DL）" /><published>2025-01-19T00:00:00+09:00</published><updated>2025-01-19T00:00:00+09:00</updated><id>https://kyo1988.github.io/Kyo.github.io/2025/01/19/rag-audit-checklist</id><content type="html" xml:base="https://kyo1988.github.io/Kyo.github.io/2025/01/19/rag-audit-checklist.html"><![CDATA[<div class="tldr">
+  <strong>TL;DR</strong>
+  <p>RAGの善し悪しは再現性×リーン運用。まずはこのA4一枚から。2週間で現状把握→改善提案まで。</p>
+</div>
+
+<h2 id="評価観点と最小セット">評価観点と最小セット</h2>
+
+<h3 id="1-データ品質data-quality">1. データ品質（Data Quality）</h3>
+<ul>
+  <li><strong>文書の一貫性</strong>: フォーマット・構造の統一性</li>
+  <li><strong>重複排除</strong>: 同一内容の重複文書の特定</li>
+  <li><strong>更新頻度</strong>: データの鮮度と更新プロセス</li>
+  <li><strong>権限管理</strong>: アクセス制御とセキュリティ</li>
+</ul>
+
+<h3 id="2-検索性能retrieval-performance">2. 検索性能（Retrieval Performance）</h3>
+<ul>
+  <li><strong>検索精度</strong>: 関連文書の検索率（Recall）</li>
+  <li><strong>検索適合性</strong>: 検索結果の関連性（Precision）</li>
+  <li><strong>検索速度</strong>: クエリ応答時間</li>
+  <li><strong>スケーラビリティ</strong>: 文書数増加への対応</li>
+</ul>
+
+<h3 id="3-生成品質generation-quality">3. 生成品質（Generation Quality）</h3>
+<ul>
+  <li><strong>事実正確性</strong>: 生成内容の事実関係の正確性</li>
+  <li><strong>一貫性</strong>: 文脈との整合性</li>
+  <li><strong>完全性</strong>: 回答の完全性と詳細度</li>
+  <li><strong>安全性</strong>: 有害・不適切な内容の生成回避</li>
+</ul>
+
+<h2 id="評価ダッシュボード">評価ダッシュボード</h2>
+
+<div class="key-takeaways">
+  <strong>Key Takeaways</strong>
+  <ul>
+    
+    
+      <li>検索精度: 80%以上</li>
+    
+      <li>生成品質: 85%以上</li>
+    
+      <li>応答時間: 3秒以内</li>
+    
+      <li>コスト効率: $0.01/クエリ以下</li>
+    
+      <li>ユーザー満足度: 4.0/5.0以上</li>
+    
+  </ul>
+</div>
+
+<h2 id="チェックリスト項目">チェックリスト項目</h2>
+
+<h3 id="データ管理">データ管理</h3>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />文書の前処理が適切に実行されている</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />埋め込みベクトルの品質が保証されている</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />データの更新プロセスが自動化されている</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />バージョン管理が適切に行われている</li>
+</ul>
+
+<h3 id="検索システム">検索システム</h3>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />適切な検索アルゴリズムが選択されている</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />検索結果のランキングが最適化されている</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />検索クエリの前処理が実装されている</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />検索結果のフィルタリングが機能している</li>
+</ul>
+
+<h3 id="生成システム">生成システム</h3>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />プロンプトエンジニアリングが最適化されている</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />生成内容の検証プロセスが実装されている</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />エラーハンドリングが適切に設計されている</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />生成内容のログが記録されている</li>
+</ul>
+
+<h2 id="改善提案テンプレート">改善提案テンプレート</h2>
+
+<section class="qa">
+  <h2>Q&amp;A</h2>
+  
+  <dl>
+  
+    
+    
+    
+    
+      <dt>現状の課題は？</dt>
+      <dd>検索精度が70%と目標の80%を下回っている</dd>
+    
+  
+    
+    
+    
+    
+      <dt>根本原因は？</dt>
+      <dd>埋め込みモデルの性能不足と文書前処理の不備</dd>
+    
+  
+    
+    
+    
+    
+      <dt>改善策は？</dt>
+      <dd>埋め込みモデルの更新と文書前処理の最適化</dd>
+    
+  
+    
+    
+    
+    
+      <dt>期待効果は？</dt>
+      <dd>検索精度85%向上、ユーザー満足度4.2/5.0達成</dd>
+    
+  
+  </dl>
+</section>
+
+<h2 id="無料ダウンロード">無料ダウンロード</h2>
+
+<p><strong>RAG監査チェックリスト（PDF）</strong>を無料でダウンロードできます：</p>
+
+<ul>
+  <li>📋 <strong>A4版チェックリスト</strong>: 印刷して使用可能</li>
+  <li>📊 <strong>評価ダッシュボード</strong>: Excel形式で数値管理</li>
+  <li>📝 <strong>改善提案テンプレート</strong>: Word形式でレポート作成</li>
+</ul>
+
+<p><a href="https://forms.gle/REPLACE">ダウンロードはこちら</a> （Google Forms）</p>
+
+<h2 id="監査スケジュール">監査スケジュール</h2>
+
+<ul>
+  <li><strong>Week 1</strong>: 現状調査・データ収集</li>
+  <li><strong>Week 2</strong>: 分析・評価・改善提案作成</li>
+  <li><strong>Deliverable</strong>: 評価レポート + 改善ロードマップ</li>
+</ul>
+
+<h2 id="参考資料">参考資料</h2>
+
+<ul>
+  <li><a href="https://arxiv.org/abs/2312.10997">RAG Evaluation Best Practices</a></li>
+  <li><a href="https://arxiv.org/abs/2312.10997">Retrieval-Augmented Generation Survey</a></li>
+  <li><a href="https://github.com/huggingface/evaluate">LLM Evaluation Framework</a></li>
+</ul>
+
+<div class="cta">
+  <h3>相談・見積りのご依頼</h3>
+  <p>小さく速く、成果物ベースでご一緒します。</p>
+  <p>
+    <a class="btn" href="/work-with-me/">Work with me</a>
+    <a class="btn ghost" href="/newsletter/">無料ニュースレター</a>
+  </p>
+</div>
+
+<div class="related">
+  <h3>次に読む</h3>
+  <ul>
+  
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+        <li><a href="/Kyo.github.io/2025/01/19/edinet-db-howto.html">EDINET XBRLで作る投資家級データベース</a></li>
+        
+      
+    
+  
+    
+      
+      
+      
+        <li><a href="/Kyo.github.io/2025/01/19/coreml-optimization-playbook.html">CoreML最適化プレイブック（受託）</a></li>
+        
+      
+    
+  
+    
+      
+      
+      
+        <li><a href="/Kyo.github.io/2025/01/19/coreml-optimization-playbook-en.html">CoreML Optimization Playbook (Consulting)</a></li>
+        
+      
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+  </ul>
+</div>]]></content><author><name>Kyo Harada</name></author><category term="LLM" /><category term="RAG" /><category term="Evaluation" /><category term="Case-Study" /><category term="AI" /><summary type="html"><![CDATA[2週間で現状把握→改善提案まで。評価ダッシュボード付き。RAGの善し悪しは再現性×リーン運用。まずはこのA4一枚から。]]></summary></entry><entry xml:lang="en"><title type="html">CoreML Optimization Playbook (Consulting)</title><link href="https://kyo1988.github.io/Kyo.github.io/2025/01/19/coreml-optimization-playbook-en.html" rel="alternate" type="text/html" title="CoreML Optimization Playbook (Consulting)" /><published>2025-01-19T00:00:00+09:00</published><updated>2025-01-19T00:00:00+09:00</updated><id>https://kyo1988.github.io/Kyo.github.io/2025/01/19/coreml-optimization-playbook-en</id><content type="html" xml:base="https://kyo1988.github.io/Kyo.github.io/2025/01/19/coreml-optimization-playbook-en.html"><![CDATA[<div class="tldr">
+  <strong>TL;DR</strong>
+  <p>Key design decisions for on-device optimization without quality loss in 3 minutes. Optimization sequence: quantization → distillation → architecture design.</p>
+</div>
+
+<h2 id="design-decision-framework">Design Decision Framework</h2>
+
+<h3 id="1-quantization">1. Quantization</h3>
+<ul>
+  <li><strong>INT8 Quantization</strong>: 75% model size reduction with &lt;5% accuracy loss</li>
+  <li><strong>Dynamic Quantization</strong>: Quantize only during inference, maintain FP32 during training</li>
+  <li><strong>Static Quantization</strong>: Pre-calibration for higher compression rates</li>
+</ul>
+
+<h3 id="2-knowledge-distillation">2. Knowledge Distillation</h3>
+<ul>
+  <li><strong>Teacher-Student</strong>: Knowledge transfer from large to lightweight models</li>
+  <li><strong>Temperature Parameter</strong>: Soft label generation with T=3-5</li>
+  <li><strong>Loss Function</strong>: Hard labels + soft labels + feature maps</li>
+</ul>
+
+<h3 id="3-architecture-design">3. Architecture Design</h3>
+<ul>
+  <li><strong>MobileNet</strong>: Depthwise separable convolutions for computational reduction</li>
+  <li><strong>EfficientNet</strong>: Compound scaling for efficiency maximization</li>
+  <li><strong>SqueezeNet</strong>: Fire Module for parameter count reduction</li>
+</ul>
+
+<h2 id="evaluation-metrics">Evaluation Metrics</h2>
+
+<div class="key-takeaways">
+  <strong>Key Takeaways</strong>
+  <ul>
+    
+    
+      <li>Accuracy: Top-1/Top-5 Accuracy</li>
+    
+      <li>Inference Speed: FPS (Frames Per Second)</li>
+    
+      <li>Model Size: MB units</li>
+    
+      <li>Memory Usage: RAM/VRAM</li>
+    
+      <li>Battery Consumption: mAh/inference</li>
+    
+  </ul>
+</div>
+
+<h2 id="common-pitfalls-and-solutions">Common Pitfalls and Solutions</h2>
+
+<h3 id="typical-failure-patterns">Typical Failure Patterns</h3>
+<ol>
+  <li><strong>Excessive Quantization</strong>: Significant accuracy degradation</li>
+  <li><strong>Improper Distillation</strong>: Temperature setting errors</li>
+  <li><strong>Architecture Mismatch</strong>: Task and model incompatibility</li>
+</ol>
+
+<h3 id="solutions">Solutions</h3>
+<ul>
+  <li><strong>Incremental Optimization</strong>: Apply one method at a time and measure effects</li>
+  <li><strong>A/B Testing</strong>: Parallel comparison of multiple approaches</li>
+  <li><strong>Real Device Validation</strong>: Test on actual devices, not simulators</li>
+</ul>
+
+<h2 id="deliverables">Deliverables</h2>
+
+<section class="qa">
+  <h2>Q&amp;A</h2>
+  
+  <dl>
+  
+    
+    
+    
+    
+      <dt>How to choose methods?</dt>
+      <dd>Select based on accuracy requirements and constraints. Accuracy priority → distillation, size priority → quantization</dd>
+    
+  
+    
+    
+    
+    
+      <dt>What are the evaluation metrics?</dt>
+      <dd>Comprehensive evaluation across 5 axes: accuracy, speed, size, memory, battery</dd>
+    
+  
+    
+    
+    
+    
+      <dt>What are the deliverables and timeline?</dt>
+      <dd>Optimized model, implementation guide, performance report (2-6 weeks)</dd>
+    
+  
+  </dl>
+</section>
+
+<h2 id="implementation-example">Implementation Example</h2>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// CoreML optimization implementation example</span>
+<span class="kd">import</span> <span class="kt">CoreML</span>
+
+<span class="kd">class</span> <span class="kt">OptimizedModelManager</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">loadOptimizedModel</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">MLModel</span><span class="p">?</span> <span class="p">{</span>
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">modelURL</span> <span class="o">=</span> <span class="kt">Bundle</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="nf">url</span><span class="p">(</span><span class="nv">forResource</span><span class="p">:</span> <span class="s">"optimized_model"</span><span class="p">,</span> <span class="nv">withExtension</span><span class="p">:</span> <span class="s">"mlmodelc"</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="kc">nil</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="k">try</span><span class="p">?</span> <span class="kt">MLModel</span><span class="p">(</span><span class="nv">contentsOf</span><span class="p">:</span> <span class="n">modelURL</span><span class="p">)</span>
+    <span class="p">}</span>
+    
+    <span class="kd">func</span> <span class="nf">predict</span><span class="p">(</span><span class="nv">input</span><span class="p">:</span> <span class="kt">MLFeatureProvider</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">MLFeatureValue</span><span class="p">?</span> <span class="p">{</span>
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">model</span> <span class="o">=</span> <span class="nf">loadOptimizedModel</span><span class="p">()</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="kc">nil</span> <span class="p">}</span>
+        <span class="k">return</span> <span class="k">try</span><span class="p">?</span> <span class="n">model</span><span class="o">.</span><span class="nf">prediction</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="n">input</span><span class="p">)</span><span class="o">.</span><span class="nf">featureValue</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="s">"output"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="references">References</h2>
+
+<ul>
+  <li><a href="https://developer.apple.com/documentation/coreml">CoreML Documentation</a></li>
+  <li><a href="https://developer.apple.com/machine-learning/models/">Model Optimization Guide</a></li>
+  <li><a href="https://developer.apple.com/videos/">WWDC Sessions</a></li>
+</ul>
+
+<div class="cta">
+  <h3>相談・見積りのご依頼</h3>
+  <p>小さく速く、成果物ベースでご一緒します。</p>
+  <p>
+    <a class="btn" href="/work-with-me/">Work with me</a>
+    <a class="btn ghost" href="/newsletter/">無料ニュースレター</a>
+  </p>
+</div>
+
+<div class="related">
+  <h3>次に読む</h3>
+  <ul>
+  
+    
+      
+      
+      
+        <li><a href="/Kyo.github.io/2025/01/19/rag-audit-checklist.html">RAGミニ監査チェックリスト（無料DL）</a></li>
+        
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+        <li><a href="/Kyo.github.io/2025/01/19/edinet-db-howto.html">EDINET XBRLで作る投資家級データベース</a></li>
+        
+      
+    
+  
+    
+      
+      
+      
+        <li><a href="/Kyo.github.io/2025/01/19/coreml-optimization-playbook.html">CoreML最適化プレイブック（受託）</a></li>
+        
+      
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+  </ul>
+</div>]]></content><author><name>Kyo Harada</name></author><category term="CoreML" /><category term="On-device" /><category term="Case-Study" /><category term="iOS" /><category term="Machine-Learning" /><summary type="html"><![CDATA[Decision-making for quantization/distillation/architecture design, evaluation metrics, and pitfalls. Key design decisions for on-device optimization without quality loss in 3 minutes.]]></summary></entry><entry xml:lang="ja"><title type="html">Founder’s Log #01 — 週報</title><link href="https://kyo1988.github.io/Kyo.github.io/2025/01/19/founders-log-01.html" rel="alternate" type="text/html" title="Founder’s Log #01 — 週報" /><published>2025-01-19T00:00:00+09:00</published><updated>2025-01-19T00:00:00+09:00</updated><id>https://kyo1988.github.io/Kyo.github.io/2025/01/19/founders-log-01</id><content type="html" xml:base="https://kyo1988.github.io/Kyo.github.io/2025/01/19/founders-log-01.html"><![CDATA[<div class="tldr">
+  <strong>TL;DR</strong>
+  <p>今週の決定：Jekyll 3互換パッチでビルド安定化。数字の動き：20回連続失敗→成功。次週は新機能段階的復活。</p>
+</div>
+
+<h2 id="built">Built</h2>
+
+<ul>
+  <li><strong>Jekyll 3互換パッチ</strong>: 配列引数includeを区切り文字方式に変更</li>
+  <li><strong>ビルド安定化</strong>: 20回連続失敗を解決、GitHub Pagesで正常動作</li>
+  <li><strong>Liquid構文最適化</strong>: <code class="language-plaintext highlighter-rouge">absolute_url</code>、<code class="language-plaintext highlighter-rouge">strip_newlines</code>フィルターを削除</li>
+  <li><strong>JSON-LD実装</strong>: Jekyll 3.10.0互換の構造化データ</li>
+</ul>
+
+<h2 id="learned">Learned</h2>
+
+<ul>
+  <li><strong>Jekyll 3.10.0の制限</strong>: GitHub Pagesの制約を事前調査の重要性</li>
+  <li><strong>段階的アプローチ</strong>: 最小構成→機能復活の順序が重要</li>
+  <li><strong>Liquid互換性</strong>: 配列引数は不安定、区切り文字が確実</li>
+</ul>
+
+<h2 id="one-chart">One-chart</h2>
+
+<figure>
+  
+
+<img src="https://res.cloudinary.com/djiyxp5ax/image/upload/f_auto,q_auto,w_1200/charts/build-success.png" alt="ビルド成功の推移" loading="lazy" />
+
+  <figcaption>20回連続失敗から安定ビルドへの改善。Jekyll 3互換パッチの効果。</figcaption>
+</figure>
+
+<h2 id="qa">Q&amp;A</h2>
+
+<section class="qa">
+  <h2>Q&amp;A</h2>
+  
+  <dl>
+  
+    
+    
+    
+    
+      <dt>目的は？</dt>
+      <dd>20回連続ビルド失敗の根本解決</dd>
+    
+  
+    
+    
+    
+    
+      <dt>どう評価？</dt>
+      <dd>ローカルビルド成功＋GitHub Pages自動ビルド成功</dd>
+    
+  
+    
+    
+    
+    
+      <dt>次の一手は？</dt>
+      <dd>新機能の段階的復活とコンテンツ拡充</dd>
+    
+  
+  </dl>
+</section>
+
+<h2 id="sources">Sources</h2>
+
+<ul>
+  <li><a href="https://jekyllrb.com/docs/3.10.0/">Jekyll 3.10.0 Documentation</a></li>
+  <li><a href="https://pages.github.com/versions/">GitHub Pages Jekyll Version</a></li>
+  <li><a href="https://shopify.github.io/liquid/">Liquid Template Language</a></li>
+</ul>
+
+<div class="cta">
+  <h3>相談・見積りのご依頼</h3>
+  <p>小さく速く、成果物ベースでご一緒します。</p>
+  <p>
+    <a class="btn" href="/work-with-me/">Work with me</a>
+    <a class="btn ghost" href="/newsletter/">無料ニュースレター</a>
+  </p>
+</div>
+
+<div class="related">
+  <h3>次に読む</h3>
+  <ul>
+  
+    
+      
+      
+      
+    
+  
+    
+  
+    
+      
+      
+      
+        <li><a href="/Kyo.github.io/2025/01/19/founders-log-01-en.html">Founder's Log #01 — Weekly Update</a></li>
+        
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+  </ul>
+</div>]]></content><author><name>Kyo Harada</name></author><category term="Log" /><category term="Founder" /><category term="Jekyll" /><category term="GitHub-Pages" /><summary type="html"><![CDATA[今週のBuilt / Learned / One-chart / One-link。Jekyll 3互換パッチ適用とビルド安定化の成果をまとめ。]]></summary></entry><entry xml:lang="ja"><title type="html">EDINET XBRLで作る投資家級データベース</title><link href="https://kyo1988.github.io/Kyo.github.io/2025/01/19/edinet-db-howto.html" rel="alternate" type="text/html" title="EDINET XBRLで作る投資家級データベース" /><published>2025-01-19T00:00:00+09:00</published><updated>2025-01-19T00:00:00+09:00</updated><id>https://kyo1988.github.io/Kyo.github.io/2025/01/19/edinet-db-howto</id><content type="html" xml:base="https://kyo1988.github.io/Kyo.github.io/2025/01/19/edinet-db-howto.html"><![CDATA[<div class="tldr">
+  <strong>TL;DR</strong>
+  <p>投資家が使える粒度にするための設計と運用の実際。EDINET XBRLから投資家級データベースを構築する完全ガイド。</p>
+</div>
+
+<h2 id="スキーマ設計">スキーマ設計</h2>
+
+<h3 id="1-基本テーブル構造">1. 基本テーブル構造</h3>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- 企業マスタ</span>
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">companies</span> <span class="p">(</span>
+    <span class="n">company_id</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">,</span>
+    <span class="n">company_name</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">industry_code</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
+    <span class="n">listing_date</span> <span class="nb">DATE</span><span class="p">,</span>
+    <span class="n">created_at</span> <span class="nb">TIMESTAMP</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span>
+<span class="p">);</span>
+
+<span class="c1">-- 財務データ</span>
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">financial_data</span> <span class="p">(</span>
+    <span class="n">id</span> <span class="nb">BIGINT</span> <span class="n">AUTO_INCREMENT</span> <span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">,</span>
+    <span class="n">company_id</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span>
+    <span class="n">fiscal_year</span> <span class="nb">INT</span><span class="p">,</span>
+    <span class="n">fiscal_period</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
+    <span class="n">account_code</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span>
+    <span class="n">account_name</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">200</span><span class="p">),</span>
+    <span class="n">amount</span> <span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
+    <span class="n">unit</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
+    <span class="n">created_at</span> <span class="nb">TIMESTAMP</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
+    <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="p">(</span><span class="n">company_id</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="n">companies</span><span class="p">(</span><span class="n">company_id</span><span class="p">)</span>
+<span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="2-インデックス設計">2. インデックス設計</h3>
+<ul>
+  <li><strong>複合インデックス</strong>: (company_id, fiscal_year, account_code)</li>
+  <li><strong>パーティション</strong>: fiscal_yearでパーティション分割</li>
+  <li><strong>圧縮</strong>: InnoDB圧縮でストレージ効率化</li>
+</ul>
+
+<h2 id="etlパイプライン">ETLパイプライン</h2>
+
+<h3 id="1-データ取得">1. データ取得</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">zipfile</span>
+<span class="kn">import</span> <span class="nn">xml.etree.ElementTree</span> <span class="k">as</span> <span class="n">ET</span>
+
+<span class="k">class</span> <span class="nc">EDINETDownloader</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">api_key</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">api_key</span> <span class="o">=</span> <span class="n">api_key</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">base_url</span> <span class="o">=</span> <span class="s">"https://disclosure.edinet-fsa.go.jp/api/v1"</span>
+    
+    <span class="k">def</span> <span class="nf">download_xbrl</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">doc_id</span><span class="p">):</span>
+        <span class="s">"""XBRLファイルをダウンロード"""</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="bp">self</span><span class="p">.</span><span class="n">base_url</span><span class="si">}</span><span class="s">/documents/</span><span class="si">{</span><span class="n">doc_id</span><span class="si">}</span><span class="s">"</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s">"type"</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>  <span class="c1"># XBRL形式
+</span>        <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">"X-API-KEY"</span><span class="p">:</span> <span class="bp">self</span><span class="p">.</span><span class="n">api_key</span><span class="p">}</span>
+        
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">response</span><span class="p">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">response</span><span class="p">.</span><span class="n">content</span>
+        <span class="k">return</span> <span class="bp">None</span>
+</code></pre></div></div>
+
+<h3 id="2-データ変換">2. データ変換</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">XBRLParser</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">parse_financial_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xbrl_content</span><span class="p">):</span>
+        <span class="s">"""XBRLから財務データを抽出"""</span>
+        <span class="n">root</span> <span class="o">=</span> <span class="n">ET</span><span class="p">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">xbrl_content</span><span class="p">)</span>
+        <span class="n">financial_data</span> <span class="o">=</span> <span class="p">[]</span>
+        
+        <span class="c1"># 勘定科目の抽出
+</span>        <span class="k">for</span> <span class="n">context</span> <span class="ow">in</span> <span class="n">root</span><span class="p">.</span><span class="n">findall</span><span class="p">(</span><span class="s">".//{http://www.xbrl.org/2003/instance}context"</span><span class="p">):</span>
+            <span class="n">context_id</span> <span class="o">=</span> <span class="n">context</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"id"</span><span class="p">)</span>
+            <span class="n">period</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">extract_period</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+            
+            <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">root</span><span class="p">.</span><span class="n">findall</span><span class="p">(</span><span class="s">".//{http://www.xbrl.org/2003/instance}item"</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">item</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"contextRef"</span><span class="p">)</span> <span class="o">==</span> <span class="n">context_id</span><span class="p">:</span>
+                    <span class="n">account_code</span> <span class="o">=</span> <span class="n">item</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"name"</span><span class="p">)</span>
+                    <span class="n">amount</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">item</span><span class="p">.</span><span class="n">text</span><span class="p">)</span> <span class="k">if</span> <span class="n">item</span><span class="p">.</span><span class="n">text</span> <span class="k">else</span> <span class="mi">0</span>
+                    
+                    <span class="n">financial_data</span><span class="p">.</span><span class="n">append</span><span class="p">({</span>
+                        <span class="s">"context_id"</span><span class="p">:</span> <span class="n">context_id</span><span class="p">,</span>
+                        <span class="s">"period"</span><span class="p">:</span> <span class="n">period</span><span class="p">,</span>
+                        <span class="s">"account_code"</span><span class="p">:</span> <span class="n">account_code</span><span class="p">,</span>
+                        <span class="s">"amount"</span><span class="p">:</span> <span class="n">amount</span>
+                    <span class="p">})</span>
+        
+        <span class="k">return</span> <span class="n">financial_data</span>
+</code></pre></div></div>
+
+<h2 id="欠損対処">欠損対処</h2>
+
+<h3 id="1-データクリーニング">1. データクリーニング</h3>
+<div class="key-takeaways">
+  <strong>Key Takeaways</strong>
+  <ul>
+    
+    
+      <li>欠損値の特定: 勘定科目の存在確認</li>
+    
+      <li>補完方法: 前年同期値または業界平均値</li>
+    
+      <li>異常値検出: 統計的異常値の特定と除外</li>
+    
+      <li>データ整合性: 貸借対照表のバランス確認</li>
+    
+  </ul>
+</div>
+
+<h3 id="2-品質管理">2. 品質管理</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">DataQualityChecker</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">check_balance_sheet_balance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="s">"""貸借対照表のバランス確認"""</span>
+        <span class="n">assets</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s">'account_type'</span><span class="p">]</span> <span class="o">==</span> <span class="s">'Assets'</span><span class="p">][</span><span class="s">'amount'</span><span class="p">].</span><span class="nb">sum</span><span class="p">()</span>
+        <span class="n">liabilities</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s">'account_type'</span><span class="p">]</span> <span class="o">==</span> <span class="s">'Liabilities'</span><span class="p">][</span><span class="s">'amount'</span><span class="p">].</span><span class="nb">sum</span><span class="p">()</span>
+        <span class="n">equity</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s">'account_type'</span><span class="p">]</span> <span class="o">==</span> <span class="s">'Equity'</span><span class="p">][</span><span class="s">'amount'</span><span class="p">].</span><span class="nb">sum</span><span class="p">()</span>
+        
+        <span class="n">balance</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">assets</span> <span class="o">-</span> <span class="p">(</span><span class="n">liabilities</span> <span class="o">+</span> <span class="n">equity</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">balance</span> <span class="o">&lt;</span> <span class="mf">0.01</span>  <span class="c1"># 1円未満の差は許容
+</span>    
+    <span class="k">def</span> <span class="nf">detect_outliers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="s">'amount'</span><span class="p">):</span>
+        <span class="s">"""異常値の検出"""</span>
+        <span class="n">Q1</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">column</span><span class="p">].</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
+        <span class="n">Q3</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">column</span><span class="p">].</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.75</span><span class="p">)</span>
+        <span class="n">IQR</span> <span class="o">=</span> <span class="n">Q3</span> <span class="o">-</span> <span class="n">Q1</span>
+        <span class="n">lower_bound</span> <span class="o">=</span> <span class="n">Q1</span> <span class="o">-</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="n">IQR</span>
+        <span class="n">upper_bound</span> <span class="o">=</span> <span class="n">Q3</span> <span class="o">+</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="n">IQR</span>
+        
+        <span class="k">return</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">lower_bound</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">upper_bound</span><span class="p">)]</span>
+</code></pre></div></div>
+
+<h2 id="ダッシュボード例">ダッシュボード例</h2>
+
+<h3 id="1-財務指標ダッシュボード">1. 財務指標ダッシュボード</h3>
+<ul>
+  <li><strong>収益性</strong>: ROE, ROA, 営業利益率</li>
+  <li><strong>安全性</strong>: 自己資本比率, 流動比率</li>
+  <li><strong>効率性</strong>: 総資産回転率, 売上高成長率</li>
+  <li><strong>市場評価</strong>: PER, PBR, EV/EBITDA</li>
+</ul>
+
+<h3 id="2-業界比較分析">2. 業界比較分析</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">create_industry_comparison</span><span class="p">(</span><span class="n">company_id</span><span class="p">,</span> <span class="n">industry_code</span><span class="p">):</span>
+    <span class="s">"""業界比較分析"""</span>
+    <span class="n">query</span> <span class="o">=</span> <span class="s">"""
+    SELECT 
+        company_id,
+        AVG(ROE) as avg_roe,
+        AVG(ROA) as avg_roa,
+        AVG(営業利益率) as avg_operating_margin
+    FROM financial_metrics 
+    WHERE industry_code = %s
+    GROUP BY company_id
+    ORDER BY avg_roe DESC
+    """</span>
+    <span class="k">return</span> <span class="n">execute_query</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="p">(</span><span class="n">industry_code</span><span class="p">,))</span>
+</code></pre></div></div>
+
+<h2 id="運用監視">運用監視</h2>
+
+<section class="qa">
+  <h2>Q&amp;A</h2>
+  
+  <dl>
+  
+    
+    
+    
+    
+      <dt>データ更新頻度は？</dt>
+      <dd>四半期ごと（3月・6月・9月・12月）の決算発表後</dd>
+    
+  
+    
+    
+    
+    
+      <dt>監視すべき指標は？</dt>
+      <dd>データ取得成功率・処理時間・データ品質スコア</dd>
+    
+  
+    
+    
+    
+    
+      <dt>障害時の対応は？</dt>
+      <dd>アラート通知・自動再試行・手動復旧手順</dd>
+    
+  
+  </dl>
+</section>
+
+<h2 id="成果物">成果物</h2>
+
+<ul>
+  <li><strong>データベース</strong>: MySQL/PostgreSQLで構築</li>
+  <li><strong>ETLパイプライン</strong>: Python + Airflowで自動化</li>
+  <li><strong>ダッシュボード</strong>: Grafana + InfluxDBで可視化</li>
+  <li><strong>API</strong>: RESTful APIでデータ提供</li>
+</ul>
+
+<h2 id="参考資料">参考資料</h2>
+
+<ul>
+  <li><a href="https://disclosure.edinet-fsa.go.jp/api/v1/">EDINET API Documentation</a></li>
+  <li><a href="https://www.xbrl.org/">XBRL Specification</a></li>
+  <li><a href="https://pandas.pydata.org/">Financial Data Analysis</a></li>
+</ul>
+
+<div class="cta">
+  <h3>相談・見積りのご依頼</h3>
+  <p>小さく速く、成果物ベースでご一緒します。</p>
+  <p>
+    <a class="btn" href="/work-with-me/">Work with me</a>
+    <a class="btn ghost" href="/newsletter/">無料ニュースレター</a>
+  </p>
+</div>
+
+<div class="related">
+  <h3>次に読む</h3>
+  <ul>
+  
+    
+      
+      
+      
+        <li><a href="/Kyo.github.io/2025/01/19/rag-audit-checklist.html">RAGミニ監査チェックリスト（無料DL）</a></li>
+        
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+  
+    
+      
+      
+      
+        <li><a href="/Kyo.github.io/2025/01/19/coreml-optimization-playbook.html">CoreML最適化プレイブック（受託）</a></li>
+        
+      
+    
+  
+    
+      
+      
+      
+        <li><a href="/Kyo.github.io/2025/01/19/coreml-optimization-playbook-en.html">CoreML Optimization Playbook (Consulting)</a></li>
+        
+      
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+  </ul>
+</div>]]></content><author><name>Kyo Harada</name></author><category term="EDINET" /><category term="Finance" /><category term="ETL" /><category term="Case-Study" /><category term="XBRL" /><category term="Database" /><summary type="html"><![CDATA[スキーマ設計、ETL、欠損対処、ダッシュボード例。投資家が使える粒度にするための設計と運用の実際。]]></summary></entry><entry xml:lang="en"><title type="html">Founder’s Log #01 — Weekly Update</title><link href="https://kyo1988.github.io/Kyo.github.io/2025/01/19/founders-log-01-en.html" rel="alternate" type="text/html" title="Founder’s Log #01 — Weekly Update" /><published>2025-01-19T00:00:00+09:00</published><updated>2025-01-19T00:00:00+09:00</updated><id>https://kyo1988.github.io/Kyo.github.io/2025/01/19/founders-log-01-en</id><content type="html" xml:base="https://kyo1988.github.io/Kyo.github.io/2025/01/19/founders-log-01-en.html"><![CDATA[<div class="tldr">
+  <strong>TL;DR</strong>
+  <p>This week's decisions: Jekyll 3 compatibility patch for build stabilization. Numbers: 20 consecutive failures → success. Next week: gradual feature restoration.</p>
+</div>
+
+<h2 id="built">Built</h2>
+
+<ul>
+  <li><strong>Jekyll 3 Compatibility Patch</strong>: Changed array parameter includes to delimiter-based approach</li>
+  <li><strong>Build Stabilization</strong>: Resolved 20 consecutive failures, normal operation on GitHub Pages</li>
+  <li><strong>Liquid Syntax Optimization</strong>: Removed absolute_url and strip_newlines filters</li>
+  <li><strong>JSON-LD Implementation</strong>: Jekyll 3.10.0 compatible structured data</li>
+</ul>
+
+<h2 id="learned">Learned</h2>
+
+<ul>
+  <li><strong>Jekyll 3.10.0 Limitations</strong>: Importance of pre-investigating GitHub Pages constraints</li>
+  <li><strong>Incremental Approach</strong>: Order of minimal configuration → feature restoration is crucial</li>
+  <li><strong>Liquid Compatibility</strong>: Array parameters are unstable, delimiters are reliable</li>
+</ul>
+
+<h2 id="one-chart">One-chart</h2>
+
+<figure>
+  
+
+<img src="https://res.cloudinary.com/djiyxp5ax/image/upload/f_auto,q_auto,w_1200/charts/build-success.png" alt="Build success progression" loading="lazy" />
+
+  <figcaption>Improvement from 20 consecutive failures to stable builds. Effect of Jekyll 3 compatibility patch.</figcaption>
+</figure>
+
+<h2 id="qa">Q&amp;A</h2>
+
+<section class="qa">
+  <h2>Q&amp;A</h2>
+  
+  <dl>
+  
+    
+    
+    
+    
+      <dt>What was the goal?</dt>
+      <dd>Resolve the root cause of 20 consecutive build failures</dd>
+    
+  
+    
+    
+    
+    
+      <dt>How was it evaluated?</dt>
+      <dd>Local build success + GitHub Pages automatic build success</dd>
+    
+  
+    
+    
+    
+    
+      <dt>What's the next step?</dt>
+      <dd>Gradual restoration of new features and content expansion</dd>
+    
+  
+  </dl>
+</section>
+
+<h2 id="sources">Sources</h2>
+
+<ul>
+  <li><a href="https://jekyllrb.com/docs/3.10.0/">Jekyll 3.10.0 Documentation</a></li>
+  <li><a href="https://pages.github.com/versions/">GitHub Pages Jekyll Version</a></li>
+  <li><a href="https://shopify.github.io/liquid/">Liquid Template Language</a></li>
+</ul>
+
+<div class="cta">
+  <h3>相談・見積りのご依頼</h3>
+  <p>小さく速く、成果物ベースでご一緒します。</p>
+  <p>
+    <a class="btn" href="/work-with-me/">Work with me</a>
+    <a class="btn ghost" href="/newsletter/">無料ニュースレター</a>
+  </p>
+</div>
+
+<div class="related">
+  <h3>次に読む</h3>
+  <ul>
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+        <li><a href="/Kyo.github.io/2025/01/19/founders-log-01.html">Founder's Log #01 — 週報</a></li>
+        
+      
+    
+  
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+  </ul>
+</div>]]></content><author><name>Kyo Harada</name></author><category term="Log" /><category term="Founder" /><category term="Jekyll" /><category term="GitHub-Pages" /><summary type="html"><![CDATA[This week's Built / Learned / One-chart / One-link. Jekyll 3 compatibility patch application and build stabilization achievements.]]></summary></entry><entry xml:lang="ja"><title type="html">CoreML最適化プレイブック（受託）</title><link href="https://kyo1988.github.io/Kyo.github.io/2025/01/19/coreml-optimization-playbook.html" rel="alternate" type="text/html" title="CoreML最適化プレイブック（受託）" /><published>2025-01-19T00:00:00+09:00</published><updated>2025-01-19T00:00:00+09:00</updated><id>https://kyo1988.github.io/Kyo.github.io/2025/01/19/coreml-optimization-playbook</id><content type="html" xml:base="https://kyo1988.github.io/Kyo.github.io/2025/01/19/coreml-optimization-playbook.html"><![CDATA[<div class="tldr">
+  <strong>TL;DR</strong>
+  <p>オンデバイスで品質を落とさず軽量化する設計判断の要点を3分で。量子化→蒸留→アーキ設計の順序で最適化。</p>
+</div>
+
+<h2 id="設計判断のフレームワーク">設計判断のフレームワーク</h2>
+
+<h3 id="1-量子化quantization">1. 量子化（Quantization）</h3>
+<ul>
+  <li><strong>INT8量子化</strong>: 精度損失5%以内でモデルサイズ75%削減</li>
+  <li><strong>動的量子化</strong>: 推論時のみ量子化、学習時はFP32維持</li>
+  <li><strong>静的量子化</strong>: 事前キャリブレーション、より高い圧縮率</li>
+</ul>
+
+<h3 id="2-蒸留knowledge-distillation">2. 蒸留（Knowledge Distillation）</h3>
+<ul>
+  <li><strong>Teacher-Student</strong>: 大規模モデル→軽量モデルへの知識転移</li>
+  <li><strong>温度パラメータ</strong>: T=3-5でソフトラベル生成</li>
+  <li><strong>損失関数</strong>: ハードラベル + ソフトラベル + 特徴マップ</li>
+</ul>
+
+<h3 id="3-アーキテクチャ設計">3. アーキテクチャ設計</h3>
+<ul>
+  <li><strong>MobileNet</strong>: 深度分離畳み込みで計算量削減</li>
+  <li><strong>EfficientNet</strong>: 複合スケーリングで効率最大化</li>
+  <li><strong>SqueezeNet</strong>: Fire Moduleでパラメータ数削減</li>
+</ul>
+
+<h2 id="評価指標">評価指標</h2>
+
+<div class="key-takeaways">
+  <strong>Key Takeaways</strong>
+  <ul>
+    
+    
+      <li>精度: Top-1/Top-5 Accuracy</li>
+    
+      <li>推論速度: FPS (Frames Per Second)</li>
+    
+      <li>モデルサイズ: MB単位</li>
+    
+      <li>メモリ使用量: RAM/VRAM</li>
+    
+      <li>バッテリー消費: mAh/推論</li>
+    
+  </ul>
+</div>
+
+<h2 id="落とし穴と対策">落とし穴と対策</h2>
+
+<h3 id="よくある失敗パターン">よくある失敗パターン</h3>
+<ol>
+  <li><strong>過度な量子化</strong>: 精度大幅低下</li>
+  <li><strong>不適切な蒸留</strong>: 温度設定ミス</li>
+  <li><strong>アーキ選択ミス</strong>: タスクとモデルの不適合</li>
+</ol>
+
+<h3 id="対策">対策</h3>
+<ul>
+  <li><strong>段階的最適化</strong>: 1つずつ適用して効果測定</li>
+  <li><strong>A/Bテスト</strong>: 複数手法の並行比較</li>
+  <li><strong>実機検証</strong>: シミュレータではなく実デバイスでテスト</li>
+</ul>
+
+<h2 id="成果物セット">成果物セット</h2>
+
+<section class="qa">
+  <h2>Q&amp;A</h2>
+  
+  <dl>
+  
+    
+    
+    
+    
+      <dt>どの手法をどう選ぶ？</dt>
+      <dd>精度要求と制約から逆算して選択。精度優先→蒸留、サイズ優先→量子化</dd>
+    
+  
+    
+    
+    
+    
+      <dt>評価指標は？</dt>
+      <dd>精度・速度・サイズ・メモリ・バッテリーの5軸で総合評価</dd>
+    
+  
+    
+    
+    
+    
+      <dt>納品物とスケジュールは？</dt>
+      <dd>最適化モデル・実装ガイド・性能レポート（2-6週間）</dd>
+    
+  
+  </dl>
+</section>
+
+<h2 id="実装例">実装例</h2>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// CoreML最適化の実装例</span>
+<span class="kd">import</span> <span class="kt">CoreML</span>
+
+<span class="kd">class</span> <span class="kt">OptimizedModelManager</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">loadOptimizedModel</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">MLModel</span><span class="p">?</span> <span class="p">{</span>
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">modelURL</span> <span class="o">=</span> <span class="kt">Bundle</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="nf">url</span><span class="p">(</span><span class="nv">forResource</span><span class="p">:</span> <span class="s">"optimized_model"</span><span class="p">,</span> <span class="nv">withExtension</span><span class="p">:</span> <span class="s">"mlmodelc"</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="kc">nil</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="k">try</span><span class="p">?</span> <span class="kt">MLModel</span><span class="p">(</span><span class="nv">contentsOf</span><span class="p">:</span> <span class="n">modelURL</span><span class="p">)</span>
+    <span class="p">}</span>
+    
+    <span class="kd">func</span> <span class="nf">predict</span><span class="p">(</span><span class="nv">input</span><span class="p">:</span> <span class="kt">MLFeatureProvider</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">MLFeatureValue</span><span class="p">?</span> <span class="p">{</span>
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">model</span> <span class="o">=</span> <span class="nf">loadOptimizedModel</span><span class="p">()</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="kc">nil</span> <span class="p">}</span>
+        <span class="k">return</span> <span class="k">try</span><span class="p">?</span> <span class="n">model</span><span class="o">.</span><span class="nf">prediction</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="n">input</span><span class="p">)</span><span class="o">.</span><span class="nf">featureValue</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="s">"output"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="参考資料">参考資料</h2>
+
+<ul>
+  <li><a href="https://developer.apple.com/documentation/coreml">CoreML Documentation</a></li>
+  <li><a href="https://developer.apple.com/machine-learning/models/">Model Optimization Guide</a></li>
+  <li><a href="https://developer.apple.com/videos/">WWDC Sessions</a></li>
+</ul>
+
+<div class="cta">
+  <h3>相談・見積りのご依頼</h3>
+  <p>小さく速く、成果物ベースでご一緒します。</p>
+  <p>
+    <a class="btn" href="/work-with-me/">Work with me</a>
+    <a class="btn ghost" href="/newsletter/">無料ニュースレター</a>
+  </p>
+</div>
+
+<div class="related">
+  <h3>次に読む</h3>
+  <ul>
+  
+    
+      
+      
+      
+        <li><a href="/Kyo.github.io/2025/01/19/rag-audit-checklist.html">RAGミニ監査チェックリスト（無料DL）</a></li>
+        
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+        <li><a href="/Kyo.github.io/2025/01/19/edinet-db-howto.html">EDINET XBRLで作る投資家級データベース</a></li>
+        
+      
+    
+  
+    
+  
+    
+      
+      
+      
+        <li><a href="/Kyo.github.io/2025/01/19/coreml-optimization-playbook-en.html">CoreML Optimization Playbook (Consulting)</a></li>
+        
+      
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+  </ul>
+</div>]]></content><author><name>Kyo Harada</name></author><category term="CoreML" /><category term="On-device" /><category term="Case-Study" /><category term="iOS" /><category term="Machine-Learning" /><summary type="html"><![CDATA[量子化/蒸留/アーキ設計の意思決定、評価指標、落とし穴。オンデバイスで品質を落とさず軽量化する設計判断の要点を3分で。]]></summary></entry><entry><title type="html">SALES FORECASTING 2</title><link href="https://kyo1988.github.io/Kyo.github.io/business/analyics/2021/06/18/SALES-FORECASTING-2.html" rel="alternate" type="text/html" title="SALES FORECASTING 2" /><published>2021-06-18T00:00:00+09:00</published><updated>2025-01-19T00:00:00+09:00</updated><id>https://kyo1988.github.io/Kyo.github.io/business/analyics/2021/06/18/SALES-FORECASTING-2</id><content type="html" xml:base="https://kyo1988.github.io/Kyo.github.io/business/analyics/2021/06/18/SALES-FORECASTING-2.html"><![CDATA[<ul id="markdown-toc">
   <li><a href="#sales-forecasting-2" id="markdown-toc-sales-forecasting-2">SALES FORECASTING 2</a>    <ul>
       <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
       <li><a href="#reference" id="markdown-toc-reference">Reference</a></li>
@@ -61,7 +1515,7 @@ Correlations2</p>
   <li>Wierenga, B., 2008. Handbook of Marketing Decision Models</li>
 </ul>
 
-<!-- <div class="cta">
+<div class="cta">
   <h3>相談・見積りのご依頼</h3>
   <p>小さく速く、成果物ベースでご一緒します。</p>
   <p>
@@ -69,12 +1523,46 @@ Correlations2</p>
     <a class="btn ghost" href="/newsletter/">無料ニュースレター</a>
   </p>
 </div>
- -->
-<!-- 
 
 <div class="related">
   <h3>次に読む</h3>
   <ul>
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
   
     
   
@@ -190,8 +1678,7 @@ Correlations2</p>
     
   
   </ul>
-</div>
- -->]]></content><author><name>Kyo Harada</name></author><category term="Business" /><category term="Analyics" /><category term="Business Analyics" /><category term="Conjoint Analysis" /><category term="SPSS" /><category term="Marketing Research" /><summary type="html"><![CDATA[Conjoint analysis for pizza parlor business plan using SPSS. Customer preference modeling with budget constraints.]]></summary></entry><entry><title type="html">Organize and implement Hull and White (1994a) interest rate model</title><link href="https://kyo1988.github.io/Kyo.github.io/business/finance/2021/06/09/organize-and-implement-hull-and-white-1994a-interest-rate-model.html" rel="alternate" type="text/html" title="Organize and implement Hull and White (1994a) interest rate model" /><published>2021-06-09T00:00:00+09:00</published><updated>2021-06-09T00:00:00+09:00</updated><id>https://kyo1988.github.io/Kyo.github.io/business/finance/2021/06/09/organize-and-implement-hull-and-white-1994a-interest-rate%20model</id><content type="html" xml:base="https://kyo1988.github.io/Kyo.github.io/business/finance/2021/06/09/organize-and-implement-hull-and-white-1994a-interest-rate-model.html"><![CDATA[<ul id="markdown-toc">
+</div>]]></content><author><name>Kyo Harada</name></author><category term="Business" /><category term="Analyics" /><category term="Business Analyics" /><category term="Conjoint Analysis" /><category term="SPSS" /><category term="Marketing Research" /><summary type="html"><![CDATA[Conjoint analysis for pizza parlor business plan using SPSS. Customer preference modeling with budget constraints.]]></summary></entry><entry><title type="html">Organize and implement Hull and White (1994a) interest rate model</title><link href="https://kyo1988.github.io/Kyo.github.io/business/finance/2021/06/09/organize-and-implement-hull-and-white-1994a-interest-rate-model.html" rel="alternate" type="text/html" title="Organize and implement Hull and White (1994a) interest rate model" /><published>2021-06-09T00:00:00+09:00</published><updated>2021-06-09T00:00:00+09:00</updated><id>https://kyo1988.github.io/Kyo.github.io/business/finance/2021/06/09/organize-and-implement-hull-and-white-1994a-interest-rate%20model</id><content type="html" xml:base="https://kyo1988.github.io/Kyo.github.io/business/finance/2021/06/09/organize-and-implement-hull-and-white-1994a-interest-rate-model.html"><![CDATA[<ul id="markdown-toc">
   <li><a href="#organize-and-implement-hull-and-white-1994a-interest-rate-model" id="markdown-toc-organize-and-implement-hull-and-white-1994a-interest-rate-model">Organize and implement Hull and White (1994a) interest rate model</a>    <ul>
       <li><a href="#derivation-of-hull-and-white-1994a-interest-rate-model-solutions-and-boundary-conditions" id="markdown-toc-derivation-of-hull-and-white-1994a-interest-rate-model-solutions-and-boundary-conditions">Derivation of Hull and White (1994a) interest rate model solutions and boundary conditions</a></li>
       <li><a href="#hull-and-white-tree-formulation" id="markdown-toc-hull-and-white-tree-formulation">Hull and White Tree formulation</a></li>
@@ -1135,274 +2622,4 @@ E_{t}[L(T_{N-1},T_{N}]=\frac{1-P_{t,T_{M}}-\sum_{n=1}^{N}\delta_{n}\tau_{N}P_{t,
 <ul>
   <li>Nakahara, G.，2013. LIBOR and OIS discount that can be seen in EXCEL (In Japanese)</li>
   <li>Fujii, M.，Shimada, Y. and Takahashi, A.，2010. “A Note on Construction of Multiple Swap Curves with and without Collateral”， FSA Research Review Vol.6(March 2010)．</li>
-</ul>]]></content><author><name>Kyo Harada</name></author><category term="Business" /><category term="Finance" /><category term="Business Finance" /><summary type="html"><![CDATA[This is a modified version of the report for semminar at a financial consulting firm in 2016.]]></summary></entry><entry><title type="html">Sources of finance</title><link href="https://kyo1988.github.io/Kyo.github.io/business/finance/2021/05/26/Investment-appraisal.html" rel="alternate" type="text/html" title="Sources of finance" /><published>2021-05-26T00:00:00+09:00</published><updated>2021-05-26T00:00:00+09:00</updated><id>https://kyo1988.github.io/Kyo.github.io/business/finance/2021/05/26/Investment-appraisal</id><content type="html" xml:base="https://kyo1988.github.io/Kyo.github.io/business/finance/2021/05/26/Investment-appraisal.html"><![CDATA[<ul id="markdown-toc">
-  <li><a href="#investment-appraisal--eastern-plc-assessment-standard" id="markdown-toc-investment-appraisal--eastern-plc-assessment-standard">Investment Appraisal – Eastern plc Assessment Standard</a>    <ul>
-      <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
-      <li><a href="#preparing-the-npv-calculation-for-eastern-plc" id="markdown-toc-preparing-the-npv-calculation-for-eastern-plc">Preparing the NPV calculation for Eastern plc</a></li>
-      <li><a href="#explaining-what-the-cost-of-capital-of-8-represents" id="markdown-toc-explaining-what-the-cost-of-capital-of-8-represents">Explaining what the cost of capital of 8% represents</a></li>
-      <li><a href="#comment-on-whether-and-how-this-investment-may-contribute-to-shareholder-wealth" id="markdown-toc-comment-on-whether-and-how-this-investment-may-contribute-to-shareholder-wealth">Comment on whether and how this investment may contribute to shareholder wealth</a></li>
-    </ul>
-  </li>
-</ul>
-
-<p>This is a modified version of the report for Understanding Finance (Part 1: Investment Appraisal – Eastern plc Assessment Standard) in Bath Full Time MBA Class of 2020.</p>
-
-<h1 id="investment-appraisal--eastern-plc-assessment-standard">Investment Appraisal – Eastern plc Assessment Standard</h1>
-
-<h2 id="introduction">Introduction</h2>
-<p>This report will answer the requirements of this coursework.  These issues are to prepare the NPV calculation for Eastern plc, to explain what the cost of capital of 8% represents and to comment on whether and how this investment may contribute to shareholder wealth.</p>
-
-<h2 id="preparing-the-npv-calculation-for-eastern-plc">Preparing the NPV calculation for Eastern plc</h2>
-<p>As a result of the calculation, the NPV of this investment is approximately £9.2 millions or more precisely £91,931,456.  This NPV is calculated to sum up the discounted cash flows in the life of project including the end of year 5 which the plant and equipment, which the company is going to invest, will be disposed.  Each discounted cash flow is computed to multiply the net cash flow by discount rate which is equal to the cost of capital (8%).  The net cash flow or free cash flow if the company financed by only equity is the cash flow which subtracts of all obligatory payments from gross profit adding the depreciation.  The gross profit will be estimated to 35% of the sales which is going to earn selling 4 million units per year with the current price of £2.50, however, the price is expected to inflate by 4% per year.  The depreciation is emulated using the Straight Line Basis method which means the investment subtracting from disposal value (£0.15 millions) is divided by life of project (5 years).  The obligatory payments are the investment, fixed cost, tax payable and working capital change in this case.  £2 millions of investment in new plant and machinery will be paid immediately and the remains (£6 millions) will do so at the end of the first year.  The fixed cost is estimated be £2 million per year, however, this includes the depreciation (£1.57 millions), and therefore the actual fixed cost will be £0.43 millions per year.  The tax payable is reckoned to multiply tax rate (20%) by taxable income which is to subtract gross profit from depreciation and fixed cost.  The working capital change of a year is determined to subtract the working capital of 1 year later as of the year from the working capital of the year which will be maintained at 10% of the following year’s sales.  The detail of calculation is in the MS Excel sheet which is also uploaded with this report.</p>
-
-<h2 id="explaining-what-the-cost-of-capital-of-8-represents">Explaining what the cost of capital of 8% represents</h2>
-<p>What the cost of capital of 8% represents can be the minimum rate of return on the prospective investment projects as for the investors, who are supplying funds for Eastern plc.  In addition, it can be also the degree of risk to invest this investment.  Therefore, if Capital Asset Pricing Model (CAPM) theory hold and this cost of capital is financed by only equity, the investors require almost 7.2% premium for the risk of this investment owing to the fact that 10 years British government bond rate is 0.79%, which used as a risk free rate.  Moreover, if the theory hold, this additional risk premium might depend on the company’s beta.  According to Statista, the average market risk premium in the United Kingdom, 2019 is 6.2% and therefore, the market implied the company’s beta can be approximately 1.12.  This means the company might be more sensitive than the whole market return.  In comparison with other London stock exchange listed plastic companies such as Daios Plastics SA having beta 0.0133 and Lordos United Plastics Public Ltd with beta 0.0237, the risk can be significantly higher than competitors and therefore the investors require higher return for the company.  This can be because the structure of asset might be weighted to debt which the lenders own less business risk than stockholders if the assumption that the cost pf capital is financed by only equity relax.</p>
-
-<h2 id="comment-on-whether-and-how-this-investment-may-contribute-to-shareholder-wealth">Comment on whether and how this investment may contribute to shareholder wealth</h2>
-<p>This investment may contribute to shareholder wealth.  This is mainly because the NPV is a positive with a large cash flow owing to relatively highly competitive advantage of the company only if the sales figure is feasible.  Therefore, this investment will earn a large amount of free cash flows which they are expecting and then those cash flow will be back to the investors as a dividend.  The depreciation using the Straight-Line Basis method can be affected the NPV positively because if they adopted the other method, they would have to pay more cash flow as depreciation and then the NPV will reduce more than using Straight Line Basis.</p>]]></content><author><name>Kyo Harada</name></author><category term="Business" /><category term="Finance" /><category term="Business Finance" /><summary type="html"><![CDATA[This is a modified version of the report for Understanding Finance (Part 1: Investment Appraisal – Eastern plc Assessment Standard) in Bath Full Time MBA Class of 2020.]]></summary></entry><entry><title type="html">Behavioural Finance</title><link href="https://kyo1988.github.io/Kyo.github.io/business/finance/2021/05/26/behavioural-finance.html" rel="alternate" type="text/html" title="Behavioural Finance" /><published>2021-05-26T00:00:00+09:00</published><updated>2021-05-26T00:00:00+09:00</updated><id>https://kyo1988.github.io/Kyo.github.io/business/finance/2021/05/26/behavioural-finance</id><content type="html" xml:base="https://kyo1988.github.io/Kyo.github.io/business/finance/2021/05/26/behavioural-finance.html"><![CDATA[<ul id="markdown-toc">
-  <li><a href="#behavioural-finance" id="markdown-toc-behavioural-finance">Behavioural Finance</a>    <ul>
-      <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
-      <li><a href="#active-traders-view" id="markdown-toc-active-traders-view">Active trader’s view</a></li>
-      <li><a href="#validation-of-emh-by-the-traders-emotion" id="markdown-toc-validation-of-emh-by-the-traders-emotion">Validation of EMH by the trader’s emotion</a></li>
-      <li><a href="#traders-sentiment-as-a-source-of-market-anomalies" id="markdown-toc-traders-sentiment-as-a-source-of-market-anomalies">Trader’s sentiment as a source of market anomalies</a></li>
-      <li><a href="#empirical-superiority-of-index-funds" id="markdown-toc-empirical-superiority-of-index-funds">Empirical superiority of index funds</a></li>
-      <li><a href="#algorithmic-trading-as-a-competitor-of-the-index-funds" id="markdown-toc-algorithmic-trading-as-a-competitor-of-the-index-funds">Algorithmic trading as a competitor of the index funds</a></li>
-      <li><a href="#conclusion" id="markdown-toc-conclusion">Conclusion</a></li>
-      <li><a href="#reference" id="markdown-toc-reference">Reference</a></li>
-    </ul>
-  </li>
-</ul>
-
-<p>This is a modified version of the report for Behavioural Finance in Bath Full Time MBA Class of 2020.</p>
-
-<h1 id="behavioural-finance">Behavioural Finance</h1>
-
-<h2 id="introduction">Introduction</h2>
-<p>‘The Market Is Always Wrong’ argued George Soros <cite>(Kaufman, 2018)</cite>.  Active trading can be the prediction for the residential return of the certain financial instruments (actual return minus benchmark return such as the stock index if they trade the shares) and therefore the active traders build their portfolio based on their prediction to win the market <cite>(Grinold, Ronald and Khan, 1995)</cite>.  His success seems to be the most famous example.  However, most passive traders argue that the active traders never win the market owing to the fact that the price in the stock market counts on almost all information hence is nearly equal to the intrinsic value and then there is no opportunity to beat passive trading such as the investment to S&amp;P 500.  This essay will evaluate the passive trader’s argument in terms of behavioral finance theories and evidence and therefore also argue that although the assumption of the passive trader’s opinion mainly due to their emotional bias, still it is held by the empirical fact that index funds outperform active ones in the long term.</p>
-
-<h2 id="active-traders-view">Active trader’s view</h2>
-<p>Grinold (1989 cited in Ding, 2009) indicated that the residential return is measured by the information ratio (IR) having two factors which are the skill of the prediction (named the information coefficient, IC) and how many times traders employ their skill (called the breadth). The relationship of these indicators is formulated by Grinold as IR is equal to IC times the square root of breath (ibid).  In addition, Grinold’s claim assumed the existence of the residential return for the long term.  One of the major examples to support his assumption can be the success of the value investment such as the purchase the stocks evaluated the lower price in comparison with book value or earnings <cite>(Ackert and Deaves, 2010)</cite>.  Hence, the high skilled active trader might be able to earn the residential return.  This measurement also implies that even if a trader has relatively low skill, there is an opportunity to beat the market to increase the breadth (ibid).  However, if the assumption could hold, it would lead the contradiction to the argument of the passive traders.  This is because their statement based on the efficient markets hypothesis (EMH) that the price in the market reflects all information even not publicly available including insider’s one as the form of EMH is strong (ibid).  This means, for example, if the trader forecasted the prospectively of a firm, the price of the company would count on his prediction and therefore he would be able to buy or sell his securities at the price which he thought it would be underestimated or overestimated and then the chance to purchase or short the undervalued or overvalued shares would be dismissed immediately after that, which is called no arbitrage condition (ibid).</p>
-
-<h2 id="validation-of-emh-by-the-traders-emotion">Validation of EMH by the trader’s emotion</h2>
-<p>One of the major foundations of EMH is this condition, however, the assumption has been disputed (ibid).  This is primarily because of the low liquidity of the market, which means even if the traders want to short the low liquid stocks, he might not be able to do so owing to the fact that he may not be able to find the counterparty to do so or even if he find them, the high transaction cost may exploit his revenue for the trade (ibid).  In addition, major traders in the hedge funds are denied short selling which might deteriorate mispricing the securities by speculators <cite>(Barberis and Thaler, 2003)</cite>.  Hence, the arrogation is less likely to hold due to these reasons.  In addition, the experienced traders are likely to regulate their emotion in the decision making and then their performance might be better than junior traders, however, still they could be biased by their sentiments and therefore they might wrongly price the securities <cite>(Fenton-O’Creevy et al, 2012)</cite>.  There are some biases such as home bias (the tendency that the trader invests in the domestic market rather than unfamiliar foreign markets) which can lead to a less diversified portfolio and therefore their performance might be less than the unbiased one (Ackert and Deaves, 2010).  However, the more important ones are self-attribution bias, hindsight bias and confirmation bias (ibid).  This is because these biases might be contributed to the persistence of overconfidence which is that the traders incline to overestimate their skill (ibid).  These biases is defined as that people tend to overestimate the contribution for the success while undervalue the one for the failure, that they incline to exaggerate the predictability of a certain event and that they are likely to discover the evidence consistent with their belief while ignore conflicted information respectively (ibid).</p>
-
-<h2 id="traders-sentiment-as-a-source-of-market-anomalies">Trader’s sentiment as a source of market anomalies</h2>
-<p>For instance, the implication of self-attribution bias in the trading can be short-run momentum and long-term reversals, which mean when the traders receive new positive signal for a stock, they tend to overvalue the price of the stock more than the intrinsic value in the short term while underestimate the effect for the price in the long term <cite>(DANIEL, HIRSHLEIFER and SUBRAHMANYAM, 1998)</cite>.  This is empirically observed as short-run positive autocorrelations of the stock return and long-run negative ones, both of which can be consistent with and realize the anomalies in the market as a counter example against EMH (ibid).  Other significant emotional factors affecting the performance can be strong desire to avoid missing out or the sentiment of regret.  For instance, the traders are more likely to realize returns than losses and therefore, especially risk averters incline to earn lower performance due to the fact that they tend to hold their shares in quite a long time <cite>(Alsharman, Fairchild and Hinvest, 2016)</cite>.    In fact, according to the prospect theory and its empirical evidence, the utilities of gain and loss might not be symmetry (ibid).  This means people tend to require more premium against potential loss.  For instance, the researchers ask the subjects in the experiment what gain would they demand for the coin tosses having a fair odd of fifty-fifty where loss is $50 (ibid).  Most subjects call for the loss $125 which is 2.5 times higher than the loss (ibid).  This phenomenon is called loss aversion which also might lead to the anomalies.  Although EMH assumes universal utility function with rational investors, the asymmetry between gains and losses is inconsistent with the assumption <cite>(Ackert and Deaves, 2010)</cite>.</p>
-
-<h2 id="empirical-superiority-of-index-funds">Empirical superiority of index funds</h2>
-<p>However, top 10 active funds could hardly outperform the most index funds including the worst one even if they omitted their management fees <cite>(Crane and Crotty, 2018)</cite>.  Especially after counting on the residential risk adjustments, the index funds tend to exceed active funds apparently in terms of their risk adjusted return (ibid).  Therefore, the market, even high liquidity one has the anomalies due to biased traders, however, the ones might not lead to the existence of the residential return in the long term.  At least, EMH requires the unpredictability of the anomalies <cite>(Ackert and Deaves, 2010)</cite>.  The superiority of index funds could be consistent with the requirement of the market efficiency, which means the traders may not be able to forecast the anomaly using data they collect.  This can be because clouding out the affection of trader’s sentiment and therefore the traders are less likely to predict whether the anomalies occurred by the trader’s biases affect positively or negatively even if they can forecast when the ones appear.</p>
-
-<h2 id="algorithmic-trading-as-a-competitor-of-the-index-funds">Algorithmic trading as a competitor of the index funds</h2>
-<p>Most traders can be biased; however, active trading can implement without them using the computers which is called algorithmic trading (AT).  Among of AT, especially high-frequency trading (HFT) can be one of the most prospective active trading strategies.  This is because some researchers indicated that the average HFT companies outperformed the index funds in terms of their risk adjusted residential returns in the E-mini S&amp;P 500 futures market which is one of the highest liquidity and the most efficient market in the world <cite>(Baron, Brogaard and Kirilenko, 2014)</cite>.  This may mean that a great deal of breath (transaction) is likely to lead higher performance even if they have relatively low skill (the ability of prediction).  It seems to be a counterexample for the superiority of index funds. However, this transaction speed race apparently will be won and dominated by only few firms which can invest a huge money into the machine that can detect and correspond to the earning chance at first (ibid).  Therefore, the cost to build the system may overcome their residential return as a result of the competition.  In addition, the US futures markets such as NYSE and CBOE have already imposed the speed limitation for the trading to set off the speed advantage, for example, the slower traders have an opportunity to cancel their transaction before the faster ones execute the deal <cite>(Henderson, 2019)</cite>.  Hence, the chance to earn residential return of HTF firms might be dismissed in the long term.   Furthermore, some researchers indicated that the active funds using comprehensively AT are likely to earn lower holding profits and higher interim trading returns than in terms of the risk adjusted residential return, however, they seem to earn lower total one than the active funds with lower intensively AT <cite>(Fong, Parwada and Yang, 2018)</cite>.  This may mean that the transaction cost setoff the interim trading and hence AT do not lead to the higher return than non-AT active funds (ibid).  This can be because AT incline to increase the number of transactions more than lower intensive AT funds.  Therefore, it can be also concluded that although AT can eliminate the bias of the traders, it may not be able to earn higher profits than index funds because they tend to do so than the most active funds.</p>
-
-<h2 id="conclusion">Conclusion</h2>
-<p>This essay has discussed the statement of the passive trader which is that no one can beat the market (index funds) in terms of behavioral finance theories and evidences such as the validation of EMH by the trader’s sentiment, the one’s sentiment as a source of market anomalies, the empirical superiority of index funds and AT as a competitor of the index funds.  As a result of considerations, it is claimed that even if the emotion of the investors builds the anomalies, it may not be predictable and short lived.  Only few exceptions can be HFT, however, it has been restricted by the regulators and suffered from the increase in IT development costs hence, it may no longer earn the residential return in the long term.  More generally, AT funds could earn lower return than other active funds which could do so than the index funds.  Therefore, elimination of the emotion may not contribute the greater performance than not only the one by emotional active fund managers but also the passive funds.  Thus, it is concluded in this essay that the passive funds tend to have the higher performance than active funds even if the passive traders’ assumptions of EMH do not hold mainly because of the sentiment of the traders.</p>
-
-<h2 id="reference">Reference</h2>
-<ul>
-  <li>Ding, Z., 2009. The Fundamental Law of Active Management: Time Series Dynamics and Cross-Sectional Properties</li>
-  <li>Grinold, R.C., and Ronald N. Khan, R.N., 1995, Active Portfolio Management</li>
-  <li>Ackert, L.F. and Deaves, R., 2010. Behavioral Finance</li>
-  <li>Kaufman, K., 2018. ‘The Market Is Always Wrong’: In Defense of Inefficiency [Online]. Available from: <a href="https://www.forbes.com/sites/karlkaufman/2018/09/30/the-market-is-always-wrong-in-defense-of-inefficiency/#501daf754da1">https://www.forbes.com/sites/karlkaufman/2018/09/30/the-market-is-always-wrong-in-defense-of-inefficiency/#501daf754da1</a> [Accessed 8 March 2020].</li>
-  <li>Fenton-O’Creevy, M et al., 2012. Emotion Regulation and Trader Expertise: Heart Rate Variability on the Trading Floor</li>
-  <li>DANIEL, K., HIRSHLEIFER, D., and SUBRAHMANYAM, A., 1998. Investor Psychology and Security Market Under- and Overreactions</li>
-  <li>Alsharman, M., Fairchild, R., and Hinvest, N., 2016. Warning: Trading can be Hazardous to your Wealth! (Just Watch out for Bears!)</li>
-  <li>Crane, A.D. and Crotty, K., 2018. Passive versus Active Fund Performance: Do Index Funds Have Skill?</li>
-  <li>Barberis, N, and Thaler, R, 2003. “A Survey of Behavioral Finance.”: Online working paper.</li>
-  <li>Baron, M., Brogaard, J. and Kirilenko, A., 2014. Risk and Return in High Frequency Trading</li>
-  <li>Henderson, R., 2019. US regulator throws sand in the wheels of high-frequency traders [Online]. Available from: <a href="https://www.ft.com/content/fb40285c-7728-11e9-be7d-6d846537acab">https://www.ft.com/content/fb40285c-7728-11e9-be7d-6d846537acab</a> [Accessed 8 March 2020].</li>
-  <li>Fong, K., Parwada, J. and Yang, J.W., 2018. Algorithmic Trading and Mutual Fund Performance</li>
-</ul>]]></content><author><name>Kyo Harada</name></author><category term="Business" /><category term="Finance" /><category term="Business Finance" /><summary type="html"><![CDATA[This is a modified version of the report for Behavioural Finance in Bath Full Time MBA Class of 2020.]]></summary></entry><entry><title type="html">Knowledge Leadership in a Global Economy</title><link href="https://kyo1988.github.io/Kyo.github.io/business/finance/start-up/2021/05/26/knowledge-leadership-in-a-global-economy.html" rel="alternate" type="text/html" title="Knowledge Leadership in a Global Economy" /><published>2021-05-26T00:00:00+09:00</published><updated>2021-05-26T00:00:00+09:00</updated><id>https://kyo1988.github.io/Kyo.github.io/business/finance/start-up/2021/05/26/knowledge-leadership-in-a-global-economy</id><content type="html" xml:base="https://kyo1988.github.io/Kyo.github.io/business/finance/start-up/2021/05/26/knowledge-leadership-in-a-global-economy.html"><![CDATA[<ul id="markdown-toc">
-  <li><a href="#knowledge-leadership-in-a-global-economy" id="markdown-toc-knowledge-leadership-in-a-global-economy">Knowledge Leadership in a Global Economy</a>    <ul>
-      <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
-      <li><a href="#the-definition-of-knowledge-currently-used-in-the-organization" id="markdown-toc-the-definition-of-knowledge-currently-used-in-the-organization">The definition of knowledge currently used in the organization</a></li>
-      <li><a href="#whether-this-definition-reflects-the-complexity-of-knowledge-in-the-organization" id="markdown-toc-whether-this-definition-reflects-the-complexity-of-knowledge-in-the-organization">Whether this definition reflects the complexity of knowledge in the organization</a></li>
-      <li><a href="#whether-the-core-knowledge-management-enablers-are-in-place" id="markdown-toc-whether-the-core-knowledge-management-enablers-are-in-place">Whether the core knowledge management enablers are in place</a></li>
-      <li><a href="#what-are-the-core-knowledge-assets-in-the-organization" id="markdown-toc-what-are-the-core-knowledge-assets-in-the-organization">What are the core knowledge assets in the organization?</a></li>
-      <li><a href="#the-current-knowledge-management-practices" id="markdown-toc-the-current-knowledge-management-practices">The current knowledge management practices</a></li>
-      <li><a href="#what-can-be-done-to-effectively-match-knowledge-assets-and-knowledge-management-practices" id="markdown-toc-what-can-be-done-to-effectively-match-knowledge-assets-and-knowledge-management-practices">What can be done to effectively match knowledge assets and knowledge management practices?</a></li>
-      <li><a href="#conclusion" id="markdown-toc-conclusion">Conclusion</a></li>
-      <li><a href="#reference" id="markdown-toc-reference">Reference</a></li>
-    </ul>
-  </li>
-</ul>
-
-<p>This is a modified version of the report for Knowledge Leadership in a Global Economy in Bath Full Time MBA Class of 2020.
-<cite></cite></p>
-<h1 id="knowledge-leadership-in-a-global-economy">Knowledge Leadership in a Global Economy</h1>
-
-<h2 id="introduction">Introduction</h2>
-<p>Y Combinator (YC) can be one of the most popular venture capital (VC) in the world.  One of the main reasons for popularity might be they ‘created a new model for funding early stage startups’ <cite>(Y Combinator, 2020)</cite>.  This is because for only 15 years since 2005, they have supported more than 2,000 firms including Airbnb, Dropbox and Heroku, which are valued beyond 100 billion dollars (ibid).  They also have Startup School which is a free 8-week online course for building startups. In addition, Hacker News which is one of the most famous social news sites in the world.  Therefore, they might have a total ecosystem about startups which is not only for investors such as themselves but also for the people who are going to become founders.  In addition, VC can be one of the most apparent knowledge intensive industries and YC is one of the biggest winners of the VC industry, especially early stage startups fund raising.  This essay will appraise the effectiveness of this firm’s current knowledge management practices and acknowledge what requires to be done to enhance both formal and informal knowledge management practices in terms of six aspects in relation to YC.  These aspects are earned to address the definition of knowledge currently used in YC, whether this definition reflects the complexity of knowledge in YC, whether the core knowledge management enablers are in YC, what are the core knowledge assets in YC, The current knowledge management practices and what can be done to effectively match knowledge assets and knowledge management practices? respectively.</p>
-
-<h2 id="the-definition-of-knowledge-currently-used-in-the-organization">The definition of knowledge currently used in the organization</h2>
-<p>YC provides the program for the company, mainly startup founders who want to present and get feedback on their ideas or business plans for the investors and YC alumni <cite>(Moed, 2019)</cite>.  The knowledge which YC share with the founders experienced this program is mainly instruction how to create a startup effectively and how to avoid the danger of starting up (ibid).  One of the most popular example of startup knowledge can be the statement that the founders should not scale or raise the money by the funds before they found Product Market Fit (PMF) because if they did not find PMF, although they burn a huge amount of cash, the revenue would not increase owing to the fact that the customers just do not want to buy their product and therefore whether the product which the founders built seems to be PMF or not can be the most significant factor as for the VC including YC themselves <cite>(Seibel, 2016)</cite>.  However, VCs even the greatest one are always losing the opportunity to invest the prospective startups which other VC recommended to invest together mainly because the investor in the VC had to convince other partners in their firms and this might be extremely time consuming and difficult task owing to the fact that no one can see the future but they must predict what the firm will become <cite>(Graham, 2011)</cite>.  PMF is vitally important to decide whether the VCs invest in the startups or not. This is primary because according to CB Insights, 42% of startups failed due to the fact that they built the product which the customers do not need <cite>(Griffin, 2017)</cite>.  Despite the importance, there are several definitions of PMF.  The space to interpret the PMF might create the complexity and difficulty to manage the startups.  However, survey.io provides the startups one of the most widespread PMF survey tools named and developed by Sean Ellis <cite>(Shah, 2020)</cite>.  The survey asks the customers the question which is ‘How would you feel if you could no longer use their product?’ with choices which are ‘Very disappointed’, ‘Somewhat disappointed’ or ‘Not disappointed (It really isn’t that useful)’ and as a result of this survey, According to Sean Ellis, if at least 40% of people who are surveyed selected ‘Very disappointed’, the product would reach PMF (ibid).  Slack earned 51% respondents who opted ‘Very disappointed’ if it no longer existed and therefore it is already being utilized by more than 750,000 people per day (ibid).  This case is one of the most apparent examples of the product which reached PMF.  As for the most VCs especially in the United States, PMF is the fundamental condition to invest and therefore they want to know whether the startup’s service truly reaches PMF or not, however, this knowledge which YC and other VCs address still exists ambiguously.  From a contemporary view, the knowledge characterized several aspects such as being partial (which means no one can write fully all of ideas people have), tacit (the gap between the idea and the ability to write it), subjective, and context dependent <cite>(Hislop et al, 2018)</cite>.  Hence, PMF can be a typical case of modern characteristic knowledge as for the investors and founders.</p>
-
-<h2 id="whether-this-definition-reflects-the-complexity-of-knowledge-in-the-organization">Whether this definition reflects the complexity of knowledge in the organization</h2>
-<p>It is clearly positively affected on strengthening YC’s competitive advantages compared with other VCs.  This can be because they are expanding their community members as YC alumni and becoming the authority to give the startup the credit for the future scaling mainly due to the fact that they could find Airbnb and Dropbox which are one of the most valuable firms in the world before they succeeded and therefore it can be easily imagine if a startup rose money by YC, the firm would be believed as a next Airbnb by the investors and consumers.  From the viewpoint of the learning organization (LO) which is defined as ‘organization which facilitates the learning of all its members and consciously transforms itself and its context’ , YC can be also the example of LO, however, they not only facilitate the stuff in the firm but also the member of their community outside of the company <cite>(Hislop et al, 2018)</cite>.</p>
-
-<h2 id="whether-the-core-knowledge-management-enablers-are-in-place">Whether the core knowledge management enablers are in place</h2>
-<p>Paul Graham who is the cofounder of YC and the author of some popular books in the software engineering industry could be the core knowledge management enablers.  His blog can be the one of the most famous and authorized.  In addition, the blog mainly is written about IT and Startups.  Among his posts in blog, the article named ‘Subject: Airbnb’ might be the most popular one, which is written about Fred Wilson, the famous investor, who was missing Airbnb and posted the actual emails about that <cite>(Graham, 2011)</cite>.  He tried to translate the tacit knowledge which only few successful investors knew about investment decision making into an explicit one to write the article and show real email conversation.  Although still some knowledge which he could not write is there, this experiment can represent his and his VC’s character for knowledge management and its process.  Another main source of the core knowledge management enablers also could be the startup founders who joined YC programs.  The lecturers in the programs are mainly the co-founders and the partners of the firm, however, some of them are YC backed startup founders who used to be students in this program.  The winners, who could raise money and other resources such as the knowledge about startup management, also become the lecturer or at least guest speaker in the program.  Even if the students do not become such a person, they can communicate and teach each other in the social networking site which are provided by YC as a platform and they can meet other students who are struggling to run their own startup online using Skype, Google Hangout or other Online video communication tools in a certain period, for example, the typical program has 8 weeks and therefore usually they can communicate each other with the lecturer on week 2, 4, 6 and 8.  Other major sources of the core knowledge management enablers could be the location and culture where YC is located, Silicon Valley in San Francisco of California.  This is mainly because this place is one of the most intensively high tech companies and VC located in the area and therefore the founders can easily meet their customers and find their mentors who have already succeeded in the similar business to learn how to do what they truly want to do <cite>(Migicovsky, 2019)</cite>.  In addition, Silicon Valley can be characterized mainly by 2 features, which are respecting ‘wild’ ideas and paying forward <cite>(Jordan, 2017)</cite>.  Only in this area, the ideas which people living in the outside of this cultural context may insult are accepted and encouraged owing to the fact that the people in Silicon Valley understand scoffing at someone’s too ambitious idea can lose the great deal of chance to invest in future scaling firms (ibid).  One of the most popular example is that if a person wanted to build electric car company while he did not know not only about car but also battery, he would not be assisted by the VC and engineers, however, he was helped and financed a huge amount of money and other resources because he lived in Silicon Valley and therefore Tesla became one of the largest market capitalization automobile firm in the United States, beyond Ford (ibid).  Paying forward culture can be also less likely to be settled in other areas.  This means if a founder was helped by other founders or VCs, he would assist the person who is in a similar situation with him and therefore this connection will be strengthened to the future (ibid).  These intellectual assets might not be seen in other areas even in other states in the United States.  Hence, this location advantages can be the most valuable the core knowledge management enabler for YC and their customers because if they live in other area, YC can inform them the latest knowledge created in Silicon Valley and this type of knowledge might be what the founders especially the one who are not live in Silicon Valley actually desire to learn.  YC did summarize this Silicon Valley culture and became their own assets and culture.</p>
-
-<h2 id="what-are-the-core-knowledge-assets-in-the-organization">What are the core knowledge assets in the organization?</h2>
-<p>The connection between YC alumni and investors including YC themselves might be fundamental intellectual capital built by mostly explicit knowledge about startups such as how they reach PMF.  They have their own online startup school which constructs the video lectures by YC partners, the direct communication system which if the founders want to ask them, they can do so anytime and organize articles about several specific stages which the founders would be in therefore they can be supported by them everywhere and every time.  As a result of that, YC can collect the data regarding startups especially at an early stage, which means the founders try to raise money for the first time.  More data they earn, the accuracy of the future success prediction or the odds could increase and therefore they will be able to obtain further data and positive feedback loop.  Another major core knowledge asset might be their online startup resources named library.  The library provides students and people who are interested in the program the documents, tools, template agreements, media and articles.  Almost all events YC held are recorded and shared for the online users.  It is clearly seen their efforts to make the startup management knowledge enable their potential customers.</p>
-
-<h2 id="the-current-knowledge-management-practices">The current knowledge management practices</h2>
-<p>There is some vital asymmetry of information in Series A (early stage of startups financing) between the VCs and the founders, which brings them serious disadvantages, however, YC tried to dissolve this issue to share their knowledge created by their program <cite>(Harris and Tam, 2020)</cite>.  For example, as a result of their research, the founders spent a huge amount of time and money to yield a single term sheet (a basic condition to be invested by VCs) and they met totally 30 investors to do so on average (ibid).  To avoid or reduce this time-consuming activity, YC has provided the guide to raising series A and a standard clean series A term sheet as a template (ibid).  Therefore, YC did translate the informal knowledge which only few investors knew and took advantage of the founders into formal information which every founder can access.  Hence, they are becoming the platform for the startups especially early stage one.  Furthermore, YC is expanding their startup knowhow outside of the United States mainly Europe and China.  This is primarily because especially in Europe, European ecosystem for startups has been built and European have the confidence in respect to that as a result of the fact that the capital access is improving <cite>(Voices, 2018)</cite>.  There are mainly 3 reasons to justify their confidence.  First of all, in fact, in the region of European startups have become the global key players such as Spotify, Skype, DeepMind, Monzo and Soundcloud with talented engineer teams (ibid).  Secondly, there are Computer Science hubs including Cambridge, Oxford, ETH Zurich and therefore most engineers graduated such universities select to join the scaling Europe born startups (ibid).  Thirdly and finally, Silicon Valley or more generally the United States are matured mainly due to the dominance of Big Tech companies such as Amazon, Apple, Google, Facebook and running cost there is continuously increasing (ibid).  Accordingly, these companies are seeking their engineers outside of the United States to build their branches in Europe and hence their investment is contributing to strengthen European engineer’s job market which means European IT firms become more easily hire talented engineers then ever (ibid).  On the contrary, although YC built their branch in China in 2018 and they allow the branch full access to their key resources and independence in respect to the operations from the headquarters in Silicon Valley, suddenly they abandoned the Chinese branch <cite>(Liao, 2019)</cite>.  This might be because the most prospective Chinese startups have already been financed and ruled by Chinese large tech companies such as Alibaba, Tencent and Baidu and therefore multinational corporations in China have almost been wiped out. They almost never successfully land in China’ according to Lu Qi who managed the Chinese YC branch (ibid).  This case could suggest that YC startup knowledge depends on western cultural context especially the American one and hence there is still some tacit knowledge referring to that.  Lu Qi of YC China clearly failed in China, however, he is still thinking why he did so.  He said that ‘When it comes to whether Chinese startups are suited for mentorship, or whether incubators bring value to China, these are separate questions’ which means he recognized the obstacle to succeed YC business in China but the issue was quite complicated and could not divide it into several aspects (ibid).</p>
-
-<h2 id="what-can-be-done-to-effectively-match-knowledge-assets-and-knowledge-management-practices">What can be done to effectively match knowledge assets and knowledge management practices?</h2>
-<p>YC has several type of knowledge assets mainly not only experiential knowledge assets (tacit knowledge shared through common experiences) which is matched their practice such as PMF but also systemic knowledge assets (systemized and packaged explicit knowledge) that is correlated their methods including manuals dealing with series A raising and databases according to how to build startups.   However, there is still a gap between the knowledge regarding startups written in the assets such as the documents and what the students mainly the founders actuary learned from the one <cite>(PALIOS, 2019)</cite>.  In the programs, YC tried to space among them using face to face mentoring with the mentors for startups and alumni (ibid).  All learnings YC observed are uploaded to their online startup school and therefore the students can study the knowledge in their hometown which they used not to be able to be assisted, though the effectiveness of both methods depends on the situation which the founders are in (ibid).  When they are in the early stage before scaling their firms, the mentoring is relatively effective, however, if they are in the scaling stage, the mentoring will not be less feasible (ibid).  YC holds events to meet their customers who can also see each other.  In fact, YC launched the event to seek the person who is intelligent and gifted, like Elon Musks, especially the one who desire to employ hard tech with more inclusive way such as travel and lodging costs of participants, who appeal via a one-minute video that inquires them related to their interests, and what their potential for dignity is adjusted for whatever life situations they were born into <cite>(Konrad, 2019)</cite>.  The conferences can be also seen as the tool to fill the gap and therefore YC might employ each service complementally.</p>
-
-<h2 id="conclusion">Conclusion</h2>
-<p>This essay has assessed the effectiveness of this firm’s current knowledge management practices and considered what requires to be done to enhance both formal and informal knowledge management practices in terms of six aspects in connection with YC, the world’s most popular venture capital.  These aspects are earned to address the definition of knowledge currently used in YC, whether this definition reflects the complexity of knowledge in YC, whether the core knowledge management enablers are in YC, what are the core knowledge assets in YC, The current knowledge management practices and what can be done to effectively match knowledge assets and knowledge management practices? respectively.  The knowledge is mainly startup incubation know how especially PMF.  The complexity of that is due to the ambiguity of PMF.  The core knowledge management enablers are the cofounders of YC such as Paul Graham, YC alumni including Airbnb founder and Silicon Valley culture equally paying forward and respect for too ambitious ideas.  The core knowledge assets are their startup acceleration resources such as video, documents, template agreements, tools and the people who are equal to the core knowledge management enablers speaking in the event or video.  The current knowledge management practices are sharing their startup resources via their startup schools, the latest of which is the guide about series A and expanding outside of the United States mainly Europe and China, however, their Chinese branch failed.  To answer what can be done to effectively match knowledge assets and knowledge management practices is the balancing among the documents, mentoring and events, especially distributing the documents via their platforms can change the situation of the people who live in the place far from the United States.  YC itself is scaling their service via their online startup school to the world.  In Europe, it can be seen the success regarding their expansion.  However, the failure in China noticed the fact that there is still a huge gap between hands-on practice in Silicon Valley and the one in non-western cultural contexts.  In spite of that, if they overcame the gap, they would be able to scale their business into non-western countries such as African and Asia-Pacific nations.  As a result, they might be able to find the next Elon Musks in such regions.  Startup incubation can be the engine of economic growth to build the innovative product which might increase human wealth and therefore their business may assist to increase not only quality of human life but also their living standards.</p>
-
-<h2 id="reference">Reference</h2>
-<ul>
-  <li>Graham, P., 2011. Subject: Airbnb [Online]. Available from: <a href="http://www.paulgraham.com/airbnb.html">http://www.paulgraham.com/airbnb.html</a> [Accessed 29 February 2020].</li>
-  <li>Griffin, T., 2017. 12 Things about Product-Market Fit [Online]. Available from: <a href="https://a16z.com/2017/02/18/12-things-about-product-market-fit/">https://a16z.com/2017/02/18/12-things-about-product-market-fit/</a> [Accessed 29 February 2020].</li>
-  <li>Harris, A. and Tam, J., 2020. YC’s New Guide to Raising a Series A [Online]. Available from: <a href="https://blog.ycombinator.com/ycs-series-a-guide/">https://blog.ycombinator.com/ycs-series-a-guide/</a> [Accessed 29 February 2020].</li>
-  <li>Hislop, D., Bosua, R. and Remko Helms, R., 2018. Knowledge Management in Organizations, FOURTH EDITION</li>
-  <li>Jordan, M., 2017. How and Why to Start A Startup — Sam Altman &amp; Dustin Moskovitz [Online]. Available from: <a href="https://medium.com/@gifted_products/how-and-why-to-start-a-startup-sam-altman-dustin-moskovitz-b83bdf87f745">https://medium.com/@gifted_products/how-and-why-to-start-a-startup-sam-altman-dustin-moskovitz-b83bdf87f745</a> [Accessed 29 February 2020].</li>
-  <li>Konrad, A., 2019. Y Combinator Launches A Conference For Young People To Find ‘Future Elon Musks’ [Online]. Available from: <a href="https://www.forbes.com/sites/alexkonrad/2019/01/29/y-combinator-launches-a-new-conference-to-find-future-elon-musks/#3e95edbe2993">https://www.forbes.com/sites/alexkonrad/2019/01/29/y-combinator-launches-a-new-conference-to-find-future-elon-musks/#3e95edbe2993</a> [Accessed 29 February 2020].</li>
-  <li>Liao, R., 2019. China Roundup: Y Combinator’s short-lived China dream [Online]. Available from: <a href="https://techcrunch.com/2019/11/23/china-round-up-yc-china-alibaba-meituan-war/">https://techcrunch.com/2019/11/23/china-round-up-yc-china-alibaba-meituan-war/</a> [Accessed 29 February 2020].</li>
-  <li>Migicovsky, E., 2019. Should You Move Your Company to Silicon Valley? - Eric Migicovsky, Pebble Founder [Online]. Available from: <a href="https://www.youtube.com/watch?v=Zj1WyGpSbrM">https://www.youtube.com/watch?v=Zj1WyGpSbrM</a> [Accessed 29 February 2020].</li>
-  <li>Moed, J., 2019. Why Y Combinator In 2019-2020: The Accelerator’s Latest Startups Provide An Inside Look [Online]. Available from: <a href="https://www.forbes.com/sites/jonathanmoed/2019/09/09/why-y-combinator-in-2019-2020-the-accelerators-latest-startups-provide-an-inside-look/">https://www.forbes.com/sites/jonathanmoed/2019/09/09/why-y-combinator-in-2019-2020-the-accelerators-latest-startups-provide-an-inside-look/</a> [Accessed 29 February 2020].</li>
-  <li>PALIOS, S., 2019. Y COMBINATOR PARTNER ERIC MIGICOVSKY ON THE SHIFT FROM STARTUP FOUNDER TO MENTOR [Online]. Available from: <a href="https://betakit.com/y-combinator-partner-eric-migicovsky-on-the-shift-from-startup-founder-to-mentor/">https://betakit.com/y-combinator-partner-eric-migicovsky-on-the-shift-from-startup-founder-to-mentor/</a> [Accessed 29 February 2020].</li>
-  <li>Seibel, M., 2016. The Real Product Market Fit [Online]. Available from: <a href="https://blog.ycombinator.com/the-real-product-market-fit/">https://blog.ycombinator.com/the-real-product-market-fit/</a> [Accessed 29 February 2020].</li>
-  <li>Shah, H., 2020. 731 Slack Users Reveal Why It’s So Addictive [Online]. Available from: <a href="https://hitenism.com/slack-product-market-fit-survey/">https://hitenism.com/slack-product-market-fit-survey/</a> [Accessed 29 February 2020].</li>
-  <li>Voices, V., 2018. Why European Founders At Silicon Valley’s Y Combinator Are Returning Home To Build Their Startups [Online]. Available from: <a href="https://www.forbes.com/sites/valleyvoices/2018/10/29/why-european-founders-at-y-combinator-are-returning-home-to-build-their-startups/amp/">https://www.forbes.com/sites/valleyvoices/2018/10/29/why-european-founders-at-y-combinator-are-returning-home-to-build-their-startups/amp/</a> [Accessed 29 February 2020].</li>
-  <li>Y Combinator, 2020. [Online]. Available from: <a href="https://www.ycombinator.com/">https://www.ycombinator.com/</a> [Accessed 29 February 2020].</li>
-</ul>]]></content><author><name>Kyo Harada</name></author><category term="Business" /><category term="Finance" /><category term="Start-Up" /><category term="Business Finance Start-Up" /><summary type="html"><![CDATA[This is a modified version of the report for Knowledge Leadership in a Global Economy in Bath Full Time MBA Class of 2020.]]></summary></entry><entry><title type="html">Sources of finance</title><link href="https://kyo1988.github.io/Kyo.github.io/business/finance/2021/05/26/sources-of-finance.html" rel="alternate" type="text/html" title="Sources of finance" /><published>2021-05-26T00:00:00+09:00</published><updated>2021-05-26T00:00:00+09:00</updated><id>https://kyo1988.github.io/Kyo.github.io/business/finance/2021/05/26/sources-of-finance</id><content type="html" xml:base="https://kyo1988.github.io/Kyo.github.io/business/finance/2021/05/26/sources-of-finance.html"><![CDATA[<ul id="markdown-toc">
-  <li><a href="#sources-of-finance" id="markdown-toc-sources-of-finance">Sources of finance</a>    <ul>
-      <li><a href="#summary" id="markdown-toc-summary">Summary</a></li>
-      <li><a href="#appropriate-source-of-finance" id="markdown-toc-appropriate-source-of-finance">Appropriate source of finance</a></li>
-      <li><a href="#the-reason-debt-is-usually-a-cheaper-source-of-finance-than-equity" id="markdown-toc-the-reason-debt-is-usually-a-cheaper-source-of-finance-than-equity">The reason debt is usually a cheaper source of finance than equity</a></li>
-      <li><a href="#the-sources-of-funding-revolving-credit-facility-and-senior-note" id="markdown-toc-the-sources-of-funding-revolving-credit-facility-and-senior-note">The sources of funding (revolving credit facility and senior note)</a></li>
-      <li><a href="#reference" id="markdown-toc-reference">Reference</a></li>
-    </ul>
-  </li>
-</ul>
-
-<p>This is a modified version of the report for Understanding Finance (Part 2: Sources of finance) in Bath Full Time MBA Class of 2020.</p>
-
-<h1 id="sources-of-finance">Sources of finance</h1>
-
-<h2 id="summary">Summary</h2>
-<p>This report will address three issues, one of which is to identify and explain three factors that a Chief Financial Officer (CFO) have consider to determine an appropriate source of finance for a company, which are mainly how much to pay dividends from retained earnings and the level of gearing with debt and equity.  Another problem is to explain why debt is usually a cheaper source of finance than equity is true owing to tax deductibility and lower cost.  The last topic is to describe the two sources of funding (revolving credit facility and senior note), explaining how each source of funding works and outlining at least one advantage and one disadvantage of each source.</p>
-
-<h2 id="appropriate-source-of-finance">Appropriate source of finance</h2>
-<p>The sources of finance for a company are mainly retained earnings, equity and debt.  When a Chief Financial Officer (CFO) considers a harmony of these sources, they should think how much they should return the retained earnings as the dividends for their shareholders primarily.  This is mainly because Assets of investors should be allocated by the most productive way, therefore, usually the retained earnings, consequently dividends ought to be reinvested to other more the companies or projects except for some cases including Google with zero dividend policy owing to having a great deal of cash generating projects internally.  However, even if the company has some projects with a positive NPV, it may not be covered by only their retained earnings.  In this situation, CFO should consider how to finance at the lowest cost, especially interest to gear with equity and debt, which are external sources for the company.  There are two theories to find an optimal capital structure, which are pecking order theory and trade off theory, however, both argued that debt is better or more preferable than equity.</p>
-
-<h2 id="the-reason-debt-is-usually-a-cheaper-source-of-finance-than-equity">The reason debt is usually a cheaper source of finance than equity</h2>
-<p>why debt is usually a cheaper source of finance than equity can be mainly two reasons.  One of them is that the cost of debt is less than the cost of equity due to lower risk.  Although the issuer has to pay the arrangement fee when they issue the debt, still the cost is cheaper than the one of equity because they must pay the dividend unless they have no dividend policy.  Another reason might be that the debt interest is tax deductible which lowers cost to the company.</p>
-
-<h2 id="the-sources-of-funding-revolving-credit-facility-and-senior-note">The sources of funding (revolving credit facility and senior note)</h2>
-<p>The company is funded by debt mainly including revolving credit facility and senior note.  A revolving credit (facility) is a modified line of credit which is a one-time agreement due to the fact that the account is closed when the company spends the maximum amount previously determined <cite>(Segal, 2019)</cite>.  However, the difference between a revolving credit and normal one is that the company can pay on a revolving credit account regularly with slightly higher interest rate which can be the one of major disadvantages.  On the other hand, one of the major advantages might be that the company has the capability to pay on demand, which is equal to having the liquidity to pay by cash even if the company has no cash.
-The senior note is a debt to have a right to be paid by the issuer primarily when they are bankrupt in comparison with the subordinate debt <cite>(Watson and Head, 2019)</cite>.  The primary claim on an issuer’s assets and tax-deductible can be the major advantages.  In contrast, one of the disadvantages might be that the issuer has to be redeemed when it reaches maturity.  In addition, according to the tradeoff theory, the debt increases financial risk because the interest has to be paid primary and therefore the dividend may not remain.  As a result, a senior note which has a higher interest than the normal one can increase the risk of bankruptcy more than using ordinary debt.</p>
-
-<h2 id="reference">Reference</h2>
-<ul>
-  <li>Segal, T., 2019. Revolving Credit vs. Line of Credit: What’s the Difference? [Online]. Available from: <a href="https://www.investopedia.com/ask/answers/110614/what-are-differences-between-revolving-credit-and-line-credit.asp">https://www.investopedia.com/ask/answers/110614/what-are-differences-between-revolving-credit-and-line-credit.asp</a> [Accessed 20 December 2019]</li>
-  <li>Watson, D. and Head, A., 2019. Corporate Finance Principles and Practice. 8th edition. Pearson Education Limited</li>
-</ul>]]></content><author><name>Kyo Harada</name></author><category term="Business" /><category term="Finance" /><category term="Business Finance" /><summary type="html"><![CDATA[This is a modified version of the report for Understanding Finance (Part 2: Sources of finance) in Bath Full Time MBA Class of 2020.]]></summary></entry><entry><title type="html">Strategic brand management</title><link href="https://kyo1988.github.io/Kyo.github.io/business/finance/marketing/2021/05/26/strategic-brand-management.html" rel="alternate" type="text/html" title="Strategic brand management" /><published>2021-05-26T00:00:00+09:00</published><updated>2021-05-26T00:00:00+09:00</updated><id>https://kyo1988.github.io/Kyo.github.io/business/finance/marketing/2021/05/26/strategic%20brand%20management</id><content type="html" xml:base="https://kyo1988.github.io/Kyo.github.io/business/finance/marketing/2021/05/26/strategic-brand-management.html"><![CDATA[<ul id="markdown-toc">
-  <li><a href="#strategic-brand-management" id="markdown-toc-strategic-brand-management">Strategic brand management</a>    <ul>
-      <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
-      <li><a href="#segmentation-targeting-and-positioning" id="markdown-toc-segmentation-targeting-and-positioning">Segmentation, Targeting and Positioning</a></li>
-      <li><a href="#four-es-as-an-alternative-marketing-mix-4-ps" id="markdown-toc-four-es-as-an-alternative-marketing-mix-4-ps">Four Es as an Alternative Marketing mix 4 Ps</a></li>
-      <li><a href="#two-systems-of-thinking" id="markdown-toc-two-systems-of-thinking">Two Systems of Thinking</a></li>
-      <li><a href="#customer-decision-journey" id="markdown-toc-customer-decision-journey">Customer Decision Journey</a></li>
-      <li><a href="#brand-association-map" id="markdown-toc-brand-association-map">Brand Association Map</a></li>
-      <li><a href="#search-engine-optimization" id="markdown-toc-search-engine-optimization">Search Engine Optimization</a></li>
-      <li><a href="#conclusion" id="markdown-toc-conclusion">Conclusion</a></li>
-      <li><a href="#reference" id="markdown-toc-reference">Reference</a></li>
-    </ul>
-  </li>
-</ul>
-
-<p>This is a modified version of the report for Strategic brand management in Bath Full Time MBA Class of 2020.</p>
-
-<h1 id="strategic-brand-management">Strategic brand management</h1>
-
-<h2 id="introduction">Introduction</h2>
-<p>In-store purchasing process can be one of the most significant parts among all kinds of processes including online.   This is primary because retail market is the largest industry in the all category of the industries such as automobile and it still keeps to grow the sales, for example, the revenue of the world largest retailer (WalMart) doubles in size every five years, which is more than 2 times larger than Amazon (the top online retailer in the world).  In fact, only one square meter of sales space can earn 80.000.000 US dollars per year.  Therefore, the retailers still are vitally important as a major channel and therefore the research of that is advancing rapidly.  On the other hand, an online retailer is building its physical one and vice versa then ‘online merge offline’ might be going faster.  To combine in-store marketing with online one, this essay will discuss how to build the brand online to use the online trading platform as an example.</p>
-
-<p>##Future Work
-For the purpose of this essay, it is considered how to build a brand for selling a certain product via landing page on the web.  More specifically, the product assumed the commission-free investing online platform which can be the alternative of Robinhood.  The user can invest in most financial products such as stocks and forex after creating their account without no or a few commissions.</p>
-
-<h2 id="segmentation-targeting-and-positioning">Segmentation, Targeting and Positioning</h2>
-<p>In addition, from the marketing viewpoint, it should be focused on a specific customer segment.  Generation C can be consistent with the purpose as a target customer.  This is primary because they have two main features which are young (born between 1982 and 1996) and tech-savvy that means they relate to each other via social media such as YouTube and Facebook (PICKETT, 2019).</p>
-
-<h2 id="four-es-as-an-alternative-marketing-mix-4-ps">Four Es as an Alternative Marketing mix 4 Ps</h2>
-<p>4 Ps stand for product, price, place and promotion, on the other hand, 4 Es do so experience, exchange, everywhere and evangelism <cite>(Poulou, 2018)</cite>.  This is due to the customers wanting a certain experience from the service, rather than just consuming the product (ibid).  In addition, some contemporary businesses provide its service for them without any charges and then instead of the fee, it sells the data of them and advertising space (ibid).  Furthermore, most customers connect to the Internet mainly via mobile phone and therefore, they can buy the product everywhere (ibid).  Moreover, although traditional advertising such as TV commercials is still important, customer evangelists are also becoming a significant factor to sell the products due to the huge social media networks (ibid).  Therefore, it is primary important to consider how to advertise the product via influencers.  For instance, the young famous venture capitalists and investors can play the key role for the product advertising in this essay and operation costs can be compensated by sales of data instead of commission.</p>
-
-<h2 id="two-systems-of-thinking">Two Systems of Thinking</h2>
-<p>It is also important to analyze how the customer, especially the target one, thinks about the product.  According to Kahneman (2012), people have two different systems of thinking processes which are called system 1 and system 2.  Former administers automatically and immediately with little or no effort and no space to be worked by voluntary control (ibid).  The latter, on the other hand, assigns attention to the arduous mental activities which require it such as complicated computations (ibid).  Hence, the purchasing process can be mainly related to unconscious thinking.  It is supported by the fact that its brand can have the biggest influence in the purchasing decision primary because in certain type of products, for example, top 10 brands of beer dominated more than 70 % of total share of the United States beer sales in 2002 <cite>(Corstjens and Steele, 2008)</cite>.  It can be also supported by the eye tracking observations.  This is because the subjects of the eye tracking experiment seems to have quite narrow eye sight which only focus on the middle and low of goods shelves and their decision making tend to be relatively quick (a few second), which may mean they decide to buy the goods unconsciously based on the limited information such as price and brand <cite>(Nordfält, 2020)</cite>.</p>
-
-<h2 id="customer-decision-journey">Customer Decision Journey</h2>
-<p>One of the best methods to monitor the progress can be retention rate to purchase a target product (or service).  This is mainly because the first trial of the product could be driven by the marketing and sales activities such as discounting and up (cross) selling, not purely the intrinsic value of the one and therefore, the purchase after trial can be expected to mitigate the effect of sales and marketing.  The decision process journey can be divided to the four cycles which are initial consideration, active evaluation, closure and post purchase <cite>(Court et al., 2009)</cite>.  In the post purchase, it is assumed that the customer builds the expectation of the bought product and hence they will decide if they repurchase the one, which is called ‘loyalty loop’ (ibid).  Thus, retention rate might be estimated to monitor loyalty loop .  Hence, the brand discussed in this essay should be to strengthen the loyalty loop which can be monitored by retention rate, which means the brand can be said to be associated with a product category (for instance, an online investment platform) when the customer purchases the service in brands.</p>
-
-<h2 id="brand-association-map">Brand Association Map</h2>
-<p>In fact, a brand association map is a strategic, comprehensive framework which can provide the implication its brand has vis‐à‐vis main competitors <cite>(Till, Baack and Waterman, 2011)</cite>.  The maps describe a brand and its associations besides an evaluation of the strength, relevance, uniqueness and favorability of each association (ibid).  In addition, a strong brand has stronger and more intensive association (strength and relevance), larger positive futures (favorability) and sharper distinct futures within the product category (uniqueness).  The map can be built by the customer experience (CX) including pre and post purchase one.  Therefore, sales and marketing strategy of the product should be focused on increasing the four points (strength, relevance, uniqueness and favorability).  One of the major examples of increasing its brand value  can be HSBC, the board of which developed its audited brand value from nearly zero in 1999 to $10 billion in 2005 to send the customers the message which is ‘the world’s local bank’ <cite>(Beverland, 2018)</cite>.  In fact, its logo (hexagon) can be associated with banks and icons in advertising shows the respect for cultural difference. For example, the symbol of tea in China is different from Turkey (ibid).  Therefore, the landing page of the product in this essay, especially its design should be changed by the visitor’s attributions.</p>
-
-<h2 id="search-engine-optimization">Search Engine Optimization</h2>
-<p>The customer can buy the product everywhere, however, the entrance of the Internet seems to be dominated by only a few search engines such as Google and YouTube.  Hence, it is inevitable to find how to optimize the engines, one of the most fundamental strategies of which can be maximize the number of links.  This is mainly because there is a stable relationship in correlation between links and ranking from 2007 to 2020 and high correlation between authoritative links and ranking <cite>(Nordfält, 2020)</cite>.  Thus, the landing page of the product in this essay needs the links to be searched by the target customers.</p>
-
-<h2 id="conclusion">Conclusion</h2>
-<p>This essay has discussed how to build the brand on the web using the online trading platform as an example.  The target segment decided Gen C and then the evangelists did so young VCs and investors.  The logo of the product should be a simple and single icon, however, advertising for it and the landing page should be varied by customer attributions.  Also, the landing page should optimize the search engines to increase the number of the links.  Finally, these experiments should be monitored by the retention rate which is the equivalent of a loyalty loop in the customer decision journey.</p>
-
-<h2 id="reference">Reference</h2>
-<ul>
-  <li>Beverland, M., 2018. Brand Management</li>
-  <li>Corstjens, M. and Steele, R., 2008. An international empirical analysis of the performance of manufacturers and retailers</li>
-  <li>Court, D. et al., 2009. The consumer decision journey [Online]. Available from: <a href="https://www.mckinsey.com/business-functions/marketing-and-sales/our-insights/the-consumer-decision-journey">https://www.mckinsey.com/business-functions/marketing-and-sales/our-insights/the-consumer-decision-journey</a> [Accessed 20 May 2020].</li>
-  <li>Kahneman, D., 2012. Of 2 Minds: How Fast and Slow Thinking Shape Perception and Choice [Excerpt] [Online]. Available from: <a href="https://www.scientificamerican.com/article/kahneman-excerpt-thinking-fast-and-slow/">https://www.scientificamerican.com/article/kahneman-excerpt-thinking-fast-and-slow/</a> [Accessed 20 May 2020].</li>
-  <li>Nordfält, J., 2020. Eye tracking 1 Lerum [Online]. Available from: <a href="https://www.youtube.com/watch?v=h_hXMp1FLFk">https://www.youtube.com/watch?v=h_hXMp1FLFk</a> [Accessed 20 May 2020].</li>
-  <li>Nordfält, J., 2020. Search Engine Optimization: lecture slides. Unpublished.</li>
-  <li>PICKETT, P., 2019. The Characteristics of Generation C [Online]. Available from: <a href="https://www.thebalancecareers.com/who-is-generation-c-and-what-are-they-all-about-2071937">https://www.thebalancecareers.com/who-is-generation-c-and-what-are-they-all-about-2071937</a> [Accessed 20 May 2020].</li>
-  <li>Poulou, P., 2018. From 4Ps to 4Es: Rethinking the Marketing Mix [Online]. Available from: <a href="https://www.linkedin.com/pulse/from-4ps-4es-philippe-poulou">https://www.linkedin.com/pulse/from-4ps-4es-philippe-poulou</a> [Accessed 20 May 2020].</li>
-  <li>Till, B.D., Baack, D. and Waterman, B, 2011. Strategic brand association maps: developing brand insight. Journal of product &amp; brand management., 20(2), pp.92–100.</li>
-</ul>]]></content><author><name>Kyo Harada</name></author><category term="Business" /><category term="Finance" /><category term="Marketing" /><category term="Business Finance Marketing" /><summary type="html"><![CDATA[This is a modified version of the report for Strategic brand management in Bath Full Time MBA Class of 2020.]]></summary></entry><entry><title type="html">Venture capital finance</title><link href="https://kyo1988.github.io/Kyo.github.io/business/finance/2021/05/26/vc-finance.html" rel="alternate" type="text/html" title="Venture capital finance" /><published>2021-05-26T00:00:00+09:00</published><updated>2021-05-26T00:00:00+09:00</updated><id>https://kyo1988.github.io/Kyo.github.io/business/finance/2021/05/26/vc-finance</id><content type="html" xml:base="https://kyo1988.github.io/Kyo.github.io/business/finance/2021/05/26/vc-finance.html"><![CDATA[<ul id="markdown-toc">
-  <li><a href="#venture-capital-finance" id="markdown-toc-venture-capital-finance">Venture capital finance</a>    <ul>
-      <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
-      <li><a href="#agency-problem-and-its-influence-of-the-start-ups-performance" id="markdown-toc-agency-problem-and-its-influence-of-the-start-ups-performance">Agency problem and its influence of the start-up’s performance</a></li>
-      <li><a href="#dyad-partners-sentiments-and-these-influence-of-the-start-ups-performance" id="markdown-toc-dyad-partners-sentiments-and-these-influence-of-the-start-ups-performance">Dyad-partner’s sentiments and these influence of the start-up’s performance</a></li>
-      <li><a href="#comparison-between-standard-economic-and-behavioral-theory" id="markdown-toc-comparison-between-standard-economic-and-behavioral-theory">Comparison between standard economic and behavioral theory</a></li>
-      <li><a href="#conclusion" id="markdown-toc-conclusion">Conclusion</a></li>
-      <li><a href="#reference" id="markdown-toc-reference">Reference</a></li>
-    </ul>
-  </li>
-</ul>
-
-<p>This is a modified version of the report for Venture capital finance in Bath Full Time MBA Class of 2020.</p>
-
-<h1 id="venture-capital-finance">Venture capital finance</h1>
-
-<h2 id="introduction">Introduction</h2>
-<p>Venture capital (VC) plays a significant role for the national economy.  This is primarily because although total VC investment was only less than 0.2% of GDP of the United States, VC backed firms generated 11% of all private sector jobs and earned annual revenues which was equal to 21% of GDP (Thiel, 2014).  In addition, unlike general financial intermediaries such as bank finance, VC do focus on their managerial resources not only money but also expertise to certain industries including software (22% of their total investment) and biotechnology (17% of that) (Bettignies, James and Brander, 2006).  This may mean that VC believe their effort and resources deeply affect the start-ups invested by them.  However, it is disputed that what kind factors influence the performance of the VC backed firms.  In fact, some researchers asserted that agency problems and low ability might be much less detrimental than VC backed start-ups of the dyad-partner’s sentiments of injustice, unfairness and lack of trust and therefore these feelings could be a decisive obstacle to value-creation and success in the ones.  This essay will evaluate the argument in terms of venture capital theory, standard economic one and behavioral economics ones including social preferences with these evidences.</p>
-
-<h2 id="agency-problem-and-its-influence-of-the-start-ups-performance">Agency problem and its influence of the start-up’s performance</h2>
-<p>According to the agency theory, there is an agency problem between the venture capitalists as a principal and the entrepreneurs as an agent who are assured fully self-interested and therefore their interest would be conflicted in a certain situation (UTSET, 2002).  One of the major examples for the agency problem is adverse selection (ibid).  There are good and bad entrepreneurs, however, the bad one may be able to pretend as if the good one and hence, the venture capitalists have to be able to distinguish between them (ibid).  Therefore, if the venture capitalist invests in a bad entrepreneur who had low ability or even high one but low motivation, the performance of the start-up might be deteriorated.  In addition, the hold-up risk is also the vital example of the agency problem.  The risk is that the entrepreneur can be imperil to abandon making an effort to improve the performance of his firm invested by VC till the venture capitalist reconsiders how to divide the proportion of equity distribution (ibid).  Although they can protect in the region of hold-up risk using wide range provisions, still the protection measures might be incomplete due to their inability (ibid).  Moreover, the entrepreneur might behave as if their performance is better than it actually is to induce to overestimate and be invested by venture capitalist, which is called window dressing (Burchardt et al, 2016).  This is also one of the most important phenomena caused by agency problems.  Therefore, the entrepreneur tends to focus on the short-term performance, even if they may lose the long term one.  Besides, due to the lack of ability to monitor and manage the performance, either or both of the entrepreneur and the venture capitalist may free ride others and exploit their effort, which is one of classic agency problems called free rider problem (ROMANS, 2013).  Hence, the performance could be deteriorated if some of the stakeholders attempted to free ride others.  Furthermore, if there is a loophole of the investment contract but the one is one of the key factor to improve higher performance, the entrepreneur’ effort in the loophole may be unobservable for VC and then the entrepreneur tend to omit the key activities in the one, which is defined as moral hazard (TUCKER, 2004).  Thus, the prevention to ignore the key performance factors related activities in the contract can be important for the performance.</p>
-
-<h2 id="dyad-partners-sentiments-and-these-influence-of-the-start-ups-performance">Dyad-partner’s sentiments and these influence of the start-up’s performance</h2>
-<p>Other factors to affect the performance are their emotions such as justice, fair and trust.  Even if the venture capitalist selects a good entrepreneur who wants to manage the team, still running them is a difficult issue.  For instance, some researchers argued that the perceived justice of equity distribution on entrepreneurial teams play a role for their performance (Breugst, Patzelt and Rathgeber, 2014).  High perceived distributive justice causes mutual, constructive team synergy spirals, on the other hand, low one provokes unfavorable team interactions spirals and the ones further decrease perceived justice of equity distribution (ibid).  This is because if their contract according to equity distribution is not perceived as fair, it seems to be that the evolution of intrateam trust is acutely damaged (ibid).  In addition, it is demonstrated that as the entrepreneur feels greater fairness, VC tend to offer the equity higher and therefore, the entrepreneur might make a higher value-adding effort (Fairchild, 2010).  This can be because the higher commitment to decisions, performance, behavior and attitude might be led by the increase in the perception of fairness of entrepreneurs (ibid).  Furthermore, Harrison (1999 cited in TUCKER, 2004) claimed that the lack of trust between the entrepreneur and the venture capitalist may enlarge the risk which the start-up might not be lucrative.  This is mainly because less able venture capitalists incline to require punitive covenants to assure themselves against the danger of inconvenience performance, which is caused by their limited ability to bring an amending control to a downside condition (ibid).  Also, there is a tendency that each player prefers to distribute at least the same amount as the volume that the other players earn, which is called envy-freeness (Brams, 2005).  It can be vital for the performance because if they reach envy-free distribution, no one may envy others, which means it is less likely to be the negative actions against the team.  What is more, Empathy is defined as the feeling intimately linked to mutual trust between the entrepreneur and VC (Fairchild, 2009).  It is suggested that the degree of the entrepreneur-VC empathy corresponding to the value-adding abilities of VC altered the entrepreneur’s selection of financier and the arising value of the VC and also argued that if the entrepreneur felt higher empathy for the VC with lower value-adding ability, the entrepreneur might select the lower ability VC rather than higher one and hence the performance of the firm would be decreased (ibid).  This may mean that the performance of the empathically biased entrepreneur tends to be lower than the performance of the unbiased one.  Additionally, it is asserted that if the entrepreneur has the overconfidence and unrealistic optimism, they may ignore some important figures and signs which is against their buoyant forecast and therefore they might serve to induce their miscalculation of the possibility of new venture failure linked to the potential investors of their company control who are less overconfident (Douglas, Carlsson-Wall and Hjelström, 2014).  This is because although the probability of the company that consequently fail might be calculated as an objective measure of the default probability if they are in high competitive market, if the entrepreneur and their firm having a new service enter to a new market which has a few competitors or no completion, the probability of failure must be estimated subjectively based on their unrealistic point of view and unfeasible forecast (ibid).  Hence, the overconfidence of the entrepreneur might deteriorate the performance of the start-ups due to unfeasible forecasts induced by their overconfidence.  Correspondingly, some researchers indicated that the over-optimistic entrepreneurs interpret transactional facts hypothetically that understates consequent risks, which they fail to invest in collecting transactional-specific information and tend to enter transactions without consultation of the external advisors. (UTSET, 2002).  Therefore, over-optimism may induce an entrepreneur to participate in the contracts which do not count on the actual risks that the start-ups may suffer (ibid).  Even if the over-optimistic entrepreneur completely comprehends the arduous arrangements in a venture capital contract, they would not be certainly concerned, assuming such events which would cause these adverse agreements will not be realized (ibid).  However, during the cycle of the start-up, when unfavorable cases of the planet induce demanding provisions in VC contracts, the initial over-optimistic expectations of the entrepreneur will introduce blunt facts relative to the real nature of the proper conditions (ibid).  Thus, the over-optimism of the entrepreneur might affect their performance due to unfeasible contracts agreed with VC.  This is because they may not prepare unpreferable situations which are likely to happen.  Finally, looking at negative feelings, such sentiment may lead to revenge for the company and then the performance of the one could be declined (UTSET, 2002).  This is because the angered player such as an employee might be ready to commit in active sabotage or to deliver indirect actions including not employing enough effort, even if the explicit profits of doing so seem to be less than the expenses (ibid).</p>
-
-<h2 id="comparison-between-standard-economic-and-behavioral-theory">Comparison between standard economic and behavioral theory</h2>
-<p>One of the feasible tools to analyze the economic and social situation is game theory.  For instance, as a result of game theory which is assured the players are fully rational, they might reach the equilibrium to avoid the conflictions mainly caused by the agency problem above such as adverse selection, hold-up risk, window dressing, free rider problem and moral hazard (Fairchild and Yao, 2017).  The equilibrium might say that all rational venture capitalists ought to fairly suggest 43% of the equity to the entrepreneur, holding 57% themselves, and all of the players in the dyad should exert their power (ibid).  On the other hand, after counting on the emotion of the entrepreneur and the venture capitalist such as fairness, empathy and engagement among the duo, the equilibrium is moved and then reached a new one which is relatively balanced (almost 50/50) (ibid).  This can mean in general, the venture capitalists may be superior to the entrepreneurs mainly due to their expertise, such advantage might not affect to improve performance in the long run because of their sentiments and therefore, both of them can consider this emotional effect to the equity distribution.</p>
-
-<h2 id="conclusion">Conclusion</h2>
-<p>This essay has assessed the argument that a crucial barrier to value-creation and success in VC backed prospective start-ups is that of the dyad-partners’ sentiments which can be furthermore detrimental than agency problems and low ability.  To this end, it has discussed the effects of agency problems and Dyad-partner’s sentiments for the performance, and also the comparison between standard economic and behavioral theory relative to both aspects.  It is concluded that agency problems might induce mainly moral hazard, hold-up risk, free-riding and window dressing, which could decline the performance.  Also, Dyad-partner’s sentiments are primary injustice, unfairness. lack of trust, envy, empathy, overconfident and negative reciprocity (revenge), which might deteriorate the performance and therefore emotionally biased the entrepreneur tend to be lower performer than unbiased one.  In addition, the major difference between standard economic and behavioral theory can be typically observed in the equilibrium of the equity distribution in dyad partners.  The emotion of the entrepreneur might require more equal amount of the equity even if they recognize asymmetry information with VC and thus the difference might be the premium for any type of counter actions against unfairness.</p>
-
-<h2 id="reference">Reference</h2>
-<ul>
-  <li>Bettignies, J.D., James A. and Brander, J.A., 2006. Financing entrepreneurship: Bank finance versus venture capital</li>
-  <li>Brams, S.J., 2005. Fair Division</li>
-  <li>Breugst, N., Patzelt, H. and Rathgeber, P., 2014. How should we divide the pie? Equity distribution and its impact on entrepreneurial teams</li>
-  <li>Burchardt, J., Hommel, U., Kamuriwo, D. S. &amp; Billitteri, C., 2016. Venture capital contracting in theory and practice: Implications for entrepreneurship research. Entrepreneurship: Theory and Practice, 40(1), pp. 25-48. doi: 10.1111/etap.12104</li>
-  <li>Douglas, E.J., Carlsson-Wall, M. and Hjelström, T., 2014. Negotiating equity share and management control of the entrepreneurial new venture, Venture Capital, 16:4, 287-307, DOI: 10.1080/13691066.2014.970334</li>
-  <li>Fairchild, R. and Yao, Y., 2017. Venture Capital/Entrepreneurial contracting and performance: An Experimental Investigation</li>
-  <li>Fairchild, R., 2009. An entrepreneur’s choice of venture capitalist or angel-financing: A behavioral game-theoretic approach</li>
-  <li>Fairchild, R., 2010. Fairness Norms and Self-interest in Venture Capital/Entrepreneur Contracting and Performance</li>
-  <li>ROMANS, A., 2013. THE ENTREPRENEURIAL BIBLE TO VENTURE CAPITAL</li>
-  <li>Thiel, P., 2014, Zero to One</li>
-  <li>TUCKER, J.A., 2004. LEVERAGING THE VENTURE CAPITAL RELATIONSHIP – THE ENTREPRENEURS’ PERSPECTIVE</li>
-  <li>UTSET, M.A., 2002. RECIPROCAL FAIRNESS, STRATEGIC BEHAVIOR &amp; VENTURE SURVIVAL: A THEORY OF VENTURE CAPITAL- FINANCED FIRMS</li>
-</ul>]]></content><author><name>Kyo Harada</name></author><category term="Business" /><category term="Finance" /><category term="Business Finance" /><summary type="html"><![CDATA[This is a modified version of the report for Venture capital finance in Bath Full Time MBA Class of 2020.]]></summary></entry></feed>
+</ul>]]></content><author><name>Kyo Harada</name></author><category term="Business" /><category term="Finance" /><category term="Business Finance" /><summary type="html"><![CDATA[This is a modified version of the report for semminar at a financial consulting firm in 2016.]]></summary></entry></feed>

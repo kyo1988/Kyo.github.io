@@ -5,6 +5,7 @@ description: "今週のBuilt / Learned / One-chart / One-link。Jekyll 3互換�
 tags: [Log, Founder, Jekyll, GitHub-Pages]
 og_image: /images/log-01.png
 last_modified_at: 2025-01-19
+lang: ja
 ---
 
 {% include tldr.html text="今週の決定：Jekyll 3互換パッチでビルド安定化。数字の動き：20回連続失敗→成功。次週は新機能段階的復活。" %}

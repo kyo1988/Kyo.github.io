@@ -6,9 +6,9 @@ description: "Built / Learned / One-chart / One-link — weekly."
 ---
 
 <form
-  action="https://buttondown.email/api/emails/embed-subscribe/YOUR_ID"
+  action="https://buttondown.email/api/emails/embed-subscribe/kyo-harada"
   method="post" target="popupwindow"
-  onsubmit="window.open('https://buttondown.email/YOUR_ID','popupwindow')"
+  onsubmit="window.open('https://buttondown.email/kyo-harada','popupwindow')"
   class="embeddable-buttondown-form">
   <label for="bd-email">メールアドレス</label>
   <input type="email" name="email" id="bd-email" />

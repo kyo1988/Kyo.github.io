@@ -1,13 +1,14 @@
 ---
 layout: post
 title: "RAGミニ監査チェックリスト（無料DL）"
-description: "2週間で現状把握→改善提案まで。評価ダッシュボード付き。RAGの善し悪しは"再現性×リーン運用"。まずはこのA4一枚から。"
+description: "2週間で現状把握→改善提案まで。評価ダッシュボード付き。RAGの善し悪しは再現性×リーン運用。まずはこのA4一枚から。"
 tags: [LLM, RAG, Evaluation, Case-Study, AI]
 og_image: /images/rag-checklist.png
 last_modified_at: 2025-01-19
+lang: ja
 ---
 
-{% include tldr.html text="RAGの善し悪しは"再現性×リーン運用"。まずはこのA4一枚から。2週間で現状把握→改善提案まで。" %}
+{% include tldr.html text="RAGの善し悪しは再現性×リーン運用。まずはこのA4一枚から。2週間で現状把握→改善提案まで。" %}
 
 ## 評価観点と最小セット
 

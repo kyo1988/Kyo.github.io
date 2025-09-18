@@ -71,7 +71,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS_CHTML"></script>
 <!-- <link type="application/atom+xml" rel="alternate" href="https://kyo1988.github.io/Kyo.github.io/atom.xml" title="Kyo Harada — Visage AI / Data Scientist" /> -->
 <!-- <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Page 4 of 7 for Kyo Harada — Visage AI / Data Scientist | Founder &amp; Data Scientist building on-device AI for skin analytics and finance-grade data products.</title>
+<title>Page 4 of 9 for Kyo Harada — Visage AI / Data Scientist | Founder &amp; Data Scientist building on-device AI for skin analytics and finance-grade data products.</title>
 <meta name="generator" content="Jekyll v3.10.0" />
 <meta property="og:title" content="Kyo Harada — Visage AI / Data Scientist" />
 <meta name="author" content="Kyo Harada" />
@@ -209,6 +209,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         
         
+        
+        
+        
+        
       </div>
     </nav>
 
@@ -228,7 +232,109 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <header class="post-header">
       <h1 itemprop="name" class="post-title">
-        <a itemprop="url" class="post-link" href="/Kyo.github.io/business/finance/2021/05/26/applied-microeconomics.html">Applied Microeconomics</a>
+        <a itemprop="url" class="post-link" href="/Kyo.github.io/business/finance/2021/05/31/derivation-of-yield-curve-construction-formula-with-tenor-basis-spread.html">Derivation of yield curve construction formula with tenor basis spread</a>
+      </h1>
+      <meta itemprop="keywords" content="Business Finance" />
+      <p class="post-meta">
+      Posted in
+      
+      <a href="/Kyo.github.io/categories/#Business">Business</a>, 
+      
+      <a href="/Kyo.github.io/categories/#Finance">Finance</a>
+      
+      
+      and tagged
+      
+      <a href="/Kyo.github.io/tags/#Business Finance" title="Business Finance">Business Finance</a>
+      
+      
+      <time itemprop="datePublished" datetime="2021-05-31">
+      on May 31, 2021
+      </time>
+      </p>
+    </header>
+
+    <article class="post-content" itemprop="articleBody">
+      <ul id="markdown-toc">
+  <li><a href="#derivation-of-yield-curve-construction-formula-with-tenor-basis-spread" id="markdown-toc-derivation-of-yield-curve-construction-formula-with-tenor-basis-spread">Derivation of yield curve construction formula with tenor basis spread</a>    <ul>
+      <li><a href="#reference" id="markdown-toc-reference">Reference</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="derivation-of-yield-curve-construction-formula-with-tenor-basis-spread">Derivation of yield curve construction formula with tenor basis spread</h1>
+
+<p>If LIBOR is truly risk-free, the swap of 3-month LIBOR and 6-month LIBOR should be tradable with zero spread. However, LIBOR takes into account the credit risk of banks, and tenor swaps are exactly the transactions that swap the risk of 3-month LIBOR and 6-month LIBOR. After the financial crisis, the risk of bankruptcy, that is, the difference in tenor, was conscious, and when swap 3-month LIBOR and 6-month LIBOR, the 3-month LIBOR side began to trade with a non-negligible spread.</p>
+
+<p>After all, after supplementing the discount factor and tenor spread in 0.25 year increments, the future 3-month LIBOR can be calculated as follows (Nakahara, 2013).</p>
+
+<p>\begin{eqnarray}
+L_{forward}^{3MWorld}(t,t_{i},t_{i+0.25})=\frac{1-DF(t,t_{i+0.25})-TS^{3M-6M}(t,t_{i+0.25})\times\sum_{j=1}^{4i+1}{DF(t,t_{\frac{j}{4}})\times\frac{1}{4}}}{DF(t,t_{i+0.25})\times\frac{1}{4}}+\frac{-\sum_{j=1}^{4i}{L_{forward}^{3MWorld}(t,t_{\frac{j-1}{4}},t_{\frac{j}{4}})\times DF(t,t_{\frac{j}{4}})\times\frac{1}{4}}}{DF(t,t_{i+0.25})\times\frac{1}{4}}．
+\end{eqnarray}</p>
+
+<p>However,</p>
+
+<ul>
+  <li>$L(t,T)$: Observable LIBOR at time point $t$ maturity $T$</li>
+  <li>$L_{forward}^{3MWorld}(t,t_{0},t_{0.25})=L(t,t_{0.25})$</li>
+  <li>$L_{forward}^{3MWorld}(t,t_{i},t_{i+0.25})$: A 3-month LIBOR with a reset date of $t_{i}$ and a maturity of $t_{i+0.25}$ as seen from the point in time $t$</li>
+  <li>$TS^{3M-6M}(t,T)$: Tenor spread when swapping 6-month LIBOR for 3-month LIBOR at time $t$ and maturity $T$</li>
+</ul>
+
+<p>In this article, we try to derive the equation (1). 
+At this time, the evaluation formula of the JPY tenor swap is expressed as follows (Takahashi, 2010)．</p>
+
+<p>\begin{eqnarray}
+\sum_{n=1}^{N}\delta_{n}(E_{t}[L(T_{n-1},T_{n}+\tau_{N}]P_{t,T_{n}})=\sum_{m=1}^{M}\delta_{m}E_{t}[L(T_{m-1},T_{m}]P_{t,T_{m}}．
+\end{eqnarray}</p>
+
+<p>However,</p>
+
+<ul>
+  <li>$N=2M$</li>
+  <li>$L(T_{n-1},T_{n})$: LIBOR with a reset date of $T_{n-1}$ and a maturity of $T_{n}$</li>
+  <li>$P_{t,T_{n}}$: Zero coupon bond price with maturity of $t$ at time $ T_{n}$</li>
+  <li>$\delta_{n}$: Interest calculation period</li>
+  <li>$\tau_{N}$: Tenor spread when swapping 6-month LIBOR for 3-month LIBOR at time $t$ and maturity of $T (= T_{N} = T_{M})$</li>
+</ul>
+
+<p>Now, we want to derive 3 months LIBOR, that is, $E_{t}[L(T_{N-1}, T_{N}]$, therefore expand the left side of the expression (2) as follows.</p>
+
+<p>\begin{eqnarray}
+\sum_{n=1}^{N}\delta_{n}(E_{t}[L(T_{n-1},T_{n}+\tau_{N}]P_{t,T_{n}})=\sum_{n=1}^{N-1}\delta_{n}(E_{t}[L(T_{n-1},T_{n})]P_{t,T_{n}}+\delta_{N}E_{t}[L(T_{N-1},T_{N})]P_{t,T_{N}}+\sum_{n=1}^{N}\delta_{n}\tau_{N}P_{t,T_{n}}．
+\end{eqnarray}</p>
+
+<p>On the other hand, the relationship between Libor and the discount rate is</p>
+
+<p>\begin{eqnarray}
+E_{t}[L(T_{m-1},T_{m})]=\frac{1}{\delta_{n}}\left(\frac{P_{t,T_{m-1}}}{P_{t,T_{n}}}-1\right)．
+\end{eqnarray}</p>
+
+<p>Since it is represented by, the left side of the expression \label{tenor} can be expanded as follows.</p>
+
+<p>\begin{eqnarray}
+\sum_{m=1}^{M}\delta_{m}E_{t}[L(T_{m-1},T_{m}]P_{t,T_{m}}=P_{t,T_{0}}-P_{t,T_{M}}=1-P_{t,T_{M}}．
+\end{eqnarray}</p>
+
+<p>After all, JPY 3 months LIBOR, ie $E_{t} [L(T_{N-1},T_{N}]$, is given below.</p>
+
+<p>\begin{eqnarray}
+E_{t}[L(T_{N-1},T_{N}]=\frac{1-P_{t,T_{M}}-\sum_{n=1}^{N}\delta_{n}\tau_{N}P_{t,T_{n}}}{\delta_{N}P_{t,T_{N}}}+\frac{-\sum_{n=1}^{N-1}\delta_{n}(E_{t}[L(T_{n-1},T_{n})]P_{t,T_{n}}}{\delta_{N}P_{t,T_{N}}}．
+\end{eqnarray}</p>
+
+<h2 id="reference">Reference</h2>
+<ul>
+  <li>Nakahara, G.，2013. LIBOR and OIS discount that can be seen in EXCEL (In Japanese)</li>
+  <li>Fujii, M.，Shimada, Y. and Takahashi, A.，2010. “A Note on Construction of Multiple Swap Curves with and without Collateral”， FSA Research Review Vol.6(March 2010)．</li>
+</ul>
+
+    </article> <hr />
+
+    
+
+    <header class="post-header">
+      <h1 itemprop="name" class="post-title">
+        <a itemprop="url" class="post-link" href="/Kyo.github.io/business/finance/2021/05/26/vc-finance.html">Venture capital finance</a>
       </h1>
       <meta itemprop="keywords" content="Business Finance" />
       <p class="post-meta">
@@ -252,44 +358,50 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <article class="post-content" itemprop="articleBody">
       <ul id="markdown-toc">
-  <li><a href="#applied-microeconomics" id="markdown-toc-applied-microeconomics">Applied Microeconomics</a>    <ul>
+  <li><a href="#venture-capital-finance" id="markdown-toc-venture-capital-finance">Venture capital finance</a>    <ul>
       <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
-      <li><a href="#economic-analysis-of-the-mobile-payment-industry" id="markdown-toc-economic-analysis-of-the-mobile-payment-industry">Economic Analysis of the Mobile Payment Industry</a></li>
-      <li><a href="#economic-analysis-of-stripe" id="markdown-toc-economic-analysis-of-stripe">Economic Analysis of Stripe</a></li>
+      <li><a href="#agency-problem-and-its-influence-of-the-start-ups-performance" id="markdown-toc-agency-problem-and-its-influence-of-the-start-ups-performance">Agency problem and its influence of the start-up’s performance</a></li>
+      <li><a href="#dyad-partners-sentiments-and-these-influence-of-the-start-ups-performance" id="markdown-toc-dyad-partners-sentiments-and-these-influence-of-the-start-ups-performance">Dyad-partner’s sentiments and these influence of the start-up’s performance</a></li>
+      <li><a href="#comparison-between-standard-economic-and-behavioral-theory" id="markdown-toc-comparison-between-standard-economic-and-behavioral-theory">Comparison between standard economic and behavioral theory</a></li>
       <li><a href="#conclusion" id="markdown-toc-conclusion">Conclusion</a></li>
       <li><a href="#reference" id="markdown-toc-reference">Reference</a></li>
     </ul>
   </li>
 </ul>
 
-<p>This is a modified version of the report for Applied Microeconomics in Bath Full Time MBA Class of 2020.</p>
+<p>This is a modified version of the report for Venture capital finance in Bath Full Time MBA Class of 2020.</p>
 
-<h1 id="applied-microeconomics">Applied Microeconomics</h1>
+<h1 id="venture-capital-finance">Venture capital finance</h1>
 
 <h2 id="introduction">Introduction</h2>
-<p>Once the start-ups were hard to build financial services such as payment.  This primary was because the bank used to spend 75% of their IT budget to maintain their financial service <cite>(Strange, 2019)</cite>.  However, Amazon Web Services (AWS) has changed this situation due to providing them IT infrastructure as a service and therefore, they can start the financial service business with quite cheaper than ever (ibid).  Although the banking business is supplied as a service owing to AWS and other cloud computing providers, it is not required to supply all banking functions (fraud, regulatory, data, payment, core systems and license) as a unit (ibid).  Although now there are a great deal of certain function banking service providers (called FinTech), this essay will focus on Stripe which is the one of the largest online (mainly mobile) payment service providers.  This is because the forecast says the global mobile payment market is rapidly growing with approximately 30% GACR (2018-2026) which means the market will be roughly 7 times larger than in 2018 <cite>(Fortune Business Insights, 2020)</cite>.  The hospitality and transportation sector are the fastest (35% GACR) and emerging economies in Asia-Pacific are growing more rapidly than any other region, the remarkable example of which is China having a half of world mobile payment transactions (PRIME INDEXES, 2019).  This is mainly due to the online payment innovation called Payment Facilitator (or ‘PayFac’) which completely shortened the merchant onboarding operation <cite>(CB Insights, 2020)</cite>.  Therefore, the mobile payment industry could be one of the attractive markets and Stripe might play the important role of the market owing to their presence in the market because it is one of the first firms to use PayFac technology (ibid).</p>
+<p>Venture capital (VC) plays a significant role for the national economy.  This is primarily because although total VC investment was only less than 0.2% of GDP of the United States, VC backed firms generated 11% of all private sector jobs and earned annual revenues which was equal to 21% of GDP (Thiel, 2014).  In addition, unlike general financial intermediaries such as bank finance, VC do focus on their managerial resources not only money but also expertise to certain industries including software (22% of their total investment) and biotechnology (17% of that) (Bettignies, James and Brander, 2006).  This may mean that VC believe their effort and resources deeply affect the start-ups invested by them.  However, it is disputed that what kind factors influence the performance of the VC backed firms.  In fact, some researchers asserted that agency problems and low ability might be much less detrimental than VC backed start-ups of the dyad-partner’s sentiments of injustice, unfairness and lack of trust and therefore these feelings could be a decisive obstacle to value-creation and success in the ones.  This essay will evaluate the argument in terms of venture capital theory, standard economic one and behavioral economics ones including social preferences with these evidences.</p>
 
-<h2 id="economic-analysis-of-the-mobile-payment-industry">Economic Analysis of the Mobile Payment Industry</h2>
-<p>One of the main reasons why mobile payment is rising can be to remove the pain points in the customer experience of the payment process which is becoming more complex due to E-commerce and the ramification of merchant landing pages <cite>(Goldman Sachs, 2017)</cite>.  The buyers of these platforms are not only end-users (2.1 billion in the world in 2019 and potentially 60% of the world population by 2025 because of the wide spreading mobile phone) who are mainly millennials but also the businesses such as merchants <cite>(THE PAYPERS BV, 2019)</cite>.  Functionally, the major alternatives of this service are other types of payment method mainly including credit card and debit one because of which four fifth of the transaction by the millenniums delivered on these cards and they considered the payment by the ones is the easiest way (ibid).  This is because they think there are several security filters to pay by the mobile payment, which leads them to hesitate to do so (ibid).  As well as the demand side, Fintech firms including Stripe are not the only one major supplier of the mobile payment market.  The traditional players such as banks and financial institutions are also, the example of which 89% of them in the United States is offering mobile banking services <cite>(PRIME INDEXES, 2019)</cite>.  In addition, tech giants (Google and Apple) and electronics (Samsung) are doing so mobile payment apps which prefixed their own brand name, as a result of which 3 apps will dominate 56% of this market in the US according to Juniper Research (ibid).  However, Starbucks’ mobile app was the most common mobile payment platform in the US until 2019 in terms of the number of users and still is more popular than Google and Samsung Pay (Merchant Savvy, 2020).  This can be because the customers are likely to use for low-cost, high-frequency purchases including coffee in Starbucks owing to not only more smooth purchase transactions but also loyalty and rewards programs offered by certain merchants <cite>(ELECTRONIC TRANSACTIONS ASSOCIATION, 2019)</cite>.  In addition, there are the difference of the preference about how many mobile payment apps the customers prefer to install, the major example of which East Asian countries such as China and South Korea may prefer to do so only one app, however, the other area including the United States may not hesitate to do so several apps <cite>(Merchant Savvy, 2020)</cite>.  This can allow Stripe and other mobile platformers to the more opportunities to enter this industry especially in the US, however, credit card and debit card are used in 41% and 34% of point of sales spending by value in North America in 2018 according to Worldpay’s World Payments Report <cite>(ELECTRONIC TRANSACTIONS ASSOCIATION, 2019)</cite>.  This may mean these cards are stronger competitors rather than other mobile payment platformers as for Stripe.  This might be because the customers in the area have ‘security fears’ to use the mobile payment (ibid).  In fact, roughly a half of them pointed out the fear was the main reason to prevent using the one (ibid).  Therefore, it can be said the structure of the mobile payment market in the world (except China dominated by only two firms including Alibaba and Tencent) is closing to oligopoly which Stripe and other few competitors such as Ayden and PayPal (Braintree) from nearly perfect competition due to low entry barrier which only requires to be approved by Financial Services Authority (FSA).</p>
+<h2 id="agency-problem-and-its-influence-of-the-start-ups-performance">Agency problem and its influence of the start-up’s performance</h2>
+<p>According to the agency theory, there is an agency problem between the venture capitalists as a principal and the entrepreneurs as an agent who are assured fully self-interested and therefore their interest would be conflicted in a certain situation (UTSET, 2002).  One of the major examples for the agency problem is adverse selection (ibid).  There are good and bad entrepreneurs, however, the bad one may be able to pretend as if the good one and hence, the venture capitalists have to be able to distinguish between them (ibid).  Therefore, if the venture capitalist invests in a bad entrepreneur who had low ability or even high one but low motivation, the performance of the start-up might be deteriorated.  In addition, the hold-up risk is also the vital example of the agency problem.  The risk is that the entrepreneur can be imperil to abandon making an effort to improve the performance of his firm invested by VC till the venture capitalist reconsiders how to divide the proportion of equity distribution (ibid).  Although they can protect in the region of hold-up risk using wide range provisions, still the protection measures might be incomplete due to their inability (ibid).  Moreover, the entrepreneur might behave as if their performance is better than it actually is to induce to overestimate and be invested by venture capitalist, which is called window dressing (Burchardt et al, 2016).  This is also one of the most important phenomena caused by agency problems.  Therefore, the entrepreneur tends to focus on the short-term performance, even if they may lose the long term one.  Besides, due to the lack of ability to monitor and manage the performance, either or both of the entrepreneur and the venture capitalist may free ride others and exploit their effort, which is one of classic agency problems called free rider problem (ROMANS, 2013).  Hence, the performance could be deteriorated if some of the stakeholders attempted to free ride others.  Furthermore, if there is a loophole of the investment contract but the one is one of the key factor to improve higher performance, the entrepreneur’ effort in the loophole may be unobservable for VC and then the entrepreneur tend to omit the key activities in the one, which is defined as moral hazard (TUCKER, 2004).  Thus, the prevention to ignore the key performance factors related activities in the contract can be important for the performance.</p>
 
-<h2 id="economic-analysis-of-stripe">Economic Analysis of Stripe</h2>
-<p>Stripe is an online API based payment platformer with the mission which is ‘increasing the global GDP of the internet’ <cite>(Jewell and Marden, 2018)</cite>.  Their platform has also well documented manuals and then has high integrity for the system of the clients (ibid).  This is primarily because they ‘believe that payments are a problem rooted in code, not finance’ and therefore, they concentrate to decrease implementation time to integrate their platform into the merchant’s web sites <cite>(Goldman Sachs, 2017)</cite>.  As a result of the concentration, the integration time is shortened from more than 6 months to only a few minutes (just added a few codes in the web sites whose user interfaces are unchanged) (ibid).  Their business model is mainly dependent on a per-transaction basis, the example of which when the client product is sold via their payment system, they can earn some portion of the price and therefore as the revenue of the client is increased, their revenue is also raised (ibid).  In fact, in general, they impose a fixed rate of 2.9% + 30 cents per transaction, however, the fee is changed by the volume of transactions and the geographic location which the merchants are in <cite>(Murray, 2019)</cite>.  In the UK, the fee per transaction also depends on the cards which the customers use in the merchants, the example of which they are imposed at 1.4% + 20p for a European card or 2.9% +20 p for a non-European card (ibid).  This means the merchants can deliver the international purchase transactions only with slightly higher fee (for example 1.5% additionally charged in the UK) at least within Europe.  Stripe focuses on only businesses, especially small- and medium-sized ones, which is the major difference of PayPal and therefore their revenue is estimated at $450 million as a result of a $20 billion transaction by value in 2015 (ibid).  In addition, as a result of counting on their direct sales model (marketing cost such as CAC can be quite low) and low infrastructure cost (AWS and it do only charge for the amount of actual usage which means almost zero fixed costs to operate the platform presumably only except employee salary and rent fee), the profit margin is estimated around 55 %, which is better than industrial average (around 20%) (CB Insights, 2020). Hence the cost structure of Stripe can be said to be relatively competitive in this industry.  Furthermore, Stripe is a relatively software developer oriented firm, one of the main reasons for which it has the community of them and therefore the capability of integration for other services is stronger than the competitors because they prefer to work in Stripe rather than other firms <cite>(Benson, 2018)</cite>.  This can be because they prefer to introduce their payment platform into new technology such as AI.  For instance, a new product (called Radar) can detect fraud transactions in the purchase processing to monitor in real time and score them based on the historical data trend and therefore as the tool has more data, the accuracy of the capability to detect potentially fraudulent transactions can increase, which may mean it has the strong sales and operating synergy for the payment platform <cite>(CB Insights, 2020)</cite>.  One of the largest benefits to using their online payment platform can be increasing client firm’s revenue.  In fact, the conversion rate of some clients increased by 2-3% due to smoother payment process (or faster processing time) by their platform, which means it also increased the satisfaction of client’s customer purchase experience and therefore on average they could increase by 7% of client firm revenue <cite>(Jewell and Marden, 2018)</cite>.  Another major benefit can be that their payment platform can reduce the operational cost of the clients.  This is because the cost of development and maintenance for the payment platform is 24% cheaper than competitor’s average (ibid).  Hence from the economic perspective, it can be said that the opportunity cost of the usage of moderate payment platforms is higher than Stripe payment platform and therefore, they have a competitive advantage not only for building payment systems from the scratch but also average competitors.  In addition, it also has the function to prevent the fraud of purchase transactions (ibid).  According to LexisNexis (a legal firm), generally, every $1 of fraudulent purchase transactions charges an online trade an additional $2.62 (ibid).  Therefore, it can be said their payment system can reduce the costs of the clients to prevent fraud.  Furthermore, on general, mobile payment can be more secure than other type of payment method due to tokenized transaction which means the card number cannot be seen at the point of sales and encrypting the sales information immediately after the customers purchase <cite>(ELECTRONIC TRANSACTIONS ASSOCIATION, 2019)</cite>.  Hence, Stripe can offer the secure purchase transaction via their mobile payment platform, which means the merchants can reduce security costs to introduce the mobile payment such as Stripe one.  Time can be a major scarce resource and therefore rapid integration into the client’s landing pages could lead Stripe to competitive advantage.</p>
+<h2 id="dyad-partners-sentiments-and-these-influence-of-the-start-ups-performance">Dyad-partner’s sentiments and these influence of the start-up’s performance</h2>
+<p>Other factors to affect the performance are their emotions such as justice, fair and trust.  Even if the venture capitalist selects a good entrepreneur who wants to manage the team, still running them is a difficult issue.  For instance, some researchers argued that the perceived justice of equity distribution on entrepreneurial teams play a role for their performance (Breugst, Patzelt and Rathgeber, 2014).  High perceived distributive justice causes mutual, constructive team synergy spirals, on the other hand, low one provokes unfavorable team interactions spirals and the ones further decrease perceived justice of equity distribution (ibid).  This is because if their contract according to equity distribution is not perceived as fair, it seems to be that the evolution of intrateam trust is acutely damaged (ibid).  In addition, it is demonstrated that as the entrepreneur feels greater fairness, VC tend to offer the equity higher and therefore, the entrepreneur might make a higher value-adding effort (Fairchild, 2010).  This can be because the higher commitment to decisions, performance, behavior and attitude might be led by the increase in the perception of fairness of entrepreneurs (ibid).  Furthermore, Harrison (1999 cited in TUCKER, 2004) claimed that the lack of trust between the entrepreneur and the venture capitalist may enlarge the risk which the start-up might not be lucrative.  This is mainly because less able venture capitalists incline to require punitive covenants to assure themselves against the danger of inconvenience performance, which is caused by their limited ability to bring an amending control to a downside condition (ibid).  Also, there is a tendency that each player prefers to distribute at least the same amount as the volume that the other players earn, which is called envy-freeness (Brams, 2005).  It can be vital for the performance because if they reach envy-free distribution, no one may envy others, which means it is less likely to be the negative actions against the team.  What is more, Empathy is defined as the feeling intimately linked to mutual trust between the entrepreneur and VC (Fairchild, 2009).  It is suggested that the degree of the entrepreneur-VC empathy corresponding to the value-adding abilities of VC altered the entrepreneur’s selection of financier and the arising value of the VC and also argued that if the entrepreneur felt higher empathy for the VC with lower value-adding ability, the entrepreneur might select the lower ability VC rather than higher one and hence the performance of the firm would be decreased (ibid).  This may mean that the performance of the empathically biased entrepreneur tends to be lower than the performance of the unbiased one.  Additionally, it is asserted that if the entrepreneur has the overconfidence and unrealistic optimism, they may ignore some important figures and signs which is against their buoyant forecast and therefore they might serve to induce their miscalculation of the possibility of new venture failure linked to the potential investors of their company control who are less overconfident (Douglas, Carlsson-Wall and Hjelström, 2014).  This is because although the probability of the company that consequently fail might be calculated as an objective measure of the default probability if they are in high competitive market, if the entrepreneur and their firm having a new service enter to a new market which has a few competitors or no completion, the probability of failure must be estimated subjectively based on their unrealistic point of view and unfeasible forecast (ibid).  Hence, the overconfidence of the entrepreneur might deteriorate the performance of the start-ups due to unfeasible forecasts induced by their overconfidence.  Correspondingly, some researchers indicated that the over-optimistic entrepreneurs interpret transactional facts hypothetically that understates consequent risks, which they fail to invest in collecting transactional-specific information and tend to enter transactions without consultation of the external advisors. (UTSET, 2002).  Therefore, over-optimism may induce an entrepreneur to participate in the contracts which do not count on the actual risks that the start-ups may suffer (ibid).  Even if the over-optimistic entrepreneur completely comprehends the arduous arrangements in a venture capital contract, they would not be certainly concerned, assuming such events which would cause these adverse agreements will not be realized (ibid).  However, during the cycle of the start-up, when unfavorable cases of the planet induce demanding provisions in VC contracts, the initial over-optimistic expectations of the entrepreneur will introduce blunt facts relative to the real nature of the proper conditions (ibid).  Thus, the over-optimism of the entrepreneur might affect their performance due to unfeasible contracts agreed with VC.  This is because they may not prepare unpreferable situations which are likely to happen.  Finally, looking at negative feelings, such sentiment may lead to revenge for the company and then the performance of the one could be declined (UTSET, 2002).  This is because the angered player such as an employee might be ready to commit in active sabotage or to deliver indirect actions including not employing enough effort, even if the explicit profits of doing so seem to be less than the expenses (ibid).</p>
+
+<h2 id="comparison-between-standard-economic-and-behavioral-theory">Comparison between standard economic and behavioral theory</h2>
+<p>One of the feasible tools to analyze the economic and social situation is game theory.  For instance, as a result of game theory which is assured the players are fully rational, they might reach the equilibrium to avoid the conflictions mainly caused by the agency problem above such as adverse selection, hold-up risk, window dressing, free rider problem and moral hazard (Fairchild and Yao, 2017).  The equilibrium might say that all rational venture capitalists ought to fairly suggest 43% of the equity to the entrepreneur, holding 57% themselves, and all of the players in the dyad should exert their power (ibid).  On the other hand, after counting on the emotion of the entrepreneur and the venture capitalist such as fairness, empathy and engagement among the duo, the equilibrium is moved and then reached a new one which is relatively balanced (almost 50/50) (ibid).  This can mean in general, the venture capitalists may be superior to the entrepreneurs mainly due to their expertise, such advantage might not affect to improve performance in the long run because of their sentiments and therefore, both of them can consider this emotional effect to the equity distribution.</p>
 
 <h2 id="conclusion">Conclusion</h2>
-<p>This essay has discussed the mobile payment industry and the key supplier (Stripe) in terms of economics.  It has several competitive advantages including the fraud prevention, lower marketing and operating costs (higher profit margin, 55% around), rapid integration without any change of the user interface of the merchant’s web pages and the strong developer’s community.  In addition, the industry is growing rapidly (more than GACR 30%), however, the number of suppliers is also rising and therefore the profitability of the firms might be decreased as a result of competitions.  Furthermore, the credit card firms such as Visa and Mastercard can be still the largest competitor in terms of payment.  This is because the client’s customers still have the fear of security for mobile payment even though technically it is more secure than a credit card.  In the future remark, whichever mobile payment system such as digital wallet (Apple Pay) or gateway (Stripe) the merchants select, they finally have to be authorized, done clearing and the settlement by card network of Visa and Mastercard which can charge the same amount of the fee Stripe can earn according to Goldman Sucks (2017).  Therefore, even if mobile payment penetrated and dominated the payment process, still the credit firms can earn profit due to the assessments.  Hence Stripe has mainly two options, first of which is becoming the authority like Visa or second of that introduces blockchain which is not required to the central clearing and authorization.</p>
+<p>This essay has assessed the argument that a crucial barrier to value-creation and success in VC backed prospective start-ups is that of the dyad-partners’ sentiments which can be furthermore detrimental than agency problems and low ability.  To this end, it has discussed the effects of agency problems and Dyad-partner’s sentiments for the performance, and also the comparison between standard economic and behavioral theory relative to both aspects.  It is concluded that agency problems might induce mainly moral hazard, hold-up risk, free-riding and window dressing, which could decline the performance.  Also, Dyad-partner’s sentiments are primary injustice, unfairness. lack of trust, envy, empathy, overconfident and negative reciprocity (revenge), which might deteriorate the performance and therefore emotionally biased the entrepreneur tend to be lower performer than unbiased one.  In addition, the major difference between standard economic and behavioral theory can be typically observed in the equilibrium of the equity distribution in dyad partners.  The emotion of the entrepreneur might require more equal amount of the equity even if they recognize asymmetry information with VC and thus the difference might be the premium for any type of counter actions against unfairness.</p>
 
 <h2 id="reference">Reference</h2>
 <ul>
-  <li>Benson, J., 2018. Stripe Vs Adyen [Online]. Available from: <a href="https://www.spreedly.com/blog/stripe-vs-adyen">https://www.spreedly.com/blog/stripe-vs-adyen</a> [Accessed 8th June 2020].</li>
-  <li>CB Insights, 2020. Stripe Teardown: How The $35B Payments Company Plans To Supercharge Online Retail [Online]. Available from: <a href="https://www.cbinsights.com/research/report/stripe-teardown/">https://www.cbinsights.com/research/report/stripe-teardown/</a> [Accessed 8th June 2020].</li>
-  <li>ELECTRONIC TRANSACTIONS ASSOCIATION, 2019. THE STATE OF MOBILE PAYMENTS IN 2019</li>
-  <li>Fortune Business Insights, 2020. Mobile Payment Market Size, Share &amp; Industry Analysis, By Payment Type (Proximity Payment, Remote Payment), By Industry (Media &amp; Entertainment, Retail, BFSI, Automotive, Medical &amp; Healthcare, Transportation, Consumer Electronics, Others), and Regional Forecast, 2019-2026 [Online]. Available from: <a href="https://www.fortunebusinessinsights.com/industry-reports/mobile-payment-technology-market-100336">https://www.fortunebusinessinsights.com/industry-reports/mobile-payment-technology-market-100336</a> [Accessed 8th June 2020].</li>
-  <li>Goldman Sachs, 2017. Future of Finance Payment Ecosystems</li>
-  <li>Merchant Savvy, 2020. Amazing Stats Demonstrating The Unstoppable Rise of Mobile Payments Globally [Online]. Available from: <a href="https://www.merchantsavvy.co.uk/mobile-payment-stats-trends/">https://www.merchantsavvy.co.uk/mobile-payment-stats-trends/</a> [Accessed 8th June 2020].</li>
-  <li>Murray, T., 2019. Stripe Product Model [Online]. Available from: <a href="http://www.businessmodelzoo.com/exemplars/Stripe">http://www.businessmodelzoo.com/exemplars/Stripe</a> [Accessed 8th June 2020].</li>
-  <li>PRIME INDEXES, 2019. Mobile Payments Industry Overview</li>
-  <li>Strange, A., 2019. Every Company Will Be a Fintech Company [Online]. Available from: <a href="https://a16z.com/2020/01/21/every-company-will-be-a-fintech-company/">https://a16z.com/2020/01/21/every-company-will-be-a-fintech-company/</a> [Accessed 8th June 2020].</li>
-  <li>THE PAYPERS BV, 2019. Payment Methods Report 2019</li>
+  <li>Bettignies, J.D., James A. and Brander, J.A., 2006. Financing entrepreneurship: Bank finance versus venture capital</li>
+  <li>Brams, S.J., 2005. Fair Division</li>
+  <li>Breugst, N., Patzelt, H. and Rathgeber, P., 2014. How should we divide the pie? Equity distribution and its impact on entrepreneurial teams</li>
+  <li>Burchardt, J., Hommel, U., Kamuriwo, D. S. &amp; Billitteri, C., 2016. Venture capital contracting in theory and practice: Implications for entrepreneurship research. Entrepreneurship: Theory and Practice, 40(1), pp. 25-48. doi: 10.1111/etap.12104</li>
+  <li>Douglas, E.J., Carlsson-Wall, M. and Hjelström, T., 2014. Negotiating equity share and management control of the entrepreneurial new venture, Venture Capital, 16:4, 287-307, DOI: 10.1080/13691066.2014.970334</li>
+  <li>Fairchild, R. and Yao, Y., 2017. Venture Capital/Entrepreneurial contracting and performance: An Experimental Investigation</li>
+  <li>Fairchild, R., 2009. An entrepreneur’s choice of venture capitalist or angel-financing: A behavioral game-theoretic approach</li>
+  <li>Fairchild, R., 2010. Fairness Norms and Self-interest in Venture Capital/Entrepreneur Contracting and Performance</li>
+  <li>ROMANS, A., 2013. THE ENTREPRENEURIAL BIBLE TO VENTURE CAPITAL</li>
+  <li>Thiel, P., 2014, Zero to One</li>
+  <li>TUCKER, J.A., 2004. LEVERAGING THE VENTURE CAPITAL RELATIONSHIP – THE ENTREPRENEURS’ PERSPECTIVE</li>
+  <li>UTSET, M.A., 2002. RECIPROCAL FAIRNESS, STRATEGIC BEHAVIOR &amp; VENTURE SURVIVAL: A THEORY OF VENTURE CAPITAL- FINANCED FIRMS</li>
 </ul>
 
     </article> <hr />
@@ -298,20 +410,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <header class="post-header">
       <h1 itemprop="name" class="post-title">
-        <a itemprop="url" class="post-link" href="/Kyo.github.io/business/finance/2021/05/26/Investment-appraisal.html">Sources of finance</a>
+        <a itemprop="url" class="post-link" href="/Kyo.github.io/business/finance/marketing/2021/05/26/strategic-brand-management.html">Strategic brand management</a>
       </h1>
-      <meta itemprop="keywords" content="Business Finance" />
+      <meta itemprop="keywords" content="Business Finance Marketing" />
       <p class="post-meta">
       Posted in
       
       <a href="/Kyo.github.io/categories/#Business">Business</a>, 
       
-      <a href="/Kyo.github.io/categories/#Finance">Finance</a>
+      <a href="/Kyo.github.io/categories/#Finance">Finance</a>, 
+      
+      <a href="/Kyo.github.io/categories/#Marketing">Marketing</a>
       
       
       and tagged
       
-      <a href="/Kyo.github.io/tags/#Business Finance" title="Business Finance">Business Finance</a>
+      <a href="/Kyo.github.io/tags/#Business Finance Marketing" title="Business Finance Marketing">Business Finance Marketing</a>
       
       
       <time itemprop="datePublished" datetime="2021-05-26">
@@ -322,95 +436,62 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <article class="post-content" itemprop="articleBody">
       <ul id="markdown-toc">
-  <li><a href="#investment-appraisal--eastern-plc-assessment-standard" id="markdown-toc-investment-appraisal--eastern-plc-assessment-standard">Investment Appraisal – Eastern plc Assessment Standard</a>    <ul>
+  <li><a href="#strategic-brand-management" id="markdown-toc-strategic-brand-management">Strategic brand management</a>    <ul>
       <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
-      <li><a href="#preparing-the-npv-calculation-for-eastern-plc" id="markdown-toc-preparing-the-npv-calculation-for-eastern-plc">Preparing the NPV calculation for Eastern plc</a></li>
-      <li><a href="#explaining-what-the-cost-of-capital-of-8-represents" id="markdown-toc-explaining-what-the-cost-of-capital-of-8-represents">Explaining what the cost of capital of 8% represents</a></li>
-      <li><a href="#comment-on-whether-and-how-this-investment-may-contribute-to-shareholder-wealth" id="markdown-toc-comment-on-whether-and-how-this-investment-may-contribute-to-shareholder-wealth">Comment on whether and how this investment may contribute to shareholder wealth</a></li>
-    </ul>
-  </li>
-</ul>
-
-<p>This is a modified version of the report for Understanding Finance (Part 1: Investment Appraisal – Eastern plc Assessment Standard) in Bath Full Time MBA Class of 2020.</p>
-
-<h1 id="investment-appraisal--eastern-plc-assessment-standard">Investment Appraisal – Eastern plc Assessment Standard</h1>
-
-<h2 id="introduction">Introduction</h2>
-<p>This report will answer the requirements of this coursework.  These issues are to prepare the NPV calculation for Eastern plc, to explain what the cost of capital of 8% represents and to comment on whether and how this investment may contribute to shareholder wealth.</p>
-
-<h2 id="preparing-the-npv-calculation-for-eastern-plc">Preparing the NPV calculation for Eastern plc</h2>
-<p>As a result of the calculation, the NPV of this investment is approximately £9.2 millions or more precisely £91,931,456.  This NPV is calculated to sum up the discounted cash flows in the life of project including the end of year 5 which the plant and equipment, which the company is going to invest, will be disposed.  Each discounted cash flow is computed to multiply the net cash flow by discount rate which is equal to the cost of capital (8%).  The net cash flow or free cash flow if the company financed by only equity is the cash flow which subtracts of all obligatory payments from gross profit adding the depreciation.  The gross profit will be estimated to 35% of the sales which is going to earn selling 4 million units per year with the current price of £2.50, however, the price is expected to inflate by 4% per year.  The depreciation is emulated using the Straight Line Basis method which means the investment subtracting from disposal value (£0.15 millions) is divided by life of project (5 years).  The obligatory payments are the investment, fixed cost, tax payable and working capital change in this case.  £2 millions of investment in new plant and machinery will be paid immediately and the remains (£6 millions) will do so at the end of the first year.  The fixed cost is estimated be £2 million per year, however, this includes the depreciation (£1.57 millions), and therefore the actual fixed cost will be £0.43 millions per year.  The tax payable is reckoned to multiply tax rate (20%) by taxable income which is to subtract gross profit from depreciation and fixed cost.  The working capital change of a year is determined to subtract the working capital of 1 year later as of the year from the working capital of the year which will be maintained at 10% of the following year’s sales.  The detail of calculation is in the MS Excel sheet which is also uploaded with this report.</p>
-
-<h2 id="explaining-what-the-cost-of-capital-of-8-represents">Explaining what the cost of capital of 8% represents</h2>
-<p>What the cost of capital of 8% represents can be the minimum rate of return on the prospective investment projects as for the investors, who are supplying funds for Eastern plc.  In addition, it can be also the degree of risk to invest this investment.  Therefore, if Capital Asset Pricing Model (CAPM) theory hold and this cost of capital is financed by only equity, the investors require almost 7.2% premium for the risk of this investment owing to the fact that 10 years British government bond rate is 0.79%, which used as a risk free rate.  Moreover, if the theory hold, this additional risk premium might depend on the company’s beta.  According to Statista, the average market risk premium in the United Kingdom, 2019 is 6.2% and therefore, the market implied the company’s beta can be approximately 1.12.  This means the company might be more sensitive than the whole market return.  In comparison with other London stock exchange listed plastic companies such as Daios Plastics SA having beta 0.0133 and Lordos United Plastics Public Ltd with beta 0.0237, the risk can be significantly higher than competitors and therefore the investors require higher return for the company.  This can be because the structure of asset might be weighted to debt which the lenders own less business risk than stockholders if the assumption that the cost pf capital is financed by only equity relax.</p>
-
-<h2 id="comment-on-whether-and-how-this-investment-may-contribute-to-shareholder-wealth">Comment on whether and how this investment may contribute to shareholder wealth</h2>
-<p>This investment may contribute to shareholder wealth.  This is mainly because the NPV is a positive with a large cash flow owing to relatively highly competitive advantage of the company only if the sales figure is feasible.  Therefore, this investment will earn a large amount of free cash flows which they are expecting and then those cash flow will be back to the investors as a dividend.  The depreciation using the Straight-Line Basis method can be affected the NPV positively because if they adopted the other method, they would have to pay more cash flow as depreciation and then the NPV will reduce more than using Straight Line Basis.</p>
-
-    </article> <hr />
-
-    
-
-    <header class="post-header">
-      <h1 itemprop="name" class="post-title">
-        <a itemprop="url" class="post-link" href="/Kyo.github.io/business/finance/2021/05/25/will-index-funds-continue-to-beat-active-funds.html">Will index funds continue to beat active funds?</a>
-      </h1>
-      <meta itemprop="keywords" content="Business Finance" />
-      <p class="post-meta">
-      Posted in
-      
-      <a href="/Kyo.github.io/categories/#Business">Business</a>, 
-      
-      <a href="/Kyo.github.io/categories/#Finance">Finance</a>
-      
-      
-      and tagged
-      
-      <a href="/Kyo.github.io/tags/#Business Finance" title="Business Finance">Business Finance</a>
-      
-      
-      <time itemprop="datePublished" datetime="2021-05-25">
-      on May 25, 2021
-      </time>
-      </p>
-    </header>
-
-    <article class="post-content" itemprop="articleBody">
-      <ul id="markdown-toc">
-  <li><a href="#will-index-funds-continue-to-beat-active-funds" id="markdown-toc-will-index-funds-continue-to-beat-active-funds">Will index funds continue to beat active funds?</a>    <ul>
-      <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
-      <li><a href="#unethical-issues" id="markdown-toc-unethical-issues">Unethical Issues</a></li>
-      <li><a href="#correct-index-funds" id="markdown-toc-correct-index-funds">‘Correct’ Index Funds</a></li>
+      <li><a href="#segmentation-targeting-and-positioning" id="markdown-toc-segmentation-targeting-and-positioning">Segmentation, Targeting and Positioning</a></li>
+      <li><a href="#four-es-as-an-alternative-marketing-mix-4-ps" id="markdown-toc-four-es-as-an-alternative-marketing-mix-4-ps">Four Es as an Alternative Marketing mix 4 Ps</a></li>
+      <li><a href="#two-systems-of-thinking" id="markdown-toc-two-systems-of-thinking">Two Systems of Thinking</a></li>
+      <li><a href="#customer-decision-journey" id="markdown-toc-customer-decision-journey">Customer Decision Journey</a></li>
+      <li><a href="#brand-association-map" id="markdown-toc-brand-association-map">Brand Association Map</a></li>
+      <li><a href="#search-engine-optimization" id="markdown-toc-search-engine-optimization">Search Engine Optimization</a></li>
       <li><a href="#conclusion" id="markdown-toc-conclusion">Conclusion</a></li>
       <li><a href="#reference" id="markdown-toc-reference">Reference</a></li>
     </ul>
   </li>
 </ul>
 
-<p><img src="https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fcom.ft.imagepublish.upp-prod-us.s3.amazonaws.com%2Fce3558d8-af8f-11e9-8030-530adfa879c2?dpr=1&amp;fit=scale-down&amp;quality=highest&amp;source=next&amp;width=700" alt="Figure 1" title="Figure 1" /></p>
+<p>This is a modified version of the report for Strategic brand management in Bath Full Time MBA Class of 2020.</p>
 
-<h1 id="will-index-funds-continue-to-beat-active-funds">Will index funds continue to beat active funds?</h1>
+<h1 id="strategic-brand-management">Strategic brand management</h1>
 
 <h2 id="introduction">Introduction</h2>
-<p>Today, only a few active funds can compete with index ones.  As for most individual investors, investing ETFs (Exchange traded funds) or other index funds can be the best option.  Moody’s Investors Service anticipated passive investment will outweigh active ones in the United States until 2021 <cite>(Kim and Cho, 2019)</cite>.  Therefore, most active fund managers will no longer be able to charge the fund fee.  As a matter of fact, according to figure 1, the fund fee, even asset weighted average one, has been decreasing steadily as active fund fee has done so <cite>(Platt, 2019)</cite>.</p>
+<p>In-store purchasing process can be one of the most significant parts among all kinds of processes including online.   This is primary because retail market is the largest industry in the all category of the industries such as automobile and it still keeps to grow the sales, for example, the revenue of the world largest retailer (WalMart) doubles in size every five years, which is more than 2 times larger than Amazon (the top online retailer in the world).  In fact, only one square meter of sales space can earn 80.000.000 US dollars per year.  Therefore, the retailers still are vitally important as a major channel and therefore the research of that is advancing rapidly.  On the other hand, an online retailer is building its physical one and vice versa then ‘online merge offline’ might be going faster.  To combine in-store marketing with online one, this essay will discuss how to build the brand online to use the online trading platform as an example.</p>
 
-<h2 id="unethical-issues">Unethical Issues</h2>
-<p>However, these investment trends might involve several problems such as gender and unethical issues.  One of the major dilemmas is to invest the funds indirectly if the companies indexed by the funds act unethically.  In fact, no less than half of United States listed companies income was created from alcohol cannabis or tobacco <cite>(Nauman, 2019)</cite>.  This means the investors are in favor of such corporation revenue taking activities at least circumlocutory.  In addition, investing the fund can be equal to advocating gender bias.  To illustrate this, the number of female hedge fund employees was less than a fifth of the total employees <cite>(Fortado, 2019)</cite>.</p>
+<p>##Future Work
+For the purpose of this essay, it is considered how to build a brand for selling a certain product via landing page on the web.  More specifically, the product assumed the commission-free investing online platform which can be the alternative of Robinhood.  The user can invest in most financial products such as stocks and forex after creating their account without no or a few commissions.</p>
 
-<h2 id="correct-index-funds">‘Correct’ Index Funds</h2>
-<p>To avoid the issue, the Investors can choose ethically or politically correct index funds such as ETFs having a gender lens and higher environmental, social and governance (ESG) criteria <cite>(Bolshaw, 2019)</cite>.  However, the most critical matter for the investors is to earn enough money, which has to be at least bigger than the deposit rate or the government bond one.  There is a tendency for women led funds to gain higher revenue than male one <cite>(Fortado, 2019)</cite>.  This might mean even if the investors select ethically appropriate ETFs, it may earn the expected income.  Therefore, this passive funds preference probably does not change.</p>
+<h2 id="segmentation-targeting-and-positioning">Segmentation, Targeting and Positioning</h2>
+<p>In addition, from the marketing viewpoint, it should be focused on a specific customer segment.  Generation C can be consistent with the purpose as a target customer.  This is primary because they have two main features which are young (born between 1982 and 1996) and tech-savvy that means they relate to each other via social media such as YouTube and Facebook (PICKETT, 2019).</p>
+
+<h2 id="four-es-as-an-alternative-marketing-mix-4-ps">Four Es as an Alternative Marketing mix 4 Ps</h2>
+<p>4 Ps stand for product, price, place and promotion, on the other hand, 4 Es do so experience, exchange, everywhere and evangelism <cite>(Poulou, 2018)</cite>.  This is due to the customers wanting a certain experience from the service, rather than just consuming the product (ibid).  In addition, some contemporary businesses provide its service for them without any charges and then instead of the fee, it sells the data of them and advertising space (ibid).  Furthermore, most customers connect to the Internet mainly via mobile phone and therefore, they can buy the product everywhere (ibid).  Moreover, although traditional advertising such as TV commercials is still important, customer evangelists are also becoming a significant factor to sell the products due to the huge social media networks (ibid).  Therefore, it is primary important to consider how to advertise the product via influencers.  For instance, the young famous venture capitalists and investors can play the key role for the product advertising in this essay and operation costs can be compensated by sales of data instead of commission.</p>
+
+<h2 id="two-systems-of-thinking">Two Systems of Thinking</h2>
+<p>It is also important to analyze how the customer, especially the target one, thinks about the product.  According to Kahneman (2012), people have two different systems of thinking processes which are called system 1 and system 2.  Former administers automatically and immediately with little or no effort and no space to be worked by voluntary control (ibid).  The latter, on the other hand, assigns attention to the arduous mental activities which require it such as complicated computations (ibid).  Hence, the purchasing process can be mainly related to unconscious thinking.  It is supported by the fact that its brand can have the biggest influence in the purchasing decision primary because in certain type of products, for example, top 10 brands of beer dominated more than 70 % of total share of the United States beer sales in 2002 <cite>(Corstjens and Steele, 2008)</cite>.  It can be also supported by the eye tracking observations.  This is because the subjects of the eye tracking experiment seems to have quite narrow eye sight which only focus on the middle and low of goods shelves and their decision making tend to be relatively quick (a few second), which may mean they decide to buy the goods unconsciously based on the limited information such as price and brand <cite>(Nordfält, 2020)</cite>.</p>
+
+<h2 id="customer-decision-journey">Customer Decision Journey</h2>
+<p>One of the best methods to monitor the progress can be retention rate to purchase a target product (or service).  This is mainly because the first trial of the product could be driven by the marketing and sales activities such as discounting and up (cross) selling, not purely the intrinsic value of the one and therefore, the purchase after trial can be expected to mitigate the effect of sales and marketing.  The decision process journey can be divided to the four cycles which are initial consideration, active evaluation, closure and post purchase <cite>(Court et al., 2009)</cite>.  In the post purchase, it is assumed that the customer builds the expectation of the bought product and hence they will decide if they repurchase the one, which is called ‘loyalty loop’ (ibid).  Thus, retention rate might be estimated to monitor loyalty loop .  Hence, the brand discussed in this essay should be to strengthen the loyalty loop which can be monitored by retention rate, which means the brand can be said to be associated with a product category (for instance, an online investment platform) when the customer purchases the service in brands.</p>
+
+<h2 id="brand-association-map">Brand Association Map</h2>
+<p>In fact, a brand association map is a strategic, comprehensive framework which can provide the implication its brand has vis‐à‐vis main competitors <cite>(Till, Baack and Waterman, 2011)</cite>.  The maps describe a brand and its associations besides an evaluation of the strength, relevance, uniqueness and favorability of each association (ibid).  In addition, a strong brand has stronger and more intensive association (strength and relevance), larger positive futures (favorability) and sharper distinct futures within the product category (uniqueness).  The map can be built by the customer experience (CX) including pre and post purchase one.  Therefore, sales and marketing strategy of the product should be focused on increasing the four points (strength, relevance, uniqueness and favorability).  One of the major examples of increasing its brand value  can be HSBC, the board of which developed its audited brand value from nearly zero in 1999 to $10 billion in 2005 to send the customers the message which is ‘the world’s local bank’ <cite>(Beverland, 2018)</cite>.  In fact, its logo (hexagon) can be associated with banks and icons in advertising shows the respect for cultural difference. For example, the symbol of tea in China is different from Turkey (ibid).  Therefore, the landing page of the product in this essay, especially its design should be changed by the visitor’s attributions.</p>
+
+<h2 id="search-engine-optimization">Search Engine Optimization</h2>
+<p>The customer can buy the product everywhere, however, the entrance of the Internet seems to be dominated by only a few search engines such as Google and YouTube.  Hence, it is inevitable to find how to optimize the engines, one of the most fundamental strategies of which can be maximize the number of links.  This is mainly because there is a stable relationship in correlation between links and ranking from 2007 to 2020 and high correlation between authoritative links and ranking <cite>(Nordfält, 2020)</cite>.  Thus, the landing page of the product in this essay needs the links to be searched by the target customers.</p>
 
 <h2 id="conclusion">Conclusion</h2>
-<p>As a result of this trend, there may be new arbitrage opportunities.  Michael Burry argued that the tendency in passive investment through ETFs and index funds, as well as the trend to quite large size among asset managers has strayed smaller cap stocks without exception <cite>(Kim and Cho, 2019)</cite>.  According to his statement, if this direction continues, non listed small cap stocks will be undervalued more than ever.  Consequently, these companies may not collect the money to expand the current business or build a new one from the capital market.  However, in this situation, the small cap funds can overcome the passive ones as for the revenue.  This may mean active funds oriented for smaller cap might beaten ETFs.  As a consequence, the index funds will dominate or have already done, though, the dominance will no longer last.</p>
+<p>This essay has discussed how to build the brand on the web using the online trading platform as an example.  The target segment decided Gen C and then the evangelists did so young VCs and investors.  The logo of the product should be a simple and single icon, however, advertising for it and the landing page should be varied by customer attributions.  Also, the landing page should optimize the search engines to increase the number of the links.  Finally, these experiments should be monitored by the retention rate which is the equivalent of a loyalty loop in the customer decision journey.</p>
 
 <h2 id="reference">Reference</h2>
 <ul>
-  <li>Bolshaw, L., 2019. ‘Gender lens’ ETFs seek to promote workplace diversity [Online]. Available from: <a href="https://www.ft.com/content/c42f6e0a-91b2-11e9-8ff4-699df1c62544">https://www.ft.com/content/c42f6e0a-91b2-11e9-8ff4-699df1c62544</a> [Accessed 20 September 2019].</li>
-  <li>Fortado, L., 2019. Women-led hedge funds try to crack the boys’ club [Online]. Available from: <a href="https://www.ft.com/content/73698e76-7293-11e9-bf5c-6eeb837566c5">https://www.ft.com/content/73698e76-7293-11e9-bf5c-6eeb837566c5</a> [Accessed 20 September 2019].</li>
-  <li>Kim, H. and Cho, M., 2019. The Big Short’s Michael Burry Sees a Bubble in Passive Investing [Online]. Available from: <a href="https://www.bloomberg.com/news/articles/2019-08-28/the-big-short-s-michael-burry-sees-a-bubble-in-passive-investing">https://www.bloomberg.com/news/articles/2019-08-28/the-big-short-s-michael-burry-sees-a-bubble-in-passive-investing</a> [Accessed 20 September 2019].</li>
-  <li>Nauman, B., 2019. ‘Sin stock’ ETFs strive to make good on returns [Online]. Available from: <a href="https://www.ft.com/content/f70e45d2-91ab-11e9-8ff4-699df1c62544">https://www.ft.com/content/f70e45d2-91ab-11e9-8ff4-699df1c62544</a> [Accessed 20 September 2019].</li>
-  <li>Platt, E., 2019. Zero-fee and rebate deals throw down gauntlet on ETF charges [Online]. Available from: <a href="https://www.ft.com/content/cc79a080-9117-11e9-8ff4-699df1c62544">https://www.ft.com/content/cc79a080-9117-11e9-8ff4-699df1c62544</a> [Accessed 20 September 2019].</li>
-  <li>Thompson, J., 2019. Virtue signalling ETFs: religion, veganism and marijuana used to tap trends [Online]. Available from: <a href="https://www.ft.com/content/7d4147e2-9e2e-11e9-b8ce-8b459ed04726">https://www.ft.com/content/7d4147e2-9e2e-11e9-b8ce-8b459ed04726</a> [Accessed 20 September 2019].</li>
+  <li>Beverland, M., 2018. Brand Management</li>
+  <li>Corstjens, M. and Steele, R., 2008. An international empirical analysis of the performance of manufacturers and retailers</li>
+  <li>Court, D. et al., 2009. The consumer decision journey [Online]. Available from: <a href="https://www.mckinsey.com/business-functions/marketing-and-sales/our-insights/the-consumer-decision-journey">https://www.mckinsey.com/business-functions/marketing-and-sales/our-insights/the-consumer-decision-journey</a> [Accessed 20 May 2020].</li>
+  <li>Kahneman, D., 2012. Of 2 Minds: How Fast and Slow Thinking Shape Perception and Choice [Excerpt] [Online]. Available from: <a href="https://www.scientificamerican.com/article/kahneman-excerpt-thinking-fast-and-slow/">https://www.scientificamerican.com/article/kahneman-excerpt-thinking-fast-and-slow/</a> [Accessed 20 May 2020].</li>
+  <li>Nordfält, J., 2020. Eye tracking 1 Lerum [Online]. Available from: <a href="https://www.youtube.com/watch?v=h_hXMp1FLFk">https://www.youtube.com/watch?v=h_hXMp1FLFk</a> [Accessed 20 May 2020].</li>
+  <li>Nordfält, J., 2020. Search Engine Optimization: lecture slides. Unpublished.</li>
+  <li>PICKETT, P., 2019. The Characteristics of Generation C [Online]. Available from: <a href="https://www.thebalancecareers.com/who-is-generation-c-and-what-are-they-all-about-2071937">https://www.thebalancecareers.com/who-is-generation-c-and-what-are-they-all-about-2071937</a> [Accessed 20 May 2020].</li>
+  <li>Poulou, P., 2018. From 4Ps to 4Es: Rethinking the Marketing Mix [Online]. Available from: <a href="https://www.linkedin.com/pulse/from-4ps-4es-philippe-poulou">https://www.linkedin.com/pulse/from-4ps-4es-philippe-poulou</a> [Accessed 20 May 2020].</li>
+  <li>Till, B.D., Baack, D. and Waterman, B, 2011. Strategic brand association maps: developing brand insight. Journal of product &amp; brand management., 20(2), pp.92–100.</li>
 </ul>
 
     </article> <hr />
