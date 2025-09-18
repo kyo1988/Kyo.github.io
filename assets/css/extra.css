@@ -1,5 +1,5 @@
-:root { 
-  --maxw: 740px; 
+:root {
+  --maxw: 740px;
   --primary: #2563eb;
   --primary-hover: #1d4ed8;
   --secondary: #64748b;
@@ -9,6 +9,10 @@
   --bg-dark: #0b0f14;
   --text-dark: #e6edf3;
   --card-bg-dark: #11161c;
+  
+  /* Design Kit v1 integration */
+  --accent: var(--primary);
+  --accent-ink: #ffffff;
 }
 
 .post-content { max-width: var(--maxw); line-height: 1.8; font-size: 16.5px; }
