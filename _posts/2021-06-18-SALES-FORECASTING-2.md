@@ -64,6 +64,3 @@ Finally, Figures 6 through 10, the relative utility levels are demonstrated for 
 * TensorFlow, 2020. Time series forecasting [Online]. Available from: [https://www.tensorflow.org/tutorials/structured_data/time_series](https://www.tensorflow.org/tutorials/structured_data/time_series) [Accessed 30 March 2020].
 * Tieleman, T. and Hinton, G., 2012. Lecture 6.5-rmsprop: Divide the Gradient by a Running Average of Its Recent Magnitude. COURSERA: Neural Networks for Machine Learning, 4, 26-31.
 * Wierenga, B., 2008. Handbook of Marketing Decision Models
-
-{% include cta.html %}
-{% include related-by-tags.html %}

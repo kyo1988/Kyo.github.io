@@ -71,7 +71,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS_CHTML"></script>
 <!-- <link type="application/atom+xml" rel="alternate" href="https://kyo1988.github.io/Kyo.github.io/atom.xml" title="Kyo Harada — Visage AI / Data Scientist" /> -->
 <!-- <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Page 2 of 9 for Kyo Harada — Visage AI / Data Scientist | Founder &amp; Data Scientist building on-device AI for skin analytics and finance-grade data products.</title>
+<title>Page 2 of 7 for Kyo Harada — Visage AI / Data Scientist | Founder &amp; Data Scientist building on-device AI for skin analytics and finance-grade data products.</title>
 <meta name="generator" content="Jekyll v3.10.0" />
 <meta property="og:title" content="Kyo Harada — Visage AI / Data Scientist" />
 <meta name="author" content="Kyo Harada" />
@@ -119,10 +119,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         
         <a class="page-link" href="/Kyo.github.io/">Home</a>
-        
-        
-        
-        <a class="page-link" href="/Kyo.github.io/about/">About</a>
         
         
         
@@ -209,10 +205,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         
         
-        
-        
-        
-        
       </div>
     </nav>
 
@@ -232,339 +224,590 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <header class="post-header">
       <h1 itemprop="name" class="post-title">
-        <a itemprop="url" class="post-link" href="/Kyo.github.io/2025/01/19/edinet-db-howto.html">EDINET XBRLで作る投資家級データベース</a>
+        <a itemprop="url" class="post-link" href="/Kyo.github.io/business/finance/2021/06/09/organize-and-implement-hull-and-white-1994a-interest-rate-model.html">Organize and implement Hull and White (1994a) interest rate model</a>
       </h1>
-      <meta itemprop="keywords" content="EDINET,Finance,ETL,Case-Study,XBRL,Database" />
+      <meta itemprop="keywords" content="Business Finance" />
       <p class="post-meta">
       Posted in
+      
+      <a href="/Kyo.github.io/categories/#Business">Business</a>, 
+      
+      <a href="/Kyo.github.io/categories/#Finance">Finance</a>
       
       
       and tagged
       
-      <a href="/Kyo.github.io/tags/#EDINET" title="EDINET">EDINET</a>, 
-      
-      <a href="/Kyo.github.io/tags/#Finance" title="Finance">Finance</a>, 
-      
-      <a href="/Kyo.github.io/tags/#ETL" title="ETL">ETL</a>, 
-      
-      <a href="/Kyo.github.io/tags/#Case-Study" title="Case-Study">Case-Study</a>, 
-      
-      <a href="/Kyo.github.io/tags/#XBRL" title="XBRL">XBRL</a>, 
-      
-      <a href="/Kyo.github.io/tags/#Database" title="Database">Database</a>
+      <a href="/Kyo.github.io/tags/#Business Finance" title="Business Finance">Business Finance</a>
       
       
-      <time itemprop="datePublished" datetime="2025-01-19">
-      on Jan 19, 2025
+      <time itemprop="datePublished" datetime="2021-06-09">
+      on Jun 9, 2021
       </time>
       </p>
     </header>
 
     <article class="post-content" itemprop="articleBody">
-      <div class="tldr">
-  <strong>TL;DR</strong>
-  <p>投資家が使える粒度にするための設計と運用の実際。EDINET XBRLから投資家級データベースを構築する完全ガイド。</p>
-</div>
-
-<h2 id="スキーマ設計">スキーマ設計</h2>
-
-<h3 id="1-基本テーブル構造">1. 基本テーブル構造</h3>
-<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- 企業マスタ</span>
-<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">companies</span> <span class="p">(</span>
-    <span class="n">company_id</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">,</span>
-    <span class="n">company_name</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-    <span class="n">industry_code</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
-    <span class="n">listing_date</span> <span class="nb">DATE</span><span class="p">,</span>
-    <span class="n">created_at</span> <span class="nb">TIMESTAMP</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span>
-<span class="p">);</span>
-
-<span class="c1">-- 財務データ</span>
-<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">financial_data</span> <span class="p">(</span>
-    <span class="n">id</span> <span class="nb">BIGINT</span> <span class="n">AUTO_INCREMENT</span> <span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">,</span>
-    <span class="n">company_id</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span>
-    <span class="n">fiscal_year</span> <span class="nb">INT</span><span class="p">,</span>
-    <span class="n">fiscal_period</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
-    <span class="n">account_code</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span>
-    <span class="n">account_name</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">200</span><span class="p">),</span>
-    <span class="n">amount</span> <span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
-    <span class="n">unit</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
-    <span class="n">created_at</span> <span class="nb">TIMESTAMP</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
-    <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="p">(</span><span class="n">company_id</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="n">companies</span><span class="p">(</span><span class="n">company_id</span><span class="p">)</span>
-<span class="p">);</span>
-</code></pre></div></div>
-
-<h3 id="2-インデックス設計">2. インデックス設計</h3>
-<ul>
-  <li><strong>複合インデックス</strong>: (company_id, fiscal_year, account_code)</li>
-  <li><strong>パーティション</strong>: fiscal_yearでパーティション分割</li>
-  <li><strong>圧縮</strong>: InnoDB圧縮でストレージ効率化</li>
+      <ul id="markdown-toc">
+  <li><a href="#organize-and-implement-hull-and-white-1994a-interest-rate-model" id="markdown-toc-organize-and-implement-hull-and-white-1994a-interest-rate-model">Organize and implement Hull and White (1994a) interest rate model</a>    <ul>
+      <li><a href="#derivation-of-hull-and-white-1994a-interest-rate-model-solutions-and-boundary-conditions" id="markdown-toc-derivation-of-hull-and-white-1994a-interest-rate-model-solutions-and-boundary-conditions">Derivation of Hull and White (1994a) interest rate model solutions and boundary conditions</a></li>
+      <li><a href="#hull-and-white-tree-formulation" id="markdown-toc-hull-and-white-tree-formulation">Hull and White Tree formulation</a></li>
+      <li><a href="#hull-and-white-tree-implementation" id="markdown-toc-hull-and-white-tree-implementation">Hull and White Tree Implementation</a></li>
+      <li><a href="#reference" id="markdown-toc-reference">Reference</a></li>
+    </ul>
+  </li>
 </ul>
 
-<h2 id="etlパイプライン">ETLパイプライン</h2>
-
-<h3 id="1-データ取得">1. データ取得</h3>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">import</span> <span class="nn">zipfile</span>
-<span class="kn">import</span> <span class="nn">xml.etree.ElementTree</span> <span class="k">as</span> <span class="n">ET</span>
-
-<span class="k">class</span> <span class="nc">EDINETDownloader</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">api_key</span><span class="p">):</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">api_key</span> <span class="o">=</span> <span class="n">api_key</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">base_url</span> <span class="o">=</span> <span class="s">"https://disclosure.edinet-fsa.go.jp/api/v1"</span>
-    
-    <span class="k">def</span> <span class="nf">download_xbrl</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">doc_id</span><span class="p">):</span>
-        <span class="s">"""XBRLファイルをダウンロード"""</span>
-        <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="bp">self</span><span class="p">.</span><span class="n">base_url</span><span class="si">}</span><span class="s">/documents/</span><span class="si">{</span><span class="n">doc_id</span><span class="si">}</span><span class="s">"</span>
-        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s">"type"</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>  <span class="c1"># XBRL形式
-</span>        <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">"X-API-KEY"</span><span class="p">:</span> <span class="bp">self</span><span class="p">.</span><span class="n">api_key</span><span class="p">}</span>
-        
-        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">response</span><span class="p">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">response</span><span class="p">.</span><span class="n">content</span>
-        <span class="k">return</span> <span class="bp">None</span>
-</code></pre></div></div>
-
-<h3 id="2-データ変換">2. データ変換</h3>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">XBRLParser</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">parse_financial_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xbrl_content</span><span class="p">):</span>
-        <span class="s">"""XBRLから財務データを抽出"""</span>
-        <span class="n">root</span> <span class="o">=</span> <span class="n">ET</span><span class="p">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">xbrl_content</span><span class="p">)</span>
-        <span class="n">financial_data</span> <span class="o">=</span> <span class="p">[]</span>
-        
-        <span class="c1"># 勘定科目の抽出
-</span>        <span class="k">for</span> <span class="n">context</span> <span class="ow">in</span> <span class="n">root</span><span class="p">.</span><span class="n">findall</span><span class="p">(</span><span class="s">".//{http://www.xbrl.org/2003/instance}context"</span><span class="p">):</span>
-            <span class="n">context_id</span> <span class="o">=</span> <span class="n">context</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"id"</span><span class="p">)</span>
-            <span class="n">period</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">extract_period</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
-            
-            <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">root</span><span class="p">.</span><span class="n">findall</span><span class="p">(</span><span class="s">".//{http://www.xbrl.org/2003/instance}item"</span><span class="p">):</span>
-                <span class="k">if</span> <span class="n">item</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"contextRef"</span><span class="p">)</span> <span class="o">==</span> <span class="n">context_id</span><span class="p">:</span>
-                    <span class="n">account_code</span> <span class="o">=</span> <span class="n">item</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"name"</span><span class="p">)</span>
-                    <span class="n">amount</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">item</span><span class="p">.</span><span class="n">text</span><span class="p">)</span> <span class="k">if</span> <span class="n">item</span><span class="p">.</span><span class="n">text</span> <span class="k">else</span> <span class="mi">0</span>
-                    
-                    <span class="n">financial_data</span><span class="p">.</span><span class="n">append</span><span class="p">({</span>
-                        <span class="s">"context_id"</span><span class="p">:</span> <span class="n">context_id</span><span class="p">,</span>
-                        <span class="s">"period"</span><span class="p">:</span> <span class="n">period</span><span class="p">,</span>
-                        <span class="s">"account_code"</span><span class="p">:</span> <span class="n">account_code</span><span class="p">,</span>
-                        <span class="s">"amount"</span><span class="p">:</span> <span class="n">amount</span>
-                    <span class="p">})</span>
-        
-        <span class="k">return</span> <span class="n">financial_data</span>
-</code></pre></div></div>
-
-<h2 id="欠損対処">欠損対処</h2>
-
-<h3 id="1-データクリーニング">1. データクリーニング</h3>
-<div class="key-takeaways">
-  <strong>Key Takeaways</strong>
-  <ul>
-    
-    
-      <li>欠損値の特定: 勘定科目の存在確認</li>
-    
-      <li>補完方法: 前年同期値または業界平均値</li>
-    
-      <li>異常値検出: 統計的異常値の特定と除外</li>
-    
-      <li>データ整合性: 貸借対照表のバランス確認</li>
-    
-  </ul>
-</div>
-
-<h3 id="2-品質管理">2. 品質管理</h3>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">DataQualityChecker</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">check_balance_sheet_balance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
-        <span class="s">"""貸借対照表のバランス確認"""</span>
-        <span class="n">assets</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s">'account_type'</span><span class="p">]</span> <span class="o">==</span> <span class="s">'Assets'</span><span class="p">][</span><span class="s">'amount'</span><span class="p">].</span><span class="nb">sum</span><span class="p">()</span>
-        <span class="n">liabilities</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s">'account_type'</span><span class="p">]</span> <span class="o">==</span> <span class="s">'Liabilities'</span><span class="p">][</span><span class="s">'amount'</span><span class="p">].</span><span class="nb">sum</span><span class="p">()</span>
-        <span class="n">equity</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s">'account_type'</span><span class="p">]</span> <span class="o">==</span> <span class="s">'Equity'</span><span class="p">][</span><span class="s">'amount'</span><span class="p">].</span><span class="nb">sum</span><span class="p">()</span>
-        
-        <span class="n">balance</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">assets</span> <span class="o">-</span> <span class="p">(</span><span class="n">liabilities</span> <span class="o">+</span> <span class="n">equity</span><span class="p">))</span>
-        <span class="k">return</span> <span class="n">balance</span> <span class="o">&lt;</span> <span class="mf">0.01</span>  <span class="c1"># 1円未満の差は許容
-</span>    
-    <span class="k">def</span> <span class="nf">detect_outliers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="s">'amount'</span><span class="p">):</span>
-        <span class="s">"""異常値の検出"""</span>
-        <span class="n">Q1</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">column</span><span class="p">].</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
-        <span class="n">Q3</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">column</span><span class="p">].</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.75</span><span class="p">)</span>
-        <span class="n">IQR</span> <span class="o">=</span> <span class="n">Q3</span> <span class="o">-</span> <span class="n">Q1</span>
-        <span class="n">lower_bound</span> <span class="o">=</span> <span class="n">Q1</span> <span class="o">-</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="n">IQR</span>
-        <span class="n">upper_bound</span> <span class="o">=</span> <span class="n">Q3</span> <span class="o">+</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="n">IQR</span>
-        
-        <span class="k">return</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">lower_bound</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">upper_bound</span><span class="p">)]</span>
-</code></pre></div></div>
-
-<h2 id="ダッシュボード例">ダッシュボード例</h2>
-
-<h3 id="1-財務指標ダッシュボード">1. 財務指標ダッシュボード</h3>
-<ul>
-  <li><strong>収益性</strong>: ROE, ROA, 営業利益率</li>
-  <li><strong>安全性</strong>: 自己資本比率, 流動比率</li>
-  <li><strong>効率性</strong>: 総資産回転率, 売上高成長率</li>
-  <li><strong>市場評価</strong>: PER, PBR, EV/EBITDA</li>
-</ul>
-
-<h3 id="2-業界比較分析">2. 業界比較分析</h3>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">create_industry_comparison</span><span class="p">(</span><span class="n">company_id</span><span class="p">,</span> <span class="n">industry_code</span><span class="p">):</span>
-    <span class="s">"""業界比較分析"""</span>
-    <span class="n">query</span> <span class="o">=</span> <span class="s">"""
-    SELECT 
-        company_id,
-        AVG(ROE) as avg_roe,
-        AVG(ROA) as avg_roa,
-        AVG(営業利益率) as avg_operating_margin
-    FROM financial_metrics 
-    WHERE industry_code = %s
-    GROUP BY company_id
-    ORDER BY avg_roe DESC
-    """</span>
-    <span class="k">return</span> <span class="n">execute_query</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="p">(</span><span class="n">industry_code</span><span class="p">,))</span>
-</code></pre></div></div>
-
-<h2 id="運用監視">運用監視</h2>
-
-<section class="qa">
-  <h2>Q&amp;A</h2>
-  
-  <dl>
-  
-    
-    
-    
-    
-      <dt>データ更新頻度は？</dt>
-      <dd>四半期ごと（3月・6月・9月・12月）の決算発表後</dd>
-    
-  
-    
-    
-    
-    
-      <dt>監視すべき指標は？</dt>
-      <dd>データ取得成功率・処理時間・データ品質スコア</dd>
-    
-  
-    
-    
-    
-    
-      <dt>障害時の対応は？</dt>
-      <dd>アラート通知・自動再試行・手動復旧手順</dd>
-    
-  
-  </dl>
-</section>
-
-<h2 id="成果物">成果物</h2>
+<h1 id="organize-and-implement-hull-and-white-1994a-interest-rate-model">Organize and implement Hull and White (1994a) interest rate model</h1>
+<h2 id="derivation-of-hull-and-white-1994a-interest-rate-model-solutions-and-boundary-conditions">Derivation of Hull and White (1994a) interest rate model solutions and boundary conditions</h2>
 
 <ul>
-  <li><strong>データベース</strong>: MySQL/PostgreSQLで構築</li>
-  <li><strong>ETLパイプライン</strong>: Python + Airflowで自動化</li>
-  <li><strong>ダッシュボード</strong>: Grafana + InfluxDBで可視化</li>
-  <li><strong>API</strong>: RESTful APIでデータ提供</li>
+  <li>Definition [Hull and White(1994a) interest rate model]
+\begin{eqnarray}\label{HullandWhite1994a}
+dr(t)=(\theta(t)-ar(t))dt+\sigma d\tilde{W}(t) ．
+\end{eqnarray}</li>
 </ul>
 
-<h2 id="参考資料">参考資料</h2>
+<p>However, $\tilde{W}(t)$ is Brownian motion under the risk-neutral measure $\mathbb{P}$.
+Also, $\theta (t)$, $a$, and $\sigma$ are positive-definite functions for time (Hull and White, 1994a).</p>
 
 <ul>
-  <li><a href="https://disclosure.edinet-fsa.go.jp/api/v1/">EDINET API Documentation</a></li>
-  <li><a href="https://www.xbrl.org/">XBRL Specification</a></li>
-  <li><a href="https://pandas.pydata.org/">Financial Data Analysis</a></li>
+  <li>Definition [Discount bond price evaluation formula]
+\begin{eqnarray}\label{DiscountBondPrice}
+B(t,T)=\tilde{\mathbb{E}}[e^{-\int_{t}^{T}R(s)ds}|{\cal F}(t)] ．
+\end{eqnarray}</li>
 </ul>
 
-<div class="cta">
-  <h3>相談・見積りのご依頼</h3>
-  <p>小さく速く、成果物ベースでご一緒します。</p>
-  <p>
-    <a class="btn" href="/work-with-me/">Work with me</a>
-    <a class="btn ghost" href="/newsletter/">無料ニュースレター</a>
-  </p>
-</div>
+<p>Here, a discount bond is a contract in which $1$ is paid for a certain fixed maturity of $T$, and no payment is made before the maturity.</p>
 
-<div class="related">
-  <h3>次に読む</h3>
-  <ul>
-  
-    
-      
-      
-      
-        <li><a href="/Kyo.github.io/2025/01/19/rag-audit-checklist.html">RAGミニ監査チェックリスト（無料DL）</a></li>
-        
-      
-    
-  
-    
-      
-      
-      
-    
-  
-    
-      
-      
-      
-    
-  
-    
-  
-    
-      
-      
-      
-        <li><a href="/Kyo.github.io/2025/01/19/coreml-optimization-playbook.html">CoreML最適化プレイブック（受託）</a></li>
-        
-      
-    
-  
-    
-      
-      
-      
-        <li><a href="/Kyo.github.io/2025/01/19/coreml-optimization-playbook-en.html">CoreML Optimization Playbook (Consulting)</a></li>
-        
-      
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-  </ul>
-</div>
+<ul>
+  <li>Definition [Yield from time $t$ to $T$]
+\begin{eqnarray}
+Y(t,T)=-\frac{1}{T-t}\log B(t,T)．
+\end{eqnarray}</li>
+</ul>
 
+<p>This is equivalent to the following equation.</p>
+
+<p>\begin{eqnarray}
+B(t,T)=e^{-Y(t,T)(T-t)}．
+\end{eqnarray}</p>
+
+<p>Therefore, $B(T, T) =1$.</p>
+
+<p>The random variable $e^{-\int_{t}^{T}R(s)ds}$ estimated in the equation \eqref{DiscountBondPrice} depends not only on $R(T)$ but also on the path. However, the path of $R$ to time $t$ depends only on $R(t)$ at time $t$. Therefore, since $R$ is a Markov process, the bond price $B(t, T)$ is considered to be a function of time $t$ and $R(t)$.</p>
+
+<p>\begin{eqnarray}
+B(t,T)=f(t,R(t))．
+\end{eqnarray}</p>
+
+<p>On the other hand, since the equation \eqref{DiscountBondPrice} is the expansion of $D(t)B(t,T)=\tilde{\Bbb{E}}[D(T)B(T,T))\lvert\cal{F}(t)]$, then $D(t)B(t,T)=D(t)f(t,T)$ is a martingale.</p>
+
+<p>Therefore, in order for the no arbitrage condition to hold, the drift $(dt)$ term obtained by differentiating $D(t)f(t,T)$ must appear as $0$.</p>
+
+<p>To find the derivative of $D(t)f(t,T)$, it is required first to find the discount process and its relational expression.</p>
+
+<ul>
+  <li>Definition [discount process]
+\begin{eqnarray}
+D(t)=e^{-\int_{0}^{t}R(s)ds}．
+\end{eqnarray}</li>
+</ul>
+
+<p>Here, if $S(x)=e(-t)$ and $I(t)=\int_{0}^{t}R(s)ds$, then $D(t) = S(I(t))$.
+At this time, since $dI(t)=R(t)dt$, $dI(t)dI (t)=0$ and $S’(x)=-S (x)$, $S’‘(x) =S(x)$ then from Ito’s lemma,</p>
+
+<p>\begin{eqnarray}
+dD(t)=dS(I(t)) 
+=S’(I(t))dI(t)+\frac{1}{2}S’‘(I(t))dI(t)dI(t) 
+=-S(I(t))dI(t) 
+=-D(t)R(t)dt．
+\end{eqnarray}</p>
+
+<p>therefore,</p>
+
+<p>\begin{eqnarray}
+dD(t)=-D(t)R(t)dt．
+\end{eqnarray}</p>
+
+<p>If the interest rate process $R(t)$ in finding the derivative of $D(t)f(t,T)$ follows the equation \eqref{HullandWhite1994a}, then From $dtdt=0$, $dtd\tilde{W}=0$, $d\tilde{W}d\tilde{W}=dt$ and $drdr= \sigma^2dt$</p>
+
+<p>\begin{eqnarray}
+d(D(t)f(t,T))
+=f(t,T)dD(t)+D(t)df(t,T)
+=f(t,T)(-D(t)R(t))+D(t){f_t(t,T)dt+f_r(t,T)dr+\frac{1}{2}f_rr(t,T)drdr} 
+=D(t)(-rf(t,T)+f_t(t,T)+\frac{1}{2}\sigma^2 f_rr(t,T)+(\theta(t)-ar(t))f_r(t,T))dt+D(t)\sigma f_r(t,T)d\tilde{W}(t)．
+\end{eqnarray}</p>
+
+<p>Therefore, $f(t, T))$ must be met.</p>
+
+<p>\begin{eqnarray}\label{HullWhitePDE}
+f_t(t,T)+\frac{1}{2}\sigma^{2} f_rr(t,T)+(\theta(t)-ar(t))f_r(t,T)=rf(t,T)
+\end{eqnarray}</p>
+
+<p>Also, since $1=B(T, T)=f(T, r)$, the terminal condition is obtained.</p>
+
+<p>For all $r$,
+\begin{eqnarray}
+f(T,r)=1
+\end{eqnarray}</p>
+
+<p>Next, the partial differential equation of the equation \eqref{HullWhitePDE} is expanded to obtain an analytical solution.
+If you set $f_t(t, T)=e^{-rC (t, T) -A (t, T)}$,</p>
+
+<p>\begin{eqnarray}
+f_t(t,r)=(-rC’(t,T)-A’(t,T))f(t,r)． 
+f_r(t,r)=-C(t,T)f(t,r)． 
+f_rr(t,r)=-C^{2}(t,T)f(t,r)．
+\end{eqnarray}</p>
+
+<p>Where $C’(t,T)=\frac{\partial C(t,T)}{\partial t}$，$A’(t,T)=\frac{\partial A(t,T)}{\partial t}$．
+Therefore, the left side of the formula \eqref{HullWhitePDE} is</p>
+
+<p>\begin{eqnarray}
+f_t(t,T)+\frac{1}{2}\sigma f_rr(t,T)+(\theta(t)-ar(t))f_r(t,T) 
+=(-rC’(t,T)-A’(t,T)+\frac{1}{2}\sigma^{2}C^{2}(t,T)-(\theta(t)-ar(t))C(t,T))f(t,r)．
+\end{eqnarray}</p>
+
+<p>Therefore, by transposing the right side to the left side and enclosing it with $r$, the following relational expression is obtained.</p>
+
+<p>\begin{eqnarray}
+((-C’(t,T)+aC(t,T)-1)r-A’(t,T)-\theta(t)C(t,T)+\frac{1}{2}\sigma^{2}C^{2}(t,T))f(t,r)=0．
+\end{eqnarray}</p>
+
+<p>From the assumption, $f_t(t, T)=e^{-rC(t, T)-A(t, T)}&gt;0$, and this relation must hold for all $r$, then this term for $r$ must be $0$.</p>
+
+<p>\begin{eqnarray}
+C’(t,T)=aC(t,T)-1．
+A’(t,T)=-\theta(t)C(t,T)+\frac{1}{2}\sigma^{2}C^{2}(t,T)．
+\end{eqnarray}</p>
+
+<p>Furthermore, $C(T, T)=A’(T, T)=A(T, T)=0$ is required to hold for the terminal condition.</p>
+
+<p>A function that satisfies $C’(t, T)=aC(t, T)-1$, $C(T, T)=0$</p>
+
+<p>\begin{eqnarray}
+C(t,T)=\int_{t}^{T}e^{-\int_{t}^{s}a(v)dv}ds．
+\end{eqnarray}</p>
+
+<p>It is shown that this is a unique solution to be obtained.</p>
+
+<p>\begin{eqnarray}
+\frac{d }{d s}(e^{-\int_{0}^{s}a(v)dv} C(s,T))
+=e^{-\int_{0}^{s}a(v)dv}(-a(s)C(s,T)+C’(s,T) ) 
+=e^{-\int_{0}^{s}a(v)dv}(-a(s)C(s,T)+aC(t,T)-1 ) 
+=e^{-\int_{0}^{s}a(v)dv}．
+\end{eqnarray}</p>
+
+<p>Integrating both sides of this equation from $t$ to $T$</p>
+
+<p>\begin{eqnarray}
+e^{-\int_{0}^{T}a(v)dv}C(T,T)-e^{-\int_{0}^{t}a(v)dv}C(t,T)=-\int_{t}^{T}e^{-\int_{0}^{s}a(v)dv}ds 
+\Leftrightarrow C(t,T)=e^{\int_{0}^{t}a(v)dv}\int_{t}^{T}e^{-\int_{0}^{s}a(v)dv}ds<br />
+=\int_{t}^{T}e^{-\int_{t}^{s}a(v)dv}ds．
+\end{eqnarray}</p>
+
+<p>The expansion of this unique solution is as follows. However, $a(v)=a$ is set from the equation \eqref{HullandWhite1994a}.</p>
+
+<p>\begin{eqnarray}
+C(t,T)=\int_{t}^{T}e^{-\int_{t}^{s}a(v)dv}ds 
+=\int_{t}^{T}e^{-as+at}ds 
+=\frac{1}{a}(1-e^{-a(T-t)})．
+\end{eqnarray}</p>
+
+<p>Similarly, the function, that satisfies $A(T, T)=1$, $A’(t, T)=-\theta(t)C(t, T)+\frac{1}{2}\sigma^{2}C^{2}(t, T)$, is shown below as a unique solution.</p>
+
+<p>\begin{eqnarray}
+A(t,T)=\int_{t}^{T}(\theta(t)C(t,T)-\frac{1}{2}\sigma^{2}C^{2}(t,T) )ds．
+\end{eqnarray}</p>
+
+<p>Integrating both sides of this equation from $t$ to $T$
+\begin{eqnarray}
+A(T,T)-A(t,T)=-\int_{t}^{T}\theta(t)C(t,T)ds+\frac{1}{2}\int_{t}^{T}\sigma^{2}C^{2}(t,T)ds 
+\Leftrightarrow A(t,T)=\int_{t}^{T}(\theta(t)C(t,T)-\frac{1}{2}\sigma^{2}C^{2}(t,T))ds．
+\end{eqnarray}</p>
+
+<p>The expansion of this unique solution is as follows. However, $a(v)=a$ is set from the equation \eqref{HullandWhite1994a}.</p>
+
+<p>\begin{eqnarray}
+A(t,T)=\int_{t}^{T}(\theta(t)C(t,T)-\frac{1}{2}\sigma^{2}C^{2}(t,T) )ds 
+=\int_{t}^{T}(\frac{\theta(t)}{a}(1-e^{-a(T-t)})-\frac{1}{2}\sigma^{2}\frac{1}{a^2}(1-e^{-a(T-t)} )^{2} )ds 
+=\frac{\sigma^{2}}{2a^3}(-a(T-t)+2(1-e^{-a(T-t)})-\frac{1}{2}(1-e^{-2a(T-t)})) 
++\frac{1}{a}\int_{t}^{T}\theta(s)(1-e^{-a(T-s)})ds．
+\end{eqnarray}</p>
+
+<p>Next, the parameter $\theta(t)$ in the equation \eqref{HullandWhite1994a} means the speed of mean reversion. It is required to match this parameter to the term structure of the quoted interest rate.</p>
+
+<ul>
+  <li>Definition [Instantaneous Forward Rate]
+Let $f^{M}(0, T)$ be the instantaneous forward rate of the market at maturity $T$ at time $0$.
+\begin{eqnarray}
+f^{M}(0,T)=-\frac{\partial \ln B^{M}(0,T)}{\partial T}．
+\end{eqnarray}
+Here, $B^{M}(0, T)$ is the discount bond price quoted in the market at maturity $T$.</li>
+</ul>
+
+<p>Because it is $B(t,T)=f(t,r)=e^{-rC(t,T)-A(t,T)}$，</p>
+
+<p>\begin{eqnarray}
+\ln B(0,T)=-rC(0,T)-A(0,T) 
+=-\frac{r}{a}(1-e^{-aT} ) 
+-\frac{\sigma^{2}}{2a^3}(-aT+2(1-e^{-aT})-\frac{1}{2}(1-e^{-2aT})) 
++\frac{1}{a}\int_{0}^{T}\theta(s)(1-e^{-a(T-s)})ds 
+\Leftrightarrow \frac{\partial \ln B^{M}(0,T)}{\partial T}=re^{-aT}+\frac{\sigma^{2}}{2a^3}(-a+2ae^{-aT}+e^{-2aT})+\int_{t}^{T}\theta(s)e^{-a(T-s)}ds 
+\Leftrightarrow f^{M}(0,T)=re^{-aT}+\frac{\sigma^{2}}{2a^3}(-a+2ae^{-aT}+e^{-2aT})+\int_{t}^{T}\theta(s)e^{-a(T-s)}ds．
+\end{eqnarray}</p>
+
+<p>The following relationship is used to derive $\theta(T)$ from $f^{M}(0, T)$.</p>
+
+<p>\begin{eqnarray}
+H(t)=\int_{0}^{t}h(s,t)dsarrow H’(t)=\int_{0}^{t}\frac{\partial h(s,t)}{\partial t}ds+h(t,t)．
+\end{eqnarray}</p>
+
+<p>Here, $x(t)=re^{-at}+\int_{0}^{t}\theta(s)e^{-a(t-s)}ds$</p>
+
+<p>\begin{eqnarray}
+x’(t)=-a(re^{-at}+\int_{0}^{t}\theta(s)e^{-a(t-s)}ds)+\theta(t) 
+x’(t)=-ax(t)+\theta(t) 
+\Leftrightarrow \theta(t)=x’(t)+ax(t) 
+arrow \theta(T)=x’(T)+ax(T)．
+\end{eqnarray}</p>
+
+<p>On the other hand, if it is set $g(t)=\frac{\sigma^2}{2a^2}(-1+2e^{-at}+e^{-2at})$</p>
+
+<p>\begin{eqnarray}
+f^{M}(0,T)=x(T)+g(T) 
+\Leftrightarrow x(T)=f^{M}(0,T)-g(T)．
+\end{eqnarray}</p>
+
+<p>Therefore 
+\begin{eqnarray}
+\theta(T)=\frac{\partial f^{M}(0,T)}{\partial T}-\frac{\partial g(T)}{\partial T}+ax(t)．
+\end{eqnarray}</p>
+
+<p>Here, since it is $\frac{\partial g(T)}{\partial T}=-\frac{\sigma^2}{a}(e^{-aT}+e^{-2aT})$, the following equation is obtained after all.</p>
+
+<p>\begin{eqnarray}
+\theta(T)=\frac{\partial f^{M}(0,T)}{\partial T}+\frac{\sigma^2}{a}(e^{-aT}+e^{-2aT})+af^{M}(0,T)-\frac{\sigma^2}{2a^2}(-1+2e^{-at}+e^{-2at})．
+\end{eqnarray}</p>
+
+<h2 id="hull-and-white-tree-formulation">Hull and White Tree formulation</h2>
+
+<p>In the following, to represent the interest rate model as the $3$ term tree, it is derived the relational expression between the parameters of the continuous time process and the parameters of the $3$ term process.</p>
+
+<p>In the $3$ term process, it is expressed by $p_u$, $p_m$, and $p_d$, respectively, during the minute time $\Delta t$ as the interest rate rises by the spatial division width $\Delta x$, or stays at the same level, decreasing by $\Delta x$.</p>
+
+<p>Furthermore, $\Delta t$ and $\Delta x$ cannot be selected independently and must satisfy the conditions for stability and convergence of the finite difference method $\Delta x=\sigma \sqrt{3\Delta t}$ (Hull and White, 1994).</p>
+
+<p>Here, if the drift term of the formula \eqref{HullandWhite1994a} is set $\nu=\theta(t)-ar(t)$,</p>
+
+<p>\begin{eqnarray}\label{averrageA}
+\mathbb{E}[\Delta x]=p_u(\Delta x)+p_m(0)+p_d(-\Delta x)=\nu\Delta t．
+\end{eqnarray}
+\begin{eqnarray}\label{varianceA}
+\mathbb{E}[\Delta x^2]=p_u(\Delta x^2)+p_m(0)+p_d(-\Delta x^2)=\sigma^2\Delta t+\nu^2\Delta t^2．
+\end{eqnarray}
+\begin{eqnarray}\label{SumProA}
+p_u+p_m+p_d=1．
+\end{eqnarray}</p>
+
+<p>The expression \eqref{averrageA} and the expression \eqref{varianceA} are expanded as follows.</p>
+
+<p>\begin{eqnarray}\label{averrageAA}
+p_u\Delta x-p_d\Delta x=\nu \Delta t．
+\end{eqnarray}
+\begin{eqnarray}\label{varianceAA}
+p_u\Delta x^2-p_d\Delta x^2=\sigma^2\Delta t+\nu^2\Delta t^2．
+\end{eqnarray}</p>
+
+<p>Multiply the expression \eqref{averrageAA} by $\Delta x$ and add the expression \eqref{varianceAA},</p>
+
+<p>\begin{eqnarray}\label{puA}
+2p_u\Delta x^2=\nu^2\Delta t^2+\sigma^2\Delta t+\nu \Delta t\Delta x 
+p_u=\frac{1}{2}(\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}+\frac{\nu \Delta t}{\Delta x} )．
+\end{eqnarray}</p>
+
+<p>Also, substituting the expression \eqref{puA} into the expression \eqref{averrageAA},</p>
+
+<p>\begin{eqnarray}
+p_u\Delta x-p_d\Delta x=\frac{1}{2}(\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}+\frac{\nu \Delta t}{\Delta x} )\Delta x-p_d\Delta x 
+\Leftrightarrow p_d\Delta x=\frac{1}{2}(\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}-\frac{\nu \Delta t}{\Delta x} )\Delta x<br />
+p_d=\frac{1}{2}(\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}-\frac{\nu \Delta t}{\Delta x} )．
+\end{eqnarray}</p>
+
+<p>And if it is substituted the expression \eqref{puA} and the expression \eqref{puA} into the expression \eqref{SumProA}</p>
+
+<p>\begin{eqnarray}\label{pmA}
+p_u+p_m+p_d=\frac{1}{2}(\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}+\frac{\nu \Delta t}{\Delta x} )+p_m+\frac{1}{2}(\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}-\frac{\nu \Delta t}{\Delta x} ) 
+=\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}+p_m 
+\Leftrightarrow p_m=1-\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}．
+\end{eqnarray}</p>
+
+<p>Hull And White (1994a) proposed a method for constructing an efficient and accurate short rate for the equation \eqref{HullandWhite1994a}. Also, it is assumed $\theta(t)=0$，$r(0)=0$.</p>
+
+<p>\begin{eqnarray}
+dr(t)=ar(t)dt+\sigma d\tilde{W}(t) ．
+\end{eqnarray}</p>
+
+<p>Therefore, note that $\nu=-ar$. In this simplified tree, the value of $r$ at the time $i\Delta t$ is $j\Delta t$. Since the tree is designed to reduce the amount of calculation, $j$ needs to be between $BottomNode[i]$ and $TopNode[i]$. The choice of which branching process to take at each node depends on the sign of $a$ and the size of $j$, and the range of change $\Delta x(=\Delta r)$ in the simplified $r$ process is chosen to match the expected value of $\mathbb{E}[\Delta x]$ and the variance $Var(\Delta x)$. Furthermore, when $a$ is positive, if $M$ is the expected value of the fluctuation range, when $j$ is the smallest integer larger than $-0.184/M$, the standard branching process is switched to the downward branching process. In order to maintain the symmetry, HW proposes to switch from the standard branching process to the upward branching process in the node $j$ with a negative sign for this node (Hull and White, 1994).</p>
+
+<p>Here，
+\begin{eqnarray}
+\mathbb{E}[\Delta x]=\nu \Delta t 
+=-ar\Delta t 
+=Mr 
+\Leftrightarrow M=-a\Delta t．
+\end{eqnarray}</p>
+
+<p>Also，
+\begin{eqnarray}
+Var(\Delta x)=\mathbb{E}[\Delta x^2]-(\mathbb{E}[\Delta x])^2 
+=(\nu^2\Delta t^2+\sigma^2\Delta t)-(\nu \Delta t)^2 
+=\sigma^2\Delta t．
+\end{eqnarray}
+It becomes. Here,$M^2=a^2\Delta t^2$，$r=j\Delta r$,</p>
+
+<p>\begin{eqnarray}\label{ExForPb1}
+\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}=\frac{(-ar)^2\Delta t^2+\sigma^2\Delta t}{ (\sigma \sqrt(3\Delta t))^2} 
+=\frac{(-a\Delta t)^2r^2+\sigma^2\Delta t}{ 3\sigma^2 \Delta t} 
+=\frac{M^2(j\Delta r)^2+\sigma^2\Delta t}{ 3\sigma^2 \Delta t} 
+=\frac{1}{3}\frac{j^2 M^2 \Delta r^2+\sigma^2\Delta t}{ \sigma^2 \Delta t} 
+=\frac{1}{3}\frac{j^2 M^2 \Delta r^2}{ \sigma^2 \Delta t}+\frac{1}{3} 
+=\frac{1}{3}\frac{j^2 M^2 (3\sigma^2 \Delta t)}{ \sigma^2 \Delta t}+\frac{1}{3} 
+=j^2M^2+\frac{1}{3}．
+\end{eqnarray}</p>
+
+<p>Therefore from the formula \eqref{ExForPb1},
+\begin{eqnarray}
+p_m=1-\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2} 
+=1-(j^2M^2+\frac{1}{3}) 
+=\frac{2}{3}-j^2M^2．
+\end{eqnarray}</p>
+
+<p>On the other hand,
+\begin{eqnarray}\label{ExForPb2}
+\frac{\nu\Delta t}{\Delta x}=\frac{(-ar)\Delta t}{\sigma\sqrt(3\Delta t)} 
+=\frac{-Mr}{\sigma\sqrt(3\Delta t)} 
+=\frac{-jr\Delta r}{\sigma\sqrt(3\Delta t)} 
+=\frac{-jr(\sigma\sqrt(3\Delta t))}{\sigma\sqrt(3\Delta t)} 
+=-jM．
+\end{eqnarray}</p>
+
+<p>Therefore from the formula \eqref{ExForPb2},</p>
+
+<p>\begin{eqnarray}
+p_u=\frac{1}{2}(\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}+\frac{\nu \Delta t}{\Delta x} ) 
+=\frac{1}{2}( j^2M^2+\frac{1}{3} -jM ) 
+=\frac{1}{6}+\frac{j^2M^2-jM}{2}．
+\end{eqnarray}</p>
+
+<p>\begin{eqnarray}
+p_d=\frac{1}{2}(\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}-\frac{\nu \Delta t}{\Delta x}) 
+=\frac{1}{2}(j^2M^2+\frac{1}{3}+jM) 
+=\frac{1}{6}+\frac{j^2M^2+jM}{2}．
+\end{eqnarray}</p>
+
+<p>Next, it is derived from the probabilities corresponding to the upward branching process.</p>
+
+<p>\begin{eqnarray}\label{averrageB}
+\mathbb{E}[\Delta x]=p_u(2\Delta x)+p_m(\Delta x)+p_d(0)=\nu\Delta t．
+\end{eqnarray}
+\begin{eqnarray}\label{varianceB}
+\mathbb{E}[\Delta x^2]=p_u(2\Delta x)^2+p_m(\Delta x^2)+p_d(0)=\sigma^2\Delta t+\nu^2\Delta t^2．
+\end{eqnarray}
+\begin{eqnarray}\label{SumProB}
+p_u+p_m+p_d=1．
+\end{eqnarray}</p>
+
+<p>The expression \eqref{averrageB} and the expression \eqref{varianceB} are expanded as follows.</p>
+
+<p>\begin{eqnarray}\label{averrageBB}
+2p_u\Delta x+p_m\Delta x=\nu \Delta t．
+\end{eqnarray}
+\begin{eqnarray}\label{varianceBB}
+4p_u\Delta x^2+p_m\Delta x^2=\sigma^2\Delta t+\nu^2\Delta t^2．
+\end{eqnarray}</p>
+
+<p>Subtracting the expression \eqref{averrageBB} from the expression \eqref{varianceBB} multiplied by $\Delta x$</p>
+
+<p>\begin{eqnarray}\label{puB}
+2p_u\Delta x^2=\nu^2\Delta t^2+\sigma^2\Delta t-\nu \Delta t\Delta x 
+p_u=\frac{1}{2}(\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}-\frac{\nu \Delta t}{\Delta x} )．
+\end{eqnarray}</p>
+
+<p>Also, if it is assigned the expression \eqref{puB} to the expression \eqref{averrageBB},
+\begin{eqnarray}\label{pmB}
+2p_u\Delta x+p_m\Delta x=\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}-\frac{\nu \Delta t}{\Delta x}+p_m\Delta x 
+\Leftrightarrow p_m\Delta x=2\nu \Delta t-\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}<br />
+\Leftrightarrow p_m=\frac{2\nu \Delta t}{\Delta x}-\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}．
+\end{eqnarray}</p>
+
+<p>And if it is substituted the expression \eqref{puB} and the expression \eqref{pmB} into the expression \eqref{SumProB}
+\begin{eqnarray}\label{pdB}
+p_u+p_m+p_d=\frac{1}{2}(\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}-\frac{\nu \Delta t}{\Delta x} )+\frac{2\nu \Delta t}{\Delta x}-\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}+p_d 
+=\frac{3}{2}\frac{\nu \Delta t}{\Delta x}-\frac{1}{2}\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}+p_d 
+\Leftrightarrow p_d=1-\frac{1}{2}( \frac{3\nu \Delta t}{\Delta x}-\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2} ) ．
+\end{eqnarray}</p>
+
+<p>Therefore from the formula \eqref{ExForPb1},
+\begin{eqnarray}
+p_u=\frac{1}{2}(\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}-\frac{\nu \Delta t}{\Delta x} ) 
+=\frac{1}{2}( j^2M^2+\frac{1}{3}-(-jM)) 
+=\frac{1}{6}-\frac{j^2M^2+jM}{2}．
+\end{eqnarray}</p>
+
+<p>\begin{eqnarray}
+p_m=\frac{2\nu \Delta t}{\Delta x}-\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2} 
+=-2jM-(j^2M^2+\frac{1}{3}) 
+=\frac{1}{3}-j^2M^2-2jM．
+\end{eqnarray}</p>
+
+<p>\begin{eqnarray}
+p_d=1-\frac{1}{2}( \frac{3\nu \Delta t}{\Delta x}-\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2} ) 
+=1-frac{1}{2}( -3jM-j^2M^2-\frac{1}{3}) 
+=\frac{7}{6}+\frac{j^2M^2+3jM}{2}．
+\end{eqnarray}</p>
+
+<p>Then, the probability corresponding to the downward branching process is derived.</p>
+
+<p>\begin{eqnarray}\label{averrageC}
+\mathbb{E}[\Delta x]=p_u(0)+p_m(-\Delta x)+p_d(-2\Delta x)=\nu\Delta t．
+\end{eqnarray}
+\begin{eqnarray}\label{varianceC}
+\mathbb{E}[\Delta x^2]=p_u(0)+p_m(-\Delta x)^2+p_d(-2\Delta x)^2=\sigma^2\Delta t+\nu^2\Delta t^2．
+\end{eqnarray}
+\begin{eqnarray}\label{SumProC}
+p_u+p_m+p_d=1．
+\end{eqnarray}</p>
+
+<p>The expression \eqref{averrageC} and the expression \eqref{varianceC} are expanded as follows.
+\begin{eqnarray}\label{averrageCC}
+-p_m\Delta x-2p_d\Delta x=\nu \Delta t．
+\end{eqnarray}
+\begin{eqnarray}\label{varianceCC}
+p_m\Delta x^2+4p_d\Delta x^2=\sigma^2\Delta t+\nu^2\Delta t^2．
+\end{eqnarray}</p>
+
+<p>Add the expression \eqref{varianceCC} multiplied by $\Delta x$ and the expression \eqref{averrageCC},
+\begin{eqnarray}\label{pdC}
+2p_d\Delta x^2=\nu^2\Delta t^2+\sigma^2\Delta t+\nu \Delta t\Delta x 
+p_d=\frac{1}{2}(\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}+\frac{\nu \Delta t}{\Delta x} )．
+\end{eqnarray}</p>
+
+<p>Also, if it is assigned the expression \eqref{pdC} to the expression \eqref{averrageCC},
+\begin{eqnarray}\label{pmC}
+-p_m\Delta x-2p_d\Delta x=-p_m\Delta x-\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}-\frac{\nu \Delta t}{\Delta x} 
+\Leftrightarrow -p_m\Delta x=2\nu \Delta t+\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}<br />
+\Leftrightarrow p_m=-\frac{2\nu \Delta t}{\Delta x}-\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}．
+\end{eqnarray}</p>
+
+<p>And if it is substituted the expression \eqref{pdC} and the expression \eqref{pmC} into the expression \eqref{SumProC},
+\begin{eqnarray}\label{puC}
+p_u+p_m+p_d=p_u-\frac{2\nu \Delta t}{\Delta x}-\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}+\frac{1}{2}(\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}+\frac{\nu \Delta t}{\Delta x} ) 
+=p_u-\frac{3}{2}\frac{\nu \Delta t}{\Delta x}-\frac{1}{2}\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2} 
+\Leftrightarrow p_u=1+\frac{3}{2}\frac{\nu \Delta t}{\Delta x}+\frac{1}{2}\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}．
+\end{eqnarray}</p>
+
+<p>Therefore from the formula \eqref{ExForPb1},
+\begin{eqnarray}
+p_d=\frac{1}{2}(\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2}+\frac{\nu \Delta t}{\Delta x} ) 
+=\frac{1}{2}( j^2M^2+\frac{1}{3}-jM) 
+=\frac{1}{6}-\frac{j^2M^2-jM}{2}．
+\end{eqnarray}</p>
+
+<p>\begin{eqnarray}
+p_m=-\frac{2\nu \Delta t}{\Delta x}-\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2} 
+=2jM-(j^2M^2+\frac{1}{3}) 
+=-\frac{1}{3}-j^2M^2+2jM．
+\end{eqnarray}</p>
+
+<p>\begin{eqnarray}
+p_u=1+\frac{3}{2}\frac{\nu \Delta t}{\Delta x}+\frac{1}{2}\frac{\nu^2\Delta t^2+\sigma^2\Delta t}{\Delta x^2} 
+=1+\frac{3}{2}(-jM)+\frac{1}{2}(j^2M^2+\frac{1}{3}) 
+=\frac{7}{6}+\frac{j^2M^2-3jM}{2}．
+\end{eqnarray}</p>
+
+<p>Finally, the short rate process is introduced into the drift term $a_i$, which fluctuates with time. This drift term is chosen to be consistent with the discount bonds market quoted.
+\begin{eqnarray}
+P(0,i+1)=\int_{j=BottomNode[i]}^{TopNode[i]}Q_{i,j}e^{(-a_i+j\Delta r)\Delta t}．
+\end{eqnarray}</p>
+
+<p>Here, $Q_{i,j}$ is a security that pays $1$ when the node $(i,j)$ is reached, and pays nothing at other times.
+Therefore, the drift term $ a_i $ is given as follows.</p>
+
+<p>\begin{eqnarray}
+\ln P(0,i+1)=\ln \int_{j=BottomNode[i]}^{TopNode[i]}Q_{i,j}e^{j\Delta r\Delta t}-a_i\Delta t 
+\Leftrightarrow a_i\Delta t=\ln \int_{j=BottomNode[i]}^{TopNode[i]}Q_{i,j}e^{j\Delta r\Delta t}-\ln P(0,i+1) 
+\Leftrightarrow a_i=\frac{\ln \int_{j=BottomNode[i]}^{TopNode[i]}Q_{i,j}e^{j\Delta r\Delta t}-\ln P(0,i+1)}{\Delta t}．
+\end{eqnarray}</p>
+
+<h2 id="hull-and-white-tree-implementation">Hull and White Tree Implementation</h2>
+
+<p>It is given the simplified tree implementation mentioned above. The source code is written in matlab 2016b.</p>
+<ul>
+  <li>Full of below code is in <a href="https://github.com/kyo1988/Kyo.github.io/blob/gh-pages/scripts%20for%20article/BuildHWF1.m">my GitHub account</a></li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"> 
+<span class="nf">#container</span> <span class="p">{</span> <span class="nl">float</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span> <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="m">-240px</span> <span class="m">0</span> <span class="m">0</span><span class="p">;</span> <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span> <span class="p">}</span> 
+    <span class="nt">for</span> <span class="nt">i</span><span class="o">=</span><span class="err">1</span><span class="nd">:N-1</span> 
+        <span class="nt">deltaX</span><span class="o">(</span><span class="nt">i</span><span class="o">+</span><span class="err">1</span><span class="o">)=</span><span class="nt">sigma</span><span class="o">*</span><span class="nt">sqrt</span><span class="o">(</span><span class="err">3</span><span class="o">.*(</span><span class="nt">t</span><span class="o">(</span><span class="nt">i</span><span class="o">+</span><span class="err">1</span><span class="o">)</span><span class="nt">-t</span><span class="o">(</span><span class="nt">i</span><span class="o">)));</span>
+    <span class="nt">end</span>
+    <span class="nt">for</span> <span class="nt">i</span><span class="o">=</span><span class="err">1</span><span class="nd">:N-1</span> 
+        <span class="nt">for</span> <span class="nt">j</span><span class="o">=</span><span class="nt">m</span><span class="o">(</span><span class="nt">i</span><span class="o">)</span><span class="nd">:-1:-m</span><span class="o">(</span><span class="nt">i</span><span class="o">)</span> 
+            <span class="nt">M</span><span class="o">=</span><span class="nt">-j</span><span class="o">.*</span><span class="nt">deltaX</span><span class="o">(</span><span class="nt">i</span><span class="o">).*</span><span class="nt">a</span><span class="o">*(</span><span class="nt">t</span><span class="o">(</span><span class="nt">i</span><span class="o">+</span><span class="err">1</span><span class="o">)</span><span class="nt">-t</span><span class="o">(</span><span class="nt">i</span><span class="o">));</span>
+            <span class="nt">V</span><span class="o">=</span><span class="nt">sigma</span><span class="o">.^</span><span class="err">2</span><span class="o">.*(</span><span class="nt">t</span><span class="o">(</span><span class="nt">i</span><span class="o">+</span><span class="err">1</span><span class="o">)</span><span class="nt">-t</span><span class="o">(</span><span class="nt">i</span> <span class="o">));</span>
+            <span class="nt">k</span><span class="o">(</span><span class="nt">N</span><span class="o">+</span><span class="err">1</span><span class="nt">-j</span><span class="o">,</span> <span class="nt">i</span><span class="o">)=</span><span class="nt">round</span><span class="o">((</span><span class="nt">j</span><span class="o">.*</span><span class="nt">deltaX</span><span class="o">(</span><span class="nt">i</span><span class="o">)+</span><span class="nt">M</span><span class="o">)./</span><span class="nt">deltaX</span><span class="o">(</span><span class="nt">i</span><span class="o">+</span><span class="err">1</span><span class="o">));</span> 
+            <span class="nt">alpha</span><span class="o">=(</span><span class="nt">j</span><span class="o">.*</span><span class="nt">deltaX</span><span class="o">(</span><span class="nt">i</span><span class="o">)+</span><span class="nt">M-k</span><span class="o">(</span><span class="nt">N</span><span class="o">+</span><span class="err">1</span><span class="nt">-j</span><span class="o">,</span> <span class="nt">i</span><span class="o">).*</span><span class="nt">deltaX</span><span class="o">(</span><span class="nt">i</span><span class="o">+</span><span class="err">1</span><span class="o">))./</span><span class="nt">deltaX</span><span class="o">(</span><span class="nt">i</span><span class="o">+</span><span class="err">1</span><span class="o">);</span>
+            <span class="nt">pu</span><span class="o">(</span><span class="nt">N</span><span class="o">+</span><span class="err">1</span><span class="nt">-j</span><span class="o">,</span> <span class="nt">i</span><span class="o">)=</span><span class="nt">V</span><span class="o">./(</span><span class="err">2</span><span class="o">.*</span><span class="nt">deltaX</span><span class="o">(</span><span class="nt">i</span><span class="o">+</span><span class="err">1</span><span class="o">).^</span><span class="err">2</span><span class="o">)+(</span><span class="nt">alpha</span><span class="o">.^</span><span class="err">2</span><span class="o">+</span><span class="nt">alpha</span><span class="o">)./</span><span class="err">2</span><span class="o">;</span>
+            <span class="nt">pd</span><span class="o">(</span><span class="nt">N</span><span class="o">+</span><span class="err">1</span><span class="nt">-j</span><span class="o">,</span> <span class="nt">i</span><span class="o">)=</span><span class="nt">V</span><span class="o">./(</span><span class="err">2</span><span class="o">.*</span><span class="nt">deltaX</span><span class="o">(</span><span class="nt">i</span><span class="o">+</span><span class="err">1</span><span class="o">).^</span><span class="err">2</span><span class="o">)+(</span><span class="nt">alpha</span><span class="o">.^</span><span class="err">2</span><span class="nt">-alpha</span><span class="o">)./</span><span class="err">2</span><span class="o">;</span> 
+            <span class="nt">pm</span><span class="o">(</span><span class="nt">N</span><span class="o">+</span><span class="err">1</span><span class="nt">-j</span><span class="o">,</span> <span class="nt">i</span><span class="o">)=</span><span class="err">1</span><span class="nt">-V</span><span class="o">./(</span><span class="nt">deltaX</span><span class="o">(</span><span class="nt">i</span><span class="o">+</span><span class="err">1</span><span class="o">).^</span><span class="err">2</span><span class="o">)</span><span class="nt">-alpha</span><span class="o">.^</span><span class="err">2</span><span class="o">;</span>
+        <span class="nt">if</span> <span class="nt">j</span><span class="o">==</span><span class="nt">max</span><span class="o">(</span><span class="nt">m</span><span class="o">(</span><span class="nt">i</span><span class="o">))</span> 
+            <span class="nt">m</span><span class="o">(</span><span class="nt">i</span><span class="o">+</span><span class="err">1</span><span class="o">)=</span><span class="nt">k</span><span class="o">(</span><span class="nt">N</span><span class="o">+</span><span class="err">1</span><span class="nt">-j</span><span class="o">,</span><span class="nt">i</span><span class="o">)+</span><span class="err">1</span><span class="o">;</span> 
+        <span class="nt">end</span>
+        <span class="nt">end</span>
+    <span class="nt">end</span>
+    <span class="nt">for</span> <span class="nt">i</span><span class="o">=</span><span class="err">1</span><span class="nd">:N-1</span>
+        <span class="nt">for</span> <span class="nt">j</span><span class="o">=</span><span class="err">1</span><span class="nd">:m</span><span class="o">(</span><span class="nt">i</span><span class="o">)</span>
+            <span class="nt">x</span><span class="o">(</span><span class="nt">N</span><span class="o">+</span><span class="err">1</span><span class="o">+</span><span class="nt">j</span><span class="o">,</span> <span class="nt">i</span><span class="o">)=</span><span class="nt">x</span><span class="o">(</span><span class="nt">N</span><span class="o">+</span><span class="err">1</span><span class="o">+</span><span class="nt">j-1</span><span class="o">,</span> <span class="nt">i</span><span class="o">)</span><span class="nt">-deltaX</span><span class="o">(</span><span class="nt">i</span><span class="o">);</span> 
+            <span class="nt">x</span><span class="o">(</span><span class="nt">N</span><span class="o">+</span><span class="err">1</span><span class="nt">-j</span><span class="o">,</span> <span class="nt">i</span><span class="o">)=</span><span class="nt">x</span><span class="o">(</span><span class="nt">N</span><span class="o">+</span><span class="err">1</span><span class="nt">-j</span><span class="o">+</span><span class="err">1</span><span class="o">,</span> <span class="nt">i</span><span class="o">)+</span><span class="nt">deltaX</span><span class="o">(</span><span class="nt">i</span><span class="o">);</span> 
+        <span class="nt">end</span>
+    <span class="nt">end</span>  
+    <span class="nt">for</span> <span class="nt">i</span><span class="o">=</span><span class="err">1</span><span class="nd">:N-1</span> 
+        <span class="nt">if</span> <span class="nt">i</span><span class="o">==</span><span class="err">2</span>
+            <span class="nt">Q</span><span class="o">(</span><span class="nt">N</span><span class="o">+</span><span class="err">2</span><span class="o">,</span> <span class="nt">i</span><span class="o">)=</span><span class="nt">Q</span><span class="o">(</span><span class="nt">N</span><span class="o">+</span><span class="err">1</span><span class="o">,</span> <span class="nt">i-1</span><span class="o">).*</span><span class="nt">pu</span><span class="o">(</span><span class="nt">N</span><span class="o">+</span><span class="err">1</span><span class="o">,</span> <span class="nt">i-1</span><span class="o">).*</span><span class="nt">exp</span><span class="o">(</span><span class="nt">-r</span><span class="o">(</span><span class="nt">N</span><span class="o">+</span><span class="err">1</span><span class="o">,</span> <span class="nt">i-1</span><span class="o">).*(</span><span class="nt">t</span><span class="o">(</span><span class="nt">i</span><span class="o">)</span><span class="nt">-t</span><span class="o">(</span><span class="nt">i-1</span><span class="o">)));</span> 
+            <span class="nt">Q</span><span class="o">(</span><span class="nt">N</span><span class="o">+</span><span class="err">1</span><span class="o">,</span> <span class="nt">i</span><span class="o">)=</span><span class="nt">Q</span><span class="o">(</span><span class="nt">N</span><span class="o">+</span><span class="err">1</span><span class="o">,</span> <span class="nt">i-1</span><span class="o">).*</span><span class="nt">pm</span><span class="o">(</span><span class="nt">N</span><span class="o">+</span><span class="err">1</span><span class="o">,</span> <span class="nt">i-1</span><span class="o">).*</span><span class="nt">exp</span><span class="o">(</span><span class="nt">-r</span><span class="o">(</span><span class="nt">N</span><span class="o">+</span><span class="err">1</span><span class="o">,</span> <span class="nt">i-1</span><span class="o">).*(</span><span class="nt">t</span><span class="o">(</span><span class="nt">i</span><span class="o">)</span><span class="nt">-t</span><span class="o">(</span><span class="nt">i-1</span><span class="o">)));</span> 
+            <span class="nt">Q</span><span class="o">(</span><span class="nt">N</span><span class="o">,</span> <span class="nt">i</span><span class="o">)=</span><span class="nt">Q</span><span class="o">(</span><span class="nt">N</span><span class="o">+</span><span class="err">1</span><span class="o">,</span> <span class="nt">i-1</span><span class="o">).*</span><span class="nt">pd</span><span class="o">(</span><span class="nt">N</span><span class="o">+</span><span class="err">1</span><span class="o">,</span> <span class="nt">i-1</span><span class="o">).*</span><span class="nt">exp</span><span class="o">(</span><span class="nt">-r</span><span class="o">(</span><span class="nt">N</span><span class="o">+</span><span class="err">1</span><span class="o">,</span> <span class="nt">i-1</span><span class="o">).*(</span><span class="nt">t</span><span class="o">(</span><span class="nt">i</span><span class="o">)</span><span class="nt">-t</span><span class="o">(</span><span class="nt">i-1</span><span class="o">)));</span> 
+        <span class="nt">elseif</span> <span class="nt">i</span><span class="o">&gt;=</span><span class="err">3</span>
+            <span class="nt">for</span> <span class="nt">j</span><span class="o">=</span><span class="nt">m</span><span class="o">(</span><span class="nt">i</span><span class="o">)</span><span class="nd">:-1:-m</span><span class="o">(</span> <span class="nt">i</span> <span class="o">)</span> 
+                <span class="nt">for</span> <span class="nt">jj</span><span class="o">=</span><span class="nt">m</span><span class="o">(</span><span class="nt">i-1</span><span class="o">)</span><span class="nd">:-1:-m</span><span class="o">(</span><span class="nt">i-1</span><span class="o">)</span> 
+                    <span class="nt">Q</span><span class="o">(</span><span class="nt">N</span><span class="o">+</span><span class="err">1</span><span class="o">+</span><span class="nt">j</span><span class="o">,</span> <span class="nt">i</span><span class="o">)=</span><span class="nt">Q</span><span class="o">(</span><span class="nt">N</span><span class="o">+</span><span class="err">1</span><span class="o">+</span><span class="nt">j</span><span class="o">,</span> <span class="nt">i</span><span class="o">)...</span>
+                    <span class="o">+</span><span class="nt">Q</span><span class="o">(</span><span class="nt">N</span><span class="o">+</span><span class="err">1</span><span class="o">+</span><span class="nt">jj</span><span class="o">,</span> <span class="nt">i-1</span><span class="o">).*</span><span class="nt">pu</span><span class="o">(</span><span class="nt">N</span><span class="o">+</span><span class="err">1</span><span class="o">+</span><span class="nt">jj</span><span class="o">,</span> <span class="nt">i-1</span><span class="o">).*</span><span class="nt">exp</span><span class="o">(</span><span class="nt">-r</span><span class="o">(</span><span class="nt">N</span><span class="o">+</span><span class="err">1</span><span class="o">+</span><span class="nt">jj</span><span class="o">,</span> <span class="nt">i-1</span><span class="o">).*(</span><span class="nt">t</span><span class="o">(</span><span class="nt">i</span><span class="o">)</span><span class="nt">-t</span><span class="o">(</span><span class="nt">i-1</span><span class="o">))).*(</span><span class="nt">k</span><span class="o">(</span><span class="nt">N</span><span class="o">+</span><span class="err">1</span><span class="o">+</span><span class="nt">jj</span><span class="o">,</span><span class="nt">i-1</span><span class="o">)+</span><span class="err">1</span><span class="o">==</span><span class="nt">j</span><span class="o">)...</span>
+                    <span class="o">+</span><span class="nt">Q</span><span class="o">(</span><span class="nt">N</span><span class="o">+</span><span class="err">1</span><span class="o">+</span><span class="nt">jj</span><span class="o">,</span> <span class="nt">i-1</span><span class="o">).*</span><span class="nt">pm</span><span class="o">(</span><span class="nt">N</span><span class="o">+</span><span class="err">1</span><span class="o">+</span><span class="nt">jj</span><span class="o">,</span> <span class="nt">i-1</span><span class="o">).*</span><span class="nt">exp</span><span class="o">(</span><span class="nt">-r</span><span class="o">(</span><span class="nt">N</span><span class="o">+</span><span class="err">1</span><span class="o">+</span><span class="nt">jj</span><span class="o">,</span> <span class="nt">i-1</span><span class="o">).*(</span><span class="nt">t</span><span class="o">(</span><span class="nt">i</span><span class="o">)</span><span class="nt">-t</span><span class="o">(</span><span class="nt">i-1</span><span class="o">))).*(</span><span class="nt">k</span><span class="o">(</span><span class="nt">N</span><span class="o">+</span><span class="err">1</span><span class="o">+</span><span class="nt">jj</span><span class="o">,</span><span class="nt">i-1</span><span class="o">)==</span><span class="nt">j</span><span class="o">)...</span>
+                    <span class="o">+</span><span class="nt">Q</span><span class="o">(</span><span class="nt">N</span><span class="o">+</span><span class="err">1</span><span class="o">+</span><span class="nt">jj</span><span class="o">,</span> <span class="nt">i-1</span><span class="o">).*</span><span class="nt">pd</span><span class="o">(</span><span class="nt">N</span><span class="o">+</span><span class="err">1</span><span class="o">+</span><span class="nt">jj</span><span class="o">,</span> <span class="nt">i-1</span><span class="o">).*</span><span class="nt">exp</span><span class="o">(</span><span class="nt">-r</span><span class="o">(</span><span class="nt">N</span><span class="o">+</span><span class="err">1</span><span class="o">+</span><span class="nt">jj</span><span class="o">,</span> <span class="nt">i-1</span><span class="o">).*(</span><span class="nt">t</span><span class="o">(</span><span class="nt">i</span><span class="o">)</span><span class="nt">-t</span><span class="o">(</span><span class="nt">i-1</span><span class="o">))).*(</span><span class="nt">k</span><span class="o">(</span><span class="nt">N</span><span class="o">+</span><span class="err">1</span><span class="o">+</span><span class="nt">jj</span><span class="o">,</span><span class="nt">i-1</span><span class="o">)</span><span class="nt">-1</span><span class="o">==</span><span class="nt">j</span><span class="o">);</span>
+                <span class="nt">end</span> 
+            <span class="nt">end</span> 
+        <span class="nt">end</span>
+    <span class="nt">if</span> <span class="nt">i</span><span class="o">==</span><span class="err">1</span>
+        <span class="nt">g</span><span class="o">(</span><span class="nt">i</span><span class="o">)=</span><span class="nt">-log</span><span class="o">(</span><span class="nt">P</span><span class="o">(</span><span class="nt">i</span><span class="o">+</span><span class="err">1</span><span class="o">))./(</span><span class="nt">t</span><span class="o">(</span><span class="nt">i</span><span class="o">+</span><span class="err">1</span><span class="o">)</span><span class="nt">-t</span><span class="o">(</span><span class="nt">i</span><span class="o">));</span> 
+    <span class="nt">elseif</span> <span class="nt">i</span><span class="o">&gt;=</span><span class="err">2</span> 
+        <span class="nt">sum</span><span class="o">=</span><span class="err">0</span><span class="o">;</span> 
+        <span class="nt">for</span> <span class="nt">j</span><span class="o">=</span><span class="nt">m</span><span class="o">(</span><span class="nt">i</span><span class="o">)</span> <span class="nd">:-1</span> <span class="nd">:-m</span><span class="o">(</span><span class="nt">i</span><span class="o">)</span> 
+            <span class="nt">sum</span><span class="o">=</span><span class="nt">sum</span><span class="o">+</span><span class="nt">Q</span><span class="o">(</span><span class="nt">N</span><span class="o">+</span><span class="err">1</span><span class="o">+</span><span class="nt">j</span><span class="o">,</span> <span class="nt">i</span><span class="o">).*</span><span class="nt">exp</span><span class="o">(</span><span class="nt">-x</span><span class="o">(</span><span class="nt">N</span><span class="o">+</span><span class="err">1</span><span class="o">+</span><span class="nt">j</span><span class="o">,</span> <span class="nt">i</span><span class="o">).*(</span><span class="nt">t</span><span class="o">(</span><span class="nt">i</span><span class="o">+</span><span class="err">1</span><span class="o">)</span><span class="nt">-t</span><span class="o">(</span><span class="nt">i</span><span class="o">)));</span> 
+        <span class="nt">end</span> 
+            <span class="nt">g</span><span class="o">(</span><span class="nt">i</span><span class="o">)=(</span><span class="nt">log</span><span class="o">(</span><span class="nt">sum</span><span class="o">)</span><span class="nt">-log</span><span class="o">(</span><span class="nt">P</span><span class="o">(</span><span class="nt">i</span><span class="o">+</span><span class="err">1</span><span class="o">)))./(</span><span class="nt">t</span><span class="o">(</span><span class="nt">i</span><span class="o">+</span><span class="err">1</span><span class="o">)</span><span class="nt">-t</span><span class="o">(</span><span class="nt">i</span><span class="o">));</span> 
+    <span class="nt">end</span>
+        <span class="nt">for</span> <span class="nt">j</span><span class="o">=</span><span class="nt">m</span><span class="o">(</span><span class="nt">i</span><span class="o">)</span><span class="nd">:-1:-m</span><span class="o">(</span><span class="nt">i</span><span class="o">)</span>
+            <span class="nt">r</span><span class="o">(</span><span class="nt">N</span><span class="o">+</span><span class="err">1</span><span class="nt">-j</span><span class="o">,</span> <span class="nt">i</span><span class="o">)=</span><span class="nt">x</span><span class="o">(</span><span class="nt">N</span><span class="o">+</span><span class="err">1</span><span class="nt">-j</span><span class="o">,</span> <span class="nt">i</span><span class="o">)+</span><span class="nt">g</span><span class="o">(</span><span class="nt">i</span><span class="o">);</span> 
+            <span class="nt">d</span><span class="o">(</span><span class="nt">N</span><span class="o">+</span><span class="err">1</span><span class="nt">-j</span><span class="o">,</span> <span class="nt">i</span><span class="o">)=</span><span class="nt">exp</span><span class="o">(</span><span class="nt">-r</span><span class="o">(</span><span class="nt">N</span><span class="o">+</span><span class="err">1</span><span class="nt">-j</span><span class="o">,</span> <span class="nt">i</span><span class="o">).*(</span><span class="nt">t</span><span class="o">(</span><span class="nt">i</span><span class="o">+</span><span class="err">1</span><span class="o">)</span><span class="nt">-t</span><span class="o">(</span><span class="nt">i</span><span class="o">)));</span> 
+        <span class="nt">end</span> 
+    <span class="nt">end</span></code></pre></figure>
+
+<h2 id="reference">Reference</h2>
+<ul>
+  <li>Hull, J. and A. White, 1994. “Numerical procedures for implementing term structure models I:Single-Factor Models,’’ Journal of Derivatives, 2, 1 (Fall 1994a) 7−16</li>
+  <li>Strickland, C. and Clewlow, L., 1998. Implementing Derivatives Models</li>
+  <li>Shreve, S., 2004. Stochastic Calculus for Finance II: Continuous-Time Models</li>
+</ul>
 
     </article> <hr />
 
@@ -572,254 +815,343 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <header class="post-header">
       <h1 itemprop="name" class="post-title">
-        <a itemprop="url" class="post-link" href="/Kyo.github.io/2025/01/19/coreml-optimization-playbook.html">CoreML最適化プレイブック（受託）</a>
+        <a itemprop="url" class="post-link" href="/Kyo.github.io/business/finance/2021/06/03/derivation-of-black-scholes-pde-and-its-analytical-solution-by-arbitrage-pricing-theory.html">Derivation of Black-Scholes PDE and its analytical solution by arbitrage pricing theory</a>
       </h1>
-      <meta itemprop="keywords" content="CoreML,On-device,Case-Study,iOS,Machine-Learning" />
+      <meta itemprop="keywords" content="Business Finance" />
       <p class="post-meta">
       Posted in
+      
+      <a href="/Kyo.github.io/categories/#Business">Business</a>, 
+      
+      <a href="/Kyo.github.io/categories/#Finance">Finance</a>
       
       
       and tagged
       
-      <a href="/Kyo.github.io/tags/#CoreML" title="CoreML">CoreML</a>, 
-      
-      <a href="/Kyo.github.io/tags/#On-device" title="On-device">On-device</a>, 
-      
-      <a href="/Kyo.github.io/tags/#Case-Study" title="Case-Study">Case-Study</a>, 
-      
-      <a href="/Kyo.github.io/tags/#iOS" title="iOS">iOS</a>, 
-      
-      <a href="/Kyo.github.io/tags/#Machine-Learning" title="Machine-Learning">Machine-Learning</a>
+      <a href="/Kyo.github.io/tags/#Business Finance" title="Business Finance">Business Finance</a>
       
       
-      <time itemprop="datePublished" datetime="2025-01-19">
-      on Jan 19, 2025
+      <time itemprop="datePublished" datetime="2021-06-03">
+      on Jun 3, 2021
       </time>
       </p>
     </header>
 
     <article class="post-content" itemprop="articleBody">
-      <div class="tldr">
-  <strong>TL;DR</strong>
-  <p>オンデバイスで品質を落とさず軽量化する設計判断の要点を3分で。量子化→蒸留→アーキ設計の順序で最適化。</p>
-</div>
-
-<h2 id="設計判断のフレームワーク">設計判断のフレームワーク</h2>
-
-<h3 id="1-量子化quantization">1. 量子化（Quantization）</h3>
-<ul>
-  <li><strong>INT8量子化</strong>: 精度損失5%以内でモデルサイズ75%削減</li>
-  <li><strong>動的量子化</strong>: 推論時のみ量子化、学習時はFP32維持</li>
-  <li><strong>静的量子化</strong>: 事前キャリブレーション、より高い圧縮率</li>
+      <ul id="markdown-toc">
+  <li><a href="#derivation-of-black-scholes-pde-and-its-analytical-solution-by-arbitrage-pricing-theory" id="markdown-toc-derivation-of-black-scholes-pde-and-its-analytical-solution-by-arbitrage-pricing-theory">Derivation of Black-Scholes PDE and its analytical solution by arbitrage pricing theory</a>    <ul>
+      <li><a href="#necessary-and-sufficient-condition-to-duplicate-the-portfolio-which-does-fully-hedge-the-option-sell-position" id="markdown-toc-necessary-and-sufficient-condition-to-duplicate-the-portfolio-which-does-fully-hedge-the-option-sell-position">Necessary and sufficient condition to duplicate the portfolio, which does fully hedge the option sell position</a></li>
+      <li><a href="#reference" id="markdown-toc-reference">Reference</a></li>
+    </ul>
+  </li>
 </ul>
 
-<h3 id="2-蒸留knowledge-distillation">2. 蒸留（Knowledge Distillation）</h3>
-<ul>
-  <li><strong>Teacher-Student</strong>: 大規模モデル→軽量モデルへの知識転移</li>
-  <li><strong>温度パラメータ</strong>: T=3-5でソフトラベル生成</li>
-  <li><strong>損失関数</strong>: ハードラベル + ソフトラベル + 特徴マップ</li>
-</ul>
+<h1 id="derivation-of-black-scholes-pde-and-its-analytical-solution-by-arbitrage-pricing-theory">Derivation of Black-Scholes PDE and its analytical solution by arbitrage pricing theory</h1>
 
-<h3 id="3-アーキテクチャ設計">3. アーキテクチャ設計</h3>
-<ul>
-  <li><strong>MobileNet</strong>: 深度分離畳み込みで計算量削減</li>
-  <li><strong>EfficientNet</strong>: 複合スケーリングで効率最大化</li>
-  <li><strong>SqueezeNet</strong>: Fire Moduleでパラメータ数削減</li>
-</ul>
+<p>In general, when the underlying asset price is given by a stochastic differential equation, the price of the derivative product is given by a partial differential equation. In this paper, it will be derived from the Black-Scholes PDE corresponding to the derivative (here, option) price valuation of the underlying asset (here, stock) modeled as the geometric Brownian motion. The valuation of an option is given by determining the initial funding needed to fully hedge the selling position of the option. Since the determined initial fund is the amount required to build a duplicate portfolio, it is called the no arbitrage price at time zero of the option. The price valuation method that duplicates options in stock market and money market account transactions is called arbitrage pricing theory (APT).</p>
 
-<h2 id="評価指標">評価指標</h2>
-
-<div class="key-takeaways">
-  <strong>Key Takeaways</strong>
-  <ul>
-    
-    
-      <li>精度: Top-1/Top-5 Accuracy</li>
-    
-      <li>推論速度: FPS (Frames Per Second)</li>
-    
-      <li>モデルサイズ: MB単位</li>
-    
-      <li>メモリ使用量: RAM/VRAM</li>
-    
-      <li>バッテリー消費: mAh/推論</li>
-    
-  </ul>
-</div>
-
-<h2 id="落とし穴と対策">落とし穴と対策</h2>
-
-<h3 id="よくある失敗パターン">よくある失敗パターン</h3>
-<ol>
-  <li><strong>過度な量子化</strong>: 精度大幅低下</li>
-  <li><strong>不適切な蒸留</strong>: 温度設定ミス</li>
-  <li><strong>アーキ選択ミス</strong>: タスクとモデルの不適合</li>
-</ol>
-
-<h3 id="対策">対策</h3>
-<ul>
-  <li><strong>段階的最適化</strong>: 1つずつ適用して効果測定</li>
-  <li><strong>A/Bテスト</strong>: 複数手法の並行比較</li>
-  <li><strong>実機検証</strong>: シミュレータではなく実デバイスでテスト</li>
-</ul>
-
-<h2 id="成果物セット">成果物セット</h2>
-
-<section class="qa">
-  <h2>Q&amp;A</h2>
-  
-  <dl>
-  
-    
-    
-    
-    
-      <dt>どの手法をどう選ぶ？</dt>
-      <dd>精度要求と制約から逆算して選択。精度優先→蒸留、サイズ優先→量子化</dd>
-    
-  
-    
-    
-    
-    
-      <dt>評価指標は？</dt>
-      <dd>精度・速度・サイズ・メモリ・バッテリーの5軸で総合評価</dd>
-    
-  
-    
-    
-    
-    
-      <dt>納品物とスケジュールは？</dt>
-      <dd>最適化モデル・実装ガイド・性能レポート（2-6週間）</dd>
-    
-  
-  </dl>
-</section>
-
-<h2 id="実装例">実装例</h2>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// CoreML最適化の実装例</span>
-<span class="kd">import</span> <span class="kt">CoreML</span>
-
-<span class="kd">class</span> <span class="kt">OptimizedModelManager</span> <span class="p">{</span>
-    <span class="kd">func</span> <span class="nf">loadOptimizedModel</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">MLModel</span><span class="p">?</span> <span class="p">{</span>
-        <span class="k">guard</span> <span class="k">let</span> <span class="nv">modelURL</span> <span class="o">=</span> <span class="kt">Bundle</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="nf">url</span><span class="p">(</span><span class="nv">forResource</span><span class="p">:</span> <span class="s">"optimized_model"</span><span class="p">,</span> <span class="nv">withExtension</span><span class="p">:</span> <span class="s">"mlmodelc"</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="k">return</span> <span class="kc">nil</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="k">try</span><span class="p">?</span> <span class="kt">MLModel</span><span class="p">(</span><span class="nv">contentsOf</span><span class="p">:</span> <span class="n">modelURL</span><span class="p">)</span>
-    <span class="p">}</span>
-    
-    <span class="kd">func</span> <span class="nf">predict</span><span class="p">(</span><span class="nv">input</span><span class="p">:</span> <span class="kt">MLFeatureProvider</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">MLFeatureValue</span><span class="p">?</span> <span class="p">{</span>
-        <span class="k">guard</span> <span class="k">let</span> <span class="nv">model</span> <span class="o">=</span> <span class="nf">loadOptimizedModel</span><span class="p">()</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="kc">nil</span> <span class="p">}</span>
-        <span class="k">return</span> <span class="k">try</span><span class="p">?</span> <span class="n">model</span><span class="o">.</span><span class="nf">prediction</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="n">input</span><span class="p">)</span><span class="o">.</span><span class="nf">featureValue</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="s">"output"</span><span class="p">)</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="参考資料">参考資料</h2>
+<p>Suppose it is given a portfolio valued at $X(t)$ at any time $t$. Here, the composition of the given portfolio is as follows.</p>
 
 <ul>
-  <li><a href="https://developer.apple.com/documentation/coreml">CoreML Documentation</a></li>
-  <li><a href="https://developer.apple.com/machine-learning/models/">Model Optimization Guide</a></li>
-  <li><a href="https://developer.apple.com/videos/">WWDC Sessions</a></li>
+  <li>money-market account with interest rate $r$</li>
+  <li>A stock modeled by the geometric Brownian motion expressed by the following equation</li>
 </ul>
 
-<div class="cta">
-  <h3>相談・見積りのご依頼</h3>
-  <p>小さく速く、成果物ベースでご一緒します。</p>
-  <p>
-    <a class="btn" href="/work-with-me/">Work with me</a>
-    <a class="btn ghost" href="/newsletter/">無料ニュースレター</a>
-  </p>
-</div>
+<p>\begin{eqnarray}\label{stockPrice}
+dS(t)=\alpha S(t)dt+\sigma S(t)dW(t)．
+\end{eqnarray}</p>
 
-<div class="related">
-  <h3>次に読む</h3>
-  <ul>
-  
-    
-      
-      
-      
-        <li><a href="/Kyo.github.io/2025/01/19/rag-audit-checklist.html">RAGミニ監査チェックリスト（無料DL）</a></li>
-        
-      
-    
-  
-    
-      
-      
-      
-    
-  
-    
-      
-      
-      
-    
-  
-    
-      
-      
-      
-        <li><a href="/Kyo.github.io/2025/01/19/edinet-db-howto.html">EDINET XBRLで作る投資家級データベース</a></li>
-        
-      
-    
-  
-    
-  
-    
-      
-      
-      
-        <li><a href="/Kyo.github.io/2025/01/19/coreml-optimization-playbook-en.html">CoreML Optimization Playbook (Consulting)</a></li>
-        
-      
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-  </ul>
-</div>
+<p>Here, it is assumed that the investor who holds the given portfolio holds the stock in the unit of $\Delta(t)$ at any time $t$. At this time, it is assumed that the number of shares held $\Delta(t)$ is an ‘adapted stochastic process’. The remainder of the portfolio excluding the investment in stocks, $X(t)-\Delta(t)S(t)$, is invested in the money market account.
+Here, the small change $dX(t)$ of the portfolio value $X(t)$ at any time $t$ results in the following two factors.</p>
 
+<ul>
+  <li>Profit from holding shares $\Delta(t)dS(t)$</li>
+  <li>Profit from holding cash $r(X(t)-\Delta(t)S(t))dt$</li>
+</ul>
+
+<p>That is, the small change in portfolio value $dX(t)$ is given by the following equation.</p>
+
+<p>\begin{eqnarray}\label{portDiff}
+dX(t)=\Delta(t)dS(t)+r(X(t)-\Delta(t)S(t))dt．
+\end{eqnarray}</p>
+
+<p>The equation \eqref{portDiff} is expanded as follows from the stochastic differential equation \eqref{stockPrice} of a given stock price.
+\begin{eqnarray}\label{portDiff2}
+dX(t)=\Delta(t)dS(t)+r(X(t)-\Delta(t)S(t))dt　
+=\Delta(t)( \alpha S(t)dt+\sigma S(t)dW(t) )+r(X(t)-\Delta(t)S(t))dt
+=rX(t)dt+\Delta(t)( \alpha -r )S(t)dt+\Delta(t)\sigma S(t)dW(t)．
+\end{eqnarray}</p>
+
+<p>Here, the three terms appearing in the small change $dX(t) in portfolio value $\eqref{portDiff2} expanded by the given stock price of the stochastic differential equation \eqref{stockPrice} can be interpreted as follows.</p>
+
+<ul>
+  <li>$rX(t)dt$: A term that reflects the profit from the expected rate of return of the portfolio $r$</li>
+  <li>$\Delta(t)( \alpha -r )S(t)dt$: A term that reflects the risk premium on equity investments $\alpha-r$</li>
+  <li>$\Delta(t)\sigma S(t)dW(t)$: Volatility term proportional to the size of equity investment</li>
+</ul>
+
+<p>Then, consider the discounted stock price $\mathrm{e}^{-rt} S(t)$ and the discounted portfolio value $\mathrm{e}^{-rt}X(t)$. In order to analyze these price processes, it should be noted that they are different from ordinary analysis due to the nature of the geometric Brownian motion that appeared as a model of stock prices. This property means that Brownian motion has a non-zero quadratic variation, which, as it will be seen later, is the source of the volatility term of the Black-Scholes PDE.
+In other words, to differentiate an expression expressed in the form of $f(W(t))$ with $f(x)$ as a differentiable function and $W(t)$ as the Brown motion. If Brown motion $W(t)$ is differentiable, the following equation holds from ordinary analysis by the chain rule of the composite function.</p>
+
+<p>\begin{eqnarray}
+\frac{d}{dt}f(W(t))=f’(W(t))W’(t) \Leftrightarrow df(W(t))=f’(W(t))W’(t)dt=f’(W(t))dW(t)．
+\end{eqnarray}</p>
+
+<p>However, since Brownian motion accumulates a quadratic variation of 1 per unit time $(dWdW = dt)$, the derivative of $f(W(t))$ has a correction term shown in the following equation.</p>
+
+<p>\begin{eqnarray}\label{ItoFormDiff}
+df(W(t))=f’(W(t))dW(t)+\frac{1}{2}f’‘(W(t))dt．
+\end{eqnarray}</p>
+
+<p>The formula \eqref{ItoFormDiff} is called Ito’s formula in differential form. The equation \eqref{ItoFormDiff} is an equation obtained by differentiating Ito’s formula \eqref{ItoForm} for the Brownian motion shown below.</p>
+
+<ul>
+  <li>Ito’s formula for Brownian motion</li>
+</ul>
+
+<p>Partial differentiation of $f(t, x)$, $f_ {t}(t, x)$, $f_{x}(t, x)$, $f_ {xx}(t, x)$ is defined and continuous. Let $W(t)$ be the Brownian motion. At this time, the following equation holds for all $T \geq0$.</p>
+
+<p>\begin{eqnarray}\label{ItoForm}
+f(T，W(T))=f(0，W(0))+\int_{0}^{T}f_{t}(t，W(t))dt+\int_{0}^{T}f_{x}(t，W(t))dW(t)+\frac{1}{2}\int_{0}^{T}f_{xx}(t，W(t))dt．
+\end{eqnarray}</p>
+
+<p>Where the third term of the expression \eqref{ItoForm} $\int_{0}^{T}f_{x}(t, W(t)) dW(t)$ is called Ito integral, and the second and fourth terms are Lebesgue integrals for variables of time. Ito’s formula can be extended to general stochastic processes including the Brown process, excluding jump process. This stochastic process is called the Ito process $dX(t)=a(t)dW(t)+b(t)dt$, which accumulate the quadratic variation of $a^{2}(t)$ per unit time. It is assumed that $a(t)$ and $b(t)$ are adapted stochastic processes.</p>
+
+<ul>
+  <li>Ito’s formula for the Ito process</li>
+</ul>
+
+<p>Let $X(t)$ be the Ito process, and $f(t, x)$ be the partial derivative $f_{t}(t, x)$, $f_{x}(t, x)$, $f_{xx}(t, x)$ be a defined and continuous function, and let $W(t)$ be Brownian motion. At this time, the following equation holds for all $T \geq 0$.</p>
+
+<p>\begin{eqnarray}\label{ItoFormII}
+f(T，X(T))=f(0，X(0))+\int_{0}^{T}f_{t}(t，X(t))dt+\int_{0}^{T}f_{x}(t，X(t))dX(t)+\frac{1}{2}\int_{0}^{T}f_{xx}(t，X(t))a^{2}(t)dt．
+\end{eqnarray}</p>
+
+<p>Therefore, the derivative of the discounted stock price $\mathrm{e}^{-rt} S(t)$ is $f(t, x) = \mathrm{e}^{-rt} x$ which is gotten to apply Ito’s formula \eqref{ItoForm}. In the following, it is used that $f_{t} (t, x )=-r \mathrm{e}^{-rt} x$, $ f_{x}  (t, x )=\, mathrm{e}^{-rt}$, $f_{xx} (t, x )=0 $.</p>
+
+<p>\begin{eqnarray}\label{DiscountStockPrice}
+d( \mathrm{e}^{-rt}S(t) )=df(t，S(t)) =f_{t}(t，S(t))dt+f_{x}(t，S(t))dS(t)+f_{xx}(t，S(t))dt=-r\mathrm{e}^{-rt}S(t)dt+\mathrm{e}^{-rt}dS(t) =-r\mathrm{e}^{-rt}S(t)dt+\mathrm{e}^{-rt}( \alpha S(t)dt+\sigma S(t)dW(t))=(\alpha-r)\mathrm{e}^{-rt}S(t)dt+\sigma\mathrm{e}^{-rt}S(t)dW(t)
+\end{eqnarray}</p>
+
+<p>Similarly, the derivative of the discounted portfolio value $\mathrm{e}^{-rt} X(t)$ is given by</p>
+
+<p>\begin{eqnarray}\label{DiscountPort}
+d( \mathrm{e}^{-rt}X(t) )=df(t，X(t))=f_{t}(t，X(t))dt+f_{x}(t，X(t))dX(t)+\frac{1}{2}f_{xx}(t，X(t))dt=-r\mathrm{e}^{-rt}X(t)dt+\mathrm{e}^{-rt}dX(t) =-r\mathrm{e}^{-rt}X(t)dt+\mathrm{e}^{-rt}( \Delta(t)dS(t)+r(X(t)-\Delta(t)S(t))dt)=\Delta(t)(\alpha-r)\mathrm{e}^{-rt}S(t)dt+\Delta(t)\sigma\mathrm{e}^{-rt}S(t)dW(t)=\Delta(t)d(\mathrm{e}^{-rt}S(t))．
+\end{eqnarray}</p>
+
+<p>In this way, the formula \eqref{DiscountPort} is obtained by the discounted stock price $S(t)$ and the portfolio value $X(t)$ at the discount rate $\mathrm{e}^{-rt}$ with the interest rate $r$ of the money market account. The formula \eqref{DiscountPort} indicates that small change in the discount portfolio value $d(\mathrm{e}^{-rt}X(t))$ depends only on a small change in the discounted stock price $d(\mathrm{e}^{-rt}S(t))$.</p>
+
+<p>Consider a European call option where the payment on the maturity date $T$ is $(S(T)-K )^{+}$. Here, the strike price $K$ is assumed to be a non-negative constant.
+Fischer Black, Myron Scholes and Robert Cox Merton argued that the value of European call option on maturity $T$ with payment $(S(T) -K )^{+}$ at any time $t$ depends on the length of time to maturity, the value of the stock price $S(t)$ at time $t$, the model parameters $r, \sigma$ and the strike price $K$.</p>
+
+<p>Since the model parameters $r, \sigma$ and the strike price $K$ are assumed to be constants, among the variables that affect the price evaluation of the European call option, only the time $t$ and the stock price $S(t)$ are  changed.</p>
+
+<p>Here, according to the inference of Fischer Black et al, let the value of the European call option be $c(t, x)$ when the stock price is $S(t) = x$ at time $t$. Since the stock price $S(t)$ follows the stochastic differential equation \eqref{stockPrice}, the value of the European call option is also stochastic.</p>
+
+<p>Therefore, the value of the European call option is the stochastic process $c(t, S(t))$ obtained by replacing the stochastic process $S(t)$ with the parameter $x$. At the initial time, the future stock price $S(t)$ is unknown because it is probabilistic, then the value $c(t, S(t))$ of the future European call option is also unknown. Therefore, if the function $c(t, x)$ is determined, the value of the future European call option $c(t, S(t))$ is expressed by the future stock price $S(t)$.</p>
+
+<p>To duplicate a portfolio which does full hedge the option sell position, it is required to fit the value of the duplicate portfolio $X(t)$ at any time $t\in[0, T]$ in the value of future European call options $c(t, S(t))$ starting with a certain initial fund of $X(0)$ and investing in the stock market and money market accounts.</p>
+
+<p>The necessary and sufficient conditions for constructing this replication portfolio are $\ mathrm{e}^{-rt}X(t)=\mathrm{e}^{-rt} c(t, S (t))$ for any time $t \in[0, T]$. To show that the necessary and sufficient conditions are met,</p>
+
+<p>\begin{eqnarray}\label{IsCopyPort}
+d(\mathrm{e}^{-rt}X(t))=d(\mathrm{e}^{-rt}c(t，S(t)))，t\in[0，T)
+\end{eqnarray}</p>
+
+<p>And show that $X(0) = c(0, S(0))$ holds. In fact, the following equation is obtained by integrating the equation \eqref{IsCopyPort} from 0 to $t$.</p>
+
+<p>\begin{eqnarray}
+\mathrm{e}^{-rt}X(t)-X(0)=\mathrm{e}^{-rt}c(t，S(t))-c(0，S(0))，t\in[0，T)
+\end{eqnarray}</p>
+
+<p>At this time, if $X(0)=c(0,S(0))$, then it is obtained the necessary and sufficient conditional expression $\mathrm{e}^{-rt}X(t)=\mathrm{e}^{-rt}c(t,S(t))$.</p>
+
+<h2 id="necessary-and-sufficient-condition-to-duplicate-the-portfolio-which-does-fully-hedge-the-option-sell-position">Necessary and sufficient condition to duplicate the portfolio, which does fully hedge the option sell position</h2>
+
+<p>To expand the right-hand side \eqref{IsCopyPort}, it is required to calculate the derivative of discount option price $\mathrm{e}^{-rt} c(t, S (t, S) t))$. To do this, it is needed to calculate the derivative of the option price $c(t, S(t))$. From Ito’s formula for the Ito process \eqref{ItoFormII} and the given stock price stochastic differential equation \eqref{stockPrice}</p>
+
+<p>\begin{eqnarray}
+dc(t，S(t))=c_{t}(t，S(t))dt+c_{x}(t，S(t))dS(t)+\frac{1}{2}c_{xx}(t，S(t))(\sigma S(t))^{2}dt=c_{t}(t，S(t))dt+c_{x}(t，S(t))( \alpha S(t)dt+\sigma S(t)dW(t) )+\frac{1}{2}c_{xx}(t，S(t))(\sigma S(t))^{2}dt=( c_{t}(t，S(t))dt+\alpha c_{x}(t，S(t))+\frac{1}{2}\sigma^{2} S^{2}(t)c_{xx}(t，S(t)))dt+\sigma S(t)c_{x}(t，S(t))dW(t)．
+\end{eqnarray}</p>
+
+<p>It is calculated the derivative of discount option price $\mathrm{e}^{-rt} c (t)$ by Ito’s formula \eqref{ItoFormII} for the Ito process as $f(t, x)=\mathrm{e}^{-rt}x,S(t))$. In the following, it is used that $f_{t}(t,x)=-r\mathrm{e}^{-rt}x$, $f_{x}(t,x)=\mathrm{e}^{-rt}$, $f_{xx}(t,x)=0$.</p>
+
+<p>\begin{eqnarray}\label{expandCallDis}
+d(\mathrm{e}^{-rt}c(t，S(t)))=df(t，c(t，S(t)))=f_{t}(t，c(t，S(t)))dt+f_{x}(t，c(t，S(t)))dc(t，S(t))+\frac{1}{2}f_{xx}(t，c(t，S(t)) (\sigma S(t)c_{x}(t，S(t)))^{2}dt=-r\mathrm{e}^{-rt}c(t，S(t))+\mathrm{e}^{-rt} dc(t，S(t))=\mathrm{e}^{-rt}(-rc(t，S(t))+c_{t}(t，S(t))+\alpha c_{x}(t，S(t))+\frac{1}{2}\sigma^{2} S^{2}(t)c_{xx}(t，S(t)))dt+\mathrm{e}^{-rt}\sigma S(t)c_{x}(t，S(t))dW(t)．
+\end{eqnarray}</p>
+
+<p>It is given the following equation to expand the right-hand side of \eqref{IsCopyPort} with the formula \eqref{expandCallDis} and the left-hand side with the formula \eqref{DiscountPort}.</p>
+
+<p>\begin{eqnarray}\label{expandCopyPort}
+\Delta(t)(\alpha-r)S(t)dt+\Delta(t)\sigma S(t)dW(t)=( -rc(t，S(t))+c_{t}(t，S(t))+\alpha c_{x}(t，S(t))+\frac{1}{2}\sigma^{2} S^{2}(t)c_{xx}(t，S(t)))dt+\sigma S(t)c_{x}(t，S(t))dW(t)．
+\end{eqnarray}</p>
+
+<p>If the expansion formula \eqref{expandCopyPort}, which is a necessary and sufficient condition for replicating a portfolio that completely hedges an option’s sell position, holds, the coefficients on both sides must be matched. Therefore, since the coefficients on both sides of $dW(t)$ are equal, the following equation is obtained.</p>
+
+<p>\begin{eqnarray}\label{deltaHedging}
+\Delta(t)=c_{x}(t，S(t))，t\in[0，T)
+\end{eqnarray}</p>
+
+<p>The number of shares held to fully hedge the option’s sell position at any time $t$ before maturity is the partial derivative of the option value at time $t$ with respect to the stock price $c_{x}(t, S(t))$. The relational expression \eqref{deltaHedging} of $\Delta(t)$ is called the delta-hedging rule because it is called the optional delta.</p>
+
+<p>Since the coefficients on both sides of $dt$ are also equal, the following equation holds for any time $t\in[0, T)$ from the relational expression \eqref{deltaHedging} of $\Delta(t)$.</p>
+
+<p>\begin{eqnarray}\label{expandCopyPortForT}
+(\alpha-r)S(t)c_{x}(t，S(t))
+=-rc(t，S(t))+c_{t}(t，S(t))+\alpha c_{x}(t，S(t))+\frac{1}{2}\sigma^{2} S^{2}(t)c_{xx}(t，S(t))
+\end{eqnarray}</p>
+
+<p>Since $\alpha c_{x}(t,S(t))$ term appears on both sides of the expression \eqref{expandCopyPortForT} for any time $t\in[0, T)$, it is obtained the following equation to extract this term.</p>
+
+<p>\begin{eqnarray}\label{PreBlackScholes}
+rc(t，S(t))=c_{t}(t，S(t))+rS(t)c_{x}(t，S(t))+\frac{1}{2}\sigma^{2} S^{2}(t)c_{xx}(t，S(t))
+\end{eqnarray}</p>
+
+<p>Here, if the value of the European call option when the stock price is $S(t) = x$ at time $t$ is $c(t, x)$, then it is obtained the partial differential equation of Black-Scholes from the equation \eqref{PreBlackScholes}.</p>
+
+<p>\begin{eqnarray}\label{BlackScholes}
+c_{t}(t，x)+rxc_{x}(t，x)\frac{1}{2}\sigma^{2} x^{2}c_{xx}(t，x)=rc(t，x)，t\in[0，T)，x\geq0
+\end{eqnarray}</p>
+
+<p>In addition to satisfying the equation \eqref{BlackScholes}, the function $c(t, x)$ must also satisfy the boundary conditions shown in the following equation.</p>
+
+<p>\begin{eqnarray}\label{BoundaryCondtion}
+c(T，x)=(x-K)^{+}，c(t，0)=0，\lim_{x \to \infty}[c(t，x)-(x-\mathrm{e}^{-r( T-t )}K)]=0
+\end{eqnarray}</p>
+
+<p>In fact, the first equation of the expression \eqref{BoundaryCondtion} follows from the definition of the European call option.</p>
+
+<p>The second equation is that when $x=0$ is substituted into the Black-Scholes partial differential equation \eqref{BlackScholes}, it is obtained the ordinary differential equation $c_{t}(t,0)=rc(t,0)$ for the function $c(t, 0)$ at time $t$ and then it is obtained its solution $c(t,0)=\mathrm{e}^{rt}$ is substituted $t=T$ for $c(0,0)$, which results in $c(T,0)=(0-K)^{+}=0$, $C(0,0)=0$.</p>
+
+<p>In the third equation, ‘Put/Call Parity’ holds because it is likely to end with ‘In the money’ for European call options for very large $x$ and the value of the forward contract is almost equal to $x-\mathrm{e}^{-r (Tt )}K$.</p>
+
+<p>In order to obtain an analytical solution of the Black-Scholes PDE \eqref{BlackScholes}, it is reduced by change of variables to a PDE whose exact solution is known. Therefore, two variables $u$ and $v$ are defined by the following equation, which are introduced for this purpose.</p>
+
+<p>\begin{eqnarray}\label{val1}
+u=\log \frac{x}{K}+(r-\frac{\sigma^{2}}{2})(T-t) 
+v=T-t
+\end{eqnarray}</p>
+
+<p>Here, using the variables $u$ and $v$ defined in the expression \eqref{val1}, the function $c(t, x)$ is converted into two functions $\mathrm{e}^{-rv}$ and $y (u, v )$ as shown in the following expression.</p>
+
+<p>\begin{eqnarray}\label{val2}
+c(t，x)=\mathrm{e}^{-rv}y(u，v)．
+\end{eqnarray}</p>
+
+<p>Substituting the equation \eqref{val2} into the partial differential equation \eqref{BlackScholes} of Black-Scholes and rearranging it gives the following equation.</p>
+
+<p>\begin{eqnarray}\label{HeatConductionEquation}
+y_{u u}(u，v)-\frac{2}{\sigma^{2}}y_{v}(u，v)=0．
+\end{eqnarray}</p>
+
+<p>The equation \eqref{HeatConductionEquation} is a known partial differential equation with an exact solution called the heat conduction equation. Here, the boundary condition is changed by variable transformation.</p>
+
+<p>$c(t，x)=$
+$x-K\cdots x\geq K$
+$0\cdots x \lt K$</p>
+
+<p>Note that the following conditions have changed.</p>
+
+<p>$y(u，0)=$
+$K( \mathrm{e}^{u}-1 )\cdots u\geq 0$
+$0\cdots u \lt 0$</p>
+
+<p>It is known that the heat conduction equation \eqref{HeatConductionEquation} is solved by the separation of variables method. The separation of variables method means that the solution $y(u,v)$ is expressed as the product of two functions $p(u)$ and $q(v)$.</p>
+
+<p>\begin{eqnarray}\label{val3}
+y(u，v)=p(u)q(v)．
+\end{eqnarray}</p>
+
+<p>Substituting the equation \eqref{val3} into the heat conduction equation \eqref{HeatConductionEquation} and rearranging it gives the following equation.</p>
+
+<p>\begin{eqnarray}\label{SeparationVariables}
+\frac{p_{u u}(u)}{p(u)}=\frac{2}{\sigma^{2}}\frac{q_{v}(v)}{q(v)}．
+\end{eqnarray}</p>
+
+<p>Focusing on both sides of the obtained equation \eqref{SeparationVariables}, the left side is a function of only $u$ and the right side is a function of only $v$, then constants irrelevant to $u$ and $v$, which is $-k^{2}(0\leq k\lt \infty)$. Therefore, finding the solution of the heat conduction equation \eqref{HeatConductionEquation} results in the problem of solving the following two ordinary differential equations.</p>
+
+<ul>
+  <li>$\dfrac{p_{u u}(u)}{p(u)}=-k^{2}$</li>
+  <li>$\dfrac{2}{\sigma^{2}}\dfrac{q_{v}(v)}{q(v)}=-k^{2}$</li>
+</ul>
+
+<p>The first equation is a second-order ordinary differential equation with constant coefficients, then if the coefficients are constants $C(k)$ and $D(k)$ with respect to constants $k$ irrelevant to $u$ and $v$, the solution is given by the following equation.</p>
+
+<p>\begin{eqnarray}\label{ODE1Sol}
+p(u)=C(k)\sin( ku ) +D(k)\cos( ku ) ．
+\end{eqnarray}</p>
+
+<p>Since the second equation is a variable separable ordinary differential equation, if the coefficients are the constant $E(k)$ for the constant $k$ irrelevant to $u$ and $v$, the solution is given by the following equation.</p>
+
+<p>\begin{eqnarray}\label{ODE2Sol}
+q(v)=E(k)\exp( -\frac{\sigma^{2}k^{2}}{2}v ) ．
+\end{eqnarray}</p>
+
+<p>Therefore, the solution $y (u, v )$ of the heat conduction equation \eqref{HeatConductionEquation} is a constant $k (0\leq k \lt \infty )$ irrelevant to $u$ and $v$. Then all are superposed to obtain the general solution shown in the following equation.</p>
+
+<p>\begin{eqnarray}\label{HeatConductionEquationSol}
+y(u，v)=\int_{0}^{+\infty}( C(k)\sin( ku ) +D(k)\cos( ku ) )\exp( -\frac{\sigma^{2}k^{2}}{2}v )dk．
+\end{eqnarray}</p>
+
+<p>Here, the coefficients $C(k)$ and $D(k)$ of the equation \eqref{HeatConductionEquationSol} are given by the following equation from Fourier’s integral theorem as $y(u,0)=g(a)$.</p>
+
+<p>\begin{eqnarray}\label{FourierCoefficient}
+C(k)=\frac{1}{\pi}\int_{-\infty}^{+\infty}g(a)\cos (ka) da
+\end{eqnarray}
+\begin{eqnarray}\label{FourierCoefficient2}
+D(k)=\frac{1}{\pi}\int_{-\infty}^{+\infty}g(a)\sin (ka) da
+\end{eqnarray}</p>
+
+<p>Substituting the obtained equation of coefficients \eqref{FourierCoefficient} and \eqref{FourierCoefficient2} into the solution \eqref{HeatConductionEquationSol} of the heat conduction equation \eqref{HeatConductionEquation} and rearranging it gives the following equation.</p>
+
+<p>\begin{eqnarray}\label{HeatConductionEquationSol2}
+y(u，v)=\dfrac{1}{\sigma \sqrt[]{\mathstrut 2 \pi v}} \int_{-\infty}^{+\infty}g(a)\exp( -\dfrac{1}{2}(\dfrac{a-u}{\sigma \sqrt[]{\mathstrut v}})^{2} ) da．
+\end{eqnarray}</p>
+
+<p>For further analysis, the change of variables is performed again as follows. 
+\begin{eqnarray}\label{}
+w=\dfrac{a-u}{\sigma \sqrt[]{\mathstrut v}}．
+\end{eqnarray}</p>
+
+<p>Note that the boundary conditions have changed to the following conditions due to the change of variables.</p>
+
+<p>$g(a)=g( u+\sigma \sqrt[]{\mathstrut v}w )=$</p>
+
+<p>$K( \mathrm{e}^{u+\sigma \sqrt[]{\mathstrut v}w}-1 )\cdots w\geq -\dfrac{u}{\sigma \sqrt[]{\mathstrut v}}$</p>
+
+<p>Or $0\cdots w \lt -\dfrac{u}{\sigma \sqrt[]{\mathstrut v}}$</p>
+
+<p>Focusing on the change of variables by $w$ and the changed boundary conditions, the equation \eqref{HeatConductionEquationSol2} is expanded as follows.</p>
+
+<p>\begin{eqnarray}\label{HeatConductionEquationSol3}
+y(u，v)=\dfrac{1}{\sqrt[]{\mathstrut 2 \pi}} \int_{-\dfrac{u}{\sigma \sqrt[]{\mathstrut v}}}^{+\infty}K( \exp(u+\sigma \sqrt[]{\mathstrut v}w)-1 )\exp( -\dfrac{w^{2}}{2} )dw
+=\dfrac{1}{\sqrt[]{\mathstrut 2 \pi}} \int_{-\frac{u}{\sigma \sqrt[]{\mathstrut v}}}^{+\infty}K\exp(u+\sigma \sqrt[]{\mathstrut v}w-\dfrac{w^{2}}{2}) dw-\dfrac{1}{\sqrt[]{\mathstrut 2 \pi}} \int_{-\frac{u}{\sigma \sqrt[]{\mathstrut v}}}^{+\infty} K \exp(-\dfrac{w^{2}}{2})dw．
+\end{eqnarray}</p>
+
+<p>Furthermore, if the first term on the right side of the equation \eqref{HeatConductionEquationSol3} is replaced with $z = w- \sigma \sqrt[]{\mathstrut v}$ and the second term is replaced with $z = w$, the following equation is obtained.</p>
+
+<p>\begin{eqnarray}\label{HeatConductionEquationSol4}
+y(u，v)=x\exp(rv) \dfrac{1}{ \sqrt[]{\mathstrut 2 \pi}} \int_{-\frac{u}{\sigma \sqrt[]{\mathstrut v}}^{+\infty}-\sigma \sqrt[]{\mathstrut v}}\exp( -\dfrac{z^{2}}{2} ) dz-K\dfrac{1}{ \sqrt[]{\mathstrut 2 \pi}} \int_{-\frac{u}{\sigma \sqrt[]{\mathstrut v}}}^{+\infty}\exp( -\dfrac{z^{2}}{2} ) dz
+=x\exp(rv)N(\frac{u}{\sigma \sqrt[]{\mathstrut v}}+\sigma \sqrt[]{\mathstrut v})-KN( \frac{u}{\sigma \sqrt[]{\mathstrut v}})．
+\end{eqnarray}</p>
+
+<p>Finally, by substituting the obtained equation \eqref{HeatConductionEquationSol4} into the solution of the Black-Scholes PDE \eqref{val2} is obtained as an analytical solution of the Black-Scholes PDE, which is a function that satisfies the Black-Scholes PDE.</p>
+
+<p>\begin{eqnarray}\label
+c(t，x)=xN(\frac{u}{\sigma \sqrt[]{\mathstrut v}} + \sigma \sqrt[]{\mathstrut v} ) -K \exp(-rv)N(\frac{u}{\sigma \sqrt[]{\mathstrut v}})
+\end{eqnarray}</p>
+
+<p>However,</p>
+
+<p>$u=\log \frac{x}{K}+(r-\frac{\sigma^{2}}{2})(T-t)$</p>
+
+<p>$v=T-t$</p>
+
+<h2 id="reference">Reference</h2>
+<ul>
+  <li>Shreve, S., 2004. Stochastic Calculus for Finance II: Continuous-Time Models</li>
+  <li>Ishimura, S., 2008. Black Shoals differential equations for finance and securities (In Japanese)</li>
+</ul>
 
     </article> <hr />
 
@@ -827,254 +1159,101 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <header class="post-header">
       <h1 itemprop="name" class="post-title">
-        <a itemprop="url" class="post-link" href="/Kyo.github.io/2025/01/19/coreml-optimization-playbook-en.html">CoreML Optimization Playbook (Consulting)</a>
+        <a itemprop="url" class="post-link" href="/Kyo.github.io/business/finance/2021/05/31/derivation-of-yield-curve-construction-formula-with-tenor-basis-spread.html">Derivation of yield curve construction formula with tenor basis spread</a>
       </h1>
-      <meta itemprop="keywords" content="CoreML,On-device,Case-Study,iOS,Machine-Learning" />
+      <meta itemprop="keywords" content="Business Finance" />
       <p class="post-meta">
       Posted in
+      
+      <a href="/Kyo.github.io/categories/#Business">Business</a>, 
+      
+      <a href="/Kyo.github.io/categories/#Finance">Finance</a>
       
       
       and tagged
       
-      <a href="/Kyo.github.io/tags/#CoreML" title="CoreML">CoreML</a>, 
-      
-      <a href="/Kyo.github.io/tags/#On-device" title="On-device">On-device</a>, 
-      
-      <a href="/Kyo.github.io/tags/#Case-Study" title="Case-Study">Case-Study</a>, 
-      
-      <a href="/Kyo.github.io/tags/#iOS" title="iOS">iOS</a>, 
-      
-      <a href="/Kyo.github.io/tags/#Machine-Learning" title="Machine-Learning">Machine-Learning</a>
+      <a href="/Kyo.github.io/tags/#Business Finance" title="Business Finance">Business Finance</a>
       
       
-      <time itemprop="datePublished" datetime="2025-01-19">
-      on Jan 19, 2025
+      <time itemprop="datePublished" datetime="2021-05-31">
+      on May 31, 2021
       </time>
       </p>
     </header>
 
     <article class="post-content" itemprop="articleBody">
-      <div class="tldr">
-  <strong>TL;DR</strong>
-  <p>Key design decisions for on-device optimization without quality loss in 3 minutes. Optimization sequence: quantization → distillation → architecture design.</p>
-</div>
-
-<h2 id="design-decision-framework">Design Decision Framework</h2>
-
-<h3 id="1-quantization">1. Quantization</h3>
-<ul>
-  <li><strong>INT8 Quantization</strong>: 75% model size reduction with &lt;5% accuracy loss</li>
-  <li><strong>Dynamic Quantization</strong>: Quantize only during inference, maintain FP32 during training</li>
-  <li><strong>Static Quantization</strong>: Pre-calibration for higher compression rates</li>
+      <ul id="markdown-toc">
+  <li><a href="#derivation-of-yield-curve-construction-formula-with-tenor-basis-spread" id="markdown-toc-derivation-of-yield-curve-construction-formula-with-tenor-basis-spread">Derivation of yield curve construction formula with tenor basis spread</a>    <ul>
+      <li><a href="#reference" id="markdown-toc-reference">Reference</a></li>
+    </ul>
+  </li>
 </ul>
 
-<h3 id="2-knowledge-distillation">2. Knowledge Distillation</h3>
-<ul>
-  <li><strong>Teacher-Student</strong>: Knowledge transfer from large to lightweight models</li>
-  <li><strong>Temperature Parameter</strong>: Soft label generation with T=3-5</li>
-  <li><strong>Loss Function</strong>: Hard labels + soft labels + feature maps</li>
-</ul>
+<h1 id="derivation-of-yield-curve-construction-formula-with-tenor-basis-spread">Derivation of yield curve construction formula with tenor basis spread</h1>
 
-<h3 id="3-architecture-design">3. Architecture Design</h3>
-<ul>
-  <li><strong>MobileNet</strong>: Depthwise separable convolutions for computational reduction</li>
-  <li><strong>EfficientNet</strong>: Compound scaling for efficiency maximization</li>
-  <li><strong>SqueezeNet</strong>: Fire Module for parameter count reduction</li>
-</ul>
+<p>If LIBOR is truly risk-free, the swap of 3-month LIBOR and 6-month LIBOR should be tradable with zero spread. However, LIBOR takes into account the credit risk of banks, and tenor swaps are exactly the transactions that swap the risk of 3-month LIBOR and 6-month LIBOR. After the financial crisis, the risk of bankruptcy, that is, the difference in tenor, was conscious, and when swap 3-month LIBOR and 6-month LIBOR, the 3-month LIBOR side began to trade with a non-negligible spread.</p>
 
-<h2 id="evaluation-metrics">Evaluation Metrics</h2>
+<p>After all, after supplementing the discount factor and tenor spread in 0.25 year increments, the future 3-month LIBOR can be calculated as follows (Nakahara, 2013).</p>
 
-<div class="key-takeaways">
-  <strong>Key Takeaways</strong>
-  <ul>
-    
-    
-      <li>Accuracy: Top-1/Top-5 Accuracy</li>
-    
-      <li>Inference Speed: FPS (Frames Per Second)</li>
-    
-      <li>Model Size: MB units</li>
-    
-      <li>Memory Usage: RAM/VRAM</li>
-    
-      <li>Battery Consumption: mAh/inference</li>
-    
-  </ul>
-</div>
+<p>\begin{eqnarray}
+L_{forward}^{3MWorld}(t,t_{i},t_{i+0.25})=\frac{1-DF(t,t_{i+0.25})-TS^{3M-6M}(t,t_{i+0.25})\times\sum_{j=1}^{4i+1}{DF(t,t_{\frac{j}{4}})\times\frac{1}{4}}}{DF(t,t_{i+0.25})\times\frac{1}{4}}+\frac{-\sum_{j=1}^{4i}{L_{forward}^{3MWorld}(t,t_{\frac{j-1}{4}},t_{\frac{j}{4}})\times DF(t,t_{\frac{j}{4}})\times\frac{1}{4}}}{DF(t,t_{i+0.25})\times\frac{1}{4}}．
+\end{eqnarray}</p>
 
-<h2 id="common-pitfalls-and-solutions">Common Pitfalls and Solutions</h2>
-
-<h3 id="typical-failure-patterns">Typical Failure Patterns</h3>
-<ol>
-  <li><strong>Excessive Quantization</strong>: Significant accuracy degradation</li>
-  <li><strong>Improper Distillation</strong>: Temperature setting errors</li>
-  <li><strong>Architecture Mismatch</strong>: Task and model incompatibility</li>
-</ol>
-
-<h3 id="solutions">Solutions</h3>
-<ul>
-  <li><strong>Incremental Optimization</strong>: Apply one method at a time and measure effects</li>
-  <li><strong>A/B Testing</strong>: Parallel comparison of multiple approaches</li>
-  <li><strong>Real Device Validation</strong>: Test on actual devices, not simulators</li>
-</ul>
-
-<h2 id="deliverables">Deliverables</h2>
-
-<section class="qa">
-  <h2>Q&amp;A</h2>
-  
-  <dl>
-  
-    
-    
-    
-    
-      <dt>How to choose methods?</dt>
-      <dd>Select based on accuracy requirements and constraints. Accuracy priority → distillation, size priority → quantization</dd>
-    
-  
-    
-    
-    
-    
-      <dt>What are the evaluation metrics?</dt>
-      <dd>Comprehensive evaluation across 5 axes: accuracy, speed, size, memory, battery</dd>
-    
-  
-    
-    
-    
-    
-      <dt>What are the deliverables and timeline?</dt>
-      <dd>Optimized model, implementation guide, performance report (2-6 weeks)</dd>
-    
-  
-  </dl>
-</section>
-
-<h2 id="implementation-example">Implementation Example</h2>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// CoreML optimization implementation example</span>
-<span class="kd">import</span> <span class="kt">CoreML</span>
-
-<span class="kd">class</span> <span class="kt">OptimizedModelManager</span> <span class="p">{</span>
-    <span class="kd">func</span> <span class="nf">loadOptimizedModel</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">MLModel</span><span class="p">?</span> <span class="p">{</span>
-        <span class="k">guard</span> <span class="k">let</span> <span class="nv">modelURL</span> <span class="o">=</span> <span class="kt">Bundle</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="nf">url</span><span class="p">(</span><span class="nv">forResource</span><span class="p">:</span> <span class="s">"optimized_model"</span><span class="p">,</span> <span class="nv">withExtension</span><span class="p">:</span> <span class="s">"mlmodelc"</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="k">return</span> <span class="kc">nil</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="k">try</span><span class="p">?</span> <span class="kt">MLModel</span><span class="p">(</span><span class="nv">contentsOf</span><span class="p">:</span> <span class="n">modelURL</span><span class="p">)</span>
-    <span class="p">}</span>
-    
-    <span class="kd">func</span> <span class="nf">predict</span><span class="p">(</span><span class="nv">input</span><span class="p">:</span> <span class="kt">MLFeatureProvider</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">MLFeatureValue</span><span class="p">?</span> <span class="p">{</span>
-        <span class="k">guard</span> <span class="k">let</span> <span class="nv">model</span> <span class="o">=</span> <span class="nf">loadOptimizedModel</span><span class="p">()</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="kc">nil</span> <span class="p">}</span>
-        <span class="k">return</span> <span class="k">try</span><span class="p">?</span> <span class="n">model</span><span class="o">.</span><span class="nf">prediction</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="n">input</span><span class="p">)</span><span class="o">.</span><span class="nf">featureValue</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="s">"output"</span><span class="p">)</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="references">References</h2>
+<p>However,</p>
 
 <ul>
-  <li><a href="https://developer.apple.com/documentation/coreml">CoreML Documentation</a></li>
-  <li><a href="https://developer.apple.com/machine-learning/models/">Model Optimization Guide</a></li>
-  <li><a href="https://developer.apple.com/videos/">WWDC Sessions</a></li>
+  <li>$L(t,T)$: Observable LIBOR at time point $t$ maturity $T$</li>
+  <li>$L_{forward}^{3MWorld}(t,t_{0},t_{0.25})=L(t,t_{0.25})$</li>
+  <li>$L_{forward}^{3MWorld}(t,t_{i},t_{i+0.25})$: A 3-month LIBOR with a reset date of $t_{i}$ and a maturity of $t_{i+0.25}$ as seen from the point in time $t$</li>
+  <li>$TS^{3M-6M}(t,T)$: Tenor spread when swapping 6-month LIBOR for 3-month LIBOR at time $t$ and maturity $T$</li>
 </ul>
 
-<div class="cta">
-  <h3>相談・見積りのご依頼</h3>
-  <p>小さく速く、成果物ベースでご一緒します。</p>
-  <p>
-    <a class="btn" href="/work-with-me/">Work with me</a>
-    <a class="btn ghost" href="/newsletter/">無料ニュースレター</a>
-  </p>
-</div>
+<p>In this article, we try to derive the equation (1). 
+At this time, the evaluation formula of the JPY tenor swap is expressed as follows (Takahashi, 2010)．</p>
 
-<div class="related">
-  <h3>次に読む</h3>
-  <ul>
-  
-    
-      
-      
-      
-        <li><a href="/Kyo.github.io/2025/01/19/rag-audit-checklist.html">RAGミニ監査チェックリスト（無料DL）</a></li>
-        
-      
-    
-  
-    
-      
-      
-      
-    
-  
-    
-      
-      
-      
-    
-  
-    
-      
-      
-      
-        <li><a href="/Kyo.github.io/2025/01/19/edinet-db-howto.html">EDINET XBRLで作る投資家級データベース</a></li>
-        
-      
-    
-  
-    
-      
-      
-      
-        <li><a href="/Kyo.github.io/2025/01/19/coreml-optimization-playbook.html">CoreML最適化プレイブック（受託）</a></li>
-        
-      
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-  </ul>
-</div>
+<p>\begin{eqnarray}
+\sum_{n=1}^{N}\delta_{n}(E_{t}[L(T_{n-1},T_{n}+\tau_{N}]P_{t,T_{n}})=\sum_{m=1}^{M}\delta_{m}E_{t}[L(T_{m-1},T_{m}]P_{t,T_{m}}．
+\end{eqnarray}</p>
 
+<p>However,</p>
+
+<ul>
+  <li>$N=2M$</li>
+  <li>$L(T_{n-1},T_{n})$: LIBOR with a reset date of $T_{n-1}$ and a maturity of $T_{n}$</li>
+  <li>$P_{t,T_{n}}$: Zero coupon bond price with maturity of $t$ at time $ T_{n}$</li>
+  <li>$\delta_{n}$: Interest calculation period</li>
+  <li>$\tau_{N}$: Tenor spread when swapping 6-month LIBOR for 3-month LIBOR at time $t$ and maturity of $T (= T_{N} = T_{M})$</li>
+</ul>
+
+<p>Now, we want to derive 3 months LIBOR, that is, $E_{t}[L(T_{N-1}, T_{N}]$, therefore expand the left side of the expression (2) as follows.</p>
+
+<p>\begin{eqnarray}
+\sum_{n=1}^{N}\delta_{n}(E_{t}[L(T_{n-1},T_{n}+\tau_{N}]P_{t,T_{n}})=\sum_{n=1}^{N-1}\delta_{n}(E_{t}[L(T_{n-1},T_{n})]P_{t,T_{n}}+\delta_{N}E_{t}[L(T_{N-1},T_{N})]P_{t,T_{N}}+\sum_{n=1}^{N}\delta_{n}\tau_{N}P_{t,T_{n}}．
+\end{eqnarray}</p>
+
+<p>On the other hand, the relationship between Libor and the discount rate is</p>
+
+<p>\begin{eqnarray}
+E_{t}[L(T_{m-1},T_{m})]=\frac{1}{\delta_{n}}\left(\frac{P_{t,T_{m-1}}}{P_{t,T_{n}}}-1\right)．
+\end{eqnarray}</p>
+
+<p>Since it is represented by, the left side of the expression \label{tenor} can be expanded as follows.</p>
+
+<p>\begin{eqnarray}
+\sum_{m=1}^{M}\delta_{m}E_{t}[L(T_{m-1},T_{m}]P_{t,T_{m}}=P_{t,T_{0}}-P_{t,T_{M}}=1-P_{t,T_{M}}．
+\end{eqnarray}</p>
+
+<p>After all, JPY 3 months LIBOR, ie $E_{t} [L(T_{N-1},T_{N}]$, is given below.</p>
+
+<p>\begin{eqnarray}
+E_{t}[L(T_{N-1},T_{N}]=\frac{1-P_{t,T_{M}}-\sum_{n=1}^{N}\delta_{n}\tau_{N}P_{t,T_{n}}}{\delta_{N}P_{t,T_{N}}}+\frac{-\sum_{n=1}^{N-1}\delta_{n}(E_{t}[L(T_{n-1},T_{n})]P_{t,T_{n}}}{\delta_{N}P_{t,T_{N}}}．
+\end{eqnarray}</p>
+
+<h2 id="reference">Reference</h2>
+<ul>
+  <li>Nakahara, G.，2013. LIBOR and OIS discount that can be seen in EXCEL (In Japanese)</li>
+  <li>Fujii, M.，Shimada, Y. and Takahashi, A.，2010. “A Note on Construction of Multiple Swap Curves with and without Collateral”， FSA Research Review Vol.6(March 2010)．</li>
+</ul>
 
     </article> <hr />
 

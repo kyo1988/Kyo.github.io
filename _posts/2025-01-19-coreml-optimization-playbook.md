@@ -110,6 +110,3 @@ The next phase of development should focus on advanced optimization techniques s
 * Apple Inc., 2020. CoreML Documentation [Online]. Available from: [https://developer.apple.com/documentation/coreml](https://developer.apple.com/documentation/coreml) [Accessed 19 January 2025].
 * Hinton, G., Vinyals, O. and Dean, J., 2015. Distilling the Knowledge in a Neural Network. arXiv preprint arXiv:1503.02531.
 * Jacob, B., Kligys, S., Chen, B., Zhu, M., Tang, M., Howard, A., Adam, H. and Kalenichenko, D., 2018. Quantization and Training of Neural Networks for Efficient Integer-Arithmetic-Only Inference. Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition.
-
-{% include cta.html %}
-{% include related-by-tags.html %}
