@@ -80,7 +80,7 @@
     gtag('config', '{{ site.google_analytics.ga4_measurement_id }}', {
       'send_page_view': true,
       'linker': {
-        'domains': {{ site.google_analytics.cross_domains | jsonify }}
+        'domains': ['{{ site.google_analytics.cross_domains | join: "', '" }}']
       }
     });
   </script>

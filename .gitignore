@@ -61,3 +61,11 @@ Thumbs.db
 scripts/analytics/
 *.json
 *.py
+
+# Analytics Data (Private)
+metrics/
+ga4_daily_*.csv
+analytics_*.csv
+
+# Analytics Documentation (Private)
+ANALYTICS_GUIDE.md
