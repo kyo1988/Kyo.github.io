@@ -1,10 +1,10 @@
 ---
 layout: post
 title: SALES FORECASTING
-excerpt: "This is a modified version of the report for Business Analyics in Bath Full Time MBA Class of 2020."
+excerpt: "This is a modified version of the report for Business Analytics in Bath Full Time MBA Class of 2020."
 description: "One-month-ahead sales forecasting for university catering using time series analysis. ARIMA and LSTM models for demand prediction with seasonal adjustments."
-categories: Business Analyics
-tags: [Business Analyics, Time Series, Forecasting, ARIMA, LSTM, SPSS]
+categories: Business Analytics
+tags: [Business Analytics, Time Series, Forecasting, ARIMA, LSTM, SPSS]
 comments: true
 last_modified_at: 2025-01-19
 ---
@@ -12,7 +12,7 @@ last_modified_at: 2025-01-19
 * Table of Contents
 {:toc}
 
-This is a modified version of the report for Business Analyics in Bath Full Time MBA Class of 2020.
+This is a modified version of the report for Business Analytics in Bath Full Time MBA Class of 2020.
 
 # SALES FORECASTING
 

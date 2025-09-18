@@ -7,13 +7,13 @@ description: "Small, fast, deliverables-first. Consulting packages and outcomes.
 
 ## Services (Packages)
 
-### 1) AI肌診断 PoC → 本番化
-**2–6 weeks** / 成果物：計測指標、CoreML最適化モデル、実装ガイド
+### 1) AI Skin Analytics — PoC to Production
+**2–6 weeks** / Deliverables: evaluation metrics, CoreML-optimized model, implementation guide
 
-### 2) LLM/RAG ミニ監査（固定費・2週間）
-成果物：評価ダッシュボード、改善提案、優先度付きロードマップ（PDF）
+### 2) LLM/RAG Mini Audit (fixed fee, 2 weeks)
+Deliverables: evaluation dashboard, prioritized recommendations, roadmap (PDF)
 
-### 3) 投資家向けシングルネーム分析テンプレ
-成果物：スプレッドシート＋Markdownレポ雛形＋図表テンプレ（PPT）
+### 3) Single-Name Equity Research Template
+Deliverables: spreadsheet model, Markdown report template, chart pack (PPT)
 
-**ご相談はこちら →** [フォーム](https://forms.gle/kyo-consulting) ／ カレンダー: [Cal.com/kyo-harada](https://cal.com/kyo-harada)
+**→ Inquiries:** [Form](https://forms.gle/kyo-consulting) | **Calendar:** [Cal.com/kyo-harada](https://cal.com/kyo-harada)

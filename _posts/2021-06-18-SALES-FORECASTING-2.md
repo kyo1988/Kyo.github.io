@@ -1,10 +1,10 @@
 ---
 layout: post
 title: SALES FORECASTING 2
-excerpt: "This is a modified version of the report for Business Analyics in Bath Full Time MBA Class of 2020."
+excerpt: "This is a modified version of the report for Business Analytics in Bath Full Time MBA Class of 2020."
 description: "Conjoint analysis for pizza parlor business plan using SPSS. Customer preference modeling with budget constraints."
-categories: Business Analyics
-tags: [Business Analyics, Conjoint Analysis, SPSS, Marketing Research]
+categories: Business Analytics
+tags: [Business Analytics, Conjoint Analysis, SPSS, Marketing Research]
 comments: true
 last_modified_at: 2025-01-19
 ---
