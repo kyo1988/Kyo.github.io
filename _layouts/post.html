@@ -2,14 +2,17 @@
 layout: default
 ---
 
+{% seo %}
+
+{% assign page_url = site.url | append: site.baseurl | append: page.url %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "{{ page.title | escape }}",
   "description": "{{ page.description | escape }}",
-  "datePublished": "{{ page.date | date_to_xmlschema }}",
-  "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
+  "datePublished": "{{ page.date | date: "%Y-%m-%dT%H:%M:%S%z" }}",
+  "dateModified": "{{ page.last_modified_at | default: page.date | date: "%Y-%m-%dT%H:%M:%S%z" }}",
   "author": {
     "@type": "Person",
     "name": "Kyo Harada",
@@ -23,7 +26,7 @@ layout: default
     "@type": "Organization",
     "name": "Visage AI Consulting"
   },
-  "mainEntityOfPage": {"@type": "WebPage","@id": "{{ site.url }}{{ site.baseurl }}{{ page.url }}"}
+  "mainEntityOfPage": {"@type":"WebPage","@id":"{{ page_url }}"}
 }
 </script>
 
