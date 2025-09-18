@@ -16,4 +16,4 @@ description: "Small, fast, deliverables-first. Consulting packages and outcomes.
 ### 3) 投資家向けシングルネーム分析テンプレ
 成果物：スプレッドシート＋Markdownレポ雛形＋図表テンプレ（PPT）
 
-**ご相談はこちら →** [フォーム](https://forms.gle/REPLACE) ／ カレンダー: [Cal.com](https://cal.com/REPLACE)
+**ご相談はこちら →** [フォーム](https://forms.gle/kyo-consulting) ／ カレンダー: [Cal.com/kyo-harada](https://cal.com/kyo-harada)

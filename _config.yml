@@ -9,6 +9,7 @@ baseurl: "/Kyo.github.io" # the subpath of your site, e.g. /blog/
 url: "https://kyo1988.github.io" # the base hostname & protocol for your site
 lang: "ja"
 locale: ja_JP
+default_lang: "ja"
 
 ### Personal info and site tools info:
 twitter_username: kyoHarada

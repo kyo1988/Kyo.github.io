@@ -5,6 +5,7 @@ description: "量子化/蒸留/アーキ設計の意思決定、評価指標、�
 tags: [CoreML, On-device, Case-Study, iOS, Machine-Learning]
 og_image: /images/coreml-playbook.png
 last_modified_at: 2025-01-19
+lang: ja
 ---
 
 {% include tldr.html text="オンデバイスで品質を落とさず軽量化する設計判断の要点を3分で。量子化→蒸留→アーキ設計の順序で最適化。" %}
