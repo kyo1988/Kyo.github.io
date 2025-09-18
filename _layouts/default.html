@@ -51,6 +51,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- Lazy loading script -->
 <script src="{{ '/assets/js/lazyfix.js' | relative_url }}"></script>
 
+<!-- Analytics script -->
+{% if site.google_analytics.ga4_measurement_id %}
+  <script defer src="{{ '/assets/js/analytics.js' | relative_url }}"></script>
+{% endif %}
+
 </main>
 </body>
 
