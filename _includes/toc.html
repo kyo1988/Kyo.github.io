@@ -90,9 +90,10 @@
       for (let i = tocItems.length - 1; i >= 0; i--) {
         const item = tocItems[i];
         const element = item.element;
-        const rect = element.getBoundingClientRect();
+        // Use document-relative position for accurate comparison
+        const top = element.getBoundingClientRect().top + window.scrollY;
         
-        if (rect.top <= scrollPos) {
+        if (top <= scrollPos) {
           if (currentSection !== item.id) {
             // Remove previous highlight
             if (currentSection) {
