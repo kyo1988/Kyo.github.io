@@ -7,8 +7,6 @@ tags: [ Business Finance Start-Up]
 comments: true
 ---
 
-* Table of Contents
-{:toc}
 
 This is a modified version of the report for Knowledge Leadership in a Global Economy in Bath Full Time MBA Class of 2020.
 <cite></cite>

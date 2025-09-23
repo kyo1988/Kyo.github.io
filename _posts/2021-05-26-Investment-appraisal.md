@@ -7,8 +7,6 @@ tags: [ Business Finance]
 comments: true
 ---
 
-* Table of Contents
-{:toc}
 
 This is a modified version of the report for Understanding Finance (Part 1: Investment Appraisal – Eastern plc Assessment Standard) in Bath Full Time MBA Class of 2020.
 

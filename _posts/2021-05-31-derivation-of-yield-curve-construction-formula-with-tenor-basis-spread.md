@@ -7,8 +7,6 @@ tags: [ Business Finance]
 comments: true
 ---
 
-* Table of Contents
-{:toc}
 
 # Derivation of yield curve construction formula with tenor basis spread
  

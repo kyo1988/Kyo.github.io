@@ -7,8 +7,6 @@ tags: [Finance Business]
 comments: true
 ---
 
-* Table of Contents
-{:toc}
 
 This is a modified version of the report for Corporate Finance in Bath Full Time MBA Class of 2020.
 

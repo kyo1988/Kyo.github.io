@@ -9,8 +9,6 @@ comments: true
 last_modified_at: 2025-01-19
 ---
 
-* Table of Contents
-{:toc}
 
 This is a modified version of the report for Business Analytics in Bath Full Time MBA Class of 2020.
 

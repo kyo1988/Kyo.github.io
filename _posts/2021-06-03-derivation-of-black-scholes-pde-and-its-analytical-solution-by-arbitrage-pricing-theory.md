@@ -7,8 +7,6 @@ tags: [ Business Finance]
 comments: true
 ---
 
-* Table of Contents
-{:toc}
 
 # Derivation of Black-Scholes PDE and its analytical solution by arbitrage pricing theory
  

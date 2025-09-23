@@ -7,8 +7,6 @@ tags: [ Business Start-Up Design]
 comments: true
 ---
 
-* Table of Contents
-{:toc}
 
 ![Figure 1](https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fcom.ft.imagepublish.upp-prod-us.s3.amazonaws.com%2F2a04f552-8cb8-11e8-b639-7680cedcc421?fit=scale-down&source=next&width=650 "Figure 1")
 
