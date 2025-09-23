@@ -89,7 +89,8 @@ python etl_ga_data.py
 ## Integration
 
 This script is designed to work with:
-- **GA4 Measurement ID**: `G-XXXXXXXXXX` (configured in `_config.yml`)
+- **GA4 Measurement ID**: `G-VRYRGVBM3W` (configured and verified)
 - **Cross-domain tracking**: Blog ↔ Web App session continuity
 - **Event tracking**: Automatic CTA and outbound link tracking
+- **Article Kit Integration**: Enhanced tracking for new ToC and component system
 - **Daily automation**: GitHub Actions or cron job ready
