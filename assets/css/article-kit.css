@@ -353,6 +353,56 @@
   }
 }
 
+/* Figure styles (moved from figure.html) */
+.figure {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.figure-container {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+}
+
+.figure img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.figure img:hover {
+  transform: scale(1.02);
+}
+
+.figure-caption {
+  font-size: 0.875rem;
+  color: var(--muted);
+  margin-top: 0.75rem;
+  font-style: italic;
+  line-height: 1.5;
+  max-width: 100%;
+}
+
+.figure-number {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* ToC active state (moved from toc.html) */
+.toc-list a.active {
+  background: var(--accent);
+  color: white;
+  font-weight: 500;
+}
+
+.toc-list a.active:hover {
+  background: var(--accent);
+  color: white;
+}
+
 /* Print styles */
 @media print {
   .article {
@@ -374,5 +424,18 @@
   .article pre,
   .article blockquote {
     page-break-inside: avoid;
+  }
+  
+  .figure img {
+    box-shadow: none;
+  }
+  
+  .figure img:hover {
+    transform: none;
+  }
+  
+  .callout {
+    break-inside: avoid;
+    box-shadow: none;
   }
 }
