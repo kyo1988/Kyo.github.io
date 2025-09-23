@@ -7,8 +7,6 @@ tags: [Marketing Business]
 comments: true
 ---
 
-* Table of Contents
-{:toc}
 
 This is a modified version of the report for Strategic Marketing in Bath Full Time MBA Class of 2020.
 

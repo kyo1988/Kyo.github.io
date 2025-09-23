@@ -7,8 +7,6 @@ tags: [ Business Finance]
 comments: true
 ---
 
-* Table of Contents
-{:toc}
 
 This is a modified version of the report for Applied Microeconomics in Bath Full Time MBA Class of 2020.
 

@@ -7,8 +7,6 @@ tags: [ Business Finance]
 comments: true
 ---
 
-* Table of Contents
-{:toc}
 
 # Organize and implement Hull and White (1994a) interest rate model
 ## Derivation of Hull and White (1994a) interest rate model solutions and boundary conditions

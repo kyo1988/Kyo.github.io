@@ -7,8 +7,6 @@ tags: [ Business Finance]
 comments: true
 ---
 
-* Table of Contents
-{:toc}
 
 ![Figure 1](https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fcom.ft.imagepublish.upp-prod-us.s3.amazonaws.com%2Fce3558d8-af8f-11e9-8030-530adfa879c2?dpr=1&fit=scale-down&quality=highest&source=next&width=700 "Figure 1")
 

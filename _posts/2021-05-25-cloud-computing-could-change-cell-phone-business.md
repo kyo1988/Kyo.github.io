@@ -7,8 +7,6 @@ tags: [ Business Start-Up Design]
 comments: true
 ---
 
-* Table of Contents
-{:toc}
 
 
 # Cloud Computing could change cell phone business

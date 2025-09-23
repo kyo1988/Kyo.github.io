@@ -7,8 +7,6 @@ tags: [ Business Start-Up Design]
 comments: true
 ---
 
-* Table of Contents
-{:toc}
 
 This is a modified version of the report for Enterprise in Action in Bath Full Time MBA Class of 2020.
 
