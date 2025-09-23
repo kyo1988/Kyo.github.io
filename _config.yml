@@ -95,7 +95,7 @@ excerpt_separator: "<!-- more -->"
 
 # Google Analytics 4
 google_analytics:
-  ga4_measurement_id: "G-XXXXXXXXXX"   # ← 実際のGA4 Measurement IDに更新が必要
+  ga4_measurement_id: "G-VRYRGVBM3W"
   cross_domains:
     - "kyo1988.github.io"
     - "www.visageaiconsulting.com"
