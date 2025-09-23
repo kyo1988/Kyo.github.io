@@ -9,9 +9,6 @@ comments: true
 last_modified_at: 2025-01-19
 ---
 
-* Table of Contents
-{:toc}
-
 This is a modified version of the report for Machine Learning Engineering in Bath Full Time MBA Class of 2020.
 
 # CoreML Optimization Playbook
@@ -28,6 +25,8 @@ The data related to model performance for various optimization techniques is ext
 
 1. **Quantization**: Reducing model precision from 32-bit to 8-bit or lower
 2. **Knowledge Distillation**: Transferring knowledge from large teacher models to smaller student models
+
+{% include callout.html type="info" title="Key Insight" content="Quantization shows the most consistent performance improvements across different model architectures, with an average 75% reduction in model size while maintaining <5% accuracy loss." %}
 3. **Architecture Optimization**: Designing efficient neural network architectures for mobile deployment
 
 ### Quantization Analysis

@@ -51,9 +51,14 @@ layout: default
     </p>
   </header>
 
-         <article class="prose" itemprop="articleBody">
-           {{ content }}
-         </article>
+  <div class="article-container">
+    {% include toc.html %}
+    
+    <article class="article" itemprop="articleBody">
+      {{ content }}
+    </article>
+  </div>
+  
   <hr />
 </div>
 

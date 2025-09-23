@@ -1,0 +1,108 @@
+{% comment %}
+  Figure Include
+  Usage: {% include figure.html src="image-url" alt="description" caption="Figure caption" number="1" %}
+  
+  Parameters:
+  - src: Image URL (required)
+  - alt: Alt text (required)
+  - caption: Figure caption (optional)
+  - number: Figure number (optional)
+  - width: Image width (optional)
+  - height: Image height (optional)
+  - cloudinary: If true, applies Cloudinary transformations (optional)
+{% endcomment %}
+
+{% assign figure_number = include.number | default: '' %}
+{% assign figure_caption = include.caption | default: '' %}
+{% assign figure_alt = include.alt | default: 'Figure' %}
+{% assign figure_src = include.src %}
+{% assign figure_width = include.width | default: '' %}
+{% assign figure_height = include.height | default: '' %}
+
+{% comment %} Apply Cloudinary transformations if cloudinary=true {% endcomment %}
+{% if include.cloudinary == true %}
+  {% assign cloudinary_base = site.cloudinary.base %}
+  {% assign cloudinary_name = site.cloudinary.cloud_name %}
+  {% assign figure_src = figure_src | replace: 'https://res.cloudinary.com/', '' %}
+  {% assign figure_src = figure_src | replace: cloudinary_name, '' %}
+  {% assign figure_src = cloudinary_base | append: '/w_auto,h_auto,f_auto,q_auto' | append: figure_src %}
+{% endif %}
+
+<figure class="figure" id="figure-{{ figure_number }}">
+  <div class="figure-container">
+    <img 
+      src="{{ figure_src }}" 
+      alt="{{ figure_alt }}"
+      {% if figure_width %}width="{{ figure_width }}"{% endif %}
+      {% if figure_height %}height="{{ figure_height }}"{% endif %}
+      loading="lazy"
+      decoding="async"
+    />
+    {% if figure_number or figure_caption %}
+      <figcaption class="figure-caption">
+        {% if figure_number %}<span class="figure-number">Figure {{ figure_number }}.</span> {% endif %}{{ figure_caption }}
+      </figcaption>
+    {% endif %}
+  </div>
+</figure>
+
+<style>
+.figure {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.figure-container {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+}
+
+.figure img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.figure img:hover {
+  transform: scale(1.02);
+}
+
+.figure-caption {
+  font-size: 0.875rem;
+  color: var(--muted);
+  margin-top: 0.75rem;
+  font-style: italic;
+  line-height: 1.5;
+  max-width: 100%;
+}
+
+.figure-number {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .figure {
+    margin: 1.5rem 0;
+  }
+  
+  .figure-caption {
+    font-size: 0.8125rem;
+  }
+}
+
+/* Print styles */
+@media print {
+  .figure img {
+    box-shadow: none;
+  }
+  
+  .figure img:hover {
+    transform: none;
+  }
+}
+</style>
