@@ -9,6 +9,23 @@
   --border:#e5e7eb;
   --accent:#2563eb;        /* ← Web Appのプライマリに合わせて後で変更OK */
   --accent-ink:#ffffff;
+  
+  /* article-specific colors */
+  --heading:#0f172a;
+  --code-bg:#f1f5f9;
+  --code-text:#0f172a;
+  --blockquote-bg:#f8fafc;
+  --table-header-bg:#f1f5f9;
+  --table-hover-bg:#f8fafc;
+  --toc-bg:#f8fafc;
+  --hover-bg:#f1f5f9;
+  
+  /* callout colors */
+  --callout-bg:#f8f9fa;
+  --callout-border:#dee2e6;
+  --callout-accent:#6c757d;
+  --callout-title-color:#0f172a;
+  --callout-text-color:#0f172a;
 
   /* radius & shadow */
   --radii:16px;
@@ -35,6 +52,23 @@
     --muted:#94a3b8;
     --border:#1f2937;
     --shadow:0 8px 28px rgba(0,0,0,.35);
+    
+    /* article-specific dark mode colors */
+    --heading:#e5e7eb;
+    --code-bg:#1e1e1e;
+    --code-text:#d4d4d4;
+    --blockquote-bg:#2a2a2a;
+    --table-header-bg:#2a2a2a;
+    --table-hover-bg:#1a1a1a;
+    --toc-bg:#1a1a1a;
+    --hover-bg:#2a2a2a;
+    
+    /* callout dark mode colors */
+    --callout-bg:#1a1a1a;
+    --callout-border:#404040;
+    --callout-accent:#6b7280;
+    --callout-title-color:#e5e7eb;
+    --callout-text-color:#e5e7eb;
   }
 }
 

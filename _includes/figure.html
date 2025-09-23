@@ -23,12 +23,14 @@
 {% if include.cloudinary == true %}
   {% assign cloudinary_base = site.cloudinary.base %}
   {% assign cloudinary_name = site.cloudinary.cloud_name %}
-  {% assign figure_src = figure_src | replace: 'https://res.cloudinary.com/', '' %}
-  {% assign figure_src = figure_src | replace: cloudinary_name, '' %}
-  {% assign figure_src = cloudinary_base | append: '/w_auto,h_auto,f_auto,q_auto' | append: figure_src %}
+  {% comment %} Extract the path after /image/upload/ {% endcomment %}
+  {% assign path_parts = figure_src | split: '/image/upload/' %}
+  {% if path_parts.size > 1 %}
+    {% assign figure_src = cloudinary_base | append: '/w_auto,h_auto,f_auto,q_auto/' | append: path_parts[1] %}
+  {% endif %}
 {% endif %}
 
-<figure class="figure" id="figure-{{ figure_number }}">
+<figure class="figure"{% if figure_number %} id="figure-{{ figure_number }}"{% endif %}>
   <div class="figure-container">
     <img 
       src="{{ figure_src }}" 
@@ -46,63 +48,3 @@
   </div>
 </figure>
 
-<style>
-.figure {
-  margin: 2rem 0;
-  text-align: center;
-}
-
-.figure-container {
-  position: relative;
-  display: inline-block;
-  max-width: 100%;
-}
-
-.figure img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease;
-}
-
-.figure img:hover {
-  transform: scale(1.02);
-}
-
-.figure-caption {
-  font-size: 0.875rem;
-  color: var(--muted);
-  margin-top: 0.75rem;
-  font-style: italic;
-  line-height: 1.5;
-  max-width: 100%;
-}
-
-.figure-number {
-  font-weight: 600;
-  color: var(--accent);
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .figure {
-    margin: 1.5rem 0;
-  }
-  
-  .figure-caption {
-    font-size: 0.8125rem;
-  }
-}
-
-/* Print styles */
-@media print {
-  .figure img {
-    box-shadow: none;
-  }
-  
-  .figure img:hover {
-    transform: none;
-  }
-}
-</style>
