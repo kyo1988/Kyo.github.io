@@ -7,9 +7,9 @@ description: "On-device skin analytics with finance-grade pipelines—CoreML opt
 keywords: "Data Scientist, AI, CoreML, Finance, EDINET, RAG, LLM, Consulting"
 baseurl: "/Kyo.github.io" # the subpath of your site, e.g. /blog/
 url: "https://kyo1988.github.io" # the base hostname & protocol for your site
-lang: "ja"
-locale: ja_JP
-default_lang: "ja"
+lang: "en"
+locale: en_US
+default_lang: "en"
 
 # GitHub Pages theme
 theme: minima
@@ -95,7 +95,7 @@ excerpt_separator: "<!-- more -->"
 
 # Google Analytics 4
 google_analytics:
-  ga4_measurement_id: "G-XXXXXXXXXX"   # ← あなたのGA4 Measurement ID
+  ga4_measurement_id: "G-XXXXXXXXXX"   # ← 実際のGA4 Measurement IDに更新が必要
   cross_domains:
     - "kyo1988.github.io"
     - "www.visageaiconsulting.com"

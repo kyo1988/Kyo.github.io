@@ -58,9 +58,9 @@ Thumbs.db
 .github_token
 
 # Analytics and Scripts (Private)
-scripts/analytics/
-*.json
-*.py
+scripts/analytics/ga4-fix.json
+scripts/analytics/metrics/
+scripts/analytics/*.csv
 
 # Analytics Data (Private)
 metrics/
@@ -69,3 +69,13 @@ analytics_*.csv
 
 # Analytics Documentation (Private)
 ANALYTICS_GUIDE.md
+
+# Jekyll generated files
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Manual sitemap/feed (replaced by jekyll-sitemap/jekyll-feed)
+xml/sitemap.xml
+xml/feed.xml
