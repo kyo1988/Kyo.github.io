@@ -51,6 +51,91 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- Lazy loading script -->
 <script src="{{ '/assets/js/lazyfix.js' | relative_url }}"></script>
 
+<!-- Code copy functionality -->
+<script>
+(function() {
+  // Wait for DOM to be ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCodeCopy);
+  } else {
+    initCodeCopy();
+  }
+
+  function initCodeCopy() {
+    const codeBlocks = document.querySelectorAll('pre code');
+    
+    codeBlocks.forEach(function(block) {
+      // Skip if already processed
+      if (block.parentElement.classList.contains('code-container')) return;
+      
+      const pre = block.parentElement;
+      const container = document.createElement('div');
+      container.className = 'code-container';
+      
+      // Wrap pre in container
+      pre.parentNode.insertBefore(container, pre);
+      container.appendChild(pre);
+      
+      // Add copy button
+      const copyButton = document.createElement('button');
+      copyButton.className = 'code-copy';
+      copyButton.textContent = 'Copy';
+      copyButton.setAttribute('aria-label', 'Copy code to clipboard');
+      
+      container.appendChild(copyButton);
+      
+      // Add copy functionality
+      copyButton.addEventListener('click', function() {
+        const text = block.textContent;
+        
+        if (navigator.clipboard && window.isSecureContext) {
+          // Use modern clipboard API
+          navigator.clipboard.writeText(text).then(function() {
+            showCopySuccess(copyButton);
+          }).catch(function() {
+            fallbackCopyText(text, copyButton);
+          });
+        } else {
+          // Fallback for older browsers
+          fallbackCopyText(text, copyButton);
+        }
+      });
+    });
+  }
+  
+  function fallbackCopyText(text, button) {
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    textArea.style.position = 'fixed';
+    textArea.style.left = '-999999px';
+    textArea.style.top = '-999999px';
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    
+    try {
+      document.execCommand('copy');
+      showCopySuccess(button);
+    } catch (err) {
+      console.error('Failed to copy text: ', err);
+    }
+    
+    document.body.removeChild(textArea);
+  }
+  
+  function showCopySuccess(button) {
+    const originalText = button.textContent;
+    button.textContent = 'Copied!';
+    button.style.background = '#22c55e';
+    
+    setTimeout(function() {
+      button.textContent = originalText;
+      button.style.background = '';
+    }, 2000);
+  }
+})();
+</script>
+
 <!-- Analytics script -->
 {% if site.google_analytics.ga4_measurement_id %}
   <script defer src="{{ '/assets/js/analytics.js' | relative_url }}"></script>
