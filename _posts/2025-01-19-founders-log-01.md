@@ -9,9 +9,6 @@ comments: true
 last_modified_at: 2025-01-19
 ---
 
-* Table of Contents
-{:toc}
-
 Weekly technical insights from building Visage AI's blog infrastructure. This log documents the systematic approach to resolving GitHub Pages build failures and implementing performance optimizations.
 
 # Founder's Log #01 — Weekly Update
