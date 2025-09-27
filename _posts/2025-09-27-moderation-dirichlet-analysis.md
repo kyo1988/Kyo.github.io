@@ -73,7 +73,7 @@ The Dirichlet analysis reveals significant challenges with theoretical model fit
 
 ## Evidence Files
 
-![Figure 1. Buyer moderation analysis showing quantile-based slopes and R² values.](/assets/images/marketing-science/buyer_moderation_bodycare.png)
+![Figure 1. Buyer moderation analysis showing quantile-based slopes and R² values.]({{ site.baseurl }}/assets/images/marketing-science/buyer_moderation_bodycare.png)
 
 *Figure 1 presents the quantile-based buyer moderation analysis, demonstrating strong effects in higher quantiles (Q4 slope=3.341, R²=0.472) compared to weak Dirichlet model fit.*
 

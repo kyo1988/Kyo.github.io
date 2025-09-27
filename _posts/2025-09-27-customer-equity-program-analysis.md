@@ -83,7 +83,7 @@ Complete specification-compliant implementation:
 
 ## Evidence Files
 
-![Figure 1. CEP coverage heatmap showing brand performance across different market segments.](/assets/images/marketing-science/cep_coverage_complete.png)
+![Figure 1. CEP coverage heatmap showing brand performance across different market segments.]({{ site.baseurl }}/assets/images/marketing-science/cep_coverage_complete.png)
 
 *Figure 1 illustrates the CEP coverage analysis results, revealing brand performance variations across market segments with Wilson confidence intervals.*
 

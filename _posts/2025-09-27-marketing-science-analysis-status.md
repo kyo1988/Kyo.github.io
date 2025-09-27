@@ -109,7 +109,7 @@ The specification-compliant implementation reveals why achieving PASS examples i
 
 ## Evidence Files and Documentation
 
-![Figure 1. Marketing science analysis overview showing specification-compliant implementation results across all methodologies.](/assets/images/marketing-science/dop_heat_dunnhumby_beauty_spec_q90_b2_m20.png)
+![Figure 1. Marketing science analysis overview showing specification-compliant implementation results across all methodologies.]({{ site.baseurl }}/assets/images/marketing-science/dop_heat_dunnhumby_beauty_spec_q90_b2_m20.png)
 
 *Figure 1 provides an overview of the marketing science analysis pipeline, highlighting the near-miss DoP result and comprehensive statistical validation across all methodologies.*
 

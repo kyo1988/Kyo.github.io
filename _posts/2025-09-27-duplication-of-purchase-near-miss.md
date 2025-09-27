@@ -116,7 +116,7 @@ The dunnhumby beauty result emerged from the optimal combination: top 10% users,
 
 ## Evidence Files
 
-![Figure 1. DoP heatmap for dunnhumby beauty; warmer cells indicate higher duplication.](/assets/images/marketing-science/dop_heat_dunnhumby_beauty_spec_q90_b2_m20.png)
+![Figure 1. DoP heatmap for dunnhumby beauty; warmer cells indicate higher duplication.]({{ site.baseurl }}/assets/images/marketing-science/dop_heat_dunnhumby_beauty_spec_q90_b2_m20.png)
 
 *Figure 1 displays the duplication matrix for dunnhumby beauty data, showing the near-miss result (MAD=0.015863) that approaches the 0.015 threshold.*
 
