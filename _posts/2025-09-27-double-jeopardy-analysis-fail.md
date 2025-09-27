@@ -18,7 +18,7 @@ description: "r=0.627 falls short of threshold. In markets with weak penetration
 
 ## TL;DR
 
-Our Double Jeopardy analysis reveals a failed relationship with a Pearson correlation of 0.627, significantly below the 0.80 threshold, accompanied by unstable time series signals that suggest data non-stationarity. This conservative interpretation indicates that a "penetration first" strategy should be prioritized over frequency-based loyalty programs in the beauty category. The recommended action is to shift budget allocation toward reach expansion KPIs and evaluate progress quarterly, focusing on getting more customers to try the brand rather than increasing purchase frequency among existing buyers.
+Double Jeopardy relationship fails (Pearson correlation r=0.627) in beauty category, significantly below the 0.80 threshold with unstable time series signals requiring conservative interpretation. This indicates that "penetration first" strategy should be prioritized over frequency-based loyalty programs. The recommended action is to shift budget allocation toward reach expansion KPIs and evaluate progress quarterly. **Action**: Strengthen reach KPIs and measure effectiveness quarterly, focusing on getting more customers to try the brand rather than increasing purchase frequency among existing buyers.
 
 ## Executive Summary
 
@@ -45,7 +45,7 @@ Our analysis employed specification-compliant statistical methods:
 |--------|--------|--------|--------|
 | Pearson r | ≥0.80 | 0.627 | ❌ FAIL |
 | Spearman r | ≥0.80 | 0.562 | ❌ FAIL |
-| BCa CI Lower Bound | ≥0.70 | 0.275 | ❌ FAIL |
+| BCa CI Lower Bound | ≥0.70 | 0.275 | ❌ FAIL | (BCa = bias-corrected and accelerated confidence intervals)
 | Stationarity | Stable | False | ❌ FAIL |
 
 ### Failure Analysis

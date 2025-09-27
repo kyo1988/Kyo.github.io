@@ -18,7 +18,7 @@ description: "Analysis of 1M+ Amazon reviews across languages. CEP coverage nega
 
 ## TL;DR
 
-Our Category Entry Points (CEP) analysis across 1M+ multilingual reviews reveals that brand coverage negatively correlates with penetration rates, with English showing exceptional performance compared to other languages. Data sufficiency constraints limited our analysis to English-only for reliable statistical results, highlighting the need for improved data collection across languages. The key action is to redesign copy deployment and localization investment allocation to expand coverage breadth and reduce the English-centric bias in our marketing approach.
+CEP coverage negatively correlates with penetration rates, with English showing exceptional high performance compared to other languages. Multilingual data sufficiency constraints limit reliable analysis to English-only, highlighting the need for improved data collection across languages. The key action is to redesign copy deployment and localization investment allocation to expand coverage breadth and reduce English-centric bias in marketing approach. **Action**: Test messaging validation in top 3 languages and track CEP hit improvement quantitatively.
 
 ## Executive Summary
 

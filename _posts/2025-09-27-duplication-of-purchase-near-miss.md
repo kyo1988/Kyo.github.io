@@ -18,7 +18,7 @@ description: "Weighted MAD of 0.015863 (gap +0.000863). DoP 'near-miss' demonstr
 
 ## TL;DR
 
-Our specification-compliant Duplication of Purchase analysis achieved a weighted MAD of 0.015863, falling short of the 0.015 threshold by only 0.000863, which is practically sufficient for business decision-making purposes. The weighted approach reflects real market structure and provides stricter validation compared to unweighted calculations, making it more reliable for strategic planning. The recommended action is to reset duplication rate benchmarks based on this near-miss result and focus optimization efforts on the top 3 cross-sell brand pairs that show the highest duplication potential.
+Weighted MAD (Mean Absolute Deviation) of 0.015863 achieves "near-miss" status (gap +0.000863), demonstrating practical validity for business decisions. Weighting reflects real market structure and provides stricter validation, making thresholds more realistic for strategic planning. The recommended action is to reset duplication rate benchmarks and focus on top cross-sell pairs for ROI maximization. **Action**: Implement A/B testing for top 3 cross-sell brand pairs with shelf placement and CRM optimization this quarter.
 
 ## Executive Summary
 
@@ -45,7 +45,7 @@ Duplication of Purchase (DoP) measures the extent to which buyers of one brand a
 Our analysis employed rigorous statistical methods:
 
 - **Weighted MAD**: Brand purchase count weighting (not simple averaging)
-- **BCa Bootstrap**: BCa (B=5000, seed=42)
+- **BCa Bootstrap**: BCa (B=5000, seed=42) - bias-corrected and accelerated confidence intervals
 - **Weekly Shuffle Test**: Real temporal randomization
 - **Negative Control**: Threshold ≤0.05
 - **Minimum Requirements**: ≥10 brands, median brands per user ≥2.0

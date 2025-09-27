@@ -19,7 +19,12 @@ description: "DoP achieves near-pass, DJ falls short, CEP and Moderation are use
 
 ## TL;DR
 
-Our marketing science analysis reveals that Duplication of Purchase (DoP) achieved a near-miss result, providing a solid foundation for cross-sell optimization strategies that can drive revenue impact. However, Double Jeopardy (DJ) failed to meet the threshold, indicating that reach investment should take priority over loyalty programs in the short term. Category Entry Points (CEP) and Moderation analyses offer valuable insights for copy localization and heavy buyer targeting strategies. The recommended action plan spans 30/60/90 days: focus on top cross-sell pairs A/B testing, experiment with non-English copy strategies, and redesign reach KPIs for maximum effectiveness.
+**日本語要約**:
+- DoPは"ほぼ達成"でクロスセル最適化の余地が大
+- DJ未達で当面は到達投資を優先
+- CEP/ModerationでローカライズとQ4施策で短期改善可能
+
+DoP achieves "near-miss" status providing solid foundation for cross-sell optimization with significant revenue potential. DJ fails to meet threshold, indicating reach investment priority over loyalty programs in short term. CEP and Moderation analyses offer valuable insights for copy localization and heavy buyer targeting strategies. **Action**: Implement 30/60/90 day plan with top cross-sell pairs A/B testing, non-English copy experiments, and reach KPI redesign for maximum effectiveness.
 
 ## Executive Summary
 

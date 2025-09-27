@@ -18,7 +18,7 @@ description: "Heavy buyers (Q4) show strongest purchase behavior persistence ove
 
 ## TL;DR
 
-Our moderation analysis reveals that the Q4 segment (heavy buyers) shows the strongest relationship with an R² of 0.472, demonstrating that heavy buyers drive purchase behavior persistence over time. However, the Dirichlet model fails with an R² approximately equal to zero due to high data variance and assumption violations, making it unsuitable for production use. The recommended action is to prioritize Q4 segment offer and experience optimization through A/B testing, focusing on the customer segment that shows the most predictable and valuable behavior patterns.
+Heavy buyers (Q4) show the strongest relationship (R²=0.472, coefficient of determination), demonstrating predictable and valuable behavior patterns over time. Dirichlet model fails (R²≈0) due to high data variance and assumption violations, making it unsuitable for production use. The recommended action is to prioritize Q4 segment offer and experience optimization through A/B testing. **Action**: Implement Q4-focused A/B testing with basket expansion and frequency suppression design, targeting the most predictable customer segment.
 
 ## Executive Summary
 
@@ -48,7 +48,7 @@ The NBD-Dirichlet model is a theoretical framework for understanding brand choic
 ### Dirichlet Analysis
 
 - **Model Fitting**: Maximum Likelihood Estimation (MLE)
-- **Validation**: P-P plot analysis, R² calculation
+- **Validation**: P-P plot analysis, R² calculation (coefficient of determination)
 - **Data Characteristics**: Mean purchases, standard deviation analysis
 - **Scope Limitation**: Designed for **category × brand × buyer distribution** panel data
 - **Excluded Data**: SKU-level, review data, and non-panel sources are **out of scope**
