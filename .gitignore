@@ -1,3 +1,9 @@
 _site
 .sass-cache
 .jekyll-metadata
+
+# Sensitive files
+scripts/analytics/ga4-fix.json
+*.json
+!package.json
+!_config.yml
