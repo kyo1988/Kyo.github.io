@@ -170,7 +170,7 @@ The dunnhumby beauty result emerged from the optimal combination: top 10% users,
 ### Specification-Compliant Results
 - **Best Near-Miss**: [assets/evidence/dop_dunnhumby_beauty_spec_q90_b2_m20.csv](/assets/evidence/dop_dunnhumby_beauty_spec_q90_b2_m20.csv)
 - **Comparison**: [assets/evidence/dop_instacart_shampoo_specification_compliant.csv](/assets/evidence/dop_instacart_shampoo_specification_compliant.csv)
-- **Heatmap**: [figs/dop_heat_dunnhumby_beauty_spec_q90_b2_m20.png](/assets/images/marketing-science/dop_heat_dunnhumby_beauty_spec_q90_b2_m20.png)
+- **Heatmap**: [assets/images/marketing-science/dop_heat_dunnhumby_beauty_spec_q90_b2_m20.png](/assets/images/marketing-science/dop_heat_dunnhumby_beauty_spec_q90_b2_m20.png)
 - **Audit Log**: [logs/run_dop_dunnhumby_beauty_spec_q90_b2_m20.jsonl](/logs/run_dop_dunnhumby_beauty_spec_q90_b2_m20.jsonl)
 
 ### Simplified Version Results

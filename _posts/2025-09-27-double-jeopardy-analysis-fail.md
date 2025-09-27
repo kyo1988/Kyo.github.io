@@ -151,7 +151,7 @@ The BCa confidence interval [0.275, 0.462] indicates that even the upper bound f
 *Figure 1 shows the relationship between brand penetration and average purchase frequency, revealing the weak correlation (r=0.627) that falls below the 0.80 threshold.*
 
 - **Results**: [assets/evidence/dj_bodycare.csv](/assets/evidence/dj_bodycare.csv)
-- **Visualization**: [figs/dj_bodycare.png](/assets/images/marketing-science/dj_bodycare.png)
+- **Visualization**: [assets/images/marketing-science/dj_bodycare.png](/assets/images/marketing-science/dj_bodycare.png)
 - **Audit Log**: [logs/run_dj_bodycare.jsonl](/logs/run_dj_bodycare.jsonl)
 
 ## Reproducibility

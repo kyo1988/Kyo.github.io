@@ -18,7 +18,7 @@ description: "Analysis of 1M+ Amazon reviews across languages. CEP coverage nega
 
 ## TL;DR
 
-**Key Findings**: Redesign copy deployment and localization strategy immediately to address English-centric bias. CEP coverage negatively correlates with penetration rates (r=-0.28), indicating that high-penetration brands tend to underperform in multilingual coverage.
+**Key Findings**: Consider redesigning copy deployment and localization strategy to address English-centric bias. CEP coverage negatively correlates with penetration rates (r=-0.28), indicating that high-penetration brands tend to underperform in multilingual coverage.
 
 **Next Steps**: (1) Test messaging validation in top 3 languages, (2) Track CEP hit improvement quantitatively, (3) Reallocate localization budget from English to underperforming language markets.
 

@@ -134,12 +134,12 @@ The Dirichlet analysis reveals significant challenges with theoretical model fit
 
 ### Moderation Analysis
 - **Results**: [assets/evidence/moderation_bodycare.csv](/assets/evidence/moderation_bodycare.csv)
-- **Visualization**: [figs/buyer_moderation_bodycare.png](/assets/images/marketing-science/buyer_moderation_bodycare.png)
+- **Visualization**: [assets/images/marketing-science/buyer_moderation_bodycare.png](/assets/images/marketing-science/buyer_moderation_bodycare.png)
 - **Audit Log**: [logs/run_moderation_bodycare.jsonl](/logs/run_moderation_bodycare.jsonl)
 
 ### Dirichlet Analysis
 - **Results**: [assets/evidence/dirichlet_bodycare.csv](/assets/evidence/dirichlet_bodycare.csv)
-- **P-P Plot**: [figs/dirichlet_pp_plot_bodycare.png](/assets/images/marketing-science/dirichlet_pp_plot_bodycare.png)
+- **P-P Plot**: [assets/images/marketing-science/dirichlet_pp_plot_bodycare.png](/assets/images/marketing-science/dirichlet_pp_plot_bodycare.png)
 - **Audit Log**: [logs/run_dirichlet_bodycare.jsonl](/logs/run_dirichlet_bodycare.jsonl)
 
 ## Reproducibility
