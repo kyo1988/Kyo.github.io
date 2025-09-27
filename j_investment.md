@@ -10,14 +10,14 @@ permalink: /Investment/
 
 ## Types of Investment
 
-Here is the information page about investment, which is mainly two types (passive and active). However, recently algorithm investment is becoming a hot topic, which might be in the middle of two standards. You can see my position about which is better in the article, titled [Will index funds continue to beat active funds?](https://kyo1988.github.io/Kyo.github.io/business/finance/2021/05/25/will-index-funds-continue-to-beat-active-funds.html).
+Here is the information page about investment, which is mainly two types (passive and active). However, recently algorithm investment is becoming a hot topic, which might be in the middle of two standards. You can see my position about which is better in the article, titled [Will index funds continue to beat active funds?](/business/finance/2021/05/25/will-index-funds-continue-to-beat-active-funds.html).
 
 ## Arbitrage Pricing Theory
 
 It can be said active and passive (index) investment are still in a state of confrontation, which means Arbitrage Pricing Theory (APT) and Capital Asset Pricing Model (CAPM) are also. These airticles are related to APT (main part of financial engineering).
-* [Organize and implement Hull and White (1994a) interest rate model](https://kyo1988.github.io/Kyo.github.io/business/finance/2021/06/09/organize-and-implement-hull-and-white-1994a-interest-rate-model.html)
-* [Derivation of Black-Scholes PDE and its analytical solution by arbitrage pricing theory](https://kyo1988.github.io/Kyo.github.io/business/finance/2021/06/03/derivation-of-black-scholes-pde-and-its-analytical-solution-by-arbitrage-pricing-theory.html)
-* [Derivation of yield curve construction formula with tenor basis spread](https://kyo1988.github.io/Kyo.github.io/business/finance/2021/05/31/derivation-of-yield-curve-construction-formula-with-tenor-basis-spread.html)
+* [Organize and implement Hull and White (1994a) interest rate model](/business/finance/2021/06/09/organize-and-implement-hull-and-white-1994a-interest-rate-model.html)
+* [Derivation of Black-Scholes PDE and its analytical solution by arbitrage pricing theory](/business/finance/2021/06/03/derivation-of-black-scholes-pde-and-its-analytical-solution-by-arbitrage-pricing-theory.html)
+* [Derivation of yield curve construction formula with tenor basis spread](/business/finance/2021/05/31/derivation-of-yield-curve-construction-formula-with-tenor-basis-spread.html)
 
 ## Reference
 ### Investment

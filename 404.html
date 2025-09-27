@@ -1,0 +1,20 @@
+---
+layout: default
+title: "404 - Page Not Found"
+---
+
+<div class="container">
+  <h1>404 - Page Not Found</h1>
+  <p>The page you're looking for doesn't exist.</p>
+  <p><a href="/">Go back to the homepage</a></p>
+</div>
+
+<script>
+(function () {
+  var p = location.pathname;
+  if (p.indexOf("/Kyo.github.io/") === 0) {
+    var fixed = p.replace("/Kyo.github.io", "");
+    location.replace(location.origin + fixed + location.search + location.hash);
+  }
+})();
+</script>

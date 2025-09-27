@@ -136,10 +136,10 @@ The specification-compliant implementation reveals why achieving PASS examples i
 ## Reproducibility
 
 For detailed reproducibility information, refer to the individual analysis articles:
-- **Double Jeopardy**: [DJ Analysis Reproducibility](https://kyo1988.github.io/Kyo.github.io/marketing/2025/09/27/double-jeopardy-analysis-fail.html#reproducibility)
-- **Duplication of Purchase**: [DoP Analysis Reproducibility](https://kyo1988.github.io/Kyo.github.io/marketing/2025/09/27/duplication-of-purchase-near-miss.html#reproducibility)
+- **Double Jeopardy**: [DJ Analysis Reproducibility](/marketing/2025/09/27/double-jeopardy-analysis-fail.html#reproducibility)
+- **Duplication of Purchase**: [DoP Analysis Reproducibility](/marketing/2025/09/27/duplication-of-purchase-near-miss.html#reproducibility)
 - **Category Entry Points**: [CEP Analysis Reproducibility](/marketing/2025/09/27/category-entry-points-analysis.html#reproducibility)
-- **Moderation/Dirichlet**: [Moderation Analysis Reproducibility](https://kyo1988.github.io/Kyo.github.io/marketing/2025/09/27/moderation-dirichlet-analysis.html#reproducibility)
+- **Moderation/Dirichlet**: [Moderation Analysis Reproducibility](/marketing/2025/09/27/moderation-dirichlet-analysis.html#reproducibility)
 
 ## Limitations and Threats to Validity
 
