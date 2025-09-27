@@ -5,9 +5,15 @@ date: 2025-09-27 10:00:00 +0900
 categories: [Marketing Science, Data Analysis]
 tags: [Double Jeopardy, Ehrenberg-Bass, Marketing Analytics, Statistical Analysis]
 permalink: /marketing/2025/09/27/double-jeopardy-analysis-fail.html
+description: "r=0.627 falls short of threshold. In markets with weak penetration-frequency relationships, 'penetration expansion' may be the priority."
 ---
 
-# Double Jeopardy Analysis: When Real-World Data Challenges Theoretical Expectations
+
+## TL;DR
+
+- **r=0.627 falls short of threshold (weak relationship in beauty category)**
+- **"Penetration first" importance is suggested**
+- **Action: Short-term focus on reach expansion, loyalty programs as secondary**
 
 ## Executive Summary
 
@@ -129,9 +135,7 @@ This analysis provides valuable insights into the limitations of applying theore
 
 - Ehrenberg, A.S.C. (1988). Repeat-buying: facts, theory and applications
 - Sharp, B. (2010). How Brands Grow
-- [Project Documentation](/marketing-science-README.md)
-- [Specification-Compliant Analysis Report](/notes/specification_compliant_pass_analysis.md)
 
 ---
 
-*This analysis is part of a comprehensive marketing science research project. For complete methodology and results, see the [Statement of Work](/SOW.md) and [Progress Summary](/notes/progress_summary.md).*
+*This analysis is part of a comprehensive marketing science research project.*

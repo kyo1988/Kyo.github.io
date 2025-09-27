@@ -5,9 +5,15 @@ date: 2025-09-27 11:00:00 +0900
 categories: [Marketing Science, Data Analysis]
 tags: [Duplication of Purchase, Ehrenberg-Bass, Marketing Analytics, Statistical Analysis, Weighted MAD]
 permalink: /marketing/2025/09/27/duplication-of-purchase-near-miss.html
+description: "Weighted MAD of 0.015863 (gap +0.000863). DoP 'near-miss' demonstrates practical validity and investment decision applications."
 ---
 
-# Duplication of Purchase Analysis: Near-Miss Achievement and the Weighted MAD Challenge
+
+## TL;DR
+
+- **Weighted MAD of 0.015863 (gap +0.000863) achieves "near-miss"**
+- **Weighting reflects real market structure and tightens thresholds**
+- **Action: Reset duplication rate benchmarks and prioritize cross-sell opportunities**
 
 ## Executive Summary
 
@@ -182,9 +188,7 @@ Future research should investigate additional data sources for specification-com
 
 - Ehrenberg, A.S.C. (1988). Repeat-buying: facts, theory and applications
 - Sharp, B. (2010). How Brands Grow
-- [Project Documentation](/marketing-science-README.md)
-- [Specification-Compliant Analysis Report](/notes/specification_compliant_pass_analysis.md)
 
 ---
 
-*This analysis is part of a comprehensive marketing science research project. For complete methodology and results, see the [Statement of Work](/SOW.md) and [Progress Summary](/notes/progress_summary.md).*
+*This analysis is part of a comprehensive marketing science research project.*

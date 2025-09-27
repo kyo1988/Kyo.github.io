@@ -5,9 +5,15 @@ date: 2025-09-27 12:00:00 +0900
 categories: [Marketing Science, Data Analysis]
 tags: [Category Entry Points, CEP, Brand Coverage, Multilingual Analysis, H1 Correlation]
 permalink: /marketing/2025/09/27/category-entry-points-analysis.html
+description: "Analysis of 1M+ Amazon reviews across languages. CEP coverage negatively correlates with penetration. Practical insights for localization and copy strategy."
 ---
 
-# Category Entry Points Analysis: Multilingual Brand Coverage and H1 Correlation Insights
+
+## TL;DR
+
+- **Multilingual review analysis shows higher penetration correlates with lower CEP coverage**
+- **English shows relatively high coverage and penetration (other languages limited by data sufficiency)**
+- **Action: Redesign copy deployment and localization investment allocation**
 
 ## Executive Summary
 
@@ -32,7 +38,7 @@ Category Entry Points (CEP) analysis examines how brands perform across differen
 - **Data Source**: Amazon review data (1,000,000+ records)
 - **Input SHA**: faa6eadcba54534f (full reproducibility)
 - **Chunk Processing**: 100,000 records per chunk for memory efficiency
-- **Multilingual Support**: 27 languages processed
+- **Multilingual Support**: 27 languages detected, English-only analysis due to data sufficiency
 
 ### Statistical Implementation
 
@@ -46,7 +52,7 @@ We employed Wilson confidence intervals for coverage rates due to their superior
 
 **Overall Statistics**:
 - **Total CEP Matches**: 256
-- **Excluded Languages**: 27 (insufficient data)
+- **Excluded Languages**: 26 (insufficient data, English-only analysis)
 - **Excluded Cells**: 618,066 (below threshold)
 - **Coverage Range**: 0.0 to 1.0
 
@@ -172,9 +178,7 @@ Future research should investigate production-ready brand mapping for CEP-strati
 ## References
 
 - Kotler, P. and Keller, K.L. (2015). Marketing Management
-- [Project Documentation](/marketing-science-README.md)
-- [Specification-Compliant Analysis Report](/assets/evidence/specification_compliant_pass_analysis.md)
 
 ---
 
-*This analysis is part of a comprehensive marketing science research project. For complete methodology and results, see the [Statement of Work](/assets/evidence/SOW.md) and [Progress Summary](/assets/evidence/progress_summary.md).*
+*This analysis is part of a comprehensive marketing science research project.*

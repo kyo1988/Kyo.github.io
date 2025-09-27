@@ -5,9 +5,15 @@ date: 2025-09-27 13:00:00 +0900
 categories: [Marketing Science, Data Analysis]
 tags: [Buyer Moderation, NBD-Dirichlet, Quantile Analysis, Statistical Modeling, R-squared]
 permalink: /marketing/2025/09/27/moderation-dirichlet-analysis.html
+description: "Heavy buyers (Q4) show strongest purchase behavior persistence over time (R²=0.472). Dirichlet fit is R²≈0, best kept as reference only."
 ---
 
-# Moderation and Dirichlet Analysis: Quantile-Based Insights and Model Fit Challenges
+
+## TL;DR
+
+- **Heavy buyers (Q4) show strongest purchase behavior persistence over time (R²=0.472)**
+- **Dirichlet fit is extremely weak, keep as reference model only**
+- **Action: Validate Q4-targeted strategies, prioritize robust modeling approaches**
 
 ## Executive Summary
 
@@ -163,9 +169,7 @@ Future research should investigate alternative modeling approaches for high-vari
 
 - Ehrenberg, A.S.C. (1988). Repeat-buying: facts, theory and applications
 - Sharp, B. (2010). How Brands Grow
-- [Project Documentation](/marketing-science-README.md)
-- [Specification-Compliant Analysis Report](/notes/specification_compliant_pass_analysis.md)
 
 ---
 
-*This analysis is part of a comprehensive marketing science research project. For complete methodology and results, see the [Statement of Work](/SOW.md) and [Progress Summary](/notes/progress_summary.md).*
+*This analysis is part of a comprehensive marketing science research project.*

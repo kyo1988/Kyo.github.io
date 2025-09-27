@@ -5,9 +5,15 @@ date: 2025-09-27 14:00:00 +0900
 categories: [Marketing Science, Data Analysis]
 tags: [Marketing Science, Ehrenberg-Bass, Statistical Analysis, Specification-Compliant, Real-World Data]
 permalink: /marketing/2025/09/27/marketing-science-analysis-status.html
+description: "DoP achieves near-pass, DJ falls short, CEP and Moderation are useful. Investment decision roadmap for next quarter."
 ---
 
-# Marketing Science Analysis Status: Specification-Compliant Implementation with Real-World Insights
+
+## TL;DR
+
+- **DoP achieves "near-miss", DJ falls short, CEP and Moderation are useful**
+- **Next quarter: Invest in reach expansion, localization, and heavy buyer optimization**
+- **Research continues with focus on reproducibility and sound approximation**
 
 ## Executive Summary
 
@@ -20,6 +26,17 @@ Our comprehensive marketing science analysis pipeline has achieved specification
 **Precondition**: median brands per user ≥ 2.
 
 **DJ Gate**: Pass if **Pearson r ≥ 0.80** and **BCa 95% lower ≥ 0.70**. Window/min_buyers must be stated.
+
+## Background
+
+This analysis evaluates four core marketing science principles using real-world data:
+
+- **Double Jeopardy (DJ)**: The relationship between brand penetration and purchase frequency among buyers
+- **Duplication of Purchase (DoP)**: How buyers of one brand also purchase other brands in the same category
+- **Category Entry Points (CEP)**: Brand coverage across different market segments and languages
+- **Buyer Moderation**: How purchase behavior varies across different buyer segments (quantiles)
+
+Each analysis employs specification-compliant statistical methods including BCa Bootstrap, real temporal randomization, and negative controls to ensure production-ready results.
 
 ## Current Status Overview
 
@@ -131,19 +148,24 @@ The specification-compliant implementation reveals why achieving PASS examples i
 - **Moderation Analysis**: [results/moderation_bodycare.csv](/results/moderation_bodycare.csv)
 - **Dirichlet Analysis**: [results/dirichlet_bodycare.csv](/results/dirichlet_bodycare.csv)
 
-### Documentation
-- **Project Overview**: [marketing-science-README.md](/marketing-science-README.md)
-- **Statement of Work**: [SOW.md](/SOW.md)
-- **Detailed Analysis**: [notes/specification_compliant_pass_analysis.md](/notes/specification_compliant_pass_analysis.md)
-- **Progress Summary**: [notes/progress_summary.md](/notes/progress_summary.md)
+### Methodology Summary
+
+**Statistical Framework**: All analyses employ specification-compliant methods including BCa Bootstrap (B=5000, seed=42), real weekly shuffle for temporal randomization, and negative controls for validation.
+
+**Data Sources**: 
+- UCI beauty category data (1,264 users, 27 brands) for DJ and Moderation analysis
+- Dunnhumby beauty data (1,735 users, 46 brands) for DoP near-miss analysis  
+- Amazon review data (1M+ records, 27 languages) for CEP analysis
+
+**Quality Assurance**: Complete audit logging in JSONL format, input SHA verification for reproducibility, and stationarity testing across all analyses.
 
 ## Reproducibility
 
 For detailed reproducibility information, refer to the individual analysis articles:
-- **Double Jeopardy**: [DJ Analysis Reproducibility](https://kyo1988.github.io/Kyo.github.io/marketing/2025/09/27/double-jeopardy-analysis-fail.html#reproducibility)
-- **Duplication of Purchase**: [DoP Analysis Reproducibility](https://kyo1988.github.io/Kyo.github.io/marketing/2025/09/27/duplication-of-purchase-near-miss.html#reproducibility)
-- **Category Entry Points**: [CEP Analysis Reproducibility](https://kyo1988.github.io/Kyo.github.io/marketing/2025/09/27/category-entry-points-analysis.html#reproducibility)
-- **Moderation/Dirichlet**: [Moderation Analysis Reproducibility](https://kyo1988.github.io/Kyo.github.io/marketing/2025/09/27/moderation-dirichlet-analysis.html#reproducibility)
+- **Double Jeopardy**: [DJ Analysis Reproducibility](/marketing/2025/09/27/double-jeopardy-analysis-fail.html#reproducibility)
+- **Duplication of Purchase**: [DoP Analysis Reproducibility](/marketing/2025/09/27/duplication-of-purchase-near-miss.html#reproducibility)
+- **Category Entry Points**: [CEP Analysis Reproducibility](/marketing/2025/09/27/category-entry-points-analysis.html#reproducibility)
+- **Moderation/Dirichlet**: [Moderation Analysis Reproducibility](/marketing/2025/09/27/moderation-dirichlet-analysis.html#reproducibility)
 
 ## Limitations and Threats to Validity
 
@@ -161,9 +183,7 @@ Our marketing science analysis pipeline demonstrates the importance of specifica
 
 - Ehrenberg, A.S.C. (1988). Repeat-buying: facts, theory and applications
 - Sharp, B. (2010). How Brands Grow
-- [Project Documentation](/marketing-science-README.md)
-- [Specification-Compliant Analysis Report](/notes/specification_compliant_pass_analysis.md)
 
 ---
 
-*This analysis is part of a comprehensive marketing science research project. For complete methodology and results, see the [Statement of Work](/SOW.md) and [Progress Summary](/notes/progress_summary.md).*
+*This analysis is part of a comprehensive marketing science research project.*
