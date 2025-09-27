@@ -15,7 +15,15 @@ Our Customer Equity Program (CEP) analysis successfully completed with comprehen
 
 ## Background
 
-Customer Equity Program (CEP) analysis examines how brands perform across different market segments, particularly focusing on Category Entry Points (CEPs) and their coverage rates. This analysis is crucial for understanding brand positioning and market penetration strategies.
+Customer Equity Program (CEP) analysis examines how brands perform across different market segments, particularly focusing on Category Entry Points (CEPs) and their coverage rates.
+
+### CEP Definition
+
+**CEP Coverage** = **Brand-specific review corpus** hit rate against **CEP dictionary (v1.0)** (sentence-level, negation excluded)
+
+**Multilingual Processing**: Language detection → language-specific dictionary → normalization
+
+**H1 Hypothesis**: `corr(Coverage, Penetration)` relationship analysis
 
 ## Methodology
 
@@ -46,6 +54,7 @@ We employed Wilson confidence intervals for coverage rates due to their superior
 - **Pearson Correlation**: -0.2800 (moderate negative)
 - **Spearman Correlation**: -0.5943 (strong negative)
 - **Interpretation**: Higher brand penetration correlates with lower coverage rates
+- **Causal Implication**: High-penetration brands may focus on **narrower language targeting** or have **different audience demographics** that reduce CEP coverage diversity
 
 ### Wilson Confidence Intervals
 
@@ -87,7 +96,7 @@ Complete specification-compliant implementation:
 
 *Figure 1 illustrates the CEP coverage analysis results, revealing brand performance variations across market segments with Wilson confidence intervals.*
 
-- **Coverage Results**: [results/cep_coverage_complete.csv](/results/cep_coverage_complete.csv)
+- **Coverage Results**: [assets/evidence/cep_coverage_complete.csv](/assets/evidence/cep_coverage_complete.csv)
 - **Coverage Heatmap**: [figs/cep_coverage_complete.png](/figs/cep_coverage_complete.png)
 - **H1 Correlation Plot**: [figs/cep_vs_penetration.png](/figs/cep_vs_penetration.png)
 - **Audit Log**: [logs/run_cep_complete.jsonl](/logs/run_cep_complete.jsonl)
@@ -114,7 +123,7 @@ Our CEP-stratified DoP analysis provides a demonstration of how CEP layers can b
 
 ### Evidence Files
 
-- **CEP-Stratified Results**: [results/dop_by_cep_realistic.csv](/results/dop_by_cep_realistic.csv)
+- **CEP-Stratified Results**: [assets/evidence/dop_by_cep_realistic.csv](/assets/evidence/dop_by_cep_realistic.csv)
 - **Demo Limitations**: [notes/cep_stratified_demo_limitations.md](/notes/cep_stratified_demo_limitations.md)
 
 ## Current Status

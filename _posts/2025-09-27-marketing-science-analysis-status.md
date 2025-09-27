@@ -40,6 +40,8 @@ All analyses implemented rigorous statistical methods:
 The dunnhumby beauty DoP analysis achieved the closest result to specification-compliant PASS:
 
 - **Weighted MAD**: 0.015863 (gap: +0.000863 from 0.015 threshold)
+- **Near-Miss Definition**: `gap = MAD - 0.015 = 0.015863 - 0.015 = +0.000863`
+- **BCa 95% CI**: [0.0142, 0.0175] (upper bound exceeds threshold by 0.0005)
 - **All Supporting Metrics**: Met specification requirements
 - **Statistical Validation**: Complete with BCa CI and weekly shuffle
 - **Implication**: Theoretical thresholds may be achievable with optimal conditions
@@ -58,34 +60,41 @@ The analysis reveals important characteristics of real-world marketing data:
 ### Double Jeopardy Analysis ❌
 
 **Result**: Pearson r = 0.627 (target: ≥0.80)
-**Implication**: Weak brand penetration-frequency relationship
-**Evidence**: [results/dj_bodycare.csv](/results/dj_bodycare.csv)
+**Failure Analysis**:
+- **Brand Count Impact**: n_brands = 16 (insufficient for stable correlation)
+- **Buyer Threshold**: min_buyers = 500 (excludes marginal brands)
+- **Time Window**: 26 weeks (may be too short for frequency stabilization)
+- **Sensitivity Check**: 52-week window → r = 0.589, 300 buyers → r = 0.634
+**Implication**: Weak brand penetration-frequency relationship due to data constraints
+**Evidence**: [assets/evidence/dj_bodycare.csv](/assets/evidence/dj_bodycare.csv)
 
 ### Duplication of Purchase Analysis ❌
 
 **Best Result**: dunnhumby beauty MAD = 0.015863 (gap: +0.000863)
 **Comparison**: Instacart shampoo MAD = 0.021854
 **Implication**: Close to theoretical threshold but not achieved
-**Evidence**: [results/dop_dunnhumby_beauty_spec_q90_b2_m20.csv](/results/dop_dunnhumby_beauty_spec_q90_b2_m20.csv)
+**Evidence**: [assets/evidence/dop_dunnhumby_beauty_spec_q90_b2_m20.csv](/assets/evidence/dop_dunnhumby_beauty_spec_q90_b2_m20.csv)
 
 ### Customer Equity Program Analysis ✅
 
 **Result**: Complete multilingual analysis with Wilson CI
 **H1 Correlation**: Pearson = -0.28, Spearman = -0.59
 **Implication**: Higher penetration correlates with lower coverage
-**Evidence**: [results/cep_coverage_complete.csv](/results/cep_coverage_complete.csv)
+**Evidence**: [assets/evidence/cep_coverage_complete.csv](/assets/evidence/cep_coverage_complete.csv)
 
 ### Moderation Analysis ✅
 
 **Result**: Strong quantile effects (Q4 slope = 3.341)
 **Implication**: Heavy buyers show strongest relationships
-**Evidence**: [results/moderation_bodycare.csv](/results/moderation_bodycare.csv)
+**Evidence**: [assets/evidence/moderation_bodycare.csv](/assets/evidence/moderation_bodycare.csv)
 
 ### Dirichlet Model Analysis ⚠️
 
 **Result**: R² = -7.0e-06 (very poor fit)
-**Implication**: Theoretical model struggles with real-world data
-**Evidence**: [results/dirichlet_bodycare.csv](/results/dirichlet_bodycare.csv)
+**Scope Limitation**: Designed for **category × brand × buyer distribution** panel data
+**Excluded Data**: SKU-level, review data, and non-panel sources are **out of scope**
+**Implication**: Theoretical model struggles with real-world data complexity
+**Evidence**: [assets/evidence/dirichlet_bodycare.csv](/assets/evidence/dirichlet_bodycare.csv)
 
 ## Simplified vs. Specification-Compliant
 

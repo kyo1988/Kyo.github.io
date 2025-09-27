@@ -28,7 +28,9 @@ The NBD-Dirichlet model is a theoretical framework for understanding brand choic
 ### Moderation Analysis
 
 - **Data Source**: UCI beauty category data
-- **Quantile Segmentation**: Q1, Q2, Q3, Q4 buyer segments
+- **Quantile Segmentation**: Q1, Q2, Q3, Q4 buyer segments based on purchase frequency
+- **Time Pair Definition**: Analysis of purchase behavior between time periods (t, t+1)
+- **Quantile Regression**: Q1–Q4 quantile regression analysis
 - **Statistical Measures**: Slope coefficients, R² values, confidence intervals
 - **Stationarity Check**: Temporal stability assessment
 
@@ -37,6 +39,8 @@ The NBD-Dirichlet model is a theoretical framework for understanding brand choic
 - **Model Fitting**: Maximum Likelihood Estimation (MLE)
 - **Validation**: P-P plot analysis, R² calculation
 - **Data Characteristics**: Mean purchases, standard deviation analysis
+- **Scope Limitation**: Designed for **category × brand × buyer distribution** panel data
+- **Excluded Data**: SKU-level, review data, and non-panel sources are **out of scope**
 
 ## Results
 
@@ -49,7 +53,7 @@ The NBD-Dirichlet model is a theoretical framework for understanding brand choic
 | Q1 | -0.0016 | 0.00001 | Minimal effect |
 | Q2 | 0.321 | 0.196 | Moderate effect |
 | Q3 | 0.765 | 0.204 | Strong effect |
-| Q4 | 3.341 | 0.472 | Very strong effect |
+| Q4 | 3.341 | 0.472 | Very strong effect (heavy buyers show regression slope >1, indicating weak mean reversion) |
 
 ### Discussion (Moderation)
 
@@ -61,7 +65,7 @@ The moderation analysis reveals robust quantile-based buyer segmentation with cl
 
 | Metric | Value | Interpretation |
 |--------|-------|----------------|
-| R² | -7.0e-06 | Very poor fit |
+| R² | -7.0e-06 | Very poor fit (below baseline performance) |
 | Mean Purchases | 19.48 | Moderate frequency |
 | Std Purchases | 181.9 | Very high variance |
 | NBD Success | True | Model fitted successfully |
@@ -78,12 +82,12 @@ The Dirichlet analysis reveals significant challenges with theoretical model fit
 *Figure 1 presents the quantile-based buyer moderation analysis, demonstrating strong effects in higher quantiles (Q4 slope=3.341, R²=0.472) compared to weak Dirichlet model fit.*
 
 ### Moderation Analysis
-- **Results**: [results/moderation_bodycare.csv](/results/moderation_bodycare.csv)
+- **Results**: [assets/evidence/moderation_bodycare.csv](/assets/evidence/moderation_bodycare.csv)
 - **Visualization**: [figs/buyer_moderation_bodycare.png](/figs/buyer_moderation_bodycare.png)
 - **Audit Log**: [logs/run_moderation_bodycare.jsonl](/logs/run_moderation_bodycare.jsonl)
 
 ### Dirichlet Analysis
-- **Results**: [results/dirichlet_bodycare.csv](/results/dirichlet_bodycare.csv)
+- **Results**: [assets/evidence/dirichlet_bodycare.csv](/assets/evidence/dirichlet_bodycare.csv)
 - **P-P Plot**: [figs/dirichlet_pp_plot_bodycare.png](/figs/dirichlet_pp_plot_bodycare.png)
 - **Audit Log**: [logs/run_dirichlet_bodycare.jsonl](/logs/run_dirichlet_bodycare.jsonl)
 

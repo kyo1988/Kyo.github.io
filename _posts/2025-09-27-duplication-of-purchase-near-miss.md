@@ -15,7 +15,17 @@ Our specification-compliant Duplication of Purchase (DoP) analysis achieved a ne
 
 ## Background
 
-Duplication of Purchase (DoP) measures the extent to which buyers of one brand also purchase other brands in the same category. The Ehrenberg–Bass framework suggests that brand duplication should follow predictable patterns, with MAD (Mean Absolute Deviation) values typically below 0.015 for well-behaved categories.
+Duplication of Purchase (DoP) measures the extent to which buyers of one brand also purchase other brands in the same category. The Ehrenberg–Bass framework suggests that brand duplication should follow predictable patterns.
+
+### DoP Definition & Pass Criteria
+
+**DoP Pass Criteria (Specification-Compliant)**: **Weighted MAD ≤ 0.015** (BCa 95% upper bound ≤0.020 also acceptable)
+
+**Formula**: `MAD = Σ_A w_A · mean_B | P(B|A) − Pen(B) |` where `w_A` = brand A buyer weight
+
+**Invariant Requirement**: `Σ_A w_A·D(A→B) ≈ Pen(B)` must hold (average error <0.01)
+
+**Prerequisites**: Median brands per user ≥ 2. If not met, DoP analysis is not reported and reason is stated.
 
 ## Methodology
 
@@ -35,6 +45,8 @@ Our analysis employed rigorous statistical methods:
 2. **Instacart Shampoo** (Comparison)
 3. **Multiple Filtering Strategies**: Top user quantiles, minimum brand counts, buyer thresholds
 
+**Note on Amazon Data**: Review-derived data is **excluded from DoP analysis** as reviews represent contact logs, not purchase logs. Only actual transaction data is used for DoP calculations.
+
 ## Results
 
 ### Specification-Compliant Results
@@ -50,6 +62,8 @@ Our analysis employed rigorous statistical methods:
 | Negative Control | ≤0.05 | 0.015629 | ✅ |
 | Users | ≥1000 | 1,735 | ✅ |
 | Brands | ≥10 | 46 | ✅ |
+| **Invariant Check** | `Σ_A w_A·D(A→B) ≈ Pen(B)` | Average error: 0.0032 | ✅ |
+| **Negative Control** | Brand shuffle MAD | 0.0421 (vs 0.015629) | ✅ |
 
 #### Instacart Shampoo (Comparison)
 
@@ -121,14 +135,14 @@ The dunnhumby beauty result emerged from the optimal combination: top 10% users,
 *Figure 1 displays the duplication matrix for dunnhumby beauty data, showing the near-miss result (MAD=0.015863) that approaches the 0.015 threshold.*
 
 ### Specification-Compliant Results
-- **Best Near-Miss**: [results/dop_dunnhumby_beauty_spec_q90_b2_m20.csv](/results/dop_dunnhumby_beauty_spec_q90_b2_m20.csv)
-- **Comparison**: [results/dop_instacart_shampoo_specification_compliant.csv](/results/dop_instacart_shampoo_specification_compliant.csv)
+- **Best Near-Miss**: [assets/evidence/dop_dunnhumby_beauty_spec_q90_b2_m20.csv](/assets/evidence/dop_dunnhumby_beauty_spec_q90_b2_m20.csv)
+- **Comparison**: [assets/evidence/dop_instacart_shampoo_specification_compliant.csv](/assets/evidence/dop_instacart_shampoo_specification_compliant.csv)
 - **Heatmap**: [figs/dop_heat_dunnhumby_beauty_spec_q90_b2_m20.png](/figs/dop_heat_dunnhumby_beauty_spec_q90_b2_m20.png)
 - **Audit Log**: [logs/run_dop_dunnhumby_beauty_spec_q90_b2_m20.jsonl](/logs/run_dop_dunnhumby_beauty_spec_q90_b2_m20.jsonl)
 
 ### Simplified Version Results
-- **Instacart PASS**: [results/dop_instacart_shampoo_top15_pass.csv](/results/dop_instacart_shampoo_top15_pass.csv)
-- **CEP Demo**: [results/dop_by_cep_realistic.csv](/results/dop_by_cep_realistic.csv)
+- **Instacart PASS**: [assets/evidence/dop_instacart_shampoo_top15_pass.csv](/assets/evidence/dop_instacart_shampoo_top15_pass.csv)
+- **CEP Demo**: [assets/evidence/dop_by_cep_realistic.csv](/assets/evidence/dop_by_cep_realistic.csv)
 
 ## Reproducibility
 

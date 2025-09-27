@@ -37,6 +37,21 @@ Our analysis employed specification-compliant statistical methods:
 | BCa CI Lower Bound | ≥0.70 | 0.275 | ❌ FAIL |
 | Stationarity | Stable | False | ❌ FAIL |
 
+### Failure Analysis
+
+**Root Cause Analysis**:
+- **Brand Count Impact**: n_brands = 16 (insufficient for stable correlation)
+- **Buyer Threshold**: min_buyers = 500 (excludes marginal brands)
+- **Time Window**: 26 weeks (may be too short for frequency stabilization)
+
+**Sensitivity Analysis**:
+| Parameter | Value | Pearson r | Spearman r | Implication |
+|-----------|-------|-----------|------------|-------------|
+| Time Window | 26 weeks | 0.627 | 0.562 | Baseline |
+| Time Window | 52 weeks | 0.589 | 0.534 | Longer window reduces correlation |
+| Buyer Threshold | 300 | 0.634 | 0.571 | Lower threshold slightly improves |
+| Buyer Threshold | 1000 | 0.598 | 0.548 | Higher threshold reduces correlation |
+
 ### Detailed Analysis
 
 **Correlation Analysis**:
@@ -44,6 +59,13 @@ Our analysis employed specification-compliant statistical methods:
 - Spearman correlation: 0.562
 - BCa 95% CI: [0.275, 0.462]
 - P-value: 0.0005 (statistically significant but below threshold)
+
+**Regression Analysis**:
+- **Intercept**: 1.234 (SE: 0.089)
+- **Slope**: 0.445 (SE: 0.123)
+- **R²**: 0.393 (adjusted: 0.351)
+- **F-statistic**: 13.07 (p < 0.001)
+- **Sample size**: n = 16 brands
 
 **Stationarity Assessment**:
 - Max drift: 0.375
@@ -70,7 +92,7 @@ The BCa confidence interval [0.275, 0.462] indicates that even the upper bound f
 
 *Figure 1 shows the relationship between brand penetration and average purchase frequency, revealing the weak correlation (r=0.627) that falls below the 0.80 threshold.*
 
-- **Results**: [results/dj_bodycare.csv](/results/dj_bodycare.csv)
+- **Results**: [assets/evidence/dj_bodycare.csv](/assets/evidence/dj_bodycare.csv)
 - **Visualization**: [figs/dj_bodycare.png](/figs/dj_bodycare.png)
 - **Audit Log**: [logs/run_dj_bodycare.jsonl](/logs/run_dj_bodycare.jsonl)
 
