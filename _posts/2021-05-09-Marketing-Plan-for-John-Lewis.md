@@ -2,11 +2,15 @@
 layout: post
 title: Marketing Plan for John Lewis
 excerpt: "This is a modified version of the report for Strategic Marketing in Bath Full Time MBA Class of 2020."
+description: "Comprehensive marketing strategy for John Lewis department store. Market analysis, customer segmentation, and promotional campaigns for retail expansion."
 categories: Marketing
-tags: [Marketing Business]
+tags: [Marketing, Business, Strategy, Retail, Customer-Segmentation, Campaign]
 comments: true
+last_modified_at: 2025-01-19
 ---
 
+* Table of Contents
+{:toc}
 
 This is a modified version of the report for Strategic Marketing in Bath Full Time MBA Class of 2020.
 
@@ -68,3 +72,6 @@ The personalization, especially basket page can raise average order value (AOV).
 * Statista, 2019. Statista dossier on the John Lewis Partnership plc in the United Kingdom (UK). Statista [viewed 2 December 2019]. Available from: [https://www.statista.com/study/27327/john-lewis-partnership-statista-dossier/](https://www.statista.com/study/27327/john-lewis-partnership-statista-dossier/)
 * Summit, 2018. Summit ScorecardTop 50 UK Retailers’ Online Performance2018 Edition.
 * VoucherCodes, RetailMeNot, France and WBR Insights, 2018. Retail perspectives and innovation: Payments, personalization and the phygital.
+
+{% include cta.html %}
+{% include related-by-tags.html %}

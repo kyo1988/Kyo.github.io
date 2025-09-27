@@ -59,33 +59,33 @@ The analysis reveals important characteristics of real-world marketing data:
 
 **Result**: Pearson r = 0.627 (target: ≥0.80)
 **Implication**: Weak brand penetration-frequency relationship
-**Evidence**: [results/dj_bodycare.csv](https://github.com/kyo1988/marketing-science/blob/main/results/dj_bodycare.csv)
+**Evidence**: [results/dj_bodycare.csv](/results/dj_bodycare.csv)
 
 ### Duplication of Purchase Analysis ❌
 
 **Best Result**: dunnhumby beauty MAD = 0.015863 (gap: +0.000863)
 **Comparison**: Instacart shampoo MAD = 0.021854
 **Implication**: Close to theoretical threshold but not achieved
-**Evidence**: [results/dop_dunnhumby_beauty_spec_q90_b2_m20.csv](https://github.com/kyo1988/marketing-science/blob/main/results/dop_dunnhumby_beauty_spec_q90_b2_m20.csv)
+**Evidence**: [results/dop_dunnhumby_beauty_spec_q90_b2_m20.csv](/results/dop_dunnhumby_beauty_spec_q90_b2_m20.csv)
 
 ### Customer Equity Program Analysis ✅
 
 **Result**: Complete multilingual analysis with Wilson CI
 **H1 Correlation**: Pearson = -0.28, Spearman = -0.59
 **Implication**: Higher penetration correlates with lower coverage
-**Evidence**: [results/cep_coverage_complete.csv](https://github.com/kyo1988/marketing-science/blob/main/results/cep_coverage_complete.csv)
+**Evidence**: [results/cep_coverage_complete.csv](/results/cep_coverage_complete.csv)
 
 ### Moderation Analysis ✅
 
 **Result**: Strong quantile effects (Q4 slope = 3.341)
 **Implication**: Heavy buyers show strongest relationships
-**Evidence**: [results/moderation_bodycare.csv](https://github.com/kyo1988/marketing-science/blob/main/results/moderation_bodycare.csv)
+**Evidence**: [results/moderation_bodycare.csv](/results/moderation_bodycare.csv)
 
 ### Dirichlet Model Analysis ⚠️
 
 **Result**: R² = -7.0e-06 (very poor fit)
 **Implication**: Theoretical model struggles with real-world data
-**Evidence**: [results/dirichlet_bodycare.csv](https://github.com/kyo1988/marketing-science/blob/main/results/dirichlet_bodycare.csv)
+**Evidence**: [results/dirichlet_bodycare.csv](/results/dirichlet_bodycare.csv)
 
 ## Simplified vs. Specification-Compliant
 
@@ -114,17 +114,17 @@ The specification-compliant implementation reveals why achieving PASS examples i
 *Figure 1 provides an overview of the marketing science analysis pipeline, highlighting the near-miss DoP result and comprehensive statistical validation across all methodologies.*
 
 ### Core Results
-- **DJ Analysis**: [results/dj_bodycare.csv](https://github.com/kyo1988/marketing-science/blob/main/results/dj_bodycare.csv)
-- **DoP Analysis**: [results/dop_dunnhumby_beauty_spec_q90_b2_m20.csv](https://github.com/kyo1988/marketing-science/blob/main/results/dop_dunnhumby_beauty_spec_q90_b2_m20.csv)
-- **CEP Analysis**: [results/cep_coverage_complete.csv](https://github.com/kyo1988/marketing-science/blob/main/results/cep_coverage_complete.csv)
-- **Moderation Analysis**: [results/moderation_bodycare.csv](https://github.com/kyo1988/marketing-science/blob/main/results/moderation_bodycare.csv)
-- **Dirichlet Analysis**: [results/dirichlet_bodycare.csv](https://github.com/kyo1988/marketing-science/blob/main/results/dirichlet_bodycare.csv)
+- **DJ Analysis**: [results/dj_bodycare.csv](/results/dj_bodycare.csv)
+- **DoP Analysis**: [results/dop_dunnhumby_beauty_spec_q90_b2_m20.csv](/results/dop_dunnhumby_beauty_spec_q90_b2_m20.csv)
+- **CEP Analysis**: [results/cep_coverage_complete.csv](/results/cep_coverage_complete.csv)
+- **Moderation Analysis**: [results/moderation_bodycare.csv](/results/moderation_bodycare.csv)
+- **Dirichlet Analysis**: [results/dirichlet_bodycare.csv](/results/dirichlet_bodycare.csv)
 
 ### Documentation
-- **Project Overview**: [README.md](https://github.com/kyo1988/marketing-science/blob/main/README.md)
-- **Statement of Work**: [SOW.md](https://github.com/kyo1988/marketing-science/blob/main/SOW.md)
-- **Detailed Analysis**: [notes/specification_compliant_pass_analysis.md](https://github.com/kyo1988/marketing-science/blob/main/notes/specification_compliant_pass_analysis.md)
-- **Progress Summary**: [notes/progress_summary.md](https://github.com/kyo1988/marketing-science/blob/main/notes/progress_summary.md)
+- **Project Overview**: [marketing-science-README.md](/marketing-science-README.md)
+- **Statement of Work**: [SOW.md](/SOW.md)
+- **Detailed Analysis**: [notes/specification_compliant_pass_analysis.md](/notes/specification_compliant_pass_analysis.md)
+- **Progress Summary**: [notes/progress_summary.md](/notes/progress_summary.md)
 
 ## Reproducibility
 
@@ -150,9 +150,9 @@ Our marketing science analysis pipeline demonstrates the importance of specifica
 
 - Ehrenberg, A.S.C. (1988). Repeat-buying: facts, theory and applications
 - Sharp, B. (2010). How Brands Grow
-- [Project Documentation](https://github.com/kyo1988/marketing-science/blob/main/README.md)
-- [Specification-Compliant Analysis Report](https://github.com/kyo1988/marketing-science/blob/main/notes/specification_compliant_pass_analysis.md)
+- [Project Documentation](/marketing-science-README.md)
+- [Specification-Compliant Analysis Report](/notes/specification_compliant_pass_analysis.md)
 
 ---
 
-*This analysis is part of a comprehensive marketing science research project. For complete methodology and results, see the [Statement of Work](https://github.com/kyo1988/marketing-science/blob/main/SOW.md) and [Progress Summary](https://github.com/kyo1988/marketing-science/blob/main/notes/progress_summary.md).*
+*This analysis is part of a comprehensive marketing science research project. For complete methodology and results, see the [Statement of Work](/SOW.md) and [Progress Summary](/notes/progress_summary.md).*

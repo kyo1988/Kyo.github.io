@@ -121,14 +121,14 @@ The dunnhumby beauty result emerged from the optimal combination: top 10% users,
 *Figure 1 displays the duplication matrix for dunnhumby beauty data, showing the near-miss result (MAD=0.015863) that approaches the 0.015 threshold.*
 
 ### Specification-Compliant Results
-- **Best Near-Miss**: [results/dop_dunnhumby_beauty_spec_q90_b2_m20.csv](https://github.com/kyo1988/marketing-science/blob/main/results/dop_dunnhumby_beauty_spec_q90_b2_m20.csv)
-- **Comparison**: [results/dop_instacart_shampoo_specification_compliant.csv](https://github.com/kyo1988/marketing-science/blob/main/results/dop_instacart_shampoo_specification_compliant.csv)
-- **Heatmap**: [figs/dop_heat_dunnhumby_beauty_spec_q90_b2_m20.png](https://github.com/kyo1988/marketing-science/blob/main/figs/dop_heat_dunnhumby_beauty_spec_q90_b2_m20.png)
-- **Audit Log**: [logs/run_dop_dunnhumby_beauty_spec_q90_b2_m20.jsonl](https://github.com/kyo1988/marketing-science/blob/main/logs/run_dop_dunnhumby_beauty_spec_q90_b2_m20.jsonl)
+- **Best Near-Miss**: [results/dop_dunnhumby_beauty_spec_q90_b2_m20.csv](/results/dop_dunnhumby_beauty_spec_q90_b2_m20.csv)
+- **Comparison**: [results/dop_instacart_shampoo_specification_compliant.csv](/results/dop_instacart_shampoo_specification_compliant.csv)
+- **Heatmap**: [figs/dop_heat_dunnhumby_beauty_spec_q90_b2_m20.png](/figs/dop_heat_dunnhumby_beauty_spec_q90_b2_m20.png)
+- **Audit Log**: [logs/run_dop_dunnhumby_beauty_spec_q90_b2_m20.jsonl](/logs/run_dop_dunnhumby_beauty_spec_q90_b2_m20.jsonl)
 
 ### Simplified Version Results
-- **Instacart PASS**: [results/dop_instacart_shampoo_top15_pass.csv](https://github.com/kyo1988/marketing-science/blob/main/results/dop_instacart_shampoo_top15_pass.csv)
-- **CEP Demo**: [results/dop_by_cep_realistic.csv](https://github.com/kyo1988/marketing-science/blob/main/results/dop_by_cep_realistic.csv)
+- **Instacart PASS**: [results/dop_instacart_shampoo_top15_pass.csv](/results/dop_instacart_shampoo_top15_pass.csv)
+- **CEP Demo**: [results/dop_by_cep_realistic.csv](/results/dop_by_cep_realistic.csv)
 
 ## Reproducibility
 
@@ -168,9 +168,9 @@ Future research should investigate additional data sources for specification-com
 
 - Ehrenberg, A.S.C. (1988). Repeat-buying: facts, theory and applications
 - Sharp, B. (2010). How Brands Grow
-- [Project Documentation](https://github.com/kyo1988/marketing-science/blob/main/README.md)
-- [Specification-Compliant Analysis Report](https://github.com/kyo1988/marketing-science/blob/main/notes/specification_compliant_pass_analysis.md)
+- [Project Documentation](/marketing-science-README.md)
+- [Specification-Compliant Analysis Report](/notes/specification_compliant_pass_analysis.md)
 
 ---
 
-*This analysis is part of a comprehensive marketing science research project. For complete methodology and results, see the [Statement of Work](https://github.com/kyo1988/marketing-science/blob/main/SOW.md) and [Progress Summary](https://github.com/kyo1988/marketing-science/blob/main/notes/progress_summary.md).*
+*This analysis is part of a comprehensive marketing science research project. For complete methodology and results, see the [Statement of Work](/SOW.md) and [Progress Summary](/notes/progress_summary.md).*
