@@ -1,0 +1,637 @@
+:root {
+  --maxw: 740px;
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --secondary: #64748b;
+  --secondary-hover: #475569;
+  --border: #e5e7eb;
+  --border-dark: #1f2937;
+  --bg-dark: #0b0f14;
+  --text-dark: #e6edf3;
+  --card-bg-dark: #11161c;
+  
+  /* Design Kit v1 integration */
+  --accent: var(--primary);
+  --accent-ink: #ffffff;
+}
+
+.post-content { max-width: var(--maxw); line-height: 1.8; font-size: 16.5px; }
+.post-content h2 { margin-top: 2.0em; }
+.tldr, .key-takeaways, .qa, .cta, .related {
+  border: 1px solid var(--border); border-radius: 12px; padding: 16px; margin: 24px 0;
+}
+img { max-width: 100%; height: auto; }
+figure { margin: 24px 0; }
+figcaption { font-size: 14px; opacity: .8; }
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  padding: 4rem 2rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #1e293b;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  color: #64748b;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s;
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: white;
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn-secondary:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-1px);
+}
+
+/* Product Features */
+.product-features {
+  margin: 3rem 0;
+  padding: 0 2rem;
+}
+
+.product-features h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #1e293b;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.feature-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.feature-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #1e293b;
+}
+
+.feature-card p {
+  color: #64748b;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.feature-link {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.feature-link:hover {
+  border-bottom-color: var(--primary);
+}
+
+/* Case Studies */
+.case-studies-intro {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: #f8fafc;
+  border-radius: 12px;
+}
+
+.case-studies-intro p {
+  font-size: 1.1rem;
+  color: #64748b;
+  margin-bottom: 1.5rem;
+}
+
+.case-studies-cta {
+  margin-top: 1.5rem;
+}
+
+.case-studies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.case-study-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.case-study-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.case-study-card h3 {
+  margin-bottom: 1rem;
+  color: #1e293b;
+}
+
+.case-study-card h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.case-study-card h3 a:hover {
+  color: var(--primary);
+}
+
+.case-description {
+  color: #64748b;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.case-study-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: white;
+}
+
+.no-cases {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: #f8fafc;
+  border-radius: 12px;
+  margin: 2rem 0;
+}
+
+.no-cases p {
+  color: #64748b;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  body { background: var(--bg-dark); color: var(--text-dark); }
+  .tldr, .key-takeaways, .qa, .cta, .related { 
+    border-color: var(--border-dark); 
+    background: var(--card-bg-dark); 
+  }
+  a { color: #8ab4f8; }
+  
+  .hero-section {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  }
+  
+  .hero-title, .product-features h2, .feature-card h3 {
+    color: var(--text-dark);
+  }
+  
+  .hero-description, .feature-card p {
+    color: #94a3b8;
+  }
+  
+  .feature-card {
+    background: var(--card-bg-dark);
+    border-color: var(--border-dark);
+  }
+  
+  .case-studies-intro, .no-cases {
+    background: var(--card-bg-dark);
+  }
+  
+  .case-studies-intro p, .no-cases p {
+    color: #94a3b8;
+  }
+  
+  .case-study-card {
+    background: var(--card-bg-dark);
+    border-color: var(--border-dark);
+  }
+  
+  .case-study-card h3 {
+    color: var(--text-dark);
+  }
+  
+  .case-description {
+    color: #94a3b8;
+  }
+}
+
+/* Medical Disclaimer */
+.medical-disclaimer {
+  margin: 2rem 0 0;
+  padding: 0.75rem 1rem;
+  border-top: 1px solid #e5e7eb;
+  opacity: 0.85;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.medical-disclaimer p {
+  margin: 0;
+  color: #64748b;
+}
+
+/* Footer */
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: #64748b;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: var(--primary);
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .footer-links {
+    justify-content: center;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .footer-links a {
+    color: #94a3b8;
+  }
+  
+  .footer-links a:hover {
+    color: #8ab4f8;
+  }
+
+  .medical-disclaimer {
+    border-top-color: #374151;
+    opacity: 0.9;
+  }
+
+  .medical-disclaimer p {
+    color: #94a3b8;
+  }
+}
+
+/* Stat strip */
+.stats{display:flex;flex-wrap:wrap;gap:14px;margin-top:14px;color:var(--muted)}
+.stats li{list-style:none;border:1px solid var(--border);border-radius:9999px;padding:6px 12px;background:var(--surface-2)}
+.stats strong{color:var(--text);margin-right:6px}
+
+/* Feature card icons */
+.card h3{display:flex;align-items:center;gap:8px}
+.icon{width:24px;height:24px;opacity:.9;flex:none}
+
+/* Heading balance */
+h1,h2{text-wrap:balance}
+
+/* Skip link: フォーカス時のみ表示 */
+.skip{
+  position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;
+  white-space:nowrap; clip:rect(0 0 0 0); clip-path:inset(50%);
+}
+.skip:focus{
+  left:16px; top:12px; width:auto; height:auto; padding:8px 12px;
+  background:var(--accent); color:#fff; border-radius:8px; z-index:1000;
+  clip:auto; clip-path:none;
+}
+
+/* Mobile hero optimization */
+@media (max-width:480px){
+  .hero{padding:48px 0 36px}
+  .hero .actions{gap:10px}
+}
+
+/* post grid */
+.post-grid{display:grid;gap:24px;grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:960px){.post-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.post-grid{grid-template-columns:1fr}}
+.post-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px;box-shadow:var(--shadow)}
+.post-card .meta{color:var(--muted);font-size:.9rem;margin:.25rem 0 .5rem}
+
+/* === Density Pass v1 — tighten spacing/typography === */
+
+/* 1) コンテナ幅を少し絞って情報密度UP */
+.container{max-width:1000px;}
+
+/* 2) セクション余白：やや詰める（広すぎ問題の本丸） */
+.section{padding:var(--s-6) 0;}          /* 旧: var(--s-8) */
+.section-title{margin-bottom:var(--s-4);}/* 旧: var(--s-5) */
+
+/* 3) ヒーロー：上下を詰め、リード幅を短くして締まった印象に */
+.hero{padding:var(--s-7) 0 var(--s-5);}   /* 旧: var(--s-9) 0 var(--s-7) */
+.hero h1{margin:0 0 var(--s-3);}
+.hero .lead{max-width:52ch; line-height:1.55;}
+.hero .actions{gap:12px; margin-top:var(--s-4);} /* 旧: gap var(--s-4) */
+
+/* 4) 見出しの上下を軽く */
+h1{letter-spacing:-.01em;}
+h2{margin:var(--s-5) 0 var(--s-3);}       /* 旧: var(--s-7) 0 var(--s-4) */
+h3{margin:var(--s-4) 0 var(--s-2);}       
+
+/* 5) ボタンを少し小ぶりに（ヒーローの密度感を出す） */
+.btn{height:40px; padding:0 14px;}        /* 旧: 44px / 18px */
+.btn-primary{box-shadow:0 4px 18px rgba(2,8,23,.10),0 1px 6px rgba(2,8,23,.06);} /* 影を軽く */
+
+/* 6) Stat strip を詰める */
+.stats{gap:10px; margin-top:10px;}
+.stats li{padding:4px 10px;}
+
+/* 7) カード群：余白・影・ギャップを軽量化 */
+.grid{gap:var(--s-4);}                    /* 旧: var(--s-5) */
+.card{padding:var(--s-4);
+      box-shadow:0 3px 14px rgba(2,8,23,.08),0 1px 4px rgba(2,8,23,.05);}
+.card:hover{transform:translateY(-1px);}  /* 動きをほんの少しだけ */
+
+/* 8) Feature 見出しアイコンのアライメント微調整 */
+.card h3{display:flex; align-items:center; gap:8px;}
+.icon{width:22px;height:22px;opacity:.9;flex:none;}
+
+/* 9) Latest Posts のカードを詰める */
+.post-grid{gap:20px;}
+.post-card{padding:16px;}
+.post-card .meta{margin:.1rem 0 .4rem}
+
+/* 10) セクション区切りラインの強さを1段弱く */
+.hero, .card, .post-card{border-color:color-mix(in srgb, var(--border) 80%, transparent);}
+
+/* 11) フッター上の免責行：マージンを短縮 */
+.medical-disclaimer{margin:1rem 0 .5rem;}
+
+/* === Density Pass v2 — tighten spacing/typography/shadows === */
+.container{max-width:980px;} /* 情報密度を上げる */
+
+.section{padding:40px 0;}           /* 旧: var(--s-6/8) 相当 */
+.section-title{margin-bottom:16px;} /* 旧: var(--s-4/5) */
+
+.hero{padding:56px 0 40px;}         /* 旧: 広め → 1段タイトに */
+.hero h1{margin:0 0 12px;}
+.hero .lead{max-width:50ch; line-height:1.55;}
+.hero .actions{gap:10px; margin-top:16px;}
+.btn{height:38px; padding:0 12px; font-weight:600;}
+.btn-primary{box-shadow:0 3px 14px rgba(2,8,23,.10),0 1px 5px rgba(2,8,23,.06);}
+
+.stats{gap:8px; margin-top:10px;}
+.stats li{padding:3px 10px;}
+
+.grid{gap:18px;}
+.card{
+  padding:16px; border-radius:12px;
+  box-shadow:0 3px 14px rgba(2,8,23,.08),0 1px 4px rgba(2,8,23,.05);
+  display:flex; flex-direction:column; /* CTAを下揃えに */
+}
+.card p:last-child{margin-top:auto;}    /* "Open Web App →"を下に固定 */
+.card:hover{transform:translateY(-1px);}
+
+.card h3{display:flex; align-items:center; gap:8px;}
+.icon{width:22px;height:22px;opacity:.9;flex:none;}
+
+.post-grid{gap:20px;}
+.post-card{padding:16px; border-radius:12px;}
+
+.medical-disclaimer{margin:12px 0 8px;}
+
+h1,h2{text-wrap:balance;} /* 改行バランス */
+
+/* === Density Pass v3 === */
+:root{ --fs-1:clamp(2.0rem, 1.1rem + 2.2vw, 3.0rem); } /* H1を一段タイトに */
+.container{ max-width:940px; }                          /* 密度さらにUP 980→940 */
+
+.section{ padding:32px 0; }                             /* 40→32 */
+.section-title{ margin-bottom:14px; }
+
+.hero{ padding:44px 0 28px; }                           /* 56→44 / 40→28 */
+.hero h1{ margin:0 0 10px; line-height:1.15; }
+.hero .lead{ max-width:50ch; line-height:1.55; }
+.hero .actions{ gap:8px; margin-top:14px; }
+.btn{ height:36px; padding:0 12px; }                    /* 38→36 */
+.stats{ gap:8px; margin-top:8px; }
+.stats li{ padding:3px 10px; }
+
+.grid{ gap:16px; }                                      /* カード間隔さらに少し詰める */
+.card{
+  padding:14px; border-radius:12px;
+  box-shadow:0 2px 10px rgba(2,8,23,.07), 0 1px 3px rgba(2,8,23,.05);
+  display:flex; flex-direction:column;
+}
+.card p:last-child{ margin-top:auto; }                  /* CTAを下揃え固定 */
+.card:hover{ transform:translateY(-1px); }
+
+.post-grid{ gap:18px; }
+.post-card{ padding:14px; }
+
+.medical-disclaimer{ margin:10px 0 6px; }
+
+/* 視覚のカサ減らし：境界線をさらに薄く */
+.hero, .card, .post-card{
+  border-color: color-mix(in srgb, var(--border) 70%, transparent);
+}
+
+/* タイプレンダリングをきれいに */
+html{ -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+
+/* 最後の保険：Olderリンクを完全に隠す */
+.pagination, .next, a[href*="Older"]{ display:none !important; }
+
+/* ===== Density v4 — 0.5× spacing / compact scale ===== */
+
+/* 1) デスクトップはしっかり詰め、モバイルは可読性を維持 */
+@media (min-width: 768px){
+  .container{ max-width: 920px; }               /* 940→さらに詰める */
+
+  /* セクション間＝ちょうど半分へ */
+  .section{ padding: 24px 0; }                   /* 旧: ~48px 相当 */
+  .section-title{ margin-bottom: 12px; }
+
+  /* ヒーロー（高さを半分に近づける） */
+  .hero{ padding: 32px 0 22px; }
+  .hero h1{ margin: 0 0 8px; line-height: 1.15; }
+  .hero .lead{ max-width: 50ch; line-height: 1.5; }
+  .hero .actions{ gap: 8px; margin-top: 12px; }
+
+  /* CTA・バッジも縮尺ダウン（最低タップ高は守る） */
+  .btn{ height: 36px; padding: 0 12px; }
+  .stats{ gap: 6px; margin-top: 8px; }
+  .stats li{ padding: 2px 8px; }
+
+  /* Core Capabilities：カードとグリッド間隔を半分に */
+  .grid{ gap: 14px; }
+  .card{
+    padding: 12px;
+    border-radius: 12px;
+    display: flex; flex-direction: column;
+    box-shadow: 0 2px 10px rgba(2,8,23,.07), 0 1px 3px rgba(2,8,23,.05);
+  }
+  .card p:last-child{ margin-top: auto; }        /* CTAを下辺で揃える */
+  .card:hover{ transform: translateY(-1px); }
+
+  .card h3{ display:flex; align-items:center; gap:8px; }
+  .icon{ width: 20px; height: 20px; }
+
+  /* Latest Posts：カード・行間も0.5× */
+  .post-grid{ gap: 16px; }
+  .post-card{ padding: 12px; }
+  .post-card .meta{ margin: .05rem 0 .35rem; }
+
+  /* 区切り線をさらに薄く（視覚ノイズを減らす） */
+  .hero, .card, .post-card{
+    border-color: color-mix(in srgb, var(--border) 60%, transparent);
+  }
+
+  /* セクション区切りの水平線も弱める（もし使っていれば） */
+  hr{ margin: 20px 0; opacity: .5; }
+}
+
+/* 2) タイポの大きさもわずかに詰める（見出しだけ） */
+:root{
+  /* H1をほんの少し小さくして1画面内に収めやすく */
+  --fs-1: clamp(1.9rem, 1.05rem + 2.1vw, 2.7rem);
+}
+
+/* 3) Skip linkはフォーカス時のみ出す（保険） */
+.skip{
+  position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;
+  white-space:nowrap; clip:rect(0 0 0 0); clip-path:inset(50%);
+}
+.skip:focus{
+  left:16px; top:12px; width:auto; height:auto; padding:8px 12px;
+  background:var(--accent); color:#fff; border-radius:8px; z-index:1000;
+  clip:auto; clip-path:none;
+}
+
+/* ===== Density v5 — compact 0.4× / final pass ===== */
+@media (min-width: 768px){
+  .container{ max-width: 900px; }            /* 920→900 さらに締める */
+
+  .section{ padding: 20px 0; }               /* 32→20 */
+  .section-title{ margin-bottom: 10px; }
+
+  .hero{ padding: 28px 0 18px; }             /* 44/28 → 28/18 */
+  .hero h1{ margin: 0 0 8px; line-height: 1.14; letter-spacing:-.01em; }
+  .hero .lead{ max-width: 50ch; line-height: 1.48; }
+  .hero .actions{ gap: 8px; margin-top: 10px; }
+
+  .btn{ height: 34px; padding: 0 10px; font-weight: 600; }
+  .stats{ gap: 6px; margin-top: 6px; }
+  .stats li{ padding: 2px 8px; }
+
+  .grid{ gap: 12px; }
+  .card{
+    padding: 12px; border-radius: 10px;
+    box-shadow: 0 1px 8px rgba(2,8,23,.06), 0 1px 2px rgba(2,8,23,.04);
+    display:flex; flex-direction:column;
+  }
+  .card p:last-child{ margin-top:auto; }
+  .card:hover{ transform: translateY(-.5px); }
+
+  .card h3{ display:flex; align-items:center; gap:6px; }
+  .icon{ width: 18px; height: 18px; opacity:.9; flex:none; }
+
+  .post-grid{ gap: 14px; }
+  .post-card{ padding: 12px; border-radius: 10px; }
+  .post-card .meta{ margin: .05rem 0 .3rem; color: var(--muted); }
+
+  .hero, .card, .post-card{
+    border-color: color-mix(in srgb, var(--border) 55%, transparent);
+  }
+}
+
+/* 見出しのサイズを一段タイトに */
+:root{ --fs-1: clamp(1.85rem, 1.0rem + 2.0vw, 2.55rem); }
+h1,h2{text-wrap:balance}
+
+/* hr を弱めて"線の主張"を抑える */
+hr{ margin:16px 0; opacity:.45; }
