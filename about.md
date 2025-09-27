@@ -1,16 +1,18 @@
 ---
 layout: page
-title: "About"
+title: About
 permalink: /about/
-description: "Founder & Data Scientist — On-device AI for skin analytics / finance-grade data products."
 ---
 
-![Kyo portrait](https://res.cloudinary.com/djiyxp5ax/image/upload/v1621667206/IMG_0082_txvfj3.jpg)
+This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
 
-**Kyo Harada** — Founder of **Visage AI** / Freelance Data Scientist.
+You can find the source code for Minima at GitHub:
+[jekyll][jekyll-organization] /
+[minima](https://github.com/jekyll/minima)
 
-- CoreML + Vision for on-device skin analytics (iOS)
-- Finance-grade data pipelines (EDINET XBRL, MySQL, dashboards)
-- Bilingual delivery (JP/EN)
+You can find the source code for Jekyll at GitHub:
+[jekyll][jekyll-organization] /
+[jekyll](https://github.com/jekyll/jekyll)
 
-*Work with me →* [/work-with-me/](/work-with-me/)
+
+[jekyll-organization]: https://github.com/jekyll

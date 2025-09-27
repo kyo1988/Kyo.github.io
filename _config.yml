@@ -1,114 +1,43 @@
-### Site info:
-title: "Kyo Harada — Visage AI / Data Scientist"
-tagline: "On-device skin analytics with finance-grade pipelines—CoreML optimization, RAG systems, and real-time evaluation."
-author: Kyo Harada
-email: kh685mba@gmail.com
-description: "On-device skin analytics with finance-grade pipelines—CoreML optimization, RAG systems, and real-time evaluation."
-keywords: "Data Scientist, AI, CoreML, Finance, EDINET, RAG, LLM, Consulting"
-baseurl: "" # user/organization site は空
-url: "https://kyo1988.github.io" # the base hostname & protocol for your site
-permalink: /:categories/:year/:month/:day/:title:output_ext
-defaults:
-  - scope: {path: "" , type: "posts"}
-    values:
-      layout: post
-      lang: en
-      og_image: /assets/og/default.png
-      twitter_card: summary_large_image
-lang: "en"
-locale: en_US
-default_lang: "en"
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 
-# GitHub Pages theme
-theme: minima
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: Your awesome title
+email: your-email@example.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: jekyllrb
+github_username:  jekyll
 
-### Personal info and site tools info:
-twitter_username: kyoHarada
-github_username: kyo1988
-linkedin: KyoHarada
-disqus_shortname: kyo
-favicon: "/images/IMG_0168.ico"
-aboutme_photo: https://res.cloudinary.com/djiyxp5ax/image/upload/v1621667206/IMG_0082_txvfj3.jpg
-
-# Cloudinary等のカスタム設定
-cloudinary:
-  cloud_name: "djiyxp5ax"
-  base: "https://res.cloudinary.com/djiyxp5ax/image/upload"
-
-# SEO
-seo:
-  type: "Person"
-  name: "Kyo Harada"
-
-### Site setting:
-ShowContactInfo: "True" # Personal Info (twitter,github,email) can be seen on aboutme-sidebar, those info only shown where ShowContactInfo == True
-default_column: "one" # blog style: two columns, if default_column != "two", you will see a one column blog.
-default_locale: "en" # blog sidebar language set, only include: English (en), Chinese (cn), Japanese (jp), Polish (pl), Korean (kr),  Russian (ru), Turkish (tr), and Indonesian (id).
-
-locales:
-    en:
-      Aboutme: "About Me"
-      Recent_Posts: "Recent Posts"
-      Categories: "Categories"
-      Tags: "Tags"
-      Archives: "Archives"
-      Previous: "Older"
-      Next: "Newer"
-      PostedInCategories: "Posted in"
-      Taggedwith: "and tagged"
-      PostDate: "on "
-      Google_search: "Site Search"
-      Home: "Home"
-      About: "About"
-      DataScience: "Data Science"
-      Visualization: "Visualization"
-      Marketing: "Marketing"
-      Investment: "Investment"
-      Travel: "Travel"
-
-###      Subscribe: "Subscribe"
-###      Copyright_Notice: "Copyright Notice"
-###      Blogroll: "Blogroll"
-###      Guestbook: "Guestbook"
-
-### your Blogroll info, only name can shown on the page.
-
-# Blogroll:
-#       - name: Kyo's Blog
-#         href: https://kyo1988.github.io/Kyo.github.io/
-#         title: Kyo's Blog
-
-### Build settings
+# Build settings
 markdown: kramdown
-kramdown:
-  input: GFM
-  syntax_highlighter: rouge
-
-# Sass settings
-sass:
-  sass_dir: _sass
-  style: compressed
-
-# GitHub Pagesで許可されるプラグインのみ
+theme: minima
 plugins:
   - jekyll-feed
-  - jekyll-seo-tag
-  - jekyll-sitemap
-  - jekyll-redirect-from
 
-# フィード設定
-feed:
-  path: atom.xml
-
-# ページネーション設定（コメントアウト - 不要なOlderリンクを防ぐ）
-# paginate: 3
-
-# 抜粋設定
-excerpt_separator: "<!-- more -->"
-
-# Google Analytics 4
-google_analytics:
-  ga4_measurement_id: "G-VRYRGVBM3W"
-  cross_domains:
-    - "kyo1988.github.io"
-    - "www.visageaiconsulting.com"
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
