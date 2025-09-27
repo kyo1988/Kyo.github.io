@@ -20,6 +20,7 @@
 BLOG_ANALYSIS_REPORT.md
 PROJECT_COMPLETION_REPORT*.md
 OPERATIONAL_GUIDELINES.md
+marketing-science-README.md
 
 # Google Verification Files
 google*.html
@@ -56,9 +57,7 @@ Thumbs.db
 .github_token
 
 # Analytics and Scripts (Private)
-scripts/analytics/ga4-fix.json
-scripts/analytics/metrics/
-scripts/analytics/*.csv
+scripts/analytics/
 
 # Analytics Data (Private)
 metrics/
