@@ -1,0 +1,45 @@
+{
+  "run_id": "d2c44344",
+  "script": "compute_dop_specification_compliant",
+  "timestamp": "2025-09-27 14:12:31",
+  "inputs": {
+    "data/processed/tx_dunnhumby_beauty.csv": "e2470f224f7f0609"
+  },
+  "params": {
+    "category_regex": "beauty",
+    "min_buyers": 20,
+    "window_weeks": 26,
+    "top_user_quantile": 0.9,
+    "min_brand_count_per_user": 2,
+    "bca": 5000,
+    "neg_control": "yes",
+    "seed": 42
+  },
+  "outputs": {
+    "results/dop_dunnhumby_beauty_spec_q90_b2_m20.csv": "generated",
+    "figs/dop_heat_dunnhumby_beauty_spec_q90_b2_m20.png": "generated"
+  },
+  "metrics": {
+    "n_brands": 46,
+    "n_users": 1735,
+    "median_brands_per_user": 2.0,
+    "weighted_mad": 0.015863168102191405,
+    "unweighted_mad": 0.015142692949361693,
+    "bca_low": 0.014792493361942804,
+    "bca_high": 0.016928302304337853,
+    "weekly_shuffle_pass_rate": 1.0,
+    "neg_control_mad": 0.01562930955128429
+  },
+  "success_check": {
+    "overall_pass": false,
+    "pass_fail_reason": "mad_fail(0.015863); weekly_shuffle_pass; median_brands_pass; neg_control_pass"
+  },
+  "specification_compliance": {
+    "weighted_mad_implementation": "brand_purchase_count_weighted",
+    "bca_bootstrap_samples": 5000,
+    "bca_seed": 42,
+    "weekly_shuffle_implementation": "real_temporal_shuffle",
+    "negative_control_threshold": 0.05,
+    "audit_logging": "complete_with_input_sha"
+  }
+}

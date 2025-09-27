@@ -87,10 +87,10 @@ Complete specification-compliant implementation:
 
 *Figure 1 illustrates the CEP coverage analysis results, revealing brand performance variations across market segments with Wilson confidence intervals.*
 
-- **Coverage Results**: [results/cep_coverage_complete.csv](https://github.com/kyo1988/marketing-science/blob/main/results/cep_coverage_complete.csv)
-- **Coverage Heatmap**: [figs/cep_coverage_complete.png](https://github.com/kyo1988/marketing-science/blob/main/figs/cep_coverage_complete.png)
-- **H1 Correlation Plot**: [figs/cep_vs_penetration.png](https://github.com/kyo1988/marketing-science/blob/main/figs/cep_vs_penetration.png)
-- **Audit Log**: [logs/run_cep_complete.jsonl](https://github.com/kyo1988/marketing-science/blob/main/logs/run_cep_complete.jsonl)
+- **Coverage Results**: [results/cep_coverage_complete.csv](/results/cep_coverage_complete.csv)
+- **Coverage Heatmap**: [figs/cep_coverage_complete.png](/figs/cep_coverage_complete.png)
+- **H1 Correlation Plot**: [figs/cep_vs_penetration.png](/figs/cep_vs_penetration.png)
+- **Audit Log**: [logs/run_cep_complete.jsonl](/logs/run_cep_complete.jsonl)
 
 ## Reproducibility
 
@@ -114,8 +114,8 @@ Our CEP-stratified DoP analysis provides a demonstration of how CEP layers can b
 
 ### Evidence Files
 
-- **CEP-Stratified Results**: [results/dop_by_cep_realistic.csv](https://github.com/kyo1988/marketing-science/blob/main/results/dop_by_cep_realistic.csv)
-- **Demo Limitations**: [notes/cep_stratified_demo_limitations.md](https://github.com/kyo1988/marketing-science/blob/main/notes/cep_stratified_demo_limitations.md)
+- **CEP-Stratified Results**: [results/dop_by_cep_realistic.csv](/results/dop_by_cep_realistic.csv)
+- **Demo Limitations**: [notes/cep_stratified_demo_limitations.md](/notes/cep_stratified_demo_limitations.md)
 
 ## Current Status
 
@@ -161,9 +161,9 @@ Future research should investigate production-ready brand mapping for CEP-strati
 ## References
 
 - Kotler, P. and Keller, K.L. (2015). Marketing Management
-- [Project Documentation](https://github.com/kyo1988/marketing-science/blob/main/README.md)
-- [Specification-Compliant Analysis Report](https://github.com/kyo1988/marketing-science/blob/main/notes/specification_compliant_pass_analysis.md)
+- [Project Documentation](/marketing-science-README.md)
+- [Specification-Compliant Analysis Report](/notes/specification_compliant_pass_analysis.md)
 
 ---
 
-*This analysis is part of a comprehensive marketing science research project. For complete methodology and results, see the [Statement of Work](https://github.com/kyo1988/marketing-science/blob/main/SOW.md) and [Progress Summary](https://github.com/kyo1988/marketing-science/blob/main/notes/progress_summary.md).*
+*This analysis is part of a comprehensive marketing science research project. For complete methodology and results, see the [Statement of Work](/SOW.md) and [Progress Summary](/notes/progress_summary.md).*

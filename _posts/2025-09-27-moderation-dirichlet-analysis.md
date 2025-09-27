@@ -78,14 +78,14 @@ The Dirichlet analysis reveals significant challenges with theoretical model fit
 *Figure 1 presents the quantile-based buyer moderation analysis, demonstrating strong effects in higher quantiles (Q4 slope=3.341, R²=0.472) compared to weak Dirichlet model fit.*
 
 ### Moderation Analysis
-- **Results**: [results/moderation_bodycare.csv](https://github.com/kyo1988/marketing-science/blob/main/results/moderation_bodycare.csv)
-- **Visualization**: [figs/buyer_moderation_bodycare.png](https://github.com/kyo1988/marketing-science/blob/main/figs/buyer_moderation_bodycare.png)
-- **Audit Log**: [logs/run_moderation_bodycare.jsonl](https://github.com/kyo1988/marketing-science/blob/main/logs/run_moderation_bodycare.jsonl)
+- **Results**: [results/moderation_bodycare.csv](/results/moderation_bodycare.csv)
+- **Visualization**: [figs/buyer_moderation_bodycare.png](/figs/buyer_moderation_bodycare.png)
+- **Audit Log**: [logs/run_moderation_bodycare.jsonl](/logs/run_moderation_bodycare.jsonl)
 
 ### Dirichlet Analysis
-- **Results**: [results/dirichlet_bodycare.csv](https://github.com/kyo1988/marketing-science/blob/main/results/dirichlet_bodycare.csv)
-- **P-P Plot**: [figs/dirichlet_pp_plot_bodycare.png](https://github.com/kyo1988/marketing-science/blob/main/figs/dirichlet_pp_plot_bodycare.png)
-- **Audit Log**: [logs/run_dirichlet_bodycare.jsonl](https://github.com/kyo1988/marketing-science/blob/main/logs/run_dirichlet_bodycare.jsonl)
+- **Results**: [results/dirichlet_bodycare.csv](/results/dirichlet_bodycare.csv)
+- **P-P Plot**: [figs/dirichlet_pp_plot_bodycare.png](/figs/dirichlet_pp_plot_bodycare.png)
+- **Audit Log**: [logs/run_dirichlet_bodycare.jsonl](/logs/run_dirichlet_bodycare.jsonl)
 
 ## Reproducibility
 
@@ -157,9 +157,9 @@ Future research should investigate alternative modeling approaches for high-vari
 
 - Ehrenberg, A.S.C. (1988). Repeat-buying: facts, theory and applications
 - Sharp, B. (2010). How Brands Grow
-- [Project Documentation](https://github.com/kyo1988/marketing-science/blob/main/README.md)
-- [Specification-Compliant Analysis Report](https://github.com/kyo1988/marketing-science/blob/main/notes/specification_compliant_pass_analysis.md)
+- [Project Documentation](/marketing-science-README.md)
+- [Specification-Compliant Analysis Report](/notes/specification_compliant_pass_analysis.md)
 
 ---
 
-*This analysis is part of a comprehensive marketing science research project. For complete methodology and results, see the [Statement of Work](https://github.com/kyo1988/marketing-science/blob/main/SOW.md) and [Progress Summary](https://github.com/kyo1988/marketing-science/blob/main/notes/progress_summary.md).*
+*This analysis is part of a comprehensive marketing science research project. For complete methodology and results, see the [Statement of Work](/SOW.md) and [Progress Summary](/notes/progress_summary.md).*

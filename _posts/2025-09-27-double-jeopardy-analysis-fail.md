@@ -70,9 +70,9 @@ The BCa confidence interval [0.275, 0.462] indicates that even the upper bound f
 
 *Figure 1 shows the relationship between brand penetration and average purchase frequency, revealing the weak correlation (r=0.627) that falls below the 0.80 threshold.*
 
-- **Results**: [results/dj_bodycare.csv](https://github.com/kyo1988/marketing-science/blob/main/results/dj_bodycare.csv)
-- **Visualization**: [figs/dj_bodycare.png](https://github.com/kyo1988/marketing-science/blob/main/figs/dj_bodycare.png)
-- **Audit Log**: [logs/run_dj_bodycare.jsonl](https://github.com/kyo1988/marketing-science/blob/main/logs/run_dj_bodycare.jsonl)
+- **Results**: [results/dj_bodycare.csv](/results/dj_bodycare.csv)
+- **Visualization**: [figs/dj_bodycare.png](/figs/dj_bodycare.png)
+- **Audit Log**: [logs/run_dj_bodycare.jsonl](/logs/run_dj_bodycare.jsonl)
 
 ## Reproducibility
 
@@ -103,9 +103,9 @@ This analysis provides valuable insights into the limitations of applying theore
 
 - Ehrenberg, A.S.C. (1988). Repeat-buying: facts, theory and applications
 - Sharp, B. (2010). How Brands Grow
-- [Project Documentation](https://github.com/kyo1988/marketing-science/blob/main/README.md)
-- [Specification-Compliant Analysis Report](https://github.com/kyo1988/marketing-science/blob/main/notes/specification_compliant_pass_analysis.md)
+- [Project Documentation](/marketing-science-README.md)
+- [Specification-Compliant Analysis Report](/notes/specification_compliant_pass_analysis.md)
 
 ---
 
-*This analysis is part of a comprehensive marketing science research project. For complete methodology and results, see the [Statement of Work](https://github.com/kyo1988/marketing-science/blob/main/SOW.md) and [Progress Summary](https://github.com/kyo1988/marketing-science/blob/main/notes/progress_summary.md).*
+*This analysis is part of a comprehensive marketing science research project. For complete methodology and results, see the [Statement of Work](/SOW.md) and [Progress Summary](/notes/progress_summary.md).*
