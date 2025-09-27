@@ -8,12 +8,18 @@ permalink: /marketing/2025/09/27/marketing-science-analysis-status.html
 description: "DoP achieves near-pass, DJ falls short, CEP and Moderation are useful. Investment decision roadmap for next quarter."
 ---
 
+## Series Navigation
+
+**Marketing Science Analysis Series**:
+- [Duplication of Purchase Analysis](/marketing/2025/09/27/duplication-of-purchase-near-miss.html)
+- [Double Jeopardy Analysis](/marketing/2025/09/27/double-jeopardy-analysis-fail.html)
+- [Category Entry Points Analysis](/marketing/2025/09/27/category-entry-points-analysis.html)
+- [Moderation & Dirichlet Analysis](/marketing/2025/09/27/moderation-dirichlet-analysis.html)
+- **Analysis Status Overview** ← Current (Hub)
 
 ## TL;DR
 
-- **DoP achieves "near-miss", DJ falls short, CEP and Moderation are useful**
-- **Next quarter: Invest in reach expansion, localization, and heavy buyer optimization**
-- **Research continues with focus on reproducibility and sound approximation**
+Our marketing science analysis reveals that Duplication of Purchase (DoP) achieved a near-miss result, providing a solid foundation for cross-sell optimization strategies that can drive revenue impact. However, Double Jeopardy (DJ) failed to meet the threshold, indicating that reach investment should take priority over loyalty programs in the short term. Category Entry Points (CEP) and Moderation analyses offer valuable insights for copy localization and heavy buyer targeting strategies. The recommended action plan spans 30/60/90 days: focus on top cross-sell pairs A/B testing, experiment with non-English copy strategies, and redesign reach KPIs for maximum effectiveness.
 
 ## Executive Summary
 
@@ -52,7 +58,13 @@ Each analysis employs specification-compliant statistical methods including BCa 
 
 ### 1. Specification-Compliant Implementation
 
-**Claim.** Our production-grade implementation employs rigorous statistical methods across all analyses. **Evidence.** We utilize BCa Bootstrap (B=5000, seed=42) for reproducibility, implement real weekly shuffle for actual temporal randomization, and maintain proper negative controls for statistical validation. **Implication.** This approach ensures that our results meet production research standards and provide reliable insights into marketing science principles. **Limits.** Results are sensitive to buyer weighting and temporal windows; stationarity tests and negative controls are reported in the appendix.
+**Claim.** Our production-grade implementation employs rigorous statistical methods across all analyses.
+
+**Evidence.** We utilize BCa Bootstrap (B=5000, seed=42) for reproducibility, implement real weekly shuffle for actual temporal randomization, and maintain proper negative controls for statistical validation.
+
+**Implication.** This approach ensures that our results meet production research standards and provide reliable insights into marketing science principles.
+
+**Limits.** Results are sensitive to buyer weighting and temporal windows; stationarity tests and negative controls are reported in the appendix.
 
 ### 2. Near-Miss Achievement
 
@@ -62,7 +74,13 @@ Each analysis employs specification-compliant statistical methods including BCa 
 
 ### 3. Real-World Data Insights
 
-**Claim.** Real-world marketing data exhibits characteristics that challenge theoretical marketing science models. **Evidence.** Purchase behavior shows extreme variability (std = 181.9), marketing science principles vary across categories, and non-stationary data affects analysis validity. **Implication.** These findings suggest that theoretical models require adaptation for real-world applications, with careful consideration of data quality and statistical assumptions. **Limits.** Results are specific to the analyzed categories and time periods; broader generalization requires additional validation across diverse datasets.
+**Claim.** Real-world marketing data exhibits characteristics that challenge theoretical marketing science models.
+
+**Evidence.** Purchase behavior shows extreme variability (std = 181.9), marketing science principles vary across categories, and non-stationary data affects analysis validity.
+
+**Implication.** These findings suggest that theoretical models require adaptation for real-world applications, with careful consideration of data quality and statistical assumptions.
+
+**Limits.** Results are specific to the analyzed categories and time periods; broader generalization requires additional validation across diverse datasets.
 
 ## Analysis Results Summary
 
@@ -137,7 +155,7 @@ The specification-compliant implementation reveals why achieving PASS examples i
 
 ## Evidence Files and Documentation
 
-![Figure 1. Marketing science analysis overview showing specification-compliant implementation results across all methodologies.](/assets/images/marketing-science/dop_heat_dunnhumby_beauty_spec_q90_b2_m20.png)
+![Marketing science analysis overview showing DoP near-miss results and comprehensive statistical validation across all methodologies](/assets/images/marketing-science/dop_heat_dunnhumby_beauty_spec_q90_b2_m20.png)
 
 *Figure 1 provides an overview of the marketing science analysis pipeline, highlighting the near-miss DoP result and comprehensive statistical validation across all methodologies.*
 
@@ -159,13 +177,18 @@ The specification-compliant implementation reveals why achieving PASS examples i
 
 **Quality Assurance**: Complete audit logging in JSONL format, input SHA verification for reproducibility, and stationarity testing across all analyses.
 
-## Reproducibility
+<details>
+<summary>Reproducibility (Commands, Versions, Logs)</summary>
 
 For detailed reproducibility information, refer to the individual analysis articles:
 - **Double Jeopardy**: [DJ Analysis Reproducibility](/marketing/2025/09/27/double-jeopardy-analysis-fail.html#reproducibility)
 - **Duplication of Purchase**: [DoP Analysis Reproducibility](/marketing/2025/09/27/duplication-of-purchase-near-miss.html#reproducibility)
 - **Category Entry Points**: [CEP Analysis Reproducibility](/marketing/2025/09/27/category-entry-points-analysis.html#reproducibility)
 - **Moderation/Dirichlet**: [Moderation Analysis Reproducibility](/marketing/2025/09/27/moderation-dirichlet-analysis.html#reproducibility)
+
+**Common Dependencies**: Python 3.9+, pandas, numpy, scipy, scikit-learn, matplotlib
+
+</details>
 
 ## Limitations and Threats to Validity
 

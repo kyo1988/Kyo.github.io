@@ -8,12 +8,17 @@ permalink: /marketing/2025/09/27/moderation-dirichlet-analysis.html
 description: "Heavy buyers (Q4) show strongest purchase behavior persistence over time (R²=0.472). Dirichlet fit is R²≈0, best kept as reference only."
 ---
 
+## Series Navigation
+
+**Marketing Science Analysis Series**:
+- [Double Jeopardy Analysis](/marketing/2025/09/27/double-jeopardy-analysis-fail.html) ← Previous
+- [Category Entry Points Analysis](/marketing/2025/09/27/category-entry-points-analysis.html) ← Next
+- [Duplication of Purchase Analysis](/marketing/2025/09/27/duplication-of-purchase-near-miss.html)
+- [Analysis Status Overview](/marketing/2025/09/27/marketing-science-analysis-status.html) ← Hub
 
 ## TL;DR
 
-- **Heavy buyers (Q4) show strongest purchase behavior persistence over time (R²=0.472)**
-- **Dirichlet fit is extremely weak, keep as reference model only**
-- **Action: Validate Q4-targeted strategies, prioritize robust modeling approaches**
+Our moderation analysis reveals that the Q4 segment (heavy buyers) shows the strongest relationship with an R² of 0.472, demonstrating that heavy buyers drive purchase behavior persistence over time. However, the Dirichlet model fails with an R² approximately equal to zero due to high data variance and assumption violations, making it unsuitable for production use. The recommended action is to prioritize Q4 segment offer and experience optimization through A/B testing, focusing on the customer segment that shows the most predictable and valuable behavior patterns.
 
 ## Executive Summary
 

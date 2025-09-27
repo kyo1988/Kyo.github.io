@@ -8,12 +8,17 @@ permalink: /marketing/2025/09/27/duplication-of-purchase-near-miss.html
 description: "Weighted MAD of 0.015863 (gap +0.000863). DoP 'near-miss' demonstrates practical validity and investment decision applications."
 ---
 
+## Series Navigation
+
+**Marketing Science Analysis Series**:
+- [Category Entry Points Analysis](/marketing/2025/09/27/category-entry-points-analysis.html) ← Previous
+- [Double Jeopardy Analysis](/marketing/2025/09/27/double-jeopardy-analysis-fail.html) ← Next
+- [Moderation & Dirichlet Analysis](/marketing/2025/09/27/moderation-dirichlet-analysis.html)
+- [Analysis Status Overview](/marketing/2025/09/27/marketing-science-analysis-status.html) ← Hub
 
 ## TL;DR
 
-- **Weighted MAD of 0.015863 (gap +0.000863) achieves "near-miss"**
-- **Weighting reflects real market structure and tightens thresholds**
-- **Action: Reset duplication rate benchmarks and prioritize cross-sell opportunities**
+Our specification-compliant Duplication of Purchase analysis achieved a weighted MAD of 0.015863, falling short of the 0.015 threshold by only 0.000863, which is practically sufficient for business decision-making purposes. The weighted approach reflects real market structure and provides stricter validation compared to unweighted calculations, making it more reliable for strategic planning. The recommended action is to reset duplication rate benchmarks based on this near-miss result and focus optimization efforts on the top 3 cross-sell brand pairs that show the highest duplication potential.
 
 ## Executive Summary
 
@@ -136,7 +141,7 @@ The dunnhumby beauty result emerged from the optimal combination: top 10% users,
 
 ## Evidence Files
 
-![Figure 1. DoP heatmap for dunnhumby beauty; warmer cells indicate higher duplication.](/assets/images/marketing-science/dop_heat_dunnhumby_beauty_spec_q90_b2_m20.png)
+![Duplication matrix heatmap showing brand cross-purchase patterns with weighted MAD near-miss result (0.015863)](/assets/images/marketing-science/dop_heat_dunnhumby_beauty_spec_q90_b2_m20.png)
 
 *Figure 1 displays the duplication matrix for dunnhumby beauty data, showing the near-miss result (MAD=0.015863) that approaches the 0.015 threshold.*
 
@@ -150,9 +155,16 @@ The dunnhumby beauty result emerged from the optimal combination: top 10% users,
 - **Instacart PASS**: [assets/evidence/dop_instacart_shampoo_top15_pass.csv](/assets/evidence/dop_instacart_shampoo_top15_pass.csv)
 - **CEP Demo**: [assets/evidence/dop_by_cep_realistic.csv](/assets/evidence/dop_by_cep_realistic.csv)
 
-## Reproducibility
+<details>
+<summary>Reproducibility (Commands, Versions, Logs)</summary>
 
 **Command (repo)**: `poetry run python scripts/eb/compute_dop_specification_compliant.py --tx data/processed/tx_dunnhumby_beauty.csv --category_regex beauty --min_buyers 20 --top_user_quantile 0.9 --min_brand_count_per_user 2 --window_weeks 26 --bca 5000 --seed 42`
+
+**Dependencies**: Python 3.9+, pandas, numpy, scipy, scikit-learn
+
+**Audit Log**: Complete processing log available in [logs/run_dop_dunnhumby_beauty_spec_q90_b2_m20.jsonl](/logs/run_dop_dunnhumby_beauty_spec_q90_b2_m20.jsonl)
+
+</details>
 
 ## Current Status
 

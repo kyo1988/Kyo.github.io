@@ -8,12 +8,17 @@ permalink: /marketing/2025/09/27/category-entry-points-analysis.html
 description: "Analysis of 1M+ Amazon reviews across languages. CEP coverage negatively correlates with penetration. Practical insights for localization and copy strategy."
 ---
 
+## Series Navigation
+
+**Marketing Science Analysis Series**:
+- [Duplication of Purchase Analysis](/marketing/2025/09/27/duplication-of-purchase-near-miss.html) ← Previous
+- [Double Jeopardy Analysis](/marketing/2025/09/27/double-jeopardy-analysis-fail.html) ← Next  
+- [Moderation & Dirichlet Analysis](/marketing/2025/09/27/moderation-dirichlet-analysis.html)
+- [Analysis Status Overview](/marketing/2025/09/27/marketing-science-analysis-status.html) ← Hub
 
 ## TL;DR
 
-- **Multilingual review analysis shows higher penetration correlates with lower CEP coverage**
-- **English shows relatively high coverage and penetration (other languages limited by data sufficiency)**
-- **Action: Redesign copy deployment and localization investment allocation**
+Our Category Entry Points (CEP) analysis across 1M+ multilingual reviews reveals that brand coverage negatively correlates with penetration rates, with English showing exceptional performance compared to other languages. Data sufficiency constraints limited our analysis to English-only for reliable statistical results, highlighting the need for improved data collection across languages. The key action is to redesign copy deployment and localization investment allocation to expand coverage breadth and reduce the English-centric bias in our marketing approach.
 
 ## Executive Summary
 
@@ -38,7 +43,7 @@ Category Entry Points (CEP) analysis examines how brands perform across differen
 - **Data Source**: Amazon review data (1,000,000+ records)
 - **Input SHA**: faa6eadcba54534f (full reproducibility)
 - **Chunk Processing**: 100,000 records per chunk for memory efficiency
-- **Multilingual Support**: 27 languages detected, English-only analysis due to data sufficiency
+- **Multilingual Support**: 27 languages detected, English-only analysis due to data sufficiency constraints
 
 ### Statistical Implementation
 
@@ -52,7 +57,7 @@ We employed Wilson confidence intervals for coverage rates due to their superior
 
 **Overall Statistics**:
 - **Total CEP Matches**: 256
-- **Excluded Languages**: 26 (insufficient data, English-only analysis)
+- **Excluded Languages**: 26 (insufficient data for reliable analysis)
 - **Excluded Cells**: 618,066 (below threshold)
 - **Coverage Range**: 0.0 to 1.0
 
@@ -100,7 +105,7 @@ Complete specification-compliant implementation:
 
 ## Evidence Files
 
-![Figure 1. CEP coverage heatmap showing brand performance across different market segments.](/assets/images/marketing-science/cep_coverage_complete.png)
+![Heatmap showing brand performance across market segments with CEP coverage rates and Wilson confidence intervals](/assets/images/marketing-science/cep_coverage_complete.png)
 
 *Figure 1 illustrates the CEP coverage analysis results, revealing brand performance variations across market segments with Wilson confidence intervals.*
 
@@ -109,25 +114,35 @@ Complete specification-compliant implementation:
 - **H1 Correlation Plot**: [figs/cep_vs_penetration.png](/figs/cep_vs_penetration.png)
 - **Audit Log**: [logs/run_cep_complete.jsonl](/logs/run_cep_complete.jsonl)
 
-## Reproducibility
+<details>
+<summary>Reproducibility (Commands, Versions, Logs)</summary>
 
 **Command (repo)**: `poetry run python scripts/stp/compute_cep_coverage.py --input $AMAZON_RAW_DIR/amazon_reviews.tsv --chunk_size 100000`
+
+**Dependencies**: Python 3.9+, pandas, numpy, scipy, matplotlib
+
+**Audit Log**: Complete processing log available in [logs/run_cep_complete.jsonl](/logs/run_cep_complete.jsonl)
+
+</details>
 
 ## CEP-Stratified DoP Analysis (H2)
 
 ### Demo Implementation
 
-Our CEP-stratified DoP analysis provides a demonstration of how CEP layers can be used for brand duplication analysis. *Limitations: This implementation uses simplified brand mapping and unweighted MAD calculations, serving as a proof-of-concept rather than production-ready analysis.*
+Our CEP-stratified DoP analysis provides a demonstration of how CEP layers can be used for brand duplication analysis.
 
 **Results**:
 - **CEP Layer "en"**: Unweighted MAD = 0.01254 ✅ PASS
 - **Weekly Shuffle**: 0.95 (target: ≥0.95) ✅
 - **Brands**: 31
 
-**Limitations**:
-- Simplified brand mapping (not production-ready)
-- Unweighted MAD calculation
-- Users = 0 (mapping limitation)
+<details>
+<summary>Demo Limitations</summary>
+
+This implementation uses simplified brand mapping and unweighted MAD calculations, serving as a proof-of-concept rather than production-ready analysis. Users = 0 due to mapping limitations.
+
+</details>
+
 
 ### Evidence Files
 

@@ -8,12 +8,17 @@ permalink: /marketing/2025/09/27/double-jeopardy-analysis-fail.html
 description: "r=0.627 falls short of threshold. In markets with weak penetration-frequency relationships, 'penetration expansion' may be the priority."
 ---
 
+## Series Navigation
+
+**Marketing Science Analysis Series**:
+- [Duplication of Purchase Analysis](/marketing/2025/09/27/duplication-of-purchase-near-miss.html) ← Previous
+- [Category Entry Points Analysis](/marketing/2025/09/27/category-entry-points-analysis.html) ← Next
+- [Moderation & Dirichlet Analysis](/marketing/2025/09/27/moderation-dirichlet-analysis.html)
+- [Analysis Status Overview](/marketing/2025/09/27/marketing-science-analysis-status.html) ← Hub
 
 ## TL;DR
 
-- **r=0.627 falls short of threshold (weak relationship in beauty category)**
-- **"Penetration first" importance is suggested**
-- **Action: Short-term focus on reach expansion, loyalty programs as secondary**
+Our Double Jeopardy analysis reveals a failed relationship with a Pearson correlation of 0.627, significantly below the 0.80 threshold, accompanied by unstable time series signals that suggest data non-stationarity. This conservative interpretation indicates that a "penetration first" strategy should be prioritized over frequency-based loyalty programs in the beauty category. The recommended action is to shift budget allocation toward reach expansion KPIs and evaluate progress quarterly, focusing on getting more customers to try the brand rather than increasing purchase frequency among existing buyers.
 
 ## Executive Summary
 
