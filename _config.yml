@@ -19,8 +19,8 @@ lang: "en"
 locale: en_US
 default_lang: "en"
 
-# GitHub Pages theme
-theme: minima
+# Custom layout (no theme)
+# theme: minima
 
 ### Personal info and site tools info:
 twitter_username: kyoHarada
@@ -83,6 +83,11 @@ markdown: kramdown
 kramdown:
   input: GFM
   syntax_highlighter: rouge
+
+# Sass settings
+sass:
+  sass_dir: _sass
+  style: compressed
 
 # GitHub Pagesで許可されるプラグインのみ
 plugins:

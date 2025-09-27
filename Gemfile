@@ -1,8 +1,10 @@
 source "https://rubygems.org"
 
-# GitHub Pages環境
-gem "github-pages", group: :jekyll_plugins
-gem "webrick", "~> 1.8"   # ローカル開発でRuby 3系なら推奨
-
-# ここに jekyll / jekyll-minifier / jekyll-assets などは置かない
-# （GitHub Pages に含まれない or 互換衝突するため）
+# Jekyll and plugins
+gem "jekyll", "~> 4.3"
+gem "jekyll-feed", "~> 0.12"
+gem "jekyll-seo-tag", "~> 2.8"
+gem "jekyll-sitemap", "~> 1.4"
+gem "jekyll-redirect-from", "~> 0.16"
+gem "sass-embedded", "~> 1.69"
+gem "webrick", "~> 1.8"
