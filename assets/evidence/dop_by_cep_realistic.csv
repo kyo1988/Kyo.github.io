@@ -1,0 +1,2 @@
+layer_name,n_brands,n_users,weighted_mad,ci_low,ci_high,weekly_shuffle_pass_rate,cte_pass,reason
+en,31,0,0.012541398990113172,0.008915439833011653,0.016502114635918247,0.95,True,success

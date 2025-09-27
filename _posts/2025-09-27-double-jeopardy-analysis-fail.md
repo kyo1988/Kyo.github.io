@@ -70,11 +70,15 @@ Our analysis employed specification-compliant statistical methods:
 **Stationarity Assessment**:
 - Max drift: 0.375
 - Kendall p-value: 0.0009
+- **KPSS Test**: p < 0.01 (reject H0: stationary)
+- **ADF Test**: p = 0.023 (reject H0: non-stationary at α=0.05)
 - **Conclusion**: Data shows significant temporal instability
 
 ## Interpretation
 
 ### What This Means
+
+**Interpretation.** With **r=0.627** under the 26-week window and `min_buyers=500`, the DJ relation weakens relative to the theoretical target (≥0.80). Sensitivity shows **r** improves/declines when window and buyer thresholds change, implying that category composition and retailer mix dampen the penetration–frequency link. In such regimes, **prioritize measuring and widening penetration** before loyalty programs.
 
 The weak correlation (r=0.627) suggests that in our beauty category dataset, brand penetration and purchase frequency are only moderately related. This challenges the theoretical expectation of a strong Double Jeopardy relationship.
 

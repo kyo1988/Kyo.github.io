@@ -4,7 +4,7 @@ title: "Category Entry Points Analysis: Multilingual Brand Coverage and H1 Corre
 date: 2025-09-27 12:00:00 +0900
 categories: [Marketing Science, Data Analysis]
 tags: [Category Entry Points, CEP, Brand Coverage, Multilingual Analysis, H1 Correlation]
-permalink: /marketing/2025/09/27/customer-equity-program-analysis.html
+permalink: /marketing/2025/09/27/category-entry-points-analysis.html
 ---
 
 # Category Entry Points Analysis: Multilingual Brand Coverage and H1 Correlation Insights

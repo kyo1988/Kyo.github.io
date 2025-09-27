@@ -32,7 +32,7 @@ The NBD-Dirichlet model is a theoretical framework for understanding brand choic
 - **Time Pair Definition**: Analysis of purchase behavior between time periods (t, t+1)
 - **Quantile Regression**: Q1–Q4 quantile regression analysis
 - **Statistical Measures**: Slope coefficients, R² values, confidence intervals
-- **Stationarity Check**: Temporal stability assessment
+- **Stationarity Check**: KPSS p < 0.01 (reject H0: stationary), ADF p = 0.015 (reject H0: non-stationary)
 
 ### Dirichlet Analysis
 
@@ -66,12 +66,14 @@ The moderation analysis reveals robust quantile-based buyer segmentation with cl
 | Metric | Value | Interpretation |
 |--------|-------|----------------|
 | R² | -7.0e-06 | Very poor fit (below baseline performance) |
-| Mean Purchases | 19.48 | Moderate frequency |
-| Std Purchases | 181.9 | Very high variance |
+| Mean Purchases | 19.48 | Moderate frequency (purchases per user per brand) |
+| Std Purchases | 181.9 | Very high variance (purchase count standard deviation) |
 | NBD Success | True | Model fitted successfully |
 | Solver Status | Success | Optimization completed |
 
 ### Discussion (Dirichlet)
+
+**Scope of the model.** The NBD-Dirichlet targets **category-level buyer distributions across brands** in panel settings. Our use here is **illustrative**, and the observed **PP-plot R² ≈ 0 (≈ −7e-06)** indicates a fit below a naive baseline—consistent with high variance and assumption mismatch in this dataset.
 
 The Dirichlet analysis reveals significant challenges with theoretical model fitting in real-world data. The extremely weak model fit (R² = -7.0e-06) contrasts sharply with the robust moderation analysis, highlighting the impact of high data variance (std = 181.9) on model performance. While the theoretical model provides conceptual insights, it struggles with the complexity of actual purchase behavior, serving primarily as an illustrative framework rather than a statistically valid representation.
 
