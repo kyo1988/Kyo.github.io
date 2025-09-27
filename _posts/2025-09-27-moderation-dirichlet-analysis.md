@@ -18,13 +18,17 @@ description: "Heavy buyers (Q4) show strongest purchase behavior persistence ove
 
 ## TL;DR
 
-**Action Required**: Implement Q4-focused A/B testing immediately to optimize heavy buyer segment performance. Heavy buyers (Q4) show the strongest relationship (R²=0.472), indicating they are the most predictable and valuable customer segment.
+**Key Findings**: Consider implementing Q4-focused A/B testing to optimize heavy buyer segment performance. Heavy buyers (Q4) show the strongest relationship (R²=0.472) in this dataset, suggesting they may be the most predictable and valuable customer segment.
 
 **Next Steps**: (1) Launch Q4-focused A/B testing with basket expansion and frequency suppression design, (2) Target heavy buyer segments for offer optimization, (3) Abandon Dirichlet model approaches due to poor fit (R²≈0).
 
 ## Executive Summary
 
-**Situation**: Heavy buyers (Q4) show the strongest relationship (R²=0.472), demonstrating predictable and valuable behavior patterns, while Dirichlet model fails (R²≈0) due to high data variance. **Implication**: Q4 segment offers the highest ROI potential for optimization efforts. **Action Required**: Marketing teams must immediately implement Q4-focused A/B testing with basket expansion and frequency suppression design, targeting the most predictable customer segment for maximum effectiveness.
+**Situation**: Heavy buyers (Q4) show the strongest relationship (R²=0.472), demonstrating predictable and valuable behavior patterns, while Dirichlet model fails (R²≈0) due to high data variance.
+
+**Implication**: Q4 segment offers the highest ROI potential for optimization efforts in this dataset.
+
+**Key Findings**: Marketing teams may want to consider implementing Q4-focused A/B testing with basket expansion and frequency suppression design, targeting the most predictable customer segment for maximum effectiveness, based on this dataset's findings.
 
 ## Background
 
@@ -156,7 +160,7 @@ Our analysis achieved mixed results across the two complementary approaches. The
 
 ### Required Action: Focus on Q4 Heavy Buyer Optimization
 
-**Main Message**: Marketing teams must immediately implement Q4-focused A/B testing to optimize heavy buyer segment performance and abandon Dirichlet model approaches.
+**Main Message**: Marketing teams may want to consider implementing Q4-focused A/B testing to optimize heavy buyer segment performance and abandon Dirichlet model approaches, based on this dataset's limited applicability of theoretical models.
 
 **Supporting Logic**:
 1. **Q4 Heavy Buyers Are Most Valuable**: R²=0.472 indicates highest predictability and value

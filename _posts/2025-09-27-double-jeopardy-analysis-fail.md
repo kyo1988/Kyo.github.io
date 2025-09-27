@@ -18,18 +18,21 @@ description: "r=0.627 falls short of threshold. In markets with weak penetration
 
 ## TL;DR
 
-**Action Required**: Shift marketing budget from loyalty programs to reach expansion strategies immediately. The Double Jeopardy relationship fails (r=0.627) in beauty category, indicating that penetration-first strategy is consistent with this dataset's characteristics.
+**Key Findings**: Consider shifting marketing budget from loyalty programs to reach expansion strategies. The Double Jeopardy relationship fails (r=0.627) in this beauty category dataset, suggesting that Ehrenberg-Bass principles may not fully apply in this specific context.
 
 **Next Steps**: (1) Redesign KPIs to prioritize new customer acquisition, (2) Measure reach expansion effectiveness quarterly, (3) Pause frequency-based loyalty investments until penetration targets are met.
 
 ## Executive Summary
 
-**Situation**: Double Jeopardy relationship fails (r=0.627) in beauty category, significantly below the 0.80 threshold required for marketing science validation. **Implication**: This is consistent with prioritizing penetration over frequency in this dataset. 
-**Action Required**: Marketing teams should shift budget allocation from frequency-based loyalty programs to reach expansion strategies, focusing on acquiring new customers rather than increasing purchase frequency among existing buyers.
+**Situation**: Double Jeopardy relationship fails (r=0.627) in this beauty category dataset, significantly below the 0.80 threshold required for marketing science validation.
+
+**Implication**: Ehrenberg-Bass principles may have limited applicability in this specific context.
+
+**Key Findings**: Marketing teams may want to consider shifting budget allocation from frequency-based loyalty programs to reach expansion strategies, focusing on acquiring new customers rather than increasing purchase frequency among existing buyers.
 
 ## Background
 
-Double Jeopardy is a fundamental principle in marketing science, first articulated by Ehrenberg–Bass, which states that brands with higher penetration also tend to have higher average purchase frequency among their buyers. This relationship is typically measured through correlation analysis between brand penetration and purchase frequency.
+Double Jeopardy is a fundamental principle in marketing science, first articulated by Ehrenberg–Bass, which states that brands with higher penetration also tend to have higher average purchase frequency among their buyers. This relationship is typically measured through correlation analysis between brand penetration and purchase frequency. However, this analysis reveals that this principle may not hold universally across all categories and datasets.
 
 ## Methodology
 
@@ -121,12 +124,12 @@ Our analysis employed specification-compliant statistical methods:
 
 ### Required Action: Pivot to Penetration-First Strategy
 
-**Main Message**: Marketing teams must immediately abandon frequency-based loyalty programs and redirect all resources to penetration expansion strategies.
+**Main Message**: Marketing teams may want to consider abandoning frequency-based loyalty programs and redirecting resources to penetration expansion strategies, given the limited applicability of Ehrenberg-Bass principles in this dataset.
 
 **Supporting Logic**:
 1. **Penetration-First Strategy**: The weak correlation (r=0.627) is consistent with focusing on penetration first in this dataset
 2. **Loyalty Programs Are Ineffective**: Without strong penetration, frequency optimization yields minimal returns
-3. **Resource Misallocation**: Current loyalty investments should be redirected to reach expansion
+3. **Resource Misallocation**: Current loyalty investments may want to be redirected to reach expansion
 
 **Implementation Requirements**:
 - Redesign KPIs to prioritize new customer acquisition over frequency metrics

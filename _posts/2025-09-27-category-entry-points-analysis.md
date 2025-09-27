@@ -18,13 +18,17 @@ description: "Analysis of 1M+ Amazon reviews across languages. CEP coverage nega
 
 ## TL;DR
 
-**Action Required**: Redesign copy deployment and localization strategy immediately to address English-centric bias. CEP coverage negatively correlates with penetration rates (r=-0.28), indicating that high-penetration brands tend to underperform in multilingual coverage.
+**Key Findings**: Redesign copy deployment and localization strategy immediately to address English-centric bias. CEP coverage negatively correlates with penetration rates (r=-0.28), indicating that high-penetration brands tend to underperform in multilingual coverage.
 
 **Next Steps**: (1) Test messaging validation in top 3 languages, (2) Track CEP hit improvement quantitatively, (3) Reallocate localization budget from English to underperforming language markets.
 
 ## Executive Summary
 
-**Situation**: CEP coverage negatively correlates with penetration rates (r=-0.28), with English showing exceptional performance while other languages underperform. **Implication**: High-penetration brands focus on narrow language targeting, missing multilingual opportunities. **Action Required**: Marketing teams must immediately redesign copy deployment and localization investment allocation to expand coverage breadth and reduce English-centric bias in marketing approach.
+**Situation**: CEP coverage negatively correlates with penetration rates (r=-0.28), with English showing exceptional performance while other languages underperform.
+
+**Implication**: High-penetration brands may focus on narrower language targeting, missing multilingual opportunities.
+
+**Key Findings**: Marketing teams may want to consider redesigning copy deployment and localization investment allocation to expand coverage breadth and reduce English-centric bias in marketing approach.
 
 ## Background
 
@@ -97,7 +101,7 @@ All coverage rates include 95% Wilson confidence intervals to provide statistica
 
 ### Required Action: Redesign Localization Strategy
 
-**Main Message**: Marketing teams must immediately redesign copy deployment and localization investment to address English-centric bias and expand multilingual coverage.
+**Main Message**: Marketing teams may want to consider redesigning copy deployment and localization investment to address English-centric bias and expand multilingual coverage, based on this dataset's findings.
 
 **Supporting Logic**:
 1. **English Dominance Problem**: English shows exceptional performance while other languages underperform
@@ -123,7 +127,7 @@ The negative correlation between penetration and coverage suggests strategic tra
 
 - **Market Saturation**: Higher penetration brands may face coverage limitations
 - **Niche Positioning**: Lower penetration brands may achieve higher coverage in specific segments
-- **Strategic Implications**: Brand strategy should consider penetration-coverage trade-offs
+- **Strategic Implications**: Brand strategy may want to consider penetration-coverage trade-offs
 
 ### 3. Statistical Validation
 
@@ -141,8 +145,8 @@ Complete specification-compliant implementation:
 *Figure 1 illustrates the CEP coverage analysis results, revealing brand performance variations across market segments with Wilson confidence intervals.*
 
 - **Coverage Results**: [assets/evidence/cep_coverage_complete.csv](/assets/evidence/cep_coverage_complete.csv)
-- **Coverage Heatmap**: [figs/cep_coverage_complete.png](/figs/cep_coverage_complete.png)
-- **H1 Correlation Plot**: [figs/cep_vs_penetration.png](/figs/cep_vs_penetration.png)
+- **Coverage Heatmap**: [assets/images/marketing-science/cep_coverage_complete.png](/assets/images/marketing-science/cep_coverage_complete.png)
+- **H1 Correlation Plot**: [assets/images/marketing-science/cep_vs_penetration.png](/assets/images/marketing-science/cep_vs_penetration.png)
 - **Audit Log**: [logs/run_cep_complete.jsonl](/logs/run_cep_complete.jsonl)
 
 ## Reproducibility
@@ -227,7 +231,7 @@ This implementation uses simplified brand mapping and unweighted MAD calculation
 
 ## Implications for Marketing Strategy
 
-1. **Multilingual Considerations**: Brand strategies should account for language-specific performance
+1. **Multilingual Considerations**: Brand strategies may want to account for language-specific performance
 2. **Penetration vs. Coverage**: Brands must balance these competing objectives
 3. **Data Quality**: Sufficient data volume required for reliable analysis
 4. **Statistical Validation**: Proper confidence intervals essential for decision-making
