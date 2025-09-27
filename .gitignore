@@ -2,8 +2,26 @@ _site
 .sass-cache
 .jekyll-metadata
 
-# Sensitive files
+# Sensitive files and directories
 scripts/analytics/ga4-fix.json
 *.json
 !package.json
 !_config.yml
+
+# Internal documentation patterns (auto-excluded)
+*_ANALYSIS_REPORT.md
+*_COMPLETION_REPORT.md
+*_REPORT.md
+*_SOW.md
+*_RUNBOOK.md
+*_GUIDE.md
+*_MANUAL.md
+*_DOCUMENTATION.md
+*_NOTES.md
+*_TODO.md
+*_CHECKLIST.md
+*_TEMPLATE.md
+*_DRAFT.md
+*_INTERNAL.md
+*_PRIVATE.md
+*_CONFIDENTIAL.md
