@@ -1,0 +1,9 @@
+{% if page.decision %}
+<div class="decision-bridge" style="background:#f6ffed;border:1px solid #b7eb8f;padding:.8rem 1rem;border-radius:.5rem;margin:1rem 0;">
+  <strong>Decision Bridge</strong>
+  <ul>
+    {% if page.decision.do %}<li><em>Do now:</em> {{ page.decision.do }}</li>{% endif %}
+    {% if page.decision.dont %}<li><em>Stop:</em> {{ page.decision.dont }}</li>{% endif %}
+  </ul>
+</div>
+{% endif %}

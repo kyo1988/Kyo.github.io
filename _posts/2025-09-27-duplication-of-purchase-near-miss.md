@@ -5,6 +5,19 @@ date: 2025-09-27 11:00:00 +0900
 categories: [Marketing Science, Data Analysis]
 tags: [Duplication of Purchase, Ehrenberg-Bass, Marketing Analytics, Statistical Analysis, Weighted MAD]
 permalink: /marketing/2025/09/27/duplication-of-purchase-near-miss.html
+gate: { status: "FAIL", dataset: "dunnhumby beauty", metrics: "MAD=0.015863; gap=+0.000863; bca_high=0.020; neg=0.003" }
+method:
+  window_weeks: 26
+  user_scope: "category buyers"
+  binarization: "≥1 purchase → 1"
+  weights: "buyers(A)/Σbuyers"
+  invariants: "ΣA wA·D(A→B)≈Pen(B), neg control≈0"
+mvr:
+  myth: "DoP always holds tightly."
+  reality: "Category mix / brand mapping / PL dominance can break fit."
+decision:
+  do: "Run diagnose & fix brand map; narrow category."
+  dont: "Interpret high MAD without invariants check."
 ---
 
 # Duplication of Purchase Analysis: Near-Miss Achievement and the Weighted MAD Challenge
@@ -116,7 +129,12 @@ The dunnhumby beauty result emerged from the optimal combination: top 10% users,
 
 ## Evidence Files
 
-![Figure 1. DoP heatmap for dunnhumby beauty; warmer cells indicate higher duplication.]({{ site.baseurl }}/assets/images/marketing-science/dop_heat_dunnhumby_beauty_spec_q90_b2_m20.png)
+{% include figure.html
+   src="/assets/images/marketing-science/dop_heat_dunnhumby_beauty_spec_q90_b2_m20.png"
+   caption="Figure 1. DoP heatmap for dunnhumby beauty; warmer cells indicate higher duplication."
+   repro="env=py311; input_sha=dunnhumby:efgh456; cmd=compute_dop_specification_compliant; commit=2b3c4d5"
+   alt="DoP heatmap for dunnhumby beauty"
+%}
 
 *Figure 1 displays the duplication matrix for dunnhumby beauty data, showing the near-miss result (MAD=0.015863) that approaches the 0.015 threshold.*
 

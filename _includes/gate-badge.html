@@ -1,0 +1,15 @@
+{% assign s = page.gate.status | upcase %}
+{% assign ds = page.gate.dataset | default:"" %}
+{% capture label %}
+  {% if s == "PASS" %}PASS
+  {% elsif s == "FAIL" %}FAIL
+  {% elsif s contains "SKIP" %}SKIP (UNSUPPORTED_FOR_REVIEWS)
+  {% elsif s contains "APPENDIX" %}APPENDIX (No Gate)
+  {% else %}UNKNOWN{% endif %}
+{% endcapture %}
+<div class="gate-badge" style="border:1px solid #ddd;padding:.4rem .6rem;border-radius:.5rem;display:inline-block;margin:.5rem 0;">
+  <strong>Gate:</strong> {{ label | strip }}{% if ds != "" %} <span class="muted">/ dataset: {{ ds }}</span>{% endif %}
+  {% if page.gate.metrics %}
+    <span class="muted"> • metrics: {{ page.gate.metrics }}</span>
+  {% endif %}
+</div>

@@ -5,6 +5,8 @@ date: 2025-09-27 14:00:00 +0900
 categories: [Marketing Science, Data Analysis]
 tags: [Marketing Science, Ehrenberg-Bass, Statistical Analysis, Specification-Compliant, Real-World Data]
 permalink: /marketing/2025/09/27/marketing-science-analysis-status.html
+gate: { status: "APPENDIX (No Gate)", dataset: "multi" }
+description: "Project status: datasets, DJ/DoP gates, CEP track."
 ---
 
 # Marketing Science Analysis Status: Specification-Compliant Implementation with Real-World Insights
@@ -19,7 +21,7 @@ Our comprehensive marketing science analysis pipeline has achieved specification
 |----------|--------|------------|-------------|
 | **Double Jeopardy** | ❌ FAIL | r = 0.627 (target: ≥0.80) | Weak penetration-frequency relationship |
 | **Duplication of Purchase** | ❌ NEAR-MISS | MAD = 0.015863 (gap: +0.000863) | Close to theoretical threshold |
-| **Customer Equity Program** | ✅ COMPLETE | Wilson CI, H1 correlation analysis | Successful multilingual analysis |
+| **Category Entry Points** | ✅ COMPLETE | Wilson CI, H1 correlation analysis | Successful multilingual analysis |
 | **Moderation Analysis** | ✅ COMPLETE | Q4 slope = 3.341, R² = 0.472 | Strong quantile effects |
 | **Dirichlet Model** | ⚠️ ILLUSTRATIVE | R² = -7.0e-06 | Weak fit due to high variance |
 
@@ -68,7 +70,7 @@ The analysis reveals important characteristics of real-world marketing data:
 **Implication**: Close to theoretical threshold but not achieved
 **Evidence**: [results/dop_dunnhumby_beauty_spec_q90_b2_m20.csv](/results/dop_dunnhumby_beauty_spec_q90_b2_m20.csv)
 
-### Customer Equity Program Analysis ✅
+### Category Entry Points Analysis ✅
 
 **Result**: Complete multilingual analysis with Wilson CI
 **H1 Correlation**: Pearson = -0.28, Spearman = -0.59
@@ -109,7 +111,12 @@ The specification-compliant implementation reveals why achieving PASS examples i
 
 ## Evidence Files and Documentation
 
-![Figure 1. Marketing science analysis overview showing specification-compliant implementation results across all methodologies.]({{ site.baseurl }}/assets/images/marketing-science/dop_heat_dunnhumby_beauty_spec_q90_b2_m20.png)
+{% include figure.html
+   src="/assets/images/marketing-science/dop_heat_dunnhumby_beauty_spec_q90_b2_m20.png"
+   caption="Figure 1. Marketing science analysis overview showing specification-compliant implementation results across all methodologies."
+   repro="env=py311; input_sha=dunnhumby:efgh456; cmd=compute_dop_specification_compliant; commit=2b3c4d5"
+   alt="Marketing science analysis overview showing specification-compliant implementation results"
+%}
 
 *Figure 1 provides an overview of the marketing science analysis pipeline, highlighting the near-miss DoP result and comprehensive statistical validation across all methodologies.*
 
@@ -131,7 +138,7 @@ The specification-compliant implementation reveals why achieving PASS examples i
 For detailed reproducibility information, refer to the individual analysis articles:
 - **Double Jeopardy**: [DJ Analysis Reproducibility](https://kyo1988.github.io/Kyo.github.io/marketing/2025/09/27/double-jeopardy-analysis-fail.html#reproducibility)
 - **Duplication of Purchase**: [DoP Analysis Reproducibility](https://kyo1988.github.io/Kyo.github.io/marketing/2025/09/27/duplication-of-purchase-near-miss.html#reproducibility)
-- **Customer Equity Program**: [CEP Analysis Reproducibility](https://kyo1988.github.io/Kyo.github.io/marketing/2025/09/27/customer-equity-program-analysis.html#reproducibility)
+- **Category Entry Points**: [CEP Analysis Reproducibility](/marketing/2025/09/27/category-entry-points-analysis.html#reproducibility)
 - **Moderation/Dirichlet**: [Moderation Analysis Reproducibility](https://kyo1988.github.io/Kyo.github.io/marketing/2025/09/27/moderation-dirichlet-analysis.html#reproducibility)
 
 ## Limitations and Threats to Validity

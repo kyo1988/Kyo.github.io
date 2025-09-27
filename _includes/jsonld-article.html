@@ -1,0 +1,11 @@
+<script type="application/ld+json" id="jsonld-article">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ page.title | jsonify }},
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "author": {"@type":"Person","name": {{ site.author.name | default: "Author" | jsonify }}},
+  "mainEntityOfPage": {"@type":"WebPage","@id":"{{ page.url | absolute_url }}"},
+  "image": "{{ page.og_image | absolute_url }}"
+}
+</script>

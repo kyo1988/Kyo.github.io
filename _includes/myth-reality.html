@@ -1,0 +1,8 @@
+{% if page.mvr %}
+<div class="mvr" style="border:1px dashed #bbb;padding:.8rem 1rem;border-radius:.5rem;margin:1rem 0;">
+  <p><strong>Myth:</strong> {{ page.mvr.myth }}</p>
+  <p><strong>Reality:</strong> {{ page.mvr.reality }}</p>
+  {% if page.mvr.evidence %}<p><strong>Evidence:</strong> {{ page.mvr.evidence }}</p>{% endif %}
+  {% if page.mvr.boundary %}<p><strong>Boundary:</strong> {{ page.mvr.boundary }}</p>{% endif %}
+</div>
+{% endif %}

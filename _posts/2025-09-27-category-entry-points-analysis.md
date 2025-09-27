@@ -1,21 +1,41 @@
 ---
 layout: post
-title: "Customer Equity Program Analysis: Multilingual Brand Coverage and H1 Correlation Insights"
+title: "Category Entry Points (CEP) Analysis: Multilingual Brand Coverage and H1 Correlation Insights"
 date: 2025-09-27 12:00:00 +0900
 categories: [Marketing Science, Data Analysis]
-tags: [Customer Equity Program, CEP, Brand Coverage, Multilingual Analysis, H1 Correlation]
-permalink: /marketing/2025/09/27/customer-equity-program-analysis.html
+tags: [Category Entry Points, CEP, Brand Coverage, Multilingual Analysis, H1 Correlation]
+permalink: /marketing/2025/09/27/category-entry-points-analysis.html
+redirect_from:
+  - /marketing/2025/09/27/customer-equity-program-analysis.html
+gate:
+  status: "APPENDIX (No Gate)"
+  dataset: "Amazon reviews"
+  metrics: "Wilson CI; H1 correlation: -0.28 (Pearson), -0.59 (Spearman)"
+method:
+  window_weeks: 104
+  user_scope: "reviewers in category"
+  binarization: "NA (text-based CEP)"
+  weights: "NA"
+  invariants: "dictionary version drift r≥0.85"
+mvr:
+  myth: "More choices always increase conversions."
+  reality: "Choice overload is mixed; CEP coverage consistency matters."
+  evidence: "CEP entropy and coverage tables (fig.1/2)."
+  boundary: "Sparse languages, low-N brands."
+decision:
+  do: "Track CEP entropy quarterly."
+  dont: "Rely on small-sample review spikes."
 ---
 
-# Customer Equity Program Analysis: Multilingual Brand Coverage and H1 Correlation Insights
+# Category Entry Points (CEP) Analysis: Multilingual Brand Coverage and H1 Correlation Insights
 
 ## Executive Summary
 
-Our Customer Equity Program (CEP) analysis successfully completed with comprehensive multilingual brand coverage analysis and H1 correlation insights. The analysis processed over 1 million Amazon review records, implemented Wilson confidence intervals, and revealed significant negative correlations between brand penetration and coverage rates. This represents a complete specification-compliant implementation with full audit logging and statistical validation.
+Our Category Entry Points (CEP) analysis successfully completed with comprehensive multilingual brand coverage analysis and H1 correlation insights. The analysis processed over 1 million Amazon review records, implemented Wilson confidence intervals, and revealed significant negative correlations between brand penetration and coverage rates. This represents a complete specification-compliant implementation with full audit logging and statistical validation.
 
 ## Background
 
-Customer Equity Program (CEP) analysis examines how brands perform across different market segments, particularly focusing on Category Entry Points (CEPs) and their coverage rates. This analysis is crucial for understanding brand positioning and market penetration strategies.
+Category Entry Points (CEP) analysis examines how brands perform across different market segments, particularly focusing on Category Entry Points (CEPs) and their coverage rates. This analysis is crucial for understanding brand positioning and market penetration strategies.
 
 ## Methodology
 
@@ -83,7 +103,12 @@ Complete specification-compliant implementation:
 
 ## Evidence Files
 
-![Figure 1. CEP coverage heatmap showing brand performance across different market segments.]({{ site.baseurl }}/assets/images/marketing-science/cep_coverage_complete.png)
+{% include figure.html
+   src="/assets/images/marketing-science/cep_coverage_complete.png"
+   caption="Figure 1. CEP coverage heatmap showing brand performance across different market segments."
+   repro="env=py311; input_sha=amazon:mnop012; cmd=compute_cep_coverage; commit=4d5e6f7"
+   alt="CEP coverage heatmap showing brand performance across different market segments"
+%}
 
 *Figure 1 illustrates the CEP coverage analysis results, revealing brand performance variations across market segments with Wilson confidence intervals.*
 

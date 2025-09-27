@@ -5,8 +5,16 @@ author: Kyo Harada
 email: kh685mba@gmail.com
 description: "On-device skin analytics with finance-grade pipelines—CoreML optimization, RAG systems, and real-time evaluation."
 keywords: "Data Scientist, AI, CoreML, Finance, EDINET, RAG, LLM, Consulting"
-baseurl: "/Kyo.github.io" # the subpath of your site, e.g. /blog/
+baseurl: "" # user/organization site は空
 url: "https://kyo1988.github.io" # the base hostname & protocol for your site
+permalink: /:categories/:year/:month/:day/:title:output_ext
+defaults:
+  - scope: {path: "" , type: "posts"}
+    values:
+      layout: post
+      lang: en
+      og_image: /assets/og/default.png
+      twitter_card: summary_large_image
 lang: "en"
 locale: en_US
 default_lang: "en"

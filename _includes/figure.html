@@ -1,50 +1,9 @@
-{% comment %}
-  Figure Include
-  Usage: {% include figure.html src="image-url" alt="description" caption="Figure caption" number="1" %}
-  
-  Parameters:
-  - src: Image URL (required)
-  - alt: Alt text (required)
-  - caption: Figure caption (optional)
-  - number: Figure number (optional)
-  - width: Image width (optional)
-  - height: Image height (optional)
-  - cloudinary: If true, applies Cloudinary transformations (optional)
-{% endcomment %}
-
-{% assign figure_number = include.number | default: '' %}
-{% assign figure_caption = include.caption | default: '' %}
-{% assign figure_alt = include.alt | default: 'Figure' %}
-{% assign figure_src = include.src %}
-{% assign figure_width = include.width | default: '' %}
-{% assign figure_height = include.height | default: '' %}
-
-{% comment %} Apply Cloudinary transformations if cloudinary=true {% endcomment %}
-{% if include.cloudinary == true %}
-  {% assign cloudinary_base = site.cloudinary.base %}
-  {% assign cloudinary_name = site.cloudinary.cloud_name %}
-  {% comment %} Extract the path after /image/upload/ {% endcomment %}
-  {% assign path_parts = figure_src | split: '/image/upload/' %}
-  {% if path_parts.size > 1 %}
-    {% assign figure_src = cloudinary_base | append: '/w_auto,h_auto,f_auto,q_auto/' | append: path_parts[1] %}
-  {% endif %}
-{% endif %}
-
-<figure class="figure"{% if figure_number %} id="figure-{{ figure_number }}"{% endif %}>
-  <div class="figure-container">
-    <img 
-      src="{{ figure_src }}" 
-      alt="{{ figure_alt }}"
-      {% if figure_width %}width="{{ figure_width }}"{% endif %}
-      {% if figure_height %}height="{{ figure_height }}"{% endif %}
-      loading="lazy"
-      decoding="async"
-    />
-    {% if figure_number or figure_caption %}
-      <figcaption class="figure-caption">
-        {% if figure_number %}<span class="figure-number">Figure {{ figure_number }}.</span> {% endif %}{{ figure_caption }}
-      </figcaption>
-    {% endif %}
-  </div>
+{% assign img = include.src %}
+{% assign cap = include.caption %}
+{% assign repro = include.repro %}
+<figure class="ms-figure" style="margin:1rem 0;">
+  <img src="{{ img | relative_url }}" alt="{{ include.alt | default: cap }}" style="max-width:100%;">
+  <figcaption style="font-size:.9rem;color:#555;">
+    {{ cap }}{% if repro %} <span class="reproline" style="color:#888;"> — {{ repro }}</span>{% endif %}
+  </figcaption>
 </figure>
-

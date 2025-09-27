@@ -5,6 +5,10 @@ date: 2025-09-27 10:00:00 +0900
 categories: [Marketing Science, Data Analysis]
 tags: [Double Jeopardy, Ehrenberg-Bass, Marketing Analytics, Statistical Analysis]
 permalink: /marketing/2025/09/27/double-jeopardy-analysis-fail.html
+gate: { status: "FAIL", dataset: "UCI beauty", metrics: "Pearson r=0.627; target≥0.80; bca_low=0.275; bca_high=0.462" }
+method: { window_weeks: 26, user_scope: "category buyers", binarization: "≥1 purchase → 1", weights: "N/A", invariants: "Pearson r≥0.80 gate" }
+mvr: { myth: "Small categories can validate DJ easily.", reality: "Need ≥10 brands and stable mapping." }
+decision: { do: "Increase n_brands; fix mapping.", dont: "Use mixed categories." }
 ---
 
 # Double Jeopardy Analysis: When Real-World Data Challenges Theoretical Expectations
@@ -66,7 +70,12 @@ The BCa confidence interval [0.275, 0.462] indicates that even the upper bound f
 
 ## Evidence Files
 
-![Figure 1. Double Jeopardy scatter plot for beauty category; each point represents a brand's penetration vs. average purchase frequency.]({{ site.baseurl }}/assets/images/marketing-science/dj_bodycare.png)
+{% include figure.html
+   src="/assets/images/marketing-science/dj_bodycare.png"
+   caption="Figure 1. Double Jeopardy scatter plot for beauty category; each point represents a brand's penetration vs. average purchase frequency."
+   repro="env=py311; input_sha=uci:abcd123; cmd=compute_dj; commit=1a2b3c4"
+   alt="Double Jeopardy scatter plot for beauty category"
+%}
 
 *Figure 1 shows the relationship between brand penetration and average purchase frequency, revealing the weak correlation (r=0.627) that falls below the 0.80 threshold.*
 

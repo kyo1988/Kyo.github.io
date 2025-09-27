@@ -1,0 +1,12 @@
+{% if page.method %}
+<div class="method-box" style="border-left:4px solid #444;padding:.8rem 1rem;background:#fafafa;margin:1rem 0;">
+  <strong>Method (repro-ready)</strong><br/>
+  <ul style="margin:.5rem 0;">
+    {% if page.method.window_weeks %}<li>Window: {{ page.method.window_weeks }} weeks</li>{% endif %}
+    {% if page.method.user_scope %}<li>User scope: {{ page.method.user_scope }}</li>{% endif %}
+    {% if page.method.binarization %}<li>Binarization: {{ page.method.binarization }}</li>{% endif %}
+    {% if page.method.weights %}<li>Weights: {{ page.method.weights }}</li>{% endif %}
+    {% if page.method.invariants %}<li>Invariants: {{ page.method.invariants }}</li>{% endif %}
+  </ul>
+</div>
+{% endif %}

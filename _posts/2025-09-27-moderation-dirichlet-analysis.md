@@ -5,6 +5,19 @@ date: 2025-09-27 13:00:00 +0900
 categories: [Marketing Science, Data Analysis]
 tags: [Buyer Moderation, NBD-Dirichlet, Quantile Analysis, Statistical Modeling, R-squared]
 permalink: /marketing/2025/09/27/moderation-dirichlet-analysis.html
+gate: { status: "APPENDIX (No Gate)", dataset: "Instacart/dunnhumby" }
+method:
+  window_weeks: 26
+  user_scope: "category buyers"
+  binarization: "≥1 purchase → 1"
+  weights: "buyers(A)/Σbuyers"
+  invariants: "Dirichlet PP R²; moderation slope<1"
+mvr:
+  myth: "Loyalty drives growth."
+  reality: "Penetration drives loyalty metrics (DJ)."
+decision:
+  do: "Report slope & CI per quantile."
+  dont: "Overfit to small-N segments."
 ---
 
 # Moderation and Dirichlet Analysis: Quantile-Based Insights and Model Fit Challenges
@@ -73,7 +86,12 @@ The Dirichlet analysis reveals significant challenges with theoretical model fit
 
 ## Evidence Files
 
-![Figure 1. Buyer moderation analysis showing quantile-based slopes and R² values.]({{ site.baseurl }}/assets/images/marketing-science/buyer_moderation_bodycare.png)
+{% include figure.html
+   src="/assets/images/marketing-science/buyer_moderation_bodycare.png"
+   caption="Figure 1. Buyer moderation analysis showing quantile-based slopes and R² values."
+   repro="env=py311; input_sha=uci:ijkl789; cmd=compute_moderation; commit=3c4d5e6"
+   alt="Buyer moderation analysis showing quantile-based slopes and R² values"
+%}
 
 *Figure 1 presents the quantile-based buyer moderation analysis, demonstrating strong effects in higher quantiles (Q4 slope=3.341, R²=0.472) compared to weak Dirichlet model fit.*
 

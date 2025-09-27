@@ -2,31 +2,9 @@
 layout: default
 ---
 
-{% assign page_url = site.url | append: site.baseurl | append: page.url %}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "{{ page.title | escape }}",
-  "description": "{{ page.description | escape }}",
-  "datePublished": "{{ page.date | date: "%Y-%m-%dT%H:%M:%S%z" }}",
-  "dateModified": "{{ page.last_modified_at | default: page.date | date: "%Y-%m-%dT%H:%M:%S%z" }}",
-  "author": {
-    "@type": "Person",
-    "name": "Kyo Harada",
-    "sameAs": [
-      "https://github.com/kyo1988",
-      "https://www.visageaiconsulting.com/",
-      "https://www.linkedin.com/in/KyoHarada"
-    ]
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Visage AI Consulting"
-  },
-  "mainEntityOfPage": {"@type":"WebPage","@id":"{{ page_url }}"}
-}
-</script>
+<!-- JSON-LD & OG/Twitter -->
+{% include jsonld-article.html %}
+{% include og-twitter.html %}
 
 <div class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
@@ -52,9 +30,21 @@ layout: default
   <div class="article-container">
     {% include toc.html %}
     
+    <!-- Gate badge -->
+    {% include gate-badge.html %}
+
+    <!-- Method -->
+    {% include method-box.html %}
+    
     <article class="article" itemprop="articleBody">
       {{ content }}
     </article>
+
+    <!-- Myth vs Reality -->
+    {% include myth-reality.html %}
+
+    <!-- Decision Bridge -->
+    {% include decision-bridge.html %}
   </div>
   
   <hr />
