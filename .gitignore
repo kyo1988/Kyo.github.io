@@ -3,7 +3,7 @@ _site
 .jekyll-metadata
 
 # Sensitive files and directories
-scripts/analytics/ga4-fix.json
+scripts/analytics/
 *.json
 !package.json
 !_config.yml
