@@ -1,13 +1,13 @@
 /* ===== Design Kit v1 (tokens) ===== */
-:root{
+:root {
   /* colors */
-  --bg:#0b1020;            /* page background tint for hero areas */
-  --surface:#ffffff;
-  --surface-2:#f8fafc;
-  --text:#0f172a;
-  --muted:#475569;
-  --border:#e5e7eb;
-  --accent:#2563eb;        /* ← Web Appのプライマリに合わせて後で変更OK */
+  --bg: #0b1020;            /* page background tint for hero areas */
+  --surface: #ffffff;
+  --surface-2: #f8fafc;
+  --text: #0f172a;
+  --muted: #475569;
+  --border: #e5e7eb;
+  --accent: #2563eb;        /* ← Web Appのプライマリに合わせて後で変更OK */
   --accent-ink:#ffffff;
   
   /* article-specific colors */
