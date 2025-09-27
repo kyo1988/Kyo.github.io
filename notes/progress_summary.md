@@ -208,10 +208,10 @@ The Marketing Science Analysis Pipeline has achieved **complete specification co
 - **CTE Analysis**: ✅ **Successfully implemented** with quantile-based segmentation
 - **Documentation**: ✅ **Accurate status reporting** with clear version distinction
 
-### ⚠️ 重要な区別
-- **簡略化版**: 重みなしMAD、簡易週次シャッフル、緩和された閾値
-- **仕様準拠版**: 重み付きMAD、実装週次シャッフル、厳格な閾値（0.05）
-- **CEP層別DoP**: デモ実装（ブランドマッピング簡易、重みなしMAD）
+### ⚠️ Important Distinction
+- **Simplified Version**: Unweighted MAD, simplified weekly shuffle, relaxed thresholds
+- **Specification-Compliant Version**: Weighted MAD, real weekly shuffle, strict thresholds (0.05)
+- **CEP-Stratified DoP**: Demo implementation (simplified brand mapping, unweighted MAD)
 
 The pipeline now provides **complete specification compliance** with all statistical requirements properly implemented:
 - **Weighted MAD**: Brand purchase count weighting implemented

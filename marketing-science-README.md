@@ -150,42 +150,42 @@ This project provides multiple implementation versions to balance statistical ri
 
 ## Success Criteria
 
-- **Double Jeopardy**: ❌ Pearson r = 0.627 (目標: ≥0.80)
-- **Duplication of Purchase**: データセットタイプ別判定
-  - **Transactionデータ**: Weighted MAD ≤ 0.015 OR BCa high ≤ 0.020 AND neg_control_mad ≤ 0.005
-  - **Mixedデータ**: Appendix only (Gate除外)
-  - **Reviewデータ**: CEP分析推奨 (DoP非対応)
-- **Buyer Moderation**: 未実装
-- **NBD-Dirichlet Fit**: 未実装
+- **Double Jeopardy**: ❌ Pearson r = 0.627 (target: ≥0.80)
+- **Duplication of Purchase**: Dataset type-based evaluation
+  - **Transaction Data**: Weighted MAD ≤ 0.015 OR BCa high ≤ 0.020 AND neg_control_mad ≤ 0.005
+  - **Mixed Data**: Appendix only (Gate excluded)
+  - **Review Data**: CEP analysis recommended (DoP not supported)
+- **Buyer Moderation**: Not implemented
+- **NBD-Dirichlet Fit**: Not implemented
 
 ## Current Results
 
 ### Double Jeopardy Analysis
 - **Status**: ❌ FAIL
-- **Pearson Correlation**: 0.627 (目標: ≥0.80)
+- **Pearson Correlation**: 0.627 (target: ≥0.80)
 - **Spearman Correlation**: 0.562
 - **Brands**: 27
 - **Users**: 1,264
 
-### データセットタイプ別分析システム
-- **Status**: ✅ 実装完了 (データセットタイプに応じた分岐処理)
-- **Performance**: 0.4-210秒 (劇的高速化)
-- **Gate判定**: SoW基準に基づく厳密なPASS/FAIL判定
+### Dataset Type-Based Analysis System
+- **Status**: ✅ Implementation complete (branching based on dataset type)
+- **Performance**: 0.4-210 seconds (dramatic speed improvement)
+- **Gate Evaluation**: Strict PASS/FAIL evaluation based on SoW criteria
 
-#### Transactionデータ (Gate判定対象)
-- **Instacart**: ❌ FAIL - Weighted MAD 0.021854 (目標: ≤0.015)
-- **Dunnhumby**: ❌ NEAR-MISS - Weighted MAD 0.015863 (ギャップ: +0.000863)
+#### Transaction Data (Gate evaluation target)
+- **Instacart**: ❌ FAIL - Weighted MAD 0.021854 (target: ≤0.015)
+- **Dunnhumby**: ❌ NEAR-MISS - Weighted MAD 0.015863 (gap: +0.000863)
 
-#### Mixedデータ (Appendix only)
-- **UCI**: Weighted MAD 0.0286 - Appendix only (Gate除外)
+#### Mixed Data (Appendix only)
+- **UCI**: Weighted MAD 0.0286 - Appendix only (Gate excluded)
 
-#### Reviewデータ (CEP分析推奨)
-- **Amazon**: SKIP (UNSUPPORTED_FOR_REVIEWS) - CEP分析推奨
+#### Review Data (CEP analysis recommended)
+- **Amazon**: SKIP (UNSUPPORTED_FOR_REVIEWS) - CEP analysis recommended
 
-### 検証システム
-- **自動分岐**: データセットタイプに応じて適切な分析手法を選択
-- **Gate管理**: TransactionデータのみでPASS/FAILを判定
-- **包括的レポート**: 詳細な検証レポートを自動生成
+### Verification System
+- **Automatic Branching**: Selects appropriate analysis method based on dataset type
+- **Gate Management**: PASS/FAIL evaluation only for Transaction data
+- **Comprehensive Reporting**: Automatic generation of detailed verification reports
 
 ## Quick Reference
 
