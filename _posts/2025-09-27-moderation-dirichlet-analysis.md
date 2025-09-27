@@ -22,7 +22,7 @@ Our moderation analysis reveals that the Q4 segment (heavy buyers) shows the str
 
 ## Executive Summary
 
-Our moderation and Dirichlet analysis reveals successful quantile-based buyer segmentation with clear moderation effects, but highlights significant challenges in NBD-Dirichlet model fitting. The moderation analysis shows strong effects across buyer quantiles (Q4 slope = 3.341, R² = 0.472), while the Dirichlet model demonstrates weak fit (R² = -7.0e-06) due to high data variance. This analysis provides valuable insights into buyer behavior patterns and the limitations of theoretical models with real-world data.
+This analysis combines two complementary approaches: **Buyer Moderation Analysis** (primary focus) provides actionable insights into customer segmentation and purchase behavior patterns, while **Dirichlet Model Analysis** (reference) demonstrates the limitations of theoretical models with real-world data. The moderation analysis reveals successful quantile-based buyer segmentation with clear effects (Q4 slope = 3.341, R² = 0.472), while the Dirichlet model shows weak fit (R² = -7.0e-06) due to high data variance, serving as a cautionary example of model limitations.
 
 ## Background
 
@@ -70,7 +70,12 @@ The NBD-Dirichlet model is a theoretical framework for understanding brand choic
 
 The moderation analysis reveals robust quantile-based buyer segmentation with clear behavioral patterns. Higher quantiles demonstrate progressively stronger moderation effects, with Q4 (heavy buyers) showing the most pronounced relationships (slope = 3.341, R² = 0.472). All quantiles exhibit statistically significant effects, and temporal stability is confirmed across segments, indicating reliable behavioral patterns.
 
-### NBD-Dirichlet Model Analysis
+### NBD-Dirichlet Model Analysis (Reference)
+
+The Dirichlet model analysis demonstrates the limitations of theoretical models with real-world data. The model shows extremely weak fit (R² ≈ 0) due to high data variance and assumption violations, serving as a cautionary example of model limitations.
+
+<details>
+<summary>Detailed Dirichlet Model Results</summary>
 
 #### Model Fitting Results
 
@@ -82,11 +87,11 @@ The moderation analysis reveals robust quantile-based buyer segmentation with cl
 | NBD Success | True | Model fitted successfully |
 | Solver Status | Success | Optimization completed |
 
-### Discussion (Dirichlet)
-
 **Scope of the model.** The NBD-Dirichlet targets **category-level buyer distributions across brands** in panel settings. Our use here is **illustrative**, and the observed **PP-plot R² ≈ 0 (≈ −7e-06)** indicates a fit below a naive baseline—consistent with high variance and assumption mismatch in this dataset.
 
 The Dirichlet analysis reveals significant challenges with theoretical model fitting in real-world data. The extremely weak model fit (R² = -7.0e-06) contrasts sharply with the robust moderation analysis, highlighting the impact of high data variance (std = 181.9) on model performance. While the theoretical model provides conceptual insights, it struggles with the complexity of actual purchase behavior, serving primarily as an illustrative framework rather than a statistically valid representation.
+
+</details>
 
 ## Evidence Files
 

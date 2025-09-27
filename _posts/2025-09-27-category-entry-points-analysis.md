@@ -43,7 +43,7 @@ Category Entry Points (CEP) analysis examines how brands perform across differen
 - **Data Source**: Amazon review data (1,000,000+ records)
 - **Input SHA**: faa6eadcba54534f (full reproducibility)
 - **Chunk Processing**: 100,000 records per chunk for memory efficiency
-- **Multilingual Support**: 27 languages detected, English-only analysis due to data sufficiency constraints
+- **Multilingual Support**: 27 languages detected, 1 adopted (English), 26 excluded due to data sufficiency constraints
 
 ### Statistical Implementation
 
@@ -105,7 +105,7 @@ Complete specification-compliant implementation:
 
 ## Evidence Files
 
-![Heatmap showing brand performance across market segments with CEP coverage rates and Wilson confidence intervals](/assets/images/marketing-science/cep_coverage_complete.png)
+![Multilingual brand performance heatmap showing CEP hit rates across languages (English dominance, sparse data in other languages)](/assets/images/marketing-science/cep_coverage_complete.png)
 
 *Figure 1 illustrates the CEP coverage analysis results, revealing brand performance variations across market segments with Wilson confidence intervals.*
 

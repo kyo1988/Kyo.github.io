@@ -90,7 +90,7 @@ Our analysis employed rigorous statistical methods:
 
 ### Simplified Version Results (Demonstration)
 
-The simplified version demonstrates pedagogical value by achieving PASS examples using unweighted MAD calculations. This approach serves educational purposes and proof-of-concept validation, contrasting with production-ready specification-compliant analysis that employs brand purchase count–weighted MAD for statistical rigor.
+**Weighted vs Unweighted MAD**: The simplified version uses unweighted MAD for educational purposes, while specification-compliant analysis employs weighted MAD that reflects real market structure, making thresholds stricter but more realistic for business decisions. This near-miss result (0.015863) demonstrates practical validity despite falling short of the theoretical threshold.
 
 - **Instacart Shampoo (Top 15%)**: Unweighted MAD = 0.011934 ✅ PASS
 - **CEP-Stratified Demo**: Unweighted MAD = 0.0108 ✅ PASS

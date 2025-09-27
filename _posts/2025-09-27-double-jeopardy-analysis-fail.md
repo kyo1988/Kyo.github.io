@@ -71,19 +71,30 @@ Our analysis employed specification-compliant statistical methods:
 - BCa 95% CI: [0.275, 0.462]
 - P-value: 0.0005 (statistically significant but below threshold)
 
-**Regression Analysis**:
+**Regression Analysis**: R² = 0.393 indicates moderate relationship strength, with statistically significant but weak slope coefficient.
+
+<details>
+<summary>Detailed Regression Parameters</summary>
+
 - **Intercept**: 1.234 (SE: 0.089)
 - **Slope**: 0.445 (SE: 0.123)
 - **R²**: 0.393 (adjusted: 0.351)
 - **F-statistic**: 13.07 (p < 0.001)
 - **Sample size**: n = 16 brands
 
-**Stationarity Assessment**:
+</details>
+
+**Stationarity Assessment**: Multiple tests indicate unstable time series signals, suggesting data non-stationarity that affects analysis validity.
+
+<details>
+<summary>Detailed Test Results</summary>
+
 - Max drift: 0.375
 - Kendall p-value: 0.0009
 - **KPSS Test**: p < 0.01 (reject H0: stationary)
 - **ADF Test**: p = 0.023 (reject H0: non-stationary at α=0.05)
-- **Conclusion**: Data shows significant temporal instability
+
+</details>
 
 ## Interpretation
 
