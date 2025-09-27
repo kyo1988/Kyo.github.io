@@ -128,7 +128,7 @@ The Dirichlet analysis reveals significant challenges with theoretical model fit
 
 ## Evidence Files
 
-![Chart demonstrates Q4 heavy buyers show strongest purchase behavior relationship (R²=0.472), validating targeted optimization strategies](/assets/images/marketing-science/buyer_moderation_bodycare.png)
+![Chart demonstrates Q4 heavy buyers show strongest purchase behavior relationship (R²=0.472), validating targeted optimization strategies](https://res.cloudinary.com/dgqphttst/image/upload/v1758994483/buyer_moderation_bodycare_vylepe.png)
 
 *Figure 1 presents the quantile-based buyer moderation analysis, demonstrating strong effects in higher quantiles (Q4 slope=3.341, R²=0.472) compared to weak Dirichlet model fit.*
 
@@ -139,7 +139,7 @@ The Dirichlet analysis reveals significant challenges with theoretical model fit
 
 ### Dirichlet Analysis
 - **Results**: [assets/evidence/dirichlet_bodycare.csv](/assets/evidence/dirichlet_bodycare.csv)
-- **P-P Plot**: [assets/images/marketing-science/dirichlet_pp_plot_bodycare.png](/assets/images/marketing-science/dirichlet_pp_plot_bodycare.png)
+- **P-P Plot**: [https://res.cloudinary.com/dgqphttst/image/upload/v1758994484/dirichlet_pp_plot_bodycare_ilunrn.png](https://res.cloudinary.com/dgqphttst/image/upload/v1758994484/dirichlet_pp_plot_bodycare_ilunrn.png)
 - **Audit Log**: [logs/run_dirichlet_bodycare.jsonl](/logs/run_dirichlet_bodycare.jsonl)
 
 ## Reproducibility

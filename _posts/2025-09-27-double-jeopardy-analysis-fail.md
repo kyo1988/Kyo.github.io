@@ -146,7 +146,7 @@ The BCa confidence interval [0.275, 0.462] indicates that even the upper bound f
 
 ## Evidence Files
 
-![Figure 1. Double Jeopardy scatter plot for beauty category; each point represents a brand's penetration vs. average purchase frequency.](/assets/images/marketing-science/dj_bodycare.png)
+![Figure 1. Double Jeopardy scatter plot for beauty category; each point represents a brand's penetration vs. average purchase frequency.](https://res.cloudinary.com/dgqphttst/image/upload/v1758994485/dj_bodycare_vrmadv.png)
 
 *Figure 1 shows the relationship between brand penetration and average purchase frequency, revealing the weak correlation (r=0.627) that falls below the 0.80 threshold.*
 

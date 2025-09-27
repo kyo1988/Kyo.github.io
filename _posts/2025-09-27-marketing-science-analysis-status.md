@@ -196,7 +196,7 @@ The specification-compliant implementation reveals why achieving PASS examples i
 
 ## Evidence Files and Documentation
 
-![Overview demonstrates DoP near-miss achievement (0.015863) providing foundation for cross-sell optimization with significant revenue potential](/assets/images/marketing-science/dop_heat_dunnhumby_beauty_spec_q90_b2_m20.png)
+![Overview demonstrates DoP near-miss achievement (0.015863) providing foundation for cross-sell optimization with significant revenue potential](https://res.cloudinary.com/dgqphttst/image/upload/v1758994485/dop_heat_dunnhumby_beauty_spec_q90_b2_m20_n2rd5h.png)
 
 *Figure 1 provides an overview of the marketing science analysis pipeline, highlighting the near-miss DoP result and comprehensive statistical validation across all methodologies.*
 

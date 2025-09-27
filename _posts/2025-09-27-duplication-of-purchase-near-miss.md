@@ -163,7 +163,7 @@ The dunnhumby beauty result emerged from the optimal combination: top 10% users,
 
 ## Evidence Files
 
-![Heatmap shows brand cross-purchase patterns achieving near-miss weighted MAD (0.015863), validating cross-sell optimization opportunities](/assets/images/marketing-science/dop_heat_dunnhumby_beauty_spec_q90_b2_m20.png)
+![Heatmap shows brand cross-purchase patterns achieving near-miss weighted MAD (0.015863), validating cross-sell optimization opportunities](https://res.cloudinary.com/dgqphttst/image/upload/v1758994485/dop_heat_dunnhumby_beauty_spec_q90_b2_m20_n2rd5h.png)
 
 *Figure 1 displays the duplication matrix for dunnhumby beauty data, showing the near-miss result (MAD=0.015863) that approaches the 0.015 threshold.*
 
