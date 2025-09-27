@@ -69,7 +69,7 @@ Each analysis employs specification-compliant statistical methods including BCa 
 1. **DoP Near-Miss**: 0.015863 (gap +0.000863) validates cross-sell optimization potential
 2. **DJ Failure**: r=0.627 requires reach investment priority over loyalty programs
 3. **CEP Success**: Multilingual analysis reveals English-centric bias requiring localization redesign
-4. **Q4 Heavy Buyers**: R²=0.472 proves highest optimization potential for targeted efforts
+4. **Q4 Heavy Buyers**: R²=0.472 indicates highest optimization potential for targeted efforts
 
 ### Current Status Overview
 
@@ -79,7 +79,7 @@ Each analysis employs specification-compliant statistical methods including BCa 
 1. **DoP Near-Miss**: 0.015863 (gap +0.000863) validates cross-sell optimization potential
 2. **DJ Failure**: r=0.627 requires reach investment priority over loyalty programs
 3. **CEP Success**: Multilingual analysis reveals English-centric bias requiring localization redesign
-4. **Q4 Heavy Buyers**: R²=0.472 proves highest optimization potential for targeted efforts
+4. **Q4 Heavy Buyers**: R²=0.472 indicates highest optimization potential for targeted efforts
 
 | Analysis | Status | Key Result | Implication |
 |----------|--------|------------|-------------|

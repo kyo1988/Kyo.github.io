@@ -18,7 +18,7 @@ description: "Heavy buyers (Q4) show strongest purchase behavior persistence ove
 
 ## TL;DR
 
-**Action Required**: Implement Q4-focused A/B testing immediately to optimize heavy buyer segment performance. Heavy buyers (Q4) show the strongest relationship (R²=0.472), proving they are the most predictable and valuable customer segment.
+**Action Required**: Implement Q4-focused A/B testing immediately to optimize heavy buyer segment performance. Heavy buyers (Q4) show the strongest relationship (R²=0.472), indicating they are the most predictable and valuable customer segment.
 
 **Next Steps**: (1) Launch Q4-focused A/B testing with basket expansion and frequency suppression design, (2) Target heavy buyer segments for offer optimization, (3) Abandon Dirichlet model approaches due to poor fit (R²≈0).
 
@@ -59,7 +59,7 @@ The NBD-Dirichlet model is a theoretical framework for understanding brand choic
 
 ### Main Finding: Q4 Heavy Buyers Offer Highest Optimization Potential
 
-**Conclusion**: Q4 heavy buyers demonstrate the strongest relationship (R²=0.472), proving they are the most predictable and valuable customer segment for targeted optimization efforts.
+**Conclusion**: Q4 heavy buyers demonstrate the strongest relationship (R²=0.472), indicating they are the most predictable and valuable customer segment for targeted optimization efforts.
 
 **Supporting Evidence**:
 1. **Progressive Relationship Strength**: Q1 (0.00001) → Q2 (0.196) → Q3 (0.204) → Q4 (0.472)
@@ -86,7 +86,7 @@ The moderation analysis reveals robust quantile-based buyer segmentation with cl
 
 ### NBD-Dirichlet Model Analysis (Reference)
 
-**Conclusion**: Dirichlet model demonstrates extremely poor fit (R² ≈ 0), proving that theoretical models are unsuitable for production use with high-variance real-world data.
+**Conclusion**: Dirichlet model demonstrates extremely poor fit (R² ≈ 0), suggesting that theoretical models are unsuitable for production use with high-variance real-world data.
 
 **Supporting Evidence**:
 1. **Extremely Weak Fit**: R² ≈ 0 indicates performance below baseline
@@ -100,7 +100,7 @@ The Dirichlet model analysis demonstrates the limitations of theoretical models 
 
 #### Model Fitting Results
 
-**Conclusion**: Dirichlet model demonstrates extremely poor fit (R² = -7.0e-06), proving that theoretical models are unsuitable for production use with high-variance real-world data.
+**Conclusion**: Dirichlet model demonstrates extremely poor fit (R² = -7.0e-06), suggesting that theoretical models are unsuitable for production use with high-variance real-world data.
 
 **Supporting Evidence**:
 1. **Very Poor Fit**: R² = -7.0e-06 indicates performance below baseline
@@ -130,12 +130,12 @@ The Dirichlet analysis reveals significant challenges with theoretical model fit
 
 ### Moderation Analysis
 - **Results**: [assets/evidence/moderation_bodycare.csv](/assets/evidence/moderation_bodycare.csv)
-- **Visualization**: [figs/buyer_moderation_bodycare.png](/figs/buyer_moderation_bodycare.png)
+- **Visualization**: [figs/buyer_moderation_bodycare.png](/assets/images/marketing-science/buyer_moderation_bodycare.png)
 - **Audit Log**: [logs/run_moderation_bodycare.jsonl](/logs/run_moderation_bodycare.jsonl)
 
 ### Dirichlet Analysis
 - **Results**: [assets/evidence/dirichlet_bodycare.csv](/assets/evidence/dirichlet_bodycare.csv)
-- **P-P Plot**: [figs/dirichlet_pp_plot_bodycare.png](/figs/dirichlet_pp_plot_bodycare.png)
+- **P-P Plot**: [figs/dirichlet_pp_plot_bodycare.png](/assets/images/marketing-science/dirichlet_pp_plot_bodycare.png)
 - **Audit Log**: [logs/run_dirichlet_bodycare.jsonl](/logs/run_dirichlet_bodycare.jsonl)
 
 ## Reproducibility
@@ -159,7 +159,7 @@ Our analysis achieved mixed results across the two complementary approaches. The
 **Main Message**: Marketing teams must immediately implement Q4-focused A/B testing to optimize heavy buyer segment performance and abandon Dirichlet model approaches.
 
 **Supporting Logic**:
-1. **Q4 Heavy Buyers Are Most Valuable**: R²=0.472 proves highest predictability and value
+1. **Q4 Heavy Buyers Are Most Valuable**: R²=0.472 indicates highest predictability and value
 2. **Progressive Segmentation Works**: Each quantile shows distinct behavioral patterns
 3. **Dirichlet Models Fail**: R²≈0 indicates theoretical models are unsuitable for production
 
@@ -192,10 +192,6 @@ The Dirichlet analysis reveals significant challenges with theoretical models th
 1. **High Variance**: Purchase behavior shows extreme variability (std = 181.9)
 2. **Complex Patterns**: Real-world data doesn't follow theoretical assumptions
 3. **Statistical Challenges**: High variance affects model fitting performance
-
-- **High Variance**: Purchase behavior shows extreme variability
-- **Complex Patterns**: Real-world data doesn't follow theoretical assumptions
-- **Statistical Challenges**: High variance affects model fitting performance
 
 ## Implications for Marketing Science
 

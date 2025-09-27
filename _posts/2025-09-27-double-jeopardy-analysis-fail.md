@@ -18,13 +18,14 @@ description: "r=0.627 falls short of threshold. In markets with weak penetration
 
 ## TL;DR
 
-**Action Required**: Shift marketing budget from loyalty programs to reach expansion strategies immediately. The Double Jeopardy relationship fails (r=0.627) in beauty category, proving that penetration drives frequency, not vice versa.
+**Action Required**: Shift marketing budget from loyalty programs to reach expansion strategies immediately. The Double Jeopardy relationship fails (r=0.627) in beauty category, indicating that penetration-first strategy is consistent with this dataset's characteristics.
 
 **Next Steps**: (1) Redesign KPIs to prioritize new customer acquisition, (2) Measure reach expansion effectiveness quarterly, (3) Pause frequency-based loyalty investments until penetration targets are met.
 
 ## Executive Summary
 
-**Situation**: Double Jeopardy relationship fails (r=0.627) in beauty category, significantly below the 0.80 threshold required for marketing science validation. **Implication**: This proves that penetration drives purchase frequency, not the reverse. **Action Required**: Marketing teams must immediately shift budget allocation from frequency-based loyalty programs to reach expansion strategies, focusing on acquiring new customers rather than increasing purchase frequency among existing buyers.
+**Situation**: Double Jeopardy relationship fails (r=0.627) in beauty category, significantly below the 0.80 threshold required for marketing science validation. **Implication**: This is consistent with prioritizing penetration over frequency in this dataset. 
+**Action Required**: Marketing teams should shift budget allocation from frequency-based loyalty programs to reach expansion strategies, focusing on acquiring new customers rather than increasing purchase frequency among existing buyers.
 
 ## Background
 
@@ -123,7 +124,7 @@ Our analysis employed specification-compliant statistical methods:
 **Main Message**: Marketing teams must immediately abandon frequency-based loyalty programs and redirect all resources to penetration expansion strategies.
 
 **Supporting Logic**:
-1. **Penetration Drives Frequency**: The weak correlation (r=0.627) proves that penetration determines frequency, not the reverse
+1. **Penetration-First Strategy**: The weak correlation (r=0.627) is consistent with focusing on penetration first in this dataset
 2. **Loyalty Programs Are Ineffective**: Without strong penetration, frequency optimization yields minimal returns
 3. **Resource Misallocation**: Current loyalty investments should be redirected to reach expansion
 
@@ -147,7 +148,7 @@ The BCa confidence interval [0.275, 0.462] indicates that even the upper bound f
 *Figure 1 shows the relationship between brand penetration and average purchase frequency, revealing the weak correlation (r=0.627) that falls below the 0.80 threshold.*
 
 - **Results**: [assets/evidence/dj_bodycare.csv](/assets/evidence/dj_bodycare.csv)
-- **Visualization**: [figs/dj_bodycare.png](/figs/dj_bodycare.png)
+- **Visualization**: [figs/dj_bodycare.png](/assets/images/marketing-science/dj_bodycare.png)
 - **Audit Log**: [logs/run_dj_bodycare.jsonl](/logs/run_dj_bodycare.jsonl)
 
 ## Reproducibility

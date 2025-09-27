@@ -18,7 +18,7 @@ description: "Analysis of 1M+ Amazon reviews across languages. CEP coverage nega
 
 ## TL;DR
 
-**Action Required**: Redesign copy deployment and localization strategy immediately to address English-centric bias. CEP coverage negatively correlates with penetration rates (r=-0.28), proving that high-penetration brands underperform in multilingual coverage.
+**Action Required**: Redesign copy deployment and localization strategy immediately to address English-centric bias. CEP coverage negatively correlates with penetration rates (r=-0.28), indicating that high-penetration brands tend to underperform in multilingual coverage.
 
 **Next Steps**: (1) Test messaging validation in top 3 languages, (2) Track CEP hit improvement quantitatively, (3) Reallocate localization budget from English to underperforming language markets.
 
@@ -102,7 +102,7 @@ All coverage rates include 95% Wilson confidence intervals to provide statistica
 **Supporting Logic**:
 1. **English Dominance Problem**: English shows exceptional performance while other languages underperform
 2. **Penetration-Coverage Trade-off**: High-penetration brands sacrifice multilingual coverage
-3. **Data Collection Gaps**: 27 languages excluded due to insufficient data limits analysis scope
+3. **Data Collection Gaps**: 26 languages excluded due to insufficient data limits analysis scope
 
 **Implementation Strategy**:
 - **Phase 1**: Test messaging validation in top 3 languages with quantitative CEP tracking
@@ -115,7 +115,7 @@ The analysis reveals significant variation in brand performance across languages
 
 - **English (en)**: Highest coverage rates and penetration
 - **Other Languages**: Variable performance with some showing low coverage
-- **Language Exclusion**: 27 languages excluded due to insufficient data (<20 records)
+- **Language Exclusion**: 26 languages excluded due to insufficient data (<20 records)
 
 ### H1 Correlation Insights
 
@@ -144,6 +144,8 @@ Complete specification-compliant implementation:
 - **Coverage Heatmap**: [figs/cep_coverage_complete.png](/figs/cep_coverage_complete.png)
 - **H1 Correlation Plot**: [figs/cep_vs_penetration.png](/figs/cep_vs_penetration.png)
 - **Audit Log**: [logs/run_cep_complete.jsonl](/logs/run_cep_complete.jsonl)
+
+## Reproducibility
 
 <details>
 <summary>Reproducibility (Commands, Versions, Logs)</summary>
@@ -194,12 +196,8 @@ This implementation uses simplified brand mapping and unweighted MAD calculation
 
 **Supporting Evidence**:
 1. **Language Diversity**: Significant variation in brand performance across languages
-2. **Data Quality**: 27 languages excluded due to insufficient data
+2. **Data Quality**: 26 languages excluded due to insufficient data
 3. **Coverage Patterns**: English shows highest coverage and penetration
-
-- **Language Diversity**: Significant variation in brand performance across languages
-- **Data Quality**: 27 languages excluded due to insufficient data
-- **Coverage Patterns**: English shows highest coverage and penetration
 
 ### 2. Penetration-Coverage Trade-offs
 

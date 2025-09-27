@@ -18,7 +18,7 @@ description: "Weighted MAD of 0.015863 (gap +0.000863). DoP 'near-miss' demonstr
 
 ## TL;DR
 
-**Action Required**: Implement cross-sell optimization strategy immediately using DoP near-miss validation. The weighted MAD of 0.015863 (gap +0.000863) proves that cross-sell patterns are predictable and actionable for business decisions.
+**Action Required**: Implement cross-sell optimization strategy immediately using DoP near-miss validation. The weighted MAD of 0.015863 (gap +0.000863) supports that cross-sell patterns are predictable enough to guide testing and optimization.
 
 **Next Steps**: (1) Launch A/B testing for top 3 cross-sell brand pairs, (2) Optimize shelf placement and CRM targeting, (3) Reset duplication rate benchmarks to 0.016 threshold for Q4 planning.
 
@@ -64,7 +64,7 @@ Duplication of Purchase (DoP) measures the extent to which buyers of one brand a
 
 ### Main Finding: DoP Near-Miss Validates Cross-Sell Strategy
 
-**Conclusion**: DoP analysis achieves near-miss status (weighted MAD = 0.015863), proving that cross-sell patterns are predictable and actionable for business optimization.
+**Conclusion**: DoP analysis achieves near-miss status (weighted MAD = 0.015863), indicating that cross-sell patterns are predictable and actionable for business optimization.
 
 **Supporting Evidence**:
 1. **Statistical Validity**: All validation metrics pass (BCa CI, weekly shuffle, negative controls)
@@ -127,7 +127,7 @@ The critical difference between simplified and specification-compliant analysis 
 **Main Message**: Marketing teams must immediately implement cross-sell optimization strategies based on validated DoP patterns.
 
 **Supporting Logic**:
-1. **Patterns Are Predictable**: Near-miss status (0.015863) proves cross-sell patterns follow predictable rules
+1. **Patterns Are Predictable**: Near-miss status (0.015863) supports that cross-sell patterns follow predictable rules
 2. **Weighted Analysis Is Essential**: Brand purchase count weighting reflects real market dynamics
 3. **Statistical Validation Confirms Reliability**: All validation metrics pass specification requirements
 
@@ -166,12 +166,14 @@ The dunnhumby beauty result emerged from the optimal combination: top 10% users,
 ### Specification-Compliant Results
 - **Best Near-Miss**: [assets/evidence/dop_dunnhumby_beauty_spec_q90_b2_m20.csv](/assets/evidence/dop_dunnhumby_beauty_spec_q90_b2_m20.csv)
 - **Comparison**: [assets/evidence/dop_instacart_shampoo_specification_compliant.csv](/assets/evidence/dop_instacart_shampoo_specification_compliant.csv)
-- **Heatmap**: [figs/dop_heat_dunnhumby_beauty_spec_q90_b2_m20.png](/figs/dop_heat_dunnhumby_beauty_spec_q90_b2_m20.png)
+- **Heatmap**: [figs/dop_heat_dunnhumby_beauty_spec_q90_b2_m20.png](/assets/images/marketing-science/dop_heat_dunnhumby_beauty_spec_q90_b2_m20.png)
 - **Audit Log**: [logs/run_dop_dunnhumby_beauty_spec_q90_b2_m20.jsonl](/logs/run_dop_dunnhumby_beauty_spec_q90_b2_m20.jsonl)
 
 ### Simplified Version Results
 - **Instacart PASS**: [assets/evidence/dop_instacart_shampoo_top15_pass.csv](/assets/evidence/dop_instacart_shampoo_top15_pass.csv)
 - **CEP Demo**: [assets/evidence/dop_by_cep_realistic.csv](/assets/evidence/dop_by_cep_realistic.csv)
+
+## Reproducibility
 
 <details>
 <summary>Reproducibility (Commands, Versions, Logs)</summary>
