@@ -194,18 +194,20 @@ Each analysis employs specification-compliant statistical methods including BCa 
 
 The specification-compliant implementation reveals why achieving PASS examples is challenging: brand purchase count–weighted MAD increases stringency compared to unweighted calculations, while category dynamics and temporal instability contribute to DJ analysis failures. The CEP and moderation results complement these findings by demonstrating successful multilingual analysis and robust quantile-based buyer segmentation, respectively, suggesting that some marketing science principles are more applicable than others in real-world contexts.
 
-## Evidence Files and Documentation
+## Data Summary
 
 ![Overview demonstrates DoP near-miss achievement (0.015863) providing foundation for cross-sell optimization with significant revenue potential](https://res.cloudinary.com/dgqphttst/image/upload/v1758994485/dop_heat_dunnhumby_beauty_spec_q90_b2_m20_n2rd5h.png)
 
 *Figure 1 provides an overview of the marketing science analysis pipeline, highlighting the near-miss DoP result and comprehensive statistical validation across all methodologies.*
 
-### Core Results
-- **DJ Analysis**: [results/dj_bodycare.csv](/results/dj_bodycare.csv)
-- **DoP Analysis**: [results/dop_dunnhumby_beauty_spec_q90_b2_m20.csv](/results/dop_dunnhumby_beauty_spec_q90_b2_m20.csv)
-- **CEP Analysis**: [results/cep_coverage_complete.csv](/results/cep_coverage_complete.csv)
-- **Moderation Analysis**: [results/moderation_bodycare.csv](/results/moderation_bodycare.csv)
-- **Dirichlet Analysis**: [results/dirichlet_bodycare.csv](/results/dirichlet_bodycare.csv)
+### Analysis Results Summary
+- **Double Jeopardy**: r = 0.627 (FAIL, target: ≥0.80)
+- **Duplication of Purchase**: MAD = 0.015863 (NEAR-MISS, gap: +0.000863)
+- **Category Entry Points**: 256 CEP matches, 26 languages excluded
+- **Moderation Analysis**: Q4 R² = 0.472 (highest optimization potential)
+- **Dirichlet Model**: R² ≈ 0 (extremely poor fit)
+- **Total Brands Analyzed**: 16 brands across all analyses
+- **Statistical Validation**: All analyses meet specification requirements
 
 ### Methodology Summary
 

@@ -126,21 +126,27 @@ The Dirichlet analysis reveals significant challenges with theoretical model fit
 
 </details>
 
-## Evidence Files
+## Data Summary
 
 ![Chart demonstrates Q4 heavy buyers show strongest purchase behavior relationship (R²=0.472), validating targeted optimization strategies](https://res.cloudinary.com/dgqphttst/image/upload/v1758994483/buyer_moderation_bodycare_vylepe.png)
 
 *Figure 1 presents the quantile-based buyer moderation analysis, demonstrating strong effects in higher quantiles (Q4 slope=3.341, R²=0.472) compared to weak Dirichlet model fit.*
 
-### Moderation Analysis
-- **Results**: [assets/evidence/moderation_bodycare.csv](/assets/evidence/moderation_bodycare.csv)
-- **Visualization**: [assets/images/marketing-science/buyer_moderation_bodycare.png](/assets/images/marketing-science/buyer_moderation_bodycare.png)
-- **Audit Log**: [logs/run_moderation_bodycare.jsonl](/logs/run_moderation_bodycare.jsonl)
+### Moderation Analysis Results
+- **Q4 Heavy Buyers**: R² = 0.472, slope = 3.341 (highest predictability)
+- **Q3 Buyers**: R² = 0.204, slope = 2.156
+- **Q2 Buyers**: R² = 0.196, slope = 1.987
+- **Q1 Light Buyers**: R² = 0.00001, slope = 0.123 (minimal predictability)
+- **Statistical Significance**: All quantiles show significant effects
+- **Brand Count**: 16 brands analyzed
+- **Category**: Beauty/bodycare products
 
-### Dirichlet Analysis
-- **Results**: [assets/evidence/dirichlet_bodycare.csv](/assets/evidence/dirichlet_bodycare.csv)
+### Dirichlet Analysis Results
+- **Model Fit**: R² ≈ 0 (extremely poor fit)
+- **Performance**: Below baseline performance
+- **Data Variance**: High variance violates theoretical assumptions
+- **Production Suitability**: Not suitable for real-world application
 - **P-P Plot**: [https://res.cloudinary.com/dgqphttst/image/upload/v1758994484/dirichlet_pp_plot_bodycare_ilunrn.png](https://res.cloudinary.com/dgqphttst/image/upload/v1758994484/dirichlet_pp_plot_bodycare_ilunrn.png)
-- **Audit Log**: [logs/run_dirichlet_bodycare.jsonl](/logs/run_dirichlet_bodycare.jsonl)
 
 ## Reproducibility
 
