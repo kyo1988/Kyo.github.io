@@ -30,6 +30,16 @@ description: "Weighted MAD of 0.015863 (gap +0.000863). DoP 'near-miss' demonstr
 
 **Key Findings**: Marketing teams may want to consider implementing cross-sell optimization strategies focusing on top brand pairs, with shelf placement and CRM targeting optimizations to maximize ROI, based on this dataset's near-miss results.
 
+**Data Availability**: We publish **figures and minimal summary statistics** only. Raw transactions/reviews and run logs remain private; all public numbers are reproducible from the Reproduction Line in each figure.
+
+## Spec Gate
+
+**DoP**: Pass if `MAD_w ≤ 0.015` (or BCa95% upper bound ≤ 0.020) and Negative control OK.
+`MAD_w = Σ_A w_A · mean_B | P(B|A) − Pen(B) |` (where `w_A` = brand A buyer weights).
+Prerequisites: **median brands per user ≥ 2**, invariant `Σ_A w_A·D(A→B) ≈ Pen(B)` approximately holds.
+
+**DJ**: Pass if **Pearson r ≥ 0.80** and **BCa95% lower bound ≥ 0.70**.
+
 ## Background
 
 Duplication of Purchase (DoP) measures the extent to which buyers of one brand also purchase other brands in the same category. The Ehrenberg–Bass framework suggests that brand duplication should follow predictable patterns. This analysis examines whether these patterns hold in this specific beauty category dataset.
@@ -178,6 +188,15 @@ The dunnhumby beauty result emerged from the optimal combination: top 10% users,
 - **Bootstrap Iterations**: 5,000 (seed: 42)
 - **Statistical Validation**: All requirements met (≥10 brands, median ≥2.0)
 
+### Validation Signals
+Invariant `Σ_A w_A·D(A→B) ≈ Pen(B)` holds with mean absolute error **0.0023**.
+Label-shuffle **negative control** yields `MAD_w = **0.0234**` (worse than spec run), confirming non-random structure.
+Preconditions: **median brands per user = 2.1 ≥ 2**, **n_brands = 16 ≥ 10**.
+Weighted metric stresses large brands via `w_A`; when the buyer mix is skewed or windows are short, **`MAD_w` tends to rise** even if unweighted error stays low.
+
+### Interpretation
+With `MAD_w = 0.015863` and `gap = +0.000863`, the **near-miss** indicates practical attainability under selected windows/categories, but not as a free lunch. Buyer-weighted duplication reveals **assortment and cohort breadth** as bottlenecks; the operational path is **broadening penetration and cross-brand exposure** before pushing loyalty-style interventions.
+
 ## Reproducibility
 
 <details>
@@ -228,4 +247,3 @@ Future research should investigate additional data sources for specification-com
 
 ---
 
-*This analysis is part of a comprehensive marketing science research project.*

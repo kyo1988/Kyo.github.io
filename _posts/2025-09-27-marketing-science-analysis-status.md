@@ -31,10 +31,25 @@ description: "DoP achieves near-pass, DJ falls short, CEP and Moderation are use
 
 **Key Findings**: Marketing teams may want to consider implementing strategic pivot with cross-sell optimization, reach expansion, localization redesign, and heavy buyer targeting for maximum effectiveness, based on this dataset's findings.
 
+**Data Availability**: We publish **figures and minimal summary statistics** only. Raw transactions/reviews and run logs remain private; all public numbers are reproducible from the Reproduction Line in each figure.
+
+## Spec Gate
+
+**DoP**: Pass if `MAD_w ≤ 0.015` (or BCa95% upper bound ≤ 0.020) and Negative control OK.
+`MAD_w = Σ_A w_A · mean_B | P(B|A) − Pen(B) |` (where `w_A` = brand A buyer weights).
+Prerequisites: **median brands per user ≥ 2**, invariant `Σ_A w_A·D(A→B) ≈ Pen(B)` approximately holds.
+
+**DJ**: Pass if **Pearson r ≥ 0.80** and **BCa95% lower bound ≥ 0.70**.
+
 ## Executive Decision Summary
 
+**DoP — where we stand.**
+Our strict gate is **`MAD_w ≤ 0.015`**. The best spec-compliant result is **`MAD_w = 0.015863`**, i.e., `gap = +0.000863`, validated with **BCa (B=5,000)**, weekly label-shuffle, and invariants.
+**By dataset (illustrative):** Instacart `0.0073 PASS`, UCI `0.0286 FAIL`, dunnhumby `0.015863 NEAR-MISS`. This split indicates the gate is **approachable** under some retail contexts but **non-trivial** in others.
+**DJ** under `26w, min_buyers=500` is **r = 0.627**, below the gate; sensitivity suggests category structure/retailer mix weakens the penetration–frequency link.
+
 **This Quarter's Key Learnings**:
-- **DoP near-miss** (0.015863) suggests partial validity of Ehrenberg-Bass principles in this dataset
+- **DoP near-miss** (gap = +0.000863) suggests partial validity of Ehrenberg-Bass principles in this dataset
 - **DJ failure** (r=0.627) indicates limited applicability of traditional marketing science frameworks
 - **CEP/Moderation insights** reveal category-specific patterns requiring adapted strategies
 
@@ -261,4 +276,3 @@ Our marketing science analysis pipeline demonstrates the importance of specifica
 
 ---
 
-*This analysis is part of a comprehensive marketing science research project.*

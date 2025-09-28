@@ -30,6 +30,18 @@ description: "Analysis of 1M+ Amazon reviews across languages. CEP coverage nega
 
 **Key Findings**: Marketing teams may want to consider redesigning copy deployment and localization investment allocation to expand coverage breadth and reduce English-centric bias in marketing approach.
 
+**Data Availability**: We publish **figures and minimal summary statistics** only. Raw transactions/reviews and run logs remain private; all public numbers are reproducible from the Reproduction Line in each figure.
+
+## Spec Gate
+
+**DoP**: Pass if `MAD_w ≤ 0.015` (or BCa95% upper bound ≤ 0.020) and Negative control OK.
+`MAD_w = Σ_A w_A · mean_B | P(B|A) − Pen(B) |` (where `w_A` = brand A buyer weights).
+Prerequisites: **median brands per user ≥ 2**, invariant `Σ_A w_A·D(A→B) ≈ Pen(B)` approximately holds.
+
+**DJ**: Pass if **Pearson r ≥ 0.80** and **BCa95% lower bound ≥ 0.70**.
+
+**CEP**: Pass if Wilson confidence intervals are properly calculated and language detection is validated.
+
 ## Background
 
 Category Entry Points (CEP) analysis examines how brands perform across different market segments, particularly focusing on Category Entry Points (CEPs) and their coverage rates.
@@ -37,6 +49,8 @@ Category Entry Points (CEP) analysis examines how brands perform across differen
 ### CEP Definition
 
 **CEP Coverage** = **Brand-specific review corpus** hit rate against **CEP dictionary (v1.0)** (sentence-level, negation excluded)
+
+**Operational definition.** **Sentence-level** hit rate of a curated CEP lexicon (`v1.0`), after language detection, per-language lexicon application, and **negation exclusion** ("not oily" does not count). Coverage is normalized across languages before correlating with penetration.
 
 **Multilingual Processing**: Language detection → language-specific dictionary → normalization
 
@@ -253,4 +267,3 @@ Future research should investigate production-ready brand mapping for CEP-strati
 
 ---
 
-*This analysis is part of a comprehensive marketing science research project.*

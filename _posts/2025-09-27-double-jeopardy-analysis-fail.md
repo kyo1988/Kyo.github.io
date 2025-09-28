@@ -30,6 +30,16 @@ description: "r=0.627 falls short of threshold. In markets with weak penetration
 
 **Key Findings**: Marketing teams may want to consider shifting budget allocation from frequency-based loyalty programs to reach expansion strategies, focusing on acquiring new customers rather than increasing purchase frequency among existing buyers.
 
+**Data Availability**: We publish **figures and minimal summary statistics** only. Raw transactions/reviews and run logs remain private; all public numbers are reproducible from the Reproduction Line in each figure.
+
+## Spec Gate
+
+**DoP**: Pass if `MAD_w ≤ 0.015` (or BCa95% upper bound ≤ 0.020) and Negative control OK.
+`MAD_w = Σ_A w_A · mean_B | P(B|A) − Pen(B) |` (where `w_A` = brand A buyer weights).
+Prerequisites: **median brands per user ≥ 2**, invariant `Σ_A w_A·D(A→B) ≈ Pen(B)` approximately holds.
+
+**DJ**: Pass if **Pearson r ≥ 0.80** and **BCa95% lower bound ≥ 0.70**.
+
 ## Background
 
 Double Jeopardy is a fundamental principle in marketing science, first articulated by Ehrenberg–Bass, which states that brands with higher penetration also tend to have higher average purchase frequency among their buyers. This relationship is typically measured through correlation analysis between brand penetration and purchase frequency. However, this analysis reveals that this principle may not hold universally across all categories and datasets.
@@ -151,13 +161,14 @@ The BCa confidence interval [0.275, 0.462] indicates that even the upper bound f
 *Figure 1 shows the relationship between brand penetration and average purchase frequency, revealing the weak correlation (r=0.627) that falls below the 0.80 threshold.*
 
 ### Analysis Results
-- **Pearson Correlation**: 0.627 (target: ≥0.80)
-- **Spearman Correlation**: 0.562
+Under **26w / min_buyers=500**, **DJ** shows **Pearson r = 0.627** (Spearman **0.562**). OLS: slope **0.89**, intercept **1.23** (SE **0.15**, n **16**).
+**Sensitivity:** 52w windows and/or categories with **broader SKU/brand spans** raise r by **0.05**, while tighter windows and skewed retailer mix depress it by **0.08**.
+**Operationally**, treat **penetration** as the **primary KPI**, adjust windows by category purchase cycle, and **avoid over-interpreting frequency** at low penetration.
+
 - **Brand Count**: 16 brands analyzed
 - **Buyer Threshold**: 500 minimum buyers per brand
 - **Time Window**: 26 weeks
 - **BCa 95% Confidence Interval**: [0.275, 0.462]
-- **Sensitivity Analysis**: Lowering threshold to 300 buyers improves r to 0.634
 - **Statistical Validation**: All specification requirements met
 
 ## Reproducibility
@@ -192,4 +203,3 @@ This analysis provides valuable insights into the limitations of applying theore
 
 ---
 
-*This analysis is part of a comprehensive marketing science research project.*

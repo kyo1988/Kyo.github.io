@@ -30,6 +30,16 @@ description: "Heavy buyers (Q4) show strongest purchase behavior persistence ove
 
 **Key Findings**: Marketing teams may want to consider implementing Q4-focused A/B testing with basket expansion and frequency suppression design, targeting the most predictable customer segment for maximum effectiveness, based on this dataset's findings.
 
+**Data Availability**: We publish **figures and minimal summary statistics** only. Raw transactions/reviews and run logs remain private; all public numbers are reproducible from the Reproduction Line in each figure.
+
+## Spec Gate
+
+**DoP**: Pass if `MAD_w ≤ 0.015` (or BCa95% upper bound ≤ 0.020) and Negative control OK.
+`MAD_w = Σ_A w_A · mean_B | P(B|A) − Pen(B) |` (where `w_A` = brand A buyer weights).
+Prerequisites: **median brands per user ≥ 2**, invariant `Σ_A w_A·D(A→B) ≈ Pen(B)` approximately holds.
+
+**DJ**: Pass if **Pearson r ≥ 0.80** and **BCa95% lower bound ≥ 0.70**.
+
 ## Background
 
 ### Buyer Moderation Analysis
@@ -37,6 +47,8 @@ description: "Heavy buyers (Q4) show strongest purchase behavior persistence ove
 Buyer moderation examines how purchase behavior varies across different buyer segments, typically measured through quantile-based analysis of purchase frequency and brand relationships.
 
 ### NBD-Dirichlet Model
+
+**Scope.** The NBD-Dirichlet models **category-level buyer distributions across brands** in panel data. Our use here is **illustrative**; the observed **PP-plot R² = ≈ −7e−06** indicates a fit **below a naive baseline**, consistent with assumption mismatch and high variance in this dataset.
 
 The NBD-Dirichlet model is a theoretical framework for understanding brand choice behavior, combining the Negative Binomial Distribution (NBD) for purchase frequency with the Dirichlet distribution for brand choice probabilities.
 
@@ -133,10 +145,10 @@ The Dirichlet analysis reveals significant challenges with theoretical model fit
 *Figure 1 presents the quantile-based buyer moderation analysis, demonstrating strong effects in higher quantiles (Q4 slope=3.341, R²=0.472) compared to weak Dirichlet model fit.*
 
 ### Moderation Analysis Results
-- **Q4 Heavy Buyers**: R² = 0.472, slope = 3.341 (highest predictability)
-- **Q3 Buyers**: R² = 0.204, slope = 2.156
-- **Q2 Buyers**: R² = 0.196, slope = 1.987
-- **Q1 Light Buyers**: R² = 0.00001, slope = 0.123 (minimal predictability)
+- **Q4 Heavy Buyers**: R² = 0.472 (quantile regression fit quality), slope = 3.341 (frequency persistence coefficient)
+- **Q3 Buyers**: R² = 0.204 (quantile regression fit quality), slope = 2.156 (frequency persistence coefficient)
+- **Q2 Buyers**: R² = 0.196 (quantile regression fit quality), slope = 1.987 (frequency persistence coefficient)
+- **Q1 Light Buyers**: R² = 0.00001 (quantile regression fit quality), slope = 0.123 (frequency persistence coefficient)
 - **Statistical Significance**: All quantiles show significant effects
 - **Brand Count**: 16 brands analyzed
 - **Category**: Beauty/bodycare products
@@ -259,4 +271,3 @@ Future research should investigate alternative modeling approaches for high-vari
 
 ---
 
-*This analysis is part of a comprehensive marketing science research project.*
