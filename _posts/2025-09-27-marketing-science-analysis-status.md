@@ -144,27 +144,23 @@ Each analysis employs specification-compliant statistical methods including BCa 
 | 52 weeks | 1000 | 0.556 | 0.512 | Both constraints reduce |
 
 **Implication**: Weak brand penetration-frequency relationship due to data constraints
-**Evidence**: [assets/evidence/dj_bodycare.csv](/assets/evidence/dj_bodycare.csv)
 
 ### Duplication of Purchase Analysis ❌
 
 **Best Result**: dunnhumby beauty MAD = 0.015863 (gap: +0.000863)
 **Comparison**: Instacart shampoo MAD = 0.021854
 **Implication**: Close to theoretical threshold but not achieved
-**Evidence**: [assets/evidence/dop_dunnhumby_beauty_spec_q90_b2_m20.csv](/assets/evidence/dop_dunnhumby_beauty_spec_q90_b2_m20.csv)
 
 ### Category Entry Points Analysis ✅
 
 **Result**: Complete multilingual analysis with Wilson CI
 **H1 Correlation**: Pearson = -0.28, Spearman = -0.59
 **Implication**: Higher penetration correlates with lower coverage
-**Evidence**: [assets/evidence/cep_coverage_complete.csv](/assets/evidence/cep_coverage_complete.csv)
 
 ### Moderation Analysis ✅
 
 **Result**: Strong quantile effects (Q4 slope = 3.341)
 **Implication**: Heavy buyers show strongest relationships
-**Evidence**: [assets/evidence/moderation_bodycare.csv](/assets/evidence/moderation_bodycare.csv)
 
 ### Dirichlet Model Analysis ⚠️
 
@@ -172,7 +168,6 @@ Each analysis employs specification-compliant statistical methods including BCa 
 **Scope Limitation**: Designed for **category × brand × buyer distribution** panel data
 **Excluded Data**: SKU-level, review data, and non-panel sources are **out of scope**
 **Implication**: Theoretical model struggles with real-world data complexity
-**Evidence**: [assets/evidence/dirichlet_bodycare.csv](/assets/evidence/dirichlet_bodycare.csv)
 
 ## Simplified vs. Specification-Compliant
 
