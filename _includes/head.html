@@ -5,67 +5,76 @@
 
   <meta name="google-site-verification" content="kZFzSU3m_vE_Y0Ja60lWjUOKkeGpV7Ch3CvfLeP8Di4" />
 
-<!-- Smart App Banner (iOS) -->
-<meta name="apple-itunes-app" content="app-id=6748892785, app-argument=https://www.visageaiconsulting.com/en?utm_source=smartbanner&utm_medium=ios&utm_campaign=app_promo">
+  <!-- Smart App Banner (iOS) -->
+  <!-- & は属性値内で &amp; にエスケープ -->
+  <meta name="apple-itunes-app"
+        content="app-id=6748892785, app-argument=https://www.visageaiconsulting.com/en?utm_source=smartbanner&amp;utm_medium=ios&amp;utm_campaign=app_promo">
 
-<!-- Web App & Mobile App Structured Data -->
-<script type="application/ld+json">
-{
- "@context":"https://schema.org",
- "@type":"SoftwareApplication",
- "name":"Visage AI",
- "applicationCategory":"WebApplication",
- "operatingSystem":"Any",
- "creator":{"@type":"Organization","name":"Visage AI Consulting"},
- "url":"https://www.visageaiconsulting.com/en",
- "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
- "potentialAction":{"@type":"UseAction","target":"https://www.visageaiconsulting.com/en"},
- "softwareVersion":"1.0",
- "description":"Explainable AI skin analysis SDK/API for e-commerce & retail with on-device processing and privacy-first approach."
-}
-</script>
+  <!-- Web App & Mobile App Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Visage AI",
+    "applicationCategory": "WebApplication",
+    "operatingSystem": "Any",
+    "publisher": { "@type": "Organization", "name": "Visage AI Consulting" },
+    "url": "https://www.visageaiconsulting.com/en",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "potentialAction": {
+      "@type": "UseAction",
+      "target": { "@type": "EntryPoint", "urlTemplate": "https://www.visageaiconsulting.com/en" }
+    },
+    "softwareVersion": "1.0",
+    "description": "Explainable AI skin analysis SDK/API for e-commerce & retail with on-device processing and privacy-first approach."
+  }
+  </script>
 
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"MobileApplication",
-  "name":"Visage AI: Skin Advisor",
-  "applicationCategory":"HealthApplication",
-  "operatingSystem":"iOS",
-  "url":"https://apps.apple.com/app/visage-ai-skin-advisor/id6748892785",
-  "downloadUrl":"https://apps.apple.com/app/visage-ai-skin-advisor/id6748892785",
-  "publisher":{"@type":"Person","name":"Kyoichiro Harada"},
-  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
-  "softwareVersion":"1.0",
-  "description":"Live showcase of production-ready skin analysis technology with explainable AI insights."
-}
-</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "Visage AI: Skin Advisor",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "iOS",
+    "url": "https://apps.apple.com/app/visage-ai-skin-advisor/id6748892785",
+    "downloadUrl": "https://apps.apple.com/app/visage-ai-skin-advisor/id6748892785",
+    "publisher": { "@type": "Person", "name": "Kyoichiro Harada" },
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "softwareVersion": "1.0",
+    "description": "Live showcase of production-ready skin analysis technology with explainable AI insights."
+  }
+  </script>
 
-  <link rel="icon" href="{{site.favicon| relative_url}}">
+  <link rel="icon" href="{{ site.favicon | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/design-kit.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/article-kit.css' | relative_url }}">
 
-<!-- jekyll-seo-tag will handle title, description, canonical, og tags, twitter tags, etc. -->
-{% seo %}
+  <!-- jekyll-seo-tag will handle title, description, canonical, og tags, twitter tags, etc. -->
+  {% seo %}
 
+  <!-- use https 明示 -->
+  <script async src="https://assets.pinterest.com/js/pinit.js"></script>
 
-<script async defer src="//assets.pinterest.com/js/pinit.js"></script>
-
-<!-- Google Analytics 4 -->
-{% if site.google_analytics.ga4_measurement_id %}
-  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics.ga4_measurement_id }}"></script>
+  <!-- Google Analytics 4 - dual tag -->
+  {% if site.google_analytics and (site.google_analytics.ga4_primary or site.google_analytics.ga4_rollup) %}
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics.ga4_rollup | default: site.google_analytics.ga4_primary }}"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
+    function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', '{{ site.google_analytics.ga4_measurement_id }}', {
+    {% if site.google_analytics.ga4_primary %}
+    gtag('config', '{{ site.google_analytics.ga4_primary }}', {
       'send_page_view': true,
-      'linker': {
-        'domains': ['{{ site.google_analytics.cross_domains | join: "', '" }}']
-      }
+      'linker': { 'domains': ['kyo1988.github.io','www.visageaiconsulting.com','visageaiconsulting.com'] }
     });
+    {% endif %}{% if site.google_analytics.ga4_rollup %}
+    gtag('config', '{{ site.google_analytics.ga4_rollup }}', {
+      'send_page_view': true,
+      'linker': { 'domains': ['kyo1988.github.io','www.visageaiconsulting.com','visageaiconsulting.com'] }
+    });
+    {% endif %}
   </script>
-{% endif %}
-
+  {% endif %}
 </head>
