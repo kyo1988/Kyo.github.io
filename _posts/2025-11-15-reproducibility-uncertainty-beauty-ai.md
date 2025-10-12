@@ -39,7 +39,7 @@ Reproducibility testing and uncertainty quantification examined the scientific r
 | Metric | ICC(2,1) Score | 95% Confidence Interval | Reproducibility Level | Sample Size |
 |--------|----------------|------------------------|---------------------|-------------|
 | **WHR Measurement** | **0.87** | **[0.82-0.91]** | **High** | **N=100** |
-| Beauty Score | 0.83 | [0.78-0.88] | High | N=100 |
+| APM Score | 0.83 | [0.78-0.88] | High | N=100 |
 | Quality Score | 0.85 | [0.80-0.90] | High | N=100 |
 | Age Estimation | 0.79 | [0.73-0.85] | Moderate-High | N=100 |
 
@@ -47,7 +47,7 @@ Reproducibility testing and uncertainty quantification examined the scientific r
 
 | Measurement Type | Uncertainty (±95% CI) | Primary Source | Impact Level |
 |------------------|----------------------|----------------|--------------|
-| **Beauty Score** | **±0.12** | **Image Quality (40%)** | **High** |
+| **APM Score** | **±0.12** | **Image Quality (40%)** | **High** |
 | Age Estimation | ±2.3 years | Algorithm (30%) | High |
 | Cultural Classification | ±0.08 | Human Judgment (20%) | Moderate |
 | Feature Measurement | ±0.05 | Environment (10%) | Low |
@@ -85,7 +85,7 @@ Reproducibility testing and uncertainty quantification examined the scientific r
 ### Operational Readiness
 
 - **Quality Thresholds**: ICC(2,1)≥0.85 for production deployment
-- **Uncertainty Budget**: ±0.12 beauty score uncertainty acceptable for most applications
+- **Uncertainty Budget**: ±0.12 APM score uncertainty acceptable for most applications
 - **Monitoring**: Continuous reproducibility monitoring essential for quality assurance
 
 ## Limitations & Ethical Considerations

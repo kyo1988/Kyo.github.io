@@ -33,9 +33,9 @@ This analysis reflects on the **14-week beauty science journey**, examining what
 
 ### Key Findings
 
-- **Cultural Diversity**: Different beauty perception patterns across 3 population groups
+- **Cultural Diversity**: Different aesthetic preference patterns across 3 population groups
 - **Skin-Body Correlations**: Relationships between 6 skin quality indicators and body proportions
-- **AI Limitations and Possibilities**: Reality and constraints of perfect face generation
+- **AI Limitations and Possibilities**: Reality and constraints of ideal face generation
 - **Scientific Rigor**: Reliable measurement with reproducibility score of 0.85
 
 ## Strategic Findings
@@ -51,7 +51,7 @@ This analysis reflects on the **14-week beauty science journey**, examining what
 
 ### Cultural Diversity Validation
 
-| Regional Group | Beauty Score | Cultural Characteristics | Market Potential |
+| Regional Group | APM Score | Cultural Characteristics | Market Potential |
 |----------------|--------------|------------------------|------------------|
 | **East Asian** | **0.75** | **Symmetry-focused, rounded features** | **High** |
 | European | 0.72 | Defined features, dimensional beauty | High |

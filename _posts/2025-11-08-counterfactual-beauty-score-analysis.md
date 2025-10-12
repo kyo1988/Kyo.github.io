@@ -5,7 +5,7 @@ date: 2025-11-08 10:00:00 +0900
 categories: [AI, Computer Vision, Research]
 tags: [Beauty AI, Counterfactual Analysis, Statistical Analysis, Mobile AI, 2D-only]
 permalink: /research/2025/11/08/counterfactual-beauty-score-analysis.html
-description: "Counterfactual analysis reveals dramatic beauty score changes from eye area modifications: Canthal Tilt changes show +21%/-11% impact, demonstrating the power of subtle facial adjustments."
+description: "Counterfactual analysis reveals dramatic APM score changes from eye area modifications: Canthal Tilt changes show +21%/-11% impact, demonstrating the power of subtle facial adjustments."
 ---
 
 ## Series Navigation
@@ -21,7 +21,7 @@ description: "Counterfactual analysis reveals dramatic beauty score changes from
 
 ## Governing Thought
 
-**Counterfactual analysis explored the impact of specific facial changes on overall beauty perception and scientifically demonstrated that subtle changes in the eye area have dramatic effects on beauty perception.**
+**Counterfactual analysis explored the impact of specific facial changes on overall aesthetic preference patterns and scientifically demonstrated that subtle changes in the eye area have dramatic effects on aesthetic perception.**
 
 **Type: Explanation**
 
@@ -30,13 +30,13 @@ description: "Counterfactual analysis reveals dramatic beauty score changes from
 **⚠️ Important**: This analysis is a **2D-only interim release**. 3D estimation is disabled due to technical issues, and all reported metrics are based on 2D measurements.
 
 ### Conclusion
-Counterfactual analysis explored the impact of specific facial changes on overall beauty perception and discovered that subtle changes in the eye area have dramatic effects on beauty perception. Canthal Tilt changes achieved beauty score +21%/-11%, Scleral Show changes +15%/-8%, and age perception changes ±1.2-2.3 years.
+Counterfactual analysis explored the impact of specific facial changes on overall aesthetic preference patterns and discovered that subtle changes in the eye area have dramatic effects on aesthetic perception. Canthal Tilt changes achieved APM score +21%/-11%, Scleral Show changes +15%/-8%, and age perception changes ±1.2-2.3 years.
 
 ## Key Findings
 
 ### Eye Area Modification Impact
 
-| Modification Type | Parameter Change | Beauty Score Impact | Age Perception Change | Statistical Significance |
+| Modification Type | Parameter Change | APM Score Impact | Age Perception Change | Statistical Significance |
 |-------------------|------------------|-------------------|---------------------|----------------------|
 | **Canthal Tilt (+1σ)** | **+8.5°** | **+21%** | **-1.2 years** | **p<0.001** |
 | **Canthal Tilt (-1σ)** | **-8.5°** | **-11%** | **+1.8 years** | **p<0.001** |
@@ -47,7 +47,7 @@ Counterfactual analysis explored the impact of specific facial changes on overal
 
 | Metric | Baseline Value | Measurement Method |
 |--------|----------------|-------------------|
-| **Baseline Beauty Score** | **0.72** | **Multi-factor composite** |
+| **Baseline APM Score** | **0.72** | **Multi-factor composite** |
 | Canthal Tilt | 8.5° | MediaPipe Face Mesh landmarks |
 | Scleral Show | 2.3mm | Landmark-based measurement |
 | Age Perception | 28.5 years | AI age estimation model |
@@ -62,11 +62,11 @@ Counterfactual analysis explored the impact of specific facial changes on overal
 
 ## Visual Evidence
 
-![Beauty Score Change Matrix](https://res.cloudinary.com/djiyxp5ax/image/upload/v1760277135/WEEK_10_BEAUTY_SCORE_CHANGE_MATRIX_tvsui1.png)
-*Figure 1: Beauty score change matrix showing the impact of eye area modifications across different facial regions and cultural groups.*
+![APM Score Change Matrix](https://res.cloudinary.com/djiyxp5ax/image/upload/v1760277135/WEEK_10_BEAUTY_SCORE_CHANGE_MATRIX_tvsui1.png)
+*Figure 1: APM score change matrix showing the impact of eye area modifications across different facial regions and cultural groups.*
 
 ![Eye Area Change Impact](https://res.cloudinary.com/djiyxp5ax/image/upload/v1760277137/WEEK_10_EYE_AREA_CHANGE_IMPACT_dr9vjv.png)
-*Figure 2: Eye area change impact analysis demonstrating the disproportionate effect of subtle modifications on overall beauty perception.*
+*Figure 2: Eye area change impact analysis demonstrating the disproportionate effect of subtle modifications on overall aesthetic perception.*
 
 ## Business Implications
 
@@ -78,7 +78,7 @@ Counterfactual analysis explored the impact of specific facial changes on overal
 
 ### ROI Considerations
 
-- **Enhancement Focus**: Eye area modifications provide 21% beauty score improvement potential
+- **Enhancement Focus**: Eye area modifications provide 21% APM score improvement potential
 - **Age Perception**: 1.2-2.3 year age reduction from targeted modifications
 - **Cultural Adaptation**: Different cultural groups show varying sensitivity to modifications
 
@@ -132,7 +132,7 @@ Counterfactual analysis explored the impact of specific facial changes on overal
 
 ### Quality Assurance
 
-- **Baseline Validation**: 0.72 beauty score ensures meaningful improvement measurement
+- **Baseline Validation**: 0.72 APM score ensures meaningful improvement measurement
 - **Modification Precision**: ±8.5° Canthal Tilt and ±2.3mm Scleral Show for realistic changes
 - **Reproducibility**: Fixed random seeds and deterministic modification pipeline
 

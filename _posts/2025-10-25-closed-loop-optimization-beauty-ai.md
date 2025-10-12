@@ -33,10 +33,10 @@ description: "Closed-loop analysis reveals AI's remarkable individual feature op
 Closed-loop analysis examined whether AI can consistently generate ideal faces and achieved 78% success rate in individual feature optimization while achieving only 45% success rate in overall harmony optimization. These results scientifically revealed both AI's remarkable capabilities and fundamental limitations.
 
 ### Evidence
-This study used Stable Diffusion 2.1-based face generation models and controlled pose and expression using ControlNet. We detected landmarks using MediaPipe Face Mesh and evaluated beauty scores (symmetry, skin quality, feature balance) and quality scores (resolution, noise, distortion). We applied gradient descent (learning rate 0.01, maximum 5 iterations, early stopping) and verified convergence conditions (beauty score improvement <0.01).
+This study used Stable Diffusion 2.1-based face generation models and controlled pose and expression using ControlNet. We detected landmarks using MediaPipe Face Mesh and evaluated APM scores (symmetry, skin quality, feature balance) and quality scores (resolution, noise, distortion). We applied gradient descent (learning rate 0.01, maximum 5 iterations, early stopping) and verified convergence conditions (APM score improvement <0.01).
 
 ### Implications
-We scientifically demonstrated AI's individual feature optimization capabilities and highlighted limitations in overall harmony. These results scientifically confirm that while perfect face generation is technically possible, achieving consistency and realism simultaneously remains challenging.
+We scientifically demonstrated AI's individual feature optimization capabilities and highlighted limitations in overall harmony. These results scientifically confirm that while ideal face generation is technically possible, achieving consistency and realism simultaneously remains challenging.
 
 ## Key Findings
 
@@ -51,7 +51,7 @@ We scientifically demonstrated AI's individual feature optimization capabilities
 
 | Metric | Individual Features | Holistic Harmony | Improvement |
 |--------|-------------------|------------------|-------------|
-| Beauty Score Improvement | 0.15 ± 0.08 | 0.09 ± 0.12 | 67% higher |
+| APM Score Improvement | 0.15 ± 0.08 | 0.09 ± 0.12 | 67% higher |
 | Quality Score Improvement | 0.12 ± 0.06 | 0.07 ± 0.09 | 71% higher |
 | Convergence Rate | 78% | 45% | 73% higher |
 
@@ -66,7 +66,7 @@ We scientifically demonstrated AI's individual feature optimization capabilities
 ## Visual Evidence
 
 ![Optimization Process](https://res.cloudinary.com/djiyxp5ax/image/upload/v1760277131/WEEK_06_OPTIMIZATION_PROCESS_vzuujc.png)
-*Figure 1: Closed-loop optimization process showing beauty score improvements over iterations. Individual features show faster convergence and higher success rates.*
+*Figure 1: Closed-loop optimization process showing APM score improvements over iterations. Individual features show faster convergence and higher success rates.*
 
 ![Convergence Heatmap](https://res.cloudinary.com/djiyxp5ax/image/upload/v1760277130/WEEK_06_CONVERGENCE_HEATMAP_znqcaw.png)
 *Figure 2: Convergence analysis heatmap showing optimization success patterns across different facial regions and feature combinations.*
@@ -91,7 +91,7 @@ We scientifically demonstrated AI's individual feature optimization capabilities
 ### Operational Readiness
 
 - **Computational Requirements**: Individual features require 2.1 min vs 8.2 min for holistic optimization
-- **Quality Gates**: Convergence thresholds (0.01 beauty score improvement) ensure meaningful optimization
+- **Quality Gates**: Convergence thresholds (0.01 APM score improvement) ensure meaningful optimization
 - **Failure Handling**: 22% individual feature failure rate requires robust fallback mechanisms
 
 ## Limitations & Ethical Considerations
@@ -125,7 +125,7 @@ We scientifically demonstrated AI's individual feature optimization capabilities
 ### Statistical Rigor
 
 - **Sample Size**: N=1,000 generated faces for reliable optimization analysis
-- **Convergence Criteria**: 0.01 beauty score improvement threshold for meaningful optimization
+- **Convergence Criteria**: 0.01 APM score improvement threshold for meaningful optimization
 - **Success Metrics**: Multi-dimensional evaluation (beauty, quality, realism scores)
 - **Reproducibility**: Fixed random seeds and deterministic optimization pipeline
 
