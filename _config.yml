@@ -71,6 +71,8 @@ locales:
 #         title: Kyo's Blog
 
 ### Build settings
+future: false
+timezone: Asia/Tokyo
 markdown: kramdown
 kramdown:
   input: GFM
