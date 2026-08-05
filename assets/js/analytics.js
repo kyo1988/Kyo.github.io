@@ -14,15 +14,38 @@
     if(!a) return;
 
     const url = new URL(a.href, location.href);
-    const isExternal = url.host !== siteHost;
+    const isHttp = url.protocol === 'http:' || url.protocol === 'https:';
+    const isExternal = isHttp && url.host !== siteHost;
 
     // 配置ヒント（data-placement があれば優先）
     const placement = a.dataset.placement || inferPlacement(a);
+    const linkText = (a.textContent || '').trim().slice(0, 100);
 
     if(isExternal){
       track('click_outbound', {
         link_url: url.href,
         link_domain: url.host,
+        link_text: linkText,
+        placement: placement,
+        outbound: true
+      });
+    }
+
+    // 研究成果への遷移を、一般の外部クリックから分けて測る。
+    const researchAssetType = classifyResearchAsset(url);
+    if(researchAssetType){
+      track('research_asset_click', {
+        asset_type: researchAssetType,
+        link_url: url.href,
+        link_domain: url.host,
+        link_text: linkText,
+        placement: placement
+      });
+    }
+
+    if(url.protocol === 'mailto:'){
+      track('contact_click', {
+        contact_method: 'email',
         placement: placement
       });
     }
@@ -44,11 +67,21 @@
 
   // 配置推定（クラスや親要素から推測）
   function inferPlacement(a){
+    if(a.closest('.cta')) return 'post_footer';
+    if(a.closest('.post-content, .article')) return 'article_body';
     const sec = a.closest('section');
     if(!sec) return 'unknown';
     if(sec.querySelector('.hero, .hero h1')) return 'hero';
     if(sec.querySelector('.grid, .card')) return 'core_capabilities';
     if(sec.querySelector('.post-grid')) return 'latest_posts';
     return sec.className || 'section';
+  }
+
+  function classifyResearchAsset(url){
+    if(url.protocol !== 'http:' && url.protocol !== 'https:') return null;
+    if(url.hostname === 'doi.org' || url.hostname.endsWith('.zenodo.org') || url.hostname === 'zenodo.org') return 'doi';
+    if(url.hostname === 'github.com' || url.hostname.endsWith('.github.com')) return 'github';
+    if(url.pathname.toLowerCase().endsWith('.pdf')) return 'pdf';
+    return null;
   }
 })();

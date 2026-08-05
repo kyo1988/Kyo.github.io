@@ -1,269 +1,119 @@
 ---
 layout: post
-title: "Category Entry Points Analysis: Multilingual Brand Coverage and H1 Correlation Insights"
-date: 2025-09-27 12:00:00 +0900
+title: "Category Entry Points: Language-Bias Claim Withdrawn"
+date: 2025-09-27 11:00:00 +0900
+last_modified_at: 2026-08-05 00:00:00 +0900
 categories: [Marketing Science, Data Analysis]
-tags: [Category Entry Points, CEP, Brand Coverage, Multilingual Analysis, H1 Correlation]
+tags: [Category Entry Points, Marketing Analytics, Replication Audit, Research Integrity]
 permalink: /marketing/2025/09/27/category-entry-points-analysis.html
-description: "Analysis of 1M+ Amazon reviews across languages. CEP coverage negatively correlates with penetration. Practical insights for localization and copy strategy."
+description: "August 2026 correction: the CEP run retained one language, used ASINs as brands, and did not measure multilingual language bias or a coverage improvement."
+suppress_default_cta: true
 ---
 
-## Series Navigation
+> **Correction — August 2026**
+>
+> The original article described a completed multilingual Category Entry Points analysis, inferred English-centric bias, and recommended localization changes. Those claims and recommendations are withdrawn. The audited pipeline retained one language, treated ASINs as brand identifiers, and parsed the CEP configuration under the wrong schema.
 
-**Marketing Science Analysis Series**:
-- [Duplication of Purchase Analysis](/marketing/2025/09/27/duplication-of-purchase-near-miss.html) ← Previous
-- [Double Jeopardy Analysis](/marketing/2025/09/27/double-jeopardy-analysis-fail.html) ← Next  
-- [Moderation & Dirichlet Analysis](/marketing/2025/09/27/moderation-dirichlet-analysis.html)
-- [Analysis Status Overview](/marketing/2025/09/27/marketing-science-analysis-status.html) ← Hub
+Read the [corrected EBM-2025 v0.2 report](https://www.visageaiconsulting.com/en/whitepaper/ebm-2025) or the [v0.2 PDF](https://www.visageaiconsulting.com/whitepapers/ebm-2025-v0.2.pdf). The [original v0.1 PDF](https://www.visageaiconsulting.com/whitepapers/ebm-2025-v0.1.pdf) is archived and superseded.
+
+## Series navigation
+
+- [Duplication of Purchase analysis]({{ site.baseurl }}/marketing/2025/09/27/duplication-of-purchase-near-miss.html)
+- [Double Jeopardy analysis]({{ site.baseurl }}/marketing/2025/09/27/double-jeopardy-analysis-fail.html)
+- [Buyer-frequency and NBD analysis]({{ site.baseurl }}/marketing/2025/09/27/moderation-dirichlet-analysis.html)
+- [Corrected analysis status]({{ site.baseurl }}/marketing/2025/09/27/marketing-science-analysis-status.html)
 
 ## TL;DR
 
-**Key Findings**: Consider redesigning copy deployment and localization strategy to address English-centric bias. CEP coverage negatively correlates with penetration rates (r=-0.28), indicating that high-penetration brands tend to underperform in multilingual coverage.
+The archived pipeline processed one million Amazon review rows and returned lexical-coverage aggregates. It did not complete the multilingual brand-level Category Entry Points analysis described in the original article.
 
-**Next Steps**: (1) Test messaging validation in top 3 languages, (2) Track CEP hit improvement quantitatively, (3) Reallocate localization budget from English to underperforming language markets.
+The mismatch is specific. The parser read the lexicon under a schema different from the configuration, retained one language, and passed ASIN product identifiers through a brand-normalization path that expected brand names. The output is still useful for diagnosing the pipeline, but r=-0.280 cannot be interpreted as language bias or a penetration-coverage trade-off.
 
-## Executive Summary
+## Intended measurement
 
-**Situation**: CEP coverage negatively correlates with penetration rates (r=-0.28), with English showing exceptional performance while other languages underperform.
+Category Entry Points are situations, needs, motives, or contexts that buyers associate with a category or brand. The archived project attempted a lexical proxy: search review text for terms grouped into dimensions such as quality, value, innovation, sustainability, and convenience, then compare coverage across languages and brands.
 
-**Implication**: High-penetration brands may focus on narrower language targeting, missing multilingual opportunities.
+That proxy already narrows the construct. A substring hit in a review is not direct evidence that a CEP was available in memory at purchase. At minimum, the pipeline still needed to preserve the intended dimension, language, and normalized-brand axes. The implementation did not do so.
 
-**Key Findings**: Marketing teams may want to consider redesigning copy deployment and localization investment allocation to expand coverage breadth and reduce English-centric bias in marketing approach.
+## Archived pipeline
 
-**Data Availability**: We publish **figures and minimal summary statistics** only. Raw transactions/reviews and run logs remain private; all public numbers are reproducible from the Reproduction Line in each figure.
+The script:
 
-## Spec Gate
+- read up to 1,000,000 Amazon review rows in 100,000-row chunks;
+- detected a language code for each review;
+- required at least 20 rows per ASIN-language cell;
+- searched configured substrings in review text;
+- calculated Wilson intervals for lexical hit proportions;
+- aggregated hit rates by the identifiers it labelled as brands;
+- correlated total review count with mean lexical coverage.
 
-**DoP**: Pass if `MAD_w ≤ 0.015` (or BCa95% upper bound ≤ 0.020) and Negative control OK.
-`MAD_w = Σ_A w_A · mean_B | P(B|A) − Pen(B) |` (where `w_A` = brand A buyer weights).
-Prerequisites: **median brands per user ≥ 2**, invariant `Σ_A w_A·D(A→B) ≈ Pen(B)` approximately holds.
+Wilson intervals can be calculated correctly while the variables entering them represent the wrong construct. The audit therefore separates arithmetic validity from measurement validity.
 
-**DJ**: Pass if **Pearson r ≥ 0.80** and **BCa95% lower bound ≥ 0.70**.
+## What the archived run produced
 
-**CEP**: Pass if Wilson confidence intervals are properly calculated and language detection is validated.
+The Amazon pipeline processed 1,000,000 review rows and wrote 256 aggregate rows covering 58 ASINs. It reported Pearson r=-0.280 between total review count per ASIN and mean lexical hit rate.
 
-## Background
+That coefficient is not a test of multilingual language bias. The audit log shows one retained language (`en`) and 27 excluded language codes. A one-language output cannot support a comparison across languages.
 
-Category Entry Points (CEP) analysis examines how brands perform across different market segments, particularly focusing on Category Entry Points (CEPs) and their coverage rates.
+## Schema failures
 
-### CEP Definition
+Two mismatches changed the construct measured by the pipeline.
 
-**CEP Coverage** = **Brand-specific review corpus** hit rate against **CEP dictionary (v1.0)** (sentence-level, negation excluded)
+1. The configuration was organized as `language → dimension → terms`, while the parser expected `dimension → language → terms`. The output consequently recorded `en` as the sole CEP category instead of the intended dimensions: quality, value, innovation, sustainability, and convenience.
+2. The parser passed ASIN values into a nested normalization dictionary that expected brand-name keys. The retained “brands” were product identifiers.
 
-**Operational definition.** **Sentence-level** hit rate of a curated CEP lexicon (`v1.0`), after language detection, per-language lexicon application, and **negation exclusion** ("not oily" does not count). Coverage is normalized across languages before correlating with penetration.
+The variable labelled penetration was total review count, not buyer penetration. The value r=-0.280 is a correlation between ASIN review volume and malformed lexical coverage. It cannot confirm a penetration-coverage trade-off.
 
-**Multilingual Processing**: Language detection → language-specific dictionary → normalization
+![Archived CEP coverage output. The visualization reflects the parser's malformed category and identifier structure, not a validated multilingual brand comparison.](https://res.cloudinary.com/dgqphttst/image/upload/v1758994484/cep_coverage_complete_fk9rhy.png)
 
-**H1 Hypothesis**: `corr(Coverage, Penetration)` relationship analysis
+*Figure 1. Archived lexical-coverage output. The figure is retained to document the pipeline result; it should not be read as evidence of English dominance or multilingual brand coverage.*
 
-## Methodology
+## Logged counts
 
-### Data Processing
+The run wrote 256 aggregate rows covering 58 ASINs and reported 618,066 excluded cells below its minimum threshold. The log recorded one retained language (`en`) and 27 excluded language codes.
 
-- **Data Source**: Amazon review data (1,000,000+ records)
-- **Input SHA**: faa6eadcba54534f (full reproducibility)
-- **Chunk Processing**: 100,000 records per chunk for memory efficiency
-- **Multilingual Support**: 27 languages detected, 1 adopted (English), 26 excluded due to data sufficiency constraints
+Those counts describe filtering behavior, not multilingual coverage. “Detected,” “retained,” and “compared” are different states: detecting language codes upstream does not create a 27-language analysis when only one language survives into the output.
 
-### Statistical Implementation
+## Withdrawn coverage claim
 
-We employed Wilson confidence intervals for coverage rates due to their superior performance with small-n cells compared to Wald intervals, providing better coverage properties for proportion estimation. H1 correlation analysis examined brand penetration versus coverage relationships, while complete exclusion logging and input SHA verification ensured data integrity throughout the processing pipeline.
+No archived log or output contains a before/after test in which bottom-five CEP coverage increased from 38% to 52%. No intervention was recorded. The claimed increase and its associated accuracy statement are withdrawn.
 
-**Operational definition.** We compute **CEP coverage** as the **sentence-level hit rate** of a curated lexicon (`v1.0`), after language detection, per-language lexicon application, and **negation exclusion** ("not oily" is not counted). The coverage metric is normalized across languages.
+The archived CEP-stratified Duplication of Purchase demo also reported zero users after mapping. Its unweighted result is not evidence of a passed replication.
 
-## Results
+## CEP-stratified DoP demo
 
-### Main Finding: English-Centric Bias Limits Multilingual Coverage
+The original article presented an unweighted MAD from a CEP-stratified demonstration as a PASS. The same artifact reported zero users because the brand mapping did not produce an analyzable cohort. A metric emitted after the population has collapsed cannot validate the stratification logic. This demo remains a test fixture for repairing mappings, not a positive result.
 
-**Conclusion**: High-penetration brands underperform in multilingual CEP coverage, requiring immediate localization strategy redesign.
+## Reproduction record
 
-**Supporting Evidence**:
-1. **Negative Correlation**: Pearson r = -0.28, Spearman r = -0.59 (strong negative relationship)
-2. **English Dominance**: English shows exceptional performance vs. other languages
-3. **Data Quality**: 1M+ records processed, 26 languages excluded due to insufficient data
-4. **Statistical Rigor**: Wilson confidence intervals ensure reliable proportion estimation
+The archived command was:
 
-### Coverage Analysis
+```bash
+poetry run python scripts/stp/compute_cep_coverage.py \
+  --input $AMAZON_RAW_DIR/amazon_reviews.tsv \
+  --chunk_size 100000
+```
 
-Our coverage analysis processed over 1 million Amazon review records across 27 languages, with comprehensive exclusion logging to ensure data quality. The analysis successfully identified 256 CEP matches while excluding 26 languages due to insufficient data and 618,066 cells below the minimum threshold, demonstrating rigorous data filtering for reliable statistical results.
+The associated log retained an input SHA prefix. Replaying the command against the same file would reproduce the schema mismatch unless the parser or configuration is changed. A corrected implementation should receive a new version and output path rather than silently replacing the archived result.
 
-**Overall Statistics**:
-- **Total CEP Matches**: 256
-- **Excluded Languages**: 26 (insufficient data for reliable analysis)
-- **Excluded Cells**: 618,066 (below threshold)
-- **Coverage Range**: 0.0 to 1.0
+## Claim boundary
 
-### H1 Correlation Analysis
+This run is a failed measurement prototype. It does not establish English-centric bias, compare 27 languages, identify localization opportunities, or justify localization spending. A new implementation must align the lexicon and parser schemas, normalize actual brands, define buyer penetration from buyer records, and specify the language comparison before examining outcomes.
 
-The H1 correlation analysis reveals a significant negative relationship between brand penetration and CEP coverage rates, confirming our hypothesis that higher penetration brands tend to have lower coverage across different market segments. This finding suggests that successful brands may focus on core messaging rather than broad category entry point coverage, providing strategic insights for copy deployment and localization investment.
+## Reimplementation requirements
 
-**Correlation Results**:
-- **Pearson Correlation**: -0.2800 (moderate negative)
-- **Spearman Correlation**: -0.5943 (strong negative)
-- **Interpretation**: Higher brand penetration correlates with lower coverage rates
-- **Causal Implication**: High-penetration brands may focus on **narrower language targeting** or have **different audience demographics** that reduce CEP coverage diversity
+1. Validate the lexicon schema before processing data and fail on an unexpected axis order.
+2. Normalize verified brand names before aggregation; keep ASIN as a separate product identifier.
+3. Define penetration from unique buyers in a specified market and window, not from review volume.
+4. Report detected, excluded, and retained languages separately.
+5. Pre-specify the minimum cell size and how sparse languages will be handled.
+6. Treat lexical review coverage as a text proxy unless it is validated against an independent CEP measure.
 
-### Wilson Confidence Intervals
+## Data references
 
-All coverage rates include 95% Wilson confidence intervals to provide statistical rigor and uncertainty quantification. Wilson intervals are preferred over Wald intervals for proportion estimation, especially with small sample sizes, as they provide better coverage properties and more accurate confidence bounds for our CEP analysis.
-
-- **ci_low**: Lower bound of confidence interval
-- **ci_high**: Upper bound of confidence interval
-- **Coverage**: Point estimate of coverage rate
-
-## Strategic Implementation
-
-### Required Action: Redesign Localization Strategy
-
-**Main Message**: Marketing teams may want to consider redesigning copy deployment and localization investment to address English-centric bias and expand multilingual coverage, based on this dataset's findings.
-
-**Supporting Logic**:
-1. **English Dominance Problem**: English shows exceptional performance while other languages underperform
-2. **Penetration-Coverage Trade-off**: High-penetration brands sacrifice multilingual coverage
-3. **Data Collection Gaps**: 26 languages excluded due to insufficient data limits analysis scope
-
-**Implementation Strategy**:
-- **Phase 1**: Test messaging validation in top 3 languages with quantitative CEP tracking
-- **Phase 2**: Reallocate localization budget from English to underperforming language markets
-- **Phase 3**: Expand data collection across diverse language markets for comprehensive analysis
-
-### Multilingual Performance Analysis
-
-The analysis reveals significant variation in brand performance across languages, with English showing exceptional dominance in both coverage rates and penetration. This finding suggests that current marketing strategies may be heavily biased toward English-speaking markets, potentially missing opportunities in other language segments.
-
-- **English (en)**: Highest coverage rates and penetration
-- **Other Languages**: Variable performance with some showing low coverage
-- **Language Exclusion**: 26 languages excluded due to insufficient data (<20 records)
-
-### H1 Correlation Insights
-
-The negative correlation between penetration and coverage suggests strategic trade-offs that require immediate attention:
-
-- **Market Saturation**: Higher penetration brands may face coverage limitations
-- **Niche Positioning**: Lower penetration brands may achieve higher coverage in specific segments
-- **Strategic Implications**: Brand strategy may want to consider penetration-coverage trade-offs
-
-### 3. Statistical Validation
-
-Complete specification-compliant implementation:
-
-- **Wilson CI**: Proper confidence interval calculation for proportions
-- **Input SHA**: Full reproducibility and data integrity verification
-- **Exclusion Logging**: Transparent data processing with complete audit trail
-- **H1 Visualization**: Clear correlation analysis with statistical measures
-
-## Data Summary
-
-![Heatmap reveals English brands achieve higher CEP coverage rates compared to other languages, indicating localization investment opportunities](https://res.cloudinary.com/dgqphttst/image/upload/v1758994484/cep_coverage_complete_fk9rhy.png)
-
-*Figure 1 illustrates the CEP coverage analysis results, revealing brand performance variations across market segments with Wilson confidence intervals.*
-
-### Analysis Results
-- **Total Languages Analyzed**: 27 languages detected, 1 adopted (English), 26 excluded due to data sufficiency
-- **CEP Matches Identified**: 256 CEP matches across all languages
-- **Excluded Cells**: 618,066 cells below minimum threshold
-- **Correlation Analysis**: Pearson r = -0.28, Spearman r = -0.59 (penetration vs. coverage)
-- **English Performance**: Exceptional coverage rates compared to other languages
-- **Data Quality**: Comprehensive exclusion logging with complete audit trail
-
-## Reproducibility
-
-<details>
-<summary>Reproducibility (Commands, Versions, Logs)</summary>
-
-**Command (repo)**: `poetry run python scripts/stp/compute_cep_coverage.py --input $AMAZON_RAW_DIR/amazon_reviews.tsv --chunk_size 100000`
-
-**Dependencies**: Python 3.9+, pandas, numpy, scipy, matplotlib
-
-**Audit Log**: Complete processing log available in [logs/run_cep_complete.jsonl](/logs/run_cep_complete.jsonl)
-
-</details>
-
-## CEP-Stratified DoP Analysis (H2)
-
-### Demo Implementation
-
-Our CEP-stratified DoP analysis provides a demonstration of how CEP layers can be used for brand duplication analysis.
-
-**Results**:
-- **CEP Layer "en"**: Unweighted MAD = 0.01254 ✅ PASS
-- **Weekly Shuffle**: 0.95 (target: ≥0.95) ✅
-- **Brands**: 31
-
-<details>
-<summary>Demo Limitations</summary>
-
-This implementation uses simplified brand mapping and unweighted MAD calculations, serving as a proof-of-concept rather than production-ready analysis. Users = 0 due to mapping limitations.
-
-</details>
-
-
-### Evidence Files
-
-- **CEP-Stratified Results**: [assets/evidence/dop_by_cep_realistic.csv](/assets/evidence/dop_by_cep_realistic.csv)
-- **Demo Limitations**: [assets/evidence/cep_stratified_demo_limitations.md](/assets/evidence/cep_stratified_demo_limitations.md)
-
-## Current Status
-
-**CEP Analysis**: ✅ COMPLETE - Wilson CI and H1 correlation analysis
-**CEP-Stratified DoP**: ✅ DEMO COMPLETE - Simplified implementation with PASS example
-**Statistical Validation**: ✅ Complete with input SHA, exclusion logging, and correlation analysis
-
-## Key Insights
-
-### 1. Multilingual Market Dynamics
-
-**Conclusion**: Significant language diversity in brand performance reveals English-centric bias requiring immediate localization strategy adjustment.
-
-**Supporting Evidence**:
-1. **Language Diversity**: Significant variation in brand performance across languages
-2. **Data Quality**: 26 languages excluded due to insufficient data
-3. **Coverage Patterns**: English shows highest coverage and penetration
-
-### 2. Penetration-Coverage Trade-offs
-
-**Conclusion**: Negative correlation between penetration and coverage requires strategic balance in marketing approach.
-
-**Supporting Evidence**:
-1. **Negative Correlation**: Higher penetration correlates with lower coverage
-2. **Strategic Implications**: Brands must balance penetration and coverage strategies
-3. **Market Saturation**: High penetration may limit coverage opportunities
-
-- **Negative Correlation**: Higher penetration correlates with lower coverage
-- **Strategic Implications**: Brands must balance penetration and coverage strategies
-- **Market Saturation**: High penetration may limit coverage opportunities
-
-### 3. Statistical Rigor
-
-**Conclusion**: Rigorous statistical implementation with Wilson confidence intervals and audit trails ensures reliable multilingual analysis.
-
-**Supporting Evidence**:
-1. **Wilson CI**: Proper confidence interval calculation for coverage rates
-2. **Input Validation**: SHA verification ensures data integrity
-3. **Audit Trail**: Complete logging of data processing and exclusions
-
-- **Wilson CI**: Proper confidence interval calculation for coverage rates
-- **Input Validation**: SHA verification ensures data integrity
-- **Audit Trail**: Complete logging of data processing and exclusions
-
-## Implications for Marketing Strategy
-
-1. **Multilingual Considerations**: Brand strategies may want to account for language-specific performance
-2. **Penetration vs. Coverage**: Brands must balance these competing objectives
-3. **Data Quality**: Sufficient data volume required for reliable analysis
-4. **Statistical Validation**: Proper confidence intervals essential for decision-making
-
-## Limitations and Threats to Validity
-
-These results are contingent on category selection, temporal windowing, and minimum buyer thresholds. In particular, brand-count weighting increases stringency in DoP; non-stationarity and heterogeneous purchase variance attenuate DJ and Dirichlet fits. We report full audit logs and input SHAs to support replication.
-
-## Next Steps
-
-Future research should investigate production-ready brand mapping for CEP-stratified analysis, explore additional data sources for multilingual analysis, examine penetration-coverage optimization strategies, and develop guidelines for language-specific brand positioning.
-
-## References
-
-- Kotler, P. and Keller, K.L. (2015). Marketing Management
+- Ni, J., Li, J., & McAuley, J. (2019). “Justifying Recommendations using Distantly-Labeled Reviews and Fine-Grained Aspects.” *Proceedings of EMNLP-IJCNLP 2019*, 188–197. [https://doi.org/10.18653/v1/D19-1018](https://doi.org/10.18653/v1/D19-1018)
+- McAuley Lab, UC San Diego. [Amazon Review Data (2018)](https://cseweb.ucsd.edu/~jmcauley/datasets/amazon_v2/).
 
 ---
 
+{% include cta-whitepaper.html %}

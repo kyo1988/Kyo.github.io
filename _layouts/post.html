@@ -60,7 +60,9 @@ layout: default
   <hr />
 </div>
 
+{% unless page.suppress_default_cta %}
 {% include cta.html %}
+{% endunless %}
 {% include related-by-tags.html %}
 
 {% if site.related_posts.size >= 1 %}
@@ -76,3 +78,9 @@ layout: default
 
 {% include page_pagination.html %}
 {% include comments.html %}
+
+{% if site.google_analytics %}
+{% if site.google_analytics.ga4_primary or site.google_analytics.ga4_rollup %}
+<script src="{{ '/assets/js/analytics.js' | relative_url }}"></script>
+{% endif %}
+{% endif %}

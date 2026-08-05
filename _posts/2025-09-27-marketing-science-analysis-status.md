@@ -1,278 +1,152 @@
 ---
 layout: post
-title: "Marketing Science Analysis Status: Specification-Compliant Implementation with Real-World Insights"
+title: "EBM-2025 Analysis Status: Code Audit and Withdrawn Claims"
 date: 2025-09-27 14:00:00 +0900
+last_modified_at: 2026-08-05 00:00:00 +0900
 categories: [Marketing Science, Data Analysis]
-tags: [Marketing Science, Ehrenberg-Bass, Statistical Analysis, Specification-Compliant, Real-World Data]
+tags: [Marketing Science, Ehrenberg-Bass, Replication Audit, Research Integrity]
 permalink: /marketing/2025/09/27/marketing-science-analysis-status.html
-description: "DoP achieves near-pass, DJ falls short, CEP and Moderation are useful. Investment decision roadmap for next quarter."
+description: "August 2026 correction: five EBM-2025 claims and the resulting marketing recommendations are withdrawn after a code audit."
+suppress_default_cta: true
 ---
 
-## Series Navigation
+> **Correction — August 2026**
+>
+> This article originally presented the EBM-2025 pipeline as a specification-compliant analysis with decision-ready marketing implications. A subsequent audit of the code, configuration, and logs found that several statements exceeded what the implementation measured. Five claims and all strategy or budget recommendations derived from them are withdrawn. This page retains the published URL and the archived numerical outputs so that the correction is explicit rather than silent.
 
-**Marketing Science Analysis Series**:
-- [Duplication of Purchase Analysis](/marketing/2025/09/27/duplication-of-purchase-near-miss.html)
-- [Double Jeopardy Analysis](/marketing/2025/09/27/double-jeopardy-analysis-fail.html)
-- [Category Entry Points Analysis](/marketing/2025/09/27/category-entry-points-analysis.html)
-- [Moderation & Dirichlet Analysis](/marketing/2025/09/27/moderation-dirichlet-analysis.html)
-- **Analysis Status Overview** ← Current (Hub)
+The corrected report is [EBM-2025 v0.2: Public-data replication audit](https://www.visageaiconsulting.com/en/whitepaper/ebm-2025). The [v0.2 PDF](https://www.visageaiconsulting.com/whitepapers/ebm-2025-v0.2.pdf) contains the methods, code-audit findings, limits, and references. The [original v0.1 PDF](https://www.visageaiconsulting.com/whitepapers/ebm-2025-v0.1.pdf) remains archived and is superseded.
+
+## Series navigation
+
+- [Duplication of Purchase: a near-miss that did not pass]({{ site.baseurl }}/marketing/2025/09/27/duplication-of-purchase-near-miss.html)
+- [Double Jeopardy: failed project gate, inconclusive replication]({{ site.baseurl }}/marketing/2025/09/27/double-jeopardy-analysis-fail.html)
+- [Category Entry Points: language-bias claim withdrawn]({{ site.baseurl }}/marketing/2025/09/27/category-entry-points-analysis.html)
+- [Buyer-frequency persistence and NBD: claims narrowed]({{ site.baseurl }}/marketing/2025/09/27/moderation-dirichlet-analysis.html)
 
 ## TL;DR
 
-**Key Findings**: Consider implementing comprehensive marketing strategy pivot based on analysis results. DoP near-miss (0.015863) suggests cross-sell optimization potential, DJ failure (r=0.627) indicates limited applicability of Ehrenberg-Bass principles, CEP analysis reveals localization challenges, and Q4 heavy buyers show highest optimization potential in this dataset.
+The original project asked whether four archived public-data pipelines reproduced patterns associated with Ehrenberg-Bass marketing science. The 2026 code audit changes the answer: one Duplication of Purchase output was close to an internal gate, Double Jeopardy failed two project checks, and the buyer-frequency, CEP, and NBD outputs do not measure the stronger constructs originally attributed to them.
 
-**Next Steps**: (1) Launch cross-sell A/B testing, (2) Pivot budget to reach expansion, (3) Redesign localization strategy, (4) Target Q4 heavy buyers for optimization.
+The project remains useful for a different reason. It shows how an analysis can run to completion, emit plausible numbers and figures, and still lose the connection between a named method and the quantity implemented in code. The corrected articles document those breaks at the estimator, resampling, temporal-order, grouping, and configuration-schema levels.
 
-## Executive Summary
+No marketing action follows directly from the archive. A new study can use it as a failure map: define the market and constructs first, pre-specify gates, correct the estimators, and rerun on traceable inputs.
 
-**Situation**: Comprehensive marketing science analysis reveals mixed results across four core Ehrenberg-Bass principles, suggesting limited applicability in this specific beauty category dataset.
+## What the project attempted to measure
 
-**Implication**: Traditional marketing science frameworks may require adaptation for this context, revealing both opportunities and limitations.
+The four analysis families answer different questions and should not be treated as one composite validation score.
 
-**Key Findings**: Marketing teams may want to consider implementing strategic pivot with cross-sell optimization, reach expansion, localization redesign, and heavy buyer targeting for maximum effectiveness, based on this dataset's findings.
+- **Duplication of Purchase (DoP):** whether buyers of one label also buy other labels in proportions related to those labels' penetration.
+- **Double Jeopardy (DJ):** whether lower-penetration labels also have lower average buying frequency among their buyers.
+- **Buyer-frequency persistence:** whether transaction frequency in one observed quarter is associated with frequency in an adjacent quarter, conditional on an outcome-derived purchase-volume group.
+- **Category Entry Points (CEP):** whether review text can be mapped to intended lexical dimensions across languages and normalized brands.
+- **NBD diagnostic:** whether an estimated purchase-frequency distribution produces predictions that match observed behavior.
 
-**Data Availability**: We publish **figures and minimal summary statistics** only. Raw transactions/reviews and run logs remain private; all public numbers are reproducible from the Reproduction Line in each figure.
+The datasets were not observations from one market. The archive combined grocery orders, household retail transactions, giftware invoices, and Amazon reviews. Category construction, buyer identifiers, observation windows, and label definitions differed across pipelines. Cross-pipeline agreement cannot therefore be interpreted as triangulation on one consumer process.
 
-## Spec Gate
+## Project-defined gates
 
-**DoP**: Pass if `MAD_w ≤ 0.015` (or BCa95% upper bound ≤ 0.020) and Negative control OK.
-`MAD_w = Σ_A w_A · mean_B | P(B|A) − Pen(B) |` (where `w_A` = brand A buyer weights).
-Prerequisites: **median brands per user ≥ 2**, invariant `Σ_A w_A·D(A→B) ≈ Pen(B)` approximately holds.
+The archived DoP gate was weighted MAD ≤0.015, with an alternative rule based on an interval upper bound and additional prerequisite checks. The reported summary took the form
 
-**DJ**: Pass if **Pearson r ≥ 0.80** and **BCa95% lower bound ≥ 0.70**.
+`MAD_w = Σ_A w_A · mean_B | P(B|A) − Pen(B) |`.
 
-## Executive Decision Summary
+The archived Double Jeopardy gate required Pearson r≥0.80 and a lower interval bound ≥0.70. These were internal project rules. They were not universal rejection thresholds supplied by Ehrenberg-Bass theory, and passing or failing them would not by itself validate or refute the underlying empirical regularity.
 
-**DoP — where we stand.**
-Our strict gate is **`MAD_w ≤ 0.015`**. The best spec-compliant result is **`MAD_w = 0.015863`**, i.e., `gap = +0.000863`, validated with **BCa (B=5,000)**, weekly label-shuffle, and invariants.
-**By dataset (illustrative):** Instacart `0.0073 PASS`, UCI `0.0286 FAIL`, dunnhumby `0.015863 NEAR-MISS`. This split indicates the gate is **approachable** under some retail contexts but **non-trivial** in others.
-**DJ** under `26w, min_buyers=500` is **r = 0.627**, below the gate; sensitivity suggests category structure/retailer mix weakens the penetration–frequency link.
+## Corrected status
 
-**This Quarter's Key Learnings**:
-- **DoP near-miss** (gap = +0.000863) suggests partial validity of Ehrenberg-Bass principles in this dataset
-- **DJ failure** (r=0.627) indicates limited applicability of traditional marketing science frameworks
-- **CEP/Moderation insights** reveal category-specific patterns requiring adapted strategies
+The 2025 project is an exploratory replication audit. It is not a validated replication, a client case study, or a marketing playbook.
 
-**Strategic Implementation Priorities**:
-- **Cross-Sell Optimization**: Launch A/B testing for top brand pairs with shelf placement optimization
-- **Reach Expansion**: Redesign KPIs to prioritize new customer acquisition over frequency metrics
-- **Localization Strategy**: Test messaging validation in top 3 languages and track CEP improvement
-- **Heavy Buyer Targeting**: Implement Q4-focused optimization with basket expansion design
+| Analysis | Archived output | Gate or check | Defensible conclusion |
+|---|---:|---:|---|
+| Duplication of Purchase, dunnhumby | weighted MAD 0.015863 | ≤0.015 | The run failed; it was a near-miss to the project gate |
+| Duplication of Purchase, Instacart | weighted MAD 0.021854 | ≤0.015 | The run failed |
+| Double Jeopardy, UCI | Pearson r=0.627 | ≥0.80 | The run failed its project gate and stationarity check |
+| Buyer-frequency persistence, UCI Q4 | R²=0.472 | no confirmatory gate | Descriptive adjacent-quarter association only |
+| CEP lexical pipeline, Amazon | r=-0.280 | no valid language-bias test | Not interpretable because the parser and configuration schemas disagree |
+| NBD diagnostic, UCI | R²≈-7×10⁻⁶ | no valid goodness-of-fit test | Not an NBD fit result; the evaluation predicted the sample mean |
 
-### Specification Gates
+These outputs do not support causal marketing recommendations. The archive contains no experiment connecting them to cross-sell revenue, reach expansion, localization performance, buyer targeting, or return on investment.
 
-**DoP Gate**: Pass if **weighted MAD ≤ 0.015** (or **BCa 95% upper ≤ 0.020**), with invariants and negative control satisfied.
-`MAD = Σ_A w_A · mean_B | P(B|A) − Pen(B) |`, where `w_A` is buyer-weighted share.
-**Precondition**: median brands per user ≥ 2.
+## Reading the numerical outputs
 
-**DJ Gate**: Pass if **Pearson r ≥ 0.80** and **BCa 95% lower ≥ 0.70**. Window/min_buyers must be stated.
+### Duplication of Purchase
 
-## Background
+The dunnhumby output is the closest archived run to its internal threshold. The weighted value exceeded the gate by 0.000863. The Instacart comparison was farther away. These are descriptive outputs from the archived pipeline, not confirmatory estimates, because the matrix construction, weights, interval, temporal shuffle, and run-selection process all require correction.
 
-This analysis evaluates four core marketing science principles using real-world data:
+### Double Jeopardy
 
-- **Double Jeopardy (DJ)**: The relationship between brand penetration and purchase frequency among buyers
-- **Duplication of Purchase (DoP)**: How buyers of one brand also purchase other brands in the same category
-- **Category Entry Points (CEP)**: Brand coverage across different market segments and languages
-- **Buyer Moderation**: How purchase behavior varies across different buyer segments (quantiles)
+Pearson r=0.627 is below the project's 0.80 criterion, and the stationarity flag also failed. The point estimate is still a correlation across derived labels in one transformed dataset. It cannot determine whether the empirical law fails in a validly defined beauty market.
 
-Each analysis employs specification-compliant statistical methods including BCa Bootstrap, real temporal randomization, and negative controls to ensure production-ready results.
+### Buyer-frequency persistence
 
-## Strategic Decision Framework
+The Q4 regression had the largest within-sample R². Because purchase-volume groups were recalculated from contemporaneous outcomes and the model contained no intervention, this is a descriptive persistence result. It is neither a moderation effect of marketing contact nor evidence that high-volume buyers should receive more budget.
 
-### Main Finding: Mixed Results Require Immediate Strategic Pivot
+### CEP and NBD
 
-**Conclusion**: Comprehensive marketing science analysis reveals mixed results across four core principles, requiring immediate strategic adjustments to maximize ROI and optimize marketing effectiveness.
+Both pipelines lost their intended constructs in implementation. The CEP output does not compare languages or normalized brands. The NBD evaluation does not use fitted-distribution predictions. Their numerical outputs are retained to locate the failure, not to characterize market behavior or model fit.
 
-**Supporting Evidence**:
-1. **DoP Near-Miss**: 0.015863 (gap +0.000863) validates cross-sell optimization potential
-2. **DJ Failure**: r=0.627 requires reach investment priority over loyalty programs
-3. **CEP Success**: Multilingual analysis reveals English-centric bias requiring localization redesign
-4. **Q4 Heavy Buyers**: R²=0.472 indicates highest optimization potential for targeted efforts
+## Withdrawn claims
 
-### Current Status Overview
+### 1. Top-decile Double Jeopardy deviation
 
-**Conclusion**: Mixed results across four core marketing science principles require immediate strategic adjustments, with DoP near-miss and Q4 heavy buyers offering highest optimization potential.
+No top-decile or middle-quantile split exists in the Double Jeopardy script. The reported r=0.627 was computed across all 27 retained labels. It failed the project's 0.80 gate, but that failure does not establish that the Double Jeopardy law fails in the beauty category: the category and label fields were produced by project-specific heuristics from a giftware dataset.
 
-**Supporting Evidence**:
-1. **DoP Near-Miss**: 0.015863 (gap +0.000863) validates cross-sell optimization potential
-2. **DJ Failure**: r=0.627 requires reach investment priority over loyalty programs
-3. **CEP Success**: Multilingual analysis reveals English-centric bias requiring localization redesign
-4. **Q4 Heavy Buyers**: R²=0.472 indicates highest optimization potential for targeted efforts
+### 2. R²=0.472 as response to an additional contact
 
-| Analysis | Status | Key Result | Implication |
-|----------|--------|------------|-------------|
-| **Double Jeopardy** | ❌ FAIL | r = 0.627 (target: ≥0.80) | Weak penetration-frequency relationship |
-| **Duplication of Purchase** | ❌ NEAR-MISS | MAD = 0.015863 (gap: +0.000863) | Close to theoretical threshold |
-| **Category Entry Points** | ✅ COMPLETE | Wilson CI, H1 correlation analysis | Successful multilingual analysis |
-| **Moderation Analysis** | ✅ COMPLETE | Q4 slope = 3.341, R² = 0.472 | Strong quantile effects |
-| **Dirichlet Model** | ⚠️ ILLUSTRATIVE | R² = -7.0e-06 | Weak fit due to high variance |
+The regression contains no contact, campaign, treatment, price, or stock variable. It measures association between transaction counts in adjacent observed quarters. Q4 had the largest within-sample association under the grouping rule; no causal or incremental-sales interpretation follows.
 
-## Key Achievements
+### 3. CEP coverage rising from 38% to 52%
 
-### 1. Specification-Compliant Implementation
+The archived output contains no before/after comparison and no intervention. The reported increase and the associated accuracy statement are withdrawn.
 
-**Claim.** Our production-grade implementation employs rigorous statistical methods across all analyses.
+### 4. Language-bias detection across 27 languages
 
-**Evidence.** We utilize BCa Bootstrap (B=5000, seed=42) for reproducibility, implement real weekly shuffle for actual temporal randomization, and maintain proper negative controls for statistical validation.
+The logged run retained one language and excluded 27 language codes. It also used ASINs as brand identifiers. The value r=-0.280 is therefore not a multilingual language-bias result.
 
-**Implication.** This approach ensures that our results meet production research standards and provide reliable insights into marketing science principles.
+### 5. Poor Dirichlet model fit
 
-**Limits.** Results are sensitive to buyer weighting and temporal windows; stationarity tests and negative controls are reported in the appendix.
+The fitting routine estimated negative-binomial parameters, but the evaluation path predicted the same sample mean for every user. R²≈-7×10⁻⁶ evaluates a constant-mean predictor, not the fitted NBD distribution or a full NBD-Dirichlet model.
 
-### 2. Near-Miss Achievement
+## Implementation findings
 
-**Why "Near-Miss" matters.** The strict gate for DoP is **weighted MAD ≤ 0.015**. Our best result hits **0.015863**, i.e., `gap = +0.000863`, with full validation (BCa B=5,000; weekly shuffle; invariants). This suggests the threshold is **approachable** under certain category/window choices, though not crossed yet.
+The audit identified defects that prevent confirmatory interpretation:
 
-**Validation signals.** The **invariant** `Σ_A w_A·D(A→B) ≈ Pen(B)` holds with a mean absolute error of 0.0032. A **label-shuffle** negative control degrades MAD to 0.0421, confirming signal beyond chance. Median brands per user = 2.0 (≥2 required), so the cohort supports DoP interpretation.
+- the Duplication of Purchase matrix copied one directional conditional rate into both directions;
+- weights were calculated after deduplication and therefore reflected retained buyer counts rather than purchase counts;
+- the reported “BCa” intervals were percentile resamples and did not calculate bias correction or acceleration;
+- the weekly shuffle ran after user-label pairs had been reduced to one row, leaving repeated weeks structurally unavailable;
+- the Double Jeopardy bootstrap lost replacement multiplicity and used a denominator inconsistent with the point estimate;
+- the CEP parser expected a schema different from the supplied configuration;
+- the NBD evaluation compared observations with a constant mean rather than fitted-distribution predictions.
 
-### 3. Real-World Data Insights
+Fourteen Duplication of Purchase filter combinations were examined, and the closest result was selected after those runs. The 0.015 threshold was an internal project rule, not a universal rejection boundary from the underlying theory.
 
-**Claim.** Real-world marketing data exhibits characteristics that challenge theoretical marketing science models.
+## What remains supported
 
-**Evidence.** Purchase behavior shows extreme variability (std = 181.9), marketing science principles vary across categories, and non-stationary data affects analysis validity.
+The weighted dunnhumby Duplication of Purchase statistic did not cross its pre-set gate. The simplified unweighted statistic was not substituted after the result was known to manufacture a pass. That decision remains correct.
 
-**Implication.** These findings suggest that theoretical models require adaptation for real-world applications, with careful consideration of data quality and statistical assumptions.
+The negative and uninterpretable results also identify the requirements for a new study: fixed constructs and gates before analysis, corrected estimators, versioned code, traceable inputs, a clean-environment rerun, and independent review. Those requirements have not yet been met.
 
-**Limits.** Results are specific to the analyzed categories and time periods; broader generalization requires additional validation across diverse datasets.
+## Data and reproduction status
 
-## Analysis Results Summary
+The archive names four source families: dunnhumby Complete Journey, Instacart, UCI Online Retail II, and Amazon Review Data (2018). The raw data are not bundled with this blog or the report. Instacart and dunnhumby also require account- or terms-mediated acquisition.
 
-### Double Jeopardy Analysis ❌
+The dunnhumby, Instacart, and Amazon logs retain input hash prefixes. The UCI runs record their inputs only as `loaded`, and the analysis directory is not tied to a recorded Git commit. The original one-hour reproduction statement was never demonstrated through a clean-environment rerun. Reproduction therefore means rebuilding the analysis under a new versioned specification, not replaying the published commands and assuming identity with the original environment.
 
-**Result**: Pearson r = 0.627 (target: ≥0.80)
-**Failure Analysis**: DJ relationship failure stems from multiple factors that collectively undermine the theoretical marketing science principle. The limited brand count (n=16) provides insufficient data for stable correlation estimation, while the buyer threshold (min=500) excludes marginal brands that might strengthen the relationship. Additionally, the 26-week time window may be too short for purchase frequency patterns to stabilize, contributing to the weak correlation observed.
+## What a valid follow-up would change
 
-- **Brand Count Impact**: n_brands = 16 (insufficient for stable correlation)
-- **Buyer Threshold**: min_buyers = 500 (excludes marginal brands)
-- **Time Window**: 26 weeks (may be too short for frequency stabilization)
-
-**Sensitivity Analysis**: Parameter sensitivity analysis reveals that DJ relationship weakness is inherent to beauty category data rather than a methodological issue. While lowering the buyer threshold to 300 provides minimal improvement (r=0.634), extending the time window to 52 weeks actually reduces correlation strength, confirming that the weak relationship is data-specific and requires strategic pivot rather than parameter optimization.
-
-| Window | Min Buyers | Pearson r | Spearman r | Implication |
-|--------|------------|-----------|------------|-------------|
-| 26 weeks | 300 | 0.634 | 0.571 | Lower threshold improves |
-| 26 weeks | 500 | 0.627 | 0.562 | Baseline |
-| 26 weeks | 1000 | 0.598 | 0.548 | Higher threshold reduces |
-| 52 weeks | 300 | 0.612 | 0.555 | Longer window + lower threshold |
-| 52 weeks | 500 | 0.589 | 0.534 | Longer window reduces |
-| 52 weeks | 1000 | 0.556 | 0.512 | Both constraints reduce |
-
-**Implication**: Weak brand penetration-frequency relationship due to data constraints
-
-### Duplication of Purchase Analysis ❌
-
-**Best Result**: dunnhumby beauty MAD = 0.015863 (gap: +0.000863)
-**Comparison**: Instacart shampoo MAD = 0.021854
-**Implication**: Close to theoretical threshold but not achieved
-
-### Category Entry Points Analysis ✅
-
-**Result**: Complete multilingual analysis with Wilson CI
-**H1 Correlation**: Pearson = -0.28, Spearman = -0.59
-**Implication**: Higher penetration correlates with lower coverage
-
-### Moderation Analysis ✅
-
-**Result**: Strong quantile effects (Q4 slope = 3.341)
-**Implication**: Heavy buyers show strongest relationships
-
-### Dirichlet Model Analysis ⚠️
-
-**Result**: R² = -7.0e-06 (very poor fit)
-**Scope Limitation**: Designed for **category × brand × buyer distribution** panel data
-**Excluded Data**: SKU-level, review data, and non-panel sources are **out of scope**
-**Implication**: Theoretical model struggles with real-world data complexity
-
-## Simplified vs. Specification-Compliant
-
-### Simplified Version Results
-
-- **Purpose**: Demonstration and quick validation
-- **Method**: Unweighted MAD, estimated weekly shuffle
-- **Results**: 2 PASS examples achieved
-- **Use Case**: Educational purposes, proof-of-concept
-
-### Specification-Compliant Version Results
-
-- **Purpose**: Production-ready statistical analysis
-- **Method**: Weighted MAD, BCa (B=5000, seed=42), real weekly shuffle
-- **Results**: Near-miss achievement, no strict PASS
-- **Use Case**: Research publication, statistical validation
-
-## Synthesis
-
-The specification-compliant implementation reveals why achieving PASS examples is challenging: brand purchase count–weighted MAD increases stringency compared to unweighted calculations, while category dynamics and temporal instability contribute to DJ analysis failures. The CEP and moderation results complement these findings by demonstrating successful multilingual analysis and robust quantile-based buyer segmentation, respectively, suggesting that some marketing science principles are more applicable than others in real-world contexts.
-
-## Data Summary
-
-![Overview demonstrates DoP near-miss achievement (0.015863) providing foundation for cross-sell optimization with significant revenue potential](https://res.cloudinary.com/dgqphttst/image/upload/v1758994485/dop_heat_dunnhumby_beauty_spec_q90_b2_m20_n2rd5h.png)
-
-*Figure 1 provides an overview of the marketing science analysis pipeline, highlighting the near-miss DoP result and comprehensive statistical validation across all methodologies.*
-
-### Analysis Results Summary
-- **Double Jeopardy**: r = 0.627 (FAIL, target: ≥0.80)
-- **Duplication of Purchase**: MAD = 0.015863 (NEAR-MISS, gap: +0.000863)
-- **Category Entry Points**: 256 CEP matches, 26 languages excluded
-- **Moderation Analysis**: Q4 R² = 0.472 (highest optimization potential)
-- **Dirichlet Model**: R² ≈ 0 (extremely poor fit)
-- **Total Brands Analyzed**: 16 brands across all analyses
-- **Statistical Validation**: All analyses meet specification requirements
-
-### Methodology Summary
-
-**Statistical Framework**: All analyses employ specification-compliant methods including BCa Bootstrap (B=5000, seed=42), real weekly shuffle for temporal randomization, and negative controls for validation.
-
-**Data Sources**: 
-- UCI beauty category data (1,264 users, 27 brands) for DJ and Moderation analysis
-- Dunnhumby beauty data (1,735 users, 46 brands) for DoP near-miss analysis  
-- Amazon review data (1M+ records, 27 languages) for CEP analysis
-
-**Quality Assurance**: Complete audit logging in JSONL format, input SHA verification for reproducibility, and stationarity testing across all analyses.
-
-<details>
-<summary>Reproducibility (Commands, Versions, Logs)</summary>
-
-For detailed reproducibility information, refer to the individual analysis articles:
-- **Double Jeopardy**: [DJ Analysis Reproducibility](/marketing/2025/09/27/double-jeopardy-analysis-fail.html#reproducibility)
-- **Duplication of Purchase**: [DoP Analysis Reproducibility](/marketing/2025/09/27/duplication-of-purchase-near-miss.html#reproducibility)
-- **Category Entry Points**: [CEP Analysis Reproducibility](/marketing/2025/09/27/category-entry-points-analysis.html#reproducibility)
-- **Moderation/Dirichlet**: [Moderation Analysis Reproducibility](/marketing/2025/09/27/moderation-dirichlet-analysis.html#reproducibility)
-
-**Common Dependencies**: Python 3.9+, pandas, numpy, scipy, scikit-learn, matplotlib
-
-</details>
-
-## Limitations and Threats to Validity
-
-These results are contingent on category selection, temporal windowing, and minimum buyer thresholds. In particular, brand-count weighting increases stringency in DoP; non-stationarity and heterogeneous purchase variance attenuate DJ and Dirichlet fits. We report full audit logs and input SHAs to support replication.
-
-## Strategic Implementation Plan
-
-### Required Action: Execute Strategic Marketing Pivot
-
-**Main Message**: Marketing teams may want to consider implementing comprehensive strategy adjustments based on analysis results to maximize ROI and optimize marketing effectiveness, recognizing the limited applicability of traditional Ehrenberg-Bass principles in this specific dataset.
-
-**Implementation Strategy**:
-- **Cross-Sell Optimization**: Launch A/B testing for top brand pairs with shelf placement optimization
-- **Reach Expansion**: Redesign KPIs to prioritize new customer acquisition over frequency metrics
-- **Localization Strategy**: Test messaging validation in top 3 languages and track CEP improvement
-- **Heavy Buyer Targeting**: Implement Q4-focused optimization with basket expansion design
-
-**Resource Allocation**:
-- **Cross-Sell Optimization**: 40% of budget (DoP near-miss validation)
-- **Reach Expansion**: 35% of budget (DJ failure requires penetration focus)
-- **Localization Strategy**: 20% of budget (CEP analysis reveals English-centric bias)
-- **Heavy Buyer Targeting**: 5% of budget (Q4 segment offers highest ROI potential)
-
-## Conclusion
-
-Our marketing science analysis pipeline demonstrates the importance of specification-compliant implementation in revealing genuine data characteristics. While no strict PASS examples were achieved, the near-miss results and comprehensive statistical validation provide valuable insights into the gap between theoretical expectations and real-world data. This analysis contributes to the understanding of marketing science principles in practice and highlights the need for rigorous statistical implementation in marketing research.
+1. Define category, brand, buyer, penetration, purchase, and observation window before examining outcomes.
+2. Freeze one implementation for each estimator and test it against small hand-calculated fixtures.
+3. Resample independent buyers or households rather than derived matrix cells.
+4. Preserve temporal information until after negative controls and stationarity checks run.
+5. Separate descriptive association, predictive evaluation, and causal intervention claims.
+6. Record input hashes, code commit, environment lockfile, and all attempted specifications.
+7. Require an independent clean-environment rerun before describing the result as a replication.
 
 ## References
 
-- Ehrenberg, A.S.C. (1988). Repeat-buying: facts, theory and applications
-- Sharp, B. (2010). How Brands Grow
+- Ehrenberg, A.S.C. (1988). *Repeat-Buying: Facts, Theory and Applications*.
+- Sharp, B. (2010). *How Brands Grow*.
 
 ---
 
+{% include cta-whitepaper.html %}

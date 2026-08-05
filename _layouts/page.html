@@ -23,3 +23,9 @@ layout: default
   {% endif %}
 
 </div>
+
+{% if site.google_analytics %}
+{% if site.google_analytics.ga4_primary or site.google_analytics.ga4_rollup %}
+<script src="{{ '/assets/js/analytics.js' | relative_url }}"></script>
+{% endif %}
+{% endif %}

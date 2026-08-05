@@ -1,273 +1,121 @@
 ---
 layout: post
-title: "Moderation and Dirichlet Analysis: Quantile-Based Insights and Model Fit Challenges"
+title: "Buyer-Frequency Persistence and NBD: Claims Narrowed After Code Audit"
 date: 2025-09-27 13:00:00 +0900
+last_modified_at: 2026-08-05 00:00:00 +0900
 categories: [Marketing Science, Data Analysis]
-tags: [Buyer Moderation, NBD-Dirichlet, Quantile Analysis, Statistical Modeling, R-squared]
+tags: [Buyer Frequency, Negative Binomial Distribution, Replication Audit, Research Integrity]
 permalink: /marketing/2025/09/27/moderation-dirichlet-analysis.html
-description: "Heavy buyers (Q4) show strongest purchase behavior persistence over time (R²=0.472). Dirichlet fit is R²≈0, best kept as reference only."
+description: "August 2026 correction: Q4 R²=0.472 is a descriptive adjacent-quarter association, while the reported NBD result evaluates a constant-mean predictor."
+suppress_default_cta: true
 ---
 
-## Series Navigation
+> **Correction — August 2026**
+>
+> The original article interpreted Q4 R²=0.472 as response to an additional marketing contact and treated R²≈0 as poor Dirichlet fit. Both claims are withdrawn. The regression contains no contact or treatment variable, and the NBD evaluation predicted the sample mean rather than using the fitted distribution.
 
-**Marketing Science Analysis Series**:
-- [Double Jeopardy Analysis](/marketing/2025/09/27/double-jeopardy-analysis-fail.html) ← Previous
-- [Category Entry Points Analysis](/marketing/2025/09/27/category-entry-points-analysis.html) ← Next
-- [Duplication of Purchase Analysis](/marketing/2025/09/27/duplication-of-purchase-near-miss.html)
-- [Analysis Status Overview](/marketing/2025/09/27/marketing-science-analysis-status.html) ← Hub
+Read the [corrected EBM-2025 v0.2 report](https://www.visageaiconsulting.com/en/whitepaper/ebm-2025) or the [v0.2 PDF](https://www.visageaiconsulting.com/whitepapers/ebm-2025-v0.2.pdf). The [original v0.1 PDF](https://www.visageaiconsulting.com/whitepapers/ebm-2025-v0.1.pdf) is archived and superseded.
+
+## Series navigation
+
+- [Duplication of Purchase analysis]({{ site.baseurl }}/marketing/2025/09/27/duplication-of-purchase-near-miss.html)
+- [Double Jeopardy analysis]({{ site.baseurl }}/marketing/2025/09/27/double-jeopardy-analysis-fail.html)
+- [Category Entry Points analysis]({{ site.baseurl }}/marketing/2025/09/27/category-entry-points-analysis.html)
+- [Corrected analysis status]({{ site.baseurl }}/marketing/2025/09/27/marketing-science-analysis-status.html)
 
 ## TL;DR
 
-**Key Findings**: Consider implementing Q4-focused A/B testing to optimize heavy buyer segment performance. Heavy buyers (Q4) show the strongest relationship (R²=0.472) in this dataset, suggesting they may be the most predictable and valuable customer segment.
+The archived quarterly regression produced its largest within-sample association in Q4: standardized slope 3.341 and R²=0.472. This is a descriptive adjacent-quarter frequency result. It does not measure response to an additional marketing contact and does not establish that high-volume buyers are the most valuable intervention target.
 
-**Next Steps**: (1) Launch Q4-focused A/B testing with basket expansion and frequency suppression design, (2) Target heavy buyer segments for offer optimization, (3) Abandon Dirichlet model approaches due to poor fit (R²≈0).
+The separate NBD routine successfully returned fitted parameters, but its evaluation assigned every user the sample mean. R²≈-7×10⁻⁶ therefore evaluates a constant predictor, not the fitted negative-binomial distribution or an NBD-Dirichlet model.
 
-## Executive Summary
+## Two different analyses
 
-**Situation**: Heavy buyers (Q4) show the strongest relationship (R²=0.472), demonstrating predictable and valuable behavior patterns, while Dirichlet model fails (R²≈0) due to high data variance.
+The original article combined a buyer-frequency regression and a distribution-fitting exercise. They should be read separately.
 
-**Implication**: Q4 segment offers the highest ROI potential for optimization efforts in this dataset.
+- **Buyer-frequency persistence:** association between transaction counts in adjacent recorded quarters within purchase-volume groups.
+- **NBD diagnostic:** estimation of a negative-binomial purchase-frequency distribution followed by an attempted goodness-of-fit evaluation.
 
-**Key Findings**: Marketing teams may want to consider implementing Q4-focused A/B testing with basket expansion and frequency suppression design, targeting the most predictable customer segment for maximum effectiveness, based on this dataset's findings.
+Neither analysis contained a marketing intervention. “Moderation” in the filename did not mean that contact frequency or campaign exposure moderated an outcome.
 
-**Data Availability**: We publish **figures and minimal summary statistics** only. Raw transactions/reviews and run logs remain private; all public numbers are reproducible from the Reproduction Line in each figure.
+## Archived buyer-frequency method
 
-## Spec Gate
+The UCI transaction rows were aggregated to user-quarter observations. Within each quarter, purchase-volume quartiles Q1–Q4 were recalculated from the observed outcome. The script then standardized the current transaction count and regressed a shifted adjacent-quarter count on it within each quartile using ordinary least squares.
 
-**DoP**: Pass if `MAD_w ≤ 0.015` (or BCa95% upper bound ≤ 0.020) and Negative control OK.
-`MAD_w = Σ_A w_A · mean_B | P(B|A) − Pen(B) |` (where `w_A` = brand A buyer weights).
-Prerequisites: **median brands per user ≥ 2**, invariant `Σ_A w_A·D(A→B) ≈ Pen(B)` approximately holds.
+The variable named `freq_t1` points to the previous recorded quarter under the implemented shift. The name suggests a forward outcome, but the code's temporal direction is reversed relative to that label. This does not erase the observed association; it changes what the coefficient describes.
 
-**DJ**: Pass if **Pearson r ≥ 0.80** and **BCa95% lower bound ≥ 0.70**.
+## Buyer-frequency result
 
-## Background
+The UCI analysis assigned users to purchase-volume quartiles within each quarter, then regressed transaction frequency in one observed quarter on the adjacent observed quarter within each quartile. The predictor was standardized before estimation.
 
-### Buyer Moderation Analysis
+| Purchase-volume quartile | Observations | Users | Standardized slope | R² |
+|---|---:|---:|---:|---:|
+| Q1 | 126 | 107 | -0.002 | 0.00001 |
+| Q2 | 88 | 76 | 0.321 | 0.196 |
+| Q3 | 77 | 67 | 0.765 | 0.204 |
+| Q4 | 190 | 120 | 3.341 | 0.472 |
 
-Buyer moderation examines how purchase behavior varies across different buyer segments, typically measured through quantile-based analysis of purchase frequency and brand relationships.
+Q4 had the strongest within-sample association under this grouping rule. The result states that adjacent-quarter transaction counts were more predictable among the highest purchase-volume observations in the archived sample.
 
-### NBD-Dirichlet Model
+![Archived buyer-frequency plot. Q4 has the largest within-sample association, but the analysis contains no marketing-contact variable or treatment.](https://res.cloudinary.com/dgqphttst/image/upload/v1758994483/buyer_moderation_bodycare_vylepe.png)
 
-**Scope.** The NBD-Dirichlet models **category-level buyer distributions across brands** in panel data. Our use here is **illustrative**; the observed **PP-plot R² = ≈ −7e−06** indicates a fit **below a naive baseline**, consistent with assumption mismatch and high variance in this dataset.
+*Figure 1. Archived adjacent-quarter frequency regressions by contemporaneously defined purchase-volume quartile. The chart is descriptive and non-causal.*
 
-The NBD-Dirichlet model is a theoretical framework for understanding brand choice behavior, combining the Negative Binomial Distribution (NBD) for purchase frequency with the Dirichlet distribution for brand choice probabilities.
+## Why the Q4 pattern can become stronger mechanically
 
-## Methodology
+Quartile membership is defined from purchase volume in each observed quarter rather than from a fixed pre-period. High-volume groups also have greater variance. Grouping on an outcome-related variable and then regressing nearby outcomes can produce larger slopes and R² values even without a segment-specific response mechanism.
 
-### Moderation Analysis
+The reported Q1–Q4 gradient is therefore an object for follow-up, not proof of a behavioral treatment effect. The archived analysis also does not establish that all quartile coefficients are stable across later periods or out of sample.
 
-- **Data Source**: UCI beauty category data
-- **Quantile Segmentation**: Q1, Q2, Q3, Q4 buyer segments based on purchase frequency
-- **Time Pair Definition**: Analysis of purchase behavior between time periods (t, t+1)
-- **Quantile Regression**: Q1–Q4 quantile regression analysis
-- **Statistical Measures**: Slope coefficients, R² values, confidence intervals
-- **Stationarity Check**: KPSS p < 0.01 (reject H0: stationary), ADF p = 0.015 (reject H0: non-stationary)
+## What R²=0.472 does not identify
 
-### Dirichlet Analysis
+The regression contains no marketing-contact variable, campaign exposure, treatment assignment, price, or stock measure. It does not estimate the effect of an additional contact and cannot explain incremental sales or expected return on a targeting budget.
 
-- **Model Fitting**: Maximum Likelihood Estimation (MLE)
-- **Validation**: P-P plot analysis, R² calculation (coefficient of determination)
-- **Data Characteristics**: Mean purchases, standard deviation analysis
-- **Scope Limitation**: Designed for **category × brand × buyer distribution** panel data
-- **Excluded Data**: SKU-level, review data, and non-panel sources are **out of scope**
+The script's shifted value points to the previous recorded quarter, while quartile membership is recalculated from purchase volume in each quarter. Outcome-related grouping and the greater variance of high-volume buyers can mechanically increase the Q4 association. A predictive follow-up would need a fixed baseline cohort, explicit time direction, and held-out later periods. A causal follow-up would additionally need an identified exposure or randomized treatment.
 
-## Results
+## Archived NBD method and output
 
-### Main Finding: Q4 Heavy Buyers Offer Highest Optimization Potential
+The NBD routine estimated parameters from purchase counts and recorded solver success. The archive reported mean purchases of 19.48, standard deviation 181.9, and R²≈-7×10⁻⁶. Successful optimization only means that the fitting procedure returned a solution; it does not show that the fitted model was used correctly downstream.
 
-**Conclusion**: Q4 heavy buyers demonstrate the strongest relationship (R²=0.472), indicating they are the most predictable and valuable customer segment for targeted optimization efforts.
+The NBD models a category purchase-frequency distribution. A full NBD-Dirichlet analysis would additionally model brand choice probabilities across a valid category-by-brand-by-buyer panel. The archived evaluation did not reach that test.
 
-**Supporting Evidence**:
-1. **Progressive Relationship Strength**: Q1 (0.00001) → Q2 (0.196) → Q3 (0.204) → Q4 (0.472)
-2. **Statistical Significance**: All quantiles show statistically significant effects
-3. **Temporal Stability**: Reliable behavioral patterns confirmed across segments
-4. **High Slope Value**: Q4 slope = 3.341 indicates strong behavioral persistence
+## Withdrawn Dirichlet-fit claim
 
-### Buyer Moderation Analysis
+The archive reports fitted negative-binomial parameters and R²≈-7×10⁻⁶. The evaluation path, however, assigns the same sample-mean prediction to every user. The resulting R² evaluates a constant-mean predictor. It does not evaluate predictions from the fitted NBD distribution and does not test a full NBD-Dirichlet model.
 
-#### Quantile Performance
+The archived result therefore cannot support either good or poor Dirichlet fit.
 
-The quantile performance analysis reveals a clear pattern of increasing relationship strength with higher purchase frequency segments. Q4 heavy buyers demonstrate the strongest relationship (R²=0.472), indicating that heavy buyers show more predictable and valuable behavior patterns over time. This finding validates the strategic importance of targeting heavy buyer segments for optimization efforts.
+The archived P-P plot remains available as a pipeline artifact: [NBD diagnostic plot](https://res.cloudinary.com/dgqphttst/image/upload/v1758994484/dirichlet_pp_plot_bodycare_ilunrn.png). Because the evaluation path supplied constant-mean predictions, the plot should not be interpreted as fitted-distribution performance.
 
-| Quantile | Slope | R² | Interpretation |
-|----------|-------|----|----------------|
-| Q1 | -0.0016 | 0.00001 | Minimal effect |
-| Q2 | 0.321 | 0.196 | Moderate effect |
-| Q3 | 0.765 | 0.204 | Strong effect |
-| Q4 | 3.341 | 0.472 | Very strong effect (heavy buyers show regression slope >1, indicating weak mean reversion) |
+## Reproduction record
 
-### Discussion (Moderation)
+The archived entry points were:
 
-The moderation analysis reveals robust quantile-based buyer segmentation with clear behavioral patterns. Higher quantiles demonstrate progressively stronger moderation effects, with Q4 (heavy buyers) showing the most pronounced relationships (slope = 3.341, R² = 0.472). All quantiles exhibit statistically significant effects, and temporal stability is confirmed across segments, indicating reliable behavioral patterns.
+```bash
+poetry run python scripts/eb/compute_moderation.py \
+  --tx data/processed/tx_uci_beauty_with_categories.csv \
+  --category_regex bodycare
 
-### NBD-Dirichlet Model Analysis (Reference)
+poetry run python scripts/eb/compute_dirichlet.py \
+  --tx data/processed/tx_uci_beauty_with_categories.csv \
+  --category_regex bodycare
+```
 
-**Conclusion**: Dirichlet model demonstrates extremely poor fit (R² ≈ 0), suggesting that theoretical models are unsuitable for production use with high-variance real-world data.
+The logs identify the input only as `loaded` and do not record a Git commit. The commands document the original execution path but do not constitute an exact reproduction package.
 
-**Supporting Evidence**:
-1. **Extremely Weak Fit**: R² ≈ 0 indicates performance below baseline
-2. **High Data Variance**: Real-world data violates theoretical assumptions
-3. **Production Unsuitable**: Model provides no predictive value despite successful fitting
+## Claim boundary
 
-The Dirichlet model analysis demonstrates the limitations of theoretical models with real-world data. The model shows extremely weak fit (R² ≈ 0) due to high data variance and assumption violations, serving as a cautionary example of model limitations.
+The Q4 value is a descriptive adjacent-quarter association. It does not support heavy-buyer targeting, contact-frequency changes, budget allocation, or an optimization claim. The NBD output is an implementation diagnostic, not a model-fit result.
 
-<details>
-<summary>Detailed Dirichlet Model Results</summary>
+## Reimplementation requirements
 
-#### Model Fitting Results
-
-**Conclusion**: Dirichlet model demonstrates extremely poor fit (R² = -7.0e-06), suggesting that theoretical models are unsuitable for production use with high-variance real-world data.
-
-**Supporting Evidence**:
-1. **Very Poor Fit**: R² = -7.0e-06 indicates performance below baseline
-2. **High Data Variance**: Standard deviation of 181.9 suggests extreme variability
-3. **Model Limitations**: Theoretical assumptions violated by real-world data characteristics
-4. **Production Unsuitable**: Despite successful fitting, model provides no predictive value
-
-| Metric | Value | Interpretation |
-|--------|-------|----------------|
-| R² | -7.0e-06 | Very poor fit (below baseline performance) |
-| Mean Purchases | 19.48 | Moderate frequency (purchases per user per brand) |
-| Std Purchases | 181.9 | Very high variance (purchase count standard deviation) |
-| NBD Success | True | Model fitted successfully |
-| Solver Status | Success | Optimization completed |
-
-**Scope of the model.** The NBD-Dirichlet targets **category-level buyer distributions across brands** in panel settings. Our use here is **illustrative**, and the observed **PP-plot R² ≈ 0 (≈ −7e-06)** indicates a fit below a naive baseline—consistent with high variance and assumption mismatch in this dataset.
-
-The Dirichlet analysis reveals significant challenges with theoretical model fitting in real-world data. The extremely weak model fit (R² = -7.0e-06) contrasts sharply with the robust moderation analysis, highlighting the impact of high data variance (std = 181.9) on model performance. While the theoretical model provides conceptual insights, it struggles with the complexity of actual purchase behavior, serving primarily as an illustrative framework rather than a statistically valid representation.
-
-</details>
-
-## Data Summary
-
-![Chart demonstrates Q4 heavy buyers show strongest purchase behavior relationship (R²=0.472), validating targeted optimization strategies](https://res.cloudinary.com/dgqphttst/image/upload/v1758994483/buyer_moderation_bodycare_vylepe.png)
-
-*Figure 1 presents the quantile-based buyer moderation analysis, demonstrating strong effects in higher quantiles (Q4 slope=3.341, R²=0.472) compared to weak Dirichlet model fit.*
-
-### Moderation Analysis Results
-- **Q4 Heavy Buyers**: R² = 0.472 (quantile regression fit quality), slope = 3.341 (frequency persistence coefficient)
-- **Q3 Buyers**: R² = 0.204 (quantile regression fit quality), slope = 2.156 (frequency persistence coefficient)
-- **Q2 Buyers**: R² = 0.196 (quantile regression fit quality), slope = 1.987 (frequency persistence coefficient)
-- **Q1 Light Buyers**: R² = 0.00001 (quantile regression fit quality), slope = 0.123 (frequency persistence coefficient)
-- **Statistical Significance**: All quantiles show significant effects
-- **Brand Count**: 16 brands analyzed
-- **Category**: Beauty/bodycare products
-
-### Dirichlet Analysis Results
-- **Model Fit**: R² ≈ 0 (extremely poor fit)
-- **Performance**: Below baseline performance
-- **Data Variance**: High variance violates theoretical assumptions
-- **Production Suitability**: Not suitable for real-world application
-- **P-P Plot**: [https://res.cloudinary.com/dgqphttst/image/upload/v1758994484/dirichlet_pp_plot_bodycare_ilunrn.png](https://res.cloudinary.com/dgqphttst/image/upload/v1758994484/dirichlet_pp_plot_bodycare_ilunrn.png)
-
-## Reproducibility
-
-**Moderation Command (repo)**: `poetry run python scripts/eb/compute_moderation.py --tx data/processed/tx_uci_beauty_with_categories.csv --category_regex bodycare`
-
-**Dirichlet Command (repo)**: `poetry run python scripts/eb/compute_dirichlet.py --tx data/processed/tx_uci_beauty_with_categories.csv --category_regex bodycare`
-
-## Current Status
-
-Our analysis achieved mixed results across the two complementary approaches. The moderation analysis successfully completed with robust quantile-based buyer segmentation, providing actionable insights for customer targeting strategies. However, the Dirichlet analysis revealed significant challenges with theoretical model fitting, resulting in weak fit that serves primarily as an illustrative example of model limitations rather than a production-ready tool.
-
-**Moderation Analysis**: ✅ COMPLETE - Successful quantile-based segmentation
-**Dirichlet Analysis**: ⚠️ COMPLETE - Weak fit, illustrative only
-**Statistical Validation**: ✅ Complete with proper confidence intervals and model fitting
-
-## Strategic Implementation
-
-### Required Action: Focus on Q4 Heavy Buyer Optimization
-
-**Main Message**: Marketing teams may want to consider implementing Q4-focused A/B testing to optimize heavy buyer segment performance and abandon Dirichlet model approaches, based on this dataset's limited applicability of theoretical models.
-
-**Supporting Logic**:
-1. **Q4 Heavy Buyers Are Most Valuable**: R²=0.472 indicates highest predictability and value
-2. **Progressive Segmentation Works**: Each quantile shows distinct behavioral patterns
-3. **Dirichlet Models Fail**: R²≈0 indicates theoretical models are unsuitable for production
-
-**Implementation Strategy**:
-- **Phase 1**: Launch Q4-focused A/B testing with basket expansion and frequency suppression design
-- **Phase 2**: Target heavy buyer segments for offer optimization and experience enhancement
-- **Phase 3**: Abandon Dirichlet model approaches due to poor fit and high variance
-
-### Buyer Segmentation Success
-
-The moderation analysis demonstrates clear and meaningful buyer segmentation that provides actionable insights for marketing strategy. Each quantile shows distinct behavioral patterns, with Q4 heavy buyers exhibiting the strongest moderation effects (R²=0.472), indicating that heavy buyers represent the most predictable and valuable customer segment for targeted optimization efforts.
-
-- **Quantile Effects**: Each quantile shows distinct behavioral patterns
-- **Q4 Dominance**: Heavy buyers exhibit the strongest moderation effects
-- **Statistical Validity**: All segments show statistically significant relationships
-
-### Model Fit Challenges
-
-The Dirichlet analysis reveals significant challenges with theoretical models that require immediate strategic adjustment:
-
-- **Poor Fit**: R² = -7.0e-06 indicates very weak model performance
-- **High Variance**: Standard deviation of 181.9 suggests extreme data variability
-- **Real-World Complexity**: Theoretical models struggle with actual data characteristics
-
-### 3. Data Characteristics
-
-**Conclusion**: Real-world data exhibits extreme variability that challenges theoretical model assumptions, requiring robust statistical approaches for reliable analysis.
-
-**Supporting Evidence**:
-1. **High Variance**: Purchase behavior shows extreme variability (std = 181.9)
-2. **Complex Patterns**: Real-world data doesn't follow theoretical assumptions
-3. **Statistical Challenges**: High variance affects model fitting performance
-
-## Implications for Marketing Science
-
-### 1. Buyer Segmentation
-
-**Conclusion**: Quantile-based buyer segmentation provides actionable insights for marketing strategy, with Q4 heavy buyers offering the highest optimization potential.
-
-**Supporting Evidence**:
-1. **Quantile Analysis**: Effective method for understanding buyer behavior
-2. **Heavy Buyer Focus**: Q4 buyers show strongest relationships (R²=0.472)
-3. **Strategic Implications**: Different strategies needed for different segments
-
-- **Quantile Analysis**: Effective method for understanding buyer behavior
-- **Heavy Buyer Focus**: Q4 buyers show strongest relationships
-- **Strategic Implications**: Different strategies needed for different segments
-
-### 2. Model Limitations
-
-**Conclusion**: Theoretical models struggle with real-world data complexity, requiring alternative robust statistical approaches for production use.
-
-**Supporting Evidence**:
-1. **Theoretical vs. Empirical**: Real-world data challenges theoretical models
-2. **High Variance Impact**: Extreme data variability affects model performance
-3. **Illustrative Value**: Models provide insights but not statistical validity
-
-- **Theoretical vs. Empirical**: Real-world data challenges theoretical models
-- **High Variance Impact**: Extreme data variability affects model performance
-- **Illustrative Value**: Models provide insights but not statistical validity
-
-### 3. Statistical Considerations
-
-**Conclusion**: Rigorous statistical implementation with confidence intervals and validation methods is essential for production-ready marketing science analysis.
-
-**Supporting Evidence**:
-1. **Model Selection**: High-variance data requires robust modeling approaches
-2. **Validation Methods**: R² alone insufficient for model assessment
-3. **Real-World Application**: Theoretical models need empirical validation
-
-- **Model Selection**: High-variance data requires robust modeling approaches
-- **Validation Methods**: R² alone insufficient for model assessment
-- **Real-World Application**: Theoretical models need empirical validation
-
-## Limitations and Threats to Validity
-
-These results are contingent on category selection, temporal windowing, and minimum buyer thresholds. In particular, brand-count weighting increases stringency in DoP; non-stationarity and heterogeneous purchase variance attenuate DJ and Dirichlet fits. We report full audit logs and input SHAs to support replication.
-
-## Next Steps
-
-Future research should investigate alternative modeling approaches for high-variance data, explore robust statistical methods for buyer segmentation, examine model validation techniques beyond R², and develop guidelines for theoretical model application.
+For prediction, define quartiles from a fixed baseline period, preserve forward time direction, and evaluate on held-out future quarters. For causal response, add an identified exposure or randomized treatment and prevent post-treatment purchase volume from defining the groups. For NBD evaluation, generate expected frequencies or probabilities from the fitted parameters and compare those predictions with observations using pre-specified diagnostics.
 
 ## References
 
-- Ehrenberg, A.S.C. (1988). Repeat-buying: facts, theory and applications
-- Sharp, B. (2010). How Brands Grow
+- Goodhardt, G.J., Ehrenberg, A.S.C., & Chatfield, C. (1984). “The Dirichlet: A Comprehensive Model of Buying Behaviour.” *Journal of the Royal Statistical Society: Series A*, 147(5), 621–643. [https://doi.org/10.2307/2981696](https://doi.org/10.2307/2981696)
+- Chen, D. (2012). *Online Retail II*. UCI Machine Learning Repository. [https://doi.org/10.24432/C5CG6D](https://doi.org/10.24432/C5CG6D)
 
 ---
 
+{% include cta-whitepaper.html %}
