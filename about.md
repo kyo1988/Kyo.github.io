@@ -23,7 +23,13 @@ Executable checks for analysis defects that can run to completion while returnin
 - [Version DOI (v0.1.0): 10.5281/zenodo.21714102](https://doi.org/10.5281/zenodo.21714102)
 - [GitHub repository](https://github.com/kyo1988/analysis-integrity-kit)
 
-### Paper in preparation
+### Preprint: other-agent models in LLM systems
+
+*Beyond Social Performance: Evidence Modes and Validation Obligations for Other-Agent Models in LLM Systems* is published as a version 1.0 preprint on Zenodo. It defines evidence modes and the validation obligations attached to claims about other-agent models in LLM systems. The work is citable by DOI; it is not presented as peer reviewed.
+
+- [Preprint DOI: 10.5281/zenodo.21800317](https://doi.org/10.5281/zenodo.21800317)
+
+### Related manuscript in preparation
 
 *Governed LLM-Assisted Analysis: A Failure-Mode Taxonomy and an Operational Boundary Specification* is in preparation. The [current status and source materials](https://github.com/kyo1988/analysis-integrity-kit/tree/main/paper) are public; no completed manuscript or peer-review claim is made here.
 
