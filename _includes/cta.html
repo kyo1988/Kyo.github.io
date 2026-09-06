@@ -1,7 +1,12 @@
 {% if page.tags contains 'Beauty AI' %}
 <div class="cta">
+  {% if page.slug == 'cultural-beauty-standards-analysis' %}
+  <h3>From Population-Level Beauty Research to Personal Skincare Decisions</h3>
+  <p>This article studies group-level patterns, not personal ranking. Visage AI takes a different consumer approach: one skincare priority for today, then a check of whether your current routine already covers it. No extra purchase is a valid result.</p>
+  {% else %}
   <h3>From Beauty AI Research to Daily Skincare Decisions</h3>
   <p>Visage AI helps you choose one clear skincare priority, check whether your current routine already covers it, and can conclude that no extra purchase is needed.</p>
+  {% endif %}
   <p>
     <a class="btn"
        href="https://www.visageaiconsulting.com/learn?utm_source=kyo_blog&utm_medium=post_footer&utm_campaign=beauty_ai_owned_bridge&utm_content={{ page.slug | default: 'general' }}"
