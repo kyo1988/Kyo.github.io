@@ -1,8 +1,27 @@
+{% if page.tags contains 'Beauty AI' %}
+<div class="cta">
+  <h3>From Beauty AI Research to Daily Skincare Decisions</h3>
+  <p>Visage AI helps you choose one clear skincare priority, check whether your current routine already covers it, and can conclude that no extra purchase is needed.</p>
+  <p>
+    <a class="btn"
+       href="https://www.visageaiconsulting.com/learn?utm_source=kyo_blog&utm_medium=post_footer&utm_campaign=beauty_ai_owned_bridge&utm_content={{ page.slug | default: 'general' }}"
+       rel="noopener external"
+       onclick="gtag('event','click_cta',{destination:'visage_learn',placement:'post_footer',campaign:'beauty_ai_owned_bridge',content:'{{ page.slug | default: 'general' }}'});">
+      Explore Visage AI Guides →
+    </a>
+    <a class="btn ghost"
+       href="https://apps.apple.com/app/visage-ai-skin-advisor/id6748892785?utm_source=kyo_blog&utm_medium=post_footer&utm_campaign=beauty_ai_owned_bridge&utm_content={{ page.slug | default: 'general' }}"
+       rel="noopener external">
+      View on the App Store
+    </a>
+  </p>
+</div>
+{% else %}
 <div class="cta">
   <h3>AI-Powered Skin Analysis Solutions</h3>
   <p>Get the latest insights on explainable AI for e-commerce and retail.</p>
   <p>
-    <a class="btn" 
+    <a class="btn"
        href="https://www.visageaiconsulting.com/whitepaper/ebm-2025?utm_source=blog&utm_medium=post_footer&utm_campaign={{ page.slug | default: 'general' }}"
        rel="noopener external"
        onclick="gtag('event','click_cta',{destination:'whitepaper_lp',placement:'post_footer',campaign:'{{ page.slug | default: 'general' }}'});">
@@ -11,3 +30,4 @@
     <a class="btn ghost" href="/newsletter/">Free Newsletter</a>
   </p>
 </div>
+{% endif %}
